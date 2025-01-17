@@ -1,16 +1,16 @@
 # Descriptif du projet
 
-Porteur de projet :
+Porteur de projet : Médiacités
 
-Sujet :
+Sujet : SimpliCités
 
-Nom d'équipe :
+Nom d'équipe : Médiacitadins
 
-Participants : 
+Participants :
 
-- AGR :
-- Polytech :  
-- SciencesPo : 
+- AGR : Lilou, Anaïs, 
+- Polytech :  Pierre, Samuel, Saad, Ayman, Nolann
+- SciencesPo : Robin
 
 
 
