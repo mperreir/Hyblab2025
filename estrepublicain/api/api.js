@@ -13,5 +13,17 @@ app.get('/topic', function ( req, res ) {
     res.json({'topic':topic});
 } );
 
+// app.get('/videos', async (req, res) => {
+//     // Récupération des artistes
+//     const response = await fetch(`/estrepublicain/public/data/videos.json`);
+//     // Gestion des erreurs
+//     if (!response.ok) {
+//         throw new Error('Network response was not ok');
+//     }
+//     // Conversion en textex
+//     // Envoi du résultat
+//     res.send(JSON.stringify(response));
+// });
+
 // Export our API
 module.exports = app;

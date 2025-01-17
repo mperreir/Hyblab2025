@@ -51,7 +51,7 @@ body{
 
 /* the slides and the loader should fill the whole 9:16 zone */
 .swiper-wrapper section, #loader{
-    background-color: dodgerblue;
+    background-color: black;
     width: 100%;
     height: 100%;
 }
@@ -90,7 +90,6 @@ body{
 }
 
 main > section{
-    background-image: url('../img/background.svg');
     background-size: 100% auto; /* background is full width and height is proportional to width */
     background-position: bottom; /* background is bottom aligned */
 }
@@ -105,6 +104,37 @@ main > section{
     text-align: center;
     padding: 1em;
     background-color: rgba(0, 0, 0, 0.5);
+}
+
+.filter {
+    display: inline-block;
+    padding: 24px 32px;
+    border: 0;
+    text-decoration: none;
+    border-radius: 15px;
+    background-color: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.2);
+    backdrop-filter: blur(30px);
+    color: rgba(255,255,255,0.8);
+    font-size: 14px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.filter:hover {
+    color: white;
+    border: 1px solid rgba(226,0,11,0.2);
+    background-color: rgba(226,0,11,0.2);
+    -webkit-transition: background-color 300ms linear;
+    -ms-transition: background-color 300ms linear;
+    transition: background-color 300ms linear;
+}
+
+.filter.selected {
+    color: white;
+    border: 1px solid rgba(226,0,11,0.2);
+    background-color: rgba(226,0,11,0.2);
 }
 
 
@@ -174,6 +204,8 @@ main > section{
 body{
     font-size: calc(15vh * 3 / 4);
 }
+
+
 
 /* Fill the whole viewport when its aspect ratio is between 9/16 and 3/4 */
 @media screen and (max-aspect-ratio: 3/4) {
