@@ -225,7 +225,7 @@ main > section {
     font-size: 1em;
 }
 
-.crime-cards button {
+.crime-cards a {
     margin-top: 10px;
     left: 50%;
     bottom: 10px;
@@ -235,13 +235,13 @@ main > section {
     backdrop-filter: blur(30px);
 }
 
-.crime-cards button:hover {
+.crime-cards a:hover {
     background-color: rgba(255, 255, 255, 0.4);
     transition: all ease 200ms;
 }
 
 .crime-pics {
-    width: calc(100% - 40px);
+    width: 100%;
     aspect-ratio: 2;
     background-color: white;
     border-radius: 10px;
