@@ -1,21 +1,108 @@
-/* ------- Important ! Please at least keep the last part of this CSS ----------- */
-/* ------- that adapts content width and height so that aspect ratio  ----------- */
-/* ------- is kept between 9/16 a,d 3/4 (portait orientation)         ----------- */
+/* ==============================
+   Import des polices
+============================== */
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 
-/* Normalize margin and padding to ease elements positioning */
-*{
-    padding:0;
-    margin:0;
+/* ==============================
+   Réinitialisation des marges et paddings
+============================== */
+* {
+    padding: 0;
+    margin: 0;
 }
 
-body{
+/* ==============================
+   Style général
+============================== */
+html {
+    background-color: black;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+body {
     background-color: black;
     color: white;
-    font-family: sans-serif;
-    overflow-x: hidden;
+    overflow-x: clip;
 }
 
+.html::-webkit-scrollbar {
+    display: none;
+}
+
+/* ==============================
+   Header
+============================== */
+header {
+    width: calc(100% - 10px);
+    height: 50px;
+    margin: 5px;
+
+    position: fixed;
+    top: 0;
+
+    border: 1px solid rgba(226, 0, 11, 0.2);
+    border-radius: 10px;
+
+    background-color: rgba(226, 0, 11, 0.2);
+    backdrop-filter: blur(30px);
+    color: white;
+
+    text-transform: uppercase;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+/* ==============================
+   Animations
+============================== */
+@keyframes wipe-enter {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes cloud1 {
+    0% {
+        left: -50px;
+    }
+    100% {
+        left: 0px;
+    }
+}
+
+@keyframes cloud2 {
+    0% {
+        right: -50px;
+    }
+    100% {
+        right: 0px;
+    }
+}
+
+/* ==============================
+   Préférences utilisateur (médias)
+============================== */
+@media (prefers-reduced-motion: no-preference) {
+    h1.in-view {
+        animation: wipe-enter 1s ease;
+    }
+
+    #cloud1 {
+        animation: cloud1 1s ease;
+    }
+
+    #cloud2 {
+        animation: cloud2 1s ease;
+    }
+}
+
+/* ==============================
+   Styles spécifiques aux éléments
+============================== */
 em {
     font-weight: bold;
     text-transform: none;
@@ -24,11 +111,19 @@ em {
     font-family: "Libre Baskerville", serif;
 }
 
-main > section{
-    background-size: 100% auto; /* background is full width and height is proportional to width */
-    background-position: bottom; /* background is bottom aligned */
+main {
+    background-color: black;
+    color: white;
 }
 
+main > section {
+    background-size: 100% auto;
+    background-position: bottom;
+}
+
+/* ==============================
+   Partie introduction
+============================== */
 #intro {
     padding-top: 60px;
     background-size: contain;
@@ -37,7 +132,6 @@ main > section{
 }
 
 #intro img {
-    z-index: 0;
     position: absolute;
     max-width: 50%;
 }
@@ -59,109 +153,102 @@ main > section{
     text-transform: uppercase;
     font-family: "Libre Baskerville", serif;
     font-weight: 700;
-    font-style: normal;
     font-size: 1.5em;
 }
 
 #intro h2 em {
     font-weight: 700;
-    font-size: calc(80vw/8);
+    font-size: calc(80vw / 8);
     text-transform: uppercase;
     opacity: 0.6;
 }
 
-.steps {
+/* ==============================
+   Textes "6 ETAPES" et "6 CRIMES"
+============================== */
+.mirror-text {
     position: relative;
 }
 
-.steps:after {
+.mirror-text:after {
     position: absolute;
     bottom: 0;
     margin-left: 50%;
     transform: translateX(-50%);
     width: 60vw;
-    height: calc(90vw/8);
+    height: calc(90vw / 8);
     content: "";
-    background: linear-gradient(to top,
-    rgba(0,0,0, 1) 20%,
-    rgba(0,0,0, 0) 80%
-    );
-    pointer-events: none; /* so the text is still selectable */
+    background: linear-gradient(to top, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 80%);
+    pointer-events: none;
 }
 
 .crimes {
-    position: relative;
     transform: scaleY(-1);
 }
 
-.crimes:after {
-    position: absolute;
-    bottom: 0;
-    width: 60vw;
-    margin-left: 50%;
-    transform: translateX(-50%);
-    height: calc(90vw/8);
-    content: "";
-    background: linear-gradient(to top,
-    rgba(0,0,0, 1) 20%,
-    rgba(0,0,0, 0) 80%
-    );
-    pointer-events: none; /* so the text is still selectable */
-}
-
-.caroussel {
+/* ==============================
+   Carrousel
+============================== */
+#carousel {
     justify-content: safe center;
     overflow-y: scroll;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    cursor: grab;
 }
 
-.caroussel::-webkit-scrollbar {
-    display: none;
+#carousel:active {
+    cursor: grabbing;
 }
 
-
-.thumbCrimes {
+/* ==============================
+   Vignettes des crimes
+============================== */
+.crime-cards {
     margin: 10px;
-    border: 1px solid rgba(226,0,11,0.2);
-    background-color: rgba(226,0,11,0.2);
+    border: 1px solid rgba(226, 0, 11, 0.2);
+    background-color: rgba(226, 0, 11, 0.2);
     backdrop-filter: blur(30px);
     border-radius: calc(10px + 20px);
     padding: 20px;
+    padding-bottom: 60px;
 }
 
-.thumbCrimes h2 {
+.crime-cards h2 {
     margin-top: 5px;
     font-family: "Libre Baskerville", serif;
 }
 
-.thumbCrimes h3 {
+.crime-cards h3 {
     opacity: 0.6;
     font-size: 1em;
 }
 
-.thumbCrimes button {
-    margin-left: 50%;
+.crime-cards button {
     margin-top: 10px;
+    left: 50%;
+    bottom: 10px;
     transform: translateX(-50%);
-    border: 1px solid rgba(255,255,255,0.2);
-    background-color: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(30px);
 }
 
-.thumbCrimes button:hover {
-    background-color: rgba(255,255,255,0.4);
+.crime-cards button:hover {
+    background-color: rgba(255, 255, 255, 0.4);
     transition: all ease 200ms;
 }
 
-
-.thumbPic {
-    width: calc(100%-40px);
+.crime-pics {
+    width: calc(100% - 40px);
     aspect-ratio: 2;
     background-color: white;
     border-radius: 10px;
 }
 
+/* ==============================
+   Ligne SVG
+============================== */
 .svg-line {
     color: white;
     display: flex;
@@ -169,65 +256,58 @@ main > section{
     justify-content: center;
 }
 
-
-body{
-    font-size: calc(15vh * 3 / 4);
-}
-
-header {
-    margin: 5px;
-    border-radius: 10px;
-    width: calc(100% - 10px);
-    position: fixed;
-    top: 0;
-    height: 50px;
-    border: 1px solid rgba(226,0,11,0.2);
-    background-color: rgba(226,0,11,0.2);
-    backdrop-filter: blur(30px);
-    color: white;
-    text-transform: uppercase;
-    font-size: 0.8em;
-    font-weight: bold;
-}
-
-main {
-    background-color: black;
-    color: white;
-}
-
 .svg-line > svg {
     margin-top: 60px;
 }
 
-
-/* Fill the whole viewport when its aspect ratio is between 9/16 and 3/4 */
-@media screen and (max-aspect-ratio: 3/4) {
-    #container{
-        margin-left: 0; /* reset margin-left */
-        width: 100vw; /* content is full width (and full height because of the default rule for container height */
-    }
-
-    /* We set a default font size here. It will be the base for all other font sizes */
-    /* Here the font size is proportional to content width */
-    body{
-        font-size: 15vw;
-    }
+/* ==============================
+   Section #countdown
+============================== */
+#countdown {
+    margin-top: 50vh;
 }
 
-/* The content is displayed at 9/16 If the aspect ratio is higher that 9/16  */
-@media screen and (max-aspect-ratio: 9/16) {
-    #container{
-        margin-left: 0; /* reset left margin */
-        width: 100vw;   /* content is full width */
-        margin-top: calc(-50 * 16vw / 9); /* move the content half the height to the top */
-        top:50%; /* then center it ! */
-        height: calc(100 * 16vw / 9); /* adjust height so that aspect ratio is 9/16 */
-    }
-
-    /* We set a default font size here. It will be the base for all other font sizes */
-    /* Here the font size is proportional to content width */
-    body{
-        font-size: 15vw;
-    }
+#countdown > div {
+    top: 50%;
+    height: 100vh;
+    background-color: black;
 }
 
+#countdown > div > h1 {
+    text-align: center;
+}
+
+#countdown h1 {
+    font-family: "Libre Baskerville", serif;
+    font-weight: 700;
+    font-size: 5em;
+}
+
+/* ==============================
+   Partie avec le texte de démarage
+============================== */
+#beginning-text {
+    height: 50vh;
+    margin-bottom: 25vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+/* ==============================
+   Progress bar
+============================== */
+progress {
+    position: fixed;
+    top: 49vh;
+    left: 0;
+    width: 100vh;
+    height: 3px;
+    transform: translateX(-50%) rotate(90deg);
+    background-color: black;
+    border: none;
+}
+
+progress::-moz-progress-bar {
+    background: #e2000b;
+}

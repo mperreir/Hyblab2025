@@ -11,6 +11,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script src="js/index.js" defer></script>
+  <script src="js/scroll-animations.js" defer></script>
+  <script src="js/timeline.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -19,69 +21,107 @@
 </head>
 <body class="position-relative">
 <header class="z-3 d-flex align-items-center">
-  <img src="img/LER.svg" height="30" class="m-1">
+  <a href="https://www.estrepublicain.fr/">
+    <img src="img/LER.svg" height="30" class="m-1">
+  </a>
   Sur les traces des grands crimes de l'Est
 </header>
 <main>
-<div id="intro">
-  <img id="cloud1" src="img/cloud1.png">
-  <img id="cloud2 z-3" src="img/cloud2.png">
-  <div class="row z-0">
-    <p class="text-center col-12">L'<em>Est Républicain</em> présente <i>Sur Les Traces des Grands Crimes de l'Est</i></p>
-    <span class="col-0 col-md-2"></span>
-    <h1 class="text-center z-5 col-12 col-md-8">Replongez dans l'ambiance de l'époque et revivez l'enquête telle qu'elle a été menée.</h1>
-    <span class="col-0 col-md-2"></span>
-    <div class="col-12 steps z-0">
-      <h2 class="m-0 text-center"><em>5 étapes</em></h2>
+
+  <progress class="z-2" id="progress"></progress>
+
+  <div id="intro">
+    <img id="cloud1" class="z-1" src="img/cloud1.png">
+    <img id="cloud2" class="z-1" src="img/cloud2.png">
+    
+    <div class="row z-2">
+      <p class="text-center col-12 z-2">L'<em>Est Républicain</em> présente <i>Sur Les Traces des Grands Crimes de l'Est</i></p>
+
+      <span class="col-0 col-md-2"></span>
+      <h1 class="animate text-center z-5 col-12 col-md-8 z-2">Replongez dans l'ambiance de l'époque et revivez l'enquête telle qu'elle a été menée.</h1>
+      <span class="col-0 col-md-2"></span>
+
+      <div class="col-12 steps mirror-text z-0">
+        <h2 class="m-0 text-center"><em>6 étapes</em></h2>
+      </div>
+
+      <div class="col-12 d-inline-flex z-1" id="carousel">
+        <div class="crime-cards position-relative">
+          <div class="crime-pics"></div>
+          <h2>Traves</h2>
+          <h3>Le Petit Grégory</h3>
+          <button class="btn btn-dark position-absolute">Y ALLER</button>
+        </div>
+
+        <div class="crime-cards position-relative">
+          <div class="crime-pics"></div>
+          <h2>Strasbourg</h2>
+          <h3>Le Petit Grégory</h3>
+          <button class="btn btn-dark position-absolute">Y ALLER</button>
+        </div>
+
+        <div class="crime-cards position-relative">
+          <div class="crime-pics"></div>
+          <h2>Uruffe</h2>
+          <h3>Le Petit Grégory</h3>
+          <button class="btn btn-dark position-absolute">Y ALLER</button>
+        </div>
+
+        <div class="crime-cards position-relative">
+          <div class="crime-pics"></div>
+          <h2>Saint-Cloud</h2>
+          <h3>Le Petit Grégory</h3>
+          <button class="btn btn-dark position-absolute">Y ALLER</button>
+        </div>
+
+        <div class="crime-cards position-relative">
+          <div class="crime-pics"></div>
+          <h2>Marsal</h2>
+          <h3>Le Petit Grégory</h3>
+          <button class="btn btn-dark position-absolute">Y ALLER</button>
+        </div>
+
+        <div class="crime-cards position-relative">
+          <div class="crime-pics"></div>
+          <h2>Luxiol</h2>
+          <h3>Le Petit Grégory</h3>
+          <button class="btn btn-dark position-absolute">Y ALLER</button>
+        </div>
+      </div>
     </div>
-    <div class="col-12 caroussel d-inline-flex">
-      <div class="thumbCrimes">
-        <div class="thumbPic"></div>
-        <h2>Strasbourg</h2>
-        <h3>Le Petit Grégory</h3>
-        <button class="btn btn-dark">Y ALLER</button>
-      </div>
-
-      <div class="thumbCrimes">
-        <div class="thumbPic"></div>
-        <h2>Strasbourg</h2>
-        <h3>Le Petit Grégory</h3>
-        <button class="btn btn-dark">Y ALLER</button>
-      </div>
-
-      <div class="thumbCrimes">
-        <div class="thumbPic"></div>
-        <h2>Strasbourg</h2>
-        <h3>Le Petit Grégory</h3>
-        <button class="btn btn-dark">Y ALLER</button>
-      </div>
-
-      <div class="thumbCrimes">
-        <div class="thumbPic"></div>
-        <h2>Strasbourg</h2>
-        <h3>Le Petit Grégory</h3>
-        <button class="btn btn-dark">Y ALLER</button>
-      </div>
-
-      <div class="thumbCrimes">
-        <div class="thumbPic"></div>
-        <h2>Strasbourg</h2>
-        <h3>Le Petit Grégory</h3>
-        <button class="btn btn-dark">Y ALLER</button>
-      </div>
-    </div>
-    <div class="col-12 crimes">
-      <h2 class="m-0 text-center"><em>5 crimes</em></h2>
+    <div class="col-12 crimes mirror-text">
+      <h2 class="m-0 text-center"><em>6 crimes</em></h2>
     </div>
 
   </div>
-</div>
-<div class="svg-line w-100 h-200 z-0">
-  <svg class="w-100 h-100" viewBox="0 0 219 554" fill="none" xmlns="http://www.w3.org/2000/svg" id="line">
-    <path id="linePath" d="M1 9.99999C1 9.99999 193.892 -28.8024 216 54C236.622 131.237 71.8737 127.471 80 207C86.3858 269.496 144.604 280.747 186 328C227.396 375.253 38.4083 392.859 55 465C67.4676 519.209 123.261 518.634 167 553" stroke="white" stroke-width="5px"/>
-  </svg>
+  </div>
+  <div id="countdown" class="position-relative">
+    <div class="position-sticky">
+      <h1>PRET ?</h1>
+    </div>
+    <div class="position-sticky">
+      <h1>3</h1>
+    </div>
+    <div class="position-sticky">
+      <h1>2</h1>
+    </div>
+    <div class="position-sticky">
+      <h1>1</h1>
+    </div>
+  </div>
+  <div id="beginning-text">
+    Notre histoire commence en 1899, dans l'Est.
+  </div>
+  <div class="row">
+    <div class="col-1 col-md-3"></div>
+    <div class="svg-line col-10 col-md-6 w-md-50 z-0">
+      <svg class="w-100 h-100"  viewBox="0 0 161 967" fill="none" id="line" xmlns="http://www.w3.org/2000/svg">
+        <path id="path-line" d="M1 1C1 1 77 78 67 108C57 138 36 142 37 168C38 194 75 243 86 299C97 355 25 366 13 439C1 512 62 583 72 601C82 619 92 658 118 661C144 664 159 640 160 615C161 590 127 571 102 588C77 605 102 700 78 721C54 742 22 812 13 861C4 910 72 966 72 966" stroke="red" stroke-width="2px"/>
+      </svg>
+    </div>
+    <div class="col-1 col-md-3"></div>
+  </div>
 
-</div>
 </main>
 </body>
 </html>
