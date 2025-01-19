@@ -15,6 +15,7 @@
    Style général
 ============================== */
 html {
+    overflow-x: hidden;
     background-color: black;
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -268,7 +269,7 @@ main > section {
 }
 
 #countdown > div {
-    top: 50%;
+    top: 45%;
     height: 100vh;
     background-color: black;
 }
@@ -280,7 +281,7 @@ main > section {
 #countdown h1 {
     font-family: "Libre Baskerville", serif;
     font-weight: 700;
-    font-size: 5em;
+    font-size: 4.5em;
 }
 
 /* ==============================

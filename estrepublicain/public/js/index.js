@@ -1,5 +1,7 @@
 "use strict";
 
+document.body.style.maxWidth = window.innerWidth + "px"
+
 // Ce bout de code permet de garantir que toutes les cars soient de la même taille en sélectionnant la plus grande
 let cards = Array.from(document.getElementsByClassName("crime-cards"))
 let cardsWidths = cards.map((value) => {return value.offsetWidth})
