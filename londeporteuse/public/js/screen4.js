@@ -14,11 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
             sizes.forEach(s => s.classList.remove("selected"));
             size.classList.add("selected");
         });
-
-
     });
 });
-
-
 
 
