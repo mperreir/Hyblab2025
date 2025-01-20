@@ -4,6 +4,11 @@ const path = require('path');
 
 const app = express();
 
+app.use((req, res, next) => {
+  console.log(`Requête reçue pour: ${req.url}`);
+  next();
+});
+
 console.log(__dirname)
 
 // Exécuter la commande de build
