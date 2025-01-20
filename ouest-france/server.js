@@ -4,6 +4,11 @@ const path = require('path');
 
 const app = express();
 
+app.use((req, res, next) => {
+  console.log(`Requête reçue pour: ${req.url}`);
+  next();
+});
+
 // Exécuter la commande de build
 //console.log('Building the React project...');
 //execSync('npm run build', { stdio: 'inherit' }); // Exécute "npm run build" et affiche les logs dans la console
