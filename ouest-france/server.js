@@ -4,7 +4,7 @@ const path = require('path');
 const app = express();
 
 // Servir les fichiers statiques générés par Vite
-app.use('/ouest-france', express.static(path.join(__dirname, 'dist')));
+app.use(express.static(path.join(__dirname, 'dist')));
 
 // Servir les logos communs
 app.use(express.static(path.join(__dirname, '../__common-logos__')));
