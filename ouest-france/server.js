@@ -14,12 +14,12 @@ app.use((req, res, next) => {
 //execSync('npm run build', { stdio: 'inherit' }); // Exécute "npm run build" et affiche les logs dans la console
 
 // Servir les fichiers statiques du build React
-app.use(express.static(path.join(__dirname, 'dist')));
+app.use(express.static(path.join(__dirname + "/ouest-france", 'dist')));
 app.use(express.static(path.join(__dirname, '../__common-logos__')));
 
 // Gérer les routes pour React (SPA)
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+  res.sendFile(path.join(__dirname + "/ouest-france", 'dist', 'index.html'));
 });
 
 
