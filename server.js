@@ -23,6 +23,12 @@ app_names.forEach(function (element, index, array) {
 	app.use("/" + element, sub_apps[element]);
 });
 
+// Register a new route for screen2
+app.get("/screen2", function (req, res) {
+	res.sendFile(__dirname + "/londeporteuse/public/screen2.html");
+});
+
+
 // redirect catch all url to hyblab website (disabled for dev)
 // app.use(/\/$/, function (req, res, next) {
 // 	res.redirect("http://www.hyblab.fr/");
