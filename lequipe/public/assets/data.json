@@ -54,22 +54,22 @@
                                         {
                                             "type": "text",
                                             "text": {
-                                                "text": "La grotte est sombre et silencieuse, mais vous sentez une odeur étrange.",
+                                                "text": "Face à cette surenchère, l’UCI décide d’innover. Deux championnats distincts voient le jour : l’UCI Express et l’UCI World Tour.",
                                                 "template": "full_page"
                                             }
                                         },
                                         {
                                             "type": "text",
                                             "text": {
-                                                "text": "Vous découvrez un trésor caché par un ancien pirate.",
-                                                "template": "quote"
+                                                "text": "D’un côté, la grande boucle améliorée devient le « Tour des dopés », où tout est permis. Sept jours suffisent pour atteindre l’arrivée. Les spectateurs retiennent leur souffle. Les plus impatients y trouvent leur compte. De l’autre, un « Tour classique», pour les puristes, où on roule au jus d’orange et à la sueur.",
+                                                "template": "full_page"
                                             }
                                         },
                                         {
-                                            "type": "image",
-                                            "image": {
-                                                "link": "pirate_treasure.png",
-                                                "template": "right"
+                                            "type": "text",
+                                            "text": {
+                                                "text": "Et pendant ce temps, les siestes de papy devant la télé passent à la trappe : sur le Tour Express, chaque virage est une accélération. La Grande Boucle n’a jamais été aussi rapide et les coureurs rejoindront tous les clubs des 27.",
+                                                "template": "full_page"
                                             }
                                         }
                                     ]
@@ -82,15 +82,22 @@
                                         {
                                             "type": "text",
                                             "text": {
-                                                "text": "Vous vous perdez dans la jungle et trouvez une rivière où boire de l'eau fraîche.",
+                                                "text": "Face à ce manque de considération, l’UCI reprend la main. Les contrôles antidopage deviennent implacables. Les tricheurs sont traqués sans relâche, et une vague d’interdictions s’abat sur les coureurs pris la main dans le sac à vitamines.",
                                                 "template": "full_page"
                                             }
                                         },
                                         {
-                                            "type": "image",
-                                            "image": {
-                                                "link": "jungle_river.png",
-                                                "template": "center"
+                                            "type": "text",
+                                            "text": {
+                                                "text": "Résultat : les cyclistes dopés sont bannis des compétitions internationales et du World Cycling Tour. Les organisateurs des grands circuits, en quête de crédibilité, adoptent une ligne dure.",
+                                                "template": "full_page"
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": {
+                                                "text": "Le Tour de France, autrefois sommet absolu du cyclisme, perd peu à peu de sa superbe. Sans ses têtes d’affiche éclaboussées par les scandales, l’épreuve peine à attirer l’attention. Les champions « clean » peinent à égaler l’aura de leurs prédécesseurs dopés. Le peloton devient plus homogène, mais aussi moins spectaculaire.",
+                                                "template": "full_page"
                                             }
                                         }
                                     ]
@@ -100,62 +107,41 @@
                     }
                 },
                 {
-                    "text": "Marcher le long de la plage.",
+                    "text": "Il gagne le Tour, sans EPO dans le sang, juste des jambes en feu.",
                     "result": {
                         "content": [
                             {
                                 "type": "text",
                                 "text": {
-                                    "text": "Vous suivez la plage et trouvez des débris de votre bateau.",
+                                    "text": "Victoire ! Lance Armstrong brandit son maillot jaune et succède à Marco Pantani sur le podium. Le champion américain s’impose sans tomber dans le panneau du dopage contrairement à certains de ses rivaux. L’EPO ? A la poubelle. Armstrong préfère « Rouler sans tricher », son nouveau mantra. Sa fondation Livestrong, créée en 1997, pour soutenir les malades du cancer devient un véritable QG de la lutte anti-dopage. Celui que l’on prénomme « Le Boss » ne se contente pas de gagner des courses : il sauve le cyclisme d’une overdose collective.",
                                     "template": "full_page"
                                 }
                             },
                             {
                                 "type": "text",
                                 "text": {
-                                    "text": "Parmi les débris, vous trouvez un couteau rouillé.",
-                                    "template": "quote"
-                                }
-                            },
-                            {
-                                "type": "image",
-                                "image": {
-                                    "link": "knife.png",
-                                    "template": "right"
+                                    "text": "La vie de Marco Pantani aussi prendra un tournant inattendu. Inspiré par le discours anti-dopage de Lance, « Le Pirate” décide de se reprendre en main. Fini les fréquentations douteuses et les excès qui l’entraînaient vers le fond. Au lieu de sombrer après ses déboires, Pantani trouve un nouveau souffle, encouragé par un cyclisme qui, grâce à Armstrong, commence à redorer son image.",
+                                    "template": "full_page"
                                 }
                             }
                         ],
                         "choices": [
                             {
-                                "text": "Ramasser le couteau et continuer.",
+                                "text": "Et si Marco Pantani avait eu une seconde chance pour pédaler droit ?",
                                 "result": {
                                     "content": [
                                         {
                                             "type": "text",
                                             "text": {
-                                                "text": "Avec le couteau, vous êtes mieux préparé pour survivre.",
+                                                "text": "Pas de tragique chambre d’hôtel en 2004, pas d’overdose. À la place, Pantani revient au sommet. Armstrong et Lui deviennent les visages d’une nouvelle ère, mais surtout, d’une rivalité mythique. Dès l’an 2000, les deux se disputent les maillots jaunes sur les routes du Tour de France. Lance, méthodique et calculateur, contre Marco, tout feu tout flamme dans les montagnes. Les médias se régalent : c’est la version cycliste d’un blockbuster d’été.",
                                                 "template": "full_page"
-                                            }
-                                        }
-                                    ]
-                                }
-                            },
-                            {
-                                "text": "Ignorer le couteau et chercher d'autres ressources.",
-                                "result": {
-                                    "content": [
-                                        {
-                                            "type": "text",
-                                            "text": {
-                                                "text": "Vous trouvez des fruits comestibles sur un arbre proche.",
-                                                "template": "quote"
                                             }
                                         },
                                         {
-                                            "type": "image",
-                                            "image": {
-                                                "link": "fruits.png",
-                                                "template": "left"
+                                            "type": "text",
+                                            "text": {
+                                                "text": "Les deux hommes se rendent coup pour coup : un contre-la-montre pour Lance, une échappée légendaire pour Marco. Le coureur impulsif vs le grimpeur romantique. Chaque Tour devient une scène d’anthologie. Le public est en délire devant un cyclisme qui renaît de ses cendres.",
+                                                "template": "full_page"
                                             }
                                         }
                                     ]
