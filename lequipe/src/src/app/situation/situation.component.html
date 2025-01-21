@@ -1,0 +1,18 @@
+@for (item of situation.content; track $index) {
+    @switch (item.type) {
+        @case ("text") {
+            <p> {{item.text?.text}} </p>
+        }
+        @case ("image") {
+            <!-- <img [src]="item.image?.link" [alt]="item.image?.link"> -->
+        }
+    }
+}
+<div id="choice_div">
+@for (item of situation.choices; track $index) {
+    <p (click)="selected_choice = item" class="choice" [ngClass]="{'selected' : selected_choice == item}"> {{item.text}} </p>
+}
+</div>
+@if (selected_choice) {
+    <app-situation [situation]="selected_choice.result"></app-situation>
+}

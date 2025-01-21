@@ -1,0 +1,30 @@
+p {
+    margin: 5px;
+    font-size: 20%;
+}
+
+.choice {
+    // make some sort of nice looking card looking button for a choice button
+    flex:1; //make buttons same size
+    border: 1px solid white;
+    color: white;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: lighten(black, 10%);
+
+    &:hover {
+        background-color: lighten(black, 20%);
+    }
+}
+
+#choice_div {
+    display: flex;
+}
+
+.selected {
+    background-color: lighten(black, 25%);
+}
