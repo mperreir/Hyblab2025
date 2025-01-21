@@ -1,54 +1,54 @@
 [
     {
-        "title": "L'île Déserte",
+        "title": "EN ROUE LIBRE",
         "image": "square1.png",
         "situation": {
             "content": [
                 {
                     "type": "text",
                     "text": {
-                        "text": "La plage s'étend à perte de vue. Derrière vous, une jungle dense murmure sous le souffle du vent.",
+                        "text": "Le vainqueur du Tour de France 2024, Tadej Pogacar, fait taire les rumeurs de dopage sur ses performances. Comme un air de déjà vu, non ? La plaie ouverte par Lance Armstrong est loin d’être cicatrisée. L’histoire est-elle en train de se répéter ? \nDans ton rôle de président de l’Union Cycliste Internationale, tu ne peux t’empêcher de te replonger dans ce scandale qui a secoué le cyclisme mondial. Une idée te taraude : et si Armstrong n’avait jamais été testé positif au dopage ? Direction 1999, pour changer le cours des événements.",
                         "template": "full_page"
-                    }
-                },
-                {
-                    "type": "image",
-                    "image": {
-                        "link": "beach.png",
-                        "template": "center"
                     }
                 }
             ],
             "choices": [
                 {
-                    "text": "Explorer la jungle.",
+                    "text": "Il gagne le Tour, shooté aux corticoïdes et personne ne le sait.",
                     "result": {
                         "content": [
                             {
                                 "type": "text",
                                 "text": {
-                                    "text": "Vous entrez dans la jungle. Les arbres gigantesques créent un plafond naturel de feuilles.",
+                                    "text": "Lance Armstrong reste celui que l’on appelle «Robocop». Pas de scandale, pas de déchéance de ses titres : l’UCI n’a jamais pu prouver quoi que ce soit. La légende s’impose et inspire tout le peloton. Sa flamme n’éclaire pas seulement le chemin de la performance sportive... mais aussi celui du dopage.",
                                     "template": "full_page"
                                 }
                             },
                             {
                                 "type": "text",
                                 "text": {
-                                    "text": "Vous apercevez une grotte au loin.",
-                                    "template": "quote"
+                                    "text": "Une nouvelle génération de fous de la pédale voit le jour. Jan Ullrich, Alberto Contador, Óscar Pereiro, Carlos Sastre… tous montent au créneau pour détrôner Lance. Une véritable lutte des titans.",
+                                    "template": "full_page"
                                 }
                             },
                             {
-                                "type": "image",
-                                "image": {
-                                    "link": "jungle_cave.png",
-                                    "template": "left"
+                                "type": "text",
+                                "text": {
+                                    "text": "Mais derrière les podiums, l’UCI et les organisateurs des grands tours et des classiques pataugent dans un marécage de seringues et de pilules. Les coureurs sont chargés comme des mules, et les scientifiques rivalisent d’ingéniosité pour développer des substances encore plus efficaces : cétones, nouveaux cocktails chimiques... La frontière entre l’humain et la machine devient floue.",
+                                    "template": "full_page"
+                                }
+                            },
+                            {
+                                "type": "text",
+                                "text": {
+                                    "text": "Quelle est la réaction de l’UCI ?",
+                                    "template": "full_page"
                                 }
                             }
                         ],
                         "choices": [
                             {
-                                "text": "Entrer dans la grotte.",
+                                "text": "L’UCI déroule le tapis rouge aux dopés",
                                 "result": {
                                     "content": [
                                         {
@@ -76,7 +76,7 @@
                                 }
                             },
                             {
-                                "text": "Continuer à explorer la jungle.",
+                                "text": "L’UCI passe à l’action : le dopage c’est non !",
                                 "result": {
                                     "content": [
                                         {
