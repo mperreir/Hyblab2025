@@ -1,8 +1,7 @@
 /* ==============================
    Import des polices
 ============================== */
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Quicksand:wght@300..700&display=swap');
 /* ==============================
    Réinitialisation des marges et paddings
 ============================== */
@@ -22,6 +21,7 @@ html {
 }
 
 body {
+    font-family: "Quicksand", serif;
     background-color: black;
     color: white;
     overflow-x: clip;
@@ -34,34 +34,36 @@ body {
 /* ==============================
    Header
 ============================== */
-header {
-    width: calc(100% - 10px);
-    height: 50px;
-    margin: 5px;
+/*header {*/
+/*    width: calc(100% - 10px);*/
+/*    height: 50px;*/
+/*    margin: 5px;*/
 
-    position: fixed;
-    top: 0;
+/*    position: fixed;*/
+/*    top: 0;*/
 
-    border: 1px solid rgba(226, 0, 11, 0.2);
-    border-radius: 10px;
+/*    border: 1px solid rgba(226, 0, 11, 0.2);*/
+/*    border-radius: 10px;*/
 
-    background-color: rgba(226, 0, 11, 0.2);
-    backdrop-filter: blur(30px);
-    color: white;
+/*    background-color: rgba(226, 0, 11, 0.2);*/
+/*    backdrop-filter: blur(30px);*/
+/*    color: white;*/
 
-    text-transform: uppercase;
-    font-size: 0.8em;
-    font-weight: bold;
-}
+/*    text-transform: uppercase;*/
+/*    font-size: 0.8em;*/
+/*    font-weight: bold;*/
+/*}*/
 
 /* ==============================
    Animations
 ============================== */
 @keyframes wipe-enter {
     0% {
+        transform: translateY(25%);
         opacity: 0;
     }
     100% {
+        transform: translateY(0%);
         opacity: 1;
     }
 }
@@ -92,24 +94,20 @@ header {
         animation: wipe-enter 1s ease;
     }
 
-    #cloud1 {
-        animation: cloud1 1s ease;
-    }
-
-    #cloud2 {
-        animation: cloud2 1s ease;
-    }
+    /*.portrait.in-view {*/
+    /*    animation: wipe-enter 1s ease;*/
+    /*}*/
 }
 
 /* ==============================
    Styles spécifiques aux éléments
 ============================== */
 em {
-    font-weight: bold;
     text-transform: none;
     color: #e2000b;
+    font-family: "Anton", serif;
+    font-weight: 400;
     font-style: normal;
-    font-family: "Libre Baskerville", serif;
 }
 
 main {
@@ -122,13 +120,28 @@ main > section {
     background-position: bottom;
 }
 
+#scroll-indication {
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(30px);
+    padding: 10px;
+    width: 16vw;
+    border-radius: 100%;
+    opacity: 0;
+}
+
 /* ==============================
    Partie introduction
 ============================== */
 #intro {
+    width: 90vw;
+    margin-left: 5vw;
     padding-top: 60px;
-    background-size: contain;
-    background-image: url("../img/stars.jpg");
+    background: black;
     text-shadow: #000 1px 0 10px;
 }
 
@@ -137,23 +150,10 @@ main > section {
     max-width: 50%;
 }
 
-#intro img:nth-child(1) {
-    top: 0;
-    left: 0;
-    transform: translateX(-50%);
-    filter: blur(4px);
-}
-
-#intro img:nth-child(2) {
-    top: 0;
-    right: 0;
-    transform: translate(25%, 50%);
-}
-
 #intro h1 {
     text-transform: uppercase;
-    font-family: "Libre Baskerville", serif;
-    font-weight: 700;
+    font-family: "Anton", serif;
+    font-weight: 400;
     font-size: 1.5em;
 }
 
@@ -217,7 +217,7 @@ main > section {
 
 .crime-cards h2 {
     margin-top: 5px;
-    font-family: "Libre Baskerville", serif;
+    font-family: "Anton", serif;
 }
 
 .crime-cards h3 {
@@ -242,7 +242,7 @@ main > section {
 
 .crime-pics {
     width: 100%;
-    aspect-ratio: 2;
+    aspect-ratio: 1.5;
     background-color: white;
     border-radius: 10px;
 }
@@ -264,34 +264,88 @@ main > section {
 /* ==============================
    Section #countdown
 ============================== */
-#countdown {
-    margin-top: 50vh;
-}
 
-#countdown > div {
-    top: 45%;
+.countdown {
+    width: 90vw;
     height: 100vh;
-    background-color: black;
+    margin-left: 5vw;
 }
 
-#countdown > div > h1 {
+.countdown > div.position-sticky {
+    top: 45%;
+}
+
+.countdown-background {
+    height: 100vh;
+}
+
+.countdown > div > h1 {
     text-align: center;
 }
 
-#countdown h1 {
-    font-family: "Libre Baskerville", serif;
-    font-weight: 700;
-    font-size: 4.5em;
+.countdown h1 {
+    font-family: "Anton", serif;
+    font-weight: 400;
+    font-size: 2em;
 }
 
+.countdown img {
+    width: 50vw;
+    opacity: 0;
+    position: absolute;
+    border-radius: 100px;
+    padding: 10px;
+    border: 1px solid rgba(226, 0, 11, 0.2);
+    background-color: rgba(226, 0, 11, 0.2);
+    backdrop-filter: blur(30px);
+}
+
+.countdown img#portrait-peugeot1 {
+    top: 0;
+    left: 0;
+    transform: translate(60vw, 10vh);
+}
+
+.countdown img#portrait-stras1 {
+    top: 0;
+    left: 0;
+    filter: blur(5px);
+    transform: translate(10vw, 30vh);
+}
+
+.countdown img#portrait-uruffe1 {
+    top: 0;
+    left: 0;
+    filter: blur(1px);
+    transform: translate(50vw, 60vh);
+}
+
+.countdown img#portrait-uruffe3 {
+    top: 0;
+    left: 0;
+    transform: translate(5vw, 20vh);
+}
+
+.countdown img#portrait-auto1 {
+    top: 0;
+    left: 0;
+    filter: blur(5px);
+    transform: translate(10vw, 40vh);
+}
+
+.countdown img#portrait-uruffe2 {
+    top: 0;
+    left: 0;
+    filter: blur(1px);
+    transform: translate(70vw, 10vh);
+}
 /* ==============================
    Partie avec le texte de démarage
 ============================== */
 #beginning-text {
     height: 50vh;
-    margin-bottom: 25vh;
     justify-content: center;
-    align-items: center;
+    align-items: end;
     display: flex;
 }
 

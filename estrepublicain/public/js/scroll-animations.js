@@ -33,15 +33,41 @@ window.addEventListener('scroll', function(){
 
     // Calcule de l'avancement du scroll pour la progress bar
     document.getElementById("progress").value = (currentScroll + window.innerHeight) / document.body.offsetHeight * 100
+    //
+    // // Déplacement des nuages en fonction du scroll (effet paralaxe)
+    document.getElementById("portrait-peugeot1").style.top = - currentScroll * 0.5 + 'px';
+    document.getElementById("portrait-stras1").style.top = - currentScroll * 0.2 + 'px';
+    document.getElementById("portrait-uruffe1").style.top = - currentScroll * 0.5 + 'px';
+    document.getElementById("portrait-uruffe3").style.top = - currentScroll * 0.5 + 'px';
+    document.getElementById("portrait-auto1").style.top = - currentScroll * 0.2 + 'px';
+    document.getElementById("portrait-uruffe2").style.top = - currentScroll * 0.5 + 'px';
 
-    // Déplacement des nuages en fonction du scroll (effet paralaxe)
-    document.getElementById("cloud1").style.left = - currentScroll * 0.5 + 'px';
-    document.getElementById("cloud2").style.right = - currentScroll * 0.7 + 'px';
-    document.getElementById("cloud2").style.top = - currentScroll * 1.2 + 'px';
-
+    document.querySelectorAll(".portrait").forEach((portrait) => {
+        portrait.style.opacity = 1 - (portrait.getBoundingClientRect().top-currentScroll) / (0.5 * window.innerHeight)
+    })
     // Affichage du texte démarrant la timeline avec un fondu basé sur le scroll
     // Récupération de l'élément
     let beginningText = document.getElementById("beginning-text")
     // Calcul de l'opacité en fonction de son emplacement sur l'écran (1 quand il est au milieu et 0 quand il est trop haut ou trop bas)
-    beginningText.style.opacity = (1 - (Math.abs(currentScroll - beginningText.offsetTop + window.innerHeight * 0.25))/(1/2*beginningText.offsetHeight)).toString()
+    beginningText.style.opacity = (1 - (Math.abs(currentScroll - beginningText.offsetTop))/(1/2*beginningText.offsetHeight)).toString()
 })
+
+let scrollTimeout; // Variable to store the timeout ID
+const scrollDelay = 5000; // Time in milliseconds (5 seconds)
+
+// Function to execute when the user hasn't scrolled for the specified time
+function onUserIdle() {
+    document.getElementById("scroll-indication").style.opacity = "1"
+}
+
+scrollTimeout = setTimeout(onUserIdle, scrollDelay);
+
+// Event listener for scroll events
+window.addEventListener("scroll", () => {
+    // Clear the previous timeout to reset the timer
+    clearTimeout(scrollTimeout);
+    document.getElementById("scroll-indication").style.opacity = "0"
+
+    // Set a new timeout
+    scrollTimeout = setTimeout(onUserIdle, scrollDelay);
+});
