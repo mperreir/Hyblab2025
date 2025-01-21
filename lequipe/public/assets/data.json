@@ -1,0 +1,338 @@
+[
+    {
+        "title": "L'île Déserte",
+        "image": "square1.png",
+        "situation": {
+            "content": [
+                {
+                    "type": "text",
+                    "text": {
+                        "text": "La plage s'étend à perte de vue. Derrière vous, une jungle dense murmure sous le souffle du vent.",
+                        "template": "full_page"
+                    }
+                },
+                {
+                    "type": "image",
+                    "image": {
+                        "link": "beach.png",
+                        "template": "center"
+                    }
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Explorer la jungle.",
+                    "result": {
+                        "content": [
+                            {
+                                "type": "text",
+                                "text": {
+                                    "text": "Vous entrez dans la jungle. Les arbres gigantesques créent un plafond naturel de feuilles.",
+                                    "template": "full_page"
+                                }
+                            },
+                            {
+                                "type": "text",
+                                "text": {
+                                    "text": "Vous apercevez une grotte au loin.",
+                                    "template": "quote"
+                                }
+                            },
+                            {
+                                "type": "image",
+                                "image": {
+                                    "link": "jungle_cave.png",
+                                    "template": "left"
+                                }
+                            }
+                        ],
+                        "choices": [
+                            {
+                                "text": "Entrer dans la grotte.",
+                                "result": {
+                                    "content": [
+                                        {
+                                            "type": "text",
+                                            "text": {
+                                                "text": "La grotte est sombre et silencieuse, mais vous sentez une odeur étrange.",
+                                                "template": "full_page"
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": {
+                                                "text": "Vous découvrez un trésor caché par un ancien pirate.",
+                                                "template": "quote"
+                                            }
+                                        },
+                                        {
+                                            "type": "image",
+                                            "image": {
+                                                "link": "pirate_treasure.png",
+                                                "template": "right"
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "text": "Continuer à explorer la jungle.",
+                                "result": {
+                                    "content": [
+                                        {
+                                            "type": "text",
+                                            "text": {
+                                                "text": "Vous vous perdez dans la jungle et trouvez une rivière où boire de l'eau fraîche.",
+                                                "template": "full_page"
+                                            }
+                                        },
+                                        {
+                                            "type": "image",
+                                            "image": {
+                                                "link": "jungle_river.png",
+                                                "template": "center"
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "text": "Marcher le long de la plage.",
+                    "result": {
+                        "content": [
+                            {
+                                "type": "text",
+                                "text": {
+                                    "text": "Vous suivez la plage et trouvez des débris de votre bateau.",
+                                    "template": "full_page"
+                                }
+                            },
+                            {
+                                "type": "text",
+                                "text": {
+                                    "text": "Parmi les débris, vous trouvez un couteau rouillé.",
+                                    "template": "quote"
+                                }
+                            },
+                            {
+                                "type": "image",
+                                "image": {
+                                    "link": "knife.png",
+                                    "template": "right"
+                                }
+                            }
+                        ],
+                        "choices": [
+                            {
+                                "text": "Ramasser le couteau et continuer.",
+                                "result": {
+                                    "content": [
+                                        {
+                                            "type": "text",
+                                            "text": {
+                                                "text": "Avec le couteau, vous êtes mieux préparé pour survivre.",
+                                                "template": "full_page"
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "text": "Ignorer le couteau et chercher d'autres ressources.",
+                                "result": {
+                                    "content": [
+                                        {
+                                            "type": "text",
+                                            "text": {
+                                                "text": "Vous trouvez des fruits comestibles sur un arbre proche.",
+                                                "template": "quote"
+                                            }
+                                        },
+                                        {
+                                            "type": "image",
+                                            "image": {
+                                                "link": "fruits.png",
+                                                "template": "left"
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "title": "Le Château Maudit",
+        "image": "square2.png",
+        "situation": {
+            "content": [
+                {
+                    "type": "text",
+                    "text": {
+                        "text": "Une pluie battante vous pousse à chercher refuge dans un vieux château en ruine.",
+                        "template": "full_page"
+                    }
+                },
+                {
+                    "type": "image",
+                    "image": {
+                        "link": "castle_hall.png",
+                        "template": "center"
+                    }
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Explorer l'étage supérieur.",
+                    "result": {
+                        "content": [
+                            {
+                                "type": "text",
+                                "text": {
+                                    "text": "Vous montez les escaliers, qui grincent sous vos pas.",
+                                    "template": "full_page"
+                                }
+                            },
+                            {
+                                "type": "text",
+                                "text": {
+                                    "text": "Au sommet, une porte entrouverte laisse échapper une lumière vacillante.",
+                                    "template": "quote"
+                                }
+                            },
+                            {
+                                "type": "image",
+                                "image": {
+                                    "link": "castle_door.png",
+                                    "template": "right"
+                                }
+                            }
+                        ],
+                        "choices": [
+                            {
+                                "text": "Entrer dans la pièce.",
+                                "result": {
+                                    "content": [
+                                        {
+                                            "type": "text",
+                                            "text": {
+                                                "text": "Un spectre vous attend à l'intérieur. Il semble garder un précieux artefact.",
+                                                "template": "full_page"
+                                            }
+                                        },
+                                        {
+                                            "type": "image",
+                                            "image": {
+                                                "link": "specter.png",
+                                                "template": "center"
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "text": "Ignorer la pièce et continuer à explorer l'étage.",
+                                "result": {
+                                    "content": [
+                                        {
+                                            "type": "text",
+                                            "text": {
+                                                "text": "Vous trouvez une bibliothèque remplie de livres anciens.",
+                                                "template": "quote"
+                                            }
+                                        },
+                                        {
+                                            "type": "image",
+                                            "image": {
+                                                "link": "library.png",
+                                                "template": "left"
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "text": "Explorer le rez-de-chaussée.",
+                    "result": {
+                        "content": [
+                            {
+                                "type": "text",
+                                "text": {
+                                    "text": "Vous explorez les salles sombres du rez-de-chaussée.",
+                                    "template": "full_page"
+                                }
+                            },
+                            {
+                                "type": "text",
+                                "text": {
+                                    "text": "Un coffre verrouillé attire votre attention.",
+                                    "template": "quote"
+                                }
+                            },
+                            {
+                                "type": "image",
+                                "image": {
+                                    "link": "locked_chest.png",
+                                    "template": "center"
+                                }
+                            }
+                        ],
+                        "choices": [
+                            {
+                                "text": "Essayer d'ouvrir le coffre.",
+                                "result": {
+                                    "content": [
+                                        {
+                                            "type": "text",
+                                            "text": {
+                                                "text": "Le coffre contient une clé dorée.",
+                                                "template": "full_page"
+                                            }
+                                        },
+                                        {
+                                            "type": "image",
+                                            "image": {
+                                                "link": "golden_key.png",
+                                                "template": "right"
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "text": "Ignorer le coffre et chercher ailleurs.",
+                                "result": {
+                                    "content": [
+                                        {
+                                            "type": "text",
+                                            "text": {
+                                                "text": "Vous tombez sur une trappe secrète menant à un sous-sol.",
+                                                "template": "quote"
+                                            }
+                                        },
+                                        {
+                                            "type": "image",
+                                            "image": {
+                                                "link": "trapdoor.png",
+                                                "template": "center"
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    }
+]
