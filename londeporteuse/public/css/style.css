@@ -158,6 +158,182 @@ main > section{
   }
 
 
+/* screen2 */
+#screen2-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-right: 20px; /* Augmenter le rembourrage à droite */
+    color: black; /*Définir la couleur de police par défaut de la page sur noir*/
+}
+
+.screen2-title {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+#screen2-slide .options-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 0 40px; /* Définissez les marges gauche et droite et ajustez la distance */
+    margin-bottom: 20px;
+    align-items: center;
+    text-align: center;
+}
+
+#screen2-slide header + * {
+    margin-top: 100px; /* Ajouter un espacement sous l'en-tête */
+}
+
+#screen2-slide footer {
+    width: 100%;
+}
+
+#screen2-slide h1 {
+    font-size: 2rem; /* Taille du titre */
+    margin-bottom: 20px;
+    padding: 0 40px; /* La distance entre le titre et les côtés gauche et droit de la page */
+    text-align: left; /* Aligner le titre à gauche */
+}
+
+#screen2-slide h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    padding: 0 80px;
+    text-align: left;
+}
+
+#screen2-slide footer {
+    padding: 0 40px; /* Ajouter un remplissage gauche et droit au pied de page */
+}
+
+#screen2-slide .consequences {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    text-align: justify; /* Justifier le texte */
+    padding: 0 40px;
+}
+
+#screen2-slide .top-bar {
+    display: flex;
+    width: 100%; /* Réglez la largeur sur la largeur de la page */
+    height: auto; /* Ajuster automatiquement la hauteur */
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 160px;
+    background-color: black; /* L'arrière-plan est noir */
+    box-sizing: border-box; /* Assurez-vous que le rembourrage n'affecte pas la largeur */
+}
+
+#screen2-slide .logo {
+    height: 80px;
+}
+
+#screen2-slide .info-button {
+    background: linear-gradient(90deg, #96c93d, #00b09b); /* 按钮渐变背景 */
+    color: black; /* Couleur de police */
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 40px; /* Rembourrage */
+    border-radius: 25px; /* Coins arrondis */
+    display: inline-flex; /* Utilisation de Flex Layout */
+    align-items: center; /* Centre vertical */
+    justify-content: center; /* Centre horizontal */
+    gap: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out; /* Effets de transition d'animation*/
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Ombre du bouton */
+}
+
+    #screen2-slide .info-button:hover {
+        background: linear-gradient(90deg, #00b09b, #96c93d); /* 背景反转渐变 */
+        transform: scale(1.1); /* Effet d'amplification */
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Ajouter un effet d'ombre */
+        color: #fff; /* Changer la couleur de la police en blanc lors du survol */
+    }
+
+#screen2-slide.bottom-bar {
+    position: fixed; /* Corrigé en bas de la page */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(90deg, #00b09b, #96c93d); /* 渐变背景 */
+    text-align: center;
+    padding: 40px 0; /* Rembourrage supérieur et inférieur */
+    z-index: 10;
+    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.2); /* Ajouter une ombre supérieure */
+}
+
+#screen2-slide .modifier-button {
+    background: linear-gradient(90deg, #96c93d, #00b09b); /* Fond dégradé du bouton */
+    color: black;
+    border: none; /* Supprimer la bordure */
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 40px;
+    border-radius: 25px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out; /* Effet de transition d'animation */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Ombre du bouton */
+}
+
+    #screen2-slide.modifier-button .arrow {
+        font-size: 20px; /* Taille de la flèche */
+        font-weight: bold; /* audacieux */
+    }
+
+    #screen2-slide .modifier-button:hover {
+        background: linear-gradient(90deg, #00b09b, #96c93d); /* Arrière-plan dégradé inversé */
+        transform: scale(1.1); /* Effet d'amplification */
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Ajouter un effet d'ombre */
+        color: #fff; /* Changer la couleur de la police en blanc lors du survol */
+    }
+
+#screen2-slide .options-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* 圆角效果 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    #screen2-slide .options-grid img:hover {
+        transform: scale(1.1);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    }
+
+#screen2-slide .options-grid span {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+}
+
+.screen2-subtitle {
+    font-size: 28px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.screen2-text {
+    position: absolute;
+    top: 75%;
+    left: 5%;
+    right: 5%;
+    font-size: 0.5em;
+    color: white;
+    line-height: 1.5;
+}
+
+
 /* Page4 */
 #page4-slide {
     display: flex;
