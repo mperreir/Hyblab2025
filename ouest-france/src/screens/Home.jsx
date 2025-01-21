@@ -1,14 +1,8 @@
 // src/screens/Home.jsx
 import React from "react";
-import { Link } from "react-scroll";
+import { scrollToSection } from "../utils";
 
 const Home = () => {
-
-  const handleClick = () => {
-    document.getElementById("choose-player").scrollIntoView({
-      behavior: "smooth",
-    });
-  };
 
   return (
     <section
@@ -17,8 +11,10 @@ const Home = () => {
     >
       <h1 className="text-4xl text-white">Bienvenue sur notre site</h1>
       <div className="bg-white">
-      <button onClick={handleClick}>Aller à Choose Player</button>
-    </div>
+        <button onClick={() => {scrollToSection("choose-player")}}>
+          Aller à Choose Player
+        </button>
+      </div>
     </section>
   );
 };
