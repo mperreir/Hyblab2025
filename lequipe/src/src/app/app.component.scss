@@ -17,24 +17,29 @@
         width: 100%;
     }
 
-    #scenario_images {
+    #scenarios {
         margin-top: 8%;
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
 
-        #scenario_image {
+        #scenario {
             display: flex;
             flex-direction: column;
 
             width: 25%;
+            padding: 1.5%;
+
+            border: 2px solid rgb(255, 255, 255);
+            border-radius: 7px;
             cursor: pointer;
 
             img {
                 width: 100%;
             }
 
-            p {
+            h2 {
+                text-align: center;
                 margin-top: 5px;
                 width: fit-content;
                 align-self: center;

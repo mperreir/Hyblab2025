@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, ViewportScroller } from '@angular/common';
 import { Component, Input, OnChanges } from '@angular/core';
 import { Choice, Result, Situation } from '../models/content-data';
 
@@ -11,9 +11,11 @@ import { Choice, Result, Situation } from '../models/content-data';
     templateUrl: './situation.component.html',
     styleUrl: './situation.component.scss'
 })
-export class SituationComponent implements OnChanges{
+export class SituationComponent implements OnChanges {
     @Input({ required: true }) situation!: Situation | Result;
     selected_choice?: Choice;
+
+    constructor(private scroller: ViewportScroller) {}
 
     ngOnChanges(): void {
         this.selected_choice = undefined;

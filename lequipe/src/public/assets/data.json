@@ -1,103 +1,259 @@
 [
     {
-        "title": "EN ROUE LIBRE",
+        "title": "En roue libre",
         "image": "square1.png",
         "situation": {
             "content": [
                 {
                     "type": "text",
                     "text": {
-                        "text": "Le vainqueur du Tour de France 2024, Tadej Pogacar, fait taire les rumeurs de dopage sur ses performances. Comme un air de déjà vu, non ? La plaie ouverte par Lance Armstrong est loin d’être cicatrisée. L’histoire est-elle en train de se répéter ? \nDans ton rôle de président de l’Union Cycliste Internationale, tu ne peux t’empêcher de te replonger dans ce scandale qui a secoué le cyclisme mondial. Une idée te taraude : et si Armstrong n’avait jamais été testé positif au dopage ? Direction 1999, pour changer le cours des événements.",
+                        "text": "Le vainqueur du Tour de France 2024, Tadej Pogacar, fait taire les rumeurs de dopage sur ses performances. Comme un air de déjà vu, non ? La plaie ouverte par Lance Armstrong est loin d’être cicatrisée. L’histoire est-elle en train de se répéter ? Dans ton rôle de président de l’Union Cycliste Internationale, tu ne peux t’empêcher de te replonger dans ce scandale qui a secoué le cyclisme mondial. Une idée te taraude : et si Armstrong n’avait jamais été testé positif au dopage ? Direction 1999, pour changer le cours des événements.",
                         "template": "full_page"
                     }
                 }
             ],
             "choices": [
                 {
-                    "text": "Il gagne le Tour, shooté aux corticoïdes et personne ne le sait.",
+                    "text": "Start",
                     "result": {
                         "content": [
                             {
                                 "type": "text",
                                 "text": {
-                                    "text": "Lance Armstrong reste celui que l’on appelle «Robocop». Pas de scandale, pas de déchéance de ses titres : l’UCI n’a jamais pu prouver quoi que ce soit. La légende s’impose et inspire tout le peloton. Sa flamme n’éclaire pas seulement le chemin de la performance sportive... mais aussi celui du dopage.",
-                                    "template": "full_page"
-                                }
-                            },
-                            {
-                                "type": "text",
-                                "text": {
-                                    "text": "Une nouvelle génération de fous de la pédale voit le jour. Jan Ullrich, Alberto Contador, Óscar Pereiro, Carlos Sastre… tous montent au créneau pour détrôner Lance. Une véritable lutte des titans.",
-                                    "template": "full_page"
-                                }
-                            },
-                            {
-                                "type": "text",
-                                "text": {
-                                    "text": "Mais derrière les podiums, l’UCI et les organisateurs des grands tours et des classiques pataugent dans un marécage de seringues et de pilules. Les coureurs sont chargés comme des mules, et les scientifiques rivalisent d’ingéniosité pour développer des substances encore plus efficaces : cétones, nouveaux cocktails chimiques... La frontière entre l’humain et la machine devient floue.",
-                                    "template": "full_page"
-                                }
-                            },
-                            {
-                                "type": "text",
-                                "text": {
-                                    "text": "Quelle est la réaction de l’UCI ?",
+                                    "text": "On arrive sur la page qui raconte l’histoire : retour au Tour de France de 1999",
                                     "template": "full_page"
                                 }
                             }
                         ],
                         "choices": [
                             {
-                                "text": "L’UCI déroule le tapis rouge aux dopés",
+                                "text": "Il gagne le Tour, shooté aux corticoïdes et personne ne le sait.",
                                 "result": {
                                     "content": [
                                         {
                                             "type": "text",
                                             "text": {
-                                                "text": "Face à cette surenchère, l’UCI décide d’innover. Deux championnats distincts voient le jour : l’UCI Express et l’UCI World Tour.",
+                                                "text": "Lance Armstrong reste celui que l’on appelle «Robocop». Pas de scandale, pas de déchéance de ses titres : l’UCI n’a jamais pu prouver quoi que ce soit. La légende s’impose et inspire tout le peloton. Sa flamme n’éclaire pas seulement le chemin de la performance sportive... mais aussi celui du dopage.",
                                                 "template": "full_page"
                                             }
                                         },
                                         {
                                             "type": "text",
                                             "text": {
-                                                "text": "D’un côté, la grande boucle améliorée devient le « Tour des dopés », où tout est permis. Sept jours suffisent pour atteindre l’arrivée. Les spectateurs retiennent leur souffle. Les plus impatients y trouvent leur compte. De l’autre, un « Tour classique», pour les puristes, où on roule au jus d’orange et à la sueur.",
+                                                "text": "Une nouvelle génération de fous de la pédale voit le jour. Jan Ullrich, Alberto Contador, Óscar Pereiro, Carlos Sastre… tous montent au créneau pour détrôner Lance. Une véritable lutte des titans.",
                                                 "template": "full_page"
                                             }
                                         },
                                         {
                                             "type": "text",
                                             "text": {
-                                                "text": "Et pendant ce temps, les siestes de papy devant la télé passent à la trappe : sur le Tour Express, chaque virage est une accélération. La Grande Boucle n’a jamais été aussi rapide et les coureurs rejoindront tous les clubs des 27.",
+                                                "text": "Mais derrière les podiums, l’UCI et les organisateurs des grands tours et des classiques pataugent dans un marécage de seringues et de pilules. Les coureurs sont chargés comme des mules, et les scientifiques rivalisent d’ingéniosité pour développer des substances encore plus efficaces : cétones, nouveaux cocktails chimiques... La frontière entre l’humain et la machine devient floue.",
                                                 "template": "full_page"
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": {
+                                                "text": "Quelle est la réaction de l’UCI ?",
+                                                "template": "full_page"
+                                            }
+                                        }
+                                    ],
+                                    "choices": [
+                                        {
+                                            "text": "L’UCI déroule le tapis rouge aux dopés",
+                                            "result": {
+                                                "content": [
+                                                    {
+                                                        "type": "text",
+                                                        "text": {
+                                                            "text": "Face à cette surenchère, l’UCI décide d’innover. Deux championnats distincts voient le jour : l’UCI Express et l’UCI World Tour.",
+                                                            "template": "full_page"
+                                                        }
+                                                    },
+                                                    {
+                                                        "type": "text",
+                                                        "text": {
+                                                            "text": "D’un côté, la grande boucle améliorée devient le « Tour des dopés », où tout est permis. Sept jours suffisent pour atteindre l’arrivée. Les spectateurs retiennent leur souffle. Les plus impatients y trouvent leur compte. De l’autre, un « Tour classique», pour les puristes, où on roule au jus d’orange et à la sueur.",
+                                                            "template": "full_page"
+                                                        }
+                                                    },
+                                                    {
+                                                        "type": "text",
+                                                        "text": {
+                                                            "text": "Et pendant ce temps, les siestes de papy devant la télé passent à la trappe : sur le Tour Express, chaque virage est une accélération. La Grande Boucle n’a jamais été aussi rapide et les coureurs rejoindront tous les clubs des 27.",
+                                                            "template": "full_page"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "text": "L’UCI passe à l’action : le dopage c’est non !",
+                                            "result": {
+                                                "content": [
+                                                    {
+                                                        "type": "text",
+                                                        "text": {
+                                                            "text": "Face à ce manque de considération, l’UCI reprend la main. Les contrôles antidopage deviennent implacables. Les tricheurs sont traqués sans relâche, et une vague d’interdictions s’abat sur les coureurs pris la main dans le sac à vitamines.",
+                                                            "template": "full_page"
+                                                        }
+                                                    },
+                                                    {
+                                                        "type": "text",
+                                                        "text": {
+                                                            "text": "Résultat : les cyclistes dopés sont bannis des compétitions internationales et du World Cycling Tour. Les organisateurs des grands circuits, en quête de crédibilité, adoptent une ligne dure.",
+                                                            "template": "full_page"
+                                                        }
+                                                    },
+                                                    {
+                                                        "type": "text",
+                                                        "text": {
+                                                            "text": "Le Tour de France, autrefois sommet absolu du cyclisme, perd peu à peu de sa superbe. Sans ses têtes d’affiche éclaboussées par les scandales, l’épreuve peine à attirer l’attention. Les champions « clean » peinent à égaler l’aura de leurs prédécesseurs dopés. Le peloton devient plus homogène, mais aussi moins spectaculaire.",
+                                                            "template": "full_page"
+                                                        }
+                                                    }
+                                                ]
                                             }
                                         }
                                     ]
                                 }
                             },
                             {
-                                "text": "L’UCI passe à l’action : le dopage c’est non !",
+                                "text": "Il gagne le Tour, sans EPO dans le sang, juste des jambes en feu.",
                                 "result": {
                                     "content": [
                                         {
                                             "type": "text",
                                             "text": {
-                                                "text": "Face à ce manque de considération, l’UCI reprend la main. Les contrôles antidopage deviennent implacables. Les tricheurs sont traqués sans relâche, et une vague d’interdictions s’abat sur les coureurs pris la main dans le sac à vitamines.",
+                                                "text": "Victoire ! Lance Armstrong brandit son maillot jaune et succède à Marco Pantani sur le podium. Le champion américain s’impose sans tomber dans le panneau du dopage contrairement à certains de ses rivaux. L’EPO ? A la poubelle. Armstrong préfère « Rouler sans tricher », son nouveau mantra. Sa fondation Livestrong, créée en 1997, pour soutenir les malades du cancer devient un véritable QG de la lutte anti-dopage. Celui que l’on prénomme « Le Boss » ne se contente pas de gagner des courses : il sauve le cyclisme d’une overdose collective.",
                                                 "template": "full_page"
                                             }
                                         },
                                         {
                                             "type": "text",
                                             "text": {
-                                                "text": "Résultat : les cyclistes dopés sont bannis des compétitions internationales et du World Cycling Tour. Les organisateurs des grands circuits, en quête de crédibilité, adoptent une ligne dure.",
+                                                "text": "La vie de Marco Pantani aussi prendra un tournant inattendu. Inspiré par le discours anti-dopage de Lance, « Le Pirate” décide de se reprendre en main. Fini les fréquentations douteuses et les excès qui l’entraînaient vers le fond. Au lieu de sombrer après ses déboires, Pantani trouve un nouveau souffle, encouragé par un cyclisme qui, grâce à Armstrong, commence à redorer son image.",
+                                                "template": "full_page"
+                                            }
+                                        }
+                                    ],
+                                    "choices": [
+                                        {
+                                            "text": "Et si Marco Pantani avait eu une seconde chance pour pédaler droit ?",
+                                            "result": {
+                                                "content": [
+                                                    {
+                                                        "type": "text",
+                                                        "text": {
+                                                            "text": "Pas de tragique chambre d’hôtel en 2004, pas d’overdose. À la place, Pantani revient au sommet. Armstrong et Lui deviennent les visages d’une nouvelle ère, mais surtout, d’une rivalité mythique. Dès l’an 2000, les deux se disputent les maillots jaunes sur les routes du Tour de France. Lance, méthodique et calculateur, contre Marco, tout feu tout flamme dans les montagnes. Les médias se régalent : c’est la version cycliste d’un blockbuster d’été.",
+                                                            "template": "full_page"
+                                                        }
+                                                    },
+                                                    {
+                                                        "type": "text",
+                                                        "text": {
+                                                            "text": "Les deux hommes se rendent coup pour coup : un contre-la-montre pour Lance, une échappée légendaire pour Marco. Le coureur impulsif vs le grimpeur romantique. Chaque Tour devient une scène d’anthologie. Le public est en délire devant un cyclisme qui renaît de ses cendres.",
+                                                            "template": "full_page"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "title": "Le Château Maudit",
+        "image": "square2.png",
+        "situation": {
+            "content": [
+                {
+                    "type": "text",
+                    "text": {
+                        "text": "Une pluie battante vous pousse à chercher refuge dans un vieux château en ruine.",
+                        "template": "full_page"
+                    }
+                },
+                {
+                    "type": "image",
+                    "image": {
+                        "link": "castle_hall.png",
+                        "template": "center"
+                    }
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Explorer l'étage supérieur.",
+                    "result": {
+                        "content": [
+                            {
+                                "type": "text",
+                                "text": {
+                                    "text": "Vous montez les escaliers, qui grincent sous vos pas.",
+                                    "template": "full_page"
+                                }
+                            },
+                            {
+                                "type": "text",
+                                "text": {
+                                    "text": "Au sommet, une porte entrouverte laisse échapper une lumière vacillante.",
+                                    "template": "quote"
+                                }
+                            },
+                            {
+                                "type": "image",
+                                "image": {
+                                    "link": "castle_door.png",
+                                    "template": "right"
+                                }
+                            }
+                        ],
+                        "choices": [
+                            {
+                                "text": "Entrer dans la pièce.",
+                                "result": {
+                                    "content": [
+                                        {
+                                            "type": "text",
+                                            "text": {
+                                                "text": "Un spectre vous attend à l'intérieur. Il semble garder un précieux artefact.",
                                                 "template": "full_page"
                                             }
                                         },
                                         {
+                                            "type": "image",
+                                            "image": {
+                                                "link": "specter.png",
+                                                "template": "center"
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "text": "Ignorer la pièce et continuer à explorer l'étage.",
+                                "result": {
+                                    "content": [
+                                        {
                                             "type": "text",
                                             "text": {
-                                                "text": "Le Tour de France, autrefois sommet absolu du cyclisme, perd peu à peu de sa superbe. Sans ses têtes d’affiche éclaboussées par les scandales, l’épreuve peine à attirer l’attention. Les champions « clean » peinent à égaler l’aura de leurs prédécesseurs dopés. Le peloton devient plus homogène, mais aussi moins spectaculaire.",
-                                                "template": "full_page"
+                                                "text": "Vous trouvez une bibliothèque remplie de livres anciens.",
+                                                "template": "quote"
+                                            }
+                                        },
+                                        {
+                                            "type": "image",
+                                            "image": {
+                                                "link": "library.png",
+                                                "template": "left"
                                             }
                                         }
                                     ]
@@ -107,41 +263,69 @@
                     }
                 },
                 {
-                    "text": "Il gagne le Tour, sans EPO dans le sang, juste des jambes en feu.",
+                    "text": "Explorer le rez-de-chaussée.",
                     "result": {
                         "content": [
                             {
                                 "type": "text",
                                 "text": {
-                                    "text": "Victoire ! Lance Armstrong brandit son maillot jaune et succède à Marco Pantani sur le podium. Le champion américain s’impose sans tomber dans le panneau du dopage contrairement à certains de ses rivaux. L’EPO ? A la poubelle. Armstrong préfère « Rouler sans tricher », son nouveau mantra. Sa fondation Livestrong, créée en 1997, pour soutenir les malades du cancer devient un véritable QG de la lutte anti-dopage. Celui que l’on prénomme « Le Boss » ne se contente pas de gagner des courses : il sauve le cyclisme d’une overdose collective.",
+                                    "text": "Vous explorez les salles sombres du rez-de-chaussée.",
                                     "template": "full_page"
                                 }
                             },
                             {
                                 "type": "text",
                                 "text": {
-                                    "text": "La vie de Marco Pantani aussi prendra un tournant inattendu. Inspiré par le discours anti-dopage de Lance, « Le Pirate” décide de se reprendre en main. Fini les fréquentations douteuses et les excès qui l’entraînaient vers le fond. Au lieu de sombrer après ses déboires, Pantani trouve un nouveau souffle, encouragé par un cyclisme qui, grâce à Armstrong, commence à redorer son image.",
-                                    "template": "full_page"
+                                    "text": "Un coffre verrouillé attire votre attention.",
+                                    "template": "quote"
+                                }
+                            },
+                            {
+                                "type": "image",
+                                "image": {
+                                    "link": "locked_chest.png",
+                                    "template": "center"
                                 }
                             }
                         ],
                         "choices": [
                             {
-                                "text": "Et si Marco Pantani avait eu une seconde chance pour pédaler droit ?",
+                                "text": "Essayer d'ouvrir le coffre.",
                                 "result": {
                                     "content": [
                                         {
                                             "type": "text",
                                             "text": {
-                                                "text": "Pas de tragique chambre d’hôtel en 2004, pas d’overdose. À la place, Pantani revient au sommet. Armstrong et Lui deviennent les visages d’une nouvelle ère, mais surtout, d’une rivalité mythique. Dès l’an 2000, les deux se disputent les maillots jaunes sur les routes du Tour de France. Lance, méthodique et calculateur, contre Marco, tout feu tout flamme dans les montagnes. Les médias se régalent : c’est la version cycliste d’un blockbuster d’été.",
+                                                "text": "Le coffre contient une clé dorée.",
                                                 "template": "full_page"
                                             }
                                         },
                                         {
+                                            "type": "image",
+                                            "image": {
+                                                "link": "golden_key.png",
+                                                "template": "right"
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "text": "Ignorer le coffre et chercher ailleurs.",
+                                "result": {
+                                    "content": [
+                                        {
                                             "type": "text",
                                             "text": {
-                                                "text": "Les deux hommes se rendent coup pour coup : un contre-la-montre pour Lance, une échappée légendaire pour Marco. Le coureur impulsif vs le grimpeur romantique. Chaque Tour devient une scène d’anthologie. Le public est en délire devant un cyclisme qui renaît de ses cendres.",
-                                                "template": "full_page"
+                                                "text": "Vous tombez sur une trappe secrète menant à un sous-sol.",
+                                                "template": "quote"
+                                            }
+                                        },
+                                        {
+                                            "type": "image",
+                                            "image": {
+                                                "link": "trapdoor.png",
+                                                "template": "center"
                                             }
                                         }
                                     ]
