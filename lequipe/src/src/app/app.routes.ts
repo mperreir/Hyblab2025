@@ -4,7 +4,7 @@ import { HomeComponent } from './home/home.component';
 
 
 export const routes: Routes = [
-    { path: '', redirectTo: 'roleplay', pathMatch: 'full' },
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'home', component: HomeComponent },
     { path: 'roleplay', component: RoleplayComponent }
 ];

@@ -1,4 +1,7 @@
-<img src="square1.png" alt="background" id="background">
-<img src="square2.png" alt="logo" id="logo">
-<h2>Créez votre propre histoire !</h2>
-<div id="start_btn">COMMENCER</div>
+<div id="main">
+    <div id="backdrop">
+        <img src="square2.png" alt="logo" id="logo">
+        <h2>{{"Créez votre propre histoire !" | uppercase}}</h2>
+        <div id="start_btn" (click)="router.navigate(['roleplay'])">COMMENCER</div>
+    </div>
+</div>
