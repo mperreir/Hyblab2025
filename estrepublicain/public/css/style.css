@@ -186,7 +186,7 @@ main > section {
     width: 60vw;
     height: calc(90vw / 8);
     content: "";
-    background: linear-gradient(to top, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 80%);
+    background: linear-gradient(to top, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 60%);
     pointer-events: none;
 }
 
@@ -347,6 +347,12 @@ main > section {
     filter: blur(1px);
     transform: translate(70vw, 10vh);
 }
+
+#last-intro-text {
+    transition: color 1s ease;
+    color: white;
+}
+
 /* ==============================
    Partie avec le texte de démarage
 ============================== */

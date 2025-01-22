@@ -45,6 +45,14 @@ window.addEventListener('scroll', function(){
     document.querySelectorAll(".portrait").forEach((portrait) => {
         portrait.style.opacity = 1 - (portrait.getBoundingClientRect().top-currentScroll) / (0.5 * window.innerHeight)
     })
+
+    let lastIntroText = document.getElementById("last-intro-text")
+    if (lastIntroText.offsetTop > 0) {
+        lastIntroText.style.color = "#e2000b"
+    } else {
+        lastIntroText.style.color = "#FFFFFF"
+    }
+
     // Affichage du texte démarrant la timeline avec un fondu basé sur le scroll
     // Récupération de l'élément
     let beginningText = document.getElementById("beginning-text")
