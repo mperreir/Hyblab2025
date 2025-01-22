@@ -1,10 +1,10 @@
 @for (item of situation.content; track $index) {
     @switch (item.type) {
         @case ("text") {
-            <p> {{item.text?.text}} </p>
+            <p> {{item.text}} </p>
         }
         @case ("image") {
-            <!-- <img [src]="item.image?.link" [alt]="item.image?.link"> -->
+            <!-- <img [src]="item.link" [alt]="item?.altText || ''"> -->
         }
     }
 }
