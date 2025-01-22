@@ -18,6 +18,78 @@ html {
 }
 
 body {
+    background-color: #303030 !important;
+    color: #CB010A !important;
     overflow-x: clip;
 }
 
+#intro {
+    background-color: #e1e3e5;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    padding: 50px 10vw;
+    position: relative;
+}
+
+h1 {
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+#intro h5 {
+    margin-bottom: 0;
+    text-transform: uppercase;
+}
+
+#intro img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    max-width: 30vw;
+}
+
+#une {
+    padding: 50px 10vw;
+}
+
+#nos-podcast {
+    background-color: #e1e3e5;
+    padding: 50px 10vw;
+    position: relative;
+}
+
+#retrouvez-nous {
+    background-color: #303030;
+    padding: 100px 10vw;
+    position: relative;
+}
+#footer {
+    background-color: #e1e3e5;
+    padding: 50px 10vw;
+    position: relative;
+    border-top-right-radius: 25px;
+}
+
+#folder {
+    background-color: #e1e3e5;
+    position: absolute;
+    border-radius: 25px;
+    top: -25px;
+    left: 0;
+    width: 20vw;
+    height: 70px;
+}
+
+.dech-transition-haut {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 100%;
+}
+
+.dech-transition-bas {
+    position: absolute;
+    bottom: -100px;
+    left: 0;
+    width: 100%;
+}

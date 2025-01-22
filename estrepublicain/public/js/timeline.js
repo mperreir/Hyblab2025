@@ -15,11 +15,11 @@ gsap.fromTo(
     },
     {
         strokeDashoffset: 0,
-        duration: 1,
+        duration: 10,
         ease: "none",
         scrollTrigger: {
             trigger: ".svg-line",
-            start: "top center",
+            start: "top top",
             end: "bottom bottom",
             scrub: 1
         }
