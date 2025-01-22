@@ -5,8 +5,8 @@ import { scrollToSection } from './utils';
 
 import Home from './screens/Home';
 import ChoosePlayer from './screens/ChoosePlayer';
-import Screen1 from './screens/Screen1';
-import Screen2 from './screens/Screen2';
+import Article1 from './screens/Article1';
+import Article2 from './screens/Article2';
 import Quiz from './screens/Quiz';
 
 const App = () => {
@@ -15,20 +15,24 @@ const App = () => {
 
   // Exemple de données pour chaque quiz
   const quizzes = {
-    quiz1: {
-      title: "Quiz 1 : Les Bases",
-      questions: [
-        { question: "Quelle est la capitale de la France ?", answer: "Paris" },
-        { question: "2 + 2 ?", answer: "4" },
-      ],
-    },
-    quiz2: {
-      title: "Quiz 2 : Avancé",
-      questions: [
-        { question: "Quelle est la formule chimique de l'eau ?", answer: "H2O" },
-        { question: "Combien de continents y a-t-il ?", answer: "7" },
-      ],
-    },
+    player1 : {
+      quiz : {
+        questions : [
+          {
+            question : "En quel année est née Matthieu PAVON ?",
+            answers : ["2002", "2000", "1998", "1995"],
+            correct_answer : "1998",
+          },
+        ],
+        articles : [
+          {
+            title : "Les débuts de Matthieu PAVON",
+            content : "Test"
+          }
+        ]
+      }
+
+    }
   };
 
   // Gestion du clic sur un bouton dans ChoosePlayer
@@ -41,7 +45,13 @@ const App = () => {
     <div className='h-screen w-full overflow-y-scroll snap-y snap-mandatory [scroll-behavior:smooth]'>
       <Home />
       <ChoosePlayer onSelectPlayer={handleQuizSelection} />
-      {quizData && <Quiz data={quizData} />}
+      {quizData && (
+        <>
+          <Quiz data={quizData} />
+          <Article1/>
+          <Article2/>
+        </>
+        )}
     </div>
   );
 };
