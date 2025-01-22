@@ -132,6 +132,13 @@ main > section {
     width: 16vw;
     border-radius: 100%;
     opacity: 0;
+    transition: opacity 500ms ease;
+}
+
+@media only screen and (min-width: 768px) {
+    #scroll-indication {
+        width: 6vw;
+    }
 }
 
 /* ==============================
@@ -290,14 +297,15 @@ main > section {
 }
 
 .countdown img {
-    width: 50vw;
+    width: 50%;
     opacity: 0;
     position: absolute;
-    border-radius: 100px;
-    padding: 10px;
-    border: 1px solid rgba(226, 0, 11, 0.2);
-    background-color: rgba(226, 0, 11, 0.2);
-    backdrop-filter: blur(30px);
+}
+
+@media only screen and (min-width: 768px) {
+    .countdown img {
+        width: 25%;
+    }
 }
 
 .countdown img#portrait-peugeot1 {
