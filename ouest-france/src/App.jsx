@@ -1,6 +1,6 @@
 // src/App.jsx
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { scrollToSection } from './utils';
 
 import Home from './screens/Home';
@@ -29,10 +29,11 @@ const App = () => {
     setArticleData(articleJson)
   };
 
-  const scrollToQuiz = () => {
-    console.log("test")
-    scrollToSection('quiz0');
-  }
+  useEffect(() => {
+    if (quizData && articleData) {
+      scrollToSection('quiz0');
+    }
+  }, [quizData, articleData]);
 
   return (
     <div className='h-screen w-full overflow-y-scroll snap-y snap-mandatory [scroll-behavior:smooth]'>
@@ -45,7 +46,6 @@ const App = () => {
           <Article data={articleData[1]}/>
         </>
         )}
-      {scrollToQuiz()}
     </div>
   );
 };
