@@ -7,49 +7,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    h1 {
-        margin-top: 20px;
-        font-size: 130%;
-    }
-
-    pre {
-        width: 100%;
-    }
-
-    #scenarios {
-        margin-top: 8%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-
-        #scenario {
-            display: flex;
-            flex-direction: column;
-
-            width: 25%;
-            padding: 1.5%;
-
-            border: 2px solid rgb(255, 255, 255);
-            border-radius: 7px;
-            cursor: pointer;
-
-            img {
-                width: 100%;
-            }
-
-            h2 {
-                text-align: center;
-                margin-top: 5px;
-                width: fit-content;
-                align-self: center;
-                font-size: 20%;
-            }
-        }
-    }
 }
-
-
 
 /* ---------- Important media queries for easy responsive content :-) ----------------- */
 /* Whatever the device used, the content will be displayed full width and height if      */

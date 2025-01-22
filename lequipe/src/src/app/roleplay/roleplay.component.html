@@ -1,0 +1,15 @@
+<h1>Et si ...</h1>
+<div id="scenarios">
+    @for (item of data; track $index) {
+        <div id="scenario" (click)="selected_scenario = item">
+            <img [src]=item.image [alt]="item.title">
+            <h2>{{ item.title }}</h2>
+        </div>
+    }
+</div>
+<!-- <pre>
+    {{selected_scenario | json}}
+</pre> -->
+@if (selected_scenario) {
+    <app-situation [situation]="selected_scenario.situation"></app-situation>
+}
