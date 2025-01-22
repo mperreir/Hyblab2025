@@ -183,8 +183,28 @@ main > section{
     text-align: center;
 }
 
+    #screen2-slide .options-grid .option,
+    #screen2-slide .options-grid .size {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    #screen2-slide .options-grid span {
+        display: block;
+        width: 100%; /* 确保灰色框与图片宽度一致 */
+        background-color: #ccc; /* 设置灰色背景 */
+        padding: 10px 0; /* 添加上下内边距 */
+        font-size: 16px; /* 调整文字大小 */
+        font-weight: bold;
+        color: black;
+        border-top: 1px solid #aaa; /* 可选：给灰色框添加顶部边框 */
+        box-sizing: border-box; /* 确保宽度包含内边距 */
+    }
+
 #screen2-slide header + * {
-    margin-top: 100px; /* Ajouter un espacement sous l'en-tête */
+    margin-top: 70px; /* Ajouter un espacement sous l'en-tête */
 }
 
 #screen2-slide footer {
@@ -310,11 +330,14 @@ main > section{
 
 #screen2-slide .options-grid span {
     display: block;
-    text-align: center;
-    margin-top: 10px;
-    font-size: 18px;
+    width: 100%; /* 确保灰色框与图片宽度一致 */
+    background-color: #ccc; /* 设置灰色背景 */
+    padding: 10px 0; /* 添加上下内边距 */
+    font-size: 16px; /* 调整文字大小 */
     font-weight: bold;
     color: black;
+    border-top: 1px solid #aaa; /* 可选：给灰色框添加顶部边框 */
+    box-sizing: border-box; /* 确保宽度包含内边距 */
 }
 
 .screen2-subtitle {
@@ -332,7 +355,6 @@ main > section{
     color: white;
     line-height: 1.5;
 }
-
 
 /* Page4 */
 #page4-slide {
