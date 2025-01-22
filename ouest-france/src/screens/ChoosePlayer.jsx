@@ -12,7 +12,7 @@ const ChoosePlayer = ({onSelectPlayer}) => {
         <button
           className="px-4 py-2 bg-blue-500 text-white rounded"
           onClick={() => {
-            onSelectPlayer("quiz1")
+            onSelectPlayer("player1")
             //scrollToSection("screen1")
         }}
         >
@@ -22,7 +22,7 @@ const ChoosePlayer = ({onSelectPlayer}) => {
         <button
           className="px-4 py-2 bg-red-500 text-white rounded"
           onClick={() => {
-            onSelectPlayer("quiz2")
+            onSelectPlayer("player2")
             //scrollToSection("screen2")
           }}
         >

@@ -5,39 +5,28 @@ import { scrollToSection } from './utils';
 
 import Home from './screens/Home';
 import ChoosePlayer from './screens/ChoosePlayer';
-import Article1 from './screens/Article1';
-import Article2 from './screens/Article2';
+import Article from './screens/Article';
 import Quiz from './screens/Quiz';
 
 const App = () => {
 
+  const baseUrl = `${window.location.origin}/ouest-france/api`;
+
   const [quizData, setQuizData] = useState(null);
-
-  // Exemple de données pour chaque quiz
-  const quizzes = {
-    player1 : {
-      quiz : {
-        questions : [
-          {
-            question : "En quel année est née Matthieu PAVON ?",
-            answers : ["2002", "2000", "1998", "1995"],
-            correct_answer : "1998",
-          },
-        ],
-        articles : [
-          {
-            title : "Les débuts de Matthieu PAVON",
-            content : "Test"
-          }
-        ]
-      }
-
-    }
-  };
+  const [articleData, setArticleData] = useState(null)
 
   // Gestion du clic sur un bouton dans ChoosePlayer
-  const handleQuizSelection = (quizKey) => {
-    setQuizData(quizzes[quizKey]);
+  const handleQuizSelection = async (quizKey) => {
+
+    //fetch l'api
+    const quizFetch = await fetch(`${baseUrl}/${quizKey}/quiz`)
+    const quizJson = await quizFetch.json()
+
+    const articleFetch = await fetch(`${baseUrl}/${quizKey}/article`)
+    const articleJson = await articleFetch.json()
+
+    setQuizData(quizJson);
+    setArticleData(articleJson)
     scrollToSection("quiz");
   };
 
@@ -48,8 +37,8 @@ const App = () => {
       {quizData && (
         <>
           <Quiz data={quizData} />
-          <Article1/>
-          <Article2/>
+          <Article data={articleData[0]}/>
+          <Article data={articleData[1]}/>
         </>
         )}
     </div>
