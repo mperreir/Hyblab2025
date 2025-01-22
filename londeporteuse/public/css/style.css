@@ -587,3 +587,108 @@ body{
     }
 }
 
+/* screen0 */
+#screen0-slide {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-right: 20px;
+}
+
+#screen0-slide .fullscreen-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 0;
+    z-index: -1; /* Image derrière le texte */
+}
+
+#screen0-slide h2 {
+    font-size: 2rem;
+    color: white;
+    margin-top: 20px;
+}
+
+#screen0-slide .bold-text {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: black; /* Texte en noir */
+    text-align: center;
+    margin-top: 150px; /* Plus d'espace entre l'image et le texte */
+}
+
+#screen0-slide .normal-text {
+    font-weight: normal;
+    font-size: 1rem;
+    color: black; /* Texte en noir */
+    text-align: center;
+    margin-top: 20px; /* Espacement entre les deux textes */
+}
+
+#screen0-slide .create-event-button {
+    background: linear-gradient(90deg, #96c93d, #00b09b); /* Dégradé de vert */
+    color: white; /* Texte en blanc */
+    border: none; 
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 40px;
+    border-radius: 25px;
+    margin-top: 40px; /* Espacement au-dessus du bouton */
+    display: inline-flex;
+    align-items: center; /* Centrer le texte et la flèche verticalement */
+    justify-content: center; /* Centrer le texte et la flèche horizontalement */
+    gap: 10px; /* Espacement entre le texte et la flèche */
+    cursor: pointer;
+    transition: all 0.3s ease-in-out; /* Animation douce au survol */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Ombre douce */
+}
+
+#screen0-slide .create-event-button:hover {
+    background: linear-gradient(90deg, #00b09b, #96c93d); /* Inverser le dégradé au survol */
+    transform: scale(1.05); /* Légère augmentation de la taille au survol */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Augmenter l'ombre au survol */
+}
+
+#screen0-slide .create-event-button:focus {
+    outline: none; /* Retirer l'outline pour éviter le contour de focus */
+}
+
+#screen0-slide .info-button {
+    background: linear-gradient(90deg, #96c93d, #00b09b); /* 按钮渐变背景 */
+    color: black; /* Couleur de police */
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 40px; /* Rembourrage */
+    border-radius: 25px; /* Coins arrondis */
+    display: inline-flex; /* Utilisation de Flex Layout */
+    align-items: center; /* Centre vertical */
+    justify-content: center; /* Centre horizontal */
+    gap: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out; /* Effets de transition d'animation*/
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Ombre du bouton */
+}
+
+#screen0-slide .info-button:hover {
+    background: linear-gradient(90deg, #00b09b, #96c93d); /* 背景反转渐变 */
+    transform: scale(1.1); /* Effet d'amplification */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Ajouter un effet d'ombre */
+    color: #fff; /* Changer la couleur de la police en blanc lors du survol */
+}
+
+#screen0-slide .top-bar {
+    display: flex;
+    width: 100%; /* Réglez la largeur sur la largeur de la page */
+    height: auto; /* Ajuster automatiquement la hauteur */
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 160px;
+    background-color: black; /* L'arrière-plan est noir */
+    box-sizing: border-box; /* Assurez-vous que le rembourrage n'affecte pas la largeur */
+}
