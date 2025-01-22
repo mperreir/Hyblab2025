@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  ouestfranceapp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: "ouestfrance"
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./:/usr/src/app
+      - /usr/src/app/node_modules
