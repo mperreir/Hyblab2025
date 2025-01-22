@@ -10,16 +10,31 @@ const swiper = new Swiper("#mySwiper", {
   },
 });
 
+// Function to enable or disable Swiper controls
+function toggleSwiper(enable) {
+  if (enable) {
+    swiper.mousewheel.enable();
+    swiper.allowTouchMove = true;
+  } else {
+    swiper.mousewheel.disable();
+    swiper.allowTouchMove = false;
+  }
+}
+
+
 swiper.on("slideChange", function () {
   switch( swiper.activeIndex ) {
     case 0:
       initSlide1();
+      toggleSwiper(true);
       break;
     case 1:
       initSlide2();
+      toggleSwiper(false);
       break;
     case 2:
       initSlide3();
+      toggleSwiper(true);
       break;
   }
 });
@@ -37,5 +52,8 @@ setTimeout(() => {
     easing: 'easeOutQuad',
   });
   // Init first slide
+  // Charger les messages stockés au démarrage
+  const MESSAGES_KEY = 'chatMessages';
+  loadStoredMessages(MESSAGES_KEY);
   initSlide1();
 }, 1000);

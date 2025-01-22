@@ -11,23 +11,17 @@ const initSlide2 = async function () {
             sendMessage();
         }
     });
-
-    const MESSAGES_KEY = 'chatMessages';
-
-    // Charger les messages stockés au démarrage
-    window.onload = () => {
-        loadStoredMessages();
-        scrollToBottom();
-    };
+    scrollToBottom();
 };
 
 // Fonction pour envoyer un message
 function sendMessage() {
+    const MESSAGES_KEY = 'chatMessages';
     const messageText = messageInput.value.trim();
     if (messageText === '') return;
 
     if (messageText === 'clear') {
-        clearChatHistory();
+        clearChatHistory(MESSAGES_KEY);
         messageInput.value = '';
         return;
     }
@@ -35,14 +29,14 @@ function sendMessage() {
     const newMessage = { text: messageText, type: 'sent', timestamp: new Date().toISOString() };
 
     addMessage(newMessage);
-    storeMessage(newMessage);
+    storeMessage(newMessage, MESSAGES_KEY);
     scrollToBottom();
 
     // Simuler une réponse après 1 seconde
     setTimeout(() => {
         const reply = { text: 'Réponse automatique', type: 'received', timestamp: new Date().toISOString() };
         addMessage(reply);
-        storeMessage(reply);
+        storeMessage(reply, MESSAGES_KEY);
         scrollToBottom();
     }, 1000);
 
@@ -50,17 +44,24 @@ function sendMessage() {
 };
 
 // Fonction pour sauvegarder un message dans le localStorage
-function storeMessage(message) {
+function storeMessage(message, MESSAGES_KEY) {
     let messages = JSON.parse(localStorage.getItem(MESSAGES_KEY)) || [];
     messages.push(message);
     localStorage.setItem(MESSAGES_KEY, JSON.stringify(messages));
+
+    // // Activer le Swiper si plus de 5 messages
+    // if(messages.length > 5){
+    //     toggleSwiper(true);
+    // }
 };
 
 // Fonction pour charger les messages stockés
-function loadStoredMessages() {
+function loadStoredMessages(MESSAGES_KEY) {
+    console.log("loadStoredMessages");
     let messages = JSON.parse(localStorage.getItem(MESSAGES_KEY)) || [];
 
     messages.forEach(message => {
+        console.log(message);
         addMessage(message);
     });
 }
@@ -74,7 +75,7 @@ function addMessage(message) {
 };
 
 // Fonction pour effacer l'historique des messages (optionnelle)
-function clearChatHistory() {
+function clearChatHistory(MESSAGES_KEY) {
     localStorage.removeItem(MESSAGES_KEY);
     messageList.innerHTML = '';  // Effacer les messages de l'interface
 };
