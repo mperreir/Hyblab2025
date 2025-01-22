@@ -27,8 +27,12 @@ const App = () => {
 
     setQuizData(quizJson);
     setArticleData(articleJson)
-    scrollToSection("quiz");
   };
+
+  const scrollToQuiz = () => {
+    console.log("test")
+    scrollToSection('quiz0');
+  }
 
   return (
     <div className='h-screen w-full overflow-y-scroll snap-y snap-mandatory [scroll-behavior:smooth]'>
@@ -41,6 +45,7 @@ const App = () => {
           <Article data={articleData[1]}/>
         </>
         )}
+      {scrollToQuiz()}
     </div>
   );
 };

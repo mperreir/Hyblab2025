@@ -13,10 +13,6 @@ const Quiz = ({ data }) => {
     setUserAnswers(newAnswers);
     
     const question = data[questionIndex];
-
-    console.log(question);
-    console.log(question.correct_answer);
-
     const isCorrect = answer === question.correct_answer;
     const newFeedbacks = [...feedbacks];
     newFeedbacks[questionIndex] = isCorrect 
@@ -64,6 +60,8 @@ const Quiz = ({ data }) => {
                 Next Question
               </button>
             )}
+
+            <button onClick={() => scrollToSection(`article${questionIndex}`)}>Go To Article</button>
           </section>
         ))}
       </div>

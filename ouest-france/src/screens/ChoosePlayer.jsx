@@ -13,7 +13,6 @@ const ChoosePlayer = ({onSelectPlayer}) => {
           className="px-4 py-2 bg-blue-500 text-white rounded"
           onClick={() => {
             onSelectPlayer("player1")
-            //scrollToSection("screen1")
         }}
         >
           Matthieu PAVON
@@ -23,7 +22,6 @@ const ChoosePlayer = ({onSelectPlayer}) => {
           className="px-4 py-2 bg-red-500 text-white rounded"
           onClick={() => {
             onSelectPlayer("player2")
-            //scrollToSection("screen2")
           }}
         >
           Celine BOUTIER
