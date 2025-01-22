@@ -1,0 +1,57 @@
+{
+  "player1": {
+    "quiz": [
+      {
+        "question": "En quel année est née Matthieu PAVON ?",
+        "answers": ["2002", "2000", "1998", "1995"],
+        "correct_answer": "1998",
+        "explenation": "Matthieu PAVON est né en 1998 à Toulouse."
+      }, 
+      {
+        "question": "Quel est le prénom de Matthieu PAVON ?",
+        "answers": ["Matthieu", "Thomas", "Pierre", "Jean"],
+        "correct_answer": "Matthieu",
+        "explenation": "Matthieu PAVON s'apelle Matthieu"
+      }
+    ],
+    "articles": [
+      {
+        "id": "0",
+        "title": "Les débuts de Matthieu PAVON",
+        "content": "Test"
+      },
+      {
+        "id": "1",
+        "title": "Les premiers tournois de Matthieu PAVON",
+        "content": "Test"
+      }
+    ]
+  },
+  "player2": {
+    "quiz": [
+      {
+        "question": "En quel année est née Celine BOUTIER ?",
+        "answers": ["2002", "2000", "1998", "1995"],
+        "correct_answer": "1998"
+      },
+      {
+        "question": "Quel est le prénom de Celine BOUTIER ?",
+        "answers": ["Celine", "Thomas", "Pierre", "Jean"],
+        "correct_answer": "Celine"
+      }
+    ],
+    "articles": [
+      {
+        "id": "0",
+        "title": "Les débuts de Celine BOUTIER",
+        "content": "Test"
+      },
+      {
+        "id": "1",
+        "title": "Les premiers tournois de Celine BOUTIER",
+        "content": "Test"
+      }
+
+    ]
+  }
+}
