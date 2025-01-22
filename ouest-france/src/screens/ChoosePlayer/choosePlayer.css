@@ -14,13 +14,11 @@
 }
 
 .choice.left{
-    background-color: blue;
     border-right: white solid 30px;
     left: -50%;
 }
 
 .choice.right{
-    background-color: pink;
     border-left: white solid 30px;
     right: -50%;
 }
@@ -45,7 +43,6 @@
     transform: skew(20deg);
     position: absolute;
     transition: all ease 0.6s;
-    aspect-ratio: auto;
 }
 .choice.right img {
     right: 30%;
