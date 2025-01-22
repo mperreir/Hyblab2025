@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { scrollToSection } from './utils';
 
 import Home from './screens/Home';
-import ChoosePlayer from './screens/ChoosePlayer';
+import ChoosePlayer from './screens/ChoosePlayer/ChoosePlayer';
 import Article from './screens/Article';
 import Quiz from './screens/Quiz';
 
