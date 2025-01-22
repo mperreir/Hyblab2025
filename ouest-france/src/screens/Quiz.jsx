@@ -69,9 +69,4 @@ const Quiz = ({ data }) => {
   );
 };
 
-/*
-
-          <button onClick={() => scrollToSection('1')}>Previous Question</button>
-*/
-
 export default Quiz;

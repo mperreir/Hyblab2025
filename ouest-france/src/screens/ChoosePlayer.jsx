@@ -1,6 +1,5 @@
 // src/screens/Home.jsx
 import React from "react";
-import { scrollToSection } from "../utils";
 
 const ChoosePlayer = ({onSelectPlayer}) => {
   return (
