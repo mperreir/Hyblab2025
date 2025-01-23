@@ -1,0 +1,82 @@
+[
+    {
+        "name": "Économie EXEMPLE FICTIF",
+        "text": "Cet article traite de l'économie locale et de ses impacts.",
+        "kpis": [
+            {
+                "id": 0,
+                "number": "75%",
+                "text": "Croissance économique annuelle"
+            },
+            {
+                "id": 1,
+                "number": "10%",
+                "text": "Taux de chômage"
+            }
+        ],
+        "linked_categories": [
+            {
+                "id": 0,
+                "name": "Finance",
+                "link": "https://example.com/finance"
+            },
+            {
+                "id": 1,
+                "name": "Industrie",
+                "link": "https://example.com/industrie"
+            }
+        ],
+        "links": [
+            {
+                "id": 0,
+                "name": "Décision sur les taxes",
+                "link": "https://example.com/decision-taxes"
+            },
+            {
+                "id": 1,
+                "name": "Réforme du travail",
+                "link": "https://example.com/reforme-travail"
+            }
+        ]
+    },
+    {
+        "name": "Santé EXEMPLE FICTIF",
+        "text": "Cet article aborde les récentes avancées dans le domaine de la santé.",
+        "kpis": [
+            {
+                "id": 0,
+                "number": "90%",
+                "text": "Taux de vaccination"
+            },
+            {
+                "id": 1,
+                "number": "5%",
+                "text": "Taux de mortalité infantile"
+            }
+        ],
+        "linked_categories": [
+            {
+                "id": 0,
+                "name": "Médecine",
+                "link": "https://example.com/medecine"
+            },
+            {
+                "id": 1,
+                "name": "Pharmacie",
+                "link": "https://example.com/pharmacie"
+            }
+        ],
+        "links": [
+            {
+                "id": 0,
+                "name": "Politique de santé publique",
+                "link": "https://example.com/politique-sante"
+            },
+            {
+                "id": 1,
+                "name": "Réforme hospitalière",
+                "link": "https://example.com/reforme-hospitaliere"
+            }
+        ]
+    }
+]
