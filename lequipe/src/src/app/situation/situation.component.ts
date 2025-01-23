@@ -2,7 +2,7 @@ import { CommonModule, ViewportScroller } from '@angular/common';
 import { AfterViewInit, Component, Input, OnChanges } from '@angular/core';
 import { Choice, Situation } from '../models/content-data';
 import { TextAnimationPipe } from '../text-animation.pipe';
-// import anime from 'animejs/lib/anime.es.js';
+import anime from 'animejs';
 
 @Component({
     selector: 'app-situation',
@@ -38,26 +38,26 @@ export class SituationComponent implements OnChanges, AfterViewInit {
             (el as HTMLElement).getAttribute("data-text-visible") !== "true"
         );
 
-        // let tl = anime.timeline({
-        //     loop: false
-        // });
-        // tl.add({
-        //     targets: textsToAnimate,
-        //     opacity: [0,1],
-        //     duration: 950,
-        //     easing: "easeOutExpo",
-        //     delay: anime.stagger(20),
-        //     complete: (anim) => {
-        //         textsToAnimate.forEach((el) => (el as HTMLElement).setAttribute("data-text-visible", "true"));
-        //     },
-        // });
-        // tl.add({
-        //     targets: choicesToAnimate,
-        //     opacity: [0,1],
-        //     easing: "easeOutExpo",
-        //     complete: (anim) => {
-        //         choicesToAnimate.forEach((el) => (el as HTMLElement).setAttribute("data-text-visible", "true"));
-        //     },
-        // });
+        let tl = anime.timeline({
+            loop: false
+        });
+        tl.add({
+            targets: textsToAnimate,
+            opacity: [0,1],
+            duration: 950,
+            easing: "easeOutExpo",
+            delay: anime.stagger(20),
+            complete: (anim) => {
+                textsToAnimate.forEach((el) => (el as HTMLElement).setAttribute("data-text-visible", "true"));
+            },
+        });
+        tl.add({
+            targets: choicesToAnimate,
+            opacity: [0,1],
+            easing: "easeOutExpo",
+            complete: (anim) => {
+                choicesToAnimate.forEach((el) => (el as HTMLElement).setAttribute("data-text-visible", "true"));
+            },
+        });
     }
 }
