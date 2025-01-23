@@ -16,71 +16,39 @@ app.get(`/categories`, function ( req, res ) {
     res.sendFile(filename);
 } );
 
-app.get(`/articles/:category_name`, function ( req, res ) {
-    const category_name = req.params.category_name;
-
+function fetchArticlesData(category_name, dataKey, res) {
     fetch(`http://${ip}/data/articles.json`)
-    .then(response => response.json())
-    .then(articles => {
-        const article = articles.find(article => article.id === category_name);
-        if (article) {
-            res.send(article.text);
-        } else {
-            res.status(404).send({ error: 'Article not found' });
-        }
-    })
-    .catch(error => { console.error('Error fetching JSON:', error)});
+        .then(response => response.json())
+        .then(articles => {
+            const article = articles.find(article => article.id === category_name);
+            if (article) {
+                res.send(article[dataKey]);
+            } else {
+                res.status(404).send({ error: 'Article not found' });
+            }
+        })
+        .catch(error => console.error('Error fetching JSON:', error));
+}
 
-
-} );
-
-app.get(`/articles/:category_name/kpis`, function ( req, res ) {
+app.get(`/articles/:category_name`, function (req, res) {
     const category_name = req.params.category_name;
+    fetchArticlesData(category_name, 'text', res);
+});
 
-    fetch('http://localhost:3000/public/articles.json')
-    .then(response => response.json())
-    .then(articles => {
-        const article = articles.find(article => article.id === category_name);
-        if (article) {
-            res.send(article.kpis);
-        } else {
-            res.status(404).send({ error: 'Article not found' });
-        }
-    })
-    .catch(error => console.error('Error fetching JSON:', error));
-} );
-
-app.get(`/articles/:category_name/linked_categories`, function ( req, res ) {
+app.get(`/articles/:category_name/kpis`, function (req, res) {
     const category_name = req.params.category_name;
+    fetchArticlesData(category_name, 'kpis', res);
+});
 
-    fetch('http://localhost:3000/public/articles.json')
-    .then(response => response.json())
-    .then(articles => {
-        const article = articles.find(article => article.id === category_name);
-        if (article) {
-            res.send(article.linked_categories);
-        } else {
-            res.status(404).send({ error: 'Article not found' });
-        }
-    })
-    .catch(error => console.error('Error fetching JSON:', error));
-} );
-
-app.get(`/articles/:category_name/links`, function ( req, res ) {
+app.get(`/articles/:category_name/linked_categories`, function (req, res) {
     const category_name = req.params.category_name;
+    fetchArticlesData(category_name, 'linked_categories', res);
+});
 
-    fetch('http://localhost:3000/public/articles.json')
-    .then(response => response.json())
-    .then(articles => {
-        const article = articles.find(article => article.id === category_name);
-        if (article) {
-            res.send(article.links);
-        } else {
-            res.status(404).send({ error: 'Article not found' });
-        }
-    })
-    .catch(error => console.error('Error fetching JSON:', error));
-} );
+app.get(`/articles/:category_name/links`, function (req, res) {
+    const category_name = req.params.category_name;
+    fetchArticlesData(category_name, 'links', res);
+});
 
 // Export our API
 module.exports = app;
