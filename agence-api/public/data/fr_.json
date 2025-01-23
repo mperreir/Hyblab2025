@@ -1,8 +1,23 @@
 {
     "introduction": {
-        "general": [
-            "Salut ! Moi, c’est Api. Je suis là pour t’aider à avancer dans ton projet et te montrer les atouts de nos régions. Comment t'appelles-tu ?"
-        ],
+        "general": {
+            "avant_nom": [
+                "Salut ! Moi, c’est Api.",
+                "Si tu hésites à lancer ton entreprise en Bretagne ou dans les Pays de la Loire, tu es au bon endroit.",
+                "Au cours de cette aventure, tu découvriras les chiffres clés de l’économie de ces régions et tu pourras faire tes propres choix pour créer ton entreprise.",
+                "Comment t’appelles-tu ?"
+            ],
+            "apres_nom": [
+                "Enchanté de faire ta connaissance, ${user_name} !",
+                "Tu es prêt à te lancer dans l’aventure ?",
+                "Si oui, il te suffit de choisir ton futur secteur d'activité :"
+            ],
+            "avertissement": [
+                "Juste un petit mot avant de commencer : ce jeu est là pour t'amuser et t'informer.",
+                "Il ne remplace pas les conseils d'un professionnel pour créer ton entreprise.",
+                "Les informations que tu trouveras ici sont basées sur des données générales et peuvent ne pas refléter les situations que tu rencontrerais."
+            ]
+        },
         "secteurs": {
             "agro": "Tu veux te lancer dans l’agroalimentaire ? Parfait, l’Ouest est une référence dans ce domaine ! La Bretagne est la première région agricole de France, et les Pays de la Loire sont en troisième position. Produire ou transformer des aliments ici, c’est contribuer activement à nourrir la France !",
             "tech": "Ton rêve c’est d’être dans l’innovation ? L’Ouest pourrait bien répondre à tes ambitions ! Aujourd’hui, un quart des technopoles françaises y sont réunies. Aujourd’hui, un quart des technopôles français sont réunis ici . Ta prochaine innovation pourrait t’amener à changer le monde depuis nos régions !",
@@ -103,7 +118,7 @@
             "1": {},
             "2": {
                 "titre": "Financement : Les aides publiques",
-                "images" : [],
+                "images": [],
                 "paragraphes": [
                     "L'Ouest de la France bénéficie d'un soutien significatif à travers les dispositifs publics visant à renforcer son tissu industriel et à favoriser la réindustrialisation.",
                     "Le programme France Relance a permis d’accompagner 67 entreprises de la région dans leur projet de relocalisation dans des secteurs stratégiques, tout en soutenant 185 initiatives industrielles pour dynamiser les territoires​.",
@@ -116,13 +131,11 @@
                     "1_porc": "Les actifs dans les Côtes-d'Armor",
                     "1_volaille": "Les actifs en Vendée"
                 },
-
                 "images": {
                     "1_lait": [],
                     "1_porc": [],
                     "1_volaille": []
                 },
-
                 "paragraphes": [
                     "Il faut savoir que nos deux régions se distinguent du reste du territoire métropolitain par une plus forte proportion d’ouvriers et d’agriculteurs-exploitants, liée au poids important de l’agriculture et de l’industrie. Tu devrais donc trouver de nombreux partenaires et employés pour ton activité ici."
                 ]
@@ -137,7 +150,7 @@
                         "1_porc": "La viande et les produits à base de viande sont la quatrième marchandise la plus exportée en Bretagne représentant 2337 millions d’euros par an, et la cinquième marchandise la plus exportée en Pays de la Loire.",
                         "1_volaille": "La viande et les produits à base de viande sont la quatrième marchandise la plus exportée en Bretagne représentant 2337 millions d’euros par an, et la cinquième marchandise la plus exportée en Pays de la Loire."
                     }
-                    ]
+                ]
             }
         }
     },
