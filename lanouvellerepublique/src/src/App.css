@@ -6,6 +6,7 @@ body {
 #root {
   width: calc(100* 3vh / 4);
   height: 100dvh;
+  max-width: 100%;
   overflow: hidden;
   position: relative;
   display: flex;
