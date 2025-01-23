@@ -18,6 +18,7 @@ app.use(express.static(path.join(__dirname, '../__common-logos__')));
 
 // You can then add whatever routing code you need
 app.get(`/article/:category_name`, function (req, res) {
+    //TODO
     const category_name = req.params.category_name;
     fetch(`${ip}/data/articles.json`)
         .then(response => response.json())
