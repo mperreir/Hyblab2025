@@ -26,19 +26,7 @@ app_names.forEach(function (element, index, array) {
 	app.use("/" + element, sub_apps[element]);
 });
 
-// Register a new route for screen2
-app.get("/screen2", function (req, res) {
-	res.sendFile(__dirname + "/londeporteuse/public/screen2.html");
-});
 
-app.get("/screen4", function (req, res) {
-	res.sendFile(__dirname + "/londeporteuse/public/screen2.html");
-});
-
-// Register a new route for page4
-app.get("/page4", function (req, res) {
-	res.sendFile(__dirname + "/londeporteuse/public/page4.html");
-});
 
 // redirect catch all url to hyblab website (disabled for dev)
 // app.use(/\/$/, function (req, res, next) {
