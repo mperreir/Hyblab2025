@@ -1,14 +1,13 @@
 import React from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import "./Etape.css";
 
 const Etape = () => {
+  const { difficulty } = useParams(); // Récupérer la difficulté depuis l'URL
+  const navigate = useNavigate();
+
   const handleEtapeClick = (etape) => {
-    if (etape === 1) {
-      // Rediriger vers la page de l'étape 1
-      window.location.href = "/etape/1";
-    } else {
-      alert("Cette étape est verrouillée !");
-    }
+    navigate(`/etape/${difficulty}/${etape}`); // Redirige vers la page des questions avec la difficulté et l'étape
   };
 
   return (

@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #4D95AF;
+  background-color: #f4c86a;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,7 +49,7 @@ body {
 }
 
 .answer-btn.selected {
-  background-color: #4D95AF; /* Couleur de surbrillance pour le choix sélectionné */
+  background-color: #f4c86a; /* Couleur de surbrillance pour le choix sélectionné */
   color: #0d192e; /* Couleur du texte contrastante */
   font-weight: bold;
   border-color: #0d192e;
