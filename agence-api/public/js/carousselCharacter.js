@@ -8,7 +8,7 @@ class Carousel {
     this.selectButton = document.createElement('button');
     this.carousel = document.createElement('div');
     this.textZone = document.createElement('p');
-
+    this.activated = true;
   }
 
   async createCarousel() {
@@ -114,7 +114,9 @@ class Carousel {
       // Swipe Left
       this.activeIndex = (this.activeIndex + 1) % this.images.length;
     }
-    this.updateCarousel();
+    if (this.activated){
+      this.updateCarousel();
+    }
   }
 
   async getCharacter() {

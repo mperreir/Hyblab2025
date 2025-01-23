@@ -129,7 +129,9 @@ async function loadIntroStory(introStory) {
       ];
       const carousel = new Carousel(images, ['text1', 'text2', 'text3']);
       await carousel.createCarousel();
-      return await carousel.getCharacter();
+      const char =  await carousel.getCharacter();
+      carousel.activated = false;
+      return char;
   }
 
   async function selectSecteur(textsPresentationPersos) {
@@ -140,7 +142,9 @@ async function loadIntroStory(introStory) {
       ];
       const carousel = new Carousel(images, [textsPresentationPersos.agro, textsPresentationPersos.tech, textsPresentationPersos.arti]);
       await carousel.createCarousel();
-      return await carousel.getCharacter();
+      const char =  await carousel.getCharacter();
+      carousel.activated = false;
+      return char;
   }
   
 
