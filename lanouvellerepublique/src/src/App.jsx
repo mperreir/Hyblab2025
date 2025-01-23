@@ -1,22 +1,17 @@
-import { useState } from "react";
-import ScrollableMap from "./components/ScrollableMap";
-import DialogueBox from "./components/DialogueBox";
 import "./App.css"; // Create this file for styles
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import MapPage from "./pages/MapPage";
+import Home from "./pages/Home";
 
 function App() {
-  const [selectedText, setSelectedText] = useState(""); // Manage text globally
-
   return (
-    <div className="game_container">
-      <ScrollableMap
-        width={4000}
-        height={4000}
-        background="url('/backiee-98662-landscape.jpg')"
-        setSelectedText={setSelectedText}
-      />
-      {selectedText && <DialogueBox text={selectedText} setSelectedText={setSelectedText} />}
-      <h1>Carrousel</h1>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home/>} />
+        <Route path="/regions" element={<MapPage />} />
+        <Route path="/map" element={<MapPage />} />
+      </Routes>
+    </Router>
   );
 }
 
