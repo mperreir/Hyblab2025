@@ -5,11 +5,13 @@ function Home() {
   const navigate = useNavigate();
 
   return (
-    <div className="home-container">
-      <h1>Welcome to the Map Explorer</h1>
-      <button className="start-button" onClick={() => navigate("/map")}>
-        Start
-      </button>
+    <div className='home_page'>
+      <div className='header'></div> 
+      <div className='content'>
+        <button className="start-button" onClick={() => navigate("/map")}>
+          Start
+        </button>
+      </div>
     </div>
   );
 }
