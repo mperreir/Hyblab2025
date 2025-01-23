@@ -1,5 +1,5 @@
 .background {
-    background: url('homePage.png');
+    background: url('credits.png');
     background-size: auto 100%;
     background-position: center; /* Centre l'image dans le conteneur */
     background-repeat: no-repeat; /* Empêche l'image de se répéter */
@@ -25,36 +25,10 @@
     width: 200px;
 }
 
-
 p {
     font-size: 10px;
     line-height: 1.5;
     color: #1A3347;
     margin: 1px;
 
-}
-
-button {
-    margin-top: 30px;
-    padding: 12px 48px;
-    margin-bottom: 50px;
-
-    border: #1A3347;
-    border-radius: 40px;
-    border-style: solid;
-    border-width: 2px;
-
-    font-size: 12px;
-    max-width: 200px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    color: #1A3347;
-    background-color: #ffffff; /* Couleur bleue */
-
-    cursor: pointer;
-    justify-content: center;
-}
-
-button:hover {
-    background-color: #1A3347; /* Couleur bleue plus foncée au survol */
-    color: white;
 }
