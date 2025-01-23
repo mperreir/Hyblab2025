@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom"; // Importer useNavigate
 import yaml from "js-yaml";
 import "./QuestionPage.css";
+import { useParams } from "react-router-dom";
 
 const QuestionPage = () => {
   const [questions, setQuestions] = useState([]);
@@ -12,16 +13,17 @@ const QuestionPage = () => {
   const [showHintImage, setShowHintImage] = useState(false);
 
   const navigate = useNavigate(); // Initialisation de useNavigate
+  const { id } = useParams();
 
   useEffect(() => {
-    fetch("data/questions.yaml")
+    fetch("/data/questions.yaml")
       .then((response) => response.text())
       .then((text) => {
         const data = yaml.load(text);
-        setQuestions(data.game.levels[0].stages[0].questions);
+        setQuestions(data.game.levels[0].stages[parseInt(id)-1].questions);
       })
       .catch((error) => console.error("Erreur de chargement YAML :", error));
-  }, []);
+  }, [id]);
 
   if (questions.length === 0) {
     return <p>Chargement des questions...</p>;
@@ -41,7 +43,13 @@ const QuestionPage = () => {
         setShowHintImage(false);
       } else {
         // Redirection vers la page principale
-        navigate("/");
+        navigate("/etape/" + (parseInt(id) + 1));
+        setQuestions([]);
+        setCurrentQuestionIndex(0);
+        setSelectedOptionIndex(null);
+        setValidated(false);
+        setShowHintText(false);
+        setShowHintImage(false);
       }
     }
   };

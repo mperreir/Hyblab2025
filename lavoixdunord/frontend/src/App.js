@@ -14,7 +14,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Etape />} />
-        <Route path="/etape" element={<QuestionPage />} />
+        <Route path="/etape/:id" element={<QuestionPage />} />
         <Route path="/difficulty" element={<DifficultyPage />} />
       </Routes>
     </Router>

@@ -5,7 +5,7 @@ const Etape = () => {
   const handleEtapeClick = (etape) => {
     if (etape === 1) {
       // Rediriger vers la page de l'étape 1
-      window.location.href = "/etape1";
+      window.location.href = "/etape/1";
     } else {
       alert("Cette étape est verrouillée !");
     }
