@@ -58,6 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
           break;
         case 1:
           initSlide2();
+          showCircle();
           toggleSwiper(false);
           break;
         case 2:
@@ -79,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function hideCircle() {
       circleContainer.style.display = 'none';
       clearTimeout(timeout);
-      timeout = setTimeout(showCircle, 3000); // Reset the timer
+      timeout = setTimeout(showCircle, 7000); // Reset the timer
     }
 
     // Add event listeners for user activity
@@ -88,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Start the timer on page load
-    timeout = setTimeout(showCircle, 3000);
+    timeout = setTimeout(showCircle, 7000);
 
 
 
