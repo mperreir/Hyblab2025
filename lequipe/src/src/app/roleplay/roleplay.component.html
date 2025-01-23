@@ -1,7 +1,7 @@
 <h1>Et si ...</h1>
 <div id="scenarios">
     @for (item of data; track $index) {
-        <div id="scenario" (click)="selected_scenario = item">
+        <div id="scenario" (click)="selected_scenario = item" [ngClass]="{'selected' : selected_scenario == item}">
             <img [src]=item.image [alt]="item.title">
             <h2>{{ item.title }}</h2>
         </div>

@@ -37,4 +37,7 @@ pre {
             font-size: 20%;
         }
     }
+    .selected {
+        background-color: lighten(black, 25%);
+    }
 }
