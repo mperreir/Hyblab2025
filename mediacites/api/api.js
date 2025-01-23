@@ -4,7 +4,7 @@ const express = require( 'express' );
 const app = express();
 const path = require('path');
 
-const ip = `localhost:8080/mediacites`
+const ip = `http://localhost:8080/mediacites`
 
 //app.use('/public', express.static('public'));
 
@@ -17,7 +17,7 @@ app.get(`/categories`, function ( req, res ) {
 } );
 
 function fetchArticlesData(category_name, dataKey, res) {
-    fetch(`http://${ip}/data/articles.json`)
+    fetch(`${ip}/data/articles.json`)
         .then(response => response.json())
         .then(articles => {
             const article = articles.find(article => article.id === category_name);
