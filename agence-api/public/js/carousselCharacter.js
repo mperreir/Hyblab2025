@@ -8,7 +8,6 @@ const images = [
     ];
 let presentationPerso;
 
-
 // Function to create and append the carousel to the document
 async function createCarousel() {
     // Retrieve the perso's presentations from our API
@@ -49,7 +48,7 @@ async function createCarousel() {
     carouselContainer.appendChild(selectButton);
   
     // Append the carousel container to the body (or any other target element)
-    document.getElementById("chatBox").appendChild(carouselContainer);
+    document.getElementById("messageList").appendChild(carouselContainer);
 
     
 
@@ -94,10 +93,6 @@ async function createCarousel() {
         endX = 0;
     });
 
-    selectButton.addEventListener('click', () => {
-        console.log('Selected perso:', activeIndex);
-    });
-
     // Initial update
     updateCarousel();
 };
@@ -136,4 +131,20 @@ function handleGesture(startX, endX) {
     activeIndex = (activeIndex + 1) % images.length;
     updateCarousel();
     }
+}
+
+
+async function getCharacter(){
+    return new Promise((resolve) => {
+        const selectButton = document.getElementById('selectButton');
+        console.log()
+        function onClick() {
+
+            selectButton.textContent="Choisi !";
+            selectButton.disabled = true;
+
+            resolve(activeIndex);
+        }
+        selectButton.addEventListener('click', onClick);
+    });
 }
