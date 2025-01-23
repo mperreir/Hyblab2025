@@ -28,3 +28,26 @@ Le dossier de votre projet contient un squelette de code que vous devez modifier
 ## Instructions de déploiement
 
 Si votre projet nécessite des instructions spécifiques pour son déploiement, merci d'ajouter des explications ici.
+
+
+## Organisation des JSONs
+### `articles.json`
+* `id` : id de l'article
+* `name` : titre de la catégorie
+* `text` : texte de l’article 
+* `kpis` : 
+    * `id` : identifiant du KPI (0 ou 1)
+    * `number` : le chiffre à montrer (sous forme de chaîne pour avoir le %)
+    * `text` : texte accompagnateur
+* `linked_categories` : 
+    * `id` : id
+    * `name` : nom du lien
+    * `link` : lien vers la catégorie (utile?)
+* `links` :
+    * `id` : identifiant de la décision
+    * `name` : nom du lien vers la décision
+    * `link` : lien vers la décision
+### `decisions.json`
+* `id` : identifiant
+* `category` : catégorie
+* `link` : lien
