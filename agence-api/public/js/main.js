@@ -6,7 +6,7 @@ const initSlide2 = async function () {
   const messageList = document.getElementById('messageList');
   const messageInput = document.getElementById('messageInput');
 
-  displayExplanation({titre:"test"});
+  //displayExplanation({titre:"test"});
   scrollToBottom();
 
     // Retrieve the intro's messages from our API
