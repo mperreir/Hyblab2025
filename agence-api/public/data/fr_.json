@@ -1,8 +1,9 @@
 {
     "introduction": {
-        "general": [
+        "bonjour": [
             "Salut ! Moi, c’est Api. Je suis là pour t’aider à avancer dans ton projet et te montrer les atouts de nos régions. Comment t'appelles-tu ?"
         ],
+        "questionSecteurs": "Dans quel secteur souhaites-tu te lancer ?",
         "secteurs": {
             "agro": "Tu veux te lancer dans l’agroalimentaire ? Parfait, l’Ouest est une référence dans ce domaine ! La Bretagne est la première région agricole de France, et les Pays de la Loire sont en troisième position. Produire ou transformer des aliments ici, c’est contribuer activement à nourrir la France !",
             "tech": "Ton rêve c’est d’être dans l’innovation ? L’Ouest pourrait bien répondre à tes ambitions ! Aujourd’hui, un quart des technopoles françaises y sont réunies. Aujourd’hui, un quart des technopôles français sont réunis ici . Ta prochaine innovation pourrait t’amener à changer le monde depuis nos régions !",

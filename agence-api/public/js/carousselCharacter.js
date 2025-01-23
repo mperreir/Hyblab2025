@@ -1,30 +1,25 @@
 "use strict";
 
-let activeIndex = 1;
-const images = [
-    { src: 'img/perso1.png', alt: '1', index: 0 },
-    { src: 'img/perso2.png', alt: '2', index: 1, active: true },
-    { src: 'img/perso3.png', alt: '3', index: 2 },
-    ];
-let presentationPerso;
+class Carousel {
+  constructor(images, presentationPersoTexts) {
+    this.activeIndex = 1;
+    this.images = images;
+    this.presentationPerso = [presentationPersoTexts.agro, presentationPersoTexts.tech, presentationPersoTexts.arti];
+    this.selectButton;
+  }
 
-// Function to create and append the carousel to the document
-async function createCarousel() {
-    // Retrieve the perso's presentations from our API
-    let response = await fetch('data/presentationPerso.json');
-    presentationPerso = await response.json();
+  async createCarousel() {
 
-
+    // this.carouselContainer.innerHTML = ''; // Clear existing content
     // Create the main container
     const carouselContainer = document.createElement('div');
     carouselContainer.className = 'carousel-container';
-  
-    // Create the carousel wrapper
+
     const carousel = document.createElement('div');
     carousel.className = 'carousel';
     carousel.id = 'carousel';
-  
-    images.forEach((imageData) => {
+
+    this.images.forEach((imageData) => {
       const img = document.createElement('img');
       img.src = imageData.src;
       img.alt = imageData.alt;
@@ -34,23 +29,17 @@ async function createCarousel() {
       }
       carousel.appendChild(img);
     });
-  
-    // Append the carousel to the container
-    carouselContainer.appendChild(carousel);
 
     const textZone = document.createElement('p');
     textZone.className = 'textZone';
+    this.selectButton = document.createElement('button');
+    this.selectButton.id = 'selectButton';
+    this.selectButton.textContent = 'Choisir';
+
+    carouselContainer.appendChild(carousel);
     carouselContainer.appendChild(textZone);
-
-    const selectButton = document.createElement('button');
-    selectButton.id = 'selectButton';
-    selectButton.textContent = 'Choisir';
-    carouselContainer.appendChild(selectButton);
-  
-    // Append the carousel container to the body (or any other target element)
-    document.getElementById("messageList").appendChild(carouselContainer);
-
-    
+    carouselContainer.appendChild(this.selectButton);
+    document.getElementById('messageList').appendChild(carouselContainer);
 
     let isDragging = false;
     let startX = 0;
@@ -58,21 +47,21 @@ async function createCarousel() {
 
     // Mouse Events for Desktop
     carousel.addEventListener('mousedown', (e) => {
-        isDragging = true;
-        startX = e.clientX;
+      isDragging = true;
+      startX = e.clientX;
     });
 
     carousel.addEventListener('mousemove', (e) => {
-        if (!isDragging) return;
-        endX = e.clientX;
+      if (!isDragging) return;
+      endX = e.clientX;
     });
 
     carousel.addEventListener('mouseup', () => {
-        if (!isDragging) return;
-        isDragging = false;
-        handleGesture(startX, endX);
-        startX = 0;
-        endX = 0;
+      if (!isDragging) return;
+      isDragging = false;
+      this.handleGesture(startX, endX);
+      startX = 0;
+      endX = 0;
     });
 
     // Prevent default behavior to avoid text/image selection
@@ -80,71 +69,62 @@ async function createCarousel() {
 
     // Touch Events for Mobile
     carousel.addEventListener('touchstart', (e) => {
-        startX = e.touches[0].clientX;
+      startX = e.touches[0].clientX;
     });
 
     carousel.addEventListener('touchmove', (e) => {
-        endX = e.touches[0].clientX;
+      endX = e.touches[0].clientX;
     });
 
     carousel.addEventListener('touchend', () => {
-        handleGesture(startX, endX);
-        startX = 0;
-        endX = 0;
+      this.handleGesture(startX, endX);
+      startX = 0;
+      endX = 0;
     });
 
-    // Initial update
-    updateCarousel();
-};
+    this.updateCarousel();
+    scrollToBottom();
+  }
 
-function updateCarousel() {
+  updateCarousel() {
     const images = Array.from(document.querySelectorAll('.carousel img'));
-
     const carousel = document.getElementById('carousel');
     const textZone = document.querySelector('.textZone');
-
     const totalImages = images.length;
-    const leftIndex = (activeIndex - 1 + totalImages) % totalImages;
-    const rightIndex = (activeIndex + 1) % totalImages;
+    const leftIndex = (this.activeIndex - 1 + totalImages) % totalImages;
+    const rightIndex = (this.activeIndex + 1) % totalImages;
 
     carousel.innerHTML = ''; // Clear existing images
     carousel.appendChild(images[leftIndex].cloneNode(true));
-    carousel.appendChild(images[activeIndex].cloneNode(true));
+    carousel.appendChild(images[this.activeIndex].cloneNode(true));
     carousel.appendChild(images[rightIndex].cloneNode(true));
 
     carousel.children[0].classList.remove('active');
     carousel.children[1].classList.add('active');
     carousel.children[2].classList.remove('active');
 
-    textZone.innerHTML = presentationPerso[activeIndex];
-}
+    textZone.innerHTML = this.presentationPerso[this.activeIndex];
+  }
 
-function handleGesture(startX, endX) {
+  handleGesture(startX, endX) {
     const swipeDistance = endX - startX;
-
     if (swipeDistance > 50) {
-    // Swipe Right
-    activeIndex = (activeIndex - 1 + images.length) % images.length;
-    updateCarousel();
+      // Swipe Right
+      this.activeIndex = (this.activeIndex - 1 + this.images.length) % this.images.length;
     } else if (swipeDistance < -50) {
-    // Swipe Left
-    activeIndex = (activeIndex + 1) % images.length;
-    updateCarousel();
+      // Swipe Left
+      this.activeIndex = (this.activeIndex + 1) % this.images.length;
     }
-}
+    this.updateCarousel();
+  }
 
-
-async function getCharacter(){
+  async getCharacter() {
     return new Promise((resolve) => {
-        const selectButton = document.getElementById('selectButton');
-        console.log()
-        function onClick() {
-
-            selectButton.textContent="Choisi !";
-            selectButton.disabled = true;
-
-            resolve(activeIndex);
-        }
-        selectButton.addEventListener('click', onClick);
+        this.selectButton.addEventListener('click', () => {
+            this.selectButton.textContent = "Choisi !";
+            this.selectButton.disabled = true;
+            resolve(this.activeIndex);
+        });
     });
+}
 }
