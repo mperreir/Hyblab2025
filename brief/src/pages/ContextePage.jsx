@@ -1,16 +1,16 @@
-// /src/pages/LandingPage.jsx
+// /src/pages/ContextePage.jsx
 import React from 'react';
 import IntroLayout from '../Layout/IntroductionLayout'; 
 import { useNavigate } from 'react-router-dom'; 
-import LandingComponent from '../components/LandingComponent';  
+import LandingComponent from '../components/ContexteComponent';  
 
-const LandingPage = () => {
+const ContextePage = () => {
   const navigate = useNavigate();
   return (
     <IntroLayout>
-      <LandingComponent onStart={() => navigate("/brief/contexte")} />
+      <LandingComponent onStart={() => navigate("/brief/Intro")} />
     </IntroLayout>
   );
 };
 
-export default LandingPage;
+export default ContextePage;

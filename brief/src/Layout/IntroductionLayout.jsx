@@ -11,7 +11,7 @@ const IntroductionLayout = ({ children }) => {
       <AppBar position="static" sx={{ backgroundColor: '#007BFF' }}>
         <Toolbar>
           <Typography variant="h6" sx={{ flexGrow: 1, textAlign: 'center' }}>
-            Bienvenue dans le Jeu !
+            Bienvenue dans le bonjour!
           </Typography>
         </Toolbar>
       </AppBar>
