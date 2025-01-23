@@ -33,19 +33,34 @@ header {
         width: 100%;
     }
     
+    
     #scenarios {
+
+        width: 100%;
+        gap: 10px; /* Espacement entre les éléments */
+        padding: 10px;
         margin-top: 8%;
+        scroll-snap-type: x mandatory; /* Optionnel pour un défilement fluide */
+        overflow-x: scroll;
         display: flex;
         flex-direction: row;
-        justify-content: space-evenly;
-    
+        justify-content: flex-start;
+
+        /* Ensure borders and padding are included in dimensions */
+        box-sizing: border-box;
+        &::-webkit-scrollbar {
+            display: none; /* Cache la barre de défilement */
+        }
+        scrollbar-width: none; /* Firefox */
+
         #scenario {
+            
+            flex: 0 0 auto; /* Empêche les éléments de se réduire ou de se casser sur plusieurs lignes */
+            scroll-snap-align: start; /* Optionnel : alignement précis lors du défilement */
             display: flex;
             flex-direction: column;
-    
             width: 25%;
             padding: 1.5%;
-    
             border: 2px solid rgb(255, 255, 255);
             border-radius: 7px;
             cursor: pointer;

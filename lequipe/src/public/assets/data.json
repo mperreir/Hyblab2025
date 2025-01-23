@@ -408,5 +408,141 @@
                 }
             ]
         }
+    },
+    {
+        "title": "Le Château Maudit",
+        "image": "square2.png",
+        "situation": {
+            "content": [
+                {
+                    "type": "text",
+                    "text": "Une pluie battante vous pousse à chercher refuge dans un vieux château en ruine.",
+                    "template": "full_page"
+                },
+                {
+                    "type": "image",
+                    "link": "castle_hall.png",
+                    "template": "center"
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Explorer l'étage supérieur.",
+                    "result": {
+                        "content": [
+                            {
+                                "type": "text",
+                                "text": "Vous montez les escaliers, qui grincent sous vos pas.",
+                                "template": "full_page"
+                            },
+                            {
+                                "type": "text",
+                                "text": "Au sommet, une porte entrouverte laisse échapper une lumière vacillante.",
+                                "template": "quote"
+                            },
+                            {
+                                "type": "image",
+                                "link": "castle_door.png",
+                                "template": "right"
+                            }
+                        ],
+                        "choices": [
+                            {
+                                "text": "Entrer dans la pièce.",
+                                "result": {
+                                    "content": [
+                                        {
+                                            "type": "text",
+                                            "text": "Un spectre vous attend à l'intérieur. Il semble garder un précieux artefact.",
+                                            "template": "full_page"
+                                        },
+                                        {
+                                            "type": "image",
+                                            "link": "specter.png",
+                                            "template": "center"
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "text": "Ignorer la pièce et continuer à explorer l'étage.",
+                                "result": {
+                                    "content": [
+                                        {
+                                            "type": "text",
+                                            "text": "Vous trouvez une bibliothèque remplie de livres anciens.",
+                                            "template": "quote"
+                                        },
+                                        {
+                                            "type": "image",
+                                            "link": "library.png",
+                                            "template": "left"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "text": "Explorer le rez-de-chaussée.",
+                    "result": {
+                        "content": [
+                            {
+                                "type": "text",
+                                "text": "Vous explorez les salles sombres du rez-de-chaussée.",
+                                "template": "full_page"
+                            },
+                            {
+                                "type": "text",
+                                "text": "Un coffre verrouillé attire votre attention.",
+                                "template": "quote"
+                            },
+                            {
+                                "type": "image",
+                                "link": "locked_chest.png",
+                                "template": "center"
+                            }
+                        ],
+                        "choices": [
+                            {
+                                "text": "Essayer d'ouvrir le coffre.",
+                                "result": {
+                                    "content": [
+                                        {
+                                            "type": "text",
+                                            "text": "Le coffre contient une clé dorée.",
+                                            "template": "full_page"
+                                        },
+                                        {
+                                            "type": "image",
+                                            "link": "golden_key.png",
+                                            "template": "right"
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "text": "Ignorer le coffre et chercher ailleurs.",
+                                "result": {
+                                    "content": [
+                                        {
+                                            "type": "text",
+                                            "text": "Vous tombez sur une trappe secrète menant à un sous-sol.",
+                                            "template": "quote"
+                                        },
+                                        {
+                                            "type": "image",
+                                            "link": "trapdoor.png",
+                                            "template": "center"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
     }
 ]
