@@ -17,10 +17,23 @@ const initSlide2 = async function () {
     const userName = await loadIntroStory(texts.introduction.general);
 
     // Select the character
-    const character = await selectCharacter(texts.introduction.secteurs);
+    // const character = await selectCharacter(texts.introduction.secteurs);
 
     // Select the character
-    const secteur = await selectSecteur(texts.introduction.secteurs);    
+    const secteur = await selectSecteur(texts.introduction.secteurs);
+    console.log(secteur);
+
+    switch (secteur) {
+        case 0:
+            histoireAgro();
+            break;
+        case 1:
+            histoireTech();
+            break;
+        case 2:
+            histoireArti();
+            break;
+    };
 };
 
 function wait(ms) {
