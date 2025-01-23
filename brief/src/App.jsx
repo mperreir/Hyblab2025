@@ -7,8 +7,9 @@ const App = () => {
     <Router>
       <IntroLayout>
         <Routes>
-          <Route path="/" element={<Navigate to="/landing" replace />} />
-          <Route path="/landing" element={<LandingPage/>} />
+          <Route path="/brief/" element={<Navigate to="/brief/landing" replace />} />
+          <Route path="/brief/landing" element={<LandingPage/>} />
+          <Route path="/brief/contexte" element={<div>Page de l’histoire à venir...</div>} />
         </Routes>
       </IntroLayout>
     </Router>
