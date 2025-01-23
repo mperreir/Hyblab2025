@@ -158,16 +158,63 @@
             }
         }
     },
+
+
     "tech": {
-        "introduction": [],
-        "questions": [],
-        "reponses": [
-            []
+        "introduction": [
+            "Alors, tu veux te lancer dans la tech ? Excellent choix ! L’Ouest de la France, c’est l’endroit parfait pour les innovateurs comme toi.",
+            "Avec 11 technopôles sur les 41 que compte la France, la région regorge d’opportunités et chaque technopôle a sa spécialité."
         ],
-        "contexte": "",
-        "informations": "",
+        "questions": [
+            [
+                "Il est temps de choisir dans quelle technopole tu souhaites établir ton activité.",
+                "Je te propose trois villes de taille différentes, tu peux choisir celle qui te correspond le mieux.",
+                "On commence par Nantes, l’endroit où science et technologie se croisent. Ici, on révolutionne la santé, on innove dans les biotechs, et on fait avancer le numérique.",
+                "À Lorient, on repense les déplacements et on mise sur la mer ! Mobilité verte, technologies maritimes… c’est la ville des projets qui avancent à grande vitesse.",
+                "Enfin, Lannion, c’est le cœur des télécoms en France ! Fibre, réseaux et innovation dans l’optique-photonique, on y prépare le futur des communications.",
+                "Dans quelle ville ci-dessous souhaites-tu t'installer ?"
+            ]
+        ],
+        "reponses": [
+            [
+                "Je choisis Nantes.",
+                "Je choisis Lorient.",
+                "Je choisis Lannion."
+            ]
+        ],
+        "contexte": {
+            "1": {
+                "avant": [
+                    "Une technopole est un grand centre urbain disposant d’un fort potentiel d’enseignement et de recherche, favorable au développement d’industries de pointe.",
+                    "C'est à ne pas confondre avec un technopôle, qui est un site spécialement aménagé pour accueillir les entreprises de haute technologie ou en favoriser la création.",
+                    "Allons identifier les technopoles de l'Ouest ensemble !"
+                ],
+                "apres": [
+                    {
+                        "1_nantes": "Bravo pour ton choix de t'installer à Nantes !",
+                        "1_lorient": "Bravo pour ton choix de t'installer à Lorient !",
+                        "1_lannion": "Bravo pour ton choix de t'installer à Lannion !"
+                    }
+                ],
+                "images": {
+                    "1": []
+                }
+            }
+        },
+        "informations": 
+        {
+            "1":{
+                "titre":"Les technopoles de l'Ouest",
+                "images":[],
+                "paragraphes": [
+                    "Dans l’Ouest, les technopoles se répartissent en fonction de la taille des villes qui les accueillent. On retrouve d’abord celles situées dans des villes de plus de 100 000 habitants, comme Rennes, Nantes, Brest, Le Mans et Angers ; celles des villes de plus de 40 000 habitants, telles que Lorient, Laval, Vannes, Saint-Brieuc et Quimper ; et enfin, les plus petites, dans des villes de plus de 20 000 habitants, avec Lannion."
+                ]
+            }
+        },
         "images": ""
     },
+
+    
     "arti": {
         "introduction": [],
         "questions": [],
