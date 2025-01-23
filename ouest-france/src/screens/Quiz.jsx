@@ -27,9 +27,6 @@ const Quiz = ({ data }) => {
     const wasCorrect = previousAnswer === question.correct_answer;
 
     if (previousAnswer === null) {
-      console.log(previousAnswer);
-      console.log(newAnswers);
-      console.log(isCorrect);
       // First time answering
       if (isCorrect) {
         setScore(score + 1);
