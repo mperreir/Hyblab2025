@@ -1,13 +1,13 @@
-"use stric";
+"use strict";
 
 const initSlide2 = async function () {
 
-    const chatBox = document.getElementById('chatBox');
-    const messageList = document.getElementById('messageList');
-    const messageInput = document.getElementById('messageInput');
+  const chatBox = document.getElementById('chatBox');
+  const messageList = document.getElementById('messageList');
+  const messageInput = document.getElementById('messageInput');
 
-    scrollToBottom();
-    console.log("oui")
+  displayExplanation({titre:"test"});
+  scrollToBottom();
 
     // Retrieve the intro's messages from our API
     let response = await fetch('data/fr_.json');
@@ -28,7 +28,7 @@ const initSlide2 = async function () {
 };
 
 function wait(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 function waitForNameInput() {
@@ -72,7 +72,7 @@ async function getUserName() {
 }
   
 async function loadIntroStory(introStory) {
-    document.getElementById('chat-input').style.visibility = 'hidden';
+  document.getElementById('chat-input').style.visibility = 'hidden';
 
     let i = 1;
     for (const key in introStory) {

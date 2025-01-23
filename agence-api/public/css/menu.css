@@ -16,8 +16,8 @@ html, body {
   top: 20px;
   right: 20px;
   padding: 10px 15px;
-  background-color: #007bff;
-  color: white;
+  background-color: #fcfcfc;
+  color: rgb(17, 15, 15);
   font-size: 1em;
   border: none;
   border-radius: 5px;
@@ -25,7 +25,7 @@ html, body {
   z-index: 10;
 }
 #menu-btn:hover {
-  background-color: #0056b3;
+  background-color: #e4eaf0;
 }
 
 /* ========== 弹窗蒙层(背景) ========== */
@@ -93,8 +93,8 @@ html, body {
 /* 关闭按钮(×) */
 .close-btn {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 15px;
+  right: 25px;
   background: none;
   border: none;
   font-size: 1.5em;
@@ -113,7 +113,7 @@ html, body {
   margin: 10px 0;
 }
 .menu-content ul li a {
-  color: #007bff;
+  color: #111111;
   text-decoration: none;
   font-weight: bold;
 }
