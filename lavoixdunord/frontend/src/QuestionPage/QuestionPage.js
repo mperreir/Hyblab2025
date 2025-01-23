@@ -6,12 +6,12 @@ const QuestionPage = () => {
   const [questions, setQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedOptionIndex, setSelectedOptionIndex] = useState(null);
+  const [validated, setValidated] = useState(false); // Indique si la réponse a été validée
   const [showHintText, setShowHintText] = useState(false);
   const [showHintImage, setShowHintImage] = useState(false);
 
-  // Charger les questions depuis le fichier YAML
   useEffect(() => {
-    fetch("/data/questions.yaml")
+    fetch("data/questions.yaml")
       .then((response) => response.text())
       .then((text) => {
         const data = yaml.load(text);
@@ -25,27 +25,23 @@ const QuestionPage = () => {
   }
 
   const handleNext = () => {
-    if (currentQuestionIndex < questions.length - 1) {
-      setCurrentQuestionIndex(currentQuestionIndex + 1);
-      setSelectedOptionIndex(null); // Réinitialiser la sélection
-      setShowHintText(false);
-      setShowHintImage(false);
-    }
-  };
-
-  const toggleHintText = () => {
-    setShowHintText(!showHintText);
-  };
-
-  const toggleHintImage = () => {
-    if (showHintText) {
-      setShowHintImage(!showHintImage);
+    if (!validated) {
+      // Si la réponse n'est pas encore validée, valider la réponse
+      setValidated(true);
     } else {
-      alert("Vous devez d'abord ouvrir l'indice 1 !");
+      // Passer à la question suivante
+      if (currentQuestionIndex < questions.length - 1) {
+        setCurrentQuestionIndex(currentQuestionIndex + 1);
+        setSelectedOptionIndex(null); // Réinitialiser la sélection
+        setValidated(false); // Réinitialiser l'état de validation
+        setShowHintText(false);
+        setShowHintImage(false);
+      }
     }
   };
 
   const handleOptionClick = (index) => {
+    // Permettre de modifier la réponse tant qu'elle n'est pas validée
     setSelectedOptionIndex(index);
   };
 
@@ -64,20 +60,25 @@ const QuestionPage = () => {
           {currentQuestion.options.map((option, index) => (
             <button
               key={index}
-              className={`answer-btn ${
-                selectedOptionIndex === index
-                  ? option.correct
-                    ? "correct"
-                    : "wrong"
+              className={`answer-btn ${selectedOptionIndex === index ? "selected" : "" // Surbrillance immédiate
+                } ${validated
+                  ? index === selectedOptionIndex
+                    ? option.correct
+                      ? "correct"
+                      : "wrong"
+                    : option.correct
+                      ? "correct"
+                      : ""
                   : ""
-              }`}
+                }`}
               onClick={() => handleOptionClick(index)}
-              disabled={selectedOptionIndex !== null} // Désactiver après une sélection
+              disabled={validated} // Désactiver après validation
             >
               {option.text}
             </button>
           ))}
         </div>
+
         {/* Lien global vers l'article */}
         {currentQuestion.hints.link && (
           <p className="article-link">
@@ -93,15 +94,19 @@ const QuestionPage = () => {
         <button
           className="next-btn"
           onClick={handleNext}
-          disabled={selectedOptionIndex === null} // Activer seulement après une sélection
+          disabled={selectedOptionIndex === null} // Désactiver si aucune option n'est sélectionnée
         >
-          SUIVANT
+          {validated
+            ? currentQuestionIndex < questions.length - 1
+              ? "SUIVANT"
+              : "FINIR"
+            : "VALIDER"}
         </button>
 
         {/* Indices */}
         <div className="hints-container">
           <div className="hint-item">
-            <button className="toggle-btn" onClick={toggleHintText}>
+            <button className="toggle-btn" onClick={() => setShowHintText(!showHintText)}>
               {showHintText ? "−" : "+"}
             </button>
             <span className="hint-title">INDICE 1</span>
@@ -111,14 +116,18 @@ const QuestionPage = () => {
           <div className="hint-item">
             <button
               className={`toggle-btn ${!showHintText ? "disabled" : ""}`}
-              onClick={toggleHintImage}
+              onClick={() => setShowHintImage(!showHintImage)}
               disabled={!showHintText} // Désactiver le bouton si le 1ᵉʳ indice n'est pas ouvert
             >
               {showHintImage ? "−" : "+"}
             </button>
             <span className="hint-title">INDICE 2</span>
             {showHintImage && currentQuestion.hints.image && (
-              <img src={`/${currentQuestion.hints.image}`} alt="Indice" className="hint-img" />
+              <img
+                src={`/${currentQuestion.hints.image}`}
+                alt="Indice"
+                className="hint-img"
+              />
             )}
           </div>
         </div>

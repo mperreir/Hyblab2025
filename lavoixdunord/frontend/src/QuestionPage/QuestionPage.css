@@ -48,6 +48,14 @@ body {
   font-size: 16px;
 }
 
+.answer-btn.selected {
+  background-color: #f4c86a; /* Couleur de surbrillance pour le choix sélectionné */
+  color: #0d192e; /* Couleur du texte contrastante */
+  font-weight: bold;
+  border-color: #0d192e;
+}
+
+
 .answer-btn.correct {
   background-color: green;
   color: white;
