@@ -5,12 +5,12 @@ html, body {
   background-color: #fff;
   height: 100vh;
   width: 100%;
-  overflow: hidden;  /* 避免弹窗出现时页面可滚动 */
-  font-family: sans-serif;
-  position: relative; /* 以便定位菜单按钮 */
+  overflow: hidden;
+  font-family: 'Arial', sans-serif;
+  position: relative;
 }
 
-/* 右上角 Menu 按钮 */
+/* ========== Menu 按钮样式 ========== */
 #menu-btn {
   position: absolute;
   top: 20px;
@@ -28,29 +28,21 @@ html, body {
   background-color: #e4eaf0;
 }
 
-/* ========== 弹窗蒙层(背景) ========== */
+/* ========== 弹窗蒙层 ========== */
 #menu-popup {
   position: fixed;
-  top: 0; 
+  top: 0;
   left: 0;
-  width: 100%; 
+  width: 100%;
   height: 100%;
-  
-  /* 半透明白色，可调成纯白 */
-  background: rgba(255, 255, 255, 0.7);
-
-  /* 淡入淡出 */
+  background: rgba(0, 0, 0, 0.5); /* 增强背景对比 */
   transition: opacity 0.3s ease;
   z-index: 1000;
-
-  /* 底部对齐布局，让 .menu-content 从下方出现 */
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
 }
-
-/* 隐藏时：透明 + 不可点击 */
 .hidden {
   opacity: 0;
   pointer-events: none;
@@ -58,59 +50,70 @@ html, body {
 
 /* ========== 弹窗主体 ========== */
 .menu-content {
-  /* 设计稿参数：#D9D9D9 */
-  background: #D9D9D9;
+  background: #d9d9d9;
   color: #333;
-  /* 设计稿: 宽 393px，高 614px */
   width: 393px;
   height: 614px;
-
-  /* 圆角只在顶部：50px；底部是直角 */
   border-radius: 50px 50px 0 0;
-
-  /* 让整体底部上滑 */
   transform: translateY(100%);
   transition: transform 0.3s ease;
-
   position: relative;
-  /* 若想在小手机上自适应，可加 max-width: 90%;  */
-  /* overflow-y: auto; 如果内容超出高度，需要滚动 */
-}
-.menu-content {
-  width: 393px;
-  height: 614px;
   max-width: 90%;
   max-height: 90%;
   overflow-y: auto;
 }
-
-
-/* 弹窗可见时，从底部滑到0 */
 #menu-popup:not(.hidden) .menu-content {
   transform: translateY(0);
 }
 
-/* 关闭按钮(×) */
+/* ========== 关闭按钮样式 ========== */
 .close-btn {
   position: absolute;
-  top: 15px;
+  top: 20px;
   right: 25px;
-  background: none;
-  border: none;
-  font-size: 1.5em;
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  font-size: 1.2em;
+  color: #000;
   cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.close-btn:hover {
+  background-color: #f0f0f0;
 }
 
-/* 列表与链接基本样式 */
+/* ========== 文本和标题样式 ========== */
+h1 {
+  font-size: 1.8em;
+  margin-top: 40px;
+  text-align: center;
+  color: #000;
+}
+p {
+  margin: 20px auto;
+  max-width: 80%;
+  line-height: 1.6;
+  text-align: center;
+  font-size: 1em;
+}
+
+/* ========== 列表样式 ========== */
 .menu-content ul {
-  list-style: disc inside; 
+  list-style: none;
   padding: 0;
   margin: 20px auto;
-  text-align: left; /* 让列表左对齐可读性更好 */
+  text-align: left;
   max-width: 80%;
 }
 .menu-content ul li {
-  margin: 10px 0;
+  margin: 15px 0;
+  font-size: 1em;
 }
 .menu-content ul li a {
   color: #111111;
@@ -118,22 +121,17 @@ html, body {
   font-weight: bold;
 }
 .menu-content ul li a:hover {
-  color: #252323;
+  color: #0073e6;
 }
 
-/* 页脚 */
+/* 页脚样式 */
 .menu-content footer {
   margin-top: 20px;
   font-size: 0.8em;
+  text-align: center;
   color: #666;
 }
-
-h1 {
-  margin-top: 60px;  /* 让标题稍微下移，避免和 × 挤在一起 */
-}
-p {
-  margin: 10px auto;
-  max-width: 80%;
-  line-height: 1.4;
-  text-align: center;
+.menu-content footer a {
+  text-decoration: underline;
+  color: #0073e6;
 }
