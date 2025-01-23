@@ -462,6 +462,6 @@ game:
                 - text: "Christophe Moreau"
                   correct: true
               hints:
-                text: "Ce cycliste français a marqué le début du Tour 2001 en s’emparant du maillot jaune après un prologue mémorable." 
+                text: "Ce cycliste français a marqué le début du Tour 2001 en s’emparant du maillot jaune après un prologue mémorable. " 
                 image: "images/Etape 3/dunkerque moreau.jpg"
                 link: "https://www.lavoixdunord.fr/1041548/article/2021-07-07/tour-de-france-il-y-20-ans-christophe-moreau-s-emparait-du-maillot-jaune"
