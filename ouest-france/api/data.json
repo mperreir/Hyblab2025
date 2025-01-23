@@ -2,16 +2,16 @@
   "player1": {
     "quiz": [
       {
-        "question": "En quel année est née Matthieu PAVON ?",
-        "answers": ["2002", "2000", "1998", "1995"],
-        "correct_answer": "1998",
-        "explenation": "Matthieu PAVON est né en 1998 à Toulouse."
+        "question": "À quel âge Matthieu Pavon a-t-il commencé le golf ?",
+        "answers": ["5 ans", "8 ans", "12 ans", "15 ans"],
+        "correct_answer": "12 ans",
+        "explanation": "Matthieu Pavon commence le golf à l’âge de 12 ans, ce qui est très tard pour un joueur de golf professionnel comme lui. Les joueurs de golfs professionnels commencent généralement à jouer très jeunes, souvent entre 3 et 10 ans. Certains champions comme Tiger Woods ou Rory Mcllroy (des champions américains et irlandais) ont touché un club dès l’âge de 2-3 ans. Beaucoup de joueurs, notamment ceux issus de familles de golfeurs, commencent entre 6 et 10 ans. Quelques professionnels, comme Matthieu Pavon, n’ont commencé qu’à l’adolescence, mais c’est plus rare. La majorité des golfeurs professionnels étaient déjà des compétiteurs sérieux avant 15 ans, participant à des tournois juniors."
       }, 
       {
         "question": "Quel est le prénom de Matthieu PAVON ?",
         "answers": ["Matthieu", "Thomas", "Pierre", "Jean"],
         "correct_answer": "Matthieu",
-        "explenation": "Matthieu PAVON s'apelle Matthieu"
+        "explanation": "Matthieu PAVON s'apelle Matthieu"
       }
     ],
     "articles": [
