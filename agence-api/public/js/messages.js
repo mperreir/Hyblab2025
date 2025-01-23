@@ -41,7 +41,7 @@ function addMessage(message) {
 };
 
 
-async function addAnswer(answers){
+async function addAnswer(answers, multipleChoices=false) {
     const answersContainer = document.createElement('div');
     answersContainer.id = 'answers-container';
 
@@ -61,23 +61,36 @@ async function addAnswer(answers){
     messageList.appendChild(answersContainer);
     messageList.appendChild(confirmButton);
 
+    let selectedAnswer = [];
 
-    let selectedAnswer = null;
-    answersContainer.addEventListener('click', (e) => {
-        if (e.target.classList.contains('answer')) {
-          // Remove 'selected' class from all answers
-          document.querySelectorAll('.answer').forEach((div) => div.classList.remove('selected'));
-      
-          // Add 'selected' class to the clicked answer
-          e.target.classList.add('selected');
-      
-          // Update selectedAnswer
-          selectedAnswer = e.target.dataset.answer;
-      
-          // Enable the confirm button
-          confirmButton.disabled = false;
+    if (multipleChoices) {
+        answersContainer.addEventListener('click', (e) => {
+            if (e.target.classList.contains('answer')) {
+                e.target.classList.toggle('selected');
+                selectedAnswer = Array.from(answersContainer.querySelectorAll('.selected')).map((div) => div.dataset.answer);
+                confirmButton.disabled = selectedAnswer.length === 0;
+            }
         }
-      });
+        );
+    } else {
+        answersContainer.addEventListener('click', (e) => {
+            if (e.target.classList.contains('answer')) {
+            // Remove 'selected' class from all answers
+            document.querySelectorAll('.answer').forEach((div) => div.classList.remove('selected'));
+        
+            // Add 'selected' class to the clicked answer
+            e.target.classList.add('selected');
+        
+            // Update selectedAnswer
+            selectedAnswer = [e.target.dataset.answer];
+        
+            // Enable the confirm button
+            confirmButton.disabled = false;
+            }
+        });
+    }
+
+    
 
       scrollToBottom();
       return new Promise((resolve) => {
@@ -85,8 +98,12 @@ async function addAnswer(answers){
       // Add click event listener to the confirm button
       confirmButton.addEventListener('click', () => {
         if (selectedAnswer) {
-          console.log(`Selected answer: ${selectedAnswer}`);
-          // You can handle the selected answer further here
+          confirmButton.remove();
+          answersContainer.remove();
+          for (const answer of selectedAnswer) {
+            addMessage({ text: answer, type: 'sent', timestamp: new Date().toISOString() });
+          }
+
           resolve(selectedAnswer);
         }
       });

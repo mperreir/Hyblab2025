@@ -13,6 +13,8 @@ const initSlide2 = async function () {
     let response = await fetch('data/fr_.json');
     const texts = await response.json();
 
+    await histoireAgro(texts.agro);
+
     // Load the intro story
     const userName = await loadIntroStory(texts.introduction.general);
 
@@ -161,6 +163,15 @@ async function histoireAgro(texts){
 
     for (let i = 0; i < texts.questions.length; i++) {
         await displayMessages(texts.questions[i]);
-        let answer = await addAnswer(texts.reponses[i]);
+
+        /* Ouais bon la solution est dégeu, mais ça fonctionne */
+        let multipleChoices = false;
+        for(let key in texts.questions[i]){
+           if(texts.questions[i][key].includes("financement")){
+                multipleChoices = true;
+                break;
+           }
+        }
+        let answer = await addAnswer(texts.reponses[i], multipleChoices);
     }
 }
