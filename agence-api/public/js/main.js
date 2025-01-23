@@ -64,7 +64,7 @@ async function getUserName() {
     chatInput.style.visibility='visible';
     messageInput.focus();
 
-    userName = await waitForNameInput();
+    let userName = await waitForNameInput();
 
     messageInput.blur();
     chatInput.style.visibility='hidden';

@@ -1,23 +1,5 @@
 "use strict";
 
-// const initSlide2 = async function () {
-
-//     const chatBox = document.getElementById('chatBox');
-//     const messageList = document.getElementById('messageList');
-
-// document.onload = function() {
-//     const messageInput = document.getElementById('messageInput');
-
-//     messageInput.addEventListener('keydown', event => {
-//         if (event.key === 'Enter') {
-//             sendMessage();
-//         }
-//     });
-
-//     messageSendButton.addEventListener('click', sendMessage);
-// };
-//     scrollToBottom();
-// };
 
 // Fonction pour envoyer un message
 function sendMessage() {
