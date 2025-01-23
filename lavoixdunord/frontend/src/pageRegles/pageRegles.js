@@ -12,7 +12,7 @@ const RulesPage = () => {
                 <br></br>
                 <p><i><b>Bonne chance, et que la découverte  de cette belle région commence !</b></i></p>
             </div>
-            <button className="button">SUIVANT</button>
+            <button className="button"><b>JOUER</b></button>
         </div>
     );
 };
