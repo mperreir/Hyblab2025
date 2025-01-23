@@ -59,19 +59,20 @@ const Quiz = ({ data }) => {
       <div className="flex h-full">
         {data.map((question, questionIndex) => (
           <section
-            className="h-screen w-screen flex-shrink-0 bg-green-200 snap-start flex items-center justify-center flex-col"
+            className="h-screen w-screen flex-shrink-0 snap-start flex items-center justify-center flex-col"
             id={"quiz" + questionIndex}
           >
-            <div className="flex w-full h-full">
-              <div className="w-1/3 h-full flex items-center justify-center">
+            <div className="flex w-full h-full p-[30px]">
+              <div className="w-1/2 h-full flex items-center justify-center">
                 <img
                   src="./pavon.jpg"
                   className="w-full h-full object-cover"
                 ></img>
               </div>
-              <div className="w-2/3 h-full flex flex-col">
-                <div className="p-6 py-16 flex justify-start items-center w-full">
-                  <h1 className="text-4xl font-bold">{question.question}</h1>
+              <div className="w-1/2 h-full flex flex-col justify-end">
+                <div className="p-6 py-16 flex flex-col gap-4 w-full">
+                  <p className="text-lg font-bold text-black">{question.question}</p>
+                  <span className="accent h-[2px] w-[60%]"></span>
                 </div>
 
                 <div className="flex flex-wrap p-6 gap-4 w-full">
@@ -83,11 +84,11 @@ const Quiz = ({ data }) => {
                         console.log("userAnswers", userAnswers[questionIndex]);
                         console.log("answer", answer);
                       }}
-                      className={`grow basis-[calc(50%-0.5rem)] p-4 text-lg rounded-lg border ${
+                      className={`duration-300 ease-initial grow basis-[calc(50%-0.5rem)] p-4 text-lg rounded-lg border ${
                         userAnswers[questionIndex] === answer
                           ? answerStatus[questionIndex] === "correct"
                             ? "bg-green-500 text-white"
-                            : "bg-red-500 text-white"
+                            : "accent text-white"
                           : "bg-white hover:bg-gray-100"
                       }`}
                     >
@@ -123,7 +124,7 @@ const Quiz = ({ data }) => {
                     </div>
                   </div>
                 )}
-                <div className="flex justify-end items-end gap-4 w-full h-full p-6">
+                <div className="flex justify-end items-end gap-4 w-full p-6">
                     {questionIndex > 0 && (
                       <button
                         className="text-lg rounded-lg border bg-white hover:bg-gray-100"
