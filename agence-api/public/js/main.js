@@ -14,9 +14,13 @@ const initSlide2 = async function () {
 
     // Load the intro story
     loadIntroStory(introStory);
+    
 };
 
 function loadIntroStory(introStory) {
+
+    document.getElementById('chat-input').style.visibility='hidden';
+
     let i = 1;
     for(const key in introStory){
         setTimeout(() => {
