@@ -19,7 +19,7 @@ gsap.fromTo(
         ease: "none",
         scrollTrigger: {
             trigger: ".svg-line",
-            start: "top top",
+            start: "top middle",
             end: "bottom bottom",
             scrub: 1
         }
