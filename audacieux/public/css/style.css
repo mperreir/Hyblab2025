@@ -29,3 +29,19 @@
     pointer-events: none; /* Permet à la souris de passer à travers la boîte */
     z-index: 1000; /* Toujours devant les autres éléments */
   }
+
+#box-container {
+    position: relative;
+}
+
+.clickable-div {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.5); /* White with 50% transparency */
+    border: 2px solid white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.clickable-div:hover {
+    background-color: rgba(255, 255, 255, 0.7); /* More opaque on hover */
+}

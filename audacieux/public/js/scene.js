@@ -109,6 +109,89 @@ function updateKeyframes(value, time) {
 }
 
 
-function test(text){
-  console.log(text);
+function test(event, text){
+  console.log("MAGASIN !!");
+  zoomOutScene();
+}
+
+function loadSceneScript(event, id)
+{
+  loadImageScene("image_holder.json", id);
+}
+
+function loadImageScene(file_name, id) {
+  const imageScene = document.getElementById("image-scene");
+  const container = document.getElementById("box-container");
+  
+  // Clear previous clickable divs
+  container.querySelectorAll('.clickable-div').forEach(div => div.remove());
+
+  // Smooth transition effect
+  imageScene.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
+  imageScene.style.transform = 'scale(1.1)';
+  imageScene.style.opacity = '0';
+
+  fetch(file_name)
+    .then(response => response.json())
+    .then(data => {
+      for(let i = 0; i < data.scenes.length; i +=1) {
+        if(data.scenes[i].id == id) {
+          // Delay to allow previous image to fade out
+          setTimeout(() => {
+            imageScene.src = data.scenes[i].url;
+            imageScene.style.position = "absolute";
+            imageScene.style.zIndex = 999;
+            imageScene.style.width = "100%";
+            imageScene.style.height = "100%";
+            imageScene.style.objectFit = "cover";
+            
+            // Smooth fade-in and zoom-in effect
+            imageScene.style.transform = 'scale(1)';
+            imageScene.style.opacity = '1';
+            
+            data.scenes[i].box.forEach(div => {
+              const clickableDiv = document.createElement('div');
+              clickableDiv.classList.add('clickable-div');
+              clickableDiv.style.position = "absolute";
+              clickableDiv.style.zIndex = 1000;
+              clickableDiv.style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
+              clickableDiv.style.left = div.left;
+              clickableDiv.style.top = div.top;
+              clickableDiv.style.width = div.width;
+              clickableDiv.style.height = div.height;
+              
+              if(div.script) {
+                if (typeof window[div.script.func] === "function") {
+                  clickableDiv.addEventListener("click", (event) => {
+                    window[div.script.func](event, ...div.script.args);
+                  });
+                } else {
+                  console.error("Fonction non définie :", div.script.func);
+                }
+              }
+        
+              container.appendChild(clickableDiv);
+            });
+          }, 500); // Match this to transition duration
+        }
+      }
+    })
+}
+
+function zoomOutScene() {
+  const imageScene = document.getElementById("image-scene");
+  
+  // Zoom-out and fade-out effect
+  imageScene.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
+  imageScene.style.transform = 'scale(1.1)';
+  imageScene.style.opacity = '0';
+  
+  
+  // Optional: Clear clickable divs after transition
+  setTimeout(() => {
+    const container = document.getElementById("box-container");
+    container.querySelectorAll('.clickable-div').forEach(div => div.remove());
+    imageScene.src = "";
+    imageScene.style = "";
+  }, 500);
 }

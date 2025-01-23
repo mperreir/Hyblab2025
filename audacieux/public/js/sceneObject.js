@@ -44,9 +44,9 @@ class SceneObject{
         if(script)
         {
             if (this.html_el && typeof window[script.func] === "function") {
-                this.html_el.addEventListener("click", () => {
+                this.html_el.addEventListener("click", (event) => {
                   // Appeler la fonction spécifiée avec les arguments
-                  window[script.func](...script.args);
+                  window[script.func](event, ...script.args);
                 });
               } else {
                 console.error(

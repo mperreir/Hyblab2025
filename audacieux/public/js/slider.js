@@ -7,8 +7,8 @@ let isAnimating = false;
 sceneContainer.addEventListener("wheel", function (event) {
   event.preventDefault();
   console.log(event.deltaY);
-  timeDelta = event.deltaY/1000;
-  maxTime = 4;
+  timeDelta = event.deltaY/100;
+  maxTime = 100;
 
   sceneManager.time = Math.max(0, Math.min(sceneManager.time+timeDelta, maxTime));
 

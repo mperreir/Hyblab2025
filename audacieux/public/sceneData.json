@@ -12,20 +12,21 @@
           "type": "svg",
           "src": "assets/1PLAN.svg",
           "z": 10,
+          "script": {"func": "loadSceneScript", "args":["scene1"]},
           "keyframes": [
             {
               "time": 0,
-              "x": 100,
-              "y": 200,
+              "x": 1050,
+              "y": 357,
               "rotation": 0,
-              "scale": 1
+              "scale": 10
             },
             {
-              "time": 4,
-              "x": 100,
-              "y": 200,
-              "rotation": 180,
-              "scale": 1
+              "time": 50,
+              "x": -500,
+              "y": 357,
+              "rotation": 0,
+              "scale": 10
             }
           ]
         },
@@ -33,14 +34,21 @@
           "id": "svgElement2",
           "type": "svg",
           "src": "assets/2PLAN.svg",
-          "z": 10,
+          "z": 9,
           "keyframes": [
             {
               "time": 0,
-              "x": 100,
-              "y": 200,
+              "x": 1000,
+              "y": 300,
               "rotation": 0,
-              "scale": 1
+              "scale": 10
+            },
+            {
+              "time": 83,
+              "x": 0,
+              "y": 300,
+              "rotation": 0,
+              "scale": 10
             }
           ]
         },
@@ -48,48 +56,24 @@
           "id": "svgElement3",
           "type": "svg",
           "src": "assets/3PLAN.svg",
-          "z": 10,
+          "z": 8,
           "keyframes": [
             {
               "time": 0,
-              "x": 100,
-              "y": 200,
+              "x": 2200,
+              "y": 300,
               "rotation": 0,
-              "scale": 1
+              "scale": 20
+            },
+            {
+              "time": 400,
+              "x": 0,
+              "y": 300,
+              "rotation": 0,
+              "scale": 20
             }
           ]
-        },
-          {
-            "id": "lottieElement1",
-            "type": "lottie",
-            "src": "assets/animation1.json",
-            "script": {"func":"test", "args":["caca"]},
-            "z": 8,
-            "keyframes": [
-              {
-                "time": 0,
-                "x": 888,
-                "y": 334,
-                "rotation": 0,
-                "scale": 3
-              },
-              {
-                "time": 2,
-                "x": 1000,
-                "y": 334,
-                "rotation": 90,
-                "scale": 3
-              },
-              {
-                "time": 4,
-                "x": 888,
-                "y": 334,
-                "rotation": 0,
-                "scale": 3
-              }
-            ]
-          }
-    
+        }
       ],
       "keyframes": [
         {
@@ -98,22 +82,41 @@
           "y": 300,
           "rotation": 0,
           "scale": 1
+        }
+      ]
+    },
+    
+    {
+      "id": "lottieElement1",
+      "type": "lottie",
+      "src": "assets/animation1.json",
+      "script": {"func":"test", "args":["caca"]},
+      "z": 8,
+      "keyframes": [
+        {
+          "time": 0,
+          "x": 100,
+          "y": 200,
+          "rotation": 0,
+          "scale": 0
         },
         {
           "time": 2,
-          "x": 300,
-          "y": 300,
-          "rotation": 0,
-          "scale": 1
+          "x": 1000,
+          "y": 334,
+          "rotation": 90,
+          "scale": 0
         },
         {
           "time": 4,
-          "x": 400,
-          "y": 400,
+          "x": 888,
+          "y": 334,
           "rotation": 0,
-          "scale": 1
+          "scale": 0
         }
       ]
     }
+    
+
   ]
 }
