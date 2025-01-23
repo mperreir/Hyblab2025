@@ -45,13 +45,14 @@ async function addAnswer(answers, multipleChoices=false) {
     const answersContainer = document.createElement('div');
     answersContainer.id = 'answers-container';
 
-    answers.forEach(answer => {
+    for(let key in answers) {
         const answerElement = document.createElement('div');
         answerElement.classList.add('answer');
-        answerElement.dataset.answer = answer;
-        answerElement.textContent = answer;
+        answerElement.dataset.answer = answers[key];
+        answerElement.textContent = answers[key];
         answersContainer.appendChild(answerElement);
-    });
+    }
+
 
     const confirmButton = document.createElement('button');
     confirmButton.id = 'confirm-button';
@@ -104,7 +105,12 @@ async function addAnswer(answers, multipleChoices=false) {
             addMessage({ text: answer, type: 'sent', timestamp: new Date().toISOString() });
           }
 
-          resolve(selectedAnswer);
+          // Find keys for all target values
+          const answerKeys = selectedAnswer.map(value => 
+            Object.keys(answers).find(key => answers[key] === value)
+          );
+
+          resolve(answerKeys);
         }
       });
     });

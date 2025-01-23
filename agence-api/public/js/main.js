@@ -13,6 +13,9 @@ const initSlide2 = async function () {
     let response = await fetch('data/fr_.json');
     const texts = await response.json();
 
+
+    // await histoire(texts.tech);
+
     // Load the intro story
     const userName = await loadIntroStory(texts.introduction.general);
 
@@ -24,13 +27,13 @@ const initSlide2 = async function () {
 
     switch (secteur) {
         case 0:
-            await histoireAgro(texts.agro);
+            await histoire(texts.agro);
             break;
         case 1:
-            histoireTech();
+            await histoire(texts.tech);
             break;
         case 2:
-            histoireArti();
+            await histoire(texts.arti);
             break;
     };
 };
@@ -156,7 +159,10 @@ async function loadIntroStory(introStory) {
   }
   
 
-async function histoireAgro(texts){
+async function histoire(texts){
+
+    let choices = [];
+
     await displayMessages(texts.introduction);
 
     for (let i = 0; i < texts.questions.length; i++) {
@@ -171,5 +177,7 @@ async function histoireAgro(texts){
            }
         }
         let answer = await addAnswer(texts.reponses[i], multipleChoices);
+        choices = [...choices, ...answer];
+        console.log(choices);
     }
 }
