@@ -4,22 +4,27 @@ const express = require( 'express' );
 const app = express();
 const path = require('path');
 
-const ip = `localhost:8080/mediacites`
+const ip = `http://ocalhost:8080/mediacites`
 
-//app.use('/public', express.static('public'));
-
-// Sample endpoint that sends the partner's name
 app.get(`/categories`, function ( req, res ) {
 
-    const filename = 'public/data/dummy.json'
-    // Send it as a JSON object
-    res.sendFile(filename);
+    fetch(`${ip}/data/articles.json`)
+    .then(response => response.json())
+    .then(articles => {
+        const categories = articles.map(articles => articles.id)
+        if (categories) {
+            res.send(categories);
+        } else {
+            res.status(404).send({ error: 'Article not found' });
+        }
+    })
+    .catch(error => { console.error('Error fetching JSON:', error)});
 } );
 
 app.get(`/articles/:category_name`, function ( req, res ) {
     const category_name = req.params.category_name;
 
-    fetch(`http://${ip}/data/articles.json`)
+    fetch(`${ip}/data/articles.json`)
     .then(response => response.json())
     .then(articles => {
         const article = articles.find(article => article.id === category_name);
@@ -30,8 +35,6 @@ app.get(`/articles/:category_name`, function ( req, res ) {
         }
     })
     .catch(error => { console.error('Error fetching JSON:', error)});
-
-
 } );
 
 app.get(`/articles/:category_name/kpis`, function ( req, res ) {
