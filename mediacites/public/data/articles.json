@@ -1,6 +1,7 @@
 [
     {
-        "name": "Économie EXEMPLE FICTIF",
+        "id": "economie",
+        "name": "Economie EXEMPLE FICTIF",
         "text": "Cet article traite de l'économie locale et de ses impacts.",
         "kpis": [
             {
@@ -40,6 +41,7 @@
         ]
     },
     {
+        "id": "sante",
         "name": "Santé EXEMPLE FICTIF",
         "text": "Cet article aborde les récentes avancées dans le domaine de la santé.",
         "kpis": [

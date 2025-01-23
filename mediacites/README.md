@@ -32,7 +32,8 @@ Si votre projet nécessite des instructions spécifiques pour son déploiement, 
 
 ## Organisation des JSONs
 ### `articles.json`
-* `name` : nom de catégorie
+* `id` : id de l'article
+* `name` : titre de la catégorie
 * `text` : texte de l’article 
 * `kpis` : 
     * `id` : identifiant du KPI (0 ou 1)
