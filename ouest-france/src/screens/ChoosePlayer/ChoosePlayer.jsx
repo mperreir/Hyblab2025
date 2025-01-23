@@ -16,7 +16,7 @@ const ChoosePlayer = ({onSelectPlayer}) => {
               className='choice left'>
               <img src={"./pavon.jpg"} alt={"Pavon"} />
               <h1>Matthieu PAVON</h1>
-              <div className="content sipaui">
+              <div className="content">
                   <h2>La Fusée</h2>
                   <p>Matthieu Pavon est un golfeur professionnel français évoluant
                       sur le circuit européen, connu pour sa puissance au drive et
@@ -25,8 +25,7 @@ const ChoosePlayer = ({onSelectPlayer}) => {
                   <button onClick={() => {
                       onSelectPlayer("player1")
                   }}
-                          className="su-button su-primary su-action-icon su-negative">Quizz <i
-                      className="su-icon">déplier</i></button>
+                          className="contained">Quiz</button>
 
               </div>
           </div>
@@ -36,7 +35,7 @@ const ChoosePlayer = ({onSelectPlayer}) => {
               className='choice right'>
               <img src={"./boutier.jpg"} alt={"boutier"}/>
               <h1>Celine BOUTIER</h1>
-              <div className="content sipaui">
+              <div className="content">
                   <h2>La Machine</h2>
                   <p>Golfeuse française de renom et multiple championne
                       sur le circuit LPGA Celine est une figure emblématique
@@ -45,8 +44,7 @@ const ChoosePlayer = ({onSelectPlayer}) => {
                   <button onClick={() => {
                       onSelectPlayer("player2")
                   }}
-                          className="su-button su-primary su-action-icon su-negative">Quizz <i
-                      className="su-icon">déplier</i></button>
+                          className="contained">Quiz</button>
 
               </div>
           </div>
