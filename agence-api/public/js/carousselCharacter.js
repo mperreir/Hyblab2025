@@ -122,8 +122,7 @@ class Carousel {
   async getCharacter() {
     return new Promise((resolve) => {
         this.selectButton.addEventListener('click', () => {
-            this.selectButton.textContent = "Choisi !";
-            this.selectButton.disabled = true;
+            this.selectButton.remove();
             resolve(this.activeIndex);
         });
     });
