@@ -14,17 +14,13 @@ const initSlide2 = async function () {
     const texts = await response.json();
 
     // Load the intro story
-    const userName = await loadIntroStory(texts);
+    const userName = await loadIntroStory(texts.introduction.general);
 
     // Select the character
     const character = await selectCharacter(texts.introduction.secteurs);
-    addMessage({ text: "Vous avez choisi " + character, type: "received", timestamp: new Date().toISOString() });
 
     // Select the character
-    const secteur = await selectSecteur(texts.introduction.secteurs);
-    addMessage({ text: "Vous avez choisi " + secteur, type: "received", timestamp: new Date().toISOString() });
-    
-    
+    const secteur = await selectSecteur(texts.introduction.secteurs);    
 };
 
 function wait(ms) {
@@ -56,6 +52,15 @@ function waitForNameInput() {
     });
   }
 
+function waitForUserTouch(){
+    return new Promise((resolve) => {
+        const messageInput = document.getElementById('chatBox');
+        messageInput.addEventListener('click', () => {
+            resolve();
+        });
+    });
+}
+
 
 async function getUserName() {
     const messageInput = document.getElementById('messageInput');
@@ -74,19 +79,27 @@ async function getUserName() {
 async function loadIntroStory(introStory) {
   document.getElementById('chat-input').style.visibility = 'hidden';
 
-    let i = 1;
-    for (const key in introStory) {
-        await wait(100); // Wait for 1 second
-        addMessage({ text: introStory[key], type: "received", timestamp: new Date().toISOString() });
+    for (const key in introStory.avant_nom) {
+        addMessage({ text: introStory.avant_nom[key], type: "received", timestamp: new Date().toISOString() });
         scrollToBottom();
-        i++;
+        await waitForUserTouch();
     }
 
     const userName = await getUserName();
-
     addMessage({ text: userName, type: "sent", timestamp: new Date().toISOString() });
-    addMessage({ text: "Coucou " + userName, type: "received", timestamp: new Date().toISOString() });
 
+    let i=0;
+    for (const key in introStory.apres_nom) {
+        if (i === 0) {
+            i++;
+            addMessage({ text: introStory.apres_nom[key].replace("{nom}", userName), type: "received", timestamp: new Date().toISOString() });
+        } else {
+            addMessage({ text: introStory.apres_nom[key], type: "received", timestamp: new Date().toISOString() });
+
+        }
+        scrollToBottom();
+        await waitForUserTouch();
+    }
 
     return userName;
 }
@@ -97,7 +110,7 @@ async function loadIntroStory(introStory) {
         { src: 'img/perso2.png', alt: '2', index: 1, active: true },
         { src: 'img/perso3.png', alt: '3', index: 2 }
       ];
-      const carousel = new Carousel(images, textsPresentationPersos);
+      const carousel = new Carousel(images, ['text1', 'text2', 'text3']);
       await carousel.createCarousel();
       return await carousel.getCharacter();
   }
@@ -108,7 +121,7 @@ async function loadIntroStory(introStory) {
         { src: 'img/perso2.png', alt: '2', index: 1, active: true },
         { src: 'img/perso3.png', alt: '3', index: 2 }
       ];
-      const carousel = new Carousel(images, textsPresentationPersos);
+      const carousel = new Carousel(images, [textsPresentationPersos.agro, textsPresentationPersos.tech, textsPresentationPersos.arti]);
       await carousel.createCarousel();
       return await carousel.getCharacter();
   }

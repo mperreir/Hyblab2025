@@ -4,7 +4,7 @@ class Carousel {
   constructor(images, presentationPersoTexts) {
     this.activeIndex = 1;
     this.images = images;
-    this.presentationPerso = [presentationPersoTexts.agro, presentationPersoTexts.tech, presentationPersoTexts.arti];
+    this.presentationPerso = presentationPersoTexts;
     this.selectButton = document.createElement('button');
     this.carousel = document.createElement('div');
     this.textZone = document.createElement('p');
