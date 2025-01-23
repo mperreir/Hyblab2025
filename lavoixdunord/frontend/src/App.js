@@ -9,7 +9,6 @@ import Etape from "./EtapePage/Etape";
 import RulesPage from "./pageRegles/pageRegles"
 import homePage from "./homePage/homePage"
 import page0 from "./page0/page0"
-import credit from "./creditPage/creditPage"
 
 
 function App() {
