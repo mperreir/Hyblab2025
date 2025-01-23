@@ -6,6 +6,7 @@
           "name": "Nucléaire",
           "percentage": 65,
           "description": "Source clé du mix énergétique, utilisant 56 réacteurs pour une production stable et décarbonée. Elle repose sur des métaux lourds comme l'uranium, mais la gestion des déchets radioactifs reste un défi.",
+          "text":"Tu fais partie des pays les plus nucléarisés au monde ! Avec 56 réacteurs, l’énergie nucléaire alimente tes réseaux électriques en continu et constitue une source clé de ton mix énergétique. Décarbonée et sans émission de GES, elle repose sur des métaux lourds comme l’uranium. Mais attention : la gestion des déchets radioactifs reste un défi écologique et politique de taille pour l’avenir !",
           "carbon_emissions": {
             "value": 0,
             "unit": "kg CO2/kWh"
