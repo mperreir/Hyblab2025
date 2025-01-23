@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from "react";
-import yaml from "js-yaml"; // Pour lire le fichier YAML
+import { useNavigate } from "react-router-dom"; // Importer useNavigate
+import yaml from "js-yaml";
 import "./QuestionPage.css";
 
 const QuestionPage = () => {
   const [questions, setQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedOptionIndex, setSelectedOptionIndex] = useState(null);
-  const [validated, setValidated] = useState(false); // Indique si la réponse a été validée
+  const [validated, setValidated] = useState(false);
   const [showHintText, setShowHintText] = useState(false);
   const [showHintImage, setShowHintImage] = useState(false);
+
+  const navigate = useNavigate(); // Initialisation de useNavigate
 
   useEffect(() => {
     fetch("data/questions.yaml")
@@ -26,22 +29,24 @@ const QuestionPage = () => {
 
   const handleNext = () => {
     if (!validated) {
-      // Si la réponse n'est pas encore validée, valider la réponse
+      // Valider la réponse
       setValidated(true);
     } else {
-      // Passer à la question suivante
+      // Passer à la question suivante ou rediriger
       if (currentQuestionIndex < questions.length - 1) {
         setCurrentQuestionIndex(currentQuestionIndex + 1);
-        setSelectedOptionIndex(null); // Réinitialiser la sélection
-        setValidated(false); // Réinitialiser l'état de validation
+        setSelectedOptionIndex(null);
+        setValidated(false);
         setShowHintText(false);
         setShowHintImage(false);
+      } else {
+        // Redirection vers la page principale
+        navigate("/");
       }
     }
   };
 
   const handleOptionClick = (index) => {
-    // Permettre de modifier la réponse tant qu'elle n'est pas validée
     setSelectedOptionIndex(index);
   };
 
@@ -60,26 +65,27 @@ const QuestionPage = () => {
           {currentQuestion.options.map((option, index) => (
             <button
               key={index}
-              className={`answer-btn ${selectedOptionIndex === index ? "selected" : "" // Surbrillance immédiate
-                } ${validated
+              className={`answer-btn ${
+                selectedOptionIndex === index ? "selected" : ""
+              } ${
+                validated
                   ? index === selectedOptionIndex
                     ? option.correct
                       ? "correct"
                       : "wrong"
                     : option.correct
-                      ? "correct"
-                      : ""
+                    ? "correct"
+                    : ""
                   : ""
-                }`}
+              }`}
               onClick={() => handleOptionClick(index)}
-              disabled={validated} // Désactiver après validation
+              disabled={validated}
             >
               {option.text}
             </button>
           ))}
         </div>
 
-        {/* Lien global vers l'article */}
         {currentQuestion.hints.link && (
           <p className="article-link">
             <a
@@ -94,7 +100,7 @@ const QuestionPage = () => {
         <button
           className="next-btn"
           onClick={handleNext}
-          disabled={selectedOptionIndex === null} // Désactiver si aucune option n'est sélectionnée
+          disabled={selectedOptionIndex === null}
         >
           {validated
             ? currentQuestionIndex < questions.length - 1
@@ -103,7 +109,6 @@ const QuestionPage = () => {
             : "VALIDER"}
         </button>
 
-        {/* Indices */}
         <div className="hints-container">
           <div className="hint-item">
             <button className="toggle-btn" onClick={() => setShowHintText(!showHintText)}>
@@ -117,7 +122,7 @@ const QuestionPage = () => {
             <button
               className={`toggle-btn ${!showHintText ? "disabled" : ""}`}
               onClick={() => setShowHintImage(!showHintImage)}
-              disabled={!showHintText} // Désactiver le bouton si le 1ᵉʳ indice n'est pas ouvert
+              disabled={!showHintText}
             >
               {showHintImage ? "−" : "+"}
             </button>
