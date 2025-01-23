@@ -21,11 +21,10 @@ const initSlide2 = async function () {
 
     // Select the character
     const secteur = await selectSecteur(texts.introduction.secteurs);
-    console.log(secteur);
 
     switch (secteur) {
         case 0:
-            histoireAgro();
+            await histoireAgro(texts.agro);
             break;
         case 1:
             histoireTech();
@@ -88,18 +87,23 @@ async function getUserName() {
     chatInput.style.visibility='hidden';
     return userName;
 }
+
+async function displayMessages(message) {
+    for (const key in message) {
+        addMessage({ text: message[key], type: "received", timestamp: new Date().toISOString() });
+        scrollToBottom();
+        await waitForUserTouch();
+    }
+}
+
   
 async function loadIntroStory(introStory) {
   document.getElementById('chat-input').style.visibility = 'hidden';
 
-    for (const key in introStory.avant_nom) {
-        addMessage({ text: introStory.avant_nom[key], type: "received", timestamp: new Date().toISOString() });
-        scrollToBottom();
-        await waitForUserTouch();
-    }
+    await displayMessages(introStory.avant_nom);
 
     const userName = await getUserName();
-    addMessage({ text: userName, type: "sent", timestamp: new Date().toISOString() });
+    await addMessage({ text: userName, type: "sent", timestamp: new Date().toISOString() });
 
     let i=0;
     for (const key in introStory.apres_nom) {
@@ -139,3 +143,12 @@ async function loadIntroStory(introStory) {
       return await carousel.getCharacter();
   }
   
+
+async function histoireAgro(texts){
+    await displayMessages(texts.introduction);
+
+    for (let i = 0; i < texts.questions.length; i++) {
+        await displayMessages(texts.questions[i]);
+
+    }
+}
