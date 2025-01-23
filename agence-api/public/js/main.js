@@ -16,7 +16,9 @@ const initSlide2 = async function () {
     const userName = await loadIntroStory(introStory);
 
     // Select the character
-    const character = selectCharacter();
+    const character = await selectCharacter();
+    addMessage({ text: "Vous avez choisi " + character, type: "received", timestamp: new Date().toISOString() });
+    
     
 };
 
@@ -86,8 +88,8 @@ async function loadIntroStory(introStory) {
 
   async function selectCharacter() {
     // Call the function to create and add the carousel
-    createCarousel();
+    await createCarousel();
     scrollToBottom();
-
+    return getCharacter();
   }
   
