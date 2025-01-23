@@ -107,6 +107,7 @@ class Carousel {
 
   handleGesture(startX, endX) {
     const swipeDistance = endX - startX;
+    if (swipeDistance < -300) return;
     if (swipeDistance > 50) {
       // Swipe Right
       this.activeIndex = (this.activeIndex - 1 + this.images.length) % this.images.length;
