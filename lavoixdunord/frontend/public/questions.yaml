@@ -1,0 +1,467 @@
+game:
+  levels:
+    - id: easy
+      stages:
+        - number: 1
+          questions:
+            - id: 1
+              category: Histoire
+              text: "Quand a eu lieu le dernier départ du Tour de France à Lille ?"
+              options:
+                - text: "1980"
+                  correct: false
+                - text: "1994"
+                  correct: true
+                - text: "2004"
+                  correct: false
+              hints:
+                text: "C'était un été marqué par une grande chaleur, un prologue de 7,2 km dans les rues de Lille, et un million de spectateurs enthousiastes." 
+                image: "images/Etape 1/lille vue aerienne 1.jpg"
+                link: "https://www.lavoixdunord.fr/art/region/en-1994-le-tour-de-france-partait-de-lille-ia19b0n2257551"
+
+            - id: 2
+              category: Vie locale
+              text: "Quel événement populaire transforme les rues de Lille en un immense marché à ciel ouvert chaque année en septembre ?"
+              options:
+                - text: "La Braderie"
+                  correct: true
+                - text: "La foire de Gayant"
+                  correct: false
+                - text: "Le carnaval"
+                  correct: false
+              hints:
+                text: "Cet événement attire chaque année des milliers de visiteurs venus chiner et déguster les célèbres moules-frites sur la Grand-Place." 
+                image: "images/Etape 1/lille braderie.jpg"
+                link: "https://www.lavoixdunord.fr/1502391/article/2024-09-16/braderie-de-lille-nos-tops-et-nos-flops-de-cette-edition-2024"
+
+            - id: 3
+              category: Histoire
+              text: "Quel célèbre général et homme d’État français est né à Lille en 1890 ?"
+              options:
+                - text: "Georges Clémenceau"
+                  correct: false
+                - text: "René Coty"
+                  correct: false
+                - text: "Charles de Gaulle"
+                  correct: true
+              hints:
+                text: "Ce général, père de la Ve République, a marqué l’histoire par son rôle pendant la Seconde Guerre mondiale et son célèbre appel du 18 juin." 
+                image: "images/Etape 1/LILLE maison général de gaulle.jpg"
+                link: "https://www.lavoixdunord.fr/1536232/article/2024-12-21/la-maison-natale-de-charles-de-gaulle-attend-avec-impatience-les-pieces-acquises"
+
+            - id: 4
+              category: Culture musicale
+              text: "Quel chanteur, originaire du Nord, a popularisé la chanson Quand la mer monte et choisi un nom de scène en hommage à la ville de Godewaersvelde ?"
+              options:
+                - text: "Raoul de Godewarsvelde"
+                  correct: true
+                - text: "Francis Delbarre"
+                  correct: false
+                - text: "Alain Bashung"
+                  correct: false
+              hints:
+                text: "Son nom de scène rend hommage à un village des Flandres et ses chansons évoquent souvent les paysages et l’âme du Nord." 
+                image: "images/Etape 1/Raouldegodeswervelde.jpg"
+                link: "https://www.lavoixdunord.fr/147665/article/2017-04-13/il-y-quarante-ans-disparaissait-raoul-de-godewarsvelde"
+
+            - id: 5
+              category: Histoire
+              text: "Combien de noms de soldats morts pendant la première guerre mondiale sont-ils inscrits sur l’anneau de la mémoire à Notre-Dame-de-Lorette ?"
+              options:
+                - text: "Moins de 400 000"
+                  correct: false
+                - text: "Plus de  250 000"
+                  correct: false
+                - text: "Plus de 500 000"
+                  correct: true
+              hints:
+                text: "Ce mémorial unique rassemble les noms de soldats de 40 nationalités différentes, gravés en hommage à leur sacrifice pendant la Grande Guerre." 
+                image: "images/Etape 1/ND Lorette anneau de la mémoire.jpg"
+                link: "https://www.lavoixdunord.fr/1519083/article/2024-11-03/l-anneau-de-la-memoire-dix-ans-tout-savoir-en-quatre-chiffres"
+
+        - number: 2
+          questions:
+            - id: 1
+              category: Culture musicale
+              text: "Le 6 juillet, Arras accueillera le Tour de France mais un autre événement majeur de la ville aura lieu au même moment, lequel ?"
+              options:
+                - text: "Un marathon"
+                  correct: false
+                - text: "Le Main Square Festival"
+                  correct: true
+                - text: "Le championnat de France des friteries"
+                  correct: false
+              hints:
+                text: "L'événement est musical, attirant de nombreux amateurs de concerts dans un cadre unique, en plein cœur de la ville." 
+                image: "images/Etape 2/Arras main square festival.jpg"
+                link: "https://www.lavoixdunord.fr/1485899/article/2024-07-22/le-dimanche-6-juillet-2025-ca-sera-tour-de-france-et-main-square-arras"
+
+            - id: 2
+              category: Littérature
+              text: "Quel roman de Victor Hugo situe une partie de son récit à Montreuil-sur-Mer, en s’inspirant de son séjour dans la ville ?"
+              options:
+                - text: "Les Misérables"
+                  correct: true
+                - text: "Les travailleurs de la mer"
+                  correct: false
+                - text: "Fantine"
+                  correct: false
+              hints:
+                text: "Ce roman est une réflexion sur la condition humaine, inspirée par un séjour de l’auteur dans la région." 
+                image: "images/Etape 2/montreuil Les Misérables.jpg"
+                link: "https://www.lavoixdunord.fr/1147678/article/2022-03-06/sur-les-traces-de-victor-hugo-montreuil-sur-mer-15"
+
+            - id: 3
+              category: Vie locale
+              text: "Quelle espèce de poisson, autrefois très pêchée à Étaples, a donné son nom à une célèbre fête locale ?"
+              options:
+                - text: "Le Hareng"
+                  correct: true
+                - text: "Le bar"
+                  correct: false
+                - text: "La lotte"
+                  correct: false
+              hints:
+                text: "Ce n’est pas un poisson que l’on associe à un luxe, mais plutôt à une tradition maritime qui a marqué la culture locale." 
+                image: "images/Etape 2/etaples harengs.jpg"
+                link: "https://www.lavoixdunord.fr/1523633/article/2024-11-16/retrouvez-les-plus-belles-images-du-hareng-roi-la-fete-bat-son-plein-tout-le"
+
+            - id: 4
+              category: Vie locale
+              text: "Quel célèbre aquarium situé à Boulogne-sur-Mer est l’un des plus grands d’Europe et attire chaque année des milliers de visiteurs ?"
+              options:
+                - text: "Aqualud"
+                  correct: false
+                - text: "Nausicaa"
+                  correct: true
+                - text: "Marineland"
+                  correct: false
+              hints:
+                text: "Ce n'est pas un parc d'attractions centré sur le divertissement pur, mais un lieu où l'éducation et la découverte de la mer sont au cœur de l’expérience." 
+                image: "images/Etape 2/BOULOGNE Nausicaa.jpg"
+                link: "https://www.lavoixdunord.fr/1176574/article/2022-05-08/avec-sa-nouvelle-experience-nausicaa-veut-reinventer-l-aquarium-du-futur"
+
+            - id: 5
+              category: Sport 
+              text: "Lequel de ces trois footballeurs célèbres est né à Boulogne-sur-Mer ?"
+              options:
+                - text: "Ngolo Kanté"
+                  correct: false
+                - text: "Franck Ribéry"
+                  correct: true
+                - text: "Benjamin Bourigeaud"
+                  correct: false
+              hints:
+                text: "Il n’a pas remporté le ballon d’or avec une équipe de Bundesliga, alors qu’il le méritait." 
+                image: "images/Etape 2/Boulogne ribéry.jpg"
+                link: "https://www.lavoixdunord.fr/1238096/article/2022-10-07/football-franck-ribery-va-mettre-un-terme-sa-carriere"
+
+        - number: 3
+          questions:
+            - id: 1
+              category: Vie locale
+              text: "Quel fleuve traverse Valenciennes, jouant un rôle clé dans son développement industriel ?"
+              options:
+                - text: "La Sambre"
+                  correct: false
+                - text: "La Canche"
+                  correct: false
+                - text: "L’Escaut"
+                  correct: true
+              hints:
+                text: "Ce fleuve traverse trois pays et relie Valenciennes à la Belgique et aux Pays-Bas. Il est parfois surnommé une autoroute fluviale internationale." 
+                image: "images/Etape 3/Valenciennes Escaut.jpg"
+                link: "https://www.lavoixdunord.fr/965136/article/2021-03-22/l-escaut-une-autoroute-fluviale-internationale"
+
+            - id: 2
+              category: Cuisine
+              text: "Quelle spécialité culinaire a rendu célèbre Orchies et son industrie locale, elle est souvent utilisée pour aromatiser le café ou créer des desserts ?"
+              options:
+                - text: "La Chicorée"
+                  correct: true
+                - text: "La cassonade"
+                  correct: false
+                - text: "Le spéculos"
+                  correct: false
+              hints:
+                text: "Cette spécialité, souvent associée au café, est un ingrédient incontournable des recettes du Nord." 
+                image: "images/Etape 3/ORCHIES CHICOREE.jpg"
+                link: "https://www.lavoixdunord.fr/1451323/article/2024-04-12/longtemps-boudee-la-chicoree-fait-son-grand-retour-dans-les-champs-d-orchies"
+
+            - id: 3
+              category: Sport
+              text: "La ville d’Isbergues est célèbre pour son grand-prix cyclisme, parmi tous ces champions quel est celui qui n’a jamais remporté cette course ?"
+              options:
+                - text: "Durand"
+                  correct: false
+                - text: "Merckx"
+                  correct: true
+                - text: "Gilbert"
+                  correct: false
+              hints:
+                text: "Ce champion, bien que légendaire dans le monde du cyclisme, n’a jamais inscrit son nom au palmarès d’Isbergues. Concentrez-vous sur les noms les plus mythiques." 
+                image: "images/Etape 3/isbergues grand prix.jpg"
+                link: "https://www.lavoixdunord.fr/tags/grand-prix-d-isbergues"
+
+            - id: 4
+              category: Culture
+              text: "Quel film à succès de Dany Boon a contribué à la renommée nationale et internationale de Bergues ?"
+              options:
+                - text: "Bienvenue chez les ch’tis"
+                  correct: true
+                - text: "Rien à déclarer"
+                  correct: false
+                - text: "La ch’tite famille"
+                  correct: false
+              hints:
+                text: "Ce film a marqué l’histoire du cinéma français avec un succès phénoménal." 
+                image: "images/Etape 3/bergues dany boon.jpg"
+                link: "https://www.lavoixdunord.fr/165939/article/2017-05-20/bergues-l-effet-ch-tis-decroit-dix-ans-apres-le-tournage"
+
+            - id: 5
+              category: Histoire
+              text: "En mai-juin 1940, l’évacuation des troupes allées de Dunkerque vers l’Angleterre a été une des dates marquantes de la seconde guerre mondiale, quelle était le nom de code de cette événement ?"
+              options:
+                - text: "Opération Dynamo"
+                  correct: true
+                - text: "Opération Overlord"
+                  correct: false
+                - text: "Opération Dunkerk"
+                  correct: false
+              hints:
+                text: "L'opération a été menée pour sauver plus de 338 000 soldats encerclés à Dunkerque, grâce à des rotations de navires entre la France et l'Angleterre." 
+                image: "images/Etape 3/dunkerque opération dynamo.jpg"
+                link: "https://www.lavoixdunord.fr/1539401/article/2025-01-02/operation-dynamo-les-commemorations-de-la-bataille-d-uxem-debuteront-partir-au"
+
+    - id: hard
+      stages:
+        - number: 1
+          questions:
+            - id: 1
+              category: Histoire
+              text: "Lille a été rattachée à la France sous le règne de quel roi ?"
+              options:
+                - text: "Louis XIV(en 1667)"
+                  correct: true
+                - text: "Louis XV"
+                  correct: false
+                - text: "Louis XVI"
+                  correct: false
+              hints:
+                text: "Ce roi, surnommé le 'Roi Soleil', a marqué l’histoire par son règne de 72 ans, le plus long de l’histoire française." 
+                image: "images/Etape 1/LILLE citadelle.jpg"
+                link: "https://www.lavoixdunord.fr/199825/article/2017-08-02/il-y-350-ans-le-27-aout-1667-lille-etait-annexee-la-france"
+
+            - id: 2
+              category: Sport/Histoire
+              text: "Quel symbole minier est représenté dans le blason du RC Lens, rappelant son passé industriel ?"
+              options:
+                - text: "Une gaillette"
+                  correct: false
+                - text: "Une lampe de mineur"
+                  correct: true
+                - text: "une pioche"
+                  correct: false
+              hints:
+                text: "Cet objet était essentiel pour éclairer les profondeurs sombres des galeries minières, symbole fort de la vie ouvrière de la région." 
+                image: "images/Etape 1/LENS LOGO.jpg"
+                link: "https://www.lavoixdunord.fr/1261347/article/2022-12-01/lens-un-record-de-plus-de-400-lampes-de-mineurs-exposees-bollaert-pour-la-sainte"
+
+            - id: 3
+              category: Patrimoine architectural
+              text: "Comment s’appelle le monument emblématique de Béthune, classé au patrimoine mondial de l’UNESCO, qui surplombe la Grand-Place ?"
+              options:
+                - text: "Le Beffroi"
+                  correct: true
+                - text: "La cathédrale"
+                  correct: false
+                - text: "Le Grand Moulin"
+                  correct: false
+              hints:
+                text: "Ce monument, typique des villes du Nord, est un symbole de liberté et d’autonomie communale, offrant une vue imprenable sur la Grand-Place." 
+                image: "images/Etape 1/bethune beffroi.jpg"
+                link: "https://www.lavoixdunord.fr/1471325/article/2024-06-10/le-beffroi-de-bethune-connait-ses-mensurations-officielles-il-fait-30-65-m-de"
+
+            - id: 4
+              category: Patrimoine architectural
+              text: "Quel prix prestigieux Cassel a-t-elle remporté en 2018, grâce à son charme et son patrimoine exceptionnel ?"
+              options:
+                - text: "Plus beau marché"
+                  correct: false
+                - text: "Meilleure friterie"
+                  correct: false
+                - text: "Plus beau village"
+                  correct: true
+              hints:
+                text: "Ce n'est pas un prix gastronomique ni celui qui honore un commerce particulier, mais plutôt celui d'un lieu d'exception" 
+                image: "images/Etape 1/Cassel.jpg"
+                link: "https://www.lavoixdunord.fr/1484945/article/2024-07-19/perche-sur-un-mont-cassel-au-sommet-de-la-flandre"
+
+            - id: 5
+              category: Litterature/Personnalités
+              text: "Quel écrivain français, auteur de Mémoires d’Hadrien, a passé une partie de son enfance au Mont Noir ?"
+              options:
+                - text: "Marguerite Yourcenar"                     
+                  correct: true
+                - text: "Françoise Sagan"
+                  correct: false
+                - text: "Amélie Nothomb"
+                  correct: false
+              hints:
+                text: "Ce n’est pas une autrice du XXe siècle ayant écrit sur l'amour ou la société, mais une figure ayant exploré l’histoire et les mémoires d’un autre temps." 
+                image: "images/Etape 1/Villa Yourcenar.jpg"
+                link: "https://www.lavoixdunord.fr/136083/article/2017-03-21/pour-ses-20-ans-la-villa-yourcenar-souhaite-elargir-son-public"
+
+        - number: 2
+          questions:
+            - id: 1
+              category: Histoire
+              text: "Douai a longtemps été une ville sous domination étrangère avant de devenir française. À quel royaume appartenait-elle avant le traité des Pyrénées de 1659 ?"
+              options:
+                - text: "Le royaume de Hollande"         
+                  correct: false
+                - text: "Le royaume d’Espagne"
+                  correct: true
+                - text: "La Prusse Histoire"
+                  correct: false
+              hints:
+                text: "Ce royaume est aujourd'hui une nation avec une histoire maritime et une empreinte internationale." 
+                image: "images/Etape 2/DOUAI vue aérienne.jpg"
+                link: "https://www.lavoixdunord.fr/169436/article/2017-05-28/et-douai-devint-francaise-le-temps-d-un-siege-eclair"
+
+            - id: 2
+              category: Patrimoine artistique
+              text: "Qui sont les célèbres Monsieur et Madame Gayant de Douai ?"
+              options:
+                - text: "Les fondateurs de la ville"     
+                  correct: false
+                - text: "Des explorateurs"
+                  correct: false
+                - text: "Des géants"
+                  correct: true
+              hints:
+                text: "Leur présence dans les fêtes populaires de Douai est un spectacle qui attire l'attention de tous, mais leur histoire est bien plus ancienne." 
+                image: "images/Etape 2/DOUAI Gayant.jpg"
+                link: "https://www.lavoixdunord.fr/1470657/article/2024-06-08/les-sorties-exceptionnelles-des-gayant-ont-souvent-ete-geantes-comme-bientot"
+
+            - id: 3
+              category: Histoire
+              text: "Quelles ruines emblématiques dominent le paysage du Mont-Saint-Éloi et témoignent de son passé religieux ?"
+              options:
+                - text: "Les deux Tours" 
+                  correct: false
+                - text: "Le théâtre antique"
+                  correct: false
+                - text: "Les tours de l’ancienne Abbaye"
+                  correct: true
+              hints:
+                text: "Le lieu reste impressionnant, même dans sa ruine, et fait partie du patrimoine historique qui domine le paysage environnant." 
+                image: "images/Etape 2/tour ancienne abbaye.jpg"
+                link: "https://www.lavoixdunord.fr/1526413/article/2024-11-24/les-abords-de-l-abbaye-du-mont-saint-eloi-reamenages-pour-mettre-en-valeur-le"
+
+            - id: 4
+              category: Géographie
+              text: "Quel site naturel situé à Saint-Étienne-au-Mont est un espace protégé, connu pour ses dunes et sa biodiversité exceptionnelle ?"
+              options:
+                - text: "La Dune d’Écault"                    
+                  correct: true
+                - text: "La dune des Flandres"
+                  correct: false
+                - text: "La dune du fort"
+                  correct: false
+              hints:
+                text: "Ce site est prisé pour sa beauté naturelle, mais surtout pour la diversité de sa faune et de sa flore, qui en fait un espace unique." 
+                image: "images/Etape 2/dune d'ecault.jpg"
+                link: "https://www.lavoixdunord.fr/1418169/article/2024-01-12/saint-etienne-au-mont-le-sol-d-un-sentier-s-effondre-dans-les-dunes-d-ecault"
+
+            - id: 5
+              category: Histoire
+              text: "Quel empereur français a rassemblé une armée à Boulogne-sur-Mer en 1804 pour préparer une invasion de l’Angleterre ?"
+              options:
+                - text: "Napoléon Bonaparte"               
+                  correct: true
+                - text: "Charlemagne"
+                  correct: false
+                - text: "Napoléon III"
+                  correct: false
+              hints:
+                text: "Cet empereur est connu pour ses grandes ambitions militaires et ses nombreuses campagnes à travers l'Europe." 
+                image: "images/Etape 2/boulogne napoleon.jpg"
+                link: "https://www.lavoixdunord.fr/1535620/article/2024-12-19/napoleon-passe-par-boulogne-sur-mer-pour-envahir-france-5"
+
+        - number: 3
+          questions:
+            - id: 1
+              category: Sport
+              text: "Quel grand champion cycliste français est né dans le Valenciennois ?"
+              options:
+                - text: "Jean Stablinski"        
+                  correct: true
+                - text: "Jacques Anquetil"
+                  correct: false
+                - text: "Louison Bobet"
+                  correct: false
+              hints:
+                text: "Ce champion, né dans le Valenciennois, est aussi connu pour sa contribution à la découverte d'un lieu mythique de Paris - Roubaix" 
+                image: "images/Etape 3/Jean Stablinski.jpg"
+                link: "https://www.lavoixdunord.fr/1352441/article/2023-07-14/celia-sa-petite-fille-est-sur-le-tour-jean-stablinski-y-est-donc-un-peu-aussi"
+
+            - id: 2
+              category: Vie locale
+              text: "Quel bâtiment emblématique, inauguré en 1998, est aujourd’hui le centre de la vie culturelle de Valenciennes ?"
+              options:
+                - text: "Le phénix"     
+                  correct: true
+                - text: "Le Colisée"
+                  correct: false
+                - text: "La Luna"
+                  correct: false
+              hints:
+                text: "Ce bâtiment, dont le nom évoque une renaissance mythologique, est le cœur battant de la culture à Valenciennes depuis 1998." 
+                image: "images/Etape 3/Valenciennes phénix.jpg"
+                link: "https://www.lavoixdunord.fr/tags/le-phenix"
+
+            - id: 3
+              category: Patrimoine architectural
+              text: "Quel est cet édifice célèbre de la commune de Wormhout, également appelé « le géant des Flandres » ?"
+              options:
+                - text: "Un moulin"    
+                  correct: true
+                - text: "Un mont"
+                  correct: false
+                - text: "Une abbaye"
+                  correct: false
+              hints:
+                text: "Cet édifice emblématique, surnommé 'le géant des Flandres', est un témoin silencieux des traditions locales" 
+                image: "images/Etape 3/wormhout moulin.jpg"
+                link: "https://www.lavoixdunord.fr/art/region/wormhout-a-la-decouverte-du-moulin-deschodt-le-ia17b47628n2295217"
+
+            - id: 4
+              category: Histoire
+              text: "Dunkerque était réputé pour ses corsaires, quel est le plus célèbre corsaire dunkerquois ?"
+              options:
+                - text: "Jack Sparrow"                    
+                  correct: false
+                - text: "Jean Bart"
+                  correct: true
+                - text: "Surcouf"
+                  correct: false
+              hints:
+                text: "Ce corsaire légendaire de Dunkerque est devenu un symbole de la ville, célèbre pour sa bravoure et ses exploits maritimes." 
+                image: "images/Etape 3/dunkerque jean bart.jpg"
+                link: "https://www.lavoixdunord.fr/1521395/article/2024-11-10/il-y-trente-ans-jean-bart-s-envolait-dans-le-ciel-de-dunkerque-pour-reprendre"
+
+            - id: 5
+              category: Sport / Personnalités
+              text: "En 2001, le Tour de France partait de Dunkerque, qui avait remporté le prologue et porté le premier maillot jaune ?"
+              options:
+                - text: "Lance Arsmstrong"          
+                  correct: false
+                - text: "Jan Ullrich"
+                  correct: false
+                - text: "Christophe Moreau"
+                  correct: true
+              hints:
+                text: "Ce cycliste français a marqué le début du Tour 2001 en s’emparant du maillot jaune après un prologue mémorable." 
+                image: "images/Etape 3/dunkerque moreau.jpg"
+                link: "https://www.lavoixdunord.fr/1041548/article/2021-07-07/tour-de-france-il-y-20-ans-christophe-moreau-s-emparait-du-maillot-jaune"
