@@ -18,7 +18,11 @@ const ChoosePlayer = ({onSelectPlayer}) => {
               }}
               className='choice left'>
               <img src={"./pavon.jpg"} alt={"Pavon"} />
-              {/*Matthieu PAVON*/}
+              <h1>Matthieu PAVON</h1>
+              <p>Golfeuse française de renom et multiple championne
+                  sur le circuit LPGA Celine est une figure emblématique
+                  du golf féminin. Elle est reconnue pour sa précision,
+                  sa constance et son rôle de modèle dans le sport.</p>
           </div>
           <div
               onMouseEnter={() => setHovered('hv-right')}
@@ -28,7 +32,11 @@ const ChoosePlayer = ({onSelectPlayer}) => {
               }}
               className='choice right'>
               <img src={"./boutier.jpg"} alt={"boutier"}/>
-              {/*Celine BOUTIER*/}
+              <h1>Celine BOUTIER</h1>
+              <p>Golfeuse française de renom et multiple championne
+                  sur le circuit LPGA Celine est une figure emblématique
+                  du golf féminin. Elle est reconnue pour sa précision,
+                  sa constance et son rôle de modèle dans le sport.</p>
           </div>
       </section>
   );
