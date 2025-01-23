@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>Hyblab 2025</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/loadingio/loading.css@v2.0.0/dist/loading.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="js/slide1.js" defer></script>
+    <script src="js/slide2.js" defer></script>
+    <script src="js/index.js" defer></script>
+    <script src="js/screen2.js" defer></script>
+    <script src="js/page4.js" defer></script>
+</head>
+<body>
+    <!-- Le conteneur sert à vérouiller les proportions (aspect ratio) du contenu de la page (ici des slides) -->
+    <div id="container">
+        <!-- Le loader-->
+        <div id="loader">
+            <div id="loader-img" class="ld ld-spinner ld-clock"></div>
+            <p id="loader-text">Veuillez patienter...</p>
+        </div>
+        <div id="mySwiper" class="swiper">
+            <!-- le main est aussi le conteneur des différents slides (contenus à chaque fois dans des sections)-->
+            <main class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <section id="first-slide" class="swiper-slide">
+                    <header>
+                        <h1 id="titre">Welcome to</h1>
+                    </header>
+
+                    <img src="img/logo_hyblab.png" id="logo-hyblab" alt="logo hyblab">
+
+                    <footer>
+                        <p></p>
+                    </footer>
+                </section>
+
+                <!-- Slide 2 -->
+                <section id="second-slide" class="swiper-slide">
+                    <header>
+                        <h1>This was...</h1>
+                    </header>
+                    <img id="img-fini" alt="logo hyblab" src="hyblab_2025.png">
+                    <footer id="bandeau">
+                        <a href="http://www.hyblab.fr/"><img id="hyblab" src="logo_hyblab.png" alt="Hyblab DataSport"></a>
+                        <ul>
+                            <li><a href="http://www.agrnantes.fr"><img src="ecoles/logo_agr.png" alt="AGR école de l'image"></a></li>
+                            <li><a href="http://www.polytech.univ-nantes.fr/"><img src="ecoles/logo_polytech.png" alt="Polytech Nantes"></a></li>
+                            <li><a href="https://www.sciencespo-rennes.fr/"><img src="ecoles/logo_sciencespo.svg" alt="SciencesPo"></a></li>
+                        </ul>
+                    </footer>
+                </section>
+                
+                <!-- Screen acceuil -->
+                <section id="screen0-slide" class="swiper-slide">
+                    <header>
+                        <div class="top-bar">
+                            <img src="img/logo.png" alt="Logo" class="logo">
+                            <button class="info-button">EN SAVOIR PLUS</button>
+                        </div>
+                    </header>
+                    <div class="top">
+                        <img src="./img/fete.jpg" alt="fete 1" class="fullscreen-image">
+                    </div>
+                    <h2 class="project-name">Nom du projet</h2>
+                    <p class="bold-text">Christelle Morancais, présidente des Pays de la Loire, a annoncé un plan d’économies de 100 millions d’euros, concernant majoritairement le secteur culturel.</p>
+                    <p class="normal-text">Pour comprendre les conséquences de cette coupe budgétaire sur l’avenir de la culture, on vous propose de créer votre propre festival.</p>
+                    <button class="create-event-button">Je crée mon événement &#8594;</button>
+                </section>
+
+
+                <!-- Screen 2 -->
+                <section id="screen2-slide" class="swiper-slide">
+                    <header>
+                        <div class="top-bar">
+                            <img src="img/logo.png" alt="Logo" class="logo">
+                            <button class="info-button">EN SAVOIR PLUS</button>
+                        </div>
+                    </header>
+                    <h2>Je veux implanter mon festival ici :</h2>
+                    <div class="location-options options-grid">
+                        <div id="rural" class="option">
+                            <img src="img/image2.png" alt="Rural" style="aspect-ratio: 3/4; object-fit: cover; max-width: 210px;">
+                            <span>Rural</span>
+                        </div>
+                        <div id="urban" class="option">
+                            <img src="img/image2.png" alt="Urbain" style="aspect-ratio: 3/4; object-fit: cover; max-width: 210px; ">
+                            <span>Urbain</span>
+                        </div>
+                    </div>
+                    <h2>Mon festival fera cette taille :</h2>
+                    <div class="size-options options-grid" style="display: flex; justify-content: center; gap: 20px;">
+                        <div id="intimiste" class="size">
+                            <img src="img/image2.png" alt="Intimiste" style="aspect-ratio: 3/4; object-fit: cover; max-width: 210px; ">
+                            <span>Intimiste</span>
+                        </div>
+                        <div id="moyen" class="size">
+                            <img src="img/image2.png" alt="Moyen" style="aspect-ratio: 3/4; object-fit: cover; max-width: 210px; ">
+                            <span>Moyen</span>
+                        </div>
+                        <div id="gros" class="size">
+                            <img src="img/image2.png" alt="Gros" style="aspect-ratio: 3/4; object-fit: cover; max-width: 210px; ">
+                            <span>Gros</span>
+                        </div>
+                    </div>
+                </section>
+
+
+
+                <!-- Slide 4 -->
+                <section id="page4-slide" class="swiper-slide">
+                    <header>
+                        <div class="top-bar">
+                            <img src="img/logo.png" alt="Logo" class="logo">
+                            <button class="info-button">EN SAVOIR PLUS</button>
+                        </div>
+                        <h2>Vos choix :</h2>
+                    </header>
+                    <div class="options-grid">
+                        <img data-default="img/image1.png" alt="Image 1">
+                        <img data-default="img/image1.png" alt="Image 2">
+                        <img data-default="img/image1.png" alt="Image 3">
+                        <img data-default="img/image1.png" alt="Image 4">
+                    </div>
+                    <footer>
+                        <h1>Les conséquences :</h1>
+                        <p class="consequences"></p>
+                    </footer>
+                    <div class="bottom-bar">
+                        <button class="modifier-button">
+                            <span class="arrow">&rarr;</span> MODIFIER
+                        </button>
+                    </div>
+                </section>
+            </main>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+</body>
+</html>
