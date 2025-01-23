@@ -32,4 +32,8 @@ export class RoleplayComponent implements OnInit {
     fetchData(): Observable<ContentData[]> {
         return this.http.get<ContentData[]>('assets/data.json');
     }
+
+    toggle_menu(): void {
+        
+    }
 }

@@ -1,43 +1,70 @@
-h1 {
-    margin-top: 20px;
-    font-size: 130%;
-    text-align: center;
-}
-
-pre {
-    width: 100%;
-}
-
-#scenarios {
-    margin-top: 8%;
+header {
+    background-color: black;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    align-items: center;
+    justify-content: space-between;
 
-    #scenario {
+    position: sticky;
+    top: 0;
+    height: 100px;
+    z-index: 10;
+
+    #logo {
+        height: 80%;
+        margin: 1% 5%;
+    }
+
+    div {
+        font-size: 30%;
+        margin: 1% 5%;
+    }
+}
+
+#main {
+
+    h1 {
+        margin-top: 20px;
+        font-size: 130%;
+        text-align: center;
+    }
+    
+    pre {
+        width: 100%;
+    }
+    
+    #scenarios {
+        margin-top: 8%;
         display: flex;
-        flex-direction: column;
-
-        width: 25%;
-        padding: 1.5%;
-
-        border: 2px solid rgb(255, 255, 255);
-        border-radius: 7px;
-        cursor: pointer;
-
-        img {
-            width: 100%;
-        }
-
-        h2 {
-            text-align: center;
-            margin-top: 5px;
-            width: fit-content;
-            align-self: center;
-            font-size: 20%;
+        flex-direction: row;
+        justify-content: space-evenly;
+    
+        #scenario {
+            display: flex;
+            flex-direction: column;
+    
+            width: 25%;
+            padding: 1.5%;
+    
+            border: 2px solid rgb(255, 255, 255);
+            border-radius: 7px;
+            cursor: pointer;
+    
+            img {
+                width: 100%;
+            }
+    
+            h2 {
+                text-align: center;
+                margin-top: 5px;
+                width: fit-content;
+                align-self: center;
+                font-size: 20%;
+            }
         }
     }
     .selected {
         background-color: lighten(black, 25%);
     }
 }
+
