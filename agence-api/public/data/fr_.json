@@ -30,12 +30,11 @@
     },
     "agro": {
         "introduction": [
-            "Tu as décidé de te lancer dans l’agroalimentaire ? Super choix ! Ici, dans l’Ouest, on est des champions dans ce secteur. Prêt à faire partie de cette grande aventure ?",
-            "L’agroalimentaire est un pilier économique de nos régions. La Bretagne est la première région agricole de France, et les Pays de la Loire sont troisièmes. Que ce soit pour la transformation de la viande, la production laitière ou la valorisation des céréales, tu disposes ici de toutes les ressources nécessaires pour réussir !",
-            "Voici quelques chiffres pour te donner une idée :",
-            "La Bretagne produit 40 % des aliments pour animaux de ferme en France.",
-            "Les industries de la viande, du lait et de la boulangerie industrielle représentent près des 3/4 de l’activité agroalimentaire régionale.",
-            "Je te souhaite une bonne installation !"
+            "Tu as décidé de te lancer dans l’agroalimentaire ? Super choix ! Ici, dans l’Ouest, on est des champions dans ce secteur. Prêt à faire partie de cette grande aventure ?",
+            "Avant chaque question, je te fournirai quelques informations sur le contexte régional en lien avec le thème abordé. Cela te permettra de mieux comprendre les enjeux de ton choix.",
+            "Ces données proviennent toutes de l'Atlas économique de l'Ouest écrit par l'agence API.",
+            "Il est plein de données intéressantes sur l'économie de nos régions, je te le recommande !",
+            "On peut continuer ?"
         ],
         "questions": [
             [
@@ -56,32 +55,35 @@
             ]
         ],
         "reponses": [
-            [
-                "Je souhaite m’intégrer à la production de produits laitiers. Je m’installerai en Mayenne.",
-                "Je souhaite m’intégrer à la production porcine. Je m’installerai dans les Côtes-d’Armor.",
-                "Je souhaite m’intégrer à la production avicole. Je m’installerai en Vendée."
-            ],
-            [
-                "Je vais demander un prêt bancaire.",
-                "Je vais demander une subvention.",
-                "Je vais demander un financement participatif."
-            ],
-            [
-                "Je veux embaucher de la main-d'œuvre locale, qui connaît bien le terrain et les traditions locales.",
-                "Je veux attirer des talents d’autres régions qui amèneront un vent de nouveauté avec des compétences rares ou pointues."
-            ],
-            [
-                "Je reste sur le marché local",
-                "Je vise le marché national",
-                "Je souhaite atteindre le marché européen, voire international."
-            ]
+            {
+                "1_lait":"Je souhaite m’intégrer à la production de produits laitiers. Je m’installerai en Mayenne.",
+                "1_porc":"Je souhaite m’intégrer à la production porcine. Je m’installerai dans le Finistère.",
+                "1_volaille":"Je souhaite m’intégrer à la production avicole. Je m’installerai en Vendée."
+            },
+            {
+                "2_banque":"Je vais demander un prêt bancaire.",
+                "2_aide":"Je vais demander une subvention.",
+                "2_crowdfunding":"Je vais demander un financement participatif."
+            },
+            {
+                "3_embauchelocale":"Je veux embaucher de la main-d'œuvre locale, qui connaît bien le terrain et les traditions locales.",
+                "3_embauchetalents":"Je veux attirer des talents d’autres régions qui amèneront un vent de nouveauté avec des compétences rares ou pointues."
+            },
+            {
+                "4_marchelocal":"Je reste sur le marché local",
+                "4_marchnational":"Je vise le marché national",
+                "4_marcheeuro":"Je souhaite atteindre le marché européen, voire international."
+            }
         ],
         "contexte": {
             "1": {
-                "avant": [],
+                "avant": [
+                    "On passe sur ta première page d'information ? Tu vas découvrir la place de l'agroalimentaire en Bretagne et dans les Pays de la Loire.",
+                    "Allez, c'est parti !"
+                ],
                 "apres": {
                     "1_lait": "Félicitations pour ton choix de te lancer dans la production laitière en Mayenne ! Ce département est un acteur majeur dans le secteur, abritant notamment des entreprises de renom telles que Lactalis, leader mondial des produits laitiers.",
-                    "1_porc": "Bravo pour ton ambition dans la filière porcine en Côtes-d'Armor ! Ce département abrite notamment l’entreprise Cooperl, une coopérative spécialisée dans le porc et le bovin.",
+                    "1_porc": "Bravo pour ton ambition dans la filière porcine dans le Finistère ! Ce département abrite notamment l’entreprise Bigard, un leader français de la transformation de viande, spécialisé dans la production porcine.",
                     "1_volaille": "Bravo pour ton projet dans le secteur avicole en Vendée ! Le département accueille des entreprises de renom comme Groupe LDC, leader français de la volaille."
                 }
             },
@@ -119,7 +121,16 @@
             }
         },
         "informations": {
-            "1": {},
+            "1": {
+                "titre": "L'agroalimentaire dans l'Ouest",
+                "images": [],
+                "paragraphes": [
+                    "L’agroalimentaire est un pilier économique de nos régions. La Bretagne est la première région agricole de France, et les Pays de la Loire sont troisièmes.",
+                    "Voici quelques chiffres clés :",
+                    "La Bretagne produit 40 % des aliments pour animaux de ferme en France.",
+                    "Les industries de la viande, du lait et de la boulangerie industrielle représentent près des 3/4 de l’activité agroalimentaire régionale."
+                ]
+            },
             "2": {
                 "titre": "Financement : Les aides publiques",
                 "images": [],
@@ -159,13 +170,200 @@
         }
     },
     "tech": {
-        "introduction": [],
-        "questions": [],
-        "reponses": [
-            []
+        "introduction": [
+            "Alors, tu veux te lancer dans la tech ? Excellent choix ! L’Ouest de la France, c’est l’endroit parfait pour les innovateurs comme toi.",
+            "Avec 11 technopôles sur les 41 que compte la France, la région regorge d’opportunités et chaque technopôle a sa spécialité.",
+            "Avant chaque question, je te fournirai quelques informations sur le contexte régional en lien avec le thème abordé. Cela te permettra de mieux comprendre les enjeux de ton choix.",
+            "Ces données proviennent toutes de l'Atlas économique de l'Ouest écrit par l'agence API.",
+            "Il est plein de données intéressantes sur l'économie de nos régions, je te le recommande !",
+            "On peut continuer ?"
         ],
-        "contexte": "",
-        "informations": "",
+        "questions": [
+            [
+                "Il est temps de choisir dans quelle technopole tu souhaites établir ton activité.",
+                "Je te propose trois villes de taille différentes, tu peux choisir celle qui te correspond le mieux.",
+                "On commence par Nantes, l’endroit où science et technologie se croisent. Ici, on révolutionne la santé, on innove dans les biotechs, et on fait avancer le numérique.",
+                "À Lorient, on repense les déplacements et on mise sur la mer ! Mobilité verte, technologies maritimes… c’est la ville des projets qui avancent à grande vitesse.",
+                "Enfin, Lannion, c’est le cœur des télécoms en France ! Fibre, réseaux et innovation dans l’optique-photonique, on y prépare le futur des communications.",
+                "Dans quelle ville ci-dessous souhaites-tu t'installer ?"
+            ],
+            [
+                "Quel(s) moyen(s) de financement souhaites-tu tenter d’obtenir ? Tu peux sélectionner plusieurs réponses."
+            ],
+            [
+                "Parmi les choix ci-dessous, qui aimerais-tu embaucher ?"
+            ],
+            [
+                "Souhaitez-vous engager votre société dans une démarche RSE ?"
+            ],
+            [
+                "Alors, ${user_name}, tu veux intégrer le réseau French Tech ?"
+            ]
+        ],
+        "reponses": [
+            {
+                "1_nantes":"Je choisis Nantes.",
+                "1_lorient":"Je choisis Lorient.",
+                "1_lannion":"Je choisis Lannion."
+            },
+            {
+                "2_banque":"Je vais demander un prêt bancaire.",
+                "2_aide":"Je vais demander une subvention.",
+                "2_crowdfunding":"Je vais demander un financement participatif."
+            },
+            {
+                "3_embauchejeunes":"Je veux embaucher des jeunes diplômés, pour une main-d'œuvre innovante et à moindre coût.",
+                "3_embaucheexperimentes":"Je veux embaucher des profils expérimentés, pour une équipe solide et fiable."
+            },
+            {
+                "4_non":"Non, ce n'est pas la priorité pour moi",
+                "4_label":"Oui, je veux tenter d'obtenir un label",
+                "4_mission":"Oui, je souhaite devenir une entreprise à mission"
+            },
+            {
+                "5_ouifrenchtech":"Oui, je rejoins le réseau French Tech",
+                "5_nonfrenchtech":"Non, je préfère développer mon activité de manière indépendante"
+            }
+        ],
+        "contexte": {
+            "1": {
+                "avant": [
+                    "Une technopole est un grand centre urbain disposant d’un fort potentiel d’enseignement et de recherche, favorable au développement d’industries de pointe.",
+                    "C'est à ne pas confondre avec un technopôle, qui est un site spécialement aménagé pour accueillir les entreprises de haute technologie ou en favoriser la création.",
+                    "Allons identifier les technopoles de l'Ouest ensemble !"
+                ],
+                "apres": [
+                    {
+                        "1_nantes": "Bravo pour ton choix de t'installer à Nantes !",
+                        "1_lorient": "Bravo pour ton choix de t'installer à Lorient !",
+                        "1_lannion": "Bravo pour ton choix de t'installer à Lannion !"
+                    }
+                ],
+                "images": {
+                    "1": []
+                }
+            },
+            "2": {
+                "avant": [
+                    "Maintenant, parlons de financement. As-tu déjà entendu parler du crowdfunding ?"
+                ],
+                "apres": [
+                    "Grâce à ton financement, tu vas pouvoir démarrer ton activité. Félicitations !"
+                ]
+            },
+            "3": {
+                "avant": [
+                    "Ton innovation ne se concrétisera pas toute seule ! Pour la faire avancer, il te faut une équipe.",
+                    "Ça te dit de parler recrutement ?"
+                ],
+                "apres": [
+                    {
+                        "3_jeunes": "Tu as choisi de recruter des jeunes diplômés. C’est un choix audacieux qui peut s’avérer très payant !",
+                        "3_experimentes": "Tu as choisi de recruter des profils expérimentés. Une équipe solide est la clé de la réussite !"
+                    }
+                ]
+            },
+            "4": {
+                "avant": [
+                    "Tu connais le terme RSE ?",
+                    "La RSE, c’est la Responsabilité Sociétale des Entreprises. C’est un engagement volontaire des entreprises à intégrer les préoccupations sociales, environnementales et économiques dans leurs activités et leurs interactions avec leurs parties prenantes.",
+                    "On découvre les initiatives RSE des entreprises de l'Ouest ensemble ?",
+                    "Je vais te présenter les labels RSE de la région. Pour en apprendre plus sur les entreprises à mission, je te laisserai découvrir les autres parcours !",
+                    "C'est parti !"
+                ],
+                "apres": [
+                    {
+                        "4_non": "Tu as choisi de ne pas t'engager dans une démarche RSE. C'est ton choix !",
+                        "4_label": "Tu as choisi de tenter d'obtenir un label RSE. C'est un engagement fort qui peut te démarquer de la concurrence !",
+                        "4_mission": "Tu as choisi de devenir une entreprise à mission. C'est un engagement fort qui peut te démarquer de la concurrence !"
+                    }
+                ]
+            },
+            "5": {
+                "avant": [
+                    "Tu as bien avancé dans ta réflexion !",
+                    "Il faut maintenant que ton entreprise trouve sa place au sein de l'écosystème local.",
+                    "Tu as déjà entendu parler du réseau French Tech ?"
+                ],
+                "apres": [
+                    "Super !"
+                ]
+            }
+        },
+        "informations": {
+            "1": {
+                "titre": "Les technopoles de l'Ouest",
+                "images": [],
+                "paragraphes": [
+                    "Dans l’Ouest, les technopoles se répartissent en fonction de la taille des villes qui les accueillent. On retrouve d’abord celles situées dans des villes de plus de 100 000 habitants, comme Rennes, Nantes, Brest, Le Mans et Angers ; celles des villes de plus de 40 000 habitants, telles que Lorient, Laval, Vannes, Saint-Brieuc et Quimper ; et enfin, les plus petites, dans des villes de plus de 20 000 habitants, avec Lannion."
+                ]
+            },
+            "2": {
+                "titre": "Financement : Le crownfunding",
+                "images": [],
+                "paragraphes": [
+                    "Le crowdfunding, ou financement participatif, est un mode de financement qui permet à des porteurs de projets de collecter des fonds auprès d'un large public via des plateformes en ligne.",
+                    "Contrairement aux emprunts bancaires ou aux aides publiques, qui impliquent généralement des conditions de remboursement ou des critères d'éligibilité stricts, le crowdfunding repose sur des capitaux propres apportés par des contributeurs individuels. Ces fonds peuvent prendre la forme de dons, de prêts ou de participations au capital, offrant ainsi aux entrepreneurs une plus grande flexibilité financière et une moindre dépendance aux institutions traditionnelles.",
+                    "Au-delà de l'aspect financier, le crowdfunding permet également de créer une véritable communauté autour du projet, en fédérant des soutiens qui partagent les valeurs et l'ambition de l'initiative, et qui peuvent devenir des ambassadeurs précieux pour sa réussite et son développement."
+                ]
+            },
+            "3": {
+                "titre": {
+                    "1_nantes": "Les actifs en Loire-Atlantique",
+                    "1_lorient": "Les actifs dans le Morbihan",
+                    "1_lannion": "Les actifs dans le Finistère"
+                },
+                "images": {
+                    "1_nantes": [],
+                    "1_lorient": [],
+                    "1_lannion": []
+                },
+                "paragraphes": [
+                    "Dans nos régions, le taux d’emploi des jeunes s’élève à 43,6 %, une performance supérieure à la moyenne nationale de 39,5 %, témoignant d’une bonne dynamique du marché du travail pour cette tranche d’âge.",
+                    "Par ailleurs, l’enseignement supérieur attire un grand nombre d’étudiants, avec 139 273 inscrits en Bretagne et 145 452 en Pays de la Loire en 2021, offrant un vivier de talents qualifiés.",
+                    "Ces chiffres démontrent un environnement favorable qui pourrait représenter une opportunité intéressante pour un entrepreneur souhaitant recruter des jeunes talents et développer son activité"
+                ]
+            },
+            "4": {
+                "titre": "Les labels RSE des entreprises de l'Ouest",
+                "images": [],
+                "paragraphes": {
+                    "1": {
+                        "nom_label": "AFNOR RSEi",
+                        "nb_entreprises": "6",
+                        "description": [
+                            "Délivré par l’AFNOR, le label RSEi s’adresse aux entreprises inclusives, qui agissent pour l’inclusion de personnes vulnérables (personnes vivant en situation de pauvreté-précarité) sur le marché de l’emploi, en mettant leur activité économique au service de cet objectif social."
+                        ]
+                    },
+                    "2": {
+                        "nom_label": "AFNOR ENGAGÉES RSE",
+                        "nb_entreprises": "55",
+                        "description": [
+                            "Délivré par l’AFNOR, le label Engagé RSE évalue la maturité des démarches RSE des organisations sur la base de l’ISO 26000. Ce label s’adresse à tous les types d’organisations (entreprises, associations ou territoires) quelle que soit la taille de l’entité ou son secteur d’activité."
+                        ]
+                    },
+                    "3": {
+                        "nom_label": "B-CORP",
+                        "nb_entreprises": "16",
+                        "description": [
+                            "Lancé en 2006 aux États-Unis, le Label B-Corp certifie que les entreprises intègrent bien à leur business model des objectifs sociaux, sociétaux et environnementaux.",
+                            "L’évaluation mesure l’impact positif de l’entreprise sur sa gouvernance, ses relations employeurs-employés, sur l’environnement et sur les produits et services qu’elle fournit."
+                        ]
+                    },
+                    "4": {
+                        "nom_label": "CERTIFIÉES LUCIE 26000",
+                        "nb_entreprises": "70",
+                        "description": [
+                            "Premier label RSE français, LUCIE accompagne depuis 2007 les entreprises, les associations et les collectivités qui souhaitent intégrer les enjeux sociaux et environnementaux à leurs activités et contribuer aux objectifs de développement durable.",
+                            "Cette certification s’aligne sur la norme internationale ISO 26000."
+                        ]
+                    }
+                }
+            },
+            "5": [
+                "La French Tech, c’est un écosystème national qui soutient les startups françaises et leur croissance. Dans l’Ouest, elle se décline en 3 Capitales (Nantes, Rennes Saint-Malo, Angers) et 7 Communautés, fédérant des centaines d’acteurs de l’innovation. Avec des programmes comme French Tech Next 120 et French Tech 2030, les entreprises locales accèdent à des opportunités de croissance et de financement stratégiques."
+            ]
+        },
         "images": ""
     },
     "arti": {
