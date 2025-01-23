@@ -1,12 +1,55 @@
 "use strict";
 
-const carousel = document.querySelector('.carousel');
-const images = Array.from(document.querySelectorAll('.carousel img'));
-let activeIndex = 1;
+document.onload(function() {
 
-let isDragging = false;
-let startX = 0;
-let endX = 0;
+    const carousel = document.querySelector('.carousel');
+    const images = Array.from(document.querySelectorAll('.carousel img'));
+    let activeIndex = 1;
+
+    let isDragging = false;
+    let startX = 0;
+    let endX = 0;
+
+    // Mouse Events for Desktop
+    carousel.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        startX = e.clientX;
+    });
+
+    carousel.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        endX = e.clientX;
+    });
+
+    carousel.addEventListener('mouseup', () => {
+        if (!isDragging) return;
+        isDragging = false;
+        handleGesture();
+        startX = 0;
+        endX = 0;
+    });
+
+    // Prevent default behavior to avoid text/image selection
+    carousel.addEventListener('dragstart', (e) => e.preventDefault());
+
+    // Touch Events for Mobile
+    carousel.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+    });
+
+    carousel.addEventListener('touchmove', (e) => {
+        endX = e.touches[0].clientX;
+    });
+
+    carousel.addEventListener('touchend', () => {
+        handleGesture();
+        startX = 0;
+        endX = 0;
+    });
+
+    // Initial update
+    updateCarousel();
+});
 
 function updateCarousel() {
     const totalImages = images.length;
@@ -36,43 +79,3 @@ function handleGesture() {
     updateCarousel();
     }
 }
-
-// Mouse Events for Desktop
-carousel.addEventListener('mousedown', (e) => {
-    isDragging = true;
-    startX = e.clientX;
-});
-
-carousel.addEventListener('mousemove', (e) => {
-    if (!isDragging) return;
-    endX = e.clientX;
-});
-
-carousel.addEventListener('mouseup', () => {
-    if (!isDragging) return;
-    isDragging = false;
-    handleGesture();
-    startX = 0;
-    endX = 0;
-});
-
-// Prevent default behavior to avoid text/image selection
-carousel.addEventListener('dragstart', (e) => e.preventDefault());
-
-// Touch Events for Mobile
-carousel.addEventListener('touchstart', (e) => {
-    startX = e.touches[0].clientX;
-});
-
-carousel.addEventListener('touchmove', (e) => {
-    endX = e.touches[0].clientX;
-});
-
-carousel.addEventListener('touchend', () => {
-    handleGesture();
-    startX = 0;
-    endX = 0;
-});
-
-// Initial update
-updateCarousel();

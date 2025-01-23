@@ -4,13 +4,18 @@
 
 //     const chatBox = document.getElementById('chatBox');
 //     const messageList = document.getElementById('messageList');
-//     const messageInput = document.getElementById('messageInput');
 
-//     messageInput.addEventListener('keydown', event => {
-//         if (event.key === 'Enter') {
-//             sendMessage();
-//         }
-//     });
+document.onload = function() {
+    const messageInput = document.getElementById('messageInput');
+
+    messageInput.addEventListener('keydown', event => {
+        if (event.key === 'Enter') {
+            sendMessage();
+        }
+    });
+
+    messageSendButton.addEventListener('click', sendMessage);
+};
 //     scrollToBottom();
 // };
 
@@ -19,44 +24,14 @@ function sendMessage() {
     const messageText = messageInput.value.trim();
     if (messageText === '') return;
 
+    localStorage.setItem('userName', messageText);
     const newMessage = { text: messageText, type: 'sent', timestamp: new Date().toISOString() };
 
     addMessage(newMessage);
     scrollToBottom();
 
-    // // Simuler une réponse après 1 seconde
-    // setTimeout(() => {
-    //     const reply = { text: 'Réponse automatique', type: 'received', timestamp: new Date().toISOString() };
-    //     addMessage(reply);
-    //     storeMessage(reply, MESSAGES_KEY);
-    //     scrollToBottom();
-    // }, 1000);
-
     messageInput.value = '';
 };
-
-// // Fonction pour sauvegarder un message dans le localStorage
-// function storeMessage(message, MESSAGES_KEY) {
-//     let messages = JSON.parse(localStorage.getItem(MESSAGES_KEY)) || [];
-//     messages.push(message);
-//     localStorage.setItem(MESSAGES_KEY, JSON.stringify(messages));
-
-//     // // Activer le Swiper si plus de 5 messages
-//     // if(messages.length > 5){
-//     //     toggleSwiper(true);
-//     // }
-// };
-
-// // Fonction pour charger les messages stockés
-// function loadStoredMessages(MESSAGES_KEY) {
-//     console.log("loadStoredMessages");
-//     let messages = JSON.parse(localStorage.getItem(MESSAGES_KEY)) || [];
-
-//     messages.forEach(message => {
-//         console.log(message);
-//         addMessage(message);
-//     });
-// }
 
 // Fonction pour ajouter un message dans la liste
 function addMessage(message) {
