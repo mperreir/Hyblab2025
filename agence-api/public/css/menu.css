@@ -1,0 +1,139 @@
+/* ========== 页面基础 ========== */
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;  /* 避免弹窗出现时页面可滚动 */
+  font-family: sans-serif;
+  position: relative; /* 以便定位菜单按钮 */
+}
+
+/* 右上角 Menu 按钮 */
+#menu-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 10;
+}
+#menu-btn:hover {
+  background-color: #0056b3;
+}
+
+/* ========== 弹窗蒙层(背景) ========== */
+#menu-popup {
+  position: fixed;
+  top: 0; 
+  left: 0;
+  width: 100%; 
+  height: 100%;
+  
+  /* 半透明白色，可调成纯白 */
+  background: rgba(255, 255, 255, 0.7);
+
+  /* 淡入淡出 */
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+
+  /* 底部对齐布局，让 .menu-content 从下方出现 */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* 隐藏时：透明 + 不可点击 */
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ========== 弹窗主体 ========== */
+.menu-content {
+  /* 设计稿参数：#D9D9D9 */
+  background: #D9D9D9;
+  color: #333;
+  /* 设计稿: 宽 393px，高 614px */
+  width: 393px;
+  height: 614px;
+
+  /* 圆角只在顶部：50px；底部是直角 */
+  border-radius: 50px 50px 0 0;
+
+  /* 让整体底部上滑 */
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+
+  position: relative;
+  /* 若想在小手机上自适应，可加 max-width: 90%;  */
+  /* overflow-y: auto; 如果内容超出高度，需要滚动 */
+}
+.menu-content {
+  width: 393px;
+  height: 614px;
+  max-width: 90%;
+  max-height: 90%;
+  overflow-y: auto;
+}
+
+
+/* 弹窗可见时，从底部滑到0 */
+#menu-popup:not(.hidden) .menu-content {
+  transform: translateY(0);
+}
+
+/* 关闭按钮(×) */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+/* 列表与链接基本样式 */
+.menu-content ul {
+  list-style: disc inside; 
+  padding: 0;
+  margin: 20px auto;
+  text-align: left; /* 让列表左对齐可读性更好 */
+  max-width: 80%;
+}
+.menu-content ul li {
+  margin: 10px 0;
+}
+.menu-content ul li a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+.menu-content ul li a:hover {
+  color: #252323;
+}
+
+/* 页脚 */
+.menu-content footer {
+  margin-top: 20px;
+  font-size: 0.8em;
+  color: #666;
+}
+
+h1 {
+  margin-top: 60px;  /* 让标题稍微下移，避免和 × 挤在一起 */
+}
+p {
+  margin: 10px auto;
+  max-width: 80%;
+  line-height: 1.4;
+  text-align: center;
+}
