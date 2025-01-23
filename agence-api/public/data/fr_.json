@@ -55,25 +55,25 @@
             ]
         ],
         "reponses": [
-            [
-                "Je souhaite m’intégrer à la production de produits laitiers. Je m’installerai en Mayenne.",
-                "Je souhaite m’intégrer à la production porcine. Je m’installerai dans le Finistère.",
-                "Je souhaite m’intégrer à la production avicole. Je m’installerai en Vendée."
-            ],
-            [
-                "Je vais demander un prêt bancaire.",
-                "Je vais demander une subvention.",
-                "Je vais demander un financement participatif."
-            ],
-            [
-                "Je veux embaucher de la main-d'œuvre locale, qui connaît bien le terrain et les traditions locales.",
-                "Je veux attirer des talents d’autres régions qui amèneront un vent de nouveauté avec des compétences rares ou pointues."
-            ],
-            [
-                "Je reste sur le marché local",
-                "Je vise le marché national",
-                "Je souhaite atteindre le marché européen, voire international."
-            ]
+            {
+                "1_lait":"Je souhaite m’intégrer à la production de produits laitiers. Je m’installerai en Mayenne.",
+                "1_porc":"Je souhaite m’intégrer à la production porcine. Je m’installerai dans le Finistère.",
+                "1_volaille":"Je souhaite m’intégrer à la production avicole. Je m’installerai en Vendée."
+            },
+            {
+                "2_banque":"Je vais demander un prêt bancaire.",
+                "2_aide":"Je vais demander une subvention.",
+                "2_crowdfunding":"Je vais demander un financement participatif."
+            },
+            {
+                "3_embauchelocale":"Je veux embaucher de la main-d'œuvre locale, qui connaît bien le terrain et les traditions locales.",
+                "3_embauchetalents":"Je veux attirer des talents d’autres régions qui amèneront un vent de nouveauté avec des compétences rares ou pointues."
+            },
+            {
+                "4_marchelocal":"Je reste sur le marché local",
+                "4_marchnational":"Je vise le marché national",
+                "4_marcheeuro":"Je souhaite atteindre le marché européen, voire international."
+            }
         ],
         "contexte": {
             "1": {
@@ -201,29 +201,29 @@
             ]
         ],
         "reponses": [
-            [
-                "Je choisis Nantes.",
-                "Je choisis Lorient.",
-                "Je choisis Lannion."
-            ],
-            [
-                "Je vais demander un prêt bancaire.",
-                "Je vais demander une subvention.",
-                "Je vais demander un financement participatif."
-            ],
-            [
-                "Je veux embaucher des jeunes diplômés, pour une main-d'œuvre innovante et à moindre coût.",
-                "Je veux embaucher des profils expérimentés, pour une équipe solide et fiable."
-            ],
-            [
-                "Non, ce n'est pas la priorité pour moi",
-                "Oui, je veux tenter d'obtenir un label",
-                "Oui, je souhaite devenir une entreprise à mission"
-            ],
-            [
-                "Oui, je rejoins le réseau French Tech",
-                "Non, je préfère développer mon activité de manière indépendante"
-            ]
+            {
+                "1_nantes":"Je choisis Nantes.",
+                "1_lorient":"Je choisis Lorient.",
+                "1_lannion":"Je choisis Lannion."
+            },
+            {
+                "2_banque":"Je vais demander un prêt bancaire.",
+                "2_aide":"Je vais demander une subvention.",
+                "2_crowdfunding":"Je vais demander un financement participatif."
+            },
+            {
+                "3_embauchejeunes":"Je veux embaucher des jeunes diplômés, pour une main-d'œuvre innovante et à moindre coût.",
+                "3_embaucheexperimentes":"Je veux embaucher des profils expérimentés, pour une équipe solide et fiable."
+            },
+            {
+                "4_non":"Non, ce n'est pas la priorité pour moi",
+                "4_label":"Oui, je veux tenter d'obtenir un label",
+                "4_mission":"Oui, je souhaite devenir une entreprise à mission"
+            },
+            {
+                "5_ouifrenchtech":"Oui, je rejoins le réseau French Tech",
+                "5_nonfrenchtech":"Non, je préfère développer mon activité de manière indépendante"
+            }
         ],
         "contexte": {
             "1": {
