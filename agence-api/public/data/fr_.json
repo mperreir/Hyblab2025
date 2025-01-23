@@ -30,6 +30,10 @@
             [
                 "Une bonne équipe fait toute la différence, n'est-ce pas ?",
                 "Dis-moi, comment souhaites-tu orienter ta politique de recrutement ?"
+            ],
+            [
+                "Comme tu as pu le voir, les produits de nos régions s’exportent dans toute l’Europe et même plus loin.",
+                "Quel marché vises-tu ?"
             ]
         ],
         "reponses": [
@@ -46,6 +50,11 @@
             [
                 "Je veux embaucher de la main-d'œuvre locale, qui connaît bien le terrain et les traditions locales.",
                 "Je veux attirer des talents d’autres régions qui amèneront un vent de nouveauté avec des compétences rares ou pointues."
+            ],
+            [
+                "Je reste sur le marché local",
+                "Je vise le marché national",
+                "Je souhaite atteindre le marché européen, voire international."
             ]
         ],
         "contexte": {
@@ -71,7 +80,23 @@
                     "Maintenant, parlons de ton équipe : qui vas-tu recruter pour t’épauler ?",
                     "Jettons un oeil au profil des actifs dans ton département !"
                 ],
-                "apres": []
+                "apres": [
+                    "Très bien !"
+                ]
+            },
+            "4": {
+                "avant": [
+                    "Avec ton équipe en place, il est temps de penser à une autre étape clé : où vont partir tes produits ?",
+                    "À ton avis, à quoi ressemble l'export de marchandises provenant de l'Ouest ?",
+                    "Allons voir ça ensemble !"
+                ],
+                "apres": [
+                    {
+                        "4_local": "Tu as choisi de rester sur le marché local. J'espère que tu trouveras ton public !",
+                        "4_national": "Tu as choisi de viser le marché national. Bonne chance pour la suite !",
+                        "4_international": "Tu as choisi de viser le marché international. C'est un pari risqué, mais qui peut s'avérer très payant !"
+                    }
+                ]
             }
         },
         "informations": {
@@ -101,6 +126,18 @@
                 "paragraphes": [
                     "Il faut savoir que nos deux régions se distinguent du reste du territoire métropolitain par une plus forte proportion d’ouvriers et d’agriculteurs-exploitants, liée au poids important de l’agriculture et de l’industrie. Tu devrais donc trouver de nombreux partenaires et employés pour ton activité ici."
                 ]
+            },
+            "4": {
+                "titre": "L'export de marchandises de l'Ouest",
+                "images": [],
+                "paragraphes": [
+                    "La Bretagne et les Pays de la Loire exportent respectivement 12 810 M€ et 25 430M€ par an (données du T4 2022 au T3 2023). Les principaux pays d'exportation sont l'Allemagne, l'Espagne et la Belgique pour la Bretagne, et la Belgique, l'Espagne et le Royaume-Uni pour les Pays de la Loire.",
+                    {
+                        "1_lait": "Les produits laitiers sont la sixième marchandise la plus exportée en Bretagne, représentant 2337 millions d’euros par an, et la septième marchandise la plus exportée en Pays de la Loire.",
+                        "1_porc": "La viande et les produits à base de viande sont la quatrième marchandise la plus exportée en Bretagne représentant 2337 millions d’euros par an, et la cinquième marchandise la plus exportée en Pays de la Loire.",
+                        "1_volaille": "La viande et les produits à base de viande sont la quatrième marchandise la plus exportée en Bretagne représentant 2337 millions d’euros par an, et la cinquième marchandise la plus exportée en Pays de la Loire."
+                    }
+                    ]
             }
         }
     },
