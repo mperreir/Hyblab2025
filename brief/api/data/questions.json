@@ -1,0 +1,22 @@
+{
+    "question_id": "q1",
+    "question_text": "Quel est votre choix ?",
+    "responses": [
+      {
+        "response_id": "r1",
+        "response_text": "Option 1",
+        "next_question_id": "q11"
+      },
+      {
+        "response_id": "r2",
+        "response_text": "Option 2",
+        "next_question_id": "q12"
+      },
+      {
+        "response_id": "r3",
+        "response_text": "Option 3",
+        "next_question_id": "q13"
+      }
+    ]
+  }
+  
