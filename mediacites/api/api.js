@@ -23,7 +23,7 @@ app.get(`/articles/:category_name/:keyword`, function (req, res) {
         .then(articles => {
             const article = articles.find(article => article.id === category_name);
             if (article) {
-                res.send(article[dataKey]);
+                res.send(article[req.params.keyword]);
             } else {
                 res.status(404).send({ error: 'Article not found' });
             }
