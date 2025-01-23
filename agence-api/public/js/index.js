@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
           break;
         case 1:
           initSlide2();
-          toggleSwiper(true);
+          toggleSwiper(false);
           break;
         case 2:
           initSlide3();

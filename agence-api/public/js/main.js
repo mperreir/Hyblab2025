@@ -7,6 +7,7 @@ const initSlide2 = async function () {
     const messageInput = document.getElementById('messageInput');
 
     scrollToBottom();
+    console.log("oui")
 
     // Retrieve the intro's messages from our API
     let response = await fetch('data/fr_.json');
