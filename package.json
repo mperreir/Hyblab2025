@@ -12,7 +12,5 @@
     "nodemon": "^3.1.9"
   },
   "author": "MPDS",
-  "license": "MIT",
-  "devDependencies": {
-  }
+  "license": "MIT"
 }
