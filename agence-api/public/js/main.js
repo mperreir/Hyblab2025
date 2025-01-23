@@ -13,6 +13,9 @@ const initSlide2 = async function () {
     let response = await fetch('data/fr_.json');
     const texts = await response.json();
 
+
+    // await histoire(texts.tech);
+
     // Load the intro story
     const userName = await loadIntroStory(texts.introduction.general);
 
@@ -24,13 +27,13 @@ const initSlide2 = async function () {
 
     switch (secteur) {
         case 0:
-            await histoireAgro(texts.agro);
+            await histoire(texts.agro);
             break;
         case 1:
-            histoireTech();
+            await histoire(texts.tech);
             break;
         case 2:
-            histoireArti();
+            await histoire(texts.arti);
             break;
     };
 };
@@ -156,11 +159,25 @@ async function loadIntroStory(introStory) {
   }
   
 
-async function histoireAgro(texts){
+async function histoire(texts){
+
+    let choices = [];
+
     await displayMessages(texts.introduction);
 
     for (let i = 0; i < texts.questions.length; i++) {
         await displayMessages(texts.questions[i]);
-        let answer = await addAnswer(texts.reponses[i]);
+
+        /* Ouais bon la solution est dégeu, mais ça fonctionne */
+        let multipleChoices = false;
+        for(let key in texts.questions[i]){
+           if(texts.questions[i][key].includes("financement")){
+                multipleChoices = true;
+                break;
+           }
+        }
+        let answer = await addAnswer(texts.reponses[i], multipleChoices);
+        choices = [...choices, ...answer];
+        console.log(choices);
     }
 }

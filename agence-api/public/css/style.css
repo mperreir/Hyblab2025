@@ -421,8 +421,8 @@ body{
 /* Le cercle */
 #circle-container {
     position: fixed;
-    bottom: 15%;
-    right: 50%;
+    bottom: 5%;
+    right: 5%;
     width: 80px;
     height: 80px;
     display: none; /* Hidden by default */

@@ -107,6 +107,7 @@ class Carousel {
 
   handleGesture(startX, endX) {
     const swipeDistance = endX - startX;
+    if (swipeDistance < -300) return;
     if (swipeDistance > 50) {
       // Swipe Right
       this.activeIndex = (this.activeIndex - 1 + this.images.length) % this.images.length;
@@ -122,8 +123,7 @@ class Carousel {
   async getCharacter() {
     return new Promise((resolve) => {
         this.selectButton.addEventListener('click', () => {
-            this.selectButton.textContent = "Choisi !";
-            this.selectButton.disabled = true;
+            this.selectButton.remove();
             resolve(this.activeIndex);
         });
     });
