@@ -298,6 +298,42 @@ body{
     align-self: flex-start;
 }
 
+#answers-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+    color:#0056b3;
+    font-size: medium;
+  }
+  
+  .answer {
+    padding: 10px 20px;
+    border: 2px solid gray;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+  }
+  
+  .answer.selected {
+    border-color: blue;
+    background-color: lightblue;
+  }
+  
+  #confirm-button {
+    padding: 10px 20px;
+    cursor: not-allowed;
+  }
+  
+  #confirm-button:enabled {
+    cursor: pointer;
+    background-color: blue;
+    color: white;
+  }
+  
+
+
 .chat-input {
     display: flex;
     padding: 15px;

@@ -96,6 +96,14 @@ async function displayMessages(message) {
     }
 }
 
+async function displayResponses(message) {
+    for (const key in message) {
+        addMessage({ text: message[key], type: "answer", timestamp: new Date().toISOString() });
+        scrollToBottom();
+    }
+    await waitForUserTouch();
+}
+
   
 async function loadIntroStory(introStory) {
   document.getElementById('chat-input').style.visibility = 'hidden';
@@ -153,6 +161,6 @@ async function histoireAgro(texts){
 
     for (let i = 0; i < texts.questions.length; i++) {
         await displayMessages(texts.questions[i]);
-
+        let answer = await addAnswer(texts.reponses[i]);
     }
 }
