@@ -7,17 +7,22 @@ const initSlide2 = async function () {
     const messageInput = document.getElementById('messageInput');
 
     scrollToBottom();
+    console.log("oui")
 
     // Retrieve the intro's messages from our API
-    let response = await fetch('data/introStory.json');
-    const introStory = await response.json();
+    let response = await fetch('data/fr_.json');
+    const texts = await response.json();
 
     // Load the intro story
-    const userName = await loadIntroStory(introStory);
+    const userName = await loadIntroStory(texts);
 
     // Select the character
-    const character = await selectCharacter();
+    const character = await selectCharacter(texts.introduction.secteurs);
     addMessage({ text: "Vous avez choisi " + character, type: "received", timestamp: new Date().toISOString() });
+
+    // Select the character
+    const secteur = await selectSecteur(texts.introduction.secteurs);
+    addMessage({ text: "Vous avez choisi " + secteur, type: "received", timestamp: new Date().toISOString() });
     
     
 };
@@ -86,10 +91,25 @@ async function loadIntroStory(introStory) {
     return userName;
 }
 
-  async function selectCharacter() {
-    // Call the function to create and add the carousel
-    await createCarousel();
-    scrollToBottom();
-    return getCharacter();
+  async function selectCharacter(textsPresentationPersos) {
+    const images = [
+        { src: 'img/perso1.png', alt: '1', index: 0 },
+        { src: 'img/perso2.png', alt: '2', index: 1, active: true },
+        { src: 'img/perso3.png', alt: '3', index: 2 }
+      ];
+      const carousel = new Carousel(images, textsPresentationPersos);
+      await carousel.createCarousel();
+      return await carousel.getCharacter();
+  }
+
+  async function selectSecteur(textsPresentationPersos) {
+    const images = [
+        { src: 'img/perso1.png', alt: '1', index: 0 },
+        { src: 'img/perso2.png', alt: '2', index: 1, active: true },
+        { src: 'img/perso3.png', alt: '3', index: 2 }
+      ];
+      const carousel = new Carousel(images, textsPresentationPersos);
+      await carousel.createCarousel();
+      return await carousel.getCharacter();
   }
   
