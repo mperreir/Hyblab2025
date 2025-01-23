@@ -1,0 +1,117 @@
+#page {
+    background-color: gray;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+header {
+    background-color: ghostwhite;
+    font-size: 30%;
+    padding: 3%;
+    text-align: center;
+    color: black;
+}
+
+
+#hyblab_2025 {
+    background-color: #f9af00;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 3%;
+    img {
+        width: 75%;
+    }
+}
+
+#participants {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2%;
+    tr {
+        display: flex;
+        align-items: flex-start;
+    }
+    th {
+        width: 25%;
+        font-size: 20%;
+        margin-top: 2%;
+        img {
+            width: 50%;
+        }
+    }
+}
+
+#makingoff {
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+    margin-bottom: 5%;
+    p {
+        background-color: ghostwhite;
+        text-align: center;
+        color: red;
+        font-size: 30%;
+        width: 30%;
+    }
+}
+
+#footer {
+    background-color: ghostwhite;
+    display: flex;
+    align-content: center;
+    margin-top: auto;
+    flex-direction: column;
+    bottom: 0;
+    #hyblab a {
+        display: flex;
+        justify-content: center;
+        img {
+            width: 50%;
+            margin: 2%;
+        }
+    }
+    #orga {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        a {
+            width: 20%;
+            img {
+                width: 100%;
+                margin: 2%;
+            }
+        }
+    }
+    #part {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        #cc {
+            display: flex;
+            width: 12%;
+            flex-direction: column;
+            align-items: center;
+            img {
+                width: 30%;
+            }
+        }
+        a {
+            width: 20%;
+            display: flex;
+            img {
+                width: 100%;
+                margin: 2%;
+            }
+        }
+    }
+}
