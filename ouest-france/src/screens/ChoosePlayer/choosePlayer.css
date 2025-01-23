@@ -41,7 +41,6 @@
 
 /*** Images & hover parallax ***/
 .choice img {
-    height: 100%;
     width: 100%;
     transform: skew(20deg);
     position: absolute;
