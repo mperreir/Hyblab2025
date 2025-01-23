@@ -12,6 +12,7 @@ class SceneObject{
           .then(svgContent => {
             this.html_el.innerHTML = svgContent;
           })
+          
         }
   
         if(type == "lottie")
@@ -25,6 +26,9 @@ class SceneObject{
             autoplay: false, // Disable autoplay for manual control
             path: src
           });
+          
+          this.html_el.style.width = "100px"; // ou toute autre largeur nécessaire
+          this.html_el.style.height = "100px"; // ou toute autre hauteur nécessaire
         }
 
 
@@ -35,8 +39,8 @@ class SceneObject{
             this.childs = [];
         }
   
+       
         this.html_el.style.position = "absolute";
-
         if(script)
         {
             if (this.html_el && typeof window[script.func] === "function") {
@@ -65,6 +69,7 @@ class SceneObject{
       const angle = this.rotation;
       const { x: scaleX, y: scaleY } = this.scale;
       
+      this.html_el.style.transformOrigin = "center";
       this.html_el.style.transform = `translate(${x}px, ${y}px) rotate(${angle}deg) scale(${scaleX}, ${scaleY})`;
     }
   
