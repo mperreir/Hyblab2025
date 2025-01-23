@@ -7,9 +7,11 @@ function RegionSelection() {
     return (
         <div className='page'>
             <div className='header'></div> 
-            <h2>Explorez les différentes espèces par département</h2>
-            <RegionMap/>
-            <AnimalInfo animalName={'Loutre d\'Europe'}/>
+            <div className='content'>
+                <h2>Explorez les différentes espèces par département</h2>
+                <RegionMap/>
+                <AnimalInfo animalName={'Loutre d\'Europe'}/>
+            </div>
         </div>
     );
 }
