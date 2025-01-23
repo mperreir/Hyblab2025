@@ -15,9 +15,9 @@ const ChoosePlayer = ({onSelectPlayer}) => {
               onMouseLeave={() => setHovered(null)}
               className='choice left'>
               <img src={"./pavon.jpg"} alt={"Pavon"} />
-              <h1>Matthieu PAVON</h1>
+              <h1 className="divider">La Fusée</h1>
               <div className="content">
-                  <h2>La Fusée</h2>
+                  <h1>Matthieu PAVON</h1>
                   <p>Matthieu Pavon est un golfeur professionnel français évoluant
                       sur le circuit européen, connu pour sa puissance au drive et
                       ses performances prometteuses dans les grands tournois.
@@ -34,9 +34,9 @@ const ChoosePlayer = ({onSelectPlayer}) => {
               onMouseLeave={() => setHovered(null)}
               className='choice right'>
               <img src={"./boutier.jpg"} alt={"boutier"}/>
-              <h1>Celine BOUTIER</h1>
+              <h1 className="divider">La Machine</h1>
               <div className="content">
-                  <h2>La Machine</h2>
+                  <h1>Celine BOUTIER</h1>
                   <p>Golfeuse française de renom et multiple championne
                       sur le circuit LPGA Celine est une figure emblématique
                       du golf féminin. Elle est reconnue pour sa précision,

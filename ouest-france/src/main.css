@@ -12,6 +12,11 @@ p{
     font-weight: 400;
     font-style: normal;
 }
+
+p,h1,h2{
+    color: white;
+}
+
 button.text{
     color: white;
     transition: all ease .3s;

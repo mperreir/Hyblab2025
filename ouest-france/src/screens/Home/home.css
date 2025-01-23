@@ -51,7 +51,6 @@ header nav ul {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    color: white;
     gap: 17px;
     z-index: 1;
 }
