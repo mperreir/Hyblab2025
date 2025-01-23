@@ -1,0 +1,24 @@
+.dialogue-box {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    color: black;
+    padding: 15px 20px;
+    border-radius: 10px;
+    border: solid 2px black;
+    box-sizing: border-box;
+    font-size: 150%;
+    white-space: nowrap;
+    transition: opacity 0.3s ease-in-out;
+    height: 20dvh;
+    max-height: 20dvh;
+    display: flex;
+    align-items: center;
+}
+
+.dialogue-box > p {
+    text-wrap: auto;
+    margin: 0;
+    user-select: none;
+}

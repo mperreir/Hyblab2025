@@ -1,0 +1,30 @@
+.map-container {
+    height: 100vh;
+    overflow: hidden; /* Prevents default scrollbars */
+    cursor: grab;
+    position: relative;
+    background: black; /* Optional: simulates a phone screen */
+  }
+  
+  .map-container:active {
+    cursor: grabbing;
+  }
+  
+  /* Map itself */
+  .map {
+    background-size: 500px; /* Adjust grid size */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Hide scrollbar */
+  .map-container::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .map-container {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  

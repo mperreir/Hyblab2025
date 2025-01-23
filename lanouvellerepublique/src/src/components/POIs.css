@@ -1,0 +1,30 @@
+.pois {
+    width: 100%;
+    height: 100%;
+}
+
+.poi_hitbox {
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.poi {
+    position: absolute;
+    background: rgba(255, 0, 0, 0.8);
+    width: 10px;
+    height: 10px;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 14px;
+    white-space: nowrap;
+    transition: all ease-in-out .1s; 
+}
+
+.poi_hitbox:hover .poi {
+    transform: scale(1.5);
+}
