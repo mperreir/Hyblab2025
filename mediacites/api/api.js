@@ -6,17 +6,15 @@ const path = require('path');
 const ip = `localhost:8080/mediacites`
 
 // Sample endpoint that sends the partner's name
-app.get(`http://${ip}/api/categories`, function ( req, res ) {
-    let topic;
+app.get(`/api/categories`, function ( req, res ) {
 
-    // Get partner's topic from folder name
-    topic = path.basename(path.join(__dirname, '/..'))
+    const filename = 'public/data/dummy.json'
     // Send it as a JSON object
-    res.json({'topic':topic});
+    res.sendFile(filename);
 } );
 
 app.get(`http://${ip}/api/articles/:category_name`, function ( req, res ) {
-    const category_name = req.params.articles.category_name;
+    const category_name = req.params.category_name;
 
     // Send it as a JSON object
     res.send({category_name});
