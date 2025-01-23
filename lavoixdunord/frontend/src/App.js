@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import React from "react";
 
 import QuestionPage from "./QuestionPage/QuestionPage";
+import DifficultyPage from "./DifficultyPage/DifficultyPage";
 import Etape from "./EtapePage/Etape";
 
 function App() {
@@ -13,7 +14,8 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Etape />} />
-        <Route path="/etape1" element={<QuestionPage />} />
+        <Route path="/etape" element={<QuestionPage />} />
+        <Route path="/difficulty" element={<DifficultyPage />} />
       </Routes>
     </Router>
   );
