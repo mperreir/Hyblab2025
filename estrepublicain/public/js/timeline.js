@@ -14,12 +14,12 @@ gsap.fromTo(
         strokeDashoffset: pathLength
     },
     {
-        strokeDashoffset: 0,
-        duration: 10,
+        strokeDashoffset: 1,
+        duration: 1,
         ease: "none",
         scrollTrigger: {
             trigger: ".svg-line",
-            start: "top middle",
+            start: "top bottom",
             end: "bottom bottom",
             scrub: 1
         }
