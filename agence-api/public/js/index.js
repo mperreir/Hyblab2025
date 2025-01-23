@@ -45,15 +45,12 @@ setTimeout(() => {
   // fade out the loader "slide"
   // and send it to the back (z-index = -1)
   anime({
-    delay: 1000,
+    delay: 10,
     targets: '#loader',
     opacity: '0',
     'z-index' : -1,
     easing: 'easeOutQuad',
   });
   // Init first slide
-  // Charger les messages stockés au démarrage
-  const MESSAGES_KEY = 'chatMessages';
-  loadStoredMessages(MESSAGES_KEY);
   initSlide1();
-}, 1000);
+}, 10);
