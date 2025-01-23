@@ -1,11 +1,10 @@
 .background {
-    background: url('bgregles.png');
+    background: url('homePage.png');
     background-size: auto 100%;
     background-position: center; /* Centre l'image dans le conteneur */
     background-repeat: no-repeat; /* Empêche l'image de se répéter */
     width: 100%; /* Prend toute la largeur de l'élément parent */
     height: 100%; /* Prend toute la hauteur de l'élément parent, ajustez selon le besoin */
-    
     
     display: flex;
     flex-direction: column;
@@ -17,7 +16,7 @@
     font-family: "Work Sans";
 }
 
-.rules-container {
+.container {
     background-color: white;
     padding: 1px;
     text-align: center;

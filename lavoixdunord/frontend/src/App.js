@@ -6,10 +6,17 @@ import React from "react";
 import QuestionPage from "./QuestionPage/QuestionPage";
 import DifficultyPage from "./DifficultyPage/DifficultyPage";
 import Etape from "./EtapePage/Etape";
+import RulesPage from "./pageRegles/pageRegles"
+import homePage from "./homePage/homePage"
+import page0 from "./page0/page0"
+
 
 function App() {
   //return <Etape />;
   //return <QuestionPage />;
+  //return <page0 />
+  //return <homePage />
+  //return <RulesPage />;
   return (
     <Router>
       <Routes>
