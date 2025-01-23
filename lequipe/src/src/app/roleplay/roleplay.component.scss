@@ -1,5 +1,6 @@
 header {
-    background-color: black;
+    background-color: white;
+    color: black;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -11,8 +12,8 @@ header {
     z-index: 10;
 
     #logo {
-        height: 80%;
-        margin: 1% 5%;
+        height: 60%;
+        margin: 1% 4%;
     }
 
     div {
