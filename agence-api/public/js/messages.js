@@ -5,17 +5,17 @@
 //     const chatBox = document.getElementById('chatBox');
 //     const messageList = document.getElementById('messageList');
 
-document.onload = function() {
-    const messageInput = document.getElementById('messageInput');
+// document.onload = function() {
+//     const messageInput = document.getElementById('messageInput');
 
-    messageInput.addEventListener('keydown', event => {
-        if (event.key === 'Enter') {
-            sendMessage();
-        }
-    });
+//     messageInput.addEventListener('keydown', event => {
+//         if (event.key === 'Enter') {
+//             sendMessage();
+//         }
+//     });
 
-    messageSendButton.addEventListener('click', sendMessage);
-};
+//     messageSendButton.addEventListener('click', sendMessage);
+// };
 //     scrollToBottom();
 // };
 
@@ -24,7 +24,6 @@ function sendMessage() {
     const messageText = messageInput.value.trim();
     if (messageText === '') return;
 
-    localStorage.setItem('userName', messageText);
     const newMessage = { text: messageText, type: 'sent', timestamp: new Date().toISOString() };
 
     addMessage(newMessage);
@@ -39,6 +38,8 @@ function addMessage(message) {
     messageElement.classList.add('message', message.type);
     messageElement.textContent = message.text;
     messageList.appendChild(messageElement);
+
+    scrollToBottom();
 };
 
 // // Fonction pour effacer l'historique des messages (optionnelle)

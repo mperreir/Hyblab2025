@@ -13,8 +13,10 @@ const initSlide2 = async function () {
     const introStory = await response.json();
 
     // Load the intro story
-    await loadIntroStory(introStory);
-    const userName = await getUserName();
+    const userName = await loadIntroStory(introStory);
+
+    // Select the character
+    const character = selectCharacter();
     
 };
 
@@ -22,17 +24,45 @@ function wait(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-function waitForLocalStorageKey(key, interval = 100) {
+function waitForNameInput() {
     return new Promise((resolve) => {
-      const checkInterval = setInterval(() => {
-        const value = localStorage.getItem(key);
-        if (value !== null) {
-          clearInterval(checkInterval); // Stop checking once the value exists
-          resolve(value); // Resolve the promise with the value
+      const sendButton = document.getElementById('messageSendButton');
+      const messageInput = document.getElementById('messageInput');
+  
+      function onClick() {
+        const value = messageInput.value.trim();
+        sendButton.removeEventListener('click', onClick); // Stop listening once input is received
+        messageInput.removeEventListener('keydown', event => {
+            if (event.key === 'Enter') {
+                onClick();
+            }
+        });
+        resolve(value); // Resolve the Promise with the input value
+      }
+  
+      sendButton.addEventListener('click', onClick);
+      messageInput.addEventListener('keydown', event => {
+        if (event.key === 'Enter') {
+            onClick();
         }
-      }, interval);
+    });
     });
   }
+
+
+async function getUserName() {
+    const messageInput = document.getElementById('messageInput');
+    const chatInput = document.getElementById('chat-input');
+
+    chatInput.style.visibility='visible';
+    messageInput.focus();
+
+    userName = await waitForNameInput();
+
+    messageInput.blur();
+    chatInput.style.visibility='hidden';
+    return userName;
+}
   
 async function loadIntroStory(introStory) {
     document.getElementById('chat-input').style.visibility = 'hidden';
@@ -44,15 +74,20 @@ async function loadIntroStory(introStory) {
         scrollToBottom();
         i++;
     }
-}
-  
-async function getUserName() {
-    document.getElementById('chat-input').style.visibility='visible';
-    document.getElementById('messageInput').focus();
 
-    userName = await waitForLocalStorageKey('userName');
-    
-    document.getElementById('chat-input').style.visibility='hidden';
-    document.getElementById('messageInput').blur();
+    const userName = await getUserName();
+
+    addMessage({ text: userName, type: "sent", timestamp: new Date().toISOString() });
+    addMessage({ text: "Coucou " + userName, type: "received", timestamp: new Date().toISOString() });
+
+
     return userName;
 }
+
+  async function selectCharacter() {
+    // Call the function to create and add the carousel
+    createCarousel();
+    scrollToBottom();
+
+  }
+  
