@@ -55,6 +55,16 @@ header {
             display: none; /* Cache la barre de défilement */
         }
         scrollbar-width: none; /* Firefox */
+        
+        .placeholder {
+            flex: 0 0 auto; /* Empêche les éléments de se réduire ou de se casser sur plusieurs lignes */
+            scroll-snap-align: start; /* Optionnel : alignement précis lors du défilement */
+            display: flex;
+            flex-direction: column;
+            width: 10%;
+            padding: 1.5%;
+            border-radius: 7px;
+        }
 
         .scenario {
             

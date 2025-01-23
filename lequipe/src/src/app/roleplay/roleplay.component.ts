@@ -43,7 +43,7 @@ export class RoleplayComponent implements OnInit {
     scrollToSelectedScenario(): void {
         const selectedElement = document.querySelector('.selected');
         if (selectedElement) {
-            selectedElement.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
+            //selectedElement.scrollIntoView({ block: 'end', inline: 'center' });
         }
     }
 }
