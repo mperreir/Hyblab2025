@@ -1,14 +1,15 @@
+
 #main {
     position: absolute;
     top: 0; right: 0; bottom: 0; left: 0;
-    background: url('../../../public/square1.png') no-repeat center center;
+    background: url('../../../public/background.png') no-repeat center center;
     background-size: cover;
 
     #backdrop {
         position: absolute;
         top: 0; right: 0; bottom: 0; left: 0;
         // background: rgba(0, 0, 0, 0.5);
-        backdrop-filter: blur(10px);
+        // backdrop-filter: blur(10px);
 
         display: flex;
         flex-direction: column;
@@ -19,34 +20,44 @@
             position: absolute;
             top: 0; right: 0; left: 0;
             width: 30%;
-            margin: 8% auto 0 auto;
+            margin: 15% auto 0 auto;
             z-index: 1;
         }
 
         h2 {
-            width: 60%;
-            color: black;
+            width: 70%;
+            color: white;
             font-size: 35%;
-            font-weight: 500;
+            font-weight: 600;
             font-style: italic;
             text-align: center;
         }
 
         #start_btn {
-            background-color: white;
-            border: 2px solid red;
-            border-radius: 10px;
-            color: red;
+            background-color: #d61e00;
+            border-radius: 4px;
+            color: white;
 
-            font-size: 30%;
-            font-weight: 300;
-            text-align: center;
+            display: flex;
+            gap: 7px;
+            align-items: center;
             vertical-align: middle;
+            font-size: 23%;
+            font-weight: 200;
 
-            width: 40%;
-            padding: 5px 0 10px 0;
+            // width: 40%;
+            padding: 1%;
+            padding-bottom: 1.4%;
             margin-top: 5%;
             cursor: pointer;
+
+            img {
+                height: 100%;
+            }
         }
     }
+}
+
+.flip_x {
+    transform: scaleX(-1);
 }

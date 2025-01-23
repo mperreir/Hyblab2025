@@ -1,7 +1,11 @@
 <div id="main">
     <div id="backdrop">
-        <img src="square2.png" alt="logo" id="logo">
+        <img src="logo.svg" alt="logo" id="logo">
         <h2>{{"Créez votre propre histoire !" | uppercase}}</h2>
-        <div id="start_btn" (click)="router.navigate(['roleplay'])">COMMENCER</div>
+        <div id="start_btn" (click)="router.navigate(['roleplay'])">
+            <img src="sifflet.svg" alt="" class="flip_x">
+            COMMENCER
+            <img src="sifflet.svg" alt="">
+        </div>
     </div>
 </div>
