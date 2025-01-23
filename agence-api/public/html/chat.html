@@ -9,10 +9,13 @@
         <div class="chat-box" id="chatBox">
           <ul id="messageList"></ul>
         </div>
-        <div class="chat-input">
-          <input type="text" id="messageInput" placeholder="Écris ton message...">
-          <button onclick="sendMessage()">Envoyer</button>
+        <div class="chat-input" id="chat-input">
+          <input type="text" id="messageInput" placeholder="Écris ton nom...">
+          <button id="messageSendButton">Envoyer</button>
         </div>
       </div>
+    </div>
+    <div id="expandingElement" class="expanding" onclick="closeOverlay()">
+      <p>Ceci est un texte explicatif sans utilité</p>
     </div>
 </section>
