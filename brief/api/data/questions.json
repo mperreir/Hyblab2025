@@ -1,21 +1,21 @@
 {
-    "question_id": "q1",
+    "question_id": "1",
     "question_text": "Quel est votre choix ?",
     "responses": [
       {
-        "response_id": "r1",
+        "response_id": "1",
         "response_text": "Option 1",
-        "next_question_id": "q11"
+        "next_question_id": "11"
       },
       {
-        "response_id": "r2",
+        "response_id": "2",
         "response_text": "Option 2",
-        "next_question_id": "q12"
+        "next_question_id": "12"
       },
       {
-        "response_id": "r3",
+        "response_id": "3",
         "response_text": "Option 3",
-        "next_question_id": "q13"
+        "next_question_id": "13"
       }
     ]
   }
