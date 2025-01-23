@@ -17,14 +17,36 @@
     "articles": [
       {
         "id": "0",
-        "title": "Les débuts de Matthieu PAVON",
-        "content": "Test"
+        "title": "Le Masters d’Augusta, un rendez-vous légendaire",
+        "content": "Du 11 au 14 avril 2024, le prestigieux Masters d’Augusta accueillait l’élite du golf mondial pour sa 88ᵉ édition. Disputé sur le légendaire parcours de l’Augusta National Golf Club en Géorgie (États-Unis), ce tournoi est réservé aux meilleurs joueurs du monde, aux anciens vainqueurs et à cinq amateurs triés sur le volet. L’unique récompense : la mythique veste verte. Parmi les invités de cette année figuraient Jon Rahm, tenant du titre, Scottie Scheffler, actuel numéro un mondial, Rory McIlroy, Brooks Koepka, Dustin Johnson… mais aussi Matthieu Pavon, premier Français à découvrir ce parcours mythique après une ascension fulgurante.",
+        "image": "image_article0_part0.jpg"
       },
       {
         "id": "1",
-        "title": "Les premiers tournois de Matthieu PAVON",
-        "content": "Test"
+        "title": "Une révélation historique",
+        "content": "Le 27 janvier 2024 était une date impotante pour le golf français. Matthieu Pavon s’impose au Farmers Insurance Open, devenant ainsi le premier Français à remporter un tournoi du PGA Tour depuis plus d’un siècle et un succès de Louis Tellier en 1920 au New England Pro Championship. Une victoire inespérée quelques mois plus tôt, alors qu’il cherchait encore son premier titre sur le DP World Tour. L’automne précédent, lors du DP World Tour Championship 2023 à Dubaï, Pavon avait déjà montré l’étendue de son talent en réussissant quatre birdies consécutifs sur les quatre derniers trous. Ce coup d’éclat lui permettait de terminer 5ᵉ et d’obtenir une place sur le PGA Tour, un circuit qui l’a toujours fait rêver. Fils de Michel Pavon, ancien capitaine des Girondins de Bordeaux, Matthieu Pavon ne s’est pas laissé griser par son premier titre sur le Spanish Open en octobre 2023, une victoire qu’il attendait depuis 7 ans et 185 tournois. Travailleur acharné, il a poursuivi ses efforts avec détermination.",
+        "image": "image_article1_part1.jpg"
+
+      }, 
+      {
+        "id": "2",
+        "title": "Un parcours atypique forgé par le travail",
+        "content": "Matthieu Pavon, né le 2 novembre 1992 à Toulouse, d’un père footballeur et d’une mère golfeuse, part de très loin. Alors que la plupart des golfeurs professionnels de son rang débutent le golf très tôt, lui, commence sur le tard à l’âge de 12 ans, et ne passe pas par un pôle espoirs. Il est alors loin de faire partie des golfeurs les plus talentueux de sa génération. Contrairement à beaucoup de ses adversaires, Pavon n’a pas suivi un parcours classique et n’est pas passé par un pôle espoirs. Il ne figurait pas non plus parmi les jeunes prodiges du golf français. Comme il l’a confié au Figaro : « Je pars de loin. C’est beaucoup de travail. Le golf nous remet souvent à notre place. Cela a été beaucoup d’échecs. » Malgré cela, il a toujours cru en lui et a su s’entourer d’une équipe solide, notamment avec son préparateur mental Matthieu David. Sa rigueur et son approche méthodique lui ont permis de gravir les échelons du golf mondial. – il résume cet acharnement avec un tatouage, gravé sur sa main droite, celle qui ne porte jamais de gant lorsqu'il joue « La salive qui coule aujourd’hui deviendra demain des larmes de joie » ",
+        "image": "image_article2_part2.jpg"
+      }, 
+      {
+        "id": "3",
+        "title": "Augusta : un rêve qui se réalise",
+        "content": "En 2009, sa mère, Béatrice Pavon-Deler, assiste au Masters d’Augusta et enterre symboliquement une pièce sous un arbre du practice, espérant voir un jour son fils jouer ce tournoi mythique. Quinze ans plus tard, le rêve devient réalité. Aujourd'hui 36ᵉ joueur mondial et numéro 1 français, Pavon est en pleine confiance. Après sa victoire historique à Torrey Pines, il enchaîne avec une 3ᵉ place à Pebble Beach, obtenant ainsi son invitation pour le Masters. Fait intéressant : il n’a jamais voulu découvrir Augusta en tant que spectateur, convaincu qu’il y mettrait un jour les pieds en tant que joueur. « Mon souhait, c’était d’y aller en tant que joueur d’abord. » confie-t-il à RMC sport. Pour Pascal Grizot, président de la Fédération Française de Golf, la clé de son succès réside dans son mental : « La bascule se fait sur la confiance. Matthieu a franchi le cap entre bien jouer et gagner. Il a du caractère, et c’est la marque des grands champions. »",
+        "image": "image_article3_part3.jpg"
+      },
+      {
+        "id": "4",
+        "title": "Objectif Jeux Olympiques 2024",
+        "content": "Après Augusta, Matthieu Pavon a pu réaliser à nouveau un de ses rêves en participant aux Jeux Olympiques de Paris 2024. Passionné, il considère cet événement comme un objectif majeur : « Ce sera un grand moment dans ma vie de sportif. » déclarait-il lors d'un interview avec la fédération française de golf juste avant les jeux olympiques. En conférence de presse après sa victoire à Torrey Pines, il confiait déjà : « Participer aux JO était un de mes objectifs cette année. Me qualifier pour représenter mon pays à Paris me semble désormais bien engagé. » Malheureusement, il livre 'une piètre performance' dès la 2nde journée du tournois, et celui qui était alors 23ème mondial, se retrouve propulsé à la 58ème place sur 60 joueurs des jeux olympiques. Déçu de sa performance, il déclare avoir tout de même passé un aggréable moment grâce à la foule et à l'ambiance des jeux olympiques. Il ne baisse pas pour autant les bras et se motive pour le PGA tour à venir. Du 10 au 13 Avril 2025 à Augusta, le golfeur français, aujourd'hui 38ème au classement mondial, n'a pas encore dit son dernier mot. ",
+        "image": "image_article4_part4.jpg"
       }
+      
     ]
   },
   "player2": {

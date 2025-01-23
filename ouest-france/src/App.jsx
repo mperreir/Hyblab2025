@@ -5,7 +5,8 @@ import { scrollToSection } from './utils';
 
 import Home from './screens/Home';
 import ChoosePlayer from './screens/ChoosePlayer/ChoosePlayer';
-import Article from './screens/Article';
+import Article1 from './screens/Article1';
+import Article2 from './screens/Article2';
 import Quiz from './screens/Quiz';
 
 const App = () => {
@@ -26,7 +27,8 @@ const App = () => {
     const articleJson = await articleFetch.json()
 
     setQuizData(quizJson);
-    setArticleData(articleJson)
+    setArticleData(articleJson);
+    console.log('article json', articleJson);
   };
 
   useEffect(() => {
@@ -42,8 +44,11 @@ const App = () => {
       {quizData && (
         <>
           <Quiz data={quizData} />
-          <Article data={articleData[0]}/>
-          <Article data={articleData[1]}/>
+          <Article1 data={articleData[0]}/>
+          <Article2 data={articleData[1]}/>
+          <Article1 data={articleData[2]}/>
+          <Article2 data={articleData[3]}/>
+          <Article1 data={articleData[4]}/>
         </>
         )}
     </div>
