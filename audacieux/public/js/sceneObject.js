@@ -26,6 +26,14 @@ class SceneObject{
             path: src
           });
         }
+
+
+        if(type == "group")
+        {
+            this.html_el = document.createElement("div");
+            this.html_el.setAttribute("id", id);
+            this.childs = [];
+        }
   
         // Transformation state
         this.position = { x: 0, y: 0 };

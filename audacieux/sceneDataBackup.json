@@ -1,0 +1,79 @@
+{
+    "elements": [
+
+      {
+        "id": "group1",
+        "type": "group",
+        "src": "",
+        "subElement":[
+            {
+              "id": "svgElement1",
+              "type": "svg",
+              "src": "assets/element1.svg",
+              "keyframes": [
+                {
+                  "time": 0,
+                  "x": 100,
+                  "y": 200,
+                  "rotation": 0,
+                  "scale": 1
+                }
+              ]
+            },
+            {
+              "id": "lottieElement1",
+              "type": "lottie",
+              "src": "assets/animation1.json",
+              "keyframes": [
+                {
+                  "time": 0,
+                  "x": 100,
+                  "y": 0,
+                  "rotation": 0,
+                  "scale": 1
+                },
+                {
+                  "time": 2,
+                  "x": 200,
+                  "y": 0,
+                  "rotation": 90,
+                  "scale": 0.5
+                },
+                {
+                  "time": 4,
+                  "x": 400,
+                  "y": 1000,
+                  "rotation": 180,
+                  "scale": 1
+                }
+              ]
+            }
+      
+        ],
+        "keyframes": [
+          {
+            "time": 0,
+            "x": 100,
+            "y": 200,
+            "rotation": 0,
+            "scale": 1
+          },
+          {
+            "time": 2,
+            "x": 300,
+            "y": 300,
+            "rotation": 180,
+            "scale": 1.5
+          },
+          {
+            "time": 4,
+            "x": 500,
+            "y": 200,
+            "rotation": 360,
+            "scale": 1
+          }
+        ]
+      }
+    ]
+  }
+  
