@@ -119,24 +119,48 @@
     opacity: 1;
 }
 
-.choice p{
+.choice .content{
+    font-family: Arial,serif;
     position: absolute;
     transform: skew(20deg);
     top: 65%;
     width: 100%;
     max-width: 550px;
     color: white;
-    text-align: center;
+
     opacity: 0;
     transition: all ease 0.3s;
     z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
-.choice.left p{
+.choice .content h2{
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    text-transform: uppercase;
+}
+.choice .content p{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18.4px;
+}
+.choice .content button{
+    width: min-content;
+}
+
+.choice.left .content{
     right: 25%;
+    text-align: left;
+    align-items: start;
 }
-.choice.right p{
+.choice.right .content{
     left: 35%;
+    text-align: right;
+    align-items: end;
 }
-.choice:hover p {
+.choice:hover .content {
     opacity: 1;
 }
