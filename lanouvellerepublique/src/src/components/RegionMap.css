@@ -1,0 +1,33 @@
+.map_container {
+    width: 60%;
+    aspect-ratio: 1 / 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+}
+
+.background_square {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.background_square.bright {
+    background-color: #EFD8B8;
+}
+
+.background_square.dark {
+    background-color: #C9B69B;
+}
+
+.background_square.tilted {
+    transform: rotateZ(-3deg);
+}
+
+.map_container:hover .background_square.tilted{
+    transition: all ease .2s;
+    transform: rotateZ(-6deg);
+}

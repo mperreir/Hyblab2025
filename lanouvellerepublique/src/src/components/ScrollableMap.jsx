@@ -9,7 +9,7 @@ function ScrollableMap({ width = 3000, height = 3000, background, setSelectedTex
   const [scrollPos, setScrollPos] = useState({ left: 0, top: 0 });
 
   const points = [
-    { x: 500, y: 300, text: "This is the first point. Here is some placeholder text." },
+    { x: 500, y: 300, text: "Vous me croisez un jour ? Vous remarquerez vite que je suis une vraie championne de la nage ! Mon corps long et fuselé, mes petites pattes palmées et ma queue musclée sont conçus pour filer sous l’eau. Mon pelage marron chocolat est super pratique : 98% de poils de bourre pour me garder au sec, et des poils de jarre pour être totalement imperméable. Sous l’eau, je suis équipée pour tout gérer : nager, plonger, chasser. Par contre, sur terre, je suis un peu moins agile… Mais avec tous mes atouts aquatiques, j’ai encore besoin de votre aide pour protéger mes habitats. Vous êtes prêts à me soutenir ?" },
     { x: 1200, y: 800, text: "Catulus in aedilitate sua suspendit omnium primus; aut pugnaciter aleis certant turpi sono fragosis naribus introrsum reducto spiritu concrepantes; aut quod est studiorum omnium maximum ab ortu lucis ad vesperam sole fatiscunt vel pluviis, per minutias aurigarum equorumque praecipua vel delicta scrutantes." },
     { x: 2500, y: 1500, text: "Proinde die funestis interrogationibus praestituto imaginarius iudex equitum resedit magister adhibitis aliis iam quae essent agenda praedoctis, et adsistebant hinc inde notarii, quid quaesitum esset, quidve responsum, cursim ad Caesarem perferentes, cuius imperio truci, stimulis reginae exsertantis aurem subinde per aulaeum, nec diluere obiecta permissi nec defensi periere conplures." }
   ];

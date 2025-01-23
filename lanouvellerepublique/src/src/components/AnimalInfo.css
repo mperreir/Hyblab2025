@@ -1,0 +1,31 @@
+.animal_presentation {
+    color: black;
+    margin-bottom: 30px;
+}
+
+.top_section {
+    background-color: #efd8b8;
+    display: flex;
+    flex-direction: row;
+}
+
+.text_container {
+    box-sizing: border-box;
+    margin: 0 15px;
+}
+
+.image_container {
+    width: 40%;
+}
+
+.bottom_section {
+    width: 100%;
+    background-color: #127039;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bottom_section a {
+    color: white !important;
+}

@@ -8,11 +8,11 @@
     border-radius: 10px;
     border: solid 2px black;
     box-sizing: border-box;
-    font-size: 150%;
+    font-size: 120%;
     white-space: nowrap;
     transition: opacity 0.3s ease-in-out;
-    height: 20dvh;
-    max-height: 20dvh;
+    height: 60dvh;
+    max-height: 60dvh;
     display: flex;
     align-items: center;
 }
