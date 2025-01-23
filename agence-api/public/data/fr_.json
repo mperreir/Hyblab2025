@@ -1,0 +1,181 @@
+{
+    "introduction": {
+        "general": {
+            "avant_nom": [
+                "Salut ! Moi, c’est Api.",
+                "Si tu hésites à lancer ton entreprise en Bretagne ou dans les Pays de la Loire, tu es au bon endroit.",
+                "Au cours de cette aventure, tu découvriras les chiffres clés de l’économie de ces régions et tu pourras faire tes propres choix pour créer ton entreprise.",
+                "Comment t’appelles-tu ?"
+            ],
+            "apres_nom": [
+                "Enchanté de faire ta connaissance, ${user_name} !",
+                "Je vais te présenter rapidement notre tissu économique. La Bretagne et les Pays de la Loire sont des régions qui bougent beaucoup. Ici, les taux de chômage sont parmi les plus bas en France : 5,8 % en Bretagne et 5,9 % dans les Pays de la Loire, contre 7,1 % au niveau national en 2023.",
+                "Et il y a une super dynamique : 37 % des créateurs d’entreprise ont moins de 30 ans. Pas mal non ?",
+                "En termes de qualité de vie, la situation est favorable  : le taux de pauvreté est de 10,5 % en Pays de la Loire et 11,2 % en Bretagne, contre 14,4 % au niveau national.",
+                "Et puis, on a tout ici : des cadres, des agriculteurs, des artisans... C’est ça, la force économique de l’Ouest !",
+                "Tu es prêt à commencer ton aventure ?",
+                "Si oui, il te suffit de choisir ton futur secteur d'activité :"
+            ],
+            "avertissement": [
+                "Juste un petit mot avant de commencer : ce jeu est là pour t'amuser et t'informer.",
+                "Il ne remplace pas les conseils d'un professionnel pour créer ton entreprise.",
+                "Les informations que tu trouveras ici sont basées sur des données générales et peuvent ne pas refléter les situations que tu rencontrerais."
+            ]
+        },
+        "secteurs": {
+            "agro": "Tu veux te lancer dans l’agroalimentaire ? Parfait, l’Ouest est une référence dans ce domaine ! La Bretagne est la première région agricole de France, et les Pays de la Loire sont en troisième position. Produire ou transformer des aliments ici, c’est contribuer activement à nourrir la France !",
+            "tech": "Ton rêve c’est d’être dans l’innovation ? L’Ouest pourrait bien répondre à tes ambitions ! Aujourd’hui, un quart des technopoles françaises y sont réunies. Aujourd’hui, un quart des technopôles français sont réunis ici . Ta prochaine innovation pourrait t’amener à changer le monde depuis nos régions !",
+            "arti": "Créer de tes mains te passionne ? L’Ouest est fait pour toi ! Ici, on cultive le savoir-faire entre traditions bien ancrées et forte demande locale. Que tu sois menuisier, boulanger ou bijoutier, ta créativité pourra s’épanouir et marquer les esprits."
+        }
+    },
+    "agro": {
+        "introduction": [
+            "Tu as décidé de te lancer dans l’agroalimentaire ? Super choix ! Ici, dans l’Ouest, on est des champions dans ce secteur. Prêt à faire partie de cette grande aventure ?",
+            "L’agroalimentaire est un pilier économique de nos régions. La Bretagne est la première région agricole de France, et les Pays de la Loire sont troisièmes. Que ce soit pour la transformation de la viande, la production laitière ou la valorisation des céréales, tu disposes ici de toutes les ressources nécessaires pour réussir !",
+            "Voici quelques chiffres pour te donner une idée :",
+            "La Bretagne produit 40 % des aliments pour animaux de ferme en France.",
+            "Les industries de la viande, du lait et de la boulangerie industrielle représentent près des 3/4 de l’activité agroalimentaire régionale.",
+            "Je te souhaite une bonne installation !"
+        ],
+        "questions": [
+            [
+                "Il est temps de choisir dans quel secteur tu souhaites te lancer.",
+                "Dans nos régions, la production et la transformation de lait, de porc et de volaille sont prédominantes.",
+                "Alors, dans quelle branche de l’agroalimentaire souhaites-tu te spécialiser ?"
+            ],
+            [
+                "Quel(s) moyen(s) de financement souhaites-tu tenter d’obtenir ? Tu peux sélectionner plusieurs réponses."
+            ],
+            [
+                "Une bonne équipe fait toute la différence, n'est-ce pas ?",
+                "Dis-moi, comment souhaites-tu orienter ta politique de recrutement ?"
+            ],
+            [
+                "Comme tu as pu le voir, les produits de nos régions s’exportent dans toute l’Europe et même plus loin.",
+                "Quel marché vises-tu ?"
+            ]
+        ],
+        "reponses": [
+            [
+                "Je souhaite m’intégrer à la production de produits laitiers. Je m’installerai en Mayenne.",
+                "Je souhaite m’intégrer à la production porcine. Je m’installerai dans les Côtes-d’Armor.",
+                "Je souhaite m’intégrer à la production avicole. Je m’installerai en Vendée."
+            ],
+            [
+                "Je vais demander un prêt bancaire.",
+                "Je vais demander une subvention.",
+                "Je vais demander un financement participatif."
+            ],
+            [
+                "Je veux embaucher de la main-d'œuvre locale, qui connaît bien le terrain et les traditions locales.",
+                "Je veux attirer des talents d’autres régions qui amèneront un vent de nouveauté avec des compétences rares ou pointues."
+            ],
+            [
+                "Je reste sur le marché local",
+                "Je vise le marché national",
+                "Je souhaite atteindre le marché européen, voire international."
+            ]
+        ],
+        "contexte": {
+            "1": {
+                "avant": [],
+                "apres": {
+                    "1_lait": "Félicitations pour ton choix de te lancer dans la production laitière en Mayenne ! Ce département est un acteur majeur dans le secteur, abritant notamment des entreprises de renom telles que Lactalis, leader mondial des produits laitiers.",
+                    "1_porc": "Bravo pour ton ambition dans la filière porcine en Côtes-d'Armor ! Ce département abrite notamment l’entreprise Cooperl, une coopérative spécialisée dans le porc et le bovin.",
+                    "1_volaille": "Bravo pour ton projet dans le secteur avicole en Vendée ! Le département accueille des entreprises de renom comme Groupe LDC, leader français de la volaille."
+                }
+            },
+            "2": {
+                "avant": [
+                    "Il est maintenant temps de parler financement. Les sources de ce financement peuvent être multiples.",
+                    " Je vais te présenter quelques aides publiques dont les entreprises de l’Ouest ont pu bénéficier au cours des dernières années."
+                ],
+                "apres": [
+                    "Tu as trouvé le financement nécessaire pour démarrer ton activité. Félicitations !"
+                ]
+            },
+            "3": {
+                "avant": [
+                    "Maintenant, parlons de ton équipe : qui vas-tu recruter pour t’épauler ?",
+                    "Jettons un oeil au profil des actifs dans ton département !"
+                ],
+                "apres": [
+                    "Très bien !"
+                ]
+            },
+            "4": {
+                "avant": [
+                    "Avec ton équipe en place, il est temps de penser à une autre étape clé : où vont partir tes produits ?",
+                    "À ton avis, à quoi ressemble l'export de marchandises provenant de l'Ouest ?",
+                    "Allons voir ça ensemble !"
+                ],
+                "apres": [
+                    {
+                        "4_local": "Tu as choisi de rester sur le marché local. J'espère que tu trouveras ton public !",
+                        "4_national": "Tu as choisi de viser le marché national. Bonne chance pour la suite !",
+                        "4_international": "Tu as choisi de viser le marché international. C'est un pari risqué, mais qui peut s'avérer très payant !"
+                    }
+                ]
+            }
+        },
+        "informations": {
+            "1": {},
+            "2": {
+                "titre": "Financement : Les aides publiques",
+                "images": [],
+                "paragraphes": [
+                    "L'Ouest de la France bénéficie d'un soutien significatif à travers les dispositifs publics visant à renforcer son tissu industriel et à favoriser la réindustrialisation.",
+                    "Le programme France Relance a permis d’accompagner 67 entreprises de la région dans leur projet de relocalisation dans des secteurs stratégiques, tout en soutenant 185 initiatives industrielles pour dynamiser les territoires​.",
+                    "Par ailleurs, le plan France 2030, orienté vers l’avenir et l’innovation, appuie 62 entreprises dans leur démarche de réindustrialisation, avec pour objectif de renforcer des filières essentielles telles que les technologies de pointe et la transition énergétique​. Ces initiatives s’inscrivent dans une dynamique de développement durable et de souveraineté économique, offrant de réelles opportunités de croissance aux entreprises de l'Ouest."
+                ]
+            },
+            "3": {
+                "titre": {
+                    "1_lait": "Les actifs en Mayenne",
+                    "1_porc": "Les actifs dans les Côtes-d'Armor",
+                    "1_volaille": "Les actifs en Vendée"
+                },
+                "images": {
+                    "1_lait": [],
+                    "1_porc": [],
+                    "1_volaille": []
+                },
+                "paragraphes": [
+                    "Il faut savoir que nos deux régions se distinguent du reste du territoire métropolitain par une plus forte proportion d’ouvriers et d’agriculteurs-exploitants, liée au poids important de l’agriculture et de l’industrie. Tu devrais donc trouver de nombreux partenaires et employés pour ton activité ici."
+                ]
+            },
+            "4": {
+                "titre": "L'export de marchandises de l'Ouest",
+                "images": [],
+                "paragraphes": [
+                    "La Bretagne et les Pays de la Loire exportent respectivement 12 810 M€ et 25 430M€ par an (données du T4 2022 au T3 2023). Les principaux pays d'exportation sont l'Allemagne, l'Espagne et la Belgique pour la Bretagne, et la Belgique, l'Espagne et le Royaume-Uni pour les Pays de la Loire.",
+                    {
+                        "1_lait": "Les produits laitiers sont la sixième marchandise la plus exportée en Bretagne, représentant 2337 millions d’euros par an, et la septième marchandise la plus exportée en Pays de la Loire.",
+                        "1_porc": "La viande et les produits à base de viande sont la quatrième marchandise la plus exportée en Bretagne représentant 2337 millions d’euros par an, et la cinquième marchandise la plus exportée en Pays de la Loire.",
+                        "1_volaille": "La viande et les produits à base de viande sont la quatrième marchandise la plus exportée en Bretagne représentant 2337 millions d’euros par an, et la cinquième marchandise la plus exportée en Pays de la Loire."
+                    }
+                ]
+            }
+        }
+    },
+    "tech": {
+        "introduction": [],
+        "questions": [],
+        "reponses": [
+            []
+        ],
+        "contexte": "",
+        "informations": "",
+        "images": ""
+    },
+    "arti": {
+        "introduction": [],
+        "questions": [],
+        "reponses": [
+            []
+        ],
+        "contexte": "",
+        "informations": "",
+        "images": ""
+    }
+}

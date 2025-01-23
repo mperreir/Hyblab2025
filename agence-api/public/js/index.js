@@ -1,56 +1,89 @@
 "use strict";
 
-// Init of the (touch friendly) Swiper slider
-const swiper = new Swiper("#mySwiper", {
-  direction: "vertical",
-  mousewheel: true,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-});
+/**
+ * Fonction pour charger le contenu HTML dans un élément spécifique.
+ * @param {string} url - L'URL du fichier HTML à charger.
+ * @param {string} elementId - L'ID de l'élément où le contenu sera injecté.
+ * @returns {Promise} - Une promesse qui se résout une fois le contenu chargé.
+ */
 
-// Function to enable or disable Swiper controls
-function toggleSwiper(enable) {
-  if (enable) {
-    swiper.mousewheel.enable();
-    swiper.allowTouchMove = true;
-  } else {
-    swiper.mousewheel.disable();
-    swiper.allowTouchMove = false;
-  }
+function loadContent(url, elementId) {
+  return fetch(url)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Erreur HTTP! statut: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(data => {
+      document.getElementById(elementId).innerHTML = data;
+    })
+    .catch(error => console.error(`Erreur lors du chargement de ${url}:`, error));
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+  // Charger tous les contenus HTML des slides
+  Promise.all([
+    loadContent('html/accueil.html', 'content-accueil'),
+    loadContent('html/chat.html', 'content-chat'),
+    loadContent('html/fin.html', 'content-fin')
+  ]).then(() => {
 
-swiper.on("slideChange", function () {
-  switch( swiper.activeIndex ) {
-    case 0:
+    // Init of the (touch friendly) Swiper slider
+    const swiper = new Swiper("#mySwiper", {
+      direction: "vertical",
+      mousewheel: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+    // Function to enable or disable Swiper controls
+    function toggleSwiper(enable) {
+      if (enable) {
+        swiper.mousewheel.enable();
+        swiper.allowTouchMove = true;
+      } else {
+        swiper.mousewheel.disable();
+        swiper.allowTouchMove = false;
+      }
+    }
+
+
+    swiper.on("slideChange", function () {
+      switch( swiper.activeIndex ) {
+        case 0:
+          initSlide1();
+          toggleSwiper(true);
+          break;
+        case 1:
+          initSlide2();
+          toggleSwiper(true);
+          break;
+        case 2:
+          initSlide3();
+          toggleSwiper(true);
+          break;
+      }
+    });
+
+    // Wait for the content to preload and display 1st slide
+    // Here we simulate a loading time of one second
+    setTimeout(() => { 
+      // fade out the loader "slide"
+      // and send it to the back (z-index = -1)
+      anime({
+        delay: 10,
+        targets: '#loader',
+        opacity: '0',
+        'z-index' : -1,
+        easing: 'easeOutQuad',
+      });
+      
+      // Init first slide
       initSlide1();
-      toggleSwiper(true);
-      break;
-    case 1:
-      initSlide2();
-      toggleSwiper(false);
-      break;
-    case 2:
-      initSlide3();
-      toggleSwiper(true);
-      break;
-  }
-});
-
-// Wait for the content to preload and display 1st slide
-// Here we simulate a loading time of one second
-setTimeout(() => { 
-  // fade out the loader "slide"
-  // and send it to the back (z-index = -1)
-  anime({
-    delay: 10,
-    targets: '#loader',
-    opacity: '0',
-    'z-index' : -1,
-    easing: 'easeOutQuad',
+    }, 10);
+  }).catch(error => {
+    console.error('Erreur lors du chargement des contenus:', error);
   });
-  // Init first slide
-  initSlide1();
-}, 10);
+});
