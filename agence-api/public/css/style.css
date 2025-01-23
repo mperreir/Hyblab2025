@@ -52,9 +52,10 @@ body{
 
 /* the slides and the loader should fill the whole 9:16 zone */
 .swiper-wrapper section, #loader{
-    background-color: dodgerblue;
+    background-color: white;
     width: 100%;
     height: 100%;
+    color: black
 }
 
 /* Most of the elements in this demo are absolute positioned with percentages */
@@ -65,6 +66,7 @@ body{
     position: absolute;
     font-size: 30%;
     z-index: 2;
+    text-decoration-color: #0056b3;
 }
 
 #logo-hyblab{
@@ -91,7 +93,7 @@ body{
 }
 
 main > section{
-    background-image: url('../img/background.svg');
+    /* background-image: url('../img/background.svg'); */
     background-size: 100% auto; /* background is full width and height is proportional to width */
     background-position: bottom; /* background is bottom aligned */
 }
@@ -105,7 +107,7 @@ main > section{
     font-size: 20%;
     text-align: center;
     padding: 1em;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(98, 62, 0, 0.5);
 }
 
 
@@ -207,7 +209,58 @@ body{
     }
 }
 
-/* Partie messages */
+/*---------------- Partie accueil ---------------*/
+
+/* Ajoutez ceci au conteneur parent de #bloc-centre */
+.parent-container {
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center;    /* Centre verticalement */
+    height: 100vh;          /* Occupe toute la hauteur de la fenêtre */
+    width: 100%;            /* Occupe toute la largeur disponible */
+    box-sizing: border-box; /* Inclut le padding et les bordures dans les dimensions */
+    padding: 20px;          /* Ajoute un peu de padding autour */
+}
+
+/* Style pour #bloc-centre */
+#bloc-centre {
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    
+    /* Centrage et ajustement de la taille */
+    max-width: 600px; /* Ajustez selon vos besoins */
+    height: auto;     /* Adapté en hauteur en fonction du contenu */
+
+    /* Utilisation de Flexbox pour le contenu interne */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* Réactivité */
+    font-size: 2vw; /* Ajuste la taille du texte en fonction de la largeur de la fenêtre */
+    box-sizing: border-box;
+
+    margin:auto;
+}
+
+/* Style pour le texte */
+#bloc-centre p {
+    font-size: 4em;
+}
+
+#titre {
+    font-size: 10vw; /* Ajustez cette valeur selon vos besoins */
+    font-weight: bold; /* Optionnel : rend le texte en gras */
+    color: #333333; /* Optionnel : change la couleur du texte */
+}
+
+
+/*------------------------ Partie messages ------------------*/
 
 /* Styles pour la deuxième diapositive (chat.html) */
 #second-slide {
