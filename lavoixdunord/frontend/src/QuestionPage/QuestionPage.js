@@ -1,47 +1,56 @@
 import React, { useState, useEffect } from "react";
-import yaml from "js-yaml"; // Pour lire le fichier YAML
+import { useNavigate } from "react-router-dom"; // Importer useNavigate
+import yaml from "js-yaml";
 import "./QuestionPage.css";
+import { useParams } from "react-router-dom";
 
 const QuestionPage = () => {
   const [questions, setQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedOptionIndex, setSelectedOptionIndex] = useState(null);
+  const [validated, setValidated] = useState(false);
   const [showHintText, setShowHintText] = useState(false);
   const [showHintImage, setShowHintImage] = useState(false);
 
-  // Charger les questions depuis le fichier YAML
+  const navigate = useNavigate(); // Initialisation de useNavigate
+  const { id } = useParams();
+
   useEffect(() => {
     fetch("/data/questions.yaml")
       .then((response) => response.text())
       .then((text) => {
         const data = yaml.load(text);
-        setQuestions(data.game.levels[0].stages[0].questions);
+        setQuestions(data.game.levels[0].stages[parseInt(id)-1].questions);
       })
       .catch((error) => console.error("Erreur de chargement YAML :", error));
-  }, []);
+  }, [id]);
 
   if (questions.length === 0) {
     return <p>Chargement des questions...</p>;
   }
 
   const handleNext = () => {
-    if (currentQuestionIndex < questions.length - 1) {
-      setCurrentQuestionIndex(currentQuestionIndex + 1);
-      setSelectedOptionIndex(null); // Réinitialiser la sélection
-      setShowHintText(false);
-      setShowHintImage(false);
-    }
-  };
-
-  const toggleHintText = () => {
-    setShowHintText(!showHintText);
-  };
-
-  const toggleHintImage = () => {
-    if (showHintText) {
-      setShowHintImage(!showHintImage);
+    if (!validated) {
+      // Valider la réponse
+      setValidated(true);
     } else {
-      alert("Vous devez d'abord ouvrir l'indice 1 !");
+      // Passer à la question suivante ou rediriger
+      if (currentQuestionIndex < questions.length - 1) {
+        setCurrentQuestionIndex(currentQuestionIndex + 1);
+        setSelectedOptionIndex(null);
+        setValidated(false);
+        setShowHintText(false);
+        setShowHintImage(false);
+      } else {
+        // Redirection vers la page principale
+        navigate("/etape/" + (parseInt(id) + 1));
+        setQuestions([]);
+        setCurrentQuestionIndex(0);
+        setSelectedOptionIndex(null);
+        setValidated(false);
+        setShowHintText(false);
+        setShowHintImage(false);
+      }
     }
   };
 
@@ -65,20 +74,26 @@ const QuestionPage = () => {
             <button
               key={index}
               className={`answer-btn ${
-                selectedOptionIndex === index
-                  ? option.correct
+                selectedOptionIndex === index ? "selected" : ""
+              } ${
+                validated
+                  ? index === selectedOptionIndex
+                    ? option.correct
+                      ? "correct"
+                      : "wrong"
+                    : option.correct
                     ? "correct"
-                    : "wrong"
+                    : ""
                   : ""
               }`}
               onClick={() => handleOptionClick(index)}
-              disabled={selectedOptionIndex !== null} // Désactiver après une sélection
+              disabled={validated}
             >
               {option.text}
             </button>
           ))}
         </div>
-        {/* Lien global vers l'article */}
+
         {currentQuestion.hints.link && (
           <p className="article-link">
             <a
@@ -93,15 +108,18 @@ const QuestionPage = () => {
         <button
           className="next-btn"
           onClick={handleNext}
-          disabled={selectedOptionIndex === null} // Activer seulement après une sélection
+          disabled={selectedOptionIndex === null}
         >
-          SUIVANT
+          {validated
+            ? currentQuestionIndex < questions.length - 1
+              ? "SUIVANT"
+              : "FINIR"
+            : "VALIDER"}
         </button>
 
-        {/* Indices */}
         <div className="hints-container">
           <div className="hint-item">
-            <button className="toggle-btn" onClick={toggleHintText}>
+            <button className="toggle-btn" onClick={() => setShowHintText(!showHintText)}>
               {showHintText ? "−" : "+"}
             </button>
             <span className="hint-title">INDICE 1</span>
@@ -111,14 +129,18 @@ const QuestionPage = () => {
           <div className="hint-item">
             <button
               className={`toggle-btn ${!showHintText ? "disabled" : ""}`}
-              onClick={toggleHintImage}
-              disabled={!showHintText} // Désactiver le bouton si le 1ᵉʳ indice n'est pas ouvert
+              onClick={() => setShowHintImage(!showHintImage)}
+              disabled={!showHintText}
             >
               {showHintImage ? "−" : "+"}
             </button>
             <span className="hint-title">INDICE 2</span>
             {showHintImage && currentQuestion.hints.image && (
-              <img src={`/${currentQuestion.hints.image}`} alt="Indice" className="hint-img" />
+              <img
+                src={`/${currentQuestion.hints.image}`}
+                alt="Indice"
+                className="hint-img"
+              />
             )}
           </div>
         </div>
