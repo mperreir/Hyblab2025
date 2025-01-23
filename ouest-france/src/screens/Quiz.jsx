@@ -6,6 +6,7 @@ const Quiz = ({ data }) => {
 
   const [userAnswers, setUserAnswers] = useState(new Array(data.length).fill(null));
   const [feedbacks, setFeedbacks] = useState(new Array(data.length).fill(""));
+  const [score, setScore] = useState(0);
   
   const handleAnswerClick = (questionIndex, answer) => {
     const newAnswers = [...userAnswers];
@@ -14,6 +15,9 @@ const Quiz = ({ data }) => {
     
     const question = data[questionIndex];
     const isCorrect = answer === question.correct_answer;
+    if (isCorrect) {
+      setScore(score + 1);
+    }
     const newFeedbacks = [...feedbacks];
     newFeedbacks[questionIndex] = isCorrect 
       ? "Correct ! " + (question.explanation || "")
@@ -61,9 +65,23 @@ const Quiz = ({ data }) => {
               </button>
             )}
 
+            {questionIndex === data.length - 1 && (
+              <button onClick={() => scrollToSection("quizResults")}>
+                View Results
+              </button>
+            )}
+
             <button onClick={() => scrollToSection(`article${questionIndex}`)}>Go To Article</button>
           </section>
         ))}
+        <section 
+        className="h-screen w-screen flex-shrink-0 snap-start flex items-center justify-center flex-col bg-yellow-500"
+        id="quizResults"
+        >
+          <h1 className="text-4xl font-bold">Résultats</h1>
+          <p className="text-2xl">Votre score est de {score}/{data.length}</p>
+          <button onClick={() => scrollToSection("quiz0")}>Retour au Quiz</button>
+        </section>
       </div>
     </div>
   );
