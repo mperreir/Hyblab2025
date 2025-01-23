@@ -16,7 +16,8 @@ app.get(`/categories`, function ( req, res ) {
     res.sendFile(filename);
 } );
 
-function fetchArticlesData(category_name, dataKey, res) {
+app.get(`/articles/:category_name/:keyword`, function (req, res) {
+    const category_name = req.params.category_name;
     fetch(`${ip}/data/articles.json`)
         .then(response => response.json())
         .then(articles => {
@@ -28,27 +29,8 @@ function fetchArticlesData(category_name, dataKey, res) {
             }
         })
         .catch(error => console.error('Error fetching JSON:', error));
-}
-
-app.get(`/articles/:category_name`, function (req, res) {
-    const category_name = req.params.category_name;
-    fetchArticlesData(category_name, 'text', res);
 });
 
-app.get(`/articles/:category_name/kpis`, function (req, res) {
-    const category_name = req.params.category_name;
-    fetchArticlesData(category_name, 'kpis', res);
-});
-
-app.get(`/articles/:category_name/linked_categories`, function (req, res) {
-    const category_name = req.params.category_name;
-    fetchArticlesData(category_name, 'linked_categories', res);
-});
-
-app.get(`/articles/:category_name/links`, function (req, res) {
-    const category_name = req.params.category_name;
-    fetchArticlesData(category_name, 'links', res);
-});
 
 // Export our API
 module.exports = app;
