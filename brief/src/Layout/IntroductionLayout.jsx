@@ -5,13 +5,17 @@ import { AppBar, Box, Container, CssBaseline, Toolbar, Typography } from '@mui/m
 // Le composant Layout de base
 const IntroductionLayout = ({ children }) => {
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+    <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', backgroundColor: 'white' }}>
       <CssBaseline /> {/* Assure une base de style cohérente pour MUI */}
-      
-      <AppBar position="static" sx={{ backgroundColor: '#007BFF' }}>
+
+      <AppBar position="static"
+        sx={{ backgroundColor: 'white', boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)', padding: '5px 0' }}
+      >
         <Toolbar>
-          <Typography variant="h6" sx={{ flexGrow: 1, textAlign: 'center' }}>
-            Bienvenue dans le bonjour!
+          {/* Titre avec 'Brief' en blanc et 'sciences' en couleur #991756 */}
+          <Typography sx={{ flexGrow: 1, textAlign: 'left', fontSize: '18px' }}>
+            <span style={{ color: 'black', fontWeight: "bold" }}>Brief</span>
+            <span style={{ color: '#991756', fontWeight: "bold" }}>.sciences</span>
           </Typography>
         </Toolbar>
       </AppBar>
@@ -21,8 +25,8 @@ const IntroductionLayout = ({ children }) => {
       </Container>
 
       {/* Footer */}
-      <Box component="footer" sx={{ backgroundColor: '#333', color: 'white', padding: '10px', textAlign: 'center' }}>
-        <Typography variant="body2">© 2025 Mon Jeu. Tous droits réservés.</Typography>
+      <Box component="footer" sx={{ backgroundColor: '#c1c1c1', color: 'black', padding: '10px', textAlign: 'center' }}>
+        <Typography variant="body2">© 2025 EnergieMix. Tous droits réservés.</Typography>
       </Box>
     </Box>
   );

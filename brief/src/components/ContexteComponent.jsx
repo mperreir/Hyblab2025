@@ -12,7 +12,7 @@ Ceci est le contexte
         Prêt à démarrer le jeu ? Rejoignez-nous pour une expérience immersive.
       </Typography>
       <Button variant="contained" color="primary" sx={{ padding: '10px 20px' }}>
-        Commencer
+        Non
       </Button>
     </Box>
   );
