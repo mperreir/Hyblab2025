@@ -67,6 +67,31 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
 
+    let timeout;
+    const circleContainer = document.getElementById('circle-container');
+
+    // Show the animated circles if no user activity for 3 seconds
+    function showCircle() {
+      circleContainer.style.display = 'block';
+    }
+
+    // Hide the circles and reset the timer on user activity
+    function hideCircle() {
+      circleContainer.style.display = 'none';
+      clearTimeout(timeout);
+      timeout = setTimeout(showCircle, 3000); // Reset the timer
+    }
+
+    // Add event listeners for user activity
+    ['mousemove', 'keydown', 'scroll', 'click', 'touchstart'].forEach(eventType => {
+      document.addEventListener(eventType, hideCircle);
+    });
+
+    // Start the timer on page load
+    timeout = setTimeout(showCircle, 3000);
+
+
+
     // Wait for the content to preload and display 1st slide
     // Here we simulate a loading time of one second
     setTimeout(() => { 

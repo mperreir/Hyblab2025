@@ -8,7 +8,7 @@
                 "Comment t’appelles-tu ?"
             ],
             "apres_nom": [
-                "Enchanté de faire ta connaissance, ${user_name} !",
+                "Enchanté de faire ta connaissance, {nom} !",
                 "Je vais te présenter rapidement notre tissu économique. La Bretagne et les Pays de la Loire sont des régions qui bougent beaucoup. Ici, les taux de chômage sont parmi les plus bas en France : 5,8 % en Bretagne et 5,9 % dans les Pays de la Loire, contre 7,1 % au niveau national en 2023.",
                 "Et il y a une super dynamique : 37 % des créateurs d’entreprise ont moins de 30 ans. Pas mal non ?",
                 "En termes de qualité de vie, la situation est favorable  : le taux de pauvreté est de 10,5 % en Pays de la Loire et 11,2 % en Bretagne, contre 14,4 % au niveau national.",
