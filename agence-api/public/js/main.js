@@ -13,8 +13,6 @@ const initSlide2 = async function () {
     let response = await fetch('data/fr_.json');
     const texts = await response.json();
 
-    await histoireAgro(texts.agro);
-
     // Load the intro story
     const userName = await loadIntroStory(texts.introduction.general);
 
