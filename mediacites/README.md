@@ -36,7 +36,7 @@ catégorie
 `/api/categories` :
 - Obtenir la liste
 
-`api/articles/{category_name}` :
+`/api/articles/{category_name}` :
 - Texte de l’article
 
 `/api/articles/{category_name}/kpis` :
