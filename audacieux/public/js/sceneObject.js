@@ -1,5 +1,5 @@
 class SceneObject{
-    constructor(type, src, id){
+    constructor(type, src, id, script=null){
         this.type = type;
         this.id = id;
   
@@ -35,6 +35,22 @@ class SceneObject{
             this.childs = [];
         }
   
+        this.html_el.style.position = "absolute";
+
+        if(script)
+        {
+            if (this.html_el && typeof window[script.func] === "function") {
+                this.html_el.addEventListener("click", () => {
+                  // Appeler la fonction spécifiée avec les arguments
+                  window[script.func](...script.args);
+                });
+              } else {
+                console.error(
+                  "Erreur : l'objet HTML n'existe pas ou la fonction spécifiée n'est pas définie."
+                );
+              }
+        }
+
         // Transformation state
         this.position = { x: 0, y: 0 };
         this.rotation = 0; // in degrees

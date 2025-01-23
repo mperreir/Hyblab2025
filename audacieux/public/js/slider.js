@@ -1,7 +1,7 @@
 const sceneManager = new Scene("sceneData.json", "scene-container")
 
 // Gérer l'événement du scroll
-const sceneContainer = document.getElementById("scene-container"); // Récupérer le conteneur de la scène
+const sceneContainer = document; // Récupérer le conteneur de la scène
 
 let isAnimating = false;
 sceneContainer.addEventListener("wheel", function (event) {

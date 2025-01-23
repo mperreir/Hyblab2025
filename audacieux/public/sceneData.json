@@ -5,25 +5,59 @@
       "id": "group1",
       "type": "group",
       "src": "",
+      "z": 1,
       "subElement":[
-          {
-            "id": "svgElement1",
-            "type": "svg",
-            "src": "assets/element1.svg",
-            "keyframes": [
-              {
-                "time": 0,
-                "x": 100,
-                "y": 200,
-                "rotation": 0,
-                "scale": 1
-              }
-            ]
-          },
+        {
+          "id": "svgElement1",
+          "type": "svg",
+          "src": "assets/1PLAN.svg",
+          "z": 10,
+          "keyframes": [
+            {
+              "time": 0,
+              "x": 100,
+              "y": 200,
+              "rotation": 0,
+              "scale": 1
+            }
+          ]
+        },
+        {
+          "id": "svgElement2",
+          "type": "svg",
+          "src": "assets/2PLAN.svg",
+          "z": 10,
+          "keyframes": [
+            {
+              "time": 0,
+              "x": 100,
+              "y": 200,
+              "rotation": 0,
+              "scale": 1
+            }
+          ]
+        },
+        {
+          "id": "svgElement3",
+          "type": "svg",
+          "src": "assets/3PLAN.svg",
+          "z": 10,
+          "keyframes": [
+            {
+              "time": 0,
+              "x": 100,
+              "y": 200,
+              "rotation": 0,
+              "scale": 1
+            }
+          ]
+        },
           {
             "id": "lottieElement1",
             "type": "lottie",
             "src": "assets/animation1.json",
+            "script": {"func":"test", "args":["caca"]},
+            "z": 8,
             "keyframes": [
               {
                 "time": 0,

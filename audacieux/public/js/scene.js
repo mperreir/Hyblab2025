@@ -39,7 +39,15 @@ document.body.style.overflow = "hidden";
 
 
 function addData(element, container){
-  const new_element = new SceneObject(element.type, element.src, element.id)
+
+  let new_element;
+  if(element.script){
+    new_element = new SceneObject(element.type, element.src, element.id, element.script);
+  }else{
+    new_element = new SceneObject(element.type, element.src, element.id)
+  }
+    
+
 
   new_element.keyframes = element.keyframes;
 
@@ -49,6 +57,7 @@ function addData(element, container){
   new_element.set_rotation(init_keyframe.rotation)
   new_element.set_scale(init_keyframe.scale)
 
+  new_element.html_el.style.zIndex = element.z;
   container.appendChild(new_element.html_el);
   
   if(element.type == "group")
@@ -97,4 +106,9 @@ function updateKeyframes(value, time) {
       updateKeyframes(child, time); // Appel récursif
     }
   }
+}
+
+
+function test(text){
+  console.log(text);
 }
