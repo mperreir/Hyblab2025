@@ -34,6 +34,16 @@ export class RoleplayComponent implements OnInit {
     }
 
     toggle_menu(): void {
-        
+    }
+
+    selectScenario(item: ContentData): void {
+        this.selected_scenario = item;
+        this.scrollToSelectedScenario();
+    }
+    scrollToSelectedScenario(): void {
+        const selectedElement = document.querySelector('.selected');
+        if (selectedElement) {
+            selectedElement.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
+        }
     }
 }
