@@ -10,8 +10,8 @@ function MapCarousel() {
 
     return (
         <div className='carousel'>
-            {carouselBoxes.map((box) =>
-                <CarouselBox title={box} />
+            {carouselBoxes.map((box, index) =>
+                <CarouselBox key={index} title={box} />
             )}
         </div>
     );
