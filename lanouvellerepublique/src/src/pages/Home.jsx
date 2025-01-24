@@ -24,6 +24,11 @@ function Home() {
             <span className='start-button-text'>Explore</span>
           </div>
         </div>
+        <div class="decoration">
+          <div class="green-circle"></div>
+          <div class="gray-rectangle"></div>
+        </div>
+
       </div>
     </>
   );
