@@ -2,7 +2,6 @@
 async function displayExplanation(data, liste_choix, contenu_message) {
     return new Promise((resolve) => {
         const num_question = liste_choix.length + 1;
-        console.log(liste_choix);
         setTimeout(() => {
             const reply = { text: contenu_message, type: 'received', id: `info_${num_question}`, choix: liste_choix }; // id à adapter selon le parametrage du JSON
             addMessage(reply);
@@ -17,7 +16,6 @@ async function displayExplanation(data, liste_choix, contenu_message) {
         }, 1000);
     });
 }
-
 
 // Fonction pour permettre l'agrandissement manuel
 function enableClickForExpansion(text, data) {
@@ -36,8 +34,10 @@ function expandMessage(messageElement, data) {
     const rect = messageElement.getBoundingClientRect();
     expandingElement.querySelectorAll('*').forEach(element => element.style.display = 'none');
 
-    // Récupération de la liste des choix sur la balise HTML
-    const liste_choix = messageElement.dataset.choix;
+    let liste_choix = [];
+    for (let i = 0; i < messageElement.dataset.taillechoix; i++) {
+        liste_choix.push(messageElement.dataset[`choix${i}`]);
+    }
 
     //Ajout des données du JSON dans des listes respectives
     const fields = ['titre', 'images', 'paragraphes'];
@@ -49,7 +49,7 @@ function expandMessage(messageElement, data) {
     expandingElement.appendChild(title);
 
     images.forEach(image => {
-        const img = document.createElement('img');
+        const img = document.createElement('p');
         img.src = image;
         expandingElement.appendChild(img);
     });
@@ -128,8 +128,7 @@ function match(data, liste_choix) {
         return [];
     }
     const num_question = parseInt(Object.keys(data)[0].split('_')[0], 10);
-    console.log(liste_choix);
-    return data[liste_choix[num_question - 1]];
+    return data[String(liste_choix[num_question - 1])];
 };
 
 // Fonction pour détecter le type de l'élément

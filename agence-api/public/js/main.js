@@ -16,7 +16,7 @@ const initSlide2 = async function () {
     const texts = await response.json();
 
     //displayExplanation(texts.agro.informations["3"],["1_porc", "2_trucmuche"] , "Message d'explications");
-    // await histoire(texts.tech);
+    await histoire(texts.tech);
 
     // Load the intro story
     const userName = await loadIntroStory(texts.introduction.general);
