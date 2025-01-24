@@ -106,7 +106,7 @@ const QuestionPage = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Lien vers l'article
+              <b><i>Un indice se cache <br></br> dans cet article</i></b>
             </a>
           </p>
         )}
