@@ -37,7 +37,7 @@ const theme = createTheme({
       contrastText: '#FFFFFF',
     },
     background: {
-      default: '#F5F5F5', // Fond général
+      default: '#F5E8EE', // Fond général
       paper: '#FFFFFF', // Fond des cartes
     },
     text: {
