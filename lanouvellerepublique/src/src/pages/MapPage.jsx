@@ -4,13 +4,16 @@ import DialogueBox from "../components/DialogueBox";
 import Header from "../components/Header";
 import MapCarousel from "../components/MapCarousel";
 import backgroundImage from '../../public/background.jpg';
+import { useLocation } from "react-router-dom";
 
 function MapPage() {
   const [selectedText, setSelectedText] = useState(""); // Manage text globally
   const [points, setPoints] = useState([]);
+  const location = useLocation();
 
   async function fetchPOIs() {
-    const res = await fetch('http://localhost:8080/lanouvellerepublique/api/animals/crapaud') // TEST (route à modifier)
+    const searchParams = new URLSearchParams(location.search);
+    const res = await fetch('http://hyblab.polytech.univ-nantes.fr:80/lanouvellerepublique/api/animals/' + searchParams.get("animal"))
       .then(response => response.json())
       .then(response => setPoints(response));
   }

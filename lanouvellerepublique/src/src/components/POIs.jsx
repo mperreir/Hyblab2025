@@ -6,7 +6,7 @@ const POIs = ({ setSelectedText }) => {
 
   async function loadPOIs(){
     const list = [];
-    fetch('http://localhost:8080/lanouvellerepublique/api/animals/crapaud')
+    fetch('http://hyblab.polytech.univ-nantes.fr:80/lanouvellerepublique/api/animals/Loutre')
       .then(response => {
         return response.json();
       })

@@ -6,8 +6,14 @@ function RegionMap({ selectedAnimal, setSelectedAnimal, animals }) {
 
     // Trigger the animation when the component mounts
     useEffect(() => {
-        setAnimateBackground(true);
-    }, []); // Only runs once when the component is mounted
+        // This ensures that the state updates after the component is mounted
+        const timer = setTimeout(() => {
+            setAnimateBackground(true);
+        }, 100); // Add a small delay before triggering the animation
+
+        // Clean up the timeout on unmount
+        return () => clearTimeout(timer);
+    }, []); // Empty dependency array ensures this runs only on mount
 
     const handleAnimalClick = (animalId) => {
         if (selectedAnimal !== animalId) {
