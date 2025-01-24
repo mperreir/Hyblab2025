@@ -85,19 +85,72 @@
                 </div>
                 <!-- Liens -->
                 <div class="row" style="padding-right: 3vh;">
-                    <div class="col" style="width: 100%; background-color: red; height: fit-content; border: 1vh solid white; border-radius: 4vh 4vh 4vh 4vh;">
-                        <h3 style="font-size: 5vw; color: white; text-align: right;" >Lien 1</h3>
+                    <div class="col col-to-sort-inside-of" style="width: 100%; background-color: red; height: fit-content; border: 1vh solid white; border-radius: 4vh 4vh 4vh 4vh;">
                         <div class="row">
+                            <h3 style="font-size: 5vw; color: white; text-align: right;" >Lien 1</h3>
+                            <select class="form-select form-select-sm">
+                                <option value="alphabetical_asc"selected>De A à Z</option>
+                                <option value="alphabetical_desc">De Z à A</option>
+                                <option value="chronological_asc">Du plus récent au plus vieux</option>
+                                <option value="chronological_desc">Du plus vieux au plus récent</option>
+                            </select>
+                        </div>
+                        <div class="row row-to-sort">
                             <!--TODO pouvoir trier-->
-                            <div class="col-8">
+                            <div class="col-8 col-name-to-sort">
                                 <p style="color: white;"><!-- TODO changer dynamiquement-->Ver sind the délibération?</p>
                             </div>
-                            <div class="col-4">
-                                <p style="color: white; font-style: italic; text-align: right; font-weight: 100;"><!-- TODO changer dynamiquement-->15/15/1515</p>
+                            <div class="col-4 col-date-to-sort">
+                                <p style="color: white; font-style: italic; text-align: right; font-weight: 200;"><!-- TODO changer dynamiquement-->15/09/2004</p>
                             </div>
                         </div>
-                        
-
+                        <div class="row row-to-sort">
+                            <!--TODO pouvoir trier-->
+                            <div class="col-8 col-name-to-sort">
+                                <p style="color: white;"><!-- TODO changer dynamiquement-->Abc Ver sind the délibération?</p>
+                            </div>
+                            <div class="col-4 col-date-to-sort">
+                                <p style="color: white; font-style: italic; text-align: right; font-weight: 200;"><!-- TODO changer dynamiquement-->16/09/2004</p>
+                            </div>
+                        </div>
+                        <script>
+                            function sortRows() {
+                                const select = document.querySelector('.form-select');
+                                const rows = Array.from(document.querySelectorAll('.row-to-sort'));
+                                const container = document.querySelector('.col-to-sort-inside-of');
+                            
+                                rows.sort((a, b) => {
+                                    const textA = a.querySelector('.col-name-to-sort p').textContent.trim();
+                                    const textB = b.querySelector('.col-name-to-sort p').textContent.trim();
+                                    const dateA = new Date(a.querySelector('.col-date-to-sort p').textContent.trim().split('/').reverse().join('-'));
+                                    const dateB = new Date(b.querySelector('.col-date-to-sort p').textContent.trim().split('/').reverse().join('-'));
+                            
+                                    switch (select.value) {
+                                        case 'alphabetical_asc':
+                                            return textA.localeCompare(textB);
+                                        case 'alphabetical_desc':
+                                            return textB.localeCompare(textA);
+                                        case 'chronological_asc':
+                                            return dateA - dateB;
+                                        case 'chronological_desc':
+                                            return dateB - dateA;
+                                        default:
+                                            return 0;
+                                    }
+                                });
+                            
+                                // Create a document fragment
+                                const fragment = document.createDocumentFragment();
+                            
+                                // Append sorted rows to the fragment
+                                rows.forEach(row => fragment.appendChild(row));
+                            
+                                // Append the fragment to the container
+                                container.appendChild(fragment);
+                            }
+                            
+                            document.querySelector('.form-select').addEventListener('change', sortRows);
+                        </script>
                     </div>
                 </div>
             </div>
