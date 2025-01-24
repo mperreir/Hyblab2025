@@ -58,6 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
           break;
         case 1:
           initSlide2();
+          showTapIcon();
           toggleSwiper(false);
           break;
         case 2:
@@ -67,28 +68,9 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
 
-    let timeout;
-    const circleContainer = document.getElementById('circle-container');
-
-    // Show the animated circles if no user activity for 3 seconds
-    function showCircle() {
-      circleContainer.style.display = 'block';
-    }
-
-    // Hide the circles and reset the timer on user activity
-    function hideCircle() {
-      circleContainer.style.display = 'none';
-      clearTimeout(timeout);
-      timeout = setTimeout(showCircle, 3000); // Reset the timer
-    }
-
-    // Add event listeners for user activity
-    ['mousemove', 'keydown', 'scroll', 'click', 'touchstart'].forEach(eventType => {
-      document.addEventListener(eventType, hideCircle);
-    });
-
-    // Start the timer on page load
-    timeout = setTimeout(showCircle, 3000);
+    
+    
+    
 
 
 
@@ -112,3 +94,44 @@ document.addEventListener('DOMContentLoaded', function() {
     console.error('Erreur lors du chargement des contenus:', error);
   });
 });
+
+
+let timeout;
+let preventTapIcon = false;
+
+const tapIcon = document.getElementById('tapIcon');    
+  
+  // Show the animated icon if no user activity for 7 seconds
+  function showTapIcon() {
+    if (!preventTapIcon) {
+      tapIcon.style.display = 'block';
+    }
+  }
+  
+  // Hide the icon and reset the timer on user activity
+  function hideTapIcon() {
+    tapIcon.style.display = 'none';
+    clearTimeout(timeout);
+    timeout = setTimeout(showTapIcon, 7000); // Reset the timer
+  }
+  
+  
+  
+  // Add event listeners for user activity
+  ['mousemove', 'keydown', 'scroll', 'click', 'touchstart'].forEach(eventType => {
+    document.addEventListener(eventType, hideTapIcon);
+  });
+  
+  // Start the timer on page load
+  timeout = setTimeout(showTapIcon, 7000);
+
+// Custom event to toggle preventTapIcon
+function toggleTapIconDisplay(shouldPrevent) {
+  preventTapIcon = shouldPrevent;
+  if (preventTapIcon) {
+    tapIcon.style.display = 'none'; // Ensure the icon is hidden
+    clearTimeout(timeout); // Cancel the timer
+  } else {
+    timeout = setTimeout(showTapIcon, 7000); // Restart the timer
+  }
+}

@@ -14,22 +14,6 @@ function sendMessage() {
     messageInput.value = '';
 };
 
-//première idée d'affichage de la page d'explication --> Contexte d'ouverture à adapter
-function displayExplanation(elemJSON) {
-    setTimeout(() => {
-        const reply = { text: elemJSON.titre, type: 'received', id: 'explanation' }; //id à adapter selon le parametrage du JSON
-        addMessage(reply);
-        //storeMessage(reply);
-        enableClickForExpansion(reply.text);
-
-        // Agrandissement automatique 1 seconde après apparition
-        setTimeout(() => {
-            const lastMessage = document.querySelector(`#${reply.id}`);
-            expandMessage(lastMessage);
-        }, 1000);
-    }, 1000);
-};
-
 // Fonction pour ajouter un message dans la liste
 function addMessage(message) {
     const messageElement = document.createElement('li');
@@ -37,6 +21,10 @@ function addMessage(message) {
     messageElement.textContent = message.text;
     messageElement.id = message.id;
     messageList.appendChild(messageElement);
+
+    if(message.choix){
+        messageElement.dataset.choix = message.choix;
+    }
     scrollToBottom();
 };
 
@@ -45,13 +33,14 @@ async function addAnswer(answers, multipleChoices=false) {
     const answersContainer = document.createElement('div');
     answersContainer.id = 'answers-container';
 
-    answers.forEach(answer => {
+    for(let key in answers) {
         const answerElement = document.createElement('div');
         answerElement.classList.add('answer');
-        answerElement.dataset.answer = answer;
-        answerElement.textContent = answer;
+        answerElement.dataset.answer = answers[key];
+        answerElement.textContent = answers[key];
         answersContainer.appendChild(answerElement);
-    });
+    }
+
 
     const confirmButton = document.createElement('button');
     confirmButton.id = 'confirm-button';
@@ -104,7 +93,12 @@ async function addAnswer(answers, multipleChoices=false) {
             addMessage({ text: answer, type: 'sent', timestamp: new Date().toISOString() });
           }
 
-          resolve(selectedAnswer);
+          // Find keys for all target values
+          const answerKeys = selectedAnswer.map(value => 
+            Object.keys(answers).find(key => answers[key] === value)
+          );
+
+          resolve(answerKeys);
         }
       });
     });
@@ -119,64 +113,4 @@ function scrollToBottom() {
     }, 100);  // Délai pour s'assurer que le DOM est mis à jour
 };
 
-// Fonction pour permettre l'agrandissement manuel
-function enableClickForExpansion(text) {
-    const messages = document.querySelectorAll('.message.received');
-    messages.forEach(msg => {
-        if (msg.textContent === text) {
-            msg.addEventListener('click', () => {
-                expandMessage(msg);
-            });
-        }
-    });
-};
-
-// Fonction pour agrandir le message et afficher l'image
-function expandMessage(messageElement) {
-    const rect = messageElement.getBoundingClientRect();
-    expandingElement.querySelectorAll('*').forEach(element => element.style.display = 'none');
-    //Paramétrer ici l'ajout de contnenu selon les tags de la balise passée en paramètre
-
-    expandingElement.style.display = 'flex';
-    expandingElement.style.top = rect.top + 'px';
-    expandingElement.style.left = rect.left + 'px';
-    expandingElement.style.width = messageElement.offsetWidth + 'px';
-    expandingElement.style.height = messageElement.offsetHeight + 'px';
-
-    // Ajouter un écouteur d'événement pour afficher le contenu une fois la transition terminée
-    expandingElement.addEventListener('transitionend', function onTransitionEnd() {
-        expandingElement.querySelectorAll('*').forEach(element => element.style.display = 'flex');
-        expandingElement.removeEventListener('transitionend', onTransitionEnd);  // Nettoyer l'événement
-    });
-
-    setTimeout(() => {
-        expandingElement.style.top = '0';
-        expandingElement.style.left = '0';
-        expandingElement.style.width = '100vw';
-        expandingElement.style.height = '100vh';
-
-    }, 100);
-};
-
-// Fonction pour fermer l'overlay et réduire vers le message
-
-function closeOverlay() {
-    const lastMessage = document.querySelectorAll('.message.received');
-    // --> La séléection du message sur lequel fermer est à adapter selon tag des balises HTML ?
-    // Pour l'instant la fermeture est définie statiquement dans le HTML
-
-    expandingElement.querySelectorAll('*').forEach(element => element.style.display = 'none');
-    if (lastMessage.length > 0) {
-        const rect = lastMessage[lastMessage.length - 1].getBoundingClientRect();
-
-        expandingElement.style.top = rect.top + 'px';
-        expandingElement.style.left = rect.left + 'px';
-        expandingElement.style.width = lastMessage[lastMessage.length - 1].offsetWidth + 'px';
-        expandingElement.style.height = lastMessage[lastMessage.length - 1].offsetHeight + 'px';
-    }
-
-    setTimeout(() => {
-        expandingElement.style.display = 'none';
-    }, 500);
-};
 

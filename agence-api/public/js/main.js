@@ -6,12 +6,15 @@ const initSlide2 = async function () {
   const messageList = document.getElementById('messageList');
   const messageInput = document.getElementById('messageInput');
 
-  //displayExplanation({titre:"test"});
+
   scrollToBottom();
 
     // Retrieve the intro's messages from our API
     let response = await fetch('data/fr_.json');
     const texts = await response.json();
+
+
+    // await histoire(texts.tech);
 
     // Load the intro story
     const userName = await loadIntroStory(texts.introduction.general);
@@ -24,13 +27,13 @@ const initSlide2 = async function () {
 
     switch (secteur) {
         case 0:
-            await histoireAgro(texts.agro);
+            await histoire(texts.agro);
             break;
         case 1:
-            histoireTech();
+            await histoire(texts.tech);
             break;
         case 2:
-            histoireArti();
+            await histoire(texts.arti);
             break;
     };
 };
@@ -75,6 +78,9 @@ function waitForUserTouch(){
 
 
 async function getUserName() {
+
+    toggleTapIconDisplay(true);
+
     const messageInput = document.getElementById('messageInput');
     const chatInput = document.getElementById('chat-input');
 
@@ -85,6 +91,9 @@ async function getUserName() {
 
     messageInput.blur();
     chatInput.style.visibility='hidden';
+
+    toggleTapIconDisplay(false);
+
     return userName;
 }
 
@@ -130,6 +139,7 @@ async function loadIntroStory(introStory) {
 }
 
   async function selectCharacter(textsPresentationPersos) {
+
     const images = [
         { src: 'img/perso1.png', alt: '1', index: 0 },
         { src: 'img/perso2.png', alt: '2', index: 1, active: true },
@@ -139,24 +149,36 @@ async function loadIntroStory(introStory) {
       await carousel.createCarousel();
       const char =  await carousel.getCharacter();
       carousel.activated = false;
+
+      
+
       return char;
   }
 
   async function selectSecteur(textsPresentationPersos) {
+
+    toggleTapIconDisplay(true);
+
     const images = [
-        { src: 'img/perso1.png', alt: '1', index: 0 },
-        { src: 'img/perso2.png', alt: '2', index: 1, active: true },
-        { src: 'img/perso3.png', alt: '3', index: 2 }
+        { src: 'img/agro.jpg', alt: '1', index: 0 },
+        { src: 'img/tech.jpeg', alt: '2', index: 1, active: true },
+        { src: 'img/arti.jpg', alt: '3', index: 2 }
       ];
       const carousel = new Carousel(images, [textsPresentationPersos.agro, textsPresentationPersos.tech, textsPresentationPersos.arti]);
       await carousel.createCarousel();
       const char =  await carousel.getCharacter();
       carousel.activated = false;
+
+      toggleTapIconDisplay(false);
+
       return char;
   }
   
 
-async function histoireAgro(texts){
+async function histoire(texts){
+
+    let choices = [];
+
     await displayMessages(texts.introduction);
 
     for (let i = 0; i < texts.questions.length; i++) {
@@ -170,6 +192,13 @@ async function histoireAgro(texts){
                 break;
            }
         }
+
+        toggleTapIconDisplay(true);
+
         let answer = await addAnswer(texts.reponses[i], multipleChoices);
+        choices = [...choices, ...answer];
+        console.log(choices);
+
+        toggleTapIconDisplay(false);
     }
 }

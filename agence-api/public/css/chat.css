@@ -20,8 +20,8 @@
 .chat-container {
     width: 100%;
     height: 100%;
-    background: #fff;
-    border: 3px solid #007bff;
+    background: #f0f0f0;
+    border: 3px solid rgb(131, 130, 130);
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     display: flex;
@@ -30,13 +30,13 @@
 }
 
 .chat-header {
-    background: #007bff;
-    color: #fff;
+    background: #adadad;
+    color: black;
     text-align: center;
     padding: 15px;
     font-size: 20px;
     font-weight: bold;
-    border-bottom: 2px solid #0056b3;
+    border-bottom: 2px solid rgb(189, 187, 187);
 }
 
 .chat-box {
@@ -44,7 +44,7 @@
     padding: 15px;
     overflow-y: scroll;
     scrollbar-width: thin;
-    scrollbar-color: #bbb #f0f0f0;
+    scrollbar-color: #bbb #e0e0e0;
 }
 
 .chat-box::-webkit-scrollbar {
@@ -78,17 +78,54 @@
 
 /* Messages envoyés */
 .sent {
-    background: #007bff;
+    background: #118dcb;
     color: #fff;
     align-self: flex-end;
 }
 
 /* Messages reçus */
 .received {
-    background: #ff4d4d;
+    background: #e2e2e2;
     color: #fff;
     align-self: flex-start;
+    color: black;
 }
+
+
+#answers-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+    color:#0056b3;
+    font-size: medium;
+  }
+  
+  .answer {
+    padding: 10px 20px;
+    margin-left: 30px;
+    border: 2px solid gray;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+  }
+  
+  .answer.selected {
+    border-color: blue;
+    background-color: lightblue;
+  }
+  
+  #confirm-button {
+    padding: 10px 20px;
+    cursor: not-allowed;
+  }
+  
+  #confirm-button:enabled {
+    cursor: pointer;
+    background-color: blue;
+    color: white;
+  }
 
 .chat-input {
     display: flex;
@@ -121,3 +158,23 @@
     background: #0056b3;
 }
 
+/* Tap icon */
+#tapIcon {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 70px;
+  height: 70px;
+  background: url('../img/tap.png') no-repeat center center; /* Replace with your icon */
+  background-size: contain;
+  animation: click-effect 1s infinite ease-in-out;
+}
+
+@keyframes click-effect {
+  0%, 100% {
+      transform: scale(1); /* Normal size */
+  }
+  50% {
+      transform: scale(0.9); /* Shrink slightly */
+  }
+}
