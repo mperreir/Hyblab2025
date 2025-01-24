@@ -4,13 +4,15 @@ import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { ContentData } from '../models/content-data';
 import { SituationComponent } from '../situation/situation.component';
+import { HeaderComponent } from '../header/header.component';
 
 @Component({
     selector: 'app-roleplay',
     standalone: true,
     imports: [
         CommonModule,
-        SituationComponent
+        SituationComponent,
+        HeaderComponent
     ],
     templateUrl: './roleplay.component.html',
     styleUrl: './roleplay.component.scss'
@@ -31,9 +33,6 @@ export class RoleplayComponent implements OnInit {
 
     fetchData(): Observable<ContentData[]> {
         return this.http.get<ContentData[]>('assets/data.json');
-    }
-
-    toggle_menu(): void {
     }
 
     selectScenario(item: ContentData): void {

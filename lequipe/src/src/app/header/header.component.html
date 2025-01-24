@@ -1,0 +1,17 @@
+<header>
+    <img src="logo_black.svg" alt="logo" id="logo">
+    <div class="burger-toggle" (click)="isBurgerMenuOpen = !isBurgerMenuOpen">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <nav class="burger-menu" [class.open]="isBurgerMenuOpen">
+        <a routerLink="roleplay" routerLinkActive="active">Histoires</a>
+        <a routerLink="" routerLinkActive="active">Les unes débloquées</a>
+        <a routerLink="" routerLinkActive="active">Mon compte</a>
+        <a routerLink="" routerLinkActive="active">Paramètres</a>
+        <a routerLink="credits" routerLinkActive="active">Crédits</a>
+        <a routerLink="makingoff" routerLinkActive="active">Making-off</a>
+    </nav>
+</header>
