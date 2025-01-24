@@ -1,23 +1,31 @@
-.page {
+.region_page {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to top, #41C3FF 0%, white 50%, white 100%);
+}
+
+.region_page .content {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     width: 100%;
     height: 100%;
-    background-color: white;
 }
 
-.page h2 {
-    width: 75%;
+.region_page h2 {
+    width: 65%;
     color: black;
-    font-size: 1.5rem;
+    font-size: min(2rem, 22px);
     max-height: 20vh;
     align-self: baseline;
-    margin: 10px;
+    margin: 0 20px;
+    font-family: 'Sharpie-Bold';
 }
 
-.information {
+.region_page .information {
     width: 75%;
     background-color: grey;
     flex: 1;

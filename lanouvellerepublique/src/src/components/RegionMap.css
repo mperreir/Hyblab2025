@@ -1,5 +1,6 @@
 .map_container {
-    width: 60%;
+    width: 80%;
+    max-width: 50vh;
     aspect-ratio: 1 / 1;
     position: relative;
     display: flex;

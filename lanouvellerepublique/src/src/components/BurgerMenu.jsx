@@ -16,7 +16,7 @@ function BurgerMenu({ isMenuOpen, setIsMenuOpen }) {
         window.open("https://www.lanouvellerepublique.fr/environnement/nos-animaux-en-danger", "_blank");
     }
     function goCarte() {
-        navigate("/map");
+        navigate("/regions");
         setIsMenuOpen(false);
     }
     function goCredits() {
