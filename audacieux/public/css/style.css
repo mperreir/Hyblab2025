@@ -34,3 +34,53 @@
 #time-slider {
   flex-grow: 1;
 }
+
+#mouse-popup {
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  pointer-events: none;
+}
+
+#time-slider-container {
+  position: fixed;
+  bottom: 0; /* Positionné en bas de l'écran */
+  left: 0;
+  width: 100%; /* Occupe toute la largeur */
+  background-color: rgba(0, 0, 0, 0.8); /* Fond semi-transparent */
+  z-index: 20; /* Au-dessus des autres éléments */
+  padding: 10px 0;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5); /* Ombre subtile pour un effet visuel */
+}
+
+#time-slider {
+  width: 90%; /* Le slider occupe 90% de la largeur du container */
+  margin: 0 auto; /* Centrer le slider horizontalement */
+  display: block;
+  -webkit-appearance: none; /* Supprime le style par défaut sur les navigateurs WebKit */
+  background: linear-gradient(to right, #4caf50, #2196f3); /* Dégradé pour le slider */
+  height: 8px; /* Hauteur de la barre */
+  border-radius: 5px; /* Bordures arrondies */
+  outline: none; /* Supprime le contour lors de la sélection */
+  cursor: pointer;
+}
+
+#time-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid #2196f3;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+#time-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid #2196f3;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}

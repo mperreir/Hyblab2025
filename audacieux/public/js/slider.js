@@ -33,6 +33,7 @@ sceneContainer.addEventListener(
 
     sceneManager.time = Math.max(0, Math.min(sceneManager.time + timeDelta, maxTime));
     console.log(sceneManager.time);
+    syncSliderWithScene();
     if (!isAnimating) {
       isAnimating = true;
       requestAnimationFrame(() => {
@@ -55,8 +56,7 @@ document.addEventListener("mousemove", (event) => {
 
 // Update slider value based on sceneManager.time
 function syncSliderWithScene() {
-  slider.value = scene.time;
-  currentTimeDisplay.textContent = scene.time.toFixed(1); // Display time with 1 decimal
+  slider.value = sceneManager.time;
 }
 
 // Update sceneManager.time when slider changes
@@ -64,4 +64,20 @@ slider.addEventListener("input", () => {
   const newTime = parseFloat(slider.value);
   sceneManager.set_frame(newTime);
   syncSliderWithScene(); // Keep the display in sync
+});
+
+document.addEventListener('mousemove', (event) => {
+  const popup = document.getElementById('mouse-popup');
+  const xPercent = (event.clientX / window.innerWidth * 100).toFixed(2);
+  const yPercent = (event.clientY / window.innerHeight * 100).toFixed(2);
+
+  // Mettre à jour la position du popup
+  popup.style.left = `${event.clientX + 10}px`;
+  popup.style.top = `${event.clientY + 10}px`;
+
+  // Mettre à jour le contenu
+  popup.textContent = `X: ${xPercent}% | Y: ${yPercent}%`;
+
+  // Afficher le popup
+  popup.style.display = 'block';
 });
