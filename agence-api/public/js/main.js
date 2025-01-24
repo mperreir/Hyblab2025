@@ -217,7 +217,8 @@ async function histoire(texts){
 
     for (let i = 0; i < texts.questions.length; i++) {
 
-        await displayMessages(texts.contexte[i].avant);
+        await displayMessages(texts.contexte[i].avant.slice(0,-1));
+        await displayExplanation(texts.informations[i], choices, texts.contexte[i].avant[texts.contexte[i].avant.length-1]);
 
 
         await displayMessages(texts.questions[i]);
