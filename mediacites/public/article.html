@@ -74,7 +74,7 @@
                 <!-- Pour en savoir plus -->
                 <div class="row" style="padding-right: 3vh;">
                     <div class="col" style="width: 100%; background-color: red; height: fit-content; border: 1vh solid white; border-radius: 4vh 4vh 4vh 4vh;">
-                        <h3 style="font-size: 4vw; color: white; text-align: right;" >Pour en savoir plus</h3>
+                        <h3 style="font-size: 5vw; color: white;" >POUR EN SAVOIR PLUS…</h3>
                         <p style="color: white;"><!-- TODO changer dynamiquement-->Texte résumé catégorie 1</p>
                     </div>
                 </div>
@@ -82,13 +82,17 @@
                 <div class="row" style="padding-right: 3vh;">
                     <div class="col col-to-sort-inside-of" style="width: 100%; background-color: red; height: fit-content; border: 1vh solid white; border-radius: 4vh 4vh 4vh 4vh;">
                         <div class="row">
-                            <h3 style="font-size: 5vw; color: white; text-align: right;" >Lien 1</h3>
-                            <select class="form-select form-select-sm">
-                                <option value="alphabetical_asc"selected>De A à Z</option>
-                                <option value="alphabetical_desc">De Z à A</option>
-                                <option value="chronological_asc">Du plus récent au plus vieux</option>
-                                <option value="chronological_desc">Du plus vieux au plus récent</option>
-                            </select>
+                            <div class="col-8">
+                                <h3 class="d-flex" style="font-size: 5vw; color: white; text-align:left;" >LIENS</h3>
+                            </div>
+                            <div class="col-4 d-flex justify-content-end align-items-center">
+                                <select class="custom-select custom-select-sm ">
+                                    <option value="alphabetical_asc" selected >De A à Z</option>
+                                    <option value="alphabetical_desc">De Z à A</option>
+                                    <option value="chronological_asc">Du plus récent au plus vieux</option>
+                                    <option value="chronological_desc">Du plus vieux au plus récent</option>
+                                </select>
+                            </div>
                         </div>
                         <div class="row row-to-sort">
                             <!--TODO pouvoir trier-->
