@@ -24,7 +24,7 @@ function RegionMap({ selectedAnimal, setSelectedAnimal, animals }) {
     return (
         <div className='map_container'>
             <div className={['background_square', 'dark', 'tilted', animateBackground ? 'animate' : ''].join(' ')}></div>
-            <div className={['background_square', 'bright', animateBackground ? 'animate' : ''].join(' ')}></div>
+            <div className={['background_square', 'bright', animateBackground ? 'animate' : ''].join(' ')}>
             <div className='animals_list'>
                 {animals.map((animal) => {
                     return <div 
@@ -36,6 +36,7 @@ function RegionMap({ selectedAnimal, setSelectedAnimal, animals }) {
                         <h3>{animal.fullname}</h3>
                     </div>
                 })}
+            </div>
             </div>
         </div>
     )

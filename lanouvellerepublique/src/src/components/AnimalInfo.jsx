@@ -12,7 +12,9 @@ function AnimalInfo({ animal }) {
     };
 
     return (
-        <div className='animal_presentation'>
+        <div 
+            className={`animal-info-container ${animal ? 'visible' : ''} animal_presentation`} 
+        >
             <div className='top_section'>
                 <div className='image_container'>
                     <img/>
@@ -26,6 +28,7 @@ function AnimalInfo({ animal }) {
                 <a onClick={goToMap}>Découvrir</a>
             </div>
         </div>
+        
     )
 }
 

@@ -1,25 +1,23 @@
 import { useEffect, useState } from "react";
+import { useSearchParams  } from "react-router-dom";
 import ScrollableMap from "../components/ScrollableMap";
 import DialogueBox from "../components/DialogueBox";
 import Header from "../components/Header";
 import MapCarousel from "../components/MapCarousel";
-import backgroundImage from '../../public/background.jpg';
-import { useLocation } from "react-router-dom";
+import backgroundImage from '../assets/background.jpg';
+import data from '../data/db.json';
+
 
 function MapPage() {
   const [selectedText, setSelectedText] = useState(""); // Manage text globally
   const [points, setPoints] = useState([]);
-  const location = useLocation();
-
-  async function fetchPOIs() {
-    const searchParams = new URLSearchParams(location.search);
-    const res = await fetch('http://hyblab.polytech.univ-nantes.fr:80/lanouvellerepublique/api/animals/' + searchParams.get("animal"))
-      .then(response => response.json())
-      .then(response => setPoints(response));
-  }
+  const [searchParams] = useSearchParams();
+  const queryAnimal = searchParams.get("animal"); // Get 'region' query parameter
+  const chosenAnimal = queryAnimal in data ? queryAnimal : 'Loutre'; // Charger la Loutre par défaut
 
   useEffect(() => {
-    fetchPOIs();
+    const pts = data[chosenAnimal];
+    setPoints(pts);
   });
 
   return (
@@ -31,6 +29,7 @@ function MapPage() {
         height={4000}
         background={`url(${backgroundImage})`} 
         setSelectedText={setSelectedText}
+        points={points}
       />
       {selectedText && <DialogueBox text={selectedText} setSelectedText={setSelectedText} />}
       <MapCarousel points={points} />

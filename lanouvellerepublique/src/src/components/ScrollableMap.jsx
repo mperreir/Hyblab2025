@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import POIs from "./POIs.jsx";
 import "./ScrollableMap.css"; // Create this file for styles
 
-function ScrollableMap({ width = 3000, height = 3000, background, setSelectedText }) {
+function ScrollableMap({ width = 3000, height = 3000, background, setSelectedText, points }) {
   const mapRef = useRef(null);
   const [isDragging, setIsDragging] = useState(false);
   const [startPos, setStartPos] = useState({ x: 0, y: 0 });
@@ -66,7 +66,7 @@ function ScrollableMap({ width = 3000, height = 3000, background, setSelectedTex
           background: background || "lightgray",
         }}
       >
-      <POIs setSelectedText={setSelectedText}/>
+      <POIs setSelectedText={setSelectedText} points={points}/>
       </div>
     </div>
   );
