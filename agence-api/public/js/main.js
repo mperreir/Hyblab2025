@@ -13,14 +13,29 @@ const initSlide2 = async function () {
     let response = await fetch('data/fr_.json');
     const texts = await response.json();
 
+
+    // await histoire(texts.tech);
+
     // Load the intro story
     const userName = await loadIntroStory(texts.introduction.general);
 
     // Select the character
-    const character = await selectCharacter(texts.introduction.secteurs);
+    // const character = await selectCharacter(texts.introduction.secteurs);
 
     // Select the character
-    const secteur = await selectSecteur(texts.introduction.secteurs);    
+    const secteur = await selectSecteur(texts.introduction.secteurs);
+
+    switch (secteur) {
+        case 0:
+            await histoire(texts.agro);
+            break;
+        case 1:
+            await histoire(texts.tech);
+            break;
+        case 2:
+            await histoire(texts.arti);
+            break;
+    };
 };
 
 function wait(ms) {
@@ -63,6 +78,9 @@ function waitForUserTouch(){
 
 
 async function getUserName() {
+
+    toggleTapIconDisplay(true);
+
     const messageInput = document.getElementById('messageInput');
     const chatInput = document.getElementById('chat-input');
 
@@ -73,20 +91,36 @@ async function getUserName() {
 
     messageInput.blur();
     chatInput.style.visibility='hidden';
+
+    toggleTapIconDisplay(false);
+
     return userName;
 }
+
+async function displayMessages(message) {
+    for (const key in message) {
+        addMessage({ text: message[key], type: "received", timestamp: new Date().toISOString() });
+        scrollToBottom();
+        await waitForUserTouch();
+    }
+}
+
+async function displayResponses(message) {
+    for (const key in message) {
+        addMessage({ text: message[key], type: "answer", timestamp: new Date().toISOString() });
+        scrollToBottom();
+    }
+    await waitForUserTouch();
+}
+
   
 async function loadIntroStory(introStory) {
   document.getElementById('chat-input').style.visibility = 'hidden';
 
-    for (const key in introStory.avant_nom) {
-        addMessage({ text: introStory.avant_nom[key], type: "received", timestamp: new Date().toISOString() });
-        scrollToBottom();
-        await waitForUserTouch();
-    }
+    await displayMessages(introStory.avant_nom);
 
     const userName = await getUserName();
-    addMessage({ text: userName, type: "sent", timestamp: new Date().toISOString() });
+    await addMessage({ text: userName, type: "sent", timestamp: new Date().toISOString() });
 
     let i=0;
     for (const key in introStory.apres_nom) {
@@ -105,6 +139,7 @@ async function loadIntroStory(introStory) {
 }
 
   async function selectCharacter(textsPresentationPersos) {
+
     const images = [
         { src: 'img/perso1.png', alt: '1', index: 0 },
         { src: 'img/perso2.png', alt: '2', index: 1, active: true },
@@ -112,17 +147,58 @@ async function loadIntroStory(introStory) {
       ];
       const carousel = new Carousel(images, ['text1', 'text2', 'text3']);
       await carousel.createCarousel();
-      return await carousel.getCharacter();
+      const char =  await carousel.getCharacter();
+      carousel.activated = false;
+
+      
+
+      return char;
   }
 
   async function selectSecteur(textsPresentationPersos) {
+
+    toggleTapIconDisplay(true);
+
     const images = [
-        { src: 'img/perso1.png', alt: '1', index: 0 },
-        { src: 'img/perso2.png', alt: '2', index: 1, active: true },
-        { src: 'img/perso3.png', alt: '3', index: 2 }
+        { src: 'img/agro.jpg', alt: '1', index: 0 },
+        { src: 'img/tech.jpeg', alt: '2', index: 1, active: true },
+        { src: 'img/arti.jpg', alt: '3', index: 2 }
       ];
       const carousel = new Carousel(images, [textsPresentationPersos.agro, textsPresentationPersos.tech, textsPresentationPersos.arti]);
       await carousel.createCarousel();
-      return await carousel.getCharacter();
+      const char =  await carousel.getCharacter();
+      carousel.activated = false;
+
+      toggleTapIconDisplay(false);
+
+      return char;
   }
   
+
+async function histoire(texts){
+
+    let choices = [];
+
+    await displayMessages(texts.introduction);
+
+    for (let i = 0; i < texts.questions.length; i++) {
+        await displayMessages(texts.questions[i]);
+
+        /* Ouais bon la solution est dégeu, mais ça fonctionne */
+        let multipleChoices = false;
+        for(let key in texts.questions[i]){
+           if(texts.questions[i][key].includes("financement")){
+                multipleChoices = true;
+                break;
+           }
+        }
+
+        toggleTapIconDisplay(true);
+
+        let answer = await addAnswer(texts.reponses[i], multipleChoices);
+        choices = [...choices, ...answer];
+        console.log(choices);
+
+        toggleTapIconDisplay(false);
+    }
+}

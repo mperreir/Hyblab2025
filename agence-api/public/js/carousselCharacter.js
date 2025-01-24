@@ -8,7 +8,7 @@ class Carousel {
     this.selectButton = document.createElement('button');
     this.carousel = document.createElement('div');
     this.textZone = document.createElement('p');
-
+    this.activated = true;
   }
 
   async createCarousel() {
@@ -88,15 +88,28 @@ class Carousel {
   }
 
   updateCarousel() {
-    const images = Array.from(document.querySelectorAll('.carousel img'));
-    const totalImages = images.length;
+    const totalImages = this.images.length;
     const leftIndex = (this.activeIndex - 1 + totalImages) % totalImages;
     const rightIndex = (this.activeIndex + 1) % totalImages;
 
     this.carousel.innerHTML = ''; // Clear existing images
-    this.carousel.appendChild(images[leftIndex].cloneNode(true));
-    this.carousel.appendChild(images[this.activeIndex].cloneNode(true));
-    this.carousel.appendChild(images[rightIndex].cloneNode(true));
+
+    const imgLeft = document.createElement('img');
+    imgLeft.src = this.images[leftIndex].src;
+    imgLeft.alt = this.images[leftIndex].alt;
+
+    const imgRight = document.createElement('img');
+    imgRight.src = this.images[rightIndex].src;
+    imgRight.alt = this.images[rightIndex].alt;
+
+    const imgCenter = document.createElement('img');
+    imgCenter.src = this.images[this.activeIndex].src;
+    imgCenter.alt = this.images[this.activeIndex].alt;
+
+
+    this.carousel.appendChild(imgLeft);
+    this.carousel.appendChild(imgCenter);
+    this.carousel.appendChild(imgRight);
 
     this.carousel.children[0].classList.remove('active');
     this.carousel.children[1].classList.add('active');
@@ -107,6 +120,8 @@ class Carousel {
 
   handleGesture(startX, endX) {
     const swipeDistance = endX - startX;
+    //Prevent swipe if the user only clicks on the carousel
+    if (endX < 10) return;
     if (swipeDistance > 50) {
       // Swipe Right
       this.activeIndex = (this.activeIndex - 1 + this.images.length) % this.images.length;
@@ -114,14 +129,15 @@ class Carousel {
       // Swipe Left
       this.activeIndex = (this.activeIndex + 1) % this.images.length;
     }
-    this.updateCarousel();
+    if (this.activated){
+      this.updateCarousel();
+    }
   }
 
   async getCharacter() {
     return new Promise((resolve) => {
         this.selectButton.addEventListener('click', () => {
-            this.selectButton.textContent = "Choisi !";
-            this.selectButton.disabled = true;
+            this.selectButton.remove();
             resolve(this.activeIndex);
         });
     });
