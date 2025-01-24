@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import yaml from "js-yaml";
 import "./QuestionPage.css";
@@ -10,19 +10,25 @@ const QuestionPage = () => {
   const [validated, setValidated] = useState(false);
   const [showHintText, setShowHintText] = useState(false);
   const [showHintImage, setShowHintImage] = useState(false);
-  const { difficulty, id } = useParams(); // Récupère la difficulté et l'étape depuis l'URL
+
+  const { difficulty, id } = useParams(); // Récupère les paramètres de l'URL
   const navigate = useNavigate();
 
-  // Charger les questions depuis le fichier YAML
+  // Charger les questions depuis le fichier YAML à chaque changement de `difficulty` ou `id`
   useEffect(() => {
     fetch("/data/questions.yaml")
       .then((response) => response.text())
       .then((text) => {
         const data = yaml.load(text);
         setQuestions(data.game.levels[parseInt(difficulty) - 1].stages[parseInt(id) - 1].questions);
+        setCurrentQuestionIndex(0); // Réinitialise l'index de la question
+        setSelectedOptionIndex(null); // Réinitialise la sélection
+        setValidated(false); // Réinitialise l'état de validation
+        setShowHintText(false);
+        setShowHintImage(false);
       })
       .catch((error) => console.error("Erreur de chargement YAML :", error));
-  }, [difficulty, id]);
+  }, [difficulty, id]); // Surveille les changements de `difficulty` et `id`
 
   if (questions.length === 0) {
     return <p>Chargement des questions...</p>;
@@ -30,16 +36,24 @@ const QuestionPage = () => {
 
   const handleNext = () => {
     if (!validated) {
-      setValidated(true); // Valide la réponse actuelle
+      setValidated(true); // Valider la réponse actuelle
     } else {
       if (currentQuestionIndex < questions.length - 1) {
+        // Passer à la question suivante
         setCurrentQuestionIndex(currentQuestionIndex + 1);
         setSelectedOptionIndex(null);
         setValidated(false);
         setShowHintText(false);
         setShowHintImage(false);
       } else {
-        navigate(`/etape/${difficulty}`); // Retourne à la liste des étapes
+        // Gestion de la fin d'une étape
+        const nextStage = parseInt(id) + 1;
+        if (nextStage <= 3) {
+          navigate(`/etape/${difficulty}/${nextStage}`); // Incrémente l'étape dans l'URL
+        } else {
+          alert("Félicitations ! Vous avez complété toutes les étapes.");
+          navigate("/"); // Retour à la page principale ou redirection finale
+        }
       }
     }
   };
