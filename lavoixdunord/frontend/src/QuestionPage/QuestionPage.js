@@ -11,8 +11,9 @@ const QuestionPage = () => {
   const [validated, setValidated] = useState(false);
   const [showHintText, setShowHintText] = useState(false);
   const [showHintImage, setShowHintImage] = useState(false);
+  const [isEnlarged, setIsEnlarged] = useState(false); // Ajout de l'état pour l'agrandissement
 
-  const navigate = useNavigate(); // Initialisation de useNavigate
+  const navigate = useNavigate();
   const { id } = useParams();
 
   useEffect(() => {
@@ -20,7 +21,7 @@ const QuestionPage = () => {
       .then((response) => response.text())
       .then((text) => {
         const data = yaml.load(text);
-        setQuestions(data.game.levels[0].stages[parseInt(id)-1].questions);
+        setQuestions(data.game.levels[0].stages[parseInt(id) - 1].questions);
       })
       .catch((error) => console.error("Erreur de chargement YAML :", error));
   }, [id]);
@@ -31,18 +32,16 @@ const QuestionPage = () => {
 
   const handleNext = () => {
     if (!validated) {
-      // Valider la réponse
       setValidated(true);
     } else {
-      // Passer à la question suivante ou rediriger
       if (currentQuestionIndex < questions.length - 1) {
         setCurrentQuestionIndex(currentQuestionIndex + 1);
         setSelectedOptionIndex(null);
         setValidated(false);
         setShowHintText(false);
         setShowHintImage(false);
+        setIsEnlarged(false); // Réinitialiser l'agrandissement de l'image
       } else {
-        // Redirection vers la page principale
         navigate("/etape/" + (parseInt(id) + 1));
         setQuestions([]);
         setCurrentQuestionIndex(0);
@@ -50,12 +49,17 @@ const QuestionPage = () => {
         setValidated(false);
         setShowHintText(false);
         setShowHintImage(false);
+        setIsEnlarged(false);
       }
     }
   };
 
   const handleOptionClick = (index) => {
     setSelectedOptionIndex(index);
+  };
+
+  const toggleImageSize = () => {
+    setIsEnlarged(!isEnlarged);
   };
 
   const currentQuestion = questions[currentQuestionIndex];
@@ -119,11 +123,16 @@ const QuestionPage = () => {
 
         <div className="hints-container">
           <div className="hint-item">
-            <button className="toggle-btn" onClick={() => setShowHintText(!showHintText)}>
+            <button
+              className="toggle-btn"
+              onClick={() => setShowHintText(!showHintText)}
+            >
               {showHintText ? "−" : "+"}
             </button>
             <span className="hint-title">INDICE 1</span>
-            {showHintText && <p className="hint-text">{currentQuestion.hints.text}</p>}
+            {showHintText && (
+              <p className="hint-text">{currentQuestion.hints.text}</p>
+            )}
           </div>
 
           <div className="hint-item">
@@ -139,7 +148,8 @@ const QuestionPage = () => {
               <img
                 src={`/${currentQuestion.hints.image}`}
                 alt="Indice"
-                className="hint-img"
+                className={`hint-img ${isEnlarged ? "enlarged" : ""}`}
+                onClick={toggleImageSize}
               />
             )}
           </div>
