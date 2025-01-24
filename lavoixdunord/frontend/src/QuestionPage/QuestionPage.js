@@ -11,14 +11,10 @@ const QuestionPage = () => {
   const [validated, setValidated] = useState(false);
   const [showHintText, setShowHintText] = useState(false);
   const [showHintImage, setShowHintImage] = useState(false);
-<<<<<<< HEAD
   const [isEnlarged, setIsEnlarged] = useState(false); // Ajout de l'état pour l'agrandissement
 
-  const navigate = useNavigate();
-=======
   const basename = process.env.REACT_APP_BASENAME || "/";
   const navigate = useNavigate(); // Initialisation de useNavigate
->>>>>>> a6d9baf1d4390be507a3bc405218d5aa7f05e465
   const { id } = useParams();
 
   useEffect(() => {
@@ -150,6 +146,7 @@ const QuestionPage = () => {
             </button>
             <span className="hint-title">INDICE 2</span>
             {showHintImage && currentQuestion.hints.image && (
+              
               <img
                 src={`/${currentQuestion.hints.image}`}
                 alt="Indice"
