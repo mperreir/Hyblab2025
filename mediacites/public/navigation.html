@@ -18,13 +18,17 @@
 
 <body>
   <nav class="sticky-top">
+    
     <div class="navigation-header btn-group btn-group-justified" role="group"> 
+        <button onclick="location.href='home.html'" class="btn btn-outline-secondary" type="button" style="border-radius: 4vh 4vh 4vh 4vh; margin-right: 10px; font-style: normal;">
+            🏠
+        </button>
         <!-- On pourrait essayer du relative avec left:-10 px -->
-        <button onclick="location.href='https://google.com' " class="btn btn-outline-secondary" type="button" disabled> ACTION SOCIALE ET SANTÉ</button>
+        <button onclick="location.href='https://google.com' " class="btn btn-outline-secondary" type="button" style="border-radius: 4vh 0vh 0vh 4vh;" disabled> ACTION SOCIALE ET SANTÉ</button>
         <button onclick="location.href='https://google.com' " class="btn btn-outline-secondary" type="button" disabled> CITOYENNETÉ</button>
         <button onclick="location.href='https://google.com' " class="btn btn-outline-secondary" type="button" disabled> CULTURE ET TOURISME</button>
-        <button onclick="location.href='https://google.com' " class="btn btn-outline-secondary" type="button"> ÉDUCATION</button>
-        <button onclick="location.href='https://google.com' " class="btn btn-outline-secondary" type="button"> ENVIRONNEMENT</button>
+        <button onclick="redirect('education')" class="btn btn-outline-secondary" type="button"> ÉDUCATION</button>
+        <button onclick="redirect('environnement') " class="btn btn-outline-secondary" type="button"> ENVIRONNEMENT</button>
         <button onclick="location.href='https://google.com' " class="btn btn-outline-secondary" type="button" disabled> MOBILITÉS</button>
         <button onclick="location.href='https://google.com' " class="btn btn-outline-secondary" type="button" disabled> SÉCURITÉ</button>
         <button onclick="location.href='https://google.com' " class="btn btn-outline-secondary" type="button" disabled> URBANISME ET LOGEMENT</a>
@@ -60,11 +64,11 @@
     <area shape="poly" coords="198.82500000,307.00000000,198.57500000,306.98900000,177.76600000,305.27200000,175.56800000,304.06900000,147.53100000,267.34000000,147.21200000,264.11100000,149.95400000,262.38200000,158.74800000,262.30200000,159.31900000,262.15400000,180.44900000,250.64400000,182.92700000,250.43600000,184.75300000,252.12500000,186.27800000,255.63800000,186.23400000,258.19200000,184.52200000,261.79300000,184.59200000,262.96900000,185.62300000,263.53700000,188.24500000,263.53700000,191.32900000,266.62200000,191.32900000,270.37200000,190.75500000,272.16500000,188.97500000,274.66000000,189.19200000,276.30800000,199.91700000,285.16200000,200.55400000,285.43300000,208.27400000,286.31700000,210.86900000,288.46900000,211.39700000,290.17300000,211.10100000,292.66700000,209.04900000,294.11300000,203.05500000,295.29700000,202.07300000,296.46800000,201.91100000,303.97900000,200.89100000,306.20600000,198.82500000,306.99900000,198.82500000,307.00000000" href="#" alt="Description du treizième polygone">
                         </map>
                     </div>
-                    <div class="logo">
+                      <div class="logo">
                         <img src="img/logo_mediacites.png" alt="Logo">
                     </div>
                 </div>
-                    <div class="description" style="border-radius: 4vh 4vh 4vh 4vh; width: 30vw; text-align: left; font-family: 'IBM Plex Mono';">
+                    <div class="description" style="border-radius: 4vh 4vh 4vh 4vh; width: 30vw; text-align: left;">
                       Découvrez la synthèse des décisions du conseil municipal en navigant à travers les différentes catégories.
                     </div>
                     <div class="actions">
@@ -102,6 +106,13 @@
                         </div>
                     </div>
                 </div>
+                <div class="row" style="padding-right: 3vh;">
+                    <div class="col" style="width: 100%; text-align: right;">
+                        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="btn btn-outline-secondary" style="font-size: 2vw; border-radius: 4vh 4vh 4vh 4vh;">
+                            &#8679;
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -119,5 +130,13 @@
             saucisse.innerHTML = text;
         })
         .catch(error => console.error('Error fetching JSON:', error));
+
+
+
+    function redirect(name) {
+        newUrl = window.location.href.split("?")[0]+"?name="+name;
+        location.href = newUrl;
+    }
+
     </script>
 </body>
