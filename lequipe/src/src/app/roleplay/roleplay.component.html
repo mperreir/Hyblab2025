@@ -1,6 +1,13 @@
 <app-header></app-header>
 <div id="main">
-    <div id="scenarios">
+    @if (!selected_scenario) {
+        <app-slider [items]="data" (selected_output)="selectScenario($event)"></app-slider>
+    }
+    @else {
+        <button>retour</button>
+        <div>image</div>
+    }
+    <!-- <div id="scenarios">
         <div class="placeholder"></div>
         @for (item of data; track $index) {
             <div class="scenario" (click)="selectScenario(item, $event.target)" [ngClass]="{'selected' : selected_scenario == item}">
@@ -9,7 +16,7 @@
             </div>
         }
         <div class="placeholder"></div>
-    </div>
+    </div> -->
     <!-- <pre>
         {{selected_scenario | json}}
     </pre> -->

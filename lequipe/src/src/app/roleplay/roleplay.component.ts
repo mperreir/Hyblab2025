@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { ContentData } from '../models/content-data';
 import { SituationComponent } from '../situation/situation.component';
 import { HeaderComponent } from '../header/header.component';
+import { SliderComponent } from '../slider/slider.component';
 
 @Component({
     selector: 'app-roleplay',
@@ -12,7 +13,8 @@ import { HeaderComponent } from '../header/header.component';
     imports: [
         CommonModule,
         SituationComponent,
-        HeaderComponent
+        HeaderComponent,
+        SliderComponent
     ],
     templateUrl: './roleplay.component.html',
     styleUrl: './roleplay.component.scss'
@@ -35,11 +37,7 @@ export class RoleplayComponent implements OnInit {
         return this.http.get<ContentData[]>('assets/data.json');
     }
 
-    selectScenario(item: ContentData,evt: EventTarget | null): void {
-        this.selected_scenario = item;
-        this.scrollToSelectedScenario(evt as Element);
-    }
-    scrollToSelectedScenario(evt: Element): void {
-        evt.scrollIntoView({ behavior: "auto", block: 'end', inline: 'center' });
+    selectScenario(scenario: ContentData): void {
+        this.selected_scenario = scenario;
     }
 }
