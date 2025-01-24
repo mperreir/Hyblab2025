@@ -31,6 +31,8 @@ function enableClickForExpansion(text, data) {
 
 // Fonction pour agrandir le message et afficher l'image
 function expandMessage(messageElement, data) {
+    toggleTapIconDisplay(true);
+
     const rect = messageElement.getBoundingClientRect();
 
     // Récupération de la liste des choix sur la balise HTML
@@ -83,6 +85,7 @@ function expandMessage(messageElement, data) {
 
 // Fonction pour fermer l'overlay et réduire vers le message
 function closeOverlay() {
+    toggleTapIconDisplay(false);
     const lastMessage = document.querySelectorAll('.message.received');
     // --> La séléection du message sur lequel fermer est à adapter selon tag des balises HTML ?
     // Pour l'instant la fermeture est définie statiquement dans le HTML
