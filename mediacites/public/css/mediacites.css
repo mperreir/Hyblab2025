@@ -39,3 +39,46 @@
    button:nth-child(3) { border-right:red; }
    button:nth-child(6) { border-left:red; }
 }
+
+
+.left-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 77vh;
+    border: 1vh solid black;
+    border-radius: 4vh;
+    padding: 10px;
+  }
+  
+  .header {
+    margin-bottom: 10px;
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: auto;
+  }
+  
+  .card-container {
+    margin-bottom: 10px;
+  }
+  
+  .logo img {
+    max-width: 100px;
+    height: auto;
+  }
+  
+  .description {
+    background-color: #ff0000;
+    color: #ffffff;
+    font-size: 1rem;
+    padding: 15px;
+    width: 80%;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
