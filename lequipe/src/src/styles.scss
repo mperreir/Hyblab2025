@@ -1,8 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: montserrat;
+    src: url(../public/font/Montserrat-VariableFont_wght.ttf) format("truetype");
+}
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'montserrat';
 }
 
 body {

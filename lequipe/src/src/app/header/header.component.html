@@ -1,17 +1,19 @@
 <header>
     <img src="logo_black.svg" alt="logo" id="logo">
-    <div class="burger-toggle" (click)="isBurgerMenuOpen = !isBurgerMenuOpen">
+    <div class="burger-toggle" [ngClass]="{'opened' : isBurgerMenuOpen}" (click)="isBurgerMenuOpen = !isBurgerMenuOpen">
         <span></span>
         <span></span>
         <span></span>
     </div>
 
-    <nav class="burger-menu" [class.open]="isBurgerMenuOpen">
-        <a routerLink="/roleplay" routerLinkActive="active">Histoires</a>
-        <a routerLink="/unes" routerLinkActive="active">Les unes débloquées</a>
-        <a routerLink="/account" routerLinkActive="active">Mon compte</a>
-        <a routerLink="/settings" routerLinkActive="active">Paramètres</a>
-        <a routerLink="/credits" routerLinkActive="active">Crédits</a>
-        <a routerLink="/makingoff" routerLinkActive="active">Making-off</a>
-    </nav>
+    <div class="burger-menu" [class.open]="isBurgerMenuOpen">
+        <nav>
+            <a routerLink="/roleplay" routerLinkActive="active"><span class="number">01</span><span class="text">Histoires</span></a>
+            <a routerLink="/unes" routerLinkActive="active"><span class="number">02</span><span class="text">Les unes débloquées</span></a>
+            <a routerLink="/account" routerLinkActive="active"><span class="number">03</span><span class="text">Mon compte</span></a>
+            <a routerLink="/settings" routerLinkActive="active"><span class="number">04</span><span class="text">Paramètres</span></a>
+            <a routerLink="/credits" routerLinkActive="active"><span class="number">05</span><span class="text">Crédits</span></a>
+            <a routerLink="/makingoff" routerLinkActive="active"><span class="number">06</span><span class="text">Making-off</span></a>
+        </nav>
+    </div>
 </header>
