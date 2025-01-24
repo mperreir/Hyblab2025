@@ -101,10 +101,9 @@ const QuestionPage = () => {
   };
 
   const currentQuestion = questions[currentQuestionIndex];
-
   return (
     <>
-      {/* Overlay pour l'image agrandie */}
+      {/* Gestion de l'image agrandie avec flou */}
       {isEnlarged && (
         <div className="overlay" onClick={() => setIsEnlarged(false)}>
           <img
@@ -114,31 +113,30 @@ const QuestionPage = () => {
           />
         </div>
       )}
-  
-      {/* Contenu principal avec possibilité de floutage */}
+
+      {/* Ajout dynamique de la classe pour flouter le contenu */}
       <div className={`question-container ${isEnlarged ? "blur-background" : ""}`}>
         <h2 className="question-number">
           QUESTION {currentQuestionIndex + 1}/{questions.length}
         </h2>
-  
+
         <div className="question-box">
           <p className="question-text">{currentQuestion.text}</p>
-  
+
           <div className="answers">
             {currentQuestion.options.map((option, index) => (
               <button
                 key={index}
-                className={`answer-btn ${selectedOptionIndex === index ? "selected" : ""} ${
-                  validated
-                    ? index === selectedOptionIndex
-                      ? option.correct
-                        ? "correct"
-                        : "wrong"
-                      : option.correct
+                className={`answer-btn ${selectedOptionIndex === index ? "selected" : ""} ${validated
+                  ? index === selectedOptionIndex
+                    ? option.correct
+                      ? "correct"
+                      : "wrong"
+                    : option.correct
                       ? "correct"
                       : ""
-                    : ""
-                }`}
+                  : ""
+                  }`}
                 onClick={() => handleOptionClick(index)}
                 disabled={validated}
               >
@@ -146,7 +144,7 @@ const QuestionPage = () => {
               </button>
             ))}
           </div>
-  
+
           {currentQuestion.hints.link && (
             <p className="article-link">
               <a
@@ -169,7 +167,7 @@ const QuestionPage = () => {
                 : "FINIR"
               : "VALIDER"}
           </button>
-  
+
           <div className="hints-container">
             <div className="hint-item">
               <button
@@ -181,7 +179,7 @@ const QuestionPage = () => {
               <span className="hint-title">INDICE 1</span>
               {showHintText && <p className="hint-text">{currentQuestion.hints.text}</p>}
             </div>
-  
+
             <div className="hint-item">
               <button
                 className={`toggle-btn ${!showHintText ? "disabled" : ""}`}
@@ -205,7 +203,6 @@ const QuestionPage = () => {
       </div>
     </>
   );
-  
 };
 
 export default QuestionPage;

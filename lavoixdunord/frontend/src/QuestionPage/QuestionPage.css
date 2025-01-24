@@ -267,6 +267,8 @@ body.modal-open {
   text-decoration: none;
 }
 
+
+/*rajouter ca pour blur*/
 .blur-background {
   filter: blur(8px);
   transition: filter 0.3s ease-in-out;
@@ -293,3 +295,4 @@ body.modal-open {
   border-radius: 10px; /* Bords arrondis */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Ombre légère */
 }
+/*jusqua ici*/
