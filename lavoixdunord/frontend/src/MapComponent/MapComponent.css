@@ -1,9 +1,9 @@
 .map-overlay {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 48px;
+    left: calc(50% - 175px);
+    width: 350px;
+    height: calc(100% - 100px);
     background-color: rgba(0, 0, 0, 0.8);
     z-index: 1000;
     display: flex;

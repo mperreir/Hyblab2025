@@ -3,10 +3,7 @@
     "features": [
         {
             "type": "Feature",
-            "properties": {
-                "name": "Votre label ici",
-                "title": "Votre label ici"
-            },
+            "properties": {},
             "geometry": {
                 "type": "LineString",
                 "coordinates": [
