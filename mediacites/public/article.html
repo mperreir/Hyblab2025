@@ -31,7 +31,6 @@ fetch(`/mediacites/api/articles/${name}/text`)
     .then(text => {
         saucisse.innerHTML = text;
     })
-        .catch(error => console.error('Error fetching JSON:', error));
-saucisse.innerHTML
+    .catch(error => console.error('Error fetching JSON:', error));
     </script>
 </body>
