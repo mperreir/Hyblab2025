@@ -12,7 +12,7 @@ async function displayExplanation(data, liste_choix, contenu_message) {
                 const lastMessage = document.querySelector(`#${reply.id}`);
                 expandMessage(lastMessage, data);
                 resolve(); // Resolve the promise after expandMessage
-            }, 3000);
+            }, 2000);
         }, 10);
     });
 }
