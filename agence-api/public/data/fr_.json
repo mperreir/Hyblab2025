@@ -164,7 +164,7 @@
             {
                 "titre": {
                     "1_lait": "Les actifs en Mayenne",
-                    "1_porc": "Les actifs dans les Côtes-d'Armor",
+                    "1_porc": "Les actifs dans le Finistère",
                     "1_volaille": "Les actifs en Vendée"
                 },
                 "images": {
@@ -187,6 +187,33 @@
                         "1_volaille": "La viande et les produits à base de viande sont la quatrième marchandise la plus exportée en Bretagne représentant 2337 millions d’euros par an, et la cinquième marchandise la plus exportée en Pays de la Loire."
                     }
                 ]
+            }
+        ],
+        "cartes_fin_arriere": [
+            "Localisation",
+            "Financement",
+            "Recrutement",
+            "Politique d'export"
+        ],
+        "cartes_fin_avant": [
+            {
+                "1_lait": "Production laitière",
+                "1_porc": "Production porcine",
+                "1_volaille": "Production avicole"
+            },
+            {
+                "2_banque": "Prêt bancaire",
+                "2_aide": "Subvention",
+                "2_crowdfunding": "Financement participatif"
+            },
+            {
+                "3_embauchelocale": "Main-d'œuvre locale",
+                "3_embauchetalents": "Talents d'autres régions"
+            },
+            {
+                "4_local": "Marché local",
+                "4_national": "Marché national",
+                "4_international": "Marché international"
             }
         ]
     },
@@ -332,7 +359,7 @@
                 "titre": {
                     "1_nantes": "Les actifs en Loire-Atlantique",
                     "1_lorient": "Les actifs dans le Morbihan",
-                    "1_lannion": "Les actifs dans le Finistère"
+                    "1_lannion": "Les actifs dans les Côtes-d'Armor"
                 },
                 "images": {
                     "1_nantes": [],
@@ -388,6 +415,38 @@
             [
                 "La French Tech, c’est un écosystème national qui soutient les startups françaises et leur croissance. Dans l’Ouest, elle se décline en 3 Capitales (Nantes, Rennes Saint-Malo, Angers) et 7 Communautés, fédérant des centaines d’acteurs de l’innovation. Avec des programmes comme French Tech Next 120 et French Tech 2030, les entreprises locales accèdent à des opportunités de croissance et de financement stratégiques."
             ]
+        ],
+        "cartes_fin_arriere": [
+            "Localisation",
+            "Financement",
+            "Recrutement",
+            "RSE",
+            "French Tech"
+        ],
+        "cartes_fin_avant": [
+            {
+                "1_nantes":"Nantes",
+                "1_lorient":"Lorient",
+                "1_lannion":"Lannion"
+            },
+            {
+                "2_banque":"Prêt bancaire",
+                "2_aide":"Subvention",
+                "2_crowdfunding":"Financement participatif"
+            },
+            {
+                "3_embauchejeunes":"Équipe jeune et innovante",
+                "3_embaucheexperimentes":"Équipe expérimentée et solide"
+            },
+            {
+                "4_non":"Pas de démarche RSE",
+                "4_label":"Entreprise labellisée RSE",
+                "4_mission":"Entreprise à mission"
+            },
+            {
+                "5_ouifrenchtech":"Réseau French Tech",
+                "5_nonfrenchtech":"Activité indépendante"
+            }
         ]
     },
 
@@ -552,6 +611,38 @@
                     }
 
                 ]
+            }
+        ],
+        "cartes_fin_arriere": [
+            "Métier",
+            "Financement",
+            "Recrutement",
+            "RSE",
+            "Approvisionnement"
+        ],
+        "cartes_fin_avant": [
+            {
+                "1_menuisier":"Menuisier",
+                "1_ceramiste":"Céramiste",
+                "1_boucher":"Boucher"
+            },
+            {
+                "2_banque":"Prêt bancaire",
+                "2_aide":"Subvention",
+                "2_crowdfunding":"Financement participatif"
+            },
+            {
+                "3_embauchecfa":"Formation d'artisans",
+                "3_embauchepro":"Recrutement de professionnels"
+            },
+            {
+                "4_non":"Pas de démarche RSE",
+                "4_label":"Entreprise labellisée RSE",
+                "4_mission":"Entreprise à mission"
+            },
+            {
+                "5_local":"Approvisionnement local",
+                "5_import":"Importation de matières premières"
             }
         ]
     }
