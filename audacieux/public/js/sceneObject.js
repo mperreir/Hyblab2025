@@ -2,40 +2,79 @@ class SceneObject{
     constructor(type, src, id, script=null, onload=null){
         this.type = type;
         this.id = id;
-  
-        if(type == "svg")
-        {
+        if (type == "svg") {
           this.html_el = document.createElementNS("http://www.w3.org/2000/svg", "svg");
           this.html_el.setAttribute("id", id);
+      
           fetch(src)
           .then(response => response.text())
           .then(svgContent => {
-            this.html_el.innerHTML = svgContent;
-            
-            this.html_el.style.pointerEvents = "none";
-            Array.from(this.html_el.children).forEach(element => {
-                element.style.pointerEvents = "all";
-            });
-            
-            if(script)
-              {
+              this.html_el.innerHTML = svgContent;
+      
+              // Ajouter un préfixe aux styles pour rendre les sélecteurs uniques
+              const prefixStyles = (svgElement, prefix) => {
+                  const styleElements = svgElement.querySelectorAll("style");
+                  styleElements.forEach(style => {
+                      style.textContent = style.textContent.replaceAll(
+                          "cls",
+                          `${prefix}-cls`
+                      );
+                  });
+              };
+
+              // Function to add a prefix to all class attributes in SVG sub-elements
+            const prefixClasses = (svgElement, prefix) => {
+              // Find all elements with a class attribute within the SVG
+              const elementsWithClass = svgElement.querySelectorAll('[class]');
+              
+              elementsWithClass.forEach((element) => {
+                  // Get the current class name(s)
+                  const currentClass = element.getAttribute('class');
+                  // Add the prefix to each class name
+                  const newClass = currentClass
+                      .split(' ') // Split multiple class names
+                      .map(cls => `${prefix}-${cls}`) // Add prefix to each class name
+                      .join(' '); // Join them back
+                  // Update the class attribute with the new class names
+                  element.setAttribute('class', newClass);
+              });
+            };
+      
+              // Appliquer le préfixe aux styles de l'élément SVG
+              prefixStyles(this.html_el, `${id}`);
+              prefixClasses(this.html_el, `${id}`);
+      
+      
+              // Appliquer pointer-events
+              this.html_el.style.pointerEvents = "none";
+              Array.from(this.html_el.children).forEach(element => {
+                  element.style.pointerEvents = "all";
+              });
+      
+              // Ajouter un gestionnaire d'événements si nécessaire
+              if (script) {
                   if (this.html_el && typeof window[script.func] === "function") {
                       this.html_el.addEventListener("click", (event) => {
-                        // Appeler la fonction spécifiée avec les arguments
-                        window[script.func](event, ...script.args);
+                          // Appeler la fonction spécifiée avec les arguments
+                          window[script.func](event, ...script.args);
                       });
-                    } else {
+                  } else {
                       console.error(
-                        "Erreur : l'objet HTML n'existe pas ou la fonction spécifiée n'est pas définie."
+                          "Erreur : l'objet HTML n'existe pas ou la fonction spécifiée n'est pas définie."
                       );
-                    }
+                  }
               }
-              if(onload){
-                window[onload.func](this.html_el, ...onload.args);
+      
+              // Exécuter la fonction onload si elle est définie
+              if (onload) {
+                  window[onload.func](this.html_el, ...onload.args);
               }
           })
-          
-        }else{
+          .catch(error => {
+              console.error("Erreur lors du chargement du SVG :", error);
+          });
+      }
+      else{
           if(script)
             {
                 if (this.html_el && typeof window[script.func] === "function") {
