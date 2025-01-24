@@ -15,6 +15,7 @@ const Jauge = ({ value, thickness, color , icon}) => {
           value={value}
           sx={{
             height: thickness,
+            borderRadius: thickness / 2, // Arrondir les bords
             backgroundColor: '#e0e0e0',
             '& .MuiLinearProgress-bar': {
               backgroundColor: color,
