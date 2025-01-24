@@ -8,7 +8,7 @@
   height: 100vh;
   padding: 20px;
   background-color: #4D95AF; /* Bleu de fond */
-  font-family: Arial, sans-serif;
+  font-family: "Work Sans";
 }
 
 /* Titre principal */
@@ -17,7 +17,9 @@
   font-size: 36px; /* Grande taille pour le titre */
   font-weight: bold;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 80px;
+  font-family: 'Pathway Extreme';
+  font-weight: 800;
 }
 
 /* Conteneur des options */
@@ -27,7 +29,7 @@
   border-radius: 15px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   text-align: center;
-  width: 90%; /* Ajuste à la largeur de l'écran */
+  width: 100%; /* Ajuste à la largeur de l'écran */
   max-width: 400px;
   display: flex;
   flex-direction: column;
@@ -35,7 +37,7 @@
 }
 
 .difficulty-subtitle {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: bold;
   color: #0d192e;
   margin-bottom: 20px;
@@ -54,7 +56,7 @@
   padding: 15px 30px;
   border: 2px solid #0d192e;
   border-radius: 25px;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: bold;
   cursor: pointer;
   background-color: #ffffff; /* Fond blanc */
@@ -85,7 +87,7 @@
   cursor: pointer;
   background-color: #ffffff; /* Fond blanc */
   color: #0d192e; /* Texte noir */
-  margin-top: 20px;
+  margin-top: 50px;
   transition: all 0.3s ease-in-out;
   width: 80%; /* Prend la même largeur que les autres boutons */
   max-width: 300px; /* Limite la largeur */
