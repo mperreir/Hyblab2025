@@ -14,7 +14,7 @@ app.get(`/categories`, function ( req, res ) {
     const filename = 'public/data/dummy.json'
     // Send it as a JSON object
     res.sendFile(filename);
-} );
+} ); 
 
 app.get(`/articles/:category_name/:keyword`, function (req, res) {
     const category_name = req.params.category_name;
