@@ -1,0 +1,149 @@
+{
+    "questions": [
+    {
+        "question_id": "7",
+        "question_text": " Il est urgent de protéger les ressources en eau, de renforcer les infrastructures et de garantir la sécurité énergétique. Comment vas-tu répondre à ces défis ?",
+        "responses": [
+        {
+            "response_id": "1",
+            "response_text": "Réduire la consommation énergétique avec des politiques de rationnement.",
+            "advantages":"",
+            "inconvenient":"",
+            "Budget":"0",
+            "GES":"+5",
+            "Satisfaction": "-15",
+            "next_question_id": "8",
+            "subquestion": []
+        },
+        {
+            "response_id": "2",
+            "response_text": "Diversifier les sources d’énergie pour réduire la dépendance à l’eau dans la production électrique.",
+            "advantages":"",
+            "inconvenient":"",
+            "next_question_id": "72",
+            "subquestion": [
+                {
+                    "question_id": "72",
+                    "question_text": "Quelle énergie prioriser ?",
+                    "responses": [
+                    {
+                        "response_id": "1",
+                        "response_text": "Développer massivement l’énergie solaire.",
+                        "advantages":"",
+                        "inconvenient":"",
+                        "Budget":"-10",
+                        "GES":"+10",
+                        "Satisfaction": "0",
+                        "next_question_id": "8",
+                        "subquestion": []
+                    },
+                    {
+                        "response_id": "2",
+                        "response_text": "Augmenter l’utilisation du gaz naturel comme complément au mix énergétique.",
+                        "advantages":"",
+                        "inconvenient":"",
+                        "Budget":"-5",
+                        "GES":"-5",
+                        "Satisfaction": "0",
+                        "next_question_id": "8",
+                        "subquestion": []
+                    }
+                    ]
+                }
+            ]
+        },
+        {
+            "response_id": "3",
+            "response_text": "Optimiser l’utilisation de l’eau pour le refroidissement des centrales nucléaires et thermiques.",
+            "advantages":"",
+            "inconvenient":"",
+            "next_question_id": "73",
+            "subquestion": [
+                {
+                    "question_id": "73",
+                    "question_text": " Comment utiliser l’eau pour refroidir les centrales sans épuiser les ressources pendant les sécheresses ?",
+                    "responses": [
+                    {
+                        "response_id": "1",
+                        "response_text": "Installer des réservoirs d’eau près des centrales nucléaires pour limiter la consommation d’eau naturelle.",
+                        "advantages":"",
+                        "inconvenient":"",
+                        "Budget":"-5",
+                        "GES":"-5",
+                        "Satisfaction": "-5",
+                        "next_question_id": "8",
+                        "subquestion": []
+                    },
+                    {
+                        "response_id": "2",
+                        "response_text": "Construire des réservoirs d’eau autour des centrales thermiques pour garantir un approvisionnement constant.",
+                        "advantages":"",
+                        "inconvenient":"",
+                        "Budget":"-5",
+                        "GES":"-5",
+                        "Satisfaction": "-10",
+                        "next_question_id": "8",
+                        "subquestion": []
+                    },
+                    {
+                        "response_id": "3",
+                        "response_text": "Retourner aux méthodes anciennes de refroidissement en circuit fermé pour réduire l’usage de l’eau naturelle.",
+                        "advantages":"",
+                        "inconvenient":"",
+                        "Budget":"+0",
+                        "GES":"-10",
+                        "Satisfaction": "-5",
+                        "next_question_id": "8",
+                        "subquestion": []
+                    }
+                    ]
+                }
+            ]
+        }
+        ]
+    },
+    
+    
+    {
+        "question_id": "8",
+        "question_text": "Comment vas-tu gérer cet impact environnemental global tout en poursuivant ta stratégie énergétique ?",
+        "responses": [
+        {
+            "response_id": "1",
+            "response_text": "Investir massivement dans le recyclage et la revalorisation déchets nucléaires.",
+            "advantages":"",
+            "inconvenient":"",
+            "Budget":"-15",
+            "GES":"+10",
+            "Satisfaction": "+10",
+            "next_question_id": "9",
+            "subquestion": []
+        },
+        {
+            "response_id": "2",
+            "response_text": " Construire des usines de batteries dans votre pays.",
+            "advantages":"",
+            "inconvenient":"",
+            "Budget":"-10",
+            "GES":"+5",
+            "Satisfaction": "+0",
+            "next_question_id": "6",
+            "subquestion": []
+        },
+        {
+            "response_id": "3",
+            "response_text": "Développer des installations de recyclage des panneaux solaires et des batteries usagées.",
+            "advantages":"",
+            "inconvenient":"",
+            "Budget":"-10",
+            "GES":"+5",
+            "Satisfaction": "+5",
+            "next_question_id": "6",
+            "subquestion": []
+        }
+        ]
+    }
+    
+    ]
+  }
+  

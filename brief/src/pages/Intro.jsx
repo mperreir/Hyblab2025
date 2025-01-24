@@ -5,7 +5,7 @@ import DonutChart from '../components/DonutComponent';
 const Intro = () => {
     return (
       <IntroLayout>
-        <DonutChart /> {/* Ajout du composant dans le layout */}
+        <DonutChart size={100} />
       </IntroLayout>
     );
   };

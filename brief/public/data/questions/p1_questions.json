@@ -1,0 +1,265 @@
+{
+    "questions": [
+    {
+        "question_id": "1",
+        "question_text": "Quelle stratégie souhaites-tu prioriser pour décarboner les transports de ton pays ?",
+        "responses": [
+        {
+            "response_id": "1",
+            "response_text": "Interdire progressivement les véhicules thermiques au profit des voitures électriques",
+            "advantages":"Réduit les émissions rapidement",
+            "inconvenient":" Coût élevé des infrastructures de recharge",
+            "next_question_id": "11",
+            "subquestion":[
+                {
+                    "question_id": "11",
+                    "question_text": "Pour accélérer l'adoption des véhicules électriques, quelle mesure vous semble la plus efficace ?",
+                    "responses": [
+                    {
+                        "response_id": "1",
+                        "response_text": " Subventions importantes à l'achat de véhicules électriques et déploiement rapide d'un réseau de bornes de recharge.",
+                        "Budget":"-10",
+                        "GES":"+5",
+                        "Satisfaction": "+5",
+                        "next_question_id": "2",
+                        "subquestion": []
+
+                    },
+                    {
+                        "response_id": "2",
+                        "response_text": "Investissement massif dans la recherche et développement de batteries plus performantes et moins coûteuses.",
+                        "Budget":"-20",
+                        "GES":"0",
+                        "Satisfaction": "+5",
+                        "next_question_id": "2",
+                        "subquestion": []
+                    }
+                    ]
+                }
+            ]
+        },
+        {
+            "response_id": "2",
+            "response_text": "Le développement massif des transports en commun",
+            "advantages":"Accessible à tous et réduit la dépendance à la voiture",
+            "inconvenient":"Long et coûteux à mettre en place",
+            "next_question_id": "12",
+            "subquestion": [
+                {
+                    "question_id": "12",
+                    "question_text": " Comment rendre les transports en commun plus attractifs et inciter à leur utilisation ?",
+                    "responses": [
+                    {
+                        "response_id": "1",
+                        "response_text": " Rendre les transports plus fréquents, fiables.",
+                        "Budget":"-10",
+                        "GES":"+5",
+                        "Satisfaction": "+10",
+                        "next_question_id": "2",
+                        "subquestion": []
+                    },
+                    {
+                        "response_id": "2",
+                        "response_text": "Création de pistes cyclables sécurisées, d’aires piétonnes et développement de services de vélos en libre-service.",
+                        "Budget":"-10",
+                        "GES":"+5",
+                        "Satisfaction": "+10",
+                        "next_question_id": "2",
+                        "subquestion": []
+                    }
+                    ]
+                }
+            ]
+        },
+        {
+            "response_id": "3",
+            "response_text": " Une approche combinée, misant sur l’innovation technologique et une transformation progressive des usages",
+            "advantages": "Équilibre plusieurs solutions complémentaires",
+            "inconvenient": "Transition plus lente",
+            "next_question_id": "13",
+            "subquestion":[
+                {
+                    "question_id": "13",
+                    "question_text": "Face à la diversité des besoins et des usages, comment prioriser les investissements dans les nouvelles technologies ?",
+                    "responses": [
+                    {
+                        "response_id": "1",
+                        "response_text": "Soutien aux biocarburants de nouvelle génération et à la production d’hydrogène vert pour les transports lourds.",
+                        "Budget":"-10",
+                        "GES":"+5",
+                        "Satisfaction": "+5",
+                        "next_question_id": "2",
+                        "subquestion": []
+                    },
+                    {
+                        "response_id": "2",
+                        "response_text": "Incitations au covoiturage, à l’autopartage et développement de plateformes numériques pour réduire l’usage individuel de la voiture.",
+                        "Budget":"-5",
+                        "GES":"+5",
+                        "Satisfaction": "+10",
+                        "next_question_id": "2",
+                        "subquestion": []
+                    }
+                    ]
+                }
+            ]
+        }
+        ]
+    },
+    {
+        "question_id": "2",
+        "question_text": "Quels choix feras-tu pour répondre aux besoins énergétiques tout en respectant tes objectifs climatiques ?",
+        "responses": [
+        {
+            "response_id": "1",
+            "response_text": "Investir massivement dans la construction de nouveaux réacteurs nucléaires.",
+            "advantages":"Déjà une source importante d’énergie et peu polluantes.",
+            "inconvenient": "Génère, sur le long terme, des déchets toxiques.",
+            "Budget":"-10",
+            "GES":"+5",
+            "Satisfaction": "0",
+            "next_question_id": "3",
+            "subquestion": []
+        },
+        {
+            "response_id": "2",
+            "response_text": "Fermer progressivement les réacteurs nucléaires vieillissants.",
+            "advantages": "Vous entamez une transition vers des énergies renouvelables avec un impact moindre sur votre environnement.",
+            "inconvenient":"Il va falloir trouver de nouvelles sources d’énergie",
+            "Budget":"-5",
+            "GES":"+5",
+            "Satisfaction": "+10",
+            "next_question_id": "22",
+            "subquestion": [
+                {
+                    "question_id": "22",
+                    "question_text": "Comment garantir l’approvisionnement en énergie sans compromettre la transition ?",
+                    "responses": [
+                    {
+                        "response_id": "1",
+                        "response_text": "Multiplier les projets d'énergies renouvelables à grande échelle (parcs éoliens offshore, fermes solaires, etc.).",
+                        "Budget":"-15",
+                        "GES":"+10",
+                        "Satisfaction": "+10",
+                        "next_question_id": "3",
+                        "subquestion": []
+                    },
+                    {
+                        "response_id": "2",
+                        "response_text": " Importer davantage d’énergie de pays voisins pour combler le manque d’approvisionnement nucléaire",
+                        "Budget":"-5",
+                        "GES":"0",
+                        "Satisfaction": "0",
+                        "next_question_id": "3",
+                        "subquestion": []
+                    }
+                    ]
+                }
+            ]
+        },
+        {
+            "response_id": "3",
+            "response_text": "Entretenir les réacteurs nucléaires existants.",
+            "advantages": "Coût faible.",
+            "inconvenient":"",
+            "Budget":"-5",
+            "GES":"0",
+            "Satisfaction": "0",
+            "next_question_id": "3",
+            "subquestion": []
+        }
+        ]
+    },
+    {
+        "question_id": "3",
+        "question_text": "C’est à toi de trancher : quelles énergies méritent ton investissement pour construire un avenir durable ?",
+        "responses": [
+        {
+            "response_id": "1",
+            "response_text": "Développer le biogaz à grande échelle comme source d'énergie renouvelable à partir de déchets agricoles et de biodéchets",
+            "Budget":"-5",
+            "GES":"+5",
+            "Satisfaction": "+5",
+            "next_question_id": "4",
+            "subquestion": []
+        },
+        {
+            "response_id": "2",
+            "response_text": "Investir dans des centrales géothermiques profondes pour produire de l'électricité et de la chaleur.",
+            "Budget":"-10",
+            "GES":"+5",
+            "Satisfaction": "0",
+            "next_question_id": "4",
+            "subquestion": []
+        },
+        {
+            "response_id": "3",
+            "response_text": "Moderniser les infrastructures en place pour limiter leur impact environnemental.",
+            "Budget":"-10",
+            "GES":"+5",
+            "Satisfaction": "0",
+            "next_question_id": "33",
+            "subquestion": [
+                {
+                    "question_id": "33",
+                    "question_text": "Sur quoi souhaitez-vous vous focaliser ?",
+                    "responses": [
+                    {
+                        "response_id": "1",
+                        "response_text": "Moderniser les infrastructures pétrolières",
+                        "Budget":"-5",
+                        "GES":"-5",
+                        "Satisfaction": "0",
+                        "next_question_id": "4",
+                        "subquestion": []
+                        
+                    },
+                    {
+                        "response_id": "2",
+                        "response_text": "Passer à des réacteurs nucléaires de nouvelle génération.",
+                        "Budget":"-10",
+                        "GES":"0",
+                        "Satisfaction": "0",
+                        "next_question_id": "4",
+                        "subquestion": []
+                    },
+                    {
+                        "response_id": "3",
+                        "response_text": "Moderniser les infrastructures en place pour limiter leur impact environnemental.",
+                        "Budget":"-10",
+                        "GES":"+5",
+                        "Satisfaction": "0",
+                        "next_question_id": "4",
+                        "subquestion": []
+                    }
+                    ]
+                }
+            ]
+        }
+        ]
+    }
+    ],
+    "transitions": [
+        {
+            "transition_id": 1,
+            "phase": 1,
+            "text": "À toi de jouer ! Tu as maintenant tous les leviers pour diriger ton pays. L’objectif final : réduire les émissions de CO₂ et respecter l’Accord de Paris d'ici 2050."
+        },
+        {
+            "transition_id": 2,
+            "phase": 1,
+            "text": "Prêt ? Suis les jauges en haut de l'écran. Elles te montreront l'impact de tes décisions sur le budget, les émissions de gaz à effet de serre et sur la satisfaction de ta population." 
+        },
+        {
+            "transition_id": 3,
+            "phase": 1,
+            "text": "Chaque choix compte. Chaque décision peut accélérer ou freiner ta progression. Les bonnes stratégies te rapprocheront de ton objectif."
+        },
+        {
+            "transition_id": 4,
+            "phase": 1,
+            "text": "Ton premier défi en tant que ministre du Climat et de l'Énergie est de réduire les émissions de CO₂ des transports, encore trop dépendants du pétrole. "
+        }
+    ]
+  }
+  
