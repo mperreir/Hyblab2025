@@ -100,11 +100,13 @@
                     "On passe sur ta première page d'information ? Tu vas découvrir la place de l'agroalimentaire en Bretagne et dans les Pays de la Loire.",
                     "Allez, c'est parti !"
                 ],
-                "apres": {
+                "apres": [
+                    {
                     "1_lait": "Félicitations pour ton choix de te lancer dans la production laitière en Mayenne ! Ce département est un acteur majeur dans le secteur, abritant notamment des entreprises de renom telles que Lactalis, leader mondial des produits laitiers.",
                     "1_porc": "Bravo pour ton ambition dans la filière porcine dans le Finistère ! Ce département abrite notamment l’entreprise Bigard, un leader français de la transformation de viande, spécialisé dans la production porcine.",
                     "1_volaille": "Bravo pour ton projet dans le secteur avicole en Vendée ! Le département accueille des entreprises de renom comme Groupe LDC, leader français de la volaille."
-                }
+                    }
+                ]
             },
             {
                 "avant": [
@@ -132,9 +134,9 @@
                 ],
                 "apres": [
                     {
-                        "4_local": "Tu as choisi de rester sur le marché local. J'espère que tu trouveras ton public !",
-                        "4_national": "Tu as choisi de viser le marché national. Bonne chance pour la suite !",
-                        "4_international": "Tu as choisi de viser le marché international. C'est un pari risqué, mais qui peut s'avérer très payant !"
+                        "4_marchelocal": "Tu as choisi de rester sur le marché local. J'espère que tu trouveras ton public !",
+                        "4_marchenational": "Tu as choisi de viser le marché national. Bonne chance pour la suite !",
+                        "4_marcheeuro": "Tu as choisi de viser le marché international. C'est un pari risqué, mais qui peut s'avérer très payant !"
                     }
                 ]
             }
@@ -478,31 +480,29 @@
             ]
         ],
         "reponses": [
-            [
-                {
-                    "1_menuisier": "Je choisis la menuiserie. Je veux façonner le bois pour créer des meubles uniques.",
-                    "1_ceramiste": "Je souhaite devenir céramiste. Je veux créer des objets en terre cuite, reflètant le style et l'élegance de nos régions.",
-                    "1_boucher": "Je me lance en tant que boucher. Je veux proposer des produits de qualité, issus de l'élevage local."
-                },
-                {
-                    "2_banque": "Je vais demander un prêt bancaire.",
-                    "2_aide": "Je vais demander une subvention.",
-                    "2_crowdfunding": "Je vais demander un financement participatif."
-                },
-                {
-                    "3_embauchecfa": "Je veux participer à la formation d'artisans qualifiés dans ma région, grâce à des contrats d'apprentissage.",
-                    "3_embauchepro": "Je veux diversifier mon équipe en attirant des professionnels expérimentés."
-                },
-                {
-                    "4_non": "Non, ce n'est pas la priorité pour moi.",
-                    "4_label": "Oui, je veux tenter d'obtenir un label.",
-                    "4_mission": "Oui, je souhaite devenir une entreprise à mission."
-                },
-                {
-                    "5_local": "Je vais privilégier les matières premières locales pour mes créations.",
-                    "5_import": "Je vais importer des matières premières de qualité pour mes créations."
-                }
-            ]
+            {
+                "1_menuisier": "Je choisis la menuiserie. Je veux façonner le bois pour créer des meubles uniques.",
+                "1_ceramiste": "Je souhaite devenir céramiste. Je veux créer des objets en terre cuite, reflètant le style et l'élegance de nos régions.",
+                "1_boucher": "Je me lance en tant que boucher. Je veux proposer des produits de qualité, issus de l'élevage local."
+            },
+            {
+                "2_banque": "Je vais demander un prêt bancaire.",
+                "2_aide": "Je vais demander une subvention.",
+                "2_crowdfunding": "Je vais demander un financement participatif."
+            },
+            {
+                "3_embauchecfa": "Je veux participer à la formation d'artisans qualifiés dans ma région, grâce à des contrats d'apprentissage.",
+                "3_embauchepro": "Je veux diversifier mon équipe en attirant des professionnels expérimentés."
+            },
+            {
+                "4_non": "Non, ce n'est pas la priorité pour moi.",
+                "4_label": "Oui, je veux tenter d'obtenir un label.",
+                "4_mission": "Oui, je souhaite devenir une entreprise à mission."
+            },
+            {
+                "5_local": "Je vais privilégier les matières premières locales pour mes créations.",
+                "5_import": "Je vais importer des matières premières de qualité pour mes créations."
+            }
         ],
         "contexte": [
             {
@@ -541,11 +541,11 @@
                     "Il s'agit de la Responsabilité Sociétale des Entreprises. C'est un engagement volontaire des entreprises à intégrer les préoccupations sociales, environnementales et économiques dans leurs activités et leurs interactions avec leurs parties prenantes.",
                     "Attends, je vais te parler des entreprises à mission et de leur place dans l'Ouest."
                 ],
-                "apres": {
+                "apres": [{
                     "4_non": "Tu as choisi de ne pas t'engager dans une démarche RSE. C'est ton choix !",
                     "4_label": "Tu as choisi de tenter d'obtenir un label RSE. C'est un engagement fort qui peut te démarquer de la concurrence !",
                     "4_mission": "Tu as choisi de devenir une entreprise à mission. C'est un engagement fort qui peut te démarquer de la concurrence !"
-                }
+                }]
             },
             {
                 "avant": [
