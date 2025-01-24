@@ -7,17 +7,17 @@ import markerIcon from 'leaflet/dist/images/marker-icon.png';
 import markerShadow from 'leaflet/dist/images/marker-shadow.png';
 import L from 'leaflet';
 
-// Configuration du marqueur par défaut
-const defaultIcon = L.icon({
-    iconUrl: markerIcon,
-    shadowUrl: markerShadow,
+// Configuration du marqueur personnalisé avec la nouvelle couleur
+const customIcon = L.divIcon({
+    className: 'custom-marker',
+    html: `<svg width="25" height="41" viewBox="0 0 100 100">
+        <path fill="#4d95af" d="M50 0C29.9 0 14.7 15.7 14.7 35c0 19.2 32.8 65 35.3 65 2.5 0 35.3-45.8 35.3-65C85.3 15.7 70.1 0 50 0z"/>
+        <circle fill="#ffffff" cx="50" cy="35" r="12"/>
+    </svg>`,
     iconSize: [25, 41],
     iconAnchor: [12, 41],
     popupAnchor: [1, -34],
-    shadowSize: [41, 41]
 });
-
-L.Marker.prototype.options.icon = defaultIcon;
 
 // Composant pour gérer les animations de la carte
 function MapAnimator({ center, questionIndex, geoJsonData }) {
@@ -116,7 +116,7 @@ const MapComponent = ({ difficulty, level_id, currentQuestionIndex, onClose }) =
                     <GeoJSON
                         data={geoJsonData}
                         style={{
-                            color: '#0000FF',
+                            color: '#1A3347',
                             weight: 3,
                             opacity: 0.7
                         }}
@@ -125,6 +125,7 @@ const MapComponent = ({ difficulty, level_id, currentQuestionIndex, onClose }) =
                 {questionData && (
                     <Marker 
                         position={mapCenter}
+                        icon={customIcon}
                         ref={(markerRef) => {
                             if (markerRef) {
                                 markerRef.openPopup();
