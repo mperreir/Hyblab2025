@@ -1,8 +1,8 @@
 //première idée d'affichage de la page d'explication --> Contexte d'ouverture à adapter
-function displayExplanation(data, liste_choix) {
+function displayExplanation(data, liste_choix, contenu_message) {
     const num_question = liste_choix.length + 1;
     setTimeout(() => {
-        const reply = { text: data.titre, type: 'received', id:`info_${num_question}`, choix: liste_choix}; //id à adapter selon le parametrage du JSON
+        const reply = { text: contenu_message, type: 'received', id:`info_${num_question}`, choix: liste_choix}; //id à adapter selon le parametrage du JSON
         addMessage(reply);
         enableClickForExpansion(reply.text, data);
   
