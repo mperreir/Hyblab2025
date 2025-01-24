@@ -67,7 +67,7 @@ const MapComponent = ({ difficulty, level_id, currentQuestionIndex, onClose }) =
         // Charger les données
         Promise.all([
             fetch(basename + 'data/questions.yaml').then(response => response.text()),
-            fetch(basename + 'data/geoJsonLevels.json').then(response => response.json())
+            fetch(basename + `data/geoJsonLevels${level_id}.json`).then(response => response.json())
         ]).then(([yamlText, geoJson]) => {
             const data = yaml.load(yamlText);
             const currentQuestion = data.game.levels[parseInt(difficulty) - 1]
