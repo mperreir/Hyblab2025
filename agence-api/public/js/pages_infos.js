@@ -3,7 +3,7 @@ async function displayExplanation(data, liste_choix, contenu_message) {
     return new Promise((resolve) => {
         const num_question = liste_choix.length + 1;
         setTimeout(() => {
-            const reply = { text: contenu_message, type: 'received', id: `info_${num_question}`, choix: liste_choix }; // id à adapter selon le parametrage du JSON
+            const reply = { text: contenu_message, type: 'received', id: `info_${num_question}`, class: 'info', choix: liste_choix }; // id à adapter selon le parametrage du JSON
             addMessage(reply);
             enableClickForExpansion(reply.text, data);
 

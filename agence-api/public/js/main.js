@@ -128,8 +128,12 @@ function waitForNameInput() {
 function waitForUserTouch(){
     return new Promise((resolve) => {
         const messageInput = document.getElementById('chatBox');
-        messageInput.addEventListener('click', () => {
-            resolve();
+        messageInput.addEventListener('click', (event) => {
+            if(!event.target.classList.contains("info")){
+                resolve(true);
+            } else {
+                resolve(false);
+            }
         });
     });
 }
@@ -195,7 +199,10 @@ async function displayMessages(message, userName) {
         addMessage({ text: message[key], type: "received"});
         }
         scrollToBottom();
-        await waitForUserTouch();
+        let next = false;
+        while (!next) {
+            next = await waitForUserTouch();
+        }
     }
 }
 
