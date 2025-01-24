@@ -4,22 +4,28 @@ class Scene {
     this.objects = [];
     this.sceneAudio = sceneAudio;
     this.time = 0;
-
+    this.f = 0.6;
+    
     fetch(file_name)
     .then(response => response.json())
     .then(data => {
       data.elements.forEach(element => {
-        this.objects.push(addData(element, this.scene_container))
+        console.log(this.f)
+        this.objects.push(addData(element, this.scene_container, this.f))
       }); 
 
       this.triggers = data.triggers;
     })
+
+    window.addEventListener('resize', () => this.resizeScene());
   }
 
   set_frame(time){
     this.sceneAudio.updateAudio(time);
+    console.log(this.f);
     for (const value of this.objects) {
-      updateKeyframes(value, time); // Appel de la fonction récursive
+      console.log(this.f)
+      updateKeyframes(value, time, this.f); // Appel de la fonction récursive
     }
   }
 
@@ -46,6 +52,13 @@ class Scene {
     }
     }); 
   }
+
+  resizeScene(){
+    let height = window.innerHeight;
+    console.log(height);
+    this.f = interpolate(height, 678, 1300, 0.9, 1.8)
+    this.set_frame(this.time)
+  }
 }
 
 
@@ -55,8 +68,9 @@ function interpolate(x, start_time, end_time, start_pos, end_pos)
     return (slope)*(x-start_time) + start_pos
 }
 
-function addData(element, container){
+function addData(element, container, f){
 
+  console.log(f);
   let new_element = new SceneObject(
     element.type,
     element.src,
@@ -69,9 +83,9 @@ function addData(element, container){
 
   init_keyframe = new_element.keyframes[0];
 
-  new_element.set_position(init_keyframe.x, init_keyframe.y)
+  new_element.set_position(f*init_keyframe.x, f*init_keyframe.y)
   new_element.set_rotation(init_keyframe.rotation)
-  new_element.set_scale(init_keyframe.scale)
+  new_element.set_scale(f*init_keyframe.scale)
 
   new_element.html_el.style.zIndex = element.z;
   container.appendChild(new_element.html_el);
@@ -79,7 +93,7 @@ function addData(element, container){
   if(element.type == "group")
   {
     element.subElement.forEach((sub_element) => {
-      let new_sub_element = addData(sub_element, new_element.html_el);
+      let new_sub_element = addData(sub_element, new_element.html_el, f);
       new_element.childs.push(new_sub_element)  
     })
     
@@ -88,21 +102,21 @@ function addData(element, container){
   return new_element;
 }
 
-function updateKeyframes(value, time) {
+function updateKeyframes(value, time, f) {
+  console.log(f);
   for (let i = 0; i < value.keyframes.length - 1; i++) {
     if (time >= value.keyframes[i].time && time < value.keyframes[i + 1].time) {
       const init_o = value.keyframes[i];
       const end_o = value.keyframes[i + 1];
-
       value.set_position(
-        interpolate(time, init_o.time, end_o.time, init_o.x, end_o.x),
-        interpolate(time, init_o.time, end_o.time, init_o.y, end_o.y)
+        f*interpolate(time, init_o.time, end_o.time, init_o.x, end_o.x),
+        f*interpolate(time, init_o.time, end_o.time, init_o.y, end_o.y)+interpolate(f, 0.4, 2, -200, 600 )
       );
       value.set_rotation(
         interpolate(time, init_o.time, end_o.time, init_o.rotation, end_o.rotation)
       );
       value.set_scale(
-        interpolate(time, init_o.time, end_o.time, init_o.scale, end_o.scale)
+        f*interpolate(time, init_o.time, end_o.time, init_o.scale, end_o.scale)
       );
     }
   }
@@ -110,7 +124,7 @@ function updateKeyframes(value, time) {
   // Si l'objet est un groupe, traiter ses sous-éléments
   if (value.type === "group" && value.childs) {
     for (const child of value.childs) {
-      updateKeyframes(child, time); // Appel récursif
+      updateKeyframes(child, time, f ); // Appel récursif
     }
   }
 }
