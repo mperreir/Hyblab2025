@@ -17,6 +17,7 @@ import anime from 'animejs';
 export class SituationComponent implements OnChanges, AfterViewInit {
     @Input({ required: true }) situation!: Situation;
     selected_choice?: Choice;
+    choice_visible: boolean = false;
 
     constructor(private scroller: ViewportScroller) {}
 
@@ -49,14 +50,7 @@ export class SituationComponent implements OnChanges, AfterViewInit {
             delay: anime.stagger(5),
             complete: (anim) => {
                 textsToAnimate.forEach((el) => (el as HTMLElement).setAttribute("data-text-visible", "true"));
-            },
-        });
-        tl.add({
-            targets: choicesToAnimate,
-            opacity: [0,1],
-            easing: "easeOutExpo",
-            complete: (anim) => {
-                choicesToAnimate.forEach((el) => (el as HTMLElement).setAttribute("data-text-visible", "true"));
+                this.choice_visible = true;
             },
         });
     }
