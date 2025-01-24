@@ -15,7 +15,7 @@ const IntroductionLayout = ({ children }) => {
           {/* Titre avec 'Brief' en blanc et 'sciences' en couleur #991756 */}
           <Typography sx={{ flexGrow: 1, textAlign: 'left', fontSize: '18px' }}>
             <span style={{ color: 'black', fontWeight: "bold" }}>Brief</span>
-            <span style={{ color: '#991756', fontWeight: "bold" }}>.sciences</span>
+            <span style={{ color: '#991756', fontWeight: "bold" }}>.science</span>
           </Typography>
         </Toolbar>
       </AppBar>
@@ -26,7 +26,7 @@ const IntroductionLayout = ({ children }) => {
 
       {/* Footer */}
       <Box component="footer" sx={{ backgroundColor: '#c1c1c1', color: 'black', padding: '10px', textAlign: 'center' }}>
-        <Typography variant="body2">© 2025 EnergieMix. Tous droits réservés.</Typography>
+        <Typography variant="body2">© 2025 Transition 2050. Tous droits réservés.</Typography>
       </Box>
     </Box>
   );
