@@ -1,0 +1,24 @@
+.logo {
+    width: 100px;
+    height: 100px;
+    margin-top: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.logo img {
+    width: 200%;
+    height: 200%;
+    transform: scaleX(-1);
+}
+  
+.description {
+    background-color: #ff0000;
+    color: #ffffff;
+    font-size: 1rem;
+    padding: 15px;
+    width: 80%;
+    border-radius: 10px;
+    margin-top: 20px;
+}
