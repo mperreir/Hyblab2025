@@ -4,16 +4,16 @@
       "id": "grand",
       "name": "Grand festival",
       "description": "Festival avec une grande capacité d'accueil.",
-      "image": "img/grand_festival.jpg",
+      "image": "img/fete.jpg",
       "cost": 3,
-      "icon": "img/info_icon.png",
+      "icon": "img/fete.jpg",
       "isSelected": false
     },
     {
       "id": "moyen",
       "name": "Festival Moyen",
       "description": "Festival de taille moyenne avec ambiance conviviale.",
-      "image": "img/festival_moyen.jpg",
+      "image": "img/fete.jpg",
       "cost": 2,
       "icon": "img/info_icon.png",
       "isSelected": true
@@ -22,12 +22,13 @@
       "id": "intimiste",
       "name": "Festival Intimiste",
       "description": "Petit festival pour un public restreint.",
-      "image": "img/festival_intimiste.jpg",
+      "image": "img/fete.jpg",
       "cost": 1,
       "icon": "img/info_icon.png",
       "isSelected": false
     }
   ],
+
   "ecologicalActions": [
     {
       "id": "high",

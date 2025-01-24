@@ -1,103 +1,170 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style1.css">
-  </head>
-  <body>
+    <title>Festival Budget</title>
+</head>
+<body>
     <div id="app-container">
-      <header>
-        <!-- Logo SVG minimaliste -->
-        <div class="logo-only">
-          <!-- Exemple d'un SVG placeholder -->
-          <svg width="60" height="60" viewBox="0 0 100 100">
-            <circle cx="50" cy="50" r="40" fill="#0066cc" />
-            <text x="50" y="57" fill="#fff" text-anchor="middle" font-size="20" font-family="Arial">LOGO</text>
-          </svg>
-        </div>
-      </header>
-      <main>
-        <div>
-  <section class="content">
-    <p class="content-title">€ Mon budget</p>
-  </section>
-  <section class="content">
-    <h2>LES SUBVENTIONS DE LA Région ont été supprimées, à vous d’ajuster votre budget en vous passant de l’argent public.</h2>
-  </section>
-  <section class="content">
-    <img src="img/picto1.jpg" alt="Image picto1" class="img">
-    <p class="content-title">Quelle taille pour mon festival ?</p>
-    <div class="button-container">
-      <button class="btn-choice">
-        <img src="img/option1.jpg" alt="Option 1">
-      </button>
-      <button class="btn-choice">
-        <img src="img/option2.jpg" alt="Option 2">
-      </button>
-      <button class="btn-choice">
-        <img src="img/option3.jpg" alt="Option 3">
-      </button>
-    </div>
-  </section>
-  <section class="content">
-    <img src="img/picto2.jpg" alt="Image picto2" class="img">
-    <p class="content-title">Quelles actions pour la transition écologique ?</p>
-    <div class="button-container">
-      <button class="btn-choice">
-        <img src="img/option1.jpg" alt="Option 1">
-      </button>
-      <button class="btn-choice">
-        <img src="img/option2.jpg" alt="Option 2">
-      </button>
-      <button class="btn-choice">
-        <img src="img/option3.jpg" alt="Option 3">
-      </button>
-    </div>
-  </section>
-  <section class="content">
-    <img src="img/picto3.jpg" alt="Image picto3" class="img">
-    <p class="content-title">Quelles actions pour la médiation culturelle ?</p>
-    <p class="content-texte">Je souhaite faciliter l’accès à la culture en organisant divers ateliers ouverts à
-      tous.tes.</p>
-    <div class="button-container">
-      <button class="btn-choice">
-        <img src="img/option1.jpg" alt="Option 1">
-      </button>
-      <button class="btn-choice">
-        <img src="img/option2.jpg" alt="Option 2">
-      </button>
-      <button class="btn-choice">
-        <img src="img/option3.jpg" alt="Option 3">
-      </button>
-    </div>
-  </section>
-  <section class="content">
-    <img src="img/picto4.jpg" alt="Image picto4" class="img">
-    <p class="content-title">Quelles actions pour la prévention des risques ?</p>
-    <p class="content-texte">Je veille à l'accessibilité et à la sécurité de tous.tes lors de mon évènement.</p>
-    <div class="button-container">
-      <button class="btn-choice">
-        <img src="img/option1.jpg" alt="Option 1">
-      </button>
-      <button class="btn-choice">
-        <img src="img/option2.jpg" alt="Option 2">
-      </button>
-      <button class="btn-choice">
-        <img src="img/option3.jpg" alt="Option 3">
-      </button>
-    </div>
-  </section>
-  <section class="content">
-    <p class="content-title">Ajustez le prix du billet pour équilibrer votre budget.</p>
-  </section>
-  <a href="#" class="btn btn-create-event">Je valide mes choix</a>
-</div>
-      </main>
+        <header>
+            <div class="logo-only">
+                <svg width="60" height="60" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="40" fill="#0066cc" />
+                    <text x="50" y="57" fill="#fff" text-anchor="middle" font-size="20" font-family="Arial">LOGO</text>
+                </svg>
+            </div>
+        </header>
+        <main>
+            <section class="content">
+                <p class="content-title">€ Mon budget</p>
+            </section>
+            <section class="content">
+                <h2>LES SUBVENTIONS DE LA Région ont été supprimées, à vous d’ajuster votre budget en vous passant de l’argent public.</h2>
+            </section>
 
-      <footer>
-        <p>En partenariat avec <strong>L’Onde Porteuse</strong> &amp; <strong>Le Pôle</strong></p>
-      </footer>
+            <!-- Dynamically generated sections -->
+            <div id="dynamic-content"></div>
+
+            <section class="content">
+                <p class="content-title">Ajustez le prix du billet pour équilibrer votre budget.</p>
+            </section>
+            <a href="#" class="btn btn-create-event">Je valide mes choix</a>
+        </main>
+        <footer>
+            <p>En partenariat avec <strong>L’Onde Porteuse</strong> &amp; <strong>Le Pôle</strong></p>
+        </footer>
     </div>
-  </body>
+
+    <script>
+        // JSON 文件路径
+        const jsonFilePath = 'data/PAGE3.json';
+
+        // 从服务器加载 JSON 数据
+        async function loadJSON() {
+            try {
+                const response = await fetch(jsonFilePath);
+                if (!response.ok) {
+                    throw new Error(`Failed to load JSON from ${jsonFilePath}`);
+                }
+                const data = await response.json();
+                console.log("Loaded JSON data:", data); // 检查加载的 JSON 数据
+                return data;
+            } catch (error) {
+                console.error("Error loading JSON:", error);
+            }
+        }
+
+
+        // 动态生成内容
+        function generateContent(sectionName, data) {
+            const container = document.createElement("section");
+            container.classList.add("content");
+
+            const title = document.createElement("p");
+            title.classList.add("content-title");
+            title.textContent = getTitleForSection(sectionName);
+            container.appendChild(title);
+
+            const buttonContainer = document.createElement("div");
+            buttonContainer.classList.add("button-container");
+
+            data.forEach(item => {
+                const button = document.createElement("button");
+                button.classList.add("btn-choice");
+                button.setAttribute("data-id", item.id);
+
+                const img = document.createElement("img");
+                img.src = item.image;
+                img.alt = item.name;
+
+                const label = document.createElement("p");
+                label.textContent = item.name;
+
+                button.appendChild(img);
+                button.appendChild(label);
+                buttonContainer.appendChild(button);
+
+                // 添加点击事件
+                button.addEventListener("click", async () => {
+                    await updateSelection(sectionName, item.id);
+                    refreshContent(sectionName, data);
+                });
+            });
+
+            container.appendChild(buttonContainer);
+            document.getElementById("dynamic-content").appendChild(container);
+        }
+
+        // 更新选中状态
+        async function updateSelection(sectionName, selectedId) {
+            const data = await loadJSON();
+            const sectionData = data[sectionName];
+            if (!sectionData) return;
+
+            // 更新 isSelected 状态
+            sectionData.forEach(item => {
+                item.isSelected = item.id === selectedId;
+            });
+
+            // 保存更新后的数据到后端
+            await saveJSON(data);
+            console.log(`${sectionName} updated:`, sectionData);
+        }
+
+        // 保存 JSON 数据到服务器
+        async function saveJSON(data) {
+            await fetch(jsonFilePath, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+        }
+
+        // 刷新内容以显示选中状态
+        function refreshContent(sectionName, data) {
+            const section = document.querySelector(`[data-section="${sectionName}"]`);
+            if (!section) return;
+
+            const buttons = section.querySelectorAll(".btn-choice");
+            buttons.forEach(button => {
+                const id = button.getAttribute("data-id");
+                const isSelected = data.find(item => item.id === id)?.isSelected;
+                button.classList.toggle("selected", isSelected);
+            });
+        }
+
+        // 获取部分的标题
+        function getTitleForSection(sectionName) {
+            const titles = {
+                festivalSizes: "Quelle taille pour mon festival ?",
+                ecologicalActions: "Quelles actions pour la transition écologique ?",
+                culturalMediationActions: "Quelles actions pour la médiation culturelle ?",
+                riskPreventionActions: "Quelles actions pour la prévention des risques ?"
+            };
+            return titles[sectionName] || "Section";
+        }
+
+        // 初始化页面
+        async function init() {
+            try {
+                const data = await loadJSON();
+
+                // 动态生成每个部分
+                generateContent("festivalSizes", data.festivalSizes);
+                generateContent("ecologicalActions", data.ecologicalActions);
+                generateContent("culturalMediationActions", data.culturalMediationActions);
+                generateContent("riskPreventionActions", data.riskPreventionActions);
+            } catch (error) {
+                console.error("Error loading data:", error);
+            }
+        }
+
+        // 页面加载完成后初始化
+        document.addEventListener("DOMContentLoaded", init);
+    </script>
+</body>
 </html>
