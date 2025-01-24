@@ -53,15 +53,12 @@ catégorie
 ### `articles.json`
 * `id` : id de l'article
 * `name` : titre de la catégorie
-* `text` : texte de l’article 
+* `text` : texte de l’article
+* `resume` : resume de l'article
 * `kpis` : 
     * `id` : identifiant du KPI (0 ou 1)
     * `number` : le chiffre à montrer (sous forme de chaîne pour avoir le %)
     * `text` : texte accompagnateur
-* `linked_categories` : 
-    * `id` : id
-    * `name` : nom du lien
-    * `link` : lien vers la catégorie (utile?)
 * `links` :
     * `id` : identifiant de la décision
     * `name` : nom du lien vers la décision
