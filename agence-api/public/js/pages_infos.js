@@ -3,7 +3,7 @@ async function displayExplanation(data, liste_choix, contenu_message) {
     return new Promise((resolve) => {
         const num_question = liste_choix.length + 1;
         setTimeout(() => {
-            const reply = { text: contenu_message, type: 'received', id: `info_${num_question}`, choix: liste_choix }; // id à adapter selon le parametrage du JSON
+            const reply = { text: contenu_message, type: 'received', id: `info_${num_question}`, class: 'info', choix: liste_choix }; // id à adapter selon le parametrage du JSON
             addMessage(reply);
             enableClickForExpansion(reply.text, data);
 
@@ -12,7 +12,7 @@ async function displayExplanation(data, liste_choix, contenu_message) {
                 const lastMessage = document.querySelector(`#${reply.id}`);
                 expandMessage(lastMessage, data);
                 resolve(); // Resolve the promise after expandMessage
-            }, 3000);
+            }, 2000);
         }, 10);
     });
 }
@@ -109,7 +109,6 @@ function closeOverlay() {
 
 // Fonction pour répartir les champs du JSON dans des listes respectives
 function repartitionChamps(fields, data, liste_choix){
-    console.log(liste_choix);
     let result = {titre: "", images: [], paragraphes: []};
     fields.forEach(field => {
         switch (detectType(data[field])){
@@ -137,7 +136,6 @@ function match(data, liste_choix) {
         return [];
     }
     const num_question = parseInt(Object.keys(data)[0].split('_')[0], 10);
-    console.log(liste_choix);
     return data[String(liste_choix[num_question - 1])];
 };
 

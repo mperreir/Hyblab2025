@@ -29,6 +29,11 @@ function addMessage(message) {
         messageElement.textContent = message.text;
         messageElement.id = message.id;
     }
+
+    if(message.class){
+        messageElement.classList.add(message.class);
+    }
+    
     messageList.appendChild(messageElement);
 
     if(message.choix){

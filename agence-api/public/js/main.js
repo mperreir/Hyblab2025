@@ -16,9 +16,6 @@ const initSlide2 = async function () {
     const texts = await response.json();
     
     initMenu(texts);
-    //displayExplanation(texts.agro.informations["3"],["1_porc", "2_trucmuche"] , "Message d'explications");
-    // await histoire(texts.tech);
-
 
     // Load the intro story
     const userName = await loadIntroStory(texts.introduction.general);
@@ -128,12 +125,15 @@ function waitForNameInput() {
 function waitForUserTouch(){
     return new Promise((resolve) => {
         const messageInput = document.getElementById('chatBox');
-        messageInput.addEventListener('click', () => {
-            resolve();
+        messageInput.addEventListener('click', (event) => {
+            if(!event.target.classList.contains("info")){
+                resolve(true);
+            } else {
+                resolve(false);
+            }
         });
     });
 }
-
 
 async function addButtonGoToResults() {
     const confirmButton = document.createElement('button');
@@ -141,6 +141,7 @@ async function addButtonGoToResults() {
     confirmButton.textContent = 'Voir les résultats';
     confirmButton.classList.add('button');
     document.getElementById('chatBox').appendChild(confirmButton);
+    scrollToBottom();
     confirmButton.addEventListener('click', () => {
         swiper.slideNext();
     });
@@ -153,13 +154,13 @@ async function getUserName() {
     const messageInput = document.getElementById('messageInput');
     const chatInput = document.getElementById('chat-input');
 
-    chatInput.style.visibility='visible';
+    chatInput.style.display='flex';
     messageInput.focus();
 
     let userName = await waitForNameInput();
 
     messageInput.blur();
-    chatInput.style.visibility='hidden';
+    chatInput.style.display='none';
 
     toggleTapIconDisplay(false);
 
@@ -195,7 +196,10 @@ async function displayMessages(message, userName) {
         addMessage({ text: message[key], type: "received"});
         }
         scrollToBottom();
-        await waitForUserTouch();
+        let next = false;
+        while (!next) {
+            next = await waitForUserTouch();
+        }
     }
 }
 
@@ -209,7 +213,7 @@ async function displayResponses(message) {
 }
   
 async function loadIntroStory(introStory) {
-  document.getElementById('chat-input').style.visibility = 'hidden';
+  document.getElementById('chat-input').style.display = 'none';
 
     await displayMessages(introStory.avant_nom);
 
@@ -248,7 +252,6 @@ async function histoire(texts, userName){
 
         let answer = await addAnswer(texts.reponses[i], multipleChoices);
         choices = [...choices, ...answer];
-        console.log(choices);
 
         toggleTapIconDisplay(false);
 
