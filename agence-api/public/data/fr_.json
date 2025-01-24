@@ -28,6 +28,13 @@
             "arti": "Créer de tes mains te passionne ? L’Ouest est fait pour toi ! Ici, on cultive le savoir-faire entre traditions bien ancrées et forte demande locale. Que tu sois menuisier, boulanger ou bijoutier, ta créativité pourra s’épanouir et marquer les esprits."
         }
     },
+    "fin":{
+        "avant": [
+            "Félicitations, {nom} ! Tu as terminé ton aventure.",
+            "Tu as pris des décisions importantes pour ton entreprise, et tu as découvert les opportunités qui t'attendent en Bretagne et dans les Pays de la Loire.",
+            "Va vite voir tes résultats !"
+        ]
+    },
     "agro": {
         "introduction": [
             "Tu as décidé de te lancer dans l’agroalimentaire ? Super choix ! Ici, dans l’Ouest, on est des champions dans ce secteur. Prêt à faire partie de cette grande aventure ?",
@@ -197,7 +204,7 @@
                 "Souhaitez-vous engager votre société dans une démarche RSE ?"
             ],
             [
-                "Alors, ${user_name}, tu veux intégrer le réseau French Tech ?"
+                "Alors, {nom}, tu veux intégrer le réseau French Tech ?"
             ]
         ],
         "reponses": [

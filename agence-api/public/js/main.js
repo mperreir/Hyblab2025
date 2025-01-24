@@ -78,6 +78,9 @@ function waitForUserTouch(){
 
 
 async function getUserName() {
+
+    toggleTapIconDisplay(true);
+
     const messageInput = document.getElementById('messageInput');
     const chatInput = document.getElementById('chat-input');
 
@@ -88,6 +91,9 @@ async function getUserName() {
 
     messageInput.blur();
     chatInput.style.visibility='hidden';
+
+    toggleTapIconDisplay(false);
+
     return userName;
 }
 
@@ -133,6 +139,7 @@ async function loadIntroStory(introStory) {
 }
 
   async function selectCharacter(textsPresentationPersos) {
+
     const images = [
         { src: 'img/perso1.png', alt: '1', index: 0 },
         { src: 'img/perso2.png', alt: '2', index: 1, active: true },
@@ -142,19 +149,28 @@ async function loadIntroStory(introStory) {
       await carousel.createCarousel();
       const char =  await carousel.getCharacter();
       carousel.activated = false;
+
+      
+
       return char;
   }
 
   async function selectSecteur(textsPresentationPersos) {
+
+    toggleTapIconDisplay(true);
+
     const images = [
-        { src: 'img/perso1.png', alt: '1', index: 0 },
-        { src: 'img/perso2.png', alt: '2', index: 1, active: true },
-        { src: 'img/perso3.png', alt: '3', index: 2 }
+        { src: 'img/agro.jpg', alt: '1', index: 0 },
+        { src: 'img/tech.jpeg', alt: '2', index: 1, active: true },
+        { src: 'img/arti.jpg', alt: '3', index: 2 }
       ];
       const carousel = new Carousel(images, [textsPresentationPersos.agro, textsPresentationPersos.tech, textsPresentationPersos.arti]);
       await carousel.createCarousel();
       const char =  await carousel.getCharacter();
       carousel.activated = false;
+
+      toggleTapIconDisplay(false);
+
       return char;
   }
   
@@ -176,8 +192,13 @@ async function histoire(texts){
                 break;
            }
         }
+
+        toggleTapIconDisplay(true);
+
         let answer = await addAnswer(texts.reponses[i], multipleChoices);
         choices = [...choices, ...answer];
         console.log(choices);
+
+        toggleTapIconDisplay(false);
     }
 }
