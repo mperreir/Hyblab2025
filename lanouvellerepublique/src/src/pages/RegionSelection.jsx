@@ -18,7 +18,7 @@ function RegionSelection() {
         <Header titre={"Dans leur peau"} textColor={"black"}/>
         <div className='region_page'>
             <div className='content'>
-                <h2>Explorez les différentes espèces par département</h2>
+                <h2>5 espèces en voie de disparition en France</h2>
                 <RegionMap selectedAnimal={selectedAnimal} setSelectedAnimal={setSelectedAnimal} animals={animals}/>
                 <div className={`animal-info-container ${selectedAnimal ? 'visible' : ''}`}>
                     <AnimalInfo 

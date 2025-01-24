@@ -1,12 +1,16 @@
 .map_container {
     width: 100%;
-    max-width: 50vh;
+    max-width: 45vh;
     aspect-ratio: 1 / 1;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 30px;
+}
+
+.animals_list {
+    z-index: 0;
 }
 
 .animal {
@@ -21,4 +25,42 @@
 .animal:hover {
     transform: scale(1.1);
     cursor: pointer;
+}
+
+.background_square {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    
+    opacity: 0;
+    transform: scale(0.6), opacity(0.8);
+
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.background_square.bright {
+    transform: rotateZ(17deg);
+    background-color: #EFD8B8;
+    transition-delay: 0.1s; /* Adjust this delay as needed */
+
+}
+
+.background_square.dark {
+    transform: rotateZ(14deg);
+    background-color: #C9B69B;
+}
+
+.background_square.tilted {
+    transform: rotateZ(15deg);
+}
+
+.background_square.bright.animate {
+    opacity: 1;
+    transform: scale(1) rotateZ(0deg); /* Final state for scale and rotation */
+}
+
+.background_square.dark.animate {
+    opacity: 1;
+    transform: scale(1) rotateZ(-4deg); /* Final state for scale and rotation */
 }

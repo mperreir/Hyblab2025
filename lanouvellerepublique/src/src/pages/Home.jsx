@@ -7,7 +7,6 @@ function Home() {
 
   function goCarte() {
     navigate("/regions");
-    setIsMenuOpen(false);
 }
 
   return (
@@ -18,7 +17,7 @@ function Home() {
           <div className='titles'>
             <h1 className='main-title'>Découvrez des espèces menacées</h1>
             <p className='subtitle'>
-              Découvrez des espèces animales en voie de disparitions ainsi que leurs informations
+              Découvrez des espèces animales en voie de disparition ainsi que leurs informations
             </p>
           </div>
           {/* <button className="start-button" onClick={() => navigate("/map")}>
