@@ -166,7 +166,7 @@
                 "titre": "L'export de marchandises de l'Ouest",
                 "images": [],
                 "paragraphes": [
-                    "La Bretagne et les Pays de la Loire exportent respectivement 12 810 M€ et 25 430M€ par an (données du T4 2022 au T3 2023). Les principaux pays d'exportation sont l'Allemagne, l'Espagne et la Belgique pour la Bretagne, et la Belgique, l'Espagne et le Royaume-Uni pour les Pays de la Loire.",
+                    "La Bretagne et les Pays de la Loire exportent respectivement 12 810 M€ et 25 430M€ de marchandises par an (données du T4 2022 au T3 2023). Les principaux pays d'exportation sont l'Allemagne, l'Espagne et la Belgique pour la Bretagne, et la Belgique, l'Espagne et le Royaume-Uni pour les Pays de la Loire.",
                     {
                         "1_lait": "Les produits laitiers sont la sixième marchandise la plus exportée en Bretagne, représentant 2337 millions d’euros par an, et la septième marchandise la plus exportée en Pays de la Loire.",
                         "1_porc": "La viande et les produits à base de viande sont la quatrième marchandise la plus exportée en Bretagne représentant 2337 millions d’euros par an, et la cinquième marchandise la plus exportée en Pays de la Loire.",
@@ -337,6 +337,7 @@
                 "paragraphes": [{
                     "1": {
                         "nom_label": "AFNOR RSEi",
+                        "bouton":"",
                         "nb_entreprises": "6",
                         "description": [
                             "Délivré par l’AFNOR, le label RSEi s’adresse aux entreprises inclusives, qui agissent pour l’inclusion de personnes vulnérables (personnes vivant en situation de pauvreté-précarité) sur le marché de l’emploi, en mettant leur activité économique au service de cet objectif social."
@@ -344,6 +345,7 @@
                     },
                     "2": {
                         "nom_label": "AFNOR ENGAGÉES RSE",
+                        "bouton":"",
                         "nb_entreprises": "55",
                         "description": [
                             "Délivré par l’AFNOR, le label Engagé RSE évalue la maturité des démarches RSE des organisations sur la base de l’ISO 26000. Ce label s’adresse à tous les types d’organisations (entreprises, associations ou territoires) quelle que soit la taille de l’entité ou son secteur d’activité."
@@ -351,6 +353,7 @@
                     },
                     "3": {
                         "nom_label": "B-CORP",
+                        "bouton":"",
                         "nb_entreprises": "16",
                         "description": [
                             "Lancé en 2006 aux États-Unis, le Label B-Corp certifie que les entreprises intègrent bien à leur business model des objectifs sociaux, sociétaux et environnementaux.",
@@ -359,6 +362,7 @@
                     },
                     "4": {
                         "nom_label": "CERTIFIÉES LUCIE 26000",
+                        "bouton":"",
                         "nb_entreprises": "70",
                         "description": [
                             "Premier label RSE français, LUCIE accompagne depuis 2007 les entreprises, les associations et les collectivités qui souhaitent intégrer les enjeux sociaux et environnementaux à leurs activités et contribuer aux objectifs de développement durable.",
