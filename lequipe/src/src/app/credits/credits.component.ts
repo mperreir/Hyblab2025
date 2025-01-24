@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { HeaderComponent } from '../header/header.component';
 
 @Component({
   selector: 'app-credits',
   standalone: true,
-  imports: [],
+  imports: [
+    HeaderComponent
+  ],
   templateUrl: './credits.component.html',
   styleUrl: './credits.component.scss'
 })
