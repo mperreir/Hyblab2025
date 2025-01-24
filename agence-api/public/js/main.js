@@ -2,12 +2,14 @@
 
 const initSlide2 = async function () {
 
-  const chatBox = document.getElementById('chatBox');
-  const messageList = document.getElementById('messageList');
-  const messageInput = document.getElementById('messageInput');
+    initMenu();
+
+    const chatBox = document.getElementById('chatBox');
+    const messageList = document.getElementById('messageList');
+    const messageInput = document.getElementById('messageInput');
 
 
-  scrollToBottom();
+    scrollToBottom();
 
     // Retrieve the intro's messages from our API
     let response = await fetch('data/fr_.json');
@@ -42,6 +44,29 @@ const initSlide2 = async function () {
 
 
 };
+
+function initMenu(){
+    const menuBtn = document.getElementById("menu-btn");
+    const menuPopup = document.getElementById("menu-popup");
+    const closeMenuBtn = document.getElementById("close-menu");
+
+    // 点击「Menu」打开弹窗
+    menuBtn.addEventListener("click", () => {
+        menuPopup.classList.remove("hidden");
+    });
+
+    // 点击「×」关闭弹窗
+    closeMenuBtn.addEventListener("click", () => {
+        menuPopup.classList.add("hidden");
+    });
+
+    // 点击背景(除 .menu-content 以外的区域)也关闭
+    menuPopup.addEventListener("click", (event) => {
+        if (event.target === menuPopup) {
+        menuPopup.classList.add("hidden");
+        }
+    });
+}
 
 function wait(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
