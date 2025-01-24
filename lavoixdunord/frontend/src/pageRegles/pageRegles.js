@@ -1,10 +1,14 @@
 import React from 'react';
 import './pageRegles.css';
+import { useNavigate } from "react-router-dom";
+
 
 const RulesPage = () => {
+    const navigate = useNavigate(); // Initialisation de navigate
+
 
     return (
-        <div className="background">
+        <div className="background_rules">
             <div className="rules-container">
                 <p><i><b>Bienvenue à Lille, point de départ du Tour de France et de votre aventure.</b></i></p>
                 <br></br>
@@ -12,7 +16,7 @@ const RulesPage = () => {
                 <br></br>
                 <p><i><b>Bonne chance, et que la découverte  de cette belle région commence !</b></i></p>
             </div>
-            <button className="button"><b>JOUER</b></button>
+            <button className="button_rules" onClick={() => navigate("/difficulty")}><b>JOUER</b></button>
         </div>
     );
 };

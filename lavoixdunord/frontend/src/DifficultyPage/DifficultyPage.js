@@ -20,7 +20,7 @@ const DifficultyPage = () => {
     <div className="difficulty-container">
       <h1 className="difficulty-title">DIFFICULTÉS</h1>
       <div className="difficulty-box">
-        <h2 className="difficulty-subtitle">CHOISISSEZ UN NIVEAU DE DIFFICULTÉ</h2>
+        <h2 className="difficulty-subtitle">CHOISISSEZ UN NIVEAU <br></br> DE DIFFICULTÉ</h2>
         <div className="difficulty-buttons">
           <button
             className={`difficulty-btn ${selectedDifficulty === 1 ? "selected" : ""}`}

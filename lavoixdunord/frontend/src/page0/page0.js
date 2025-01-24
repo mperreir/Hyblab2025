@@ -7,13 +7,13 @@ const Page0 = () => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      navigate("/difficulty"); 
-    }, 1500);
+      navigate("/home"); 
+    }, 2000);
 
     return () => clearTimeout(timer); 
   }, [navigate]);
 
-  return <div className="background"></div>;
+  return <div className="background_page0"></div>;
 };
 
 export default Page0;

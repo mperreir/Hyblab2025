@@ -1,4 +1,4 @@
-.background {
+.background_rules {
     background: url('bgregles.png');
     background-size: auto 100%;
     background-position: center;
@@ -23,19 +23,19 @@
     text-align: center;
     margin-top: 150px;
     margin-inline: 16px;
-    width: 160px;
+    width: 220px;
 }
 
 
-p {
-    font-size: 8.5px;
+.rules-container p {
+    font-size: 11px;
     line-height: 1.5;
     color: #1A3347;
     margin: 1px;
 
 }
 
-button {
+.button_rules {
     margin-top: 20px;
     padding: 8px 40px;
     margin-bottom: 50px;
