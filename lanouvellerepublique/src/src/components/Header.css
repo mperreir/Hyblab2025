@@ -20,7 +20,7 @@
     cursor: pointer;
 }
 
-h2 {
+.header h2 {
     cursor: default;
     position: absolute;
     left: 50%;

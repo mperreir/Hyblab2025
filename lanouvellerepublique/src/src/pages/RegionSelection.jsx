@@ -9,7 +9,6 @@ function RegionSelection() {
         <>
         <Header titre={"Dans leur peau"} textColor={"black"}/>
         <div className='region_page'>
-            <div className='header'></div> 
             <div className='content'>
                 <h2>Explorez les différentes espèces par département</h2>
                 <RegionMap/>
