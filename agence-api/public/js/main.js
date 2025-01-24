@@ -24,7 +24,6 @@ const initSlide2 = async function () {
 
     // Select the character
     // const character = await selectCharacter(texts.introduction.secteurs);
-
     // Select the character
     const secteur = await selectSecteur(texts.introduction.secteurs);
 
@@ -43,14 +42,17 @@ const initSlide2 = async function () {
     await displayMessages(texts.fin.avant, userName)
 
 
-
 };
 
 function initMenu(texts){
     const menuBtn = document.getElementById("menu-btn");
     const menuPopup = document.getElementById("menu-popup");
     const closeMenuBtn = document.getElementById("close-menu");
-
+    const goPauseLink = document.getElementById("go-pause"); // 暂停按钮
+    const pausePopup = document.getElementById("pause-popup"); // 暂停弹窗
+    const resumeGameBtn = document.getElementById("resume-game"); // 继续游戏按钮
+    const quitGameBtn = document.getElementById("quit-game"); // 结束游戏按钮
+  
     // 点击「Menu」打开弹窗
     menuBtn.addEventListener("click", () => {
         menuPopup.classList.remove("hidden");
@@ -73,8 +75,23 @@ function initMenu(texts){
         menuPopup.classList.add("hidden");  // 先关菜单
         selectSecteur(texts.introduction.secteurs);
     });
+    goPauseLink.addEventListener("click", (e) => {
+        e.preventDefault(); // 阻止默认行为
+        menuPopup.classList.add("hidden"); // 关闭菜单
+        pausePopup.classList.remove("hidden"); // 打开暂停弹窗
+      });
+    
+      // 点击“继续游戏”关闭暂停弹窗
+      resumeGameBtn.addEventListener("click", () => {
+        pausePopup.classList.add("hidden"); // 关闭暂停弹窗
+      });
+    
+      // 点击“结束游戏”跳转到首页
+      quitGameBtn.addEventListener("click", () => {
+        window.location.href = "../agence-api/"; // 跳转到首页
+      });
 }
-
+  
 function wait(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
