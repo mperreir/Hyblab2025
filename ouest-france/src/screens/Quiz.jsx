@@ -80,9 +80,10 @@ const Quiz = ({ data }) => {
                   ></img>
                 </div>
               </div>
-              <div className="w-2/3 h-full flex flex-col">
-                <div className="p-6 py-16 flex justify-start items-center w-full">
-                  <h1 className="text-4xl font-bold">{question.question}</h1>
+              <div className="w-1/2 h-full flex flex-col justify-end">
+                <div className="p-6 py-16 flex flex-col gap-4 w-full">
+                  <p className="text-lg font-bold text-black">{question.question}</p>
+                  <span className="accent h-[2px] w-[60%]"></span>
                 </div>
 
 
@@ -95,7 +96,7 @@ const Quiz = ({ data }) => {
                         console.log("userAnswers", userAnswers[questionIndex]);
                         console.log("answer", answer);
                       }}
-                      className={`grow basis-[calc(50%-0.5rem)] p-4 text-lg rounded-lg border ${
+                      className={`duration-300 ease-initial grow basis-[calc(50%-0.5rem)] p-4 text-lg rounded-lg border ${
                         userAnswers[questionIndex] === answer
                           ? answerStatus[questionIndex] === "correct"
                             ? "bg-green-500 text-white"

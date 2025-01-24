@@ -1,0 +1,60 @@
+h1 {
+    font-family: Anton,serif;
+    font-weight: 400;
+    font-style: normal;
+    text-transform: uppercase;
+}
+h2{
+    font-family: Oswald,Arial,Helvetica,sans-serif;
+}
+p{
+    font-family: Arial,serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+p,h1,h2{
+    color: white;
+}
+
+button.text{
+    color: white;
+    transition: all ease .3s;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18.4px;
+    font-family: Arial,sans-serif;
+    padding: 12px;
+    text-align: center;
+}
+button.text:hover{
+    color: #CC2229;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-underline-offset: 25%;
+    text-decoration-thickness: 6%;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: auto;
+}
+
+button.contained{
+    background-color: white;
+    color: black;
+    border-radius: 8px;
+    text-transform: uppercase;
+    transition: all ease .3s;
+    font-family: Arial,sans-serif;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 44px;
+    padding: 0px 20px;
+}
+button.contained:hover{
+    background-color: #CC2229;
+    color: white;
+}
+.accent{
+    background-color: #CC2229;
+}

@@ -3,10 +3,11 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { scrollToSection } from './utils';
 
-import Home from './screens/Home';
+import Home from './screens/Home/Home';
 import ChoosePlayer from './screens/ChoosePlayer/ChoosePlayer';
 import Article from './screens/Article';
 import Quiz from './screens/Quiz';
+import EndPage from './screens/EndPage';
 
 const App = () => {
 
@@ -46,6 +47,7 @@ const App = () => {
           <Article data={articleData[1]}/>
         </>
         )}
+      <EndPage />
     </div>
   );
 };
