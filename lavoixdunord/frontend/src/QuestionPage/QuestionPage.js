@@ -146,6 +146,7 @@ const QuestionPage = () => {
             </button>
             <span className="hint-title">INDICE 2</span>
             {showHintImage && currentQuestion.hints.image && (
+              
               <img
                 src={`/${currentQuestion.hints.image}`}
                 alt="Indice"

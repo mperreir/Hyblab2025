@@ -14,6 +14,19 @@ body {
   max-width: 400px;
 }
 
+.blur-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Fond assombri */
+  backdrop-filter: blur(10px); /* Applique un flou */
+  z-index: 998; /* Derrière l’image mais devant le reste */
+}
+.no-click {
+  pointer-events: none;
+}
 .question-number {
   font-weight: bold;
   color: #0d192e;
