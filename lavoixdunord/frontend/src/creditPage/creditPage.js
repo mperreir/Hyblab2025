@@ -1,15 +1,19 @@
 import React from 'react';
-import './creditPagecss';
+import './creditPage.css';
 
-const credit = () => {
+const Credit = () => {
 
     return (
         <div className="background">
             <div className="container">
-                <p>Designed by : Ivana RONTARD</p>
+                <p><b>Designed by :</b> Ivana RONTARD</p>
+                <br></br>
+                <p><b>Developped by :</b> Youssef IBNOUALI, Théophile TAGNE, Ghassen JRAD, Arwa OUERIEMMI, Mohammed JAOUADA & Mehdi BEN SALHA</p>
+                <br></br>
+                <p><b>Narration :</b> Quentin MALLET</p>
             </div>
         </div>
     );
 };
 
-export default credit;
+export default Credit;
