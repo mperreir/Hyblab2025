@@ -9,10 +9,9 @@ p {
     border: 1px solid white;
     color: white;
     margin: 10px;
-    padding: 5%;
     display: flex;
     border-radius: 5px;
-    text-align: center;
+    align-content: center;
     justify-content: center;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -20,6 +19,18 @@ p {
     background: no-repeat center center;
     background-size: 100% auto;
     flex-direction: column;
+    #gris {
+        height: 100%;
+        width: 100%;
+        padding: 5%;
+        align-content: center;
+        justify-content: center;
+        p{
+            text-align: center;
+            margin: 0px 0px;
+        }
+    }
+    
 
     &:hover {
         background-color: lighten(#D61E00, 5%);
@@ -34,4 +45,10 @@ p {
 .selected {
     background-color: lighten(#D61E00, 5%);
     border:black;
+}
+
+.not_selected {
+    #gris{
+            background-color: rgba(0, 0, 0, 0.5);
+    }
 }
