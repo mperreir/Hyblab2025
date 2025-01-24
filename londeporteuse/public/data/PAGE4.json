@@ -1,0 +1,16 @@
+{
+  "festivalConsequences": [
+    {
+      "id": "accessibility",
+      "content": "Votre festival n’est plus accessible à un large public car le billet est cher."
+    },
+    {
+      "id": "sizeReduction",
+      "content": "La réduction de la taille du festival engendre une baisse de l’activité des entreprises / associations partenaires."
+    },
+    {
+      "id": "localEconomyImpact",
+      "content": "La réduction ou disparition des festivals affecte négativement l'économie locale, sachant que 1€ dépensé dans la culture génère en moyenne 6€ de retombées économiques locales."
+    }
+  ]
+}
