@@ -38,8 +38,8 @@ const Home = () => {
             <div className="content">
                 <img src={home} alt="Golf logo"/>
                 <h1>Tee Time Heros</h1>
-                <p>Découvrez Céline Boutier et Matthieu Pavon,
-                    les deux étoiles montantes du golf français : talents, exploits et parcours,
+                <p>Découvrez Céline Boutier et Matthieu Pavon,<br/>
+                    les deux étoiles montantes du golf français : talents, exploits et parcours.<br/>
                     Deux talents, deux destins : qui choisirez-vous pour découvrir l’histoire du golf français ?</p>
                 <button className="contained" onClick={() => {
                     scrollToSection("choose-player")
