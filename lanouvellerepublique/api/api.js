@@ -2,12 +2,14 @@
 
 const app = require( 'express' )();
 const path = require('path');
+const cors = require('cors');
+
+app.use(cors({
+    origin: ['http://localhost:5173', 'http://localhost:4173', 'http://hyblab.polytech.univ-nantes.fr/lanouvellerepublique/*'],
+}));
 
 // Sample endpoint that sends the partner's name
 app.get('/animals/*', function ( req, res ) {
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5173');
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4173');
-    res.setHeader('Access-Control-Allow-Origin', 'http://hyblab.polytech.univ-nantes.fr');
     
     let POIs;
     // Get partner's topic from folder name

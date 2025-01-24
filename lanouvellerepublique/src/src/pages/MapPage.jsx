@@ -13,7 +13,7 @@ function MapPage() {
 
   async function fetchPOIs() {
     const searchParams = new URLSearchParams(location.search);
-    const res = await fetch('http://hyblab.polytech.univ-nantes.fr:80/lanouvellerepublique/api/animals/' + searchParams.get("animal"))
+    const res = await fetch('http://localhost:8080/lanouvellerepublique/api/animals/' + searchParams.get("animal"))
       .then(response => response.json())
       .then(response => setPoints(response));
   }
