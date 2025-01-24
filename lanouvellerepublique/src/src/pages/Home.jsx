@@ -5,16 +5,36 @@ import Header from "../components/Header";
 function Home() {
   const navigate = useNavigate();
 
+  function goCarte() {
+    navigate("/regions");
+    setIsMenuOpen(false);
+}
+
   return (
     <>
-    <Header titre={"Dans leur peau"} textColor={"white"}/>
-    <div className='home_page'>
-      <div className='content'>
-        <button className="start-button" onClick={() => navigate("/map")}>
+      <Header titre={"Dans leur peau"} textColor={"black"} isHome="true" />
+      <div className='home_page'>
+        <div className='content'>
+          <div className='titles'>
+            <h1 className='main-title'>Découvrez des espèces menacées</h1>
+            <p className='subtitle'>
+              Découvrez des espèces animales en voie de disparitions ainsi que leurs informations
+            </p>
+          </div>
+          {/* <button className="start-button" onClick={() => navigate("/map")}>
           Start
-        </button>
+        </button> */}
+
+          <div className='start-button'>
+            <span className='start-button-text'onClick={goCarte}>Explore</span>
+          </div>
+        </div>
+        <div class="decoration">
+          <div class="green-circle"></div>
+          <div class="gray-rectangle"></div>
+        </div>
+
       </div>
-    </div>
     </>
   );
 }

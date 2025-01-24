@@ -1,0 +1,24 @@
+{
+    "crapaud":[
+        {
+            "id": 1,
+            "pos": [435, 675],
+            "text": "Le crapaud c'est super",
+            "linked": "anguille"
+        },
+        {
+            "id": 2,
+            "pos": [546, 695],
+            "text": "Il mange",
+            "linked": "None"
+        }
+    ],
+    "anguille":[
+        {
+            "id": 1,
+            "pos": [435, 675],
+            "text": "L'anguille' c'est super",
+            "linked": "None"
+        }
+    ]
+}
