@@ -328,11 +328,11 @@ game:
                 text: "Ce roi, surnommé le 'Roi Soleil', a marqué l’histoire par son règne de 72 ans, le plus long de l’histoire française." 
                 image: "images/Etape 1/LILLE citadelle.jpg"
                 link: "https://www.lavoixdunord.fr/199825/article/2017-08-02/il-y-350-ans-le-27-aout-1667-lille-etait-annexee-la-france"
-                map:
-                  longitude: 3.0681408348906904
-                  latitude: 50.624501691063024
-                  label: "Lille"
-                  image: "images/Etape 1/LILLE citadelle.jpg"
+              map:
+                longitude: 3.0681408348906904
+                latitude: 50.624501691063024
+                label: "Lille"
+                image: "images/Etape 1/LILLE citadelle.jpg"
             - id: 2
               category: Sport/Histoire
               text: "Quel symbole minier est représenté dans le blason du RC Lens, rappelant son passé industriel ?"
@@ -347,11 +347,11 @@ game:
                 text: "Cet objet était essentiel pour éclairer les profondeurs sombres des galeries minières, symbole fort de la vie ouvrière de la région." 
                 image: "images/Etape 1/LENS LOGO.jpg"
                 link: "https://www.lavoixdunord.fr/1261347/article/2022-12-01/lens-un-record-de-plus-de-400-lampes-de-mineurs-exposees-bollaert-pour-la-sainte"
-                map:
-                  longitude: 2.833
-                  latitude: 50.435
-                  label: "Lens"
-                  image: "images/Etape 1/LENS LOGO.jpg"
+              map:
+                longitude: 2.833
+                latitude: 50.435
+                label: "Lens"
+                image: "images/Etape 1/LENS LOGO.jpg"
 
             - id: 3
               category: Patrimoine architectural
@@ -367,11 +367,11 @@ game:
                 text: "Ce monument, typique des villes du Nord, est un symbole de liberté et d’autonomie communale, offrant une vue imprenable sur la Grand-Place." 
                 image: "images/Etape 1/bethune beffroi.jpg"
                 link: "https://www.lavoixdunord.fr/1471325/article/2024-06-10/le-beffroi-de-bethune-connait-ses-mensurations-officielles-il-fait-30-65-m-de"
-                map:
-                  longitude: 2.639
-                  latitude: 50.531
-                  label: "Béthune"
-                  image: "images/Etape 1/bethune beffroi.jpg"
+              map:
+                longitude: 2.639
+                latitude: 50.531
+                label: "Béthune"
+                image: "images/Etape 1/bethune beffroi.jpg"
 
             - id: 4
               category: Patrimoine architectural
@@ -387,11 +387,11 @@ game:
                 text: "Ce n'est pas un prix gastronomique ni celui qui honore un commerce particulier, mais plutôt celui d'un lieu d'exception" 
                 image: "images/Etape 1/Cassel.jpg"
                 link: "https://www.lavoixdunord.fr/1484945/article/2024-07-19/perche-sur-un-mont-cassel-au-sommet-de-la-flandre"
-                map:
-                  longitude: 2.495
-                  latitude: 50.800
-                  label: "Cassel"
-                  image: "images/Etape 1/Cassel.jpg"
+              map:
+                longitude: 2.495
+                latitude: 50.800
+                label: "Cassel"
+                image: "images/Etape 1/Cassel.jpg"
 
             - id: 5
               category: Litterature/Personnalités
@@ -407,11 +407,11 @@ game:
                 text: "Ce n’est pas une autrice du XXe siècle ayant écrit sur l'amour ou la société, mais une figure ayant exploré l’histoire et les mémoires d’un autre temps." 
                 image: "images/Etape 1/Villa Yourcenar.jpg"
                 link: "https://www.lavoixdunord.fr/136083/article/2017-03-21/pour-ses-20-ans-la-villa-yourcenar-souhaite-elargir-son-public"
-                map:
-                  longitude: 2.733
-                  latitude: 50.778
-                  label: "Mont Noir"
-                  image: "images/Etape 1/Villa Yourcenar.jpg"
+              map:
+                longitude: 2.733
+                latitude: 50.778
+                label: "Mont Noir"
+                image: "images/Etape 1/Villa Yourcenar.jpg"
 
         - number: 2
           questions:

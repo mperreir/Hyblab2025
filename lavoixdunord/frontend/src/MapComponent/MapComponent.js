@@ -19,20 +19,48 @@ const defaultIcon = L.icon({
 
 L.Marker.prototype.options.icon = defaultIcon;
 
-// Composant pour gérer le changement de vue
-function ChangeView({ center }) {
+// Composant pour gérer les animations de la carte
+function MapAnimator({ center, questionIndex, geoJsonData }) {
     const map = useMap();
+
     useEffect(() => {
-        if (center) {
-            map.flyTo(center, 13, {
-                duration: 2
-            });
-        }
-    }, [center, map]);
+        if (!geoJsonData) return;
+
+        const animate = async () => {
+            if (questionIndex === 0) {
+                // Animation initiale pour la première question
+                // 1. Vue globale
+                map.setView([50.6292, 3.0573], 8);
+                await new Promise(r => setTimeout(r, 1000));
+
+                // 2. Zoom sur le tracé GeoJSON
+                const bounds = L.geoJSON(geoJsonData).getBounds();
+                map.flyToBounds(bounds, {
+                    duration: 2,
+                    paddingTopLeft: [50, 50],
+                    paddingBottomRight: [50, 50]
+                });
+                await new Promise(r => setTimeout(r, 2000));
+
+                // 3. Finalement, zoom sur le point de la première question
+                map.flyTo(center, 13, {
+                    duration: 2
+                });
+            } else {
+                // Pour les autres questions, animation directe vers le nouveau point
+                map.flyTo(center, 13, {
+                    duration: 1.5
+                });
+            }
+        };
+
+        animate();
+    }, [map, center, questionIndex, geoJsonData]);
+
     return null;
 }
 
-const MapComponent = ({ questions, difficulty, level_id, currentQuestionIndex, onClose }) => {
+const MapComponent = ({ difficulty, level_id, currentQuestionIndex, onClose }) => {
     const [questionData, setQuestionData] = useState(null);
     const [geoJsonData, setGeoJsonData] = useState(null);
     const basename = process.env.REACT_APP_BASENAME || "/";
@@ -47,6 +75,8 @@ const MapComponent = ({ questions, difficulty, level_id, currentQuestionIndex, o
             const currentQuestion = data.game.levels[parseInt(difficulty) - 1]
                 .stages[parseInt(level_id) - 1]
                 .questions[currentQuestionIndex];
+            // console.log("difficulty", "level_id", "currentQuestionIndex", "currentQuestion");
+            // console.log(difficulty, level_id, currentQuestionIndex, currentQuestion);
             setQuestionData(currentQuestion);
             setGeoJsonData(geoJson);
         });
@@ -72,32 +102,47 @@ const MapComponent = ({ questions, difficulty, level_id, currentQuestionIndex, o
                 boxZoom={false}
                 keyboard={false}
             >
-                <ChangeView center={mapCenter} />
+                <MapAnimator
+                    center={mapCenter}
+                    questionIndex={currentQuestionIndex}
+                    geoJsonData={geoJsonData}
+                />
                 <TileLayer
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     attribution='© OpenStreetMap contributors'
                     className="map-tiles-blue"
                 />
-                <GeoJSON
-                    data={geoJsonData}
-                    style={{
-                        color: '#0000FF',
-                        weight: 3,
-                        opacity: 0.7
-                    }}
-                />
-                <Marker position={mapCenter}>
-                    <Popup>
-                        <div className="custom-popup">
-                            <h3>{questionData.map.label}</h3>
-                            <img
-                                src={`${basename}${questionData.map.image}`}
-                                alt={questionData.map.label}
-                                className="popup-image"
-                            />
-                        </div>
-                    </Popup>
-                </Marker>
+                {geoJsonData && (
+                    <GeoJSON
+                        data={geoJsonData}
+                        style={{
+                            color: '#0000FF',
+                            weight: 3,
+                            opacity: 0.7
+                        }}
+                    />
+                )}
+                {questionData && (
+                    <Marker 
+                        position={mapCenter}
+                        ref={(markerRef) => {
+                            if (markerRef) {
+                                markerRef.openPopup();
+                            }
+                        }}
+                    >
+                        <Popup>
+                            <div className="custom-popup">
+                                <h3>{questionData.map.label}</h3>
+                                <img
+                                    src={`${basename}${questionData.map.image}`}
+                                    alt={questionData.map.label}
+                                    className="popup-image"
+                                />
+                            </div>
+                        </Popup>
+                    </Marker>
+                )}
             </MapContainer>
             <button className="close-map-btn" onClick={onClose}>
                 Fermer la carte

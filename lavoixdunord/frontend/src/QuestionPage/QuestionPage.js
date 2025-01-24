@@ -13,7 +13,7 @@ const QuestionPage = () => {
   const [showHintText, setShowHintText] = useState(false);
   const [showHintImage, setShowHintImage] = useState(false);
   const [isEnlarged, setIsEnlarged] = useState(false); // Ajout de l'état pour l'agrandissement
-  const [showMap, setShowMap] = useState(true);
+  const [showMap, setShowMap] = useState(false);
 
   const basename = process.env.REACT_APP_BASENAME || "/";
   const navigate = useNavigate(); // Initialisation de useNavigate
