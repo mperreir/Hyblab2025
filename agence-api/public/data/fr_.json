@@ -150,7 +150,7 @@
             "3": {
                 "titre": {
                     "1_lait": "Les actifs en Mayenne",
-                    "1_porc": "Les actifs dans les Côtes-d'Armor",
+                    "1_porc": "Les actifs dans le Finistère",
                     "1_volaille": "Les actifs en Vendée"
                 },
                 "images": {
@@ -318,7 +318,7 @@
                 "titre": {
                     "1_nantes": "Les actifs en Loire-Atlantique",
                     "1_lorient": "Les actifs dans le Morbihan",
-                    "1_lannion": "Les actifs dans le Finistère"
+                    "1_lannion": "Les actifs dans les Côtes-d'Armor"
                 },
                 "images": {
                     "1_nantes": [],
@@ -374,6 +374,11 @@
             [
                 "La French Tech, c’est un écosystème national qui soutient les startups françaises et leur croissance. Dans l’Ouest, elle se décline en 3 Capitales (Nantes, Rennes Saint-Malo, Angers) et 7 Communautés, fédérant des centaines d’acteurs de l’innovation. Avec des programmes comme French Tech Next 120 et French Tech 2030, les entreprises locales accèdent à des opportunités de croissance et de financement stratégiques."
             ]
+        ],
+        "cartes_fin": [
+            {
+                "1_nantes":""
+            }
         ]
     },
 
