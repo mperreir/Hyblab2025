@@ -26,6 +26,8 @@ export type TextBlock = {
 
 export type Choice = {
     text: string; // Texte du choix proposé au joueur
+    image?: string; // Image de fond du bouton
+    position?: string; // %de position de l'image pour bien la cadrer dans le bouton
     result: Situation; // Résultat du choix, menant à une nouvelle situation
 };
 

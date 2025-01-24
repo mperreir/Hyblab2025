@@ -5,16 +5,21 @@ p {
 
 .choice {
     // make some sort of nice looking card looking button for a choice button
-    flex:1; //make buttons same size
+    height: 110px; 
     border: 1px solid white;
     color: white;
-    padding: 15px;
     margin: 10px;
+    padding: 5%;
+    display: flex;
     border-radius: 5px;
     text-align: center;
+    justify-content: center;
     cursor: pointer;
     transition: all 0.3s ease;
-    background-color: lighten(#d61d00cd, 10%);
+    background-color: lighten(black, 10%);
+    background: no-repeat center center;
+    background-size: 100% auto;
+    flex-direction: column;
 
     &:hover {
         background-color: lighten(#D61E00, 5%);
@@ -23,6 +28,7 @@ p {
 
 #choice_div {
     display: flex;
+    flex-direction: column;
 }
 
 .selected {

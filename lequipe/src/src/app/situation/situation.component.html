@@ -12,7 +12,7 @@
 </div>
 <div id="choice_div">
 @for (item of situation.choices; track $index) {
-    <p (click)="selected_choice = item" class="choice" [ngClass]="{'selected' : selected_choice == item}"> {{item.text}} </p>
+    <p (click)="selected_choice = item" class="choice" [ngClass]="{'selected' : selected_choice == item}" [ngStyle]="{'background-image': 'url(' + item.image + ')','background-position': 'center ' + item.position + ''}"> {{item.text}} </p>
 }
 </div>
 @if (selected_choice) {

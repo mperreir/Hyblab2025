@@ -24,6 +24,8 @@
                         "choices": [
                             {
                                 "text": "Il gagne le Tour, shooté aux corticoïdes et personne ne le sait.",
+                                "image": "midjourney/velo1.png",
+                                "position": "45%",
                                 "result": {
                                     "content": [
                                         {
@@ -50,6 +52,8 @@
                                     "choices": [
                                         {
                                             "text": "L’UCI déroule le tapis rouge aux dopés",
+                                            "image": "midjourney/velo2.png",
+                                            "position": "55%",
                                             "result": {
                                                 "content": [
                                                     {
@@ -72,6 +76,8 @@
                                         },
                                         {
                                             "text": "L’UCI passe à l’action : le dopage c’est non !",
+                                            "image": "midjourney/velo3.png",
+                                            "position": "30%",
                                             "result": {
                                                 "content": [
                                                     {
@@ -97,6 +103,8 @@
                             },
                             {
                                 "text": "Il gagne le Tour, sans EPO dans le sang, juste des jambes en feu.",
+                                "image": "midjourney/velo4.png",
+                                "position": "25%",
                                 "result": {
                                     "content": [
                                         {
@@ -113,6 +121,8 @@
                                     "choices": [
                                         {
                                             "text": "Et si Marco Pantani avait eu une seconde chance pour pédaler droit ?",
+                                            "image": "midjourney/velo5.png",
+                                            "position": "55%",
                                             "result": {
                                                 "content": [
                                                     {
@@ -151,6 +161,8 @@
             "choices": [
                 {
                     "text": "Start",
+                    "image": "midjourney/velo5.png",
+                    "position": "55%",
                     "result": {
                         "content": [
                             {
