@@ -3,6 +3,7 @@ import ScrollableMap from "../components/ScrollableMap";
 import DialogueBox from "../components/DialogueBox";
 import Header from "../components/Header";
 import MapCarousel from "../components/MapCarousel";
+import backgroundImage from '../../public/background.jpg';
 
 function MapPage() {
   const [selectedText, setSelectedText] = useState(""); // Manage text globally
@@ -14,7 +15,7 @@ function MapPage() {
       <ScrollableMap
         width={4000}
         height={4000}
-        background="url('../background.jpg')"
+        background={`url(${backgroundImage})`} 
         setSelectedText={setSelectedText}
       />
       {selectedText && <DialogueBox text={selectedText} setSelectedText={setSelectedText} />}

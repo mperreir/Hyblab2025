@@ -10,41 +10,37 @@ const DialogueBox = ({ text, setSelectedText}) => {
 
     const splitTextByHeight = () => {
         if (!text || text.trim() === "" || !dialogueRef.current || !textRef.current) return [];
-
+    
         const words = text.split(" ");
         const pages = [];
         let currentPageText = "";
         
-        // Measure dialogue box height
-        const boxHeight = dialogueRef.current.clientHeight;
-        const paddingTop = parseFloat(getComputedStyle(dialogueRef.current).paddingTop);
-        const boxHeightAdjusted = boxHeight - 2 * paddingTop;
-        console.log(boxHeightAdjusted);
-
-        // Measure line height
-        const lineHeight = parseFloat(getComputedStyle(textRef.current).lineHeight);
-        const maxLines = Math.floor(boxHeight / lineHeight);
-
-        let lineCount = 0;
-
+        // Use getBoundingClientRect() for more consistent measurements
+        const boxHeight = dialogueRef.current.getBoundingClientRect().height;
+        const computedStyle = getComputedStyle(dialogueRef.current);
+        const paddingTop = parseFloat(computedStyle.paddingTop);
+        const paddingBottom = parseFloat(computedStyle.paddingBottom);
+        const boxHeightAdjusted = boxHeight - paddingTop - paddingBottom;
+    
+        // Fallback line height calculation
+        const lineHeight = parseFloat(getComputedStyle(textRef.current).lineHeight) || 20; // Provide a default
+    
         words.forEach((word) => {
             const testText = currentPageText + word + " ";
             textRef.current.innerText = testText;
             
-            const testHeight = textRef.current.scrollHeight; // Measure actual height
-
+            // Use offsetHeight instead of scrollHeight
+            const testHeight = textRef.current.offsetHeight;
+    
             if (testHeight > boxHeightAdjusted) {
                 pages.push(currentPageText.trim());
                 currentPageText = word + " ";
-                lineCount = 1;
             } else {
                 currentPageText = testText;
-                lineCount++;
             }
         });
-
+    
         if (currentPageText) pages.push(currentPageText.trim());
-        console.log(pages);
         return pages;
     };
 
