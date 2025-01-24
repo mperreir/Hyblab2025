@@ -1,5 +1,5 @@
 .map_container {
-    width: 60%;
+    width: 100%;
     max-width: 50vh;
     aspect-ratio: 1 / 1;
     position: relative;
@@ -9,26 +9,16 @@
     margin: 30px;
 }
 
-.background_square {
-    position: absolute;
-    top: 0;
-    height: 100%;
-    width: 100%;
+.animal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    transition: all .1s ease;
 }
 
-.background_square.bright {
-    background-color: #EFD8B8;
-}
-
-.background_square.dark {
-    background-color: #C9B69B;
-}
-
-.background_square.tilted {
-    transform: rotateZ(-3deg);
-}
-
-.map_container:hover .background_square.tilted{
-    transition: all ease .2s;
-    transform: rotateZ(-6deg);
+.animal:hover {
+    transform: scale(1.1);
+    cursor: pointer;
 }

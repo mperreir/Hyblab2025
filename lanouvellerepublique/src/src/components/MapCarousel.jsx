@@ -1,17 +1,11 @@
 import CarouselBox from './CarouselBox';
 import './MapCarousel.css'
 
-function MapCarousel() {
-    const carouselBoxes = ['box1', 'box2', 'box3'];
-
-    function moveToPoint() {
-        // TODO
-    }
-
+function MapCarousel({ points }) {
     return (
         <div className='carousel'>
-            {carouselBoxes.map((box) =>
-                <CarouselBox title={box} />
+            {points.map((point, index) =>
+                <CarouselBox key={index} title={point.title} description={point.subtitle} pointPosition={point.pos} />
             )}
         </div>
     );

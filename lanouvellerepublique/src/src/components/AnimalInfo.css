@@ -1,6 +1,6 @@
 .animal_presentation {
     color: black;
-    margin-bottom: 30px;
+    height: 20vh;
 }
 
 .top_section {
@@ -28,4 +28,7 @@
 
 .bottom_section a {
     color: white !important;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
 }

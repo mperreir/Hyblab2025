@@ -33,3 +33,14 @@
     max-height: 15vh;
     margin: 10px 0;
 }
+
+.animal-info-container {
+    transform: translateY(100%); /* Default state when no animal is selected */
+    transition: all 0.25s ease;
+    pointer-events: none; /* Prevent clicks on the hidden info box */
+}
+
+.animal-info-container.visible {
+    transform: translateY(0%);
+    pointer-events: all; /* Allow interaction when the info box is visible */
+}
