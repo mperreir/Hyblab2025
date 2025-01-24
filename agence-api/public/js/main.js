@@ -138,7 +138,6 @@ function waitForUserTouch(){
     });
 }
 
-
 async function addButtonGoToResults() {
     const confirmButton = document.createElement('button');
     confirmButton.id = 'confirmButton';
@@ -157,13 +156,13 @@ async function getUserName() {
     const messageInput = document.getElementById('messageInput');
     const chatInput = document.getElementById('chat-input');
 
-    chatInput.style.visibility='visible';
+    chatInput.style.display='block';
     messageInput.focus();
 
     let userName = await waitForNameInput();
 
     messageInput.blur();
-    chatInput.style.visibility='hidden';
+    chatInput.style.display='none';
 
     toggleTapIconDisplay(false);
 
@@ -216,7 +215,7 @@ async function displayResponses(message) {
 }
   
 async function loadIntroStory(introStory) {
-  document.getElementById('chat-input').style.visibility = 'hidden';
+  document.getElementById('chat-input').style.display = 'none';
 
     await displayMessages(introStory.avant_nom);
 
