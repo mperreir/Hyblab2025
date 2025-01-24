@@ -34,7 +34,7 @@ const InformationMixComponent = () => {
 
 const navigate = useNavigate(); // Hook pour la navigation
 const handleClick = () => {
-    navigate('/brief/'); // Redirige vers la page /landing (ou une autre page de ton choix)
+    navigate('/brief/questions'); // Redirige vers la page /landing (ou une autre page de ton choix)
 };
 
 
