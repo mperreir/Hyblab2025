@@ -16,9 +16,6 @@ const initSlide2 = async function () {
     const texts = await response.json();
     
     initMenu(texts);
-    //displayExplanation(texts.agro.informations["3"],["1_porc", "2_trucmuche"] , "Message d'explications");
-    // await histoire(texts.tech);
-
 
     // Load the intro story
     const userName = await loadIntroStory(texts.introduction.general);
@@ -251,6 +248,8 @@ async function histoire(texts, userName){
         }
 
         toggleTapIconDisplay(true);
+
+        console.log(texts.reponses[i]);
 
         let answer = await addAnswer(texts.reponses[i], multipleChoices);
         choices = [...choices, ...answer];
