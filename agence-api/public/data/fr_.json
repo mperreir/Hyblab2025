@@ -134,9 +134,9 @@
                 ],
                 "apres": [
                     {
-                        "4_local": "Tu as choisi de rester sur le marché local. J'espère que tu trouveras ton public !",
-                        "4_national": "Tu as choisi de viser le marché national. Bonne chance pour la suite !",
-                        "4_international": "Tu as choisi de viser le marché international. C'est un pari risqué, mais qui peut s'avérer très payant !"
+                        "4_marchelocal": "Tu as choisi de rester sur le marché local. J'espère que tu trouveras ton public !",
+                        "4_marchenational": "Tu as choisi de viser le marché national. Bonne chance pour la suite !",
+                        "4_marcheeuro": "Tu as choisi de viser le marché international. C'est un pari risqué, mais qui peut s'avérer très payant !"
                     }
                 ]
             }

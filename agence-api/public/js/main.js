@@ -153,7 +153,7 @@ async function getUserName() {
     const messageInput = document.getElementById('messageInput');
     const chatInput = document.getElementById('chat-input');
 
-    chatInput.style.display='block';
+    chatInput.style.display='flex';
     messageInput.focus();
 
     let userName = await waitForNameInput();
@@ -248,8 +248,6 @@ async function histoire(texts, userName){
         }
 
         toggleTapIconDisplay(true);
-
-        console.log(texts.reponses[i]);
 
         let answer = await addAnswer(texts.reponses[i], multipleChoices);
         choices = [...choices, ...answer];
