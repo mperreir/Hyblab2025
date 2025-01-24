@@ -5,7 +5,11 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}" // Tous les fichiers dans src avec des extensions .js, .jsx, .ts, et .tsx
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'anton': ['Anton', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 }
