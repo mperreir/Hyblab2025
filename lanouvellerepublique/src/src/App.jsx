@@ -7,7 +7,7 @@ import RegionSelection from "./pages/RegionSelection";
 function App() {
   return (
     <>
-    <Router>
+    <Router basename="/lanouvellerepublique">
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/regions" element={<RegionSelection />} />
