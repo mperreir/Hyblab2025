@@ -52,8 +52,10 @@ body {
 }
 
 .answer-btn.selected {
-  background-color: #bed5e7; /* Couleur de surbrillance pour le choix sélectionné */
-  color: #1A3347; /* Couleur du texte contrastante */
+  background-color: #bed5e7;
+  /* Couleur de surbrillance pour le choix sélectionné */
+  color: #1A3347;
+  /* Couleur du texte contrastante */
   font-weight: bold;
   border-color: #1A3347;
 }
@@ -145,21 +147,21 @@ body {
 }
 
 .toggle-btn {
-    padding: 5px 10px;
-    margin-right: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    background-color: lightgray;
-    font-size: 14px;
-  }
-  
-  .toggle-btn.disabled {
-    cursor: not-allowed;
-    background-color: gray;
-    color: white;
-  }
-  
+  padding: 5px 10px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: lightgray;
+  font-size: 14px;
+}
+
+.toggle-btn.disabled {
+  cursor: not-allowed;
+  background-color: gray;
+  color: white;
+}
+
 
 .hint-title {
   font-weight: bold;
@@ -181,17 +183,56 @@ body {
   cursor: pointer;
   transition: transform 0.3s ease-in-out;
 }
-/* Agrandissement adapté aux mobiles */
+
+/* Arrière-plan flou */
+.blur-background {
+  filter: blur(8px);
+  transition: filter 0.3s ease-in-out;
+}
+
+/* Arrière-plan flou */
+.blur-background {
+  filter: blur(8px);
+  transition: filter 0.3s ease-in-out;
+}
+
+/* Fond sombre derrière l'image */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+}
+
+/* Image agrandie */
 .hint-img.enlarged {
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(1.5); /* Ajusté pour mobile */
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  max-width: 95vw;
+  max-height: 80vh;
+  border-radius: 5px;
+}
+
+.enlarged-image {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 1000;
   max-width: 95vw; /* Pas plus large que l'écran */
   max-height: 80vh; /* Garde un peu d'espace en bas */
   border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Ajoute une ombre pour un meilleur contraste */
+  background-color: white; /* Optionnel, si nécessaire */
 }
+
+
 
 /* Fond assombri quand l'image est agrandie */
 .enlarged::after {
@@ -209,6 +250,7 @@ body {
 body.modal-open {
   overflow: hidden;
 }
+
 .next-btn {
   margin-top: 20px;
   padding: 10px 20px;
