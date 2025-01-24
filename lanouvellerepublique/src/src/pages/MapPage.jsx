@@ -14,7 +14,7 @@ function MapPage() {
       <ScrollableMap
         width={4000}
         height={4000}
-        background="url('/background.jpg')"
+        background="url('../background.jpg')"
         setSelectedText={setSelectedText}
       />
       {selectedText && <DialogueBox text={selectedText} setSelectedText={setSelectedText} />}
