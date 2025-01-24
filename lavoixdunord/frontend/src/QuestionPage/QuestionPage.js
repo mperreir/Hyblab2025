@@ -12,10 +12,18 @@ const QuestionPage = () => {
   const [showHintText, setShowHintText] = useState(false);
   const [showHintImage, setShowHintImage] = useState(false);
   const [isEnlarged, setIsEnlarged] = useState(false); // Ajout de l'état pour l'agrandissement
-
+  const [score, setScore] = useState(localStorage.getItem("score") || 0);
+  const [hint1Used, setHint1Used] = useState(false);
+  const [hint2Used, setHint2Used] = useState(false);
   const basename = process.env.REACT_APP_BASENAME || "/";
   const navigate = useNavigate(); // Initialisation de useNavigate
   const { difficulty, id } = useParams(); // Récupère les paramètres de l'URL
+
+  const updateScore = (score) => {
+    localStorage.setItem("score", score);
+    console.log("Score: ", score);
+    setScore(score);
+  };
 
   useEffect(() => {
     fetch(basename + "data/questions.yaml")
@@ -33,7 +41,15 @@ const QuestionPage = () => {
 
   const handleNext = () => {
     if (!validated) {
+      const isCorrect = questions[currentQuestionIndex].options[selectedOptionIndex].correct;
+      if (!isCorrect) {
+        updateScore((prevScore) => prevScore + 15); // Ajouter 15 points si réponse incorrecte
+      }
+
       setValidated(true);
+      updateScore((prevScore) => prevScore + 20); // Ajouter 20 points après validation
+
+
     } else {
       if (currentQuestionIndex < questions.length - 1) {
         setCurrentQuestionIndex(currentQuestionIndex + 1);
@@ -42,6 +58,8 @@ const QuestionPage = () => {
         setShowHintText(false);
         setShowHintImage(false);
         setIsEnlarged(false); // Réinitialiser l'agrandissement de l'image
+        setHint1Used(false);
+        setHint2Used(false);
       } else {
         navigate("/transition/" + (parseInt(difficulty)) + "/" + (parseInt(id)));
         setQuestions([]);
@@ -57,6 +75,23 @@ const QuestionPage = () => {
 
   const handleOptionClick = (index) => {
     setSelectedOptionIndex(index);
+  };
+
+
+  const handleHint1Click = () => {
+    if (!hint1Used) {
+      updateScore((prevScore) => prevScore + 5);
+      setHint1Used(true);
+    }
+    setShowHintText(true);
+  };
+
+  const handleHint2Click = () => {
+    if (!hint2Used && showHintText) {
+      updateScore((prevScore) => prevScore + 10);
+      setHint2Used(true);
+    }
+    setShowHintImage(true);
   };
 
   const toggleImageSize = () => {
