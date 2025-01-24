@@ -6,6 +6,8 @@ import DifficultyPage from "./DifficultyPage/DifficultyPage";
 import Etape from "./EtapePage/Etape";
 import HomePage from "./homePage/homePage";
 import RulesPage  from "./pageRegles/pageRegles";
+import FinalPage from "./finalPage/finalPage";
+import Credit from "./creditPage/creditPage";
 
 const basename = process.env.REACT_APP_BASENAME || "/";
 function App() {
@@ -17,8 +19,9 @@ function App() {
         <Route path="/regles" element={<RulesPage />} />
         <Route path="/difficulty" element={<DifficultyPage />} />
         <Route path="/etape/:difficulty" element={<Etape />} />
-        <Route path="/etape/:difficulty/:id" element={<QuestionPage />} />
-
+        <Route path="/etape/:ifficulty/:id" element={<QuestionPage />} />
+        <Route path="/final" element={<FinalPage />} />
+        <Route path="/credit" element={<Credit />} />
 
 
       
