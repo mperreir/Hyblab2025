@@ -35,7 +35,6 @@ function expandMessage(messageElement, data) {
     for (let i = 0; i < messageElement.dataset.taillechoix; i++) {
         liste_choix.push(messageElement.dataset[`choix${i}`]);
     }
-    console.log("depuis expand message, liste_choix :", liste_choix);
     //Ajout des données du JSON dans des listes respectives
     const fields = ['titre', 'images', 'paragraphes'];
 
@@ -104,6 +103,7 @@ function closeOverlay() {
 
 // Fonction pour répartir les champs du JSON dans des listes respectives
 function repartitionChamps(fields, data, liste_choix){
+    console.log(liste_choix);
     let result = {titre: "", images: [], paragraphes: []};
     fields.forEach(field => {
         switch (detectType(data[field])){
@@ -111,6 +111,10 @@ function repartitionChamps(fields, data, liste_choix){
                 result[field] = data[field];
                 break;
             case "string":
+                if (field !== "titre") {
+                    console.error("Le champ " + field + " n'est pas un tableau");
+                    break;
+                }
                 result[field] = data[field];
                 break;
             case "dico":

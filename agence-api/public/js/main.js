@@ -16,7 +16,7 @@ const initSlide2 = async function () {
     const texts = await response.json();
     
     initMenu(texts);
-    displayExplanation(texts.agro.informations["3"],["1_porc", "2_trucmuche"] , "Message d'explications");
+    //displayExplanation(texts.agro.informations["3"],["1_porc", "2_trucmuche"] , "Message d'explications");
     // await histoire(texts.tech);
 
     // Load the intro story
@@ -27,6 +27,8 @@ const initSlide2 = async function () {
 
     // Select the character
     const secteur = await selectSecteur(texts.introduction.secteurs);
+
+    displayExplanation(texts.agro.informations["3"],["1_porc", "2_trucmuche"] , "Message d'explications");
 
     switch (secteur) {
         case 0:
