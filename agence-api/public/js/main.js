@@ -217,7 +217,7 @@ async function histoire(texts){
 
     for (let i = 0; i < texts.questions.length; i++) {
 
-        await displayMessages(texts.questions[i]);
+        await displayMessages(texts.contexte[i].avant);
 
 
         await displayMessages(texts.questions[i]);
@@ -238,6 +238,14 @@ async function histoire(texts){
         console.log(choices);
 
         toggleTapIconDisplay(false);
+
+        // Sometimes the "after" message is not dependent on the choice made
+        if(typeof texts.contexte[i].apres[0] === "string"){
+            addMessage({ text: texts.contexte[i].apres[0], type: "received", timestamp: new Date().toISOString() });
+        } else {
+            // console.log(texts.contexte[i].apres[0][answer[0]]);
+            addMessage({ text: texts.contexte[i].apres[0][answer[0]], type: "received", timestamp: new Date().toISOString() });
+        }
     }
 
 }

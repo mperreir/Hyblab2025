@@ -265,8 +265,8 @@
                 ],
                 "apres": [
                     {
-                        "3_jeunes": "Tu as choisi de recruter des jeunes diplômés. C’est un choix audacieux qui peut s’avérer très payant !",
-                        "3_experimentes": "Tu as choisi de recruter des profils expérimentés. Une équipe solide est la clé de la réussite !"
+                        "3_embauchejeunes": "Tu as choisi de recruter des jeunes diplômés. C’est un choix audacieux qui peut s’avérer très payant !",
+                        "3_embaucheexperimentes": "Tu as choisi de recruter des profils expérimentés. Une équipe solide est la clé de la réussite !"
                     }
                 ]
             },
