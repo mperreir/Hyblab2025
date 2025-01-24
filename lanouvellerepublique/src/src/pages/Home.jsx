@@ -5,6 +5,11 @@ import Header from "../components/Header";
 function Home() {
   const navigate = useNavigate();
 
+  function goCarte() {
+    navigate("/regions");
+    setIsMenuOpen(false);
+}
+
   return (
     <>
       <Header titre={"Dans leur peau"} textColor={"black"} isHome="true" />
@@ -21,7 +26,7 @@ function Home() {
         </button> */}
 
           <div className='start-button'>
-            <span className='start-button-text'>Explore</span>
+            <span className='start-button-text'onClick={goCarte}>Explore</span>
           </div>
         </div>
         <div class="decoration">
