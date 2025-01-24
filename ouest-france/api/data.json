@@ -12,6 +12,12 @@
         "answers": ["Matthieu", "Thomas", "Pierre", "Jean"],
         "correct_answer": "Matthieu",
         "explanation": "Matthieu PAVON s'apelle Matthieu"
+      },
+      {
+        "question": "Quel est le prénom de Matthieu PAVON ?",
+        "answers": ["Matthieu", "Thomas", "Pierre", "Jean"],
+        "correct_answer": "Matthieu",
+        "explanation": "Matthieu PAVON s'apelle Matthieu"
       }
     ],
     "articles": [
