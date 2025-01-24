@@ -1,5 +1,36 @@
 "use strict";
 
+//----------------- bar de progression ---------------
+
+// Variables pour la barre de progression
+const totalQuestions = 6;
+let currentQuestion = 1;
+
+const progressSteps = document.querySelectorAll('.progress-step');
+console.log('Progress Steps:', progressSteps); // Ajouté pour le débogage
+
+
+// Fonction pour mettre à jour la barre de progression
+function updateProgress() {
+    progressSteps.forEach((step, index) => {
+        console.log('Step:', step, 'Index:', index); // Débogage
+        if (index < currentQuestion - 1) {
+            step.classList.add('completed');
+            step.classList.remove('active');
+        } else if (index === currentQuestion - 1) {
+            step.classList.add('active');
+            step.classList.remove('completed');
+        } else {
+            step.classList.remove('active', 'completed');
+        }
+    });
+    console.log('Progress updated to:', currentQuestion); // Débogage
+}
+
+// Initialiser la barre de progression
+updateProgress();
+
+//----------------------------------------
 
 // Fonction pour envoyer un message
 function sendMessage() {
@@ -45,7 +76,6 @@ function addMessage(message) {
     scrollToBottom();
 };
 
-
 async function addAnswer(answers, multipleChoices=false) {
     const answersContainer = document.createElement('div');
     answersContainer.id = 'answers-container';
@@ -76,8 +106,7 @@ async function addAnswer(answers, multipleChoices=false) {
                 selectedAnswer = Array.from(answersContainer.querySelectorAll('.selected')).map((div) => div.dataset.answer);
                 confirmButton.disabled = selectedAnswer.length === 0;
             }
-        }
-        );
+        });
     } else {
         answersContainer.addEventListener('click', (e) => {
             if (e.target.classList.contains('answer')) {
@@ -96,14 +125,12 @@ async function addAnswer(answers, multipleChoices=false) {
         });
     }
 
-    
-
       scrollToBottom();
       return new Promise((resolve) => {
 
       // Add click event listener to the confirm button
       confirmButton.addEventListener('click', () => {
-        if (selectedAnswer) {
+        if (selectedAnswer.length > 0) {
           confirmButton.remove();
           answersContainer.remove();
           for (const answer of selectedAnswer) {
@@ -114,6 +141,16 @@ async function addAnswer(answers, multipleChoices=false) {
           const answerKeys = selectedAnswer.map(value => 
             Object.keys(answers).find(key => answers[key] === value)
           );
+
+          // Incrémenter la question actuelle et mettre à jour la progression
+          if (currentQuestion < totalQuestions) {
+            currentQuestion++;
+            console.log("Current Question:", currentQuestion);
+            updateProgress();
+          } else {
+            // Optionnel : Afficher un message ou finaliser le processus
+            alert('Vous avez terminé toutes les questions !');
+          }
 
           resolve(answerKeys);
         }
@@ -129,5 +166,3 @@ function scrollToBottom() {
         chatBox.scrollTop = chatBox.scrollHeight;
     }, 100);  // Délai pour s'assurer que le DOM est mis à jour
 };
-
-
