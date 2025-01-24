@@ -6,7 +6,7 @@ function sendMessage() {
     const messageText = messageInput.value.trim();
     if (messageText === '') return;
 
-    const newMessage = { text: messageText, type: 'sent', timestamp: new Date().toISOString() };
+    const newMessage = { text: messageText, type: 'sent'};
 
     addMessage(newMessage);
     scrollToBottom();
@@ -17,9 +17,18 @@ function sendMessage() {
 // Fonction pour ajouter un message dans la liste
 function addMessage(message) {
     const messageElement = document.createElement('li');
-    messageElement.classList.add('message', message.type);
-    messageElement.textContent = message.text;
-    messageElement.id = message.id;
+    if (message.img){
+        const div = document.createElement('div');
+        div.classList.add('message', message.type);
+        div.appendChild(document.createElement('img')).src = message.img;
+        div.appendChild(document.createElement('p')).textContent = message.text;
+        div.id = message.id;
+        messageElement.appendChild(div);
+    } else {
+        messageElement.classList.add('message', message.type);
+        messageElement.textContent = message.text;
+        messageElement.id = message.id;
+    }
     messageList.appendChild(messageElement);
 
     if(message.choix){
@@ -93,7 +102,7 @@ async function addAnswer(answers, multipleChoices=false) {
           confirmButton.remove();
           answersContainer.remove();
           for (const answer of selectedAnswer) {
-            addMessage({ text: answer, type: 'sent', timestamp: new Date().toISOString() });
+            addMessage({ text: answer, type: 'sent'});
           }
 
           // Find keys for all target values
