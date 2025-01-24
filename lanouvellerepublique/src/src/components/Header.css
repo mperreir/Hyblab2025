@@ -1,0 +1,28 @@
+.header {
+    position: relative;
+    padding: 2rem 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.back-button:hover {
+    cursor: pointer;
+}
+
+.burger-button {
+    position: absolute;
+    right: 20px;
+}
+
+.burger-button:hover {
+    cursor: pointer;
+}
+
+.header h2 {
+    cursor: default;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}

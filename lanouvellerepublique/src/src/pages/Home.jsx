@@ -1,16 +1,21 @@
 import { useNavigate } from "react-router-dom";
 import "./Home.css"; // Import the CSS file
+import Header from "../components/Header";
 
 function Home() {
   const navigate = useNavigate();
 
   return (
-    <div className="home-container">
-      <h1>Welcome to the Map Explorer</h1>
-      <button className="start-button" onClick={() => navigate("/map")}>
-        Start
-      </button>
+    <>
+    <Header titre={"Dans leur peau"} textColor={"white"}/>
+    <div className='home_page'>
+      <div className='content'>
+        <button className="start-button" onClick={() => navigate("/map")}>
+          Start
+        </button>
+      </div>
     </div>
+    </>
   );
 }
 
