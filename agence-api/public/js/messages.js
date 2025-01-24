@@ -6,14 +6,10 @@
 const totalQuestions = 6;
 let currentQuestion = 1;
 
-const progressSteps = document.querySelectorAll('.progress-step');
-console.log('Progress Steps:', progressSteps); // Ajouté pour le débogage
-
-
 // Fonction pour mettre à jour la barre de progression
 function updateProgress() {
+    const progressSteps = document.querySelectorAll('.progress-step');
     progressSteps.forEach((step, index) => {
-        console.log('Step:', step, 'Index:', index); // Débogage
         if (index < currentQuestion - 1) {
             step.classList.add('completed');
             step.classList.remove('active');
@@ -24,11 +20,7 @@ function updateProgress() {
             step.classList.remove('active', 'completed');
         }
     });
-    console.log('Progress updated to:', currentQuestion); // Débogage
 }
-
-// Initialiser la barre de progression
-updateProgress();
 
 //----------------------------------------
 
@@ -145,7 +137,6 @@ async function addAnswer(answers, multipleChoices=false) {
           // Incrémenter la question actuelle et mettre à jour la progression
           if (currentQuestion < totalQuestions) {
             currentQuestion++;
-            console.log("Current Question:", currentQuestion);
             updateProgress();
           } else {
             // Optionnel : Afficher un message ou finaliser le processus

@@ -18,6 +18,9 @@ const initSlide2 = async function () {
     
     initMenu(texts);
 
+    // Initialiser la barre de progression
+    updateProgress();
+
     // Load the intro story
     userName = await loadIntroStory(texts.introduction.general);
 
