@@ -6,19 +6,19 @@
       "options1": [
         {
           "name": "Grand festival",
-          "cost": "€€€",
+          "cost": 3,
           "imagePath": "path/to/grand_festival_image.png",
           "info": "Plus d'info"
         },
         {
           "name": "Festival Moyen",
-          "cost": "€€",
+          "cost": 2,
           "imagePath": "path/to/festival_moyen_image.png",
           "info": "Plus d'info"
         },
         {
           "name": "Festival intimiste",
-          "cost": "€",
+          "cost": 1,
           "imagePath": "path/to/festival_intimiste_image.png",
           "info": "Plus d'info"
         }
@@ -29,19 +29,19 @@
       "options2": [
         {
           "name": "Beaucoup d’actions écologiques",
-          "cost": "€€€",
+          "cost": 3,
           "imagePath": "path/to/beaucoup_actions_image.png",
           "info": "Plus d'info"
         },
         {
           "name": "Peu d’actions écologiques",
-          "cost": "€€",
+          "cost": 2,
           "imagePath": "path/to/peu_actions_image.png",
           "info": "Plus d'info"
         },
         {
           "name": "Minimum légal d’actions écologiques",
-          "cost": "€",
+          "cost": 1,
           "imagePath": "path/to/minimum_actions_image.png",
           "info": "Plus d'info"
         }
@@ -53,25 +53,25 @@
       "options3": [
         {
           "name": "Monter un atelier de pratique musicale sur le festival",
-          "cost": "€€€",
+          "cost": 3,
           "imagePath": "path/to/atelier_pratique_image.png",
           "info": "Plus d'info"
         },
         {
           "name": "Organiser des rencontre avec les artistes",
-          "cost": "€€",
+          "cost": 2,
           "imagePath": "path/to/rencontre_artistes_image.png",
           "info": "Plus d'info"
         },
         {
           "name": "Intervention dans les écoles",
-          "cost": "€",
+          "cost": 1,
           "imagePath": "path/to/intervention_ecoles_image.png",
           "info": "Plus d'info"
         },
         {
           "name": "Ne pas mettre en place d’action de médiation culturelle",
-          "cost": "€",
+          "cost": 0,
           "imagePath": "path/to/pas_action_image.png",
           "info": "Plus d'info"
         }
@@ -83,19 +83,19 @@
       "options4": [
         {
           "name": "Mener activement des actions de prévention",
-          "cost": "€€€",
+          "cost": 3,
           "imagePath": "path/to/activement_prevention_image.png",
           "info": "Plus d'info"
         },
         {
           "name": "Réduire le nombre d’actions de préventions",
-          "cost": "€€",
+          "cost": 2,
           "imagePath": "path/to/reduire_prevention_image.png",
           "info": "Plus d'info"
         },
         {
           "name": "Minimum légal d’actions de prévention",
-          "cost": "€",
+          "cost": 1,
           "imagePath": "path/to/minimum_prevention_image.png",
           "info": "Plus d'info"
         }

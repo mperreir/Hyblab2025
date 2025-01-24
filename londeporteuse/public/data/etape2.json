@@ -10,19 +10,19 @@
     "budgetComposition": [
       {
         "name": "Part des recettes propres",
-        "percentage": "52,3%",
+        "percentage": 52.3,
         "details": "billets vendus : 35,4% ; ventes sur site : 16,9%",
         "color": "#00d1c1"
       },
       {
         "name": "Part des financements privés",
-        "percentage": "9,1%",
+        "percentage": 9.1,
         "details": "mécénat : 2,5% ; partenariats : 6,6%",
         "color": "#d1d1d1"
       },
       {
         "name": "Part des financements publics",
-        "percentage": "38,5%",
+        "percentage": 38.5,
         "details": "38,5% dont une majorité provient des collectivités territoriales",
         "color": "#808080"
       }
