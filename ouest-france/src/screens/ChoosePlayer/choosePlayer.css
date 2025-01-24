@@ -3,6 +3,7 @@
     height: 100%;
     position: relative;
     overflow: hidden;
+    border: white solid 15px;
 }
 
 /*** boxes & hover parallax ***/
@@ -13,14 +14,15 @@
     transform: skewX(-20deg);
     transition: all ease 0.6s;
     overflow: hidden;
+    display: flex;
 }
 .choice.left{
-    border-right: white solid 30px;
+    border-right: white solid 15px;
     left: -50%;
 }
 
 .choice.right{
-    border-left: white solid 30px;
+    border-left: white solid 15px;
     right: -50%;
 }
 
@@ -76,7 +78,7 @@
     bottom: 0;
     left: auto;
     width: 100%;
-    height: 50%;
+    height: 80%;
     background: linear-gradient(to bottom,#fff0,#0009,#0009);
     border-radius: 0 0 4px 4px;
     transition: all ease 0.3s;
@@ -87,23 +89,22 @@
 
 /*** divider ***/
 .choice h1.divider{
-    position: absolute;
+    position: relative;
     rotate: -90deg;
     text-align: center;
-    top: 0;
-    bottom: 0;
     line-height: 150px;
     width: 100vh;
-    transition: all ease 0.3s;
-    display: flex;
-    justify-content: center;
-    font-size: 20vh;
+    transition: all ease .3s;
+    font-size: 22vh;
     opacity: 0;
     white-space: nowrap;
+    transform: skew(-20deg);
+    top: 15%;
+}
+.choice.right h1.divider{
 }
 .choice.left h1.divider{
-    align-items: end;
-    right:0;
+    left: 92%;
 }
 .choice:hover h1.divider{
     opacity: 1;
@@ -124,8 +125,8 @@
     z-index: 1;
 }
 .choice .content h1{
-    font-size: 150px;
-    line-height: 150px;
+    font-size: 140px;
+    line-height: 140px;
 }
 .choice .content p{
     width: 100%;
