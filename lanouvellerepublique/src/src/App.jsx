@@ -11,7 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/regions" element={<RegionSelection />} />
-        <Route path="/map" element={<MapPage />} />
+        <Route path="/map" element={<MapPage animalRoute='crapaud' />} />
       </Routes>
     </Router>
     </>
