@@ -13,6 +13,7 @@ import Credit from "./creditPage/creditPage";
 import FinalPage from "./finalPage/finalPage";
 
 const basename = process.env.REACT_APP_BASENAME || "/";
+
 function App() {
   return (
     <Router basename={basename}>
