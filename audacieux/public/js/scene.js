@@ -4,7 +4,7 @@ class Scene {
     this.objects = [];
     this.sceneAudio = sceneAudio;
     this.time = 0;
-    this.f = 0.6;
+    this.f = 1.0;
     
     fetch(file_name)
     .then(response => response.json())
@@ -18,6 +18,7 @@ class Scene {
     })
 
     window.addEventListener('resize', () => this.resizeScene());
+    this.resizeScene();
   }
 
   set_frame(time){
@@ -55,8 +56,8 @@ class Scene {
 
   resizeScene(){
     let height = window.innerHeight;
-    console.log(height);
-    this.f = interpolate(height, 678, 1300, 0.9, 1.8)
+    console.log(height)
+    this.f = interpolate(height, 678, 1300, 0.6, 1.2)
     this.set_frame(this.time)
   }
 }
@@ -83,9 +84,9 @@ function addData(element, container, f){
 
   init_keyframe = new_element.keyframes[0];
 
-  new_element.set_position(f*init_keyframe.x, f*init_keyframe.y)
+  new_element.set_position(init_keyframe.x, init_keyframe.y)
   new_element.set_rotation(init_keyframe.rotation)
-  new_element.set_scale(f*init_keyframe.scale)
+  new_element.set_scale(init_keyframe.scale)
 
   new_element.html_el.style.zIndex = element.z;
   container.appendChild(new_element.html_el);
@@ -110,7 +111,7 @@ function updateKeyframes(value, time, f) {
       const end_o = value.keyframes[i + 1];
       value.set_position(
         f*interpolate(time, init_o.time, end_o.time, init_o.x, end_o.x),
-        f*interpolate(time, init_o.time, end_o.time, init_o.y, end_o.y)+interpolate(f, 0.4, 2, -200, 600 )
+        f*interpolate(time, init_o.time, end_o.time, init_o.y, end_o.y)+interpolate(f, 0.4, 2, -200, 400 )
       );
       value.set_rotation(
         interpolate(time, init_o.time, end_o.time, init_o.rotation, end_o.rotation)
