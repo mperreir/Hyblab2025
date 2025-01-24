@@ -5,7 +5,7 @@ game:
         - number: 1
           questions:
             - id: 1
-              category: Histoire
+              category: Sport
               text: "Quand a eu lieu le dernier départ du Tour de France à Lille ?"
               options:
                 - text: "1980"
@@ -50,7 +50,7 @@ game:
                 link: "https://www.lavoixdunord.fr/1536232/article/2024-12-21/la-maison-natale-de-charles-de-gaulle-attend-avec-impatience-les-pieces-acquises"
 
             - id: 4
-              category: Culture musicale
+              category: Culture
               text: "Quel chanteur, originaire du Nord, a popularisé la chanson Quand la mer monte et choisi un nom de scène en hommage à la ville de Godewaersvelde ?"
               options:
                 - text: "Raoul de Godewarsvelde"
@@ -82,7 +82,7 @@ game:
         - number: 2
           questions:
             - id: 1
-              category: Culture musicale
+              category: Culture
               text: "Le 6 juillet, Arras accueillera le Tour de France mais un autre événement majeur de la ville aura lieu au même moment, lequel ?"
               options:
                 - text: "Un marathon"
@@ -97,7 +97,7 @@ game:
                 link: "https://www.lavoixdunord.fr/1485899/article/2024-07-22/le-dimanche-6-juillet-2025-ca-sera-tour-de-france-et-main-square-arras"
 
             - id: 2
-              category: Littérature
+              category: Culture
               text: "Quel roman de Victor Hugo situe une partie de son récit à Montreuil-sur-Mer, en s’inspirant de son séjour dans la ville ?"
               options:
                 - text: "Les Misérables"
@@ -159,7 +159,7 @@ game:
         - number: 3
           questions:
             - id: 1
-              category: Vie locale
+              category: Géographie
               text: "Quel fleuve traverse Valenciennes, jouant un rôle clé dans son développement industriel ?"
               options:
                 - text: "La Sambre"
@@ -174,7 +174,7 @@ game:
                 link: "https://www.lavoixdunord.fr/965136/article/2021-03-22/l-escaut-une-autoroute-fluviale-internationale"
 
             - id: 2
-              category: Cuisine
+              category: Culture
               text: "Quelle spécialité culinaire a rendu célèbre Orchies et son industrie locale, elle est souvent utilisée pour aromatiser le café ou créer des desserts ?"
               options:
                 - text: "La Chicorée"
@@ -253,7 +253,7 @@ game:
                 link: "https://www.lavoixdunord.fr/199825/article/2017-08-02/il-y-350-ans-le-27-aout-1667-lille-etait-annexee-la-france"
 
             - id: 2
-              category: Sport/Histoire
+              category: Sport
               text: "Quel symbole minier est représenté dans le blason du RC Lens, rappelant son passé industriel ?"
               options:
                 - text: "Une gaillette"
@@ -268,7 +268,7 @@ game:
                 link: "https://www.lavoixdunord.fr/1261347/article/2022-12-01/lens-un-record-de-plus-de-400-lampes-de-mineurs-exposees-bollaert-pour-la-sainte"
 
             - id: 3
-              category: Patrimoine architectural
+              category: Architecture 
               text: "Comment s’appelle le monument emblématique de Béthune, classé au patrimoine mondial de l’UNESCO, qui surplombe la Grand-Place ?"
               options:
                 - text: "Le Beffroi"
@@ -283,7 +283,7 @@ game:
                 link: "https://www.lavoixdunord.fr/1471325/article/2024-06-10/le-beffroi-de-bethune-connait-ses-mensurations-officielles-il-fait-30-65-m-de"
 
             - id: 4
-              category: Patrimoine architectural
+              category: Vie locale
               text: "Quel prix prestigieux Cassel a-t-elle remporté en 2018, grâce à son charme et son patrimoine exceptionnel ?"
               options:
                 - text: "Plus beau marché"
@@ -298,7 +298,7 @@ game:
                 link: "https://www.lavoixdunord.fr/1484945/article/2024-07-19/perche-sur-un-mont-cassel-au-sommet-de-la-flandre"
 
             - id: 5
-              category: Litterature/Personnalités
+              category: Culture
               text: "Quel écrivain français, auteur de Mémoires d’Hadrien, a passé une partie de son enfance au Mont Noir ?"
               options:
                 - text: "Marguerite Yourcenar"                     
@@ -330,7 +330,7 @@ game:
                 link: "https://www.lavoixdunord.fr/169436/article/2017-05-28/et-douai-devint-francaise-le-temps-d-un-siege-eclair"
 
             - id: 2
-              category: Patrimoine artistique
+              category: Vie locale
               text: "Qui sont les célèbres Monsieur et Madame Gayant de Douai ?"
               options:
                 - text: "Les fondateurs de la ville"     
@@ -407,7 +407,7 @@ game:
                 link: "https://www.lavoixdunord.fr/1352441/article/2023-07-14/celia-sa-petite-fille-est-sur-le-tour-jean-stablinski-y-est-donc-un-peu-aussi"
 
             - id: 2
-              category: Vie locale
+              category: Culture
               text: "Quel bâtiment emblématique, inauguré en 1998, est aujourd’hui le centre de la vie culturelle de Valenciennes ?"
               options:
                 - text: "Le phénix"     
@@ -422,7 +422,7 @@ game:
                 link: "https://www.lavoixdunord.fr/tags/le-phenix"
 
             - id: 3
-              category: Patrimoine architectural
+              category: Architecture
               text: "Quel est cet édifice célèbre de la commune de Wormhout, également appelé « le géant des Flandres » ?"
               options:
                 - text: "Un moulin"    
@@ -452,7 +452,7 @@ game:
                 link: "https://www.lavoixdunord.fr/1521395/article/2024-11-10/il-y-trente-ans-jean-bart-s-envolait-dans-le-ciel-de-dunkerque-pour-reprendre"
 
             - id: 5
-              category: Sport / Personnalités
+              category: Sport
               text: "En 2001, le Tour de France partait de Dunkerque, qui avait remporté le prologue et porté le premier maillot jaune ?"
               options:
                 - text: "Lance Arsmstrong"          
