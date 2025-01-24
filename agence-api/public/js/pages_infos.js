@@ -12,8 +12,8 @@ async function displayExplanation(data, liste_choix, contenu_message) {
                 const lastMessage = document.querySelector(`#${reply.id}`);
                 expandMessage(lastMessage, data);
                 resolve(); // Resolve the promise after expandMessage
-            }, 1000);
-        }, 1000);
+            }, 3000);
+        }, 10);
     });
 }
 
@@ -134,6 +134,7 @@ function match(data, liste_choix) {
         return [];
     }
     const num_question = parseInt(Object.keys(data)[0].split('_')[0], 10);
+    console.log(liste_choix);
     return data[String(liste_choix[num_question - 1])];
 };
 

@@ -241,7 +241,7 @@ async function histoire(texts){
 
         await displayMessages(texts.contexte[i].avant.slice(0,-1));
         await displayExplanation(texts.informations[i], choices, texts.contexte[i].avant[texts.contexte[i].avant.length-1]);
-
+        
 
         await displayMessages(texts.questions[i]);
 
@@ -269,6 +269,8 @@ async function histoire(texts){
             // console.log(texts.contexte[i].apres[0][answer[0]]);
             addMessage({ text: texts.contexte[i].apres[0][answer[0]], type: "received", timestamp: new Date().toISOString() });
         }
+        scrollToBottom();
+        await waitForUserTouch();
     }
 
 }
