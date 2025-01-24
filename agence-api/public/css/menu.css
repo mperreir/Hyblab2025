@@ -118,7 +118,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7); /* 半透明背景 */
+  background: rgba(0, 0, 0, 0.5); /* 半透明背景 */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -134,28 +134,41 @@
 }
 
 .pause-content {
-  background: #fff;
-  color: #333;
-  padding: 20px;
-  width: 300px;
-  border-radius: 10px;
+  background: #f7f7f7; /* 浅灰色背景 */
+  color: #333; /* 深灰色文字 */
+  padding: 25px;
+  width: 320px;
+  border-radius: 15px;
   text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* 柔和阴影 */
+}
+
+.pause-content h2 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  color: #4a90e2; /* 浅蓝色标题 */
 }
 
 .pause-btn {
   display: block;
   margin: 15px auto;
-  padding: 10px 20px;
-  background: #007bff;
-  color: #fff;
+  padding: 12px 25px;
+  background: #d9eafc; /* 浅蓝色按钮背景 */
+  color: #333; /* 深灰色文字 */
   border: none;
-  border-radius: 5px;
+  border-radius: 25px;
   font-size: 1em;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
 }
 
 .pause-btn:hover {
-  background: #0056b3;
+  background: #c0dcf9; /* 鼠标悬停更深的浅蓝色 */
+  color: #222; /* 更深的灰色文字 */
+  transform: scale(1.05); /* 悬停时按钮稍微放大 */
 }
+
+.pause-btn:active {
+  transform: scale(0.95); /* 点击时按钮缩小 */
+}
+
