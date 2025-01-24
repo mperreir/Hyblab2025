@@ -17,20 +17,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, '../__common-logos__')));
 
 // You can then add whatever routing code you need
-app.get(`/article/:category_name`, function (req, res) {
-    //TODO
-    const category_name = req.params.category_name;
-    fetch(`${ip}/data/articles.json`)
-        .then(response => response.json())
-        .then(articles => {
-            const article = articles.find(article => article.id === category_name);
-            if (article) {
-                res.send(article[req.params.keyword]);
-            } else {
-                res.status(404).send({ error: 'Article not found' });
-            }
-        })
-        .catch(error => console.error('Error fetching JSON:', error));
+app.get(`/article`, function (req, res) {
+    res.sendFile(path.join(__dirname, '/public/article.html'));
 });
 
 // This module is exported and served by the main server.js located

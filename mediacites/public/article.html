@@ -17,4 +17,21 @@
   </div>
 
   
+    <p id="saucisse"></p>
+    <script>
+const queryString = window.location.search;
+console.log(queryString);
+const urlParams = new URLSearchParams(queryString);
+const name = urlParams.get('name')
+console.log(name);
+
+const saucisse = document.getElementById("saucisse");
+fetch(`/mediacites/api/articles/${name}/text`)
+    .then(response => response.json())
+    .then(text => {
+        saucisse.innerHTML = text;
+    })
+        .catch(error => console.error('Error fetching JSON:', error));
+saucisse.innerHTML
+    </script>
 </body>
