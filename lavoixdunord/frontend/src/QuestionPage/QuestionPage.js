@@ -15,17 +15,17 @@ const QuestionPage = () => {
 
   const basename = process.env.REACT_APP_BASENAME || "/";
   const navigate = useNavigate(); // Initialisation de useNavigate
-  const { id } = useParams();
+  const { difficulty, id } = useParams(); // Récupère les paramètres de l'URL
 
   useEffect(() => {
     fetch(basename + "data/questions.yaml")
       .then((response) => response.text())
       .then((text) => {
         const data = yaml.load(text);
-        setQuestions(data.game.levels[0].stages[parseInt(id) - 1].questions);
+        setQuestions(data.game.levels[parseInt(difficulty) - 1].stages[parseInt(id) - 1].questions);
       })
       .catch((error) => console.error("Erreur de chargement YAML :", error));
-  }, [id]);
+  }, [difficulty,id]);
 
   if (questions.length === 0) {
     return <p>Chargement des questions...</p>;
