@@ -29,9 +29,9 @@ function Home() {
             <span className='start-button-text'onClick={goCarte}>Explore</span>
           </div>
         </div>
-        <div class="decoration">
-          <div class="green-circle"></div>
-          <div class="gray-rectangle"></div>
+        <div className="decoration">
+          <div className="green-circle"></div>
+          <div className="gray-rectangle"></div>
         </div>
 
       </div>
