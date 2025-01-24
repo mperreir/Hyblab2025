@@ -12,10 +12,18 @@ const QuestionPage = () => {
   const [showHintText, setShowHintText] = useState(false);
   const [showHintImage, setShowHintImage] = useState(false);
   const [isEnlarged, setIsEnlarged] = useState(false); // Ajout de l'état pour l'agrandissement
-
+  const [score, setScore] = useState(localStorage.getItem("score") || 0);
+  const [hint1Used, setHint1Used] = useState(false);
+  const [hint2Used, setHint2Used] = useState(false);
   const basename = process.env.REACT_APP_BASENAME || "/";
   const navigate = useNavigate(); // Initialisation de useNavigate
   const { difficulty, id } = useParams(); // Récupère les paramètres de l'URL
+
+  const updateScore = (score) => {
+    localStorage.setItem("score", score);
+    console.log("Score: ", score);
+    setScore(score);
+  };
 
   useEffect(() => {
     fetch(basename + "data/questions.yaml")
@@ -25,7 +33,7 @@ const QuestionPage = () => {
         setQuestions(data.game.levels[parseInt(difficulty) - 1].stages[parseInt(id) - 1].questions);
       })
       .catch((error) => console.error("Erreur de chargement YAML :", error));
-  }, [difficulty,id]);
+  }, [difficulty, id]);
 
   if (questions.length === 0) {
     return <p>Chargement des questions...</p>;
@@ -33,7 +41,15 @@ const QuestionPage = () => {
 
   const handleNext = () => {
     if (!validated) {
+      const isCorrect = questions[currentQuestionIndex].options[selectedOptionIndex].correct;
+      if (!isCorrect) {
+        updateScore((prevScore) => prevScore + 15); // Ajouter 15 points si réponse incorrecte
+      }
+
       setValidated(true);
+      updateScore((prevScore) => prevScore + 20); // Ajouter 20 points après validation
+
+
     } else {
       if (currentQuestionIndex < questions.length - 1) {
         setCurrentQuestionIndex(currentQuestionIndex + 1);
@@ -42,8 +58,10 @@ const QuestionPage = () => {
         setShowHintText(false);
         setShowHintImage(false);
         setIsEnlarged(false); // Réinitialiser l'agrandissement de l'image
+        setHint1Used(false);
+        setHint2Used(false);
       } else {
-        navigate("/etape/" + (parseInt(id) + 1));
+        navigate("/transition/" + (parseInt(difficulty)) + "/" + (parseInt(id)));
         setQuestions([]);
         setCurrentQuestionIndex(0);
         setSelectedOptionIndex(null);
@@ -57,6 +75,23 @@ const QuestionPage = () => {
 
   const handleOptionClick = (index) => {
     setSelectedOptionIndex(index);
+  };
+
+
+  const handleHint1Click = () => {
+    if (!hint1Used) {
+      updateScore((prevScore) => prevScore + 5);
+      setHint1Used(true);
+    }
+    setShowHintText(true);
+  };
+
+  const handleHint2Click = () => {
+    if (!hint2Used && showHintText) {
+      updateScore((prevScore) => prevScore + 10);
+      setHint2Used(true);
+    }
+    setShowHintImage(true);
   };
 
   const toggleImageSize = () => {
@@ -78,19 +113,17 @@ const QuestionPage = () => {
           {currentQuestion.options.map((option, index) => (
             <button
               key={index}
-              className={`answer-btn ${
-                selectedOptionIndex === index ? "selected" : ""
-              } ${
-                validated
+              className={`answer-btn ${selectedOptionIndex === index ? "selected" : ""
+                } ${validated
                   ? index === selectedOptionIndex
                     ? option.correct
                       ? "correct"
                       : "wrong"
                     : option.correct
-                    ? "correct"
-                    : ""
+                      ? "correct"
+                      : ""
                   : ""
-              }`}
+                }`}
               onClick={() => handleOptionClick(index)}
               disabled={validated}
             >
@@ -106,7 +139,7 @@ const QuestionPage = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <b><i>Un indice se cache <br></br> dans cet article</i></b>
+              Lien vers l'article
             </a>
           </p>
         )}
@@ -146,6 +179,7 @@ const QuestionPage = () => {
             </button>
             <span className="hint-title">INDICE 2</span>
             {showHintImage && currentQuestion.hints.image && (
+
               <img
                 src={`/${currentQuestion.hints.image}`}
                 alt="Indice"

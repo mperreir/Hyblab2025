@@ -1,0 +1,57 @@
+.background_TP1 {
+    background: url('TransitionPage1.png');
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 350px;
+    margin-inline: auto;
+    font-family: "Work Sans";
+}
+
+.container_TP1 {
+    position: absolute;
+    top : 250px;
+    background-color: white;
+    padding: 1px;
+    text-align: center;
+    width: 160px;
+}
+
+
+.p_TP1 {
+    font-size: 8px;
+    line-height: 1.5;
+    color: #1A3347;
+    margin: 1px;
+
+}
+
+.button_TP1 {
+    position: absolute;
+    bottom: 100px; /* Ajustez la valeur selon vos besoins */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px 40px;
+    border: #1A3347;
+    border-radius: 50px;
+    border-style: solid;
+    border-width: 1px;
+    font-size: 7px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    color: #1A3347;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+.button_TP1:hover {
+    background-color: #1A3347; /* Couleur bleue plus foncée au survol */
+    color: white;
+}

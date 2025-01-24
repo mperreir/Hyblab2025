@@ -170,9 +170,9 @@ body {
 .hint-text {
   margin-top: 10px;
   font-size: 12px;
-  text-align: justify;
-  padding-left: 8px;
+  
 }
+
 
 .hint-img {
   max-width: 60%;
@@ -220,6 +220,31 @@ body.modal-open {
 
 .next-btn:disabled {
   background-color: rgb(255, 255, 255);
+  cursor: not-allowed;
+}
+
+
+
+.article-link {
+  margin-top: 10px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.article-link a {
+  color: #1A3347;
+  text-decoration: underline;
+}
+
+.article-link a:hover {
+  color: #4D95AF;
+  text-decoration: none;
+  text-decoration: underline;
+}
+
+.article-link a:hover {
+  color: #4D95AF;
+  text-decoration: none;
   cursor: not-allowed;
 }
 
