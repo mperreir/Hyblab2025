@@ -27,8 +27,6 @@ const initSlide2 = async function () {
     // Select the character
     const secteur = await selectSecteur(texts.introduction.secteurs);
 
-    displayExplanation(texts.agro.informations["3"],["1_porc", "2_trucmuche"] , "Message d'explications");
-
     switch (secteur) {
         case 0:
             await histoire(texts.agro);
