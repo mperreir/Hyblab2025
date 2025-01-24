@@ -164,7 +164,7 @@
   right: 20px;
   width: 70px;
   height: 70px;
-  background: url('tap.png') no-repeat center center; /* Replace with your icon */
+  background: url('../img/tap.png') no-repeat center center; /* Replace with your icon */
   background-size: contain;
   animation: click-effect 1s infinite ease-in-out;
 }
