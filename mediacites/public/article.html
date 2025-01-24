@@ -2,13 +2,12 @@
 
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-  <title>Article Projet Mediacites</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/mediacites.css">
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-  <script src="http://localhost:8080/mediacites/articles/:category_name/:keyword"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>Article Projet Mediacites</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/mediacites.css">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav class="sticky-top">
@@ -91,12 +90,26 @@
                                 <h3 class="d-flex" style="font-size: 5vw; color: white; text-align:left;" >LIENS</h3>
                             </div>
                             <div class="col-4 d-flex justify-content-end align-items-center">
-                                <select class="custom-select custom-select-sm ">
+                                
+                                <div class="dropdown">
+                                    <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:white; ">
+                                        De A à Z 
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a id="alphabetical_asc" class="dropdown-item">De A à Z</a></li>
+                                        <li><a id="alphabetical_desc" class="dropdown-item">De Z à A</a></li>
+                                        <li><a id="chronological_asc" class="dropdown-item">Du plus récent au plus vieux</a></li>
+                                        <li><a id="chronological_desc" class="dropdown-item">Du plus vieux au plus récent</a></li>
+                                    </ul>
+                                </div>
+                                <!--
+                                <select class="form-select custom-select-sm ">
                                     <option value="alphabetical_asc" selected >De A à Z</option>
                                     <option value="alphabetical_desc">De Z à A</option>
                                     <option value="chronological_asc">Du plus récent au plus vieux</option>
                                     <option value="chronological_desc">Du plus vieux au plus récent</option>
                                 </select>
+                                -->
                             </div>
                         </div>
                         <div class="row row-to-sort">
@@ -118,42 +131,43 @@
                             </div>
                         </div>
                         <script>
-                            function sortRows() {
-                                const select = document.querySelector('.form-select');
-                                const rows = Array.from(document.querySelectorAll('.row-to-sort'));
-                                const container = document.querySelector('.col-to-sort-inside-of');
-                            
-                                rows.sort((a, b) => {
-                                    const textA = a.querySelector('.col-name-to-sort p').textContent.trim();
-                                    const textB = b.querySelector('.col-name-to-sort p').textContent.trim();
-                                    const dateA = new Date(a.querySelector('.col-date-to-sort p').textContent.trim().split('/').reverse().join('-'));
-                                    const dateB = new Date(b.querySelector('.col-date-to-sort p').textContent.trim().split('/').reverse().join('-'));
-                            
-                                    switch (select.value) {
-                                        case 'alphabetical_asc':
-                                            return textA.localeCompare(textB);
-                                        case 'alphabetical_desc':
-                                            return textB.localeCompare(textA);
-                                        case 'chronological_asc':
-                                            return dateA - dateB;
-                                        case 'chronological_desc':
-                                            return dateB - dateA;
-                                        default:
-                                            return 0;
-                                    }
-                                });
-                            
-                                // Create a document fragment
-                                const fragment = document.createDocumentFragment();
-                            
-                                // Append sorted rows to the fragment
-                                rows.forEach(row => fragment.appendChild(row));
-                            
-                                // Append the fragment to the container
-                                container.appendChild(fragment);
-                            }
-                            
-                            document.querySelector('.form-select').addEventListener('change', sortRows);
+                        function sortRows(criteria) {
+                            const rows = Array.from(document.querySelectorAll('.row-to-sort'));
+                            const container = document.querySelector('.col-to-sort-inside-of');
+
+                            rows.sort((a, b) => {
+                                const nameA = a.querySelector('.col-name-to-sort').innerText.toUpperCase();
+                                const nameB = b.querySelector('.col-name-to-sort').innerText.toUpperCase();
+                                const dateA = parseDate(a.querySelector('.col-date-to-sort').innerText);
+                                const dateB = parseDate(b.querySelector('.col-date-to-sort').innerText);
+
+                                function parseDate(dateStr) {
+                                    const [day, month, year] = dateStr.split('/').map(Number);
+                                    return new Date(year, month - 1, day);
+                                }
+
+                                if (criteria === 'alphabetical_asc') {
+                                    return nameA.localeCompare(nameB);
+                                } else if (criteria === 'alphabetical_desc') {
+                                    return nameB.localeCompare(nameA);
+                                } else if (criteria === 'chronological_asc') {
+                                    return dateA - dateB;
+                                } else if (criteria === 'chronological_desc') {
+                                    return dateB - dateA;
+                                }
+                            });
+
+                            rows.forEach(row => container.appendChild(row));
+                            const dropdownButton = document.querySelector('.dropdown-toggle');
+                            const selectedItem = document.querySelector(`#${criteria}`).innerText;
+                            dropdownButton.innerText = selectedItem;
+                        }
+
+                        document.querySelectorAll('.dropdown-item').forEach(item => {
+                            item.addEventListener('click', () => {
+                                sortRows(item.id);
+                            });
+                        });
                         </script>
                     </div>
                 </div>
@@ -178,4 +192,6 @@
         })
         .catch(error => console.error('Error fetching JSON:', error));
     </script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
 </body>
