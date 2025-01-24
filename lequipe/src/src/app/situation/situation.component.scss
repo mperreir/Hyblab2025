@@ -5,10 +5,12 @@ p {
 
 .choice {
     // make some sort of nice looking card looking button for a choice button
-    height: 110px; 
+    position: relative;
+    width: 96%;
+    aspect-ratio: 357 / 109;
     border: 1px solid white;
     color: white;
-    margin: 10px;
+    margin: 2%;
     display: flex;
     border-radius: 5px;
     align-content: center;
@@ -20,7 +22,27 @@ p {
     background-size: 100% auto;
     flex-direction: column;
     text-shadow: 1px 1px 2px black;
+    #choisir {
+        position: absolute;
+        border-radius: 5px;
+        height: 100%;
+        width: 100%;
+        align-items: flex-end;
+        justify-content: center;
+        display: flex;
+        p{
+            text-align: center;
+            padding: 1%;
+            margin: 0px 0px;
+            font-size: 20%;
+            color: #D61E00;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+    }
     #gris {
+        position: absolute;
+        border-radius: 5px;
         height: 100%;
         width: 100%;
         padding: 5%;
@@ -50,8 +72,8 @@ p {
 
 .not_selected {
     #gris{
-            background-color: rgba(0, 0, 0, 0.5);
-            color: grey;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: grey;
     }
 }
 
