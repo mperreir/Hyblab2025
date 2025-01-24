@@ -1,0 +1,18 @@
+.credits-menu {
+    background: white;
+}
+
+.big-back-button {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%) scale(2);  
+}
+
+.big-back-button:hover {
+    cursor: pointer;
+}
+
+.ai-text {
+
+}

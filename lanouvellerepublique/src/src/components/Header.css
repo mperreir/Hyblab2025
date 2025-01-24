@@ -20,6 +20,7 @@
 .burger-button {
     position: absolute;
     right: 20px;
+    transform: scale(1.5);
 }
 
 .burger-button:hover {
