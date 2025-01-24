@@ -1,5 +1,4 @@
 body{
-    font-family: sans-serif;
     font-size: calc(15vh * 3 / 4);
 }
 
@@ -9,21 +8,35 @@ body{
     align-items: center; 
     justify-content: center; 
     padding: 2vh 4vh 0vh 4vh;
+    margin-bottom: 2vh;  
     width: 100%;
     height: 100%;
     background-color: white;
     button {
-        border: 1px solid red;
+        border-color: 1px solid red;
         color: red;
         height: 100%;
         width: auto;
-        border-radius: 4vh 0vh 0vh 4vh; 
+        border-radius: 4vh 4vh 4vh 4vh; 
         font-style: italic;
+        
+    }
+    button:hover {
+        border-color: red !important;
+        background-color: red !important;
+        color: white !important;
     }
     button:disabled {
         border: 1px solid gray;
-        border-left: 0;
     }
+    button:hover:disabled {
+        border-color: gray !important;
+        background-color: gray !important;
+        color: white !important;
+    }
+
+   button:nth-child(3) { border-right:red; }
+   button:nth-child(6) { border-left:red; }
 }
 
 
