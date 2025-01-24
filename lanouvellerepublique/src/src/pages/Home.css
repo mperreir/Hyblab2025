@@ -30,3 +30,28 @@
 .home_page .start-button:hover {
   background-color: #0056b3;
 }
+
+
+.home_page .titles {
+  margin-bottom: 50%;
+  margin-top: -20%; 
+}
+
+.home_page .main-title {
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  color: black; 
+  background: none; 
+}
+
+.home_page .subtitle {
+  font-family: 'Georgia', serif;
+  font-size: 16px;
+  text-align: center;
+  color: gray; 
+  margin-top: 25px;
+  margin-left: 1px;
+  }
+
+
