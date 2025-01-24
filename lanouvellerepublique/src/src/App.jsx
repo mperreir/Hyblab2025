@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MapPage from "./pages/MapPage";
 import Home from "./pages/Home";
 import RegionSelection from "./pages/RegionSelection";
+import Credits from "./pages/Credits";
 
 function App() {
   return (
@@ -11,7 +12,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/regions" element={<RegionSelection />} />
-        <Route path="/map" element={<MapPage animalRoute='crapaud' />} />
+        <Route path="/map" element={<MapPage />} />
+        <Route path="/credits" element={<Credits />} />
       </Routes>
     </Router>
     </>
