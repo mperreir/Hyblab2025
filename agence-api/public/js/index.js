@@ -21,6 +21,8 @@ function loadContent(url, elementId) {
     .catch(error => console.error(`Erreur lors du chargement de ${url}:`, error));
 }
 
+let swiper;
+
 document.addEventListener('DOMContentLoaded', function() {
   // Charger tous les contenus HTML des slides
   Promise.all([
@@ -30,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
   ]).then(() => {
 
     // Init of the (touch friendly) Swiper slider
-    const swiper = new Swiper("#mySwiper", {
+    swiper = new Swiper("#mySwiper", {
       direction: "vertical",
       mousewheel: true,
       pagination: {

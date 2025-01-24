@@ -36,6 +36,11 @@ const initSlide2 = async function () {
             await histoire(texts.arti);
             break;
     };
+
+    await displayMessages(texts.fin.avant, userName)
+
+
+
 };
 
 function wait(ms) {
@@ -77,6 +82,17 @@ function waitForUserTouch(){
 }
 
 
+async function addButtonGoToResults() {
+    const confirmButton = document.createElement('button');
+    confirmButton.id = 'confirmButton';
+    confirmButton.textContent = 'Voir les résultats';
+    confirmButton.classList.add('button');
+    document.getElementById('chatBox').appendChild(confirmButton);
+    confirmButton.addEventListener('click', () => {
+        swiper.slideNext();
+    });
+}
+
 async function getUserName() {
 
     toggleTapIconDisplay(true);
@@ -97,9 +113,13 @@ async function getUserName() {
     return userName;
 }
 
-async function displayMessages(message) {
+async function displayMessages(message, userName) {
     for (const key in message) {
+        if(message[key].includes("{nom}")){
+        addMessage({ text: message[key].replace("{nom}", userName), type: "received", timestamp: new Date().toISOString() });
+        } else {
         addMessage({ text: message[key], type: "received", timestamp: new Date().toISOString() });
+        }
         scrollToBottom();
         await waitForUserTouch();
     }
@@ -120,20 +140,9 @@ async function loadIntroStory(introStory) {
     await displayMessages(introStory.avant_nom);
 
     const userName = await getUserName();
-    await addMessage({ text: userName, type: "sent", timestamp: new Date().toISOString() });
+    addMessage({ text: userName, type: "sent", timestamp: new Date().toISOString() });
 
-    let i=0;
-    for (const key in introStory.apres_nom) {
-        if (i === 0) {
-            i++;
-            addMessage({ text: introStory.apres_nom[key].replace("{nom}", userName), type: "received", timestamp: new Date().toISOString() });
-        } else {
-            addMessage({ text: introStory.apres_nom[key], type: "received", timestamp: new Date().toISOString() });
-
-        }
-        scrollToBottom();
-        await waitForUserTouch();
-    }
+    await displayMessages(introStory.apres_nom, userName);
 
     return userName;
 }
@@ -201,4 +210,5 @@ async function histoire(texts){
 
         toggleTapIconDisplay(false);
     }
+
 }
