@@ -28,3 +28,8 @@ export type Choice = {
     text: string; // Texte du choix proposé au joueur
     result: Situation; // Résultat du choix, menant à une nouvelle situation
 };
+
+export class Item {
+    constructor(public title: string,
+                public imageUrl: string) {};
+};

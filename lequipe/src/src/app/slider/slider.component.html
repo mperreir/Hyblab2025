@@ -1,0 +1,11 @@
+
+<div id="container">
+    <div class="placeholder"></div>
+    @for (item of items; track $index) {
+        <div class="item" (click)="selectItem(item, $event.target)" [class.selected]="selected == item">
+            <img [src]=item.imageUrl [alt]="item.title">
+            <h2>{{ item.title }}</h2>
+        </div>
+    }
+    <div class="placeholder"></div>
+</div>
