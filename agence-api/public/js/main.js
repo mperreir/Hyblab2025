@@ -2,18 +2,20 @@
 
 const initSlide2 = async function () {
 
-  const chatBox = document.getElementById('chatBox');
-  const messageList = document.getElementById('messageList');
-  const messageInput = document.getElementById('messageInput');
+    initMenu();
+
+    const chatBox = document.getElementById('chatBox');
+    const messageList = document.getElementById('messageList');
+    const messageInput = document.getElementById('messageInput');
 
 
-  scrollToBottom();
+    scrollToBottom();
 
     // Retrieve the intro's messages from our API
     let response = await fetch('data/fr_.json');
     const texts = await response.json();
 
-
+    //displayExplanation(texts.agro.informations["3"],["1_porc", "2_trucmuche"] , "Message d'explications");
     // await histoire(texts.tech);
 
     // Load the intro story
@@ -36,7 +38,35 @@ const initSlide2 = async function () {
             await histoire(texts.arti);
             break;
     };
+
+    await displayMessages(texts.fin.avant, userName)
+
+
+
 };
+
+function initMenu(){
+    const menuBtn = document.getElementById("menu-btn");
+    const menuPopup = document.getElementById("menu-popup");
+    const closeMenuBtn = document.getElementById("close-menu");
+
+    // 点击「Menu」打开弹窗
+    menuBtn.addEventListener("click", () => {
+        menuPopup.classList.remove("hidden");
+    });
+
+    // 点击「×」关闭弹窗
+    closeMenuBtn.addEventListener("click", () => {
+        menuPopup.classList.add("hidden");
+    });
+
+    // 点击背景(除 .menu-content 以外的区域)也关闭
+    menuPopup.addEventListener("click", (event) => {
+        if (event.target === menuPopup) {
+        menuPopup.classList.add("hidden");
+        }
+    });
+}
 
 function wait(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -77,6 +107,17 @@ function waitForUserTouch(){
 }
 
 
+async function addButtonGoToResults() {
+    const confirmButton = document.createElement('button');
+    confirmButton.id = 'confirmButton';
+    confirmButton.textContent = 'Voir les résultats';
+    confirmButton.classList.add('button');
+    document.getElementById('chatBox').appendChild(confirmButton);
+    confirmButton.addEventListener('click', () => {
+        swiper.slideNext();
+    });
+}
+
 async function getUserName() {
 
     toggleTapIconDisplay(true);
@@ -97,9 +138,13 @@ async function getUserName() {
     return userName;
 }
 
-async function displayMessages(message) {
+async function displayMessages(message, userName) {
     for (const key in message) {
+        if(message[key].includes("{nom}")){
+        addMessage({ text: message[key].replace("{nom}", userName), type: "received", timestamp: new Date().toISOString() });
+        } else {
         addMessage({ text: message[key], type: "received", timestamp: new Date().toISOString() });
+        }
         scrollToBottom();
         await waitForUserTouch();
     }
@@ -120,20 +165,9 @@ async function loadIntroStory(introStory) {
     await displayMessages(introStory.avant_nom);
 
     const userName = await getUserName();
-    await addMessage({ text: userName, type: "sent", timestamp: new Date().toISOString() });
+    addMessage({ text: userName, type: "sent", timestamp: new Date().toISOString() });
 
-    let i=0;
-    for (const key in introStory.apres_nom) {
-        if (i === 0) {
-            i++;
-            addMessage({ text: introStory.apres_nom[key].replace("{nom}", userName), type: "received", timestamp: new Date().toISOString() });
-        } else {
-            addMessage({ text: introStory.apres_nom[key], type: "received", timestamp: new Date().toISOString() });
-
-        }
-        scrollToBottom();
-        await waitForUserTouch();
-    }
+    await displayMessages(introStory.apres_nom, userName);
 
     return userName;
 }
@@ -182,6 +216,10 @@ async function histoire(texts){
     await displayMessages(texts.introduction);
 
     for (let i = 0; i < texts.questions.length; i++) {
+
+        await displayMessages(texts.questions[i]);
+
+
         await displayMessages(texts.questions[i]);
 
         /* Ouais bon la solution est dégeu, mais ça fonctionne */
@@ -201,4 +239,5 @@ async function histoire(texts){
 
         toggleTapIconDisplay(false);
     }
+
 }
