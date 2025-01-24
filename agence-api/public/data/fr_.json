@@ -23,9 +23,21 @@
             ]
         },
         "secteurs": {
-            "agro": "Tu veux te lancer dans l’agroalimentaire ? Parfait, l’Ouest est une référence dans ce domaine ! La Bretagne est la première région agricole de France, et les Pays de la Loire sont en troisième position. Produire ou transformer des aliments ici, c’est contribuer activement à nourrir la France !",
-            "tech": "Ton rêve c’est d’être dans l’innovation ? L’Ouest pourrait bien répondre à tes ambitions ! Aujourd’hui, un quart des technopoles françaises y sont réunies. Aujourd’hui, un quart des technopôles français sont réunis ici . Ta prochaine innovation pourrait t’amener à changer le monde depuis nos régions !",
-            "arti": "Créer de tes mains te passionne ? L’Ouest est fait pour toi ! Ici, on cultive le savoir-faire entre traditions bien ancrées et forte demande locale. Ta créativité pourra s’épanouir et marquer les esprits."
+            "texts":{
+                "agro": "Tu veux te lancer dans l’agroalimentaire ? Parfait, l’Ouest est une référence dans ce domaine ! La Bretagne est la première région agricole de France, et les Pays de la Loire sont en troisième position. Produire ou transformer des aliments ici, c’est contribuer activement à nourrir la France !",
+                "tech": "Ton rêve c’est d’être dans l’innovation ? L’Ouest pourrait bien répondre à tes ambitions ! Aujourd’hui, un quart des technopoles françaises y sont réunies. Aujourd’hui, un quart des technopôles français sont réunis ici . Ta prochaine innovation pourrait t’amener à changer le monde depuis nos régions !",
+                "arti": "Créer de tes mains te passionne ? L’Ouest est fait pour toi ! Ici, on cultive le savoir-faire entre traditions bien ancrées et forte demande locale. Ta créativité pourra s’épanouir et marquer les esprits."
+            },
+            "images": {
+                "agro": "img/agro.jpg",
+                "tech": "img/tech.jpeg",
+                "arti": "img/arti.jpg"
+            },
+            "reponses":{
+                "agro": "Agroalimentaire",
+                "tech": "Tech",
+                "arti": "Artisanat"
+            }
         }
     },
     "fin":{
@@ -82,8 +94,8 @@
                 "4_marcheeuro": "Je souhaite atteindre le marché européen, voire international."
             }
         ],
-        "contexte": {
-            "1": {
+        "contexte": [
+            {
                 "avant": [
                     "On passe sur ta première page d'information ? Tu vas découvrir la place de l'agroalimentaire en Bretagne et dans les Pays de la Loire.",
                     "Allez, c'est parti !"
@@ -94,7 +106,7 @@
                     "1_volaille": "Bravo pour ton projet dans le secteur avicole en Vendée ! Le département accueille des entreprises de renom comme Groupe LDC, leader français de la volaille."
                 }
             },
-            "2": {
+            {
                 "avant": [
                     "Il est maintenant temps de parler financement. Les sources de ce financement peuvent être multiples.",
                     " Je vais te présenter quelques aides publiques dont les entreprises de l’Ouest ont pu bénéficier au cours des dernières années."
@@ -103,7 +115,7 @@
                     "Tu as trouvé le financement nécessaire pour démarrer ton activité. Félicitations !"
                 ]
             },
-            "3": {
+            {
                 "avant": [
                     "Maintenant, parlons de ton équipe : qui vas-tu recruter pour t’épauler ?",
                     "Jettons un œil au profil des actifs dans ton département !"
@@ -112,7 +124,7 @@
                     "Très bien !"
                 ]
             },
-            "4": {
+            {
                 "avant": [
                     "Avec ton équipe en place, il est temps de penser à une autre étape clé : où vont partir tes produits ?",
                     "À ton avis, à quoi ressemble l'export de marchandises provenant de l'Ouest ?",
@@ -126,9 +138,9 @@
                     }
                 ]
             }
-        },
-        "informations": {
-            "1": {
+        ],
+        "informations": [
+            {
                 "titre": "L'agroalimentaire dans l'Ouest",
                 "images": [],
                 "paragraphes": [
@@ -138,7 +150,7 @@
                     "Les industries de la viande, du lait et de la boulangerie industrielle représentent près des 3/4 de l’activité agroalimentaire régionale."
                 ]
             },
-            "2": {
+            {
                 "titre": "Financement : Les aides publiques",
                 "images": [],
                 "paragraphes": [
@@ -147,7 +159,7 @@
                     "Par ailleurs, le plan France 2030, orienté vers l’avenir et l’innovation, appuie 62 entreprises dans leur démarche de réindustrialisation, avec pour objectif de renforcer des filières essentielles telles que les technologies de pointe et la transition énergétique​. Ces initiatives s’inscrivent dans une dynamique de développement durable et de souveraineté économique, offrant de réelles opportunités de croissance aux entreprises de l'Ouest."
                 ]
             },
-            "3": {
+            {
                 "titre": {
                     "1_lait": "Les actifs en Mayenne",
                     "1_porc": "Les actifs dans le Finistère",
@@ -162,7 +174,7 @@
                     "Il faut savoir que nos deux régions se distinguent du reste du territoire métropolitain par une plus forte proportion d’ouvriers et d’agriculteurs-exploitants, liée au poids important de l’agriculture et de l’industrie. Tu devrais donc trouver de nombreux partenaires et employés pour ton activité ici."
                 ]
             },
-            "4": {
+            {
                 "titre": "L'export de marchandises de l'Ouest",
                 "images": [],
                 "paragraphes": [
@@ -174,7 +186,7 @@
                     }
                 ]
             }
-        }
+        ]
     },
     "tech": {
         "introduction": [
@@ -265,8 +277,8 @@
                 ],
                 "apres": [
                     {
-                        "3_jeunes": "Tu as choisi de recruter des jeunes diplômés. C’est un choix audacieux qui peut s’avérer très payant !",
-                        "3_experimentes": "Tu as choisi de recruter des profils expérimentés. Une équipe solide est la clé de la réussite !"
+                        "3_embauchejeunes": "Tu as choisi de recruter des jeunes diplômés. C’est un choix audacieux qui peut s’avérer très payant !",
+                        "3_embaucheexperimentes": "Tu as choisi de recruter des profils expérimentés. Une équipe solide est la clé de la réussite !"
                     }
                 ]
             },

@@ -4,12 +4,22 @@
     <div id="content-chat">
       <div class="chat-container">
         <div class="chat-header">
-          <h2>Conversation</h2>
+          <div class = "chat-header-bulle">
+            <img src="img/photoRobot.jpg" alt="robot" class="chat-header-img">
+          </div>
+          <h2>Apiiii</h2>
           <!-- ========== 下面是我们菜单的包裹容器 .menu-wrapper ========== -->
           <div class="menu-wrapper">
             <!-- Menu 按钮：ID、类名都随便，但要与 menu.js 对应 -->
             <button id="menu-btn" class="menu-btn">Menu</button>
             <!-- 弹窗外层：class="hidden" 初始隐藏 -->
+            <div id="pause-popup" class="hidden">
+              <div class="pause-content">
+                <h2>Jeu en pause</h2>
+                <button id="resume-game" class="pause-btn">Continuer le jeu</button>
+                <button id="quit-game" class="pause-btn">Terminer le jeu</button>
+              </div>
+            </div>
             <div id="menu-popup" class="menu-popup hidden">
               <div class="menu-content">
                 <button id="close-menu" class="close-btn">×</button>
@@ -19,9 +29,9 @@
                   Que souhaites-tu faire ?</p>
                 <ul>
                   <li><a href="#characters" id="go-characters">Revenir aux choix des personnages</a></li>
-                  <li><a href="#pause">Mettre pause au jeu</a></li>
+                  <li><a href="#pause" id="go-pause">Mettre pause au jeu</a></li>
                   <li><a href="#results">Mes résultats</a></li>
-                  <li><a href="#interviews">Les interviews</a></li>
+                  <li><a href="/agence-api/html/interviews.html">Les interviews</a></li>
                   <li><a href="../agence-api/">Quitter le jeu</a></li>
                 </ul>
                 <footer>

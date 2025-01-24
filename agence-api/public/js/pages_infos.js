@@ -1,18 +1,21 @@
 //première idée d'affichage de la page d'explication --> Contexte d'ouverture à adapter
-function displayExplanation(data, liste_choix, contenu_message) {
-    const num_question = liste_choix.length + 1;
-    setTimeout(() => {
-        const reply = { text: contenu_message, type: 'received', id:`info_${num_question}`, choix: liste_choix}; //id à adapter selon le parametrage du JSON
-        addMessage(reply);
-        enableClickForExpansion(reply.text, data);
-  
-        // Agrandissement automatique 1 seconde après apparition
+async function displayExplanation(data, liste_choix, contenu_message) {
+    return new Promise((resolve) => {
+        const num_question = liste_choix.length + 1;
         setTimeout(() => {
-            const lastMessage = document.querySelector(`#${reply.id}`);
-            expandMessage(lastMessage, data);
-        }, 1000);
-    }, 1000);
-  };
+            const reply = { text: contenu_message, type: 'received', id: `info_${num_question}`, choix: liste_choix }; // id à adapter selon le parametrage du JSON
+            addMessage(reply);
+            enableClickForExpansion(reply.text, data);
+
+            // Agrandissement automatique 1 seconde après apparition
+            setTimeout(() => {
+                const lastMessage = document.querySelector(`#${reply.id}`);
+                expandMessage(lastMessage, data);
+                resolve(); // Resolve the promise after expandMessage
+            }, 3000);
+        }, 10);
+    });
+}
 
 // Fonction pour permettre l'agrandissement manuel
 function enableClickForExpansion(text, data) {
@@ -28,12 +31,15 @@ function enableClickForExpansion(text, data) {
 
 // Fonction pour agrandir le message et afficher l'image
 function expandMessage(messageElement, data) {
+    toggleTapIconDisplay(true);
+
     const rect = messageElement.getBoundingClientRect();
-    expandingElement.querySelectorAll('*').forEach(element => element.style.display = 'none');
 
     // Récupération de la liste des choix sur la balise HTML
-    const liste_choix = messageElement.dataset.choix;
-
+    let liste_choix = [];
+    for (let i = 0; i < messageElement.dataset.taillechoix; i++) {
+        liste_choix.push(messageElement.dataset[`choix${i}`]);
+    }
     //Ajout des données du JSON dans des listes respectives
     const fields = ['titre', 'images', 'paragraphes'];
 
@@ -55,6 +61,7 @@ function expandMessage(messageElement, data) {
         expandingElement.appendChild(text);
     });
 
+    expandingElement.querySelectorAll('*').forEach(element => element.style.display = 'none');
     expandingElement.style.display = 'flex';
     expandingElement.style.top = rect.top + 'px';
     expandingElement.style.left = rect.left + 'px';
@@ -78,12 +85,14 @@ function expandMessage(messageElement, data) {
 
 // Fonction pour fermer l'overlay et réduire vers le message
 function closeOverlay() {
+    toggleTapIconDisplay(false);
     const lastMessage = document.querySelectorAll('.message.received');
     // --> La séléection du message sur lequel fermer est à adapter selon tag des balises HTML ?
     // Pour l'instant la fermeture est définie statiquement dans le HTML
     // Faire un inner.html clear
 
-    expandingElement.querySelectorAll('*').forEach(element => element.style.display = 'none');
+    //expandingElement.querySelectorAll('*').forEach(element => element.style.display = 'none');
+    expandingElement.innerHTML = '';
     if (lastMessage.length > 0) {
         const rect = lastMessage[lastMessage.length - 1].getBoundingClientRect();
 
@@ -100,6 +109,7 @@ function closeOverlay() {
 
 // Fonction pour répartir les champs du JSON dans des listes respectives
 function repartitionChamps(fields, data, liste_choix){
+    console.log(liste_choix);
     let result = {titre: "", images: [], paragraphes: []};
     fields.forEach(field => {
         switch (detectType(data[field])){
@@ -107,6 +117,10 @@ function repartitionChamps(fields, data, liste_choix){
                 result[field] = data[field];
                 break;
             case "string":
+                if (field !== "titre") {
+                    console.error("Le champ " + field + " n'est pas un tableau");
+                    break;
+                }
                 result[field] = data[field];
                 break;
             case "dico":
@@ -123,6 +137,7 @@ function match(data, liste_choix) {
         return [];
     }
     const num_question = parseInt(Object.keys(data)[0].split('_')[0], 10);
+    console.log(liste_choix);
     return data[String(liste_choix[num_question - 1])];
 };
 
