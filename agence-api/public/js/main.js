@@ -16,7 +16,7 @@ const initSlide2 = async function () {
     const texts = await response.json();
     
     initMenu(texts);
-
+    //displayExplanation(texts.agro.informations["3"],["1_porc", "2_trucmuche"] , "Message d'explications");
     // await histoire(texts.tech);
 
     // Load the intro story
@@ -221,6 +221,10 @@ async function histoire(texts){
     await displayMessages(texts.introduction);
 
     for (let i = 0; i < texts.questions.length; i++) {
+
+        await displayMessages(texts.questions[i]);
+
+
         await displayMessages(texts.questions[i]);
 
         /* Ouais bon la solution est dégeu, mais ça fonctionne */
