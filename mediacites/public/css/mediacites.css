@@ -64,7 +64,12 @@
   }
   
   .card-container {
-    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-end; /* Aligne le logo au bas du conteneur */
+    justify-content: flex-start; /* Positionne la carte et le logo à gauche */
+    gap: 20px; /* Ajoute un espacement entre la carte et le logo */
+    margin-bottom: 20px; /* Espacement entre card-container et la description */
+    height: 100%; /* Assure que le conteneur utilise tout l'espace disponible */
   }
   
   .logo img {
