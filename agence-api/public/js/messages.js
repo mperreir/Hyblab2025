@@ -23,7 +23,10 @@ function addMessage(message) {
     messageList.appendChild(messageElement);
 
     if(message.choix){
-        messageElement.dataset.choix = message.choix;
+        for (let i = 0; i < message.choix.length; i++) {
+            messageElement.dataset[`choix${i}`] = message.choix[i];
+        }
+        messageElement.dataset.taillechoix = message.choix.length;
     }
     scrollToBottom();
 };

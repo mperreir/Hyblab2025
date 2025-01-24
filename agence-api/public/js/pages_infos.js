@@ -32,8 +32,11 @@ function expandMessage(messageElement, data) {
     expandingElement.querySelectorAll('*').forEach(element => element.style.display = 'none');
 
     // Récupération de la liste des choix sur la balise HTML
-    const liste_choix = messageElement.dataset.choix;
-
+    let liste_choix = [];
+    for (let i = 0; i < messageElement.dataset.taillechoix; i++) {
+        liste_choix.push(messageElement.dataset[`choix${i}`]);
+    }
+    console.log("depuis expand message, liste_choix :", liste_choix);
     //Ajout des données du JSON dans des listes respectives
     const fields = ['titre', 'images', 'paragraphes'];
 
