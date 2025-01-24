@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom"; // Importer useNavigate
 import yaml from "js-yaml";
 import "./QuestionPage.css";
 import { useParams } from "react-router-dom";
+import MapComponent from "../MapComponent/MapComponent";
 
 const QuestionPage = () => {
   const [questions, setQuestions] = useState([]);
@@ -12,6 +13,7 @@ const QuestionPage = () => {
   const [showHintText, setShowHintText] = useState(false);
   const [showHintImage, setShowHintImage] = useState(false);
   const [isEnlarged, setIsEnlarged] = useState(false); // Ajout de l'état pour l'agrandissement
+  const [showMap, setShowMap] = useState(true);
 
   const basename = process.env.REACT_APP_BASENAME || "/";
   const navigate = useNavigate(); // Initialisation de useNavigate
@@ -34,7 +36,9 @@ const QuestionPage = () => {
   const handleNext = () => {
     if (!validated) {
       setValidated(true);
+      setShowMap(true); // Afficher la carte après validation
     } else {
+      setShowMap(false);
       if (currentQuestionIndex < questions.length - 1) {
         setCurrentQuestionIndex(currentQuestionIndex + 1);
         setSelectedOptionIndex(null);
@@ -157,6 +161,16 @@ const QuestionPage = () => {
           </div>
         </div>
       </div>
+
+      {showMap && (
+        <MapComponent
+          questions={questions}
+          difficulty={difficulty}
+          level_id={id}
+          currentQuestionIndex={currentQuestionIndex}
+          onClose={() => setShowMap(false)}
+        />
+      )}
     </div>
   );
 };

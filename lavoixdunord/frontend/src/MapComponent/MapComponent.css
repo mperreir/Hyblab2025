@@ -1,0 +1,62 @@
+.map-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.map-container {
+    width: 90%;
+    height: 80%;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.close-map-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: medium;
+    cursor: pointer;
+}
+
+.map-tiles-blue {
+    /* filter: hue-rotate(180deg) saturate(50%); */
+}
+
+.custom-popup {
+    text-align: center;
+    max-width: 200px;
+}
+
+.popup-image {
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    border-radius: 4px;
+}
+
+.leaflet-popup-content-wrapper {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+}
+
+.leaflet-popup-content {
+    margin: 10px;
+}
+
+/* Ajustements spécifiques pour react-leaflet */
+.leaflet-container {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}

@@ -5,7 +5,7 @@ game:
         - number: 1
           questions:
             - id: 1
-              category: Sport
+              category: Histoire
               text: "Quand a eu lieu le dernier départ du Tour de France à Lille ?"
               options:
                 - text: "1980"
@@ -18,6 +18,12 @@ game:
                 text: "C'était un été marqué par une grande chaleur, un prologue de 7,2 km dans les rues de Lille, et un million de spectateurs enthousiastes." 
                 image: "images/Etape 1/lille vue aerienne 1.jpg"
                 link: "https://www.lavoixdunord.fr/art/region/en-1994-le-tour-de-france-partait-de-lille-ia19b0n2257551"
+
+              map:
+                longitude: 3.0681408348906904
+                latitude: 50.624501691063024
+                label: "Lille"
+                image: "images/Etape 1/lille vue aerienne 1.jpg"
 
             - id: 2
               category: Vie locale
@@ -34,6 +40,12 @@ game:
                 image: "images/Etape 1/lille braderie.jpg"
                 link: "https://www.lavoixdunord.fr/1502391/article/2024-09-16/braderie-de-lille-nos-tops-et-nos-flops-de-cette-edition-2024"
 
+              map:
+                  longitude: 3.0681408348906904
+                  latitude: 50.624501691063024
+                  label: "Lille"
+                  image: "images/Etape 1/lille braderie.jpg"
+
             - id: 3
               category: Histoire
               text: "Quel célèbre général et homme d’État français est né à Lille en 1890 ?"
@@ -48,9 +60,14 @@ game:
                 text: "Ce général, père de la Ve République, a marqué l’histoire par son rôle pendant la Seconde Guerre mondiale et son célèbre appel du 18 juin." 
                 image: "images/Etape 1/LILLE maison général de gaulle.jpg"
                 link: "https://www.lavoixdunord.fr/1536232/article/2024-12-21/la-maison-natale-de-charles-de-gaulle-attend-avec-impatience-les-pieces-acquises"
-
+              map:
+                  longitude: 3.0681408348906904
+                  latitude: 50.624501691063024
+                  label: "Lille"
+                  image: "images/Etape 1/LILLE maison général de gaulle.jpg"
+                  
             - id: 4
-              category: Culture
+              category: Culture musicale
               text: "Quel chanteur, originaire du Nord, a popularisé la chanson Quand la mer monte et choisi un nom de scène en hommage à la ville de Godewaersvelde ?"
               options:
                 - text: "Raoul de Godewarsvelde"
@@ -63,6 +80,11 @@ game:
                 text: "Son nom de scène rend hommage à un village des Flandres et ses chansons évoquent souvent les paysages et l’âme du Nord." 
                 image: "images/Etape 1/Raouldegodeswervelde.jpg"
                 link: "https://www.lavoixdunord.fr/147665/article/2017-04-13/il-y-quarante-ans-disparaissait-raoul-de-godewarsvelde"
+              map:
+                longitude: 2.6429281241636295
+                latitude: 50.79542719890807
+                label: "Godewaersvelde"
+                image: "images/Etape 1/Raouldegodeswervelde.jpg"
 
             - id: 5
               category: Histoire
@@ -78,11 +100,17 @@ game:
                 text: "Ce mémorial unique rassemble les noms de soldats de 40 nationalités différentes, gravés en hommage à leur sacrifice pendant la Grande Guerre." 
                 image: "images/Etape 1/ND Lorette anneau de la mémoire.jpg"
                 link: "https://www.lavoixdunord.fr/1519083/article/2024-11-03/l-anneau-de-la-memoire-dix-ans-tout-savoir-en-quatre-chiffres"
+              
+              map:
+                longitude: 2.718659322806127
+                latitude: 50.400931458567754
+                label: "Notre-Dame-de-Lorette"
+                image: "images/Etape 1/ND Loret"
 
         - number: 2
           questions:
             - id: 1
-              category: Culture
+              category: Culture musicale
               text: "Le 6 juillet, Arras accueillera le Tour de France mais un autre événement majeur de la ville aura lieu au même moment, lequel ?"
               options:
                 - text: "Un marathon"
@@ -95,9 +123,14 @@ game:
                 text: "L'événement est musical, attirant de nombreux amateurs de concerts dans un cadre unique, en plein cœur de la ville." 
                 image: "images/Etape 2/Arras main square festival.jpg"
                 link: "https://www.lavoixdunord.fr/1485899/article/2024-07-22/le-dimanche-6-juillet-2025-ca-sera-tour-de-france-et-main-square-arras"
+              map:
+                longitude: 2.777759
+                latitude: 50.291
+                label: "Arras"
+                image: "images/Etape 2/Arras main square festival.jpg"
 
             - id: 2
-              category: Culture
+              category: Littérature
               text: "Quel roman de Victor Hugo situe une partie de son récit à Montreuil-sur-Mer, en s’inspirant de son séjour dans la ville ?"
               options:
                 - text: "Les Misérables"
@@ -110,6 +143,11 @@ game:
                 text: "Ce roman est une réflexion sur la condition humaine, inspirée par un séjour de l’auteur dans la région." 
                 image: "images/Etape 2/montreuil Les Misérables.jpg"
                 link: "https://www.lavoixdunord.fr/1147678/article/2022-03-06/sur-les-traces-de-victor-hugo-montreuil-sur-mer-15"
+              map:
+                longitude: 1.763
+                latitude: 50.466
+                label: "Montreuil-sur-Mer"
+                image: "images/Etape 2/montreuil Les Misérables.jpg"
 
             - id: 3
               category: Vie locale
@@ -125,6 +163,11 @@ game:
                 text: "Ce n’est pas un poisson que l’on associe à un luxe, mais plutôt à une tradition maritime qui a marqué la culture locale." 
                 image: "images/Etape 2/etaples harengs.jpg"
                 link: "https://www.lavoixdunord.fr/1523633/article/2024-11-16/retrouvez-les-plus-belles-images-du-hareng-roi-la-fete-bat-son-plein-tout-le"
+              map:
+                longitude: 1.641
+                latitude: 50.517
+                label: "Étaples"
+                image: "images/Etape 2/etaples harengs.jpg"
 
             - id: 4
               category: Vie locale
@@ -140,7 +183,11 @@ game:
                 text: "Ce n'est pas un parc d'attractions centré sur le divertissement pur, mais un lieu où l'éducation et la découverte de la mer sont au cœur de l’expérience." 
                 image: "images/Etape 2/BOULOGNE Nausicaa.jpg"
                 link: "https://www.lavoixdunord.fr/1176574/article/2022-05-08/avec-sa-nouvelle-experience-nausicaa-veut-reinventer-l-aquarium-du-futur"
-
+              map:
+                longitude: 1.614
+                latitude: 50.726
+                label: "Boulogne-sur-Mer"
+                image: "images/Etape 2/BOULOGNE Nausicaa.jpg"
             - id: 5
               category: Sport 
               text: "Lequel de ces trois footballeurs célèbres est né à Boulogne-sur-Mer ?"
@@ -155,11 +202,16 @@ game:
                 text: "Il n’a pas remporté le ballon d’or avec une équipe de Bundesliga, alors qu’il le méritait." 
                 image: "images/Etape 2/Boulogne ribéry.jpg"
                 link: "https://www.lavoixdunord.fr/1238096/article/2022-10-07/football-franck-ribery-va-mettre-un-terme-sa-carriere"
+              map:
+                longitude: 1.614
+                latitude: 50.726
+                label: "Boulogne-sur-Mer"
+                image: "images/Etape 2/Boulogne ribéry.jpg"
 
         - number: 3
           questions:
             - id: 1
-              category: Géographie
+              category: Vie locale
               text: "Quel fleuve traverse Valenciennes, jouant un rôle clé dans son développement industriel ?"
               options:
                 - text: "La Sambre"
@@ -172,9 +224,14 @@ game:
                 text: "Ce fleuve traverse trois pays et relie Valenciennes à la Belgique et aux Pays-Bas. Il est parfois surnommé une autoroute fluviale internationale." 
                 image: "images/Etape 3/Valenciennes Escaut.jpg"
                 link: "https://www.lavoixdunord.fr/965136/article/2021-03-22/l-escaut-une-autoroute-fluviale-internationale"
+              map:
+                longitude: 3.523
+                latitude: 50.354
+                label: "Valenciennes"
+                image: "images/Etape 3/Valenciennes Escaut.jpg"
 
             - id: 2
-              category: Culture
+              category: Cuisine
               text: "Quelle spécialité culinaire a rendu célèbre Orchies et son industrie locale, elle est souvent utilisée pour aromatiser le café ou créer des desserts ?"
               options:
                 - text: "La Chicorée"
@@ -187,6 +244,11 @@ game:
                 text: "Cette spécialité, souvent associée au café, est un ingrédient incontournable des recettes du Nord." 
                 image: "images/Etape 3/ORCHIES CHICOREE.jpg"
                 link: "https://www.lavoixdunord.fr/1451323/article/2024-04-12/longtemps-boudee-la-chicoree-fait-son-grand-retour-dans-les-champs-d-orchies"
+              map:
+                longitude: 3.235
+                latitude: 50.483
+                label: "Orchies"
+                image: "images/Etape 3/ORCHIES CHICOREE.jpg"
 
             - id: 3
               category: Sport
@@ -202,6 +264,11 @@ game:
                 text: "Ce champion, bien que légendaire dans le monde du cyclisme, n’a jamais inscrit son nom au palmarès d’Isbergues. Concentrez-vous sur les noms les plus mythiques." 
                 image: "images/Etape 3/isbergues grand prix.jpg"
                 link: "https://www.lavoixdunord.fr/tags/grand-prix-d-isbergues"
+              map:
+                longitude: 2.245
+                latitude: 50.62
+                label: "Isbergues"
+                image: "images/Etape 3/isbergues grand prix.jpg"
 
             - id: 4
               category: Culture
@@ -217,6 +284,11 @@ game:
                 text: "Ce film a marqué l’histoire du cinéma français avec un succès phénoménal." 
                 image: "images/Etape 3/bergues dany boon.jpg"
                 link: "https://www.lavoixdunord.fr/165939/article/2017-05-20/bergues-l-effet-ch-tis-decroit-dix-ans-apres-le-tournage"
+              map:
+                longitude: 2.4327
+                latitude: 50.968
+                label: "Bergues"
+                image: "images/Etape 3/bergues dany boon.jpg"
 
             - id: 5
               category: Histoire
@@ -232,6 +304,11 @@ game:
                 text: "L'opération a été menée pour sauver plus de 338 000 soldats encerclés à Dunkerque, grâce à des rotations de navires entre la France et l'Angleterre." 
                 image: "images/Etape 3/dunkerque opération dynamo.jpg"
                 link: "https://www.lavoixdunord.fr/1539401/article/2025-01-02/operation-dynamo-les-commemorations-de-la-bataille-d-uxem-debuteront-partir-au"
+              map:
+                longitude: 2.377
+                latitude: 51.034
+                label: "Dunkerque"
+                image: "images/Etape 3/dunkerque opération dynamo.jpg"
 
     - id: hard
       stages:
@@ -251,9 +328,13 @@ game:
                 text: "Ce roi, surnommé le 'Roi Soleil', a marqué l’histoire par son règne de 72 ans, le plus long de l’histoire française." 
                 image: "images/Etape 1/LILLE citadelle.jpg"
                 link: "https://www.lavoixdunord.fr/199825/article/2017-08-02/il-y-350-ans-le-27-aout-1667-lille-etait-annexee-la-france"
-
+                map:
+                  longitude: 3.0681408348906904
+                  latitude: 50.624501691063024
+                  label: "Lille"
+                  image: "images/Etape 1/LILLE citadelle.jpg"
             - id: 2
-              category: Sport
+              category: Sport/Histoire
               text: "Quel symbole minier est représenté dans le blason du RC Lens, rappelant son passé industriel ?"
               options:
                 - text: "Une gaillette"
@@ -266,9 +347,14 @@ game:
                 text: "Cet objet était essentiel pour éclairer les profondeurs sombres des galeries minières, symbole fort de la vie ouvrière de la région." 
                 image: "images/Etape 1/LENS LOGO.jpg"
                 link: "https://www.lavoixdunord.fr/1261347/article/2022-12-01/lens-un-record-de-plus-de-400-lampes-de-mineurs-exposees-bollaert-pour-la-sainte"
+                map:
+                  longitude: 2.833
+                  latitude: 50.435
+                  label: "Lens"
+                  image: "images/Etape 1/LENS LOGO.jpg"
 
             - id: 3
-              category: Architecture 
+              category: Patrimoine architectural
               text: "Comment s’appelle le monument emblématique de Béthune, classé au patrimoine mondial de l’UNESCO, qui surplombe la Grand-Place ?"
               options:
                 - text: "Le Beffroi"
@@ -281,9 +367,14 @@ game:
                 text: "Ce monument, typique des villes du Nord, est un symbole de liberté et d’autonomie communale, offrant une vue imprenable sur la Grand-Place." 
                 image: "images/Etape 1/bethune beffroi.jpg"
                 link: "https://www.lavoixdunord.fr/1471325/article/2024-06-10/le-beffroi-de-bethune-connait-ses-mensurations-officielles-il-fait-30-65-m-de"
+                map:
+                  longitude: 2.639
+                  latitude: 50.531
+                  label: "Béthune"
+                  image: "images/Etape 1/bethune beffroi.jpg"
 
             - id: 4
-              category: Vie locale
+              category: Patrimoine architectural
               text: "Quel prix prestigieux Cassel a-t-elle remporté en 2018, grâce à son charme et son patrimoine exceptionnel ?"
               options:
                 - text: "Plus beau marché"
@@ -296,9 +387,14 @@ game:
                 text: "Ce n'est pas un prix gastronomique ni celui qui honore un commerce particulier, mais plutôt celui d'un lieu d'exception" 
                 image: "images/Etape 1/Cassel.jpg"
                 link: "https://www.lavoixdunord.fr/1484945/article/2024-07-19/perche-sur-un-mont-cassel-au-sommet-de-la-flandre"
+                map:
+                  longitude: 2.495
+                  latitude: 50.800
+                  label: "Cassel"
+                  image: "images/Etape 1/Cassel.jpg"
 
             - id: 5
-              category: Culture
+              category: Litterature/Personnalités
               text: "Quel écrivain français, auteur de Mémoires d’Hadrien, a passé une partie de son enfance au Mont Noir ?"
               options:
                 - text: "Marguerite Yourcenar"                     
@@ -311,6 +407,11 @@ game:
                 text: "Ce n’est pas une autrice du XXe siècle ayant écrit sur l'amour ou la société, mais une figure ayant exploré l’histoire et les mémoires d’un autre temps." 
                 image: "images/Etape 1/Villa Yourcenar.jpg"
                 link: "https://www.lavoixdunord.fr/136083/article/2017-03-21/pour-ses-20-ans-la-villa-yourcenar-souhaite-elargir-son-public"
+                map:
+                  longitude: 2.733
+                  latitude: 50.778
+                  label: "Mont Noir"
+                  image: "images/Etape 1/Villa Yourcenar.jpg"
 
         - number: 2
           questions:
@@ -328,9 +429,14 @@ game:
                 text: "Ce royaume est aujourd'hui une nation avec une histoire maritime et une empreinte internationale." 
                 image: "images/Etape 2/DOUAI vue aérienne.jpg"
                 link: "https://www.lavoixdunord.fr/169436/article/2017-05-28/et-douai-devint-francaise-le-temps-d-un-siege-eclair"
+              map:
+                longitude: 3.080
+                latitude: 50.370
+                label: "Douai"
+                image: "images/Etape 2/DOUAI vue aérienne.jpg"
 
             - id: 2
-              category: Vie locale
+              category: Patrimoine artistique
               text: "Qui sont les célèbres Monsieur et Madame Gayant de Douai ?"
               options:
                 - text: "Les fondateurs de la ville"     
@@ -343,6 +449,11 @@ game:
                 text: "Leur présence dans les fêtes populaires de Douai est un spectacle qui attire l'attention de tous, mais leur histoire est bien plus ancienne." 
                 image: "images/Etape 2/DOUAI Gayant.jpg"
                 link: "https://www.lavoixdunord.fr/1470657/article/2024-06-08/les-sorties-exceptionnelles-des-gayant-ont-souvent-ete-geantes-comme-bientot"
+              map:
+                longitude: 3.080
+                latitude: 50.370
+                label: "Douai"
+                image: "images/Etape 2/DOUAI Gayant.jpg"
 
             - id: 3
               category: Histoire
@@ -358,6 +469,11 @@ game:
                 text: "Le lieu reste impressionnant, même dans sa ruine, et fait partie du patrimoine historique qui domine le paysage environnant." 
                 image: "images/Etape 2/tour ancienne abbaye.jpg"
                 link: "https://www.lavoixdunord.fr/1526413/article/2024-11-24/les-abords-de-l-abbaye-du-mont-saint-eloi-reamenages-pour-mettre-en-valeur-le"
+              map:
+                longitude: 2.69
+                latitude: 50.35
+                label: "Mont-Saint-Éloi"
+                image: "images/Etape 2/tour ancienne abbaye.jpg"
 
             - id: 4
               category: Géographie
@@ -373,6 +489,11 @@ game:
                 text: "Ce site est prisé pour sa beauté naturelle, mais surtout pour la diversité de sa faune et de sa flore, qui en fait un espace unique." 
                 image: "images/Etape 2/dune d'ecault.jpg"
                 link: "https://www.lavoixdunord.fr/1418169/article/2024-01-12/saint-etienne-au-mont-le-sol-d-un-sentier-s-effondre-dans-les-dunes-d-ecault"
+              map:
+                longitude: 1.62
+                latitude: 50.68
+                label: "Saint-Étienne-au-Mont"
+                image: "images/Etape 2/dune d'ecault.jpg"
 
             - id: 5
               category: Histoire
@@ -388,6 +509,11 @@ game:
                 text: "Cet empereur est connu pour ses grandes ambitions militaires et ses nombreuses campagnes à travers l'Europe." 
                 image: "images/Etape 2/boulogne napoleon.jpg"
                 link: "https://www.lavoixdunord.fr/1535620/article/2024-12-19/napoleon-passe-par-boulogne-sur-mer-pour-envahir-france-5"
+              map:
+                longitude: 1.6
+                latitude: 50.726
+                label: "Boulogne-sur-Mer"
+                image: "images/Etape 2/boulogne napoleon.jpg"
 
         - number: 3
           questions:
@@ -405,9 +531,14 @@ game:
                 text: "Ce champion, né dans le Valenciennois, est aussi connu pour sa contribution à la découverte d'un lieu mythique de Paris - Roubaix" 
                 image: "images/Etape 3/Jean Stablinski.jpg"
                 link: "https://www.lavoixdunord.fr/1352441/article/2023-07-14/celia-sa-petite-fille-est-sur-le-tour-jean-stablinski-y-est-donc-un-peu-aussi"
+              map:
+                longitude: 3.523
+                latitude: 50.354
+                label: "Valenciennes"
+                image: "images/Etape 3/Jean Stablinski.jpg"
 
             - id: 2
-              category: Culture
+              category: Vie locale
               text: "Quel bâtiment emblématique, inauguré en 1998, est aujourd’hui le centre de la vie culturelle de Valenciennes ?"
               options:
                 - text: "Le phénix"     
@@ -420,9 +551,14 @@ game:
                 text: "Ce bâtiment, dont le nom évoque une renaissance mythologique, est le cœur battant de la culture à Valenciennes depuis 1998." 
                 image: "images/Etape 3/Valenciennes phénix.jpg"
                 link: "https://www.lavoixdunord.fr/tags/le-phenix"
+              map:
+                longitude: 3.523
+                latitude: 50.354
+                label: "Valenciennes"
+                image: "images/Etape 3/Valenciennes phénix.jpg"
 
             - id: 3
-              category: Architecture
+              category: Patrimoine architectural
               text: "Quel est cet édifice célèbre de la commune de Wormhout, également appelé « le géant des Flandres » ?"
               options:
                 - text: "Un moulin"    
@@ -435,6 +571,11 @@ game:
                 text: "Cet édifice emblématique, surnommé 'le géant des Flandres', est un témoin silencieux des traditions locales" 
                 image: "images/Etape 3/wormhout moulin.jpg"
                 link: "https://www.lavoixdunord.fr/art/region/wormhout-a-la-decouverte-du-moulin-deschodt-le-ia17b47628n2295217"
+              map:
+                longitude: 2.46545450
+                latitude: 50.879576991
+                label: "Wormhout"
+                image: "images/Etape 3/wormhout moulin.jpg"
 
             - id: 4
               category: Histoire
@@ -450,9 +591,14 @@ game:
                 text: "Ce corsaire légendaire de Dunkerque est devenu un symbole de la ville, célèbre pour sa bravoure et ses exploits maritimes." 
                 image: "images/Etape 3/dunkerque jean bart.jpg"
                 link: "https://www.lavoixdunord.fr/1521395/article/2024-11-10/il-y-trente-ans-jean-bart-s-envolait-dans-le-ciel-de-dunkerque-pour-reprendre"
+              map:
+                longitude: 2.377
+                latitude: 51.034
+                label: "Dunkerque"
+                image: "images/Etape 3/dunkerque jean bart.jpg"
 
             - id: 5
-              category: Sport
+              category: Sport / Personnalités
               text: "En 2001, le Tour de France partait de Dunkerque, qui avait remporté le prologue et porté le premier maillot jaune ?"
               options:
                 - text: "Lance Arsmstrong"          
@@ -465,3 +611,8 @@ game:
                 text: "Ce cycliste français a marqué le début du Tour 2001 en s’emparant du maillot jaune après un prologue mémorable." 
                 image: "images/Etape 3/dunkerque moreau.jpg"
                 link: "https://www.lavoixdunord.fr/1041548/article/2021-07-07/tour-de-france-il-y-20-ans-christophe-moreau-s-emparait-du-maillot-jaune"
+              map:
+                longitude: 2.377
+                latitude: 51.034
+                label: "Dunkerque"
+                image: "images/Etape 3/dunkerque moreau.jpg"
