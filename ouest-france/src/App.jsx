@@ -5,8 +5,9 @@ import { scrollToSection } from './utils';
 
 import Home from './screens/Home';
 import ChoosePlayer from './screens/ChoosePlayer/ChoosePlayer';
-import Article from './screens/Article';
+import Article from './screens/Article/Article';
 import Quiz from './screens/Quiz';
+import EndPgae from './screens/EndPage';
 
 const App = () => {
 
@@ -46,6 +47,7 @@ const App = () => {
           <Article data={articleData[1]}/>
         </>
         )}
+      <EndPgae />
     </div>
   );
 };

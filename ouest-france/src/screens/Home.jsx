@@ -9,9 +9,11 @@ const Home = () => {
       className="h-full w-full snap-start flex items-center justify-center flex-col bg-green-500"
       id="home"
     >
-      <h1 className="text-4xl text-white">Bienvenue sur notre site</h1>
+      <h1 className="text-6xl fond-bold font-serif text-white">Bienvenue sur notre site</h1>
       <div className="bg-white">
-        <button onClick={() => {scrollToSection("choose-player")}}>
+        <button 
+          className="px-6 py-3 bg-blue-500 text-white rounded-lg shadow-lg text-lg font-semibold hover:bg-blue-600 transition"
+          onClick={() => {scrollToSection("choose-player")}}>
           Aller à Choose Player
         </button>
       </div>
