@@ -18,11 +18,7 @@ const ContexteComponent = () => {
 
 
       <Button variant="contained" color="primary" sx={{ padding: '10px 20px' }}>
-<<<<<<< HEAD
-        Non
-=======
         Suivant
->>>>>>> 89e4b7b (Création dela page contexte (reste à ajouter les objectif écologique))
       </Button>
     </Box>
   );

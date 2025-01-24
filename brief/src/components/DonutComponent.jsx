@@ -1,137 +1,84 @@
 import React, { useRef, useState } from 'react';
 import { Doughnut } from 'react-chartjs-2';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+import jsonData from './../../public/data/debut/sources_energie.json';
 
-// Enregistre les éléments et plugins dans Chart.js
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-function DonutChart() {
-  // Référence pour le graphique
+function DonutChart({ size = 300 }) {
   const chartRef = useRef(null);
 
-  // Etat pour gérer la visibilité des informations
-  const [showInfo, setShowInfo] = useState(true);
+  // Initialisation des couleurs dynamiques
+  const initialColors = jsonData.sources.map((source) => source.color);
+  const [segmentColors, setSegmentColors] = useState(initialColors); // État des couleurs actuelles
 
-  // Etat pour la taille du donut
-  const [chartSize, setChartSize] = useState(300); // Taille initiale de 300px
+  const labels = jsonData.sources.map((source) => source.name);
+  const dataValues = jsonData.sources.map((source) => source.percentage);
 
-  // Couleurs initiales
-  const initialColors = ['#FF6384', '#36A2EB', '#FFCE56'];
-
-  // Etat pour les couleurs des segments
-  const [segmentColors, setSegmentColors] = useState(initialColors);
-
-  // Données du graphique
   const data = {
-    labels: ['Rouge', 'Bleu', 'Jaune'],
+    labels: labels,
     datasets: [
       {
-        data: [300, 50, 100], // Les données pour le donut
-        backgroundColor: segmentColors, // Couleurs des segments
+        data: dataValues,
+        backgroundColor: segmentColors, // Utilise l'état des couleurs actuelles
       },
     ],
   };
 
-  // Options du graphique
+    /* fonction pour changer de couleur au moment de du swipe
+  // Fonction pour gérer les clics sur un segment
+  const handleClick = (event) => {
+    const chart = chartRef.current;
+
+    if (!chart) {
+      console.error('Chart not found');
+      return;
+    }
+
+    const activePoints = chart.getElementsAtEventForMode(event, 'nearest', { intersect: true }, true);
+
+    if (activePoints.length > 0) {
+      const index = activePoints[0].index; // Récupère l'index du segment cliqué
+
+      // Met à jour les couleurs : le segment cliqué conserve sa couleur, les autres deviennent gris
+      const newColors = segmentColors.map((color, i) =>
+        i === index ? initialColors[i] : '#D3D3D3' // Gris pour les autres
+      );
+
+      setSegmentColors(newColors); // Applique les nouvelles couleurs
+    }
+  };
+*/
+
   const options = {
     responsive: true,
     maintainAspectRatio: false,
     plugins: {
       legend: {
-        display: false, // Désactive la légende
+        display: false,
       },
       tooltip: {
-        enabled: false, // Désactive les tooltips
+        enabled: false,
       },
     },
     hover: {
-      mode: null, // Désactive le hover
+      mode: null,
     },
     interaction: {
-      mode: 'nearest', // Permet de détecter l'interaction avec un segment
+      mode: 'nearest',
     },
-    animation: false, // Supprime les animations
-  };
-
-  // Plugin pour dessiner les labels sur les segments
-  const drawLabelsPlugin = {
-    id: 'drawLabels',
-    afterDatasetsDraw(chart) {
-      if (!showInfo) return; // Si showInfo est false, ne pas dessiner les labels
-
-      const { ctx, data } = chart;
-      chart.getDatasetMeta(0).data.forEach((arc, index) => {
-        const { x, y } = arc.tooltipPosition(); // Position centrale du segment
-        const label = data.labels[index]; // Label associé au segment
-
-        ctx.save();
-        ctx.fillStyle = 'black'; // Couleur du texte
-        ctx.font = 'bold 14px Arial';
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'middle';
-
-        // Dessine le label au centre du segment
-        ctx.fillText(label, x, y);
-        ctx.restore();
-      });
+    animation: {
+      duration: 1000, // Animation de 1 seconde
+      easing: 'easeOutCirc', // Effet de l'animation
     },
-  };
-
-  // Enregistre le plugin personnalisé
-  ChartJS.register(drawLabelsPlugin);
-
-  const handleClick = (event) => {
-    // Vérifie si la référence est correcte
-    const chart = chartRef.current;
-
-    if (!chart) {
-      console.error("Chart not found");
-      return;
-    }
-
-    // Récupère les éléments sous le clic
-    const activePoints = chart.getElementsAtEventForMode(event, 'nearest', { intersect: true }, true);
-
-    // Si un segment est cliqué
-    if (activePoints.length > 0) {
-      const index = activePoints[0].index; // L'index du segment cliqué
-      const label = chart.data.labels[index]; // Label du segment
-
-      // Réinitialise les couleurs à leurs valeurs initiales
-      const resetColors = [...initialColors];
-
-      // Change la couleur des segments cliqués
-      const newColors = resetColors.map((color, i) => {
-        if (i === index) {
-          return color; // Le segment cliqué garde sa couleur
-        } else {
-          return '#D3D3D3'; // Gris pour les autres segments
-        }
-      });
-
-      // Mettre à jour les couleurs
-      setSegmentColors(newColors);
-
-      if (label === "Jaune") {
-        setChartSize(200); // Réduit la taille à 200px
-        setShowInfo(false); // Masque les informations
-      } else {
-        setChartSize(300); // Restaure la taille normale du donut
-        setShowInfo(true); // Réaffiche les informations
-      }
-    }
-    else{
-        setChartSize(300); // Restaure la taille normale du donut
-    }
   };
 
   return (
-    <div style={{ width: `${chartSize}px`, height: `${chartSize}px` }}>
+    <div style={{ width: `${size}px`, height: `${size}px` }}>
       <Doughnut
         data={data}
         options={options}
-        ref={chartRef} // Ajouter la référence au Doughnut
-        onClick={handleClick} // Attacher le gestionnaire de clic
+        ref={chartRef}
       />
     </div>
   );
