@@ -2,12 +2,14 @@
 import React from 'react';
 import { Box, Button, Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import isoVille from '../assets/isoVille.jpg';
+
 
 const LandingComponent = () => {
   const navigate = useNavigate(); // Hook pour la navigation
 
   const handleClick = () => {
-    navigate('/brief/contexte'); // Redirige vers la page /landing (ou une autre page de ton choix)
+    navigate('/brief/Introduction'); // Redirige vers la page /landing (ou une autre page de ton choix)
   };
 
   return (
@@ -18,9 +20,8 @@ const LandingComponent = () => {
       <Typography variant="body1" sx={{ marginBottom: 4 }}>
       Découvrez comment gérer un pays face aux défis énergétiques et climatiques.
       </Typography>
-      <Typography variant="body1" sx={{ marginBottom: 4 }}>
-      À travers des choix interactifs et des crises inattendues, formez-vous sur les énergies, leur impact sur le climat, et forgez votre opinion sur l’avenir énergétique. Saurez-vous construire un mix durable et équilibré ?
-      </Typography>
+      <img src={isoVille} style={{ width: '80%', marginRight: '10%' }} sx={{ marginBottom: 2}} alt= 'image de ville'/>
+
 
       <Button
         variant="contained"

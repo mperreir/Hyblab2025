@@ -3,6 +3,10 @@ import LandingPage from './pages/LandingPage';
 //import Intro from './pages/Intro';
 import ContextePage from './pages/ContextePage';
 import OutroPage from './pages/OutroPage';
+import DefinitionPage from './pages/DefinitionPage';
+import InformationMixPage from './pages/InformationMixPage';
+
+
 
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
@@ -51,6 +55,9 @@ const App = () => {
           <Route path="/brief/landing" element={<LandingPage/>} />
           <Route path="/brief/contexte" element={<ContextePage/>} />
           <Route path="/brief/outro" element={<OutroPage/>} />
+          <Route path="/brief/Introduction" element={<DefinitionPage/>} />
+          <Route path="/brief/Information" element={<InformationMixPage/>} />
+
         </Routes>
     </Router>
     </ThemeProvider>
