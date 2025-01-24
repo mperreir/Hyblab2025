@@ -8,16 +8,23 @@ import { scrollToSection } from '../utils';
 gsap.registerPlugin(ScrollTrigger);
 
 const Article1 = (data) => {
-  console.log(data.data.image)
   const ballRef = useRef(); // Référence pour le paragraphe
 
   // test avec une timeline (pour enchainer plusieurs animations dans un ordre précis)
   const tl = gsap.timeline();
 
   useGSAP(() => {
+    console.log("im here");
     // Utiliser la référence `paragraphRef.current` pour appliquer l'animation
     tl.to(ballRef.current, {
-      y: 400,
+      scrollTrigger: {
+        trigger: ballRef.current,
+        start: "top 80%",
+        end: "bottom 100px",
+        markers: true,
+        toggleActions: "restart pause reverse pause"
+      },
+      y: 200,
       rotation: 720,
       duration: 10,
     });
@@ -53,7 +60,7 @@ const Article1 = (data) => {
   </div>
   
   {/* Animation au scroll */}
-  <div>
+  <div >
     <img src="golf-ball.png" alt="golf-ball" ref={ballRef} className="w-16 h-auto"/>
   </div>
 </section>

@@ -45,10 +45,10 @@ const App = () => {
         <>
           <Quiz data={quizData} />
           <Article1 data={articleData[0]}/>
-          <Article2 data={articleData[1]}/>
+          {/* <Article2 data={articleData[1]}/>
           <Article1 data={articleData[2]}/>
           <Article2 data={articleData[3]}/>
-          <Article1 data={articleData[4]}/>
+          <Article1 data={articleData[4]}/> */}
         </>
         )}
     </div>
