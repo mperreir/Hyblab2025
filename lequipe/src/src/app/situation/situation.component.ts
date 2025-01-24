@@ -1,5 +1,5 @@
 import { CommonModule, ViewportScroller } from '@angular/common';
-import { AfterViewInit, Component, Input, OnChanges } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, OnChanges, ViewChild } from '@angular/core';
 import { Choice, Situation } from '../models/content-data';
 import { TextAnimationPipe } from '../text-animation.pipe';
 import anime from 'animejs';
@@ -19,13 +19,17 @@ export class SituationComponent implements OnChanges, AfterViewInit {
     selected_choice?: Choice;
     choice_visible: boolean = false;
 
-    constructor(private scroller: ViewportScroller) {}
+    @ViewChild('content') content?: ElementRef;
+
+    constructor() {}
 
     ngOnChanges(): void {
+        this.content?.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'nearest'});
         this.selected_choice = undefined;
     }
 
     ngAfterViewInit(): void {
+        this.content?.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'nearest'});
         this.caracterAnimation();
     }
     caracterAnimation(){

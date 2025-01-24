@@ -1,9 +1,9 @@
-<div id="main">
+<div #content id="main">
     <div id="animatedText">
         @for (item of situation.content; track $index) {
             @switch (item.type) {
                 @case ("text") {
-                    <p [innerHTML]="(item.text ? item.text : '') | textAnimation"> {{item.text}} </p>
+                    <p [innerHTML]="(item.text ? item.text : '') | textAnimation"></p>
                 }
                 @case ("image") {
                     <!-- <img [src]="item.link" [alt]="item?.altText || ''"> -->
@@ -15,7 +15,7 @@
         <div id="choice_div">
         @for (item of situation.choices; track $index) {
             <div (click)="selected_choice = item" class="choice" [ngClass]="{'selected' : selected_choice == item, 'not_selected': selected_choice && selected_choice != item}" [ngStyle]="{'background-image': 'url(' + item.image + ')','background-position': 'center ' + item.position + ''}">
-               <div id="choisir"><p>Choisir !</p></div>
+                <div id="choisir"><p>Choisir !</p></div>
             <div id="gris"><p>{{item.text}}</p></div>
             </div>
         }
