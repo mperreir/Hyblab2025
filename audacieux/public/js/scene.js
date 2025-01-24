@@ -11,6 +11,8 @@ class Scene {
       data.elements.forEach(element => {
         this.objects.push(addData(element, this.scene_container))
       }); 
+
+      this.triggers = data.triggers;
     })
   }
 
@@ -19,6 +21,30 @@ class Scene {
     for (const value of this.objects) {
       updateKeyframes(value, time); // Appel de la fonction récursive
     }
+  }
+
+  loadTriggers()
+  {
+    this.triggers.forEach(triggers => {
+      const html_object = document.getElementById(triggers.id);
+      console.log(html_object)
+      // Ajouter un gestionnaire d'événements si nécessaire
+      if (triggers.script) {
+        if (html_object && typeof window[triggers.script.func] === "function") {
+          html_object.addEventListener("click", (event) => {
+                // Appeler la fonction spécifiée avec les arguments
+                window[triggers.script.func](event, ...triggers.script.args);
+            });
+        } 
+    }
+
+    // Exécuter la fonction onload si elle est définie
+    if (triggers.onload) {
+        console.log(triggers.onload.func)
+        window[triggers.onload.func](html_object, ...triggers.onload.args);
+        console.log("test")
+    }
+    }); 
   }
 }
 

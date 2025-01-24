@@ -40,8 +40,9 @@ class Player {
 }
 
 function colorScript(event){
-    console.log(event.children[0]);
-    colorizeImage(event.children[0]);
+    console.log("color_script")
+    console.log(event);
+    colorizeImage(event);
 }
 
 function colorizeImage(imageElement) {
@@ -75,7 +76,7 @@ function colorizeImage(imageElement) {
     });
 }
 
-const pringles = new Object("Pringles", 500);
+/*const pringles = new Object("Pringles", 500);
 const sponge = new Object("Éponge", 300);
 const glass = new Object("Verre", 200);
 const latex_gloves = new Object("Gants en latex", 1000);
@@ -87,4 +88,4 @@ player.displayInventory();
 player.buyObject(sponge);
 player.buyObject(glass);
 player.buyObject(latex_gloves);
-player.displayInventory();
+player.displayInventory();*/

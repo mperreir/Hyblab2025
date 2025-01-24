@@ -1,4 +1,12 @@
 {
+  "triggers":[
+      {
+        "id": "MARCHÉ-2",
+        "onload": {"func":"colorScript", "args":[]},
+        "script": {"func":"loadSceneScript", "args":["scene1"]}
+      }
+  ],
+
   "elements": [
 
     {

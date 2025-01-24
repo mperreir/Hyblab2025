@@ -7,7 +7,10 @@ const slider = document.getElementById("time-slider");
 
 setTimeout(() => {
   console.log("After 2 seconds");
+  sceneManager.loadTriggers()
 }, 2000);
+
+
 
 document.querySelectorAll("svg").forEach(svg => {
   if (!svg.closest("svg")) {
@@ -29,7 +32,7 @@ sceneContainer.addEventListener(
     const maxTime = 100;
 
     sceneManager.time = Math.max(0, Math.min(sceneManager.time + timeDelta, maxTime));
-
+    console.log(sceneManager.time);
     if (!isAnimating) {
       isAnimating = true;
       requestAnimationFrame(() => {
