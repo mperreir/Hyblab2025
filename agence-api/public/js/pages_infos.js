@@ -32,6 +32,7 @@ function enableClickForExpansion(text, data) {
 // Fonction pour agrandir le message et afficher l'image
 function expandMessage(messageElement, data) {
     const rect = messageElement.getBoundingClientRect();
+    expandingElement.dataset.id_message = messageElement.id;
 
     // Récupération de la liste des choix sur la balise HTML
     let liste_choix = [];
@@ -83,33 +84,35 @@ function expandMessage(messageElement, data) {
 
 // Fonction pour fermer l'overlay et réduire vers le message
 function closeOverlay() {
-    const lastMessage = document.querySelectorAll('.message.received');
-    // --> La séléection du message sur lequel fermer est à adapter selon tag des balises HTML ?
-    // Pour l'instant la fermeture est définie statiquement dans le HTML
-    // Faire un inner.html clear
+    const id_message = expandingElement.dataset.id_message;
+    const lastMessage = document.getElementById(id_message);
 
     //expandingElement.querySelectorAll('*').forEach(element => element.style.display = 'none');
     expandingElement.innerHTML = '';
-    if (lastMessage.length > 0) {
-        const rect = lastMessage[lastMessage.length - 1].getBoundingClientRect();
+    if (lastMessage) {
+        const rect = lastMessage.getBoundingClientRect();
 
         expandingElement.style.top = rect.top + 'px';
         expandingElement.style.left = rect.left + 'px';
-        expandingElement.style.width = lastMessage[lastMessage.length - 1].offsetWidth + 'px';
-        expandingElement.style.height = lastMessage[lastMessage.length - 1].offsetHeight + 'px';
+        expandingElement.style.width = lastMessage.offsetWidth + 'px';
+        expandingElement.style.height = lastMessage.offsetHeight + 'px';
     }
 
     setTimeout(() => {
         expandingElement.style.display = 'none';
+        // Réinitialiser les styles après la fermeture
+        expandingElement.style.top = '';
+        expandingElement.style.left = '';
+        expandingElement.style.width = '';
+        expandingElement.style.height = '';
     }, 500);
 };
 
 // Fonction pour répartir les champs du JSON dans des listes respectives
-function repartitionChamps(fields, data, liste_choix){
-    console.log(liste_choix);
-    let result = {titre: "", images: [], paragraphes: []};
+function repartitionChamps(fields, data, liste_choix) {
+    let result = { titre: "", images: [], paragraphes: [] };
     fields.forEach(field => {
-        switch (detectType(data[field])){
+        switch (detectType(data[field])) {
             case "array":
                 result[field] = data[field];
                 break;
@@ -125,16 +128,15 @@ function repartitionChamps(fields, data, liste_choix){
                 break;
         }
     });
-    return result  
+    return result;
 };
 
 // Fonction pour trouver le bon paramètre dans le JSON
 function match(data, liste_choix) {
-    if (data.length == 0){
+    if (data.length == 0) {
         return [];
     }
     const num_question = parseInt(Object.keys(data)[0].split('_')[0], 10);
-    console.log(liste_choix);
     return data[String(liste_choix[num_question - 1])];
 };
 
@@ -144,9 +146,9 @@ function detectType(element) {
         return "array";
     } else if (typeof element === 'string') {
         return "string";
-    } else if (typeof element === 'object' && element !== null && !Array.isArray(element)){
+    } else if (typeof element === 'object' && element !== null && !Array.isArray(element)) {
         return "dico";
-    } else{
+    } else {
         return "other";
     }
 }
