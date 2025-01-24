@@ -1,7 +1,3 @@
-body{
-    font-size: calc(15vh * 3 / 4);
-}
-
 .navigation-header {
     display: flex; 
     flex-direction: row; 
