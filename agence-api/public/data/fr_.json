@@ -23,9 +23,21 @@
             ]
         },
         "secteurs": {
-            "agro": "Tu veux te lancer dans l’agroalimentaire ? Parfait, l’Ouest est une référence dans ce domaine ! La Bretagne est la première région agricole de France, et les Pays de la Loire sont en troisième position. Produire ou transformer des aliments ici, c’est contribuer activement à nourrir la France !",
-            "tech": "Ton rêve c’est d’être dans l’innovation ? L’Ouest pourrait bien répondre à tes ambitions ! Aujourd’hui, un quart des technopoles françaises y sont réunies. Aujourd’hui, un quart des technopôles français sont réunis ici . Ta prochaine innovation pourrait t’amener à changer le monde depuis nos régions !",
-            "arti": "Créer de tes mains te passionne ? L’Ouest est fait pour toi ! Ici, on cultive le savoir-faire entre traditions bien ancrées et forte demande locale. Ta créativité pourra s’épanouir et marquer les esprits."
+            "texts":{
+                "agro": "Tu veux te lancer dans l’agroalimentaire ? Parfait, l’Ouest est une référence dans ce domaine ! La Bretagne est la première région agricole de France, et les Pays de la Loire sont en troisième position. Produire ou transformer des aliments ici, c’est contribuer activement à nourrir la France !",
+                "tech": "Ton rêve c’est d’être dans l’innovation ? L’Ouest pourrait bien répondre à tes ambitions ! Aujourd’hui, un quart des technopoles françaises y sont réunies. Aujourd’hui, un quart des technopôles français sont réunis ici . Ta prochaine innovation pourrait t’amener à changer le monde depuis nos régions !",
+                "arti": "Créer de tes mains te passionne ? L’Ouest est fait pour toi ! Ici, on cultive le savoir-faire entre traditions bien ancrées et forte demande locale. Ta créativité pourra s’épanouir et marquer les esprits."
+            },
+            "images": {
+                "agro": "img/agro.jpg",
+                "tech": "img/tech.jpeg",
+                "arti": "img/arti.jpg"
+            },
+            "reponses":{
+                "agro": "Agroalimentaire",
+                "tech": "Tech",
+                "arti": "Artisanat"
+            }
         }
     },
     "fin":{
