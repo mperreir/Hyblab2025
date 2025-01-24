@@ -3,6 +3,17 @@
     {
         "question_id": "1",
         "question_text": "Quelle stratégie souhaites-tu prioriser pour décarboner les transports de ton pays ?",
+        "transition": [
+            {
+                "id":1,
+                "text": "À toi de jouer ! Tu as maintenant tous les leviers pour diriger ton pays. L’objectif final : réduire les émissions de CO₂ et respecter l’Accord de Paris d'ici 2050."
+            },
+            {
+                "id":2,
+                "text": "Ton premier défi en tant que ministre du Climat et de l'Énergie est de réduire les émissions de CO₂ des transports, encore trop dépendants du pétrole."
+            }
+
+        ],
         "responses": [
         {
             "response_id": "1",
@@ -199,6 +210,20 @@
     {
         "question_id": "2",
         "question_text": "Quels choix feras-tu pour répondre aux besoins énergétiques tout en respectant tes objectifs climatiques ?",
+        "transition":[
+            {
+                "id":3,
+                "text": "Bravo ! Tu as brillamment relevé ton premier défi."
+            },
+            {
+                "id":4,
+                "text": "Mais pas de répit pour toi. Un nouvel enjeu se présente sur ton bureau."
+            },
+            {
+                "id":5,
+                "text": "Le parc nucléaire de ton pays vieillit, et des décisions importantes s'imposent pour assurer l'avenir."
+            }
+        ],
         "responses": [
         {
             "response_id": "1",
@@ -308,6 +333,20 @@
     {
         "question_id": "3",
         "question_text": "C’est à toi de trancher : quelles énergies méritent ton investissement pour construire un avenir durable ?",
+        "transition":[
+            {
+                "id":6,
+                "text": "Après ta décision sur le nucléaire, les choses s’accélèrent."
+            },
+            {
+                "id":7,
+                "text": "Plusieurs entreprises viennent de déposer sur ton bureau des propositions innovantes."
+            },
+            {
+                "id":8,
+                "text": "Ces solutions pourraient transformer le mix énergétique de ton pays et l’adapter aux enjeux de demain."
+            }
+        ],
         "responses": [
         {
             "response_id": "1",
@@ -409,28 +448,6 @@
         }
         ]
     }
-    ],
-    "transitions": [
-        {
-            "transition_id": 1,
-            "phase": 1,
-            "text": "À toi de jouer ! Tu as maintenant tous les leviers pour diriger ton pays. L’objectif final : réduire les émissions de CO₂ et respecter l’Accord de Paris d'ici 2050."
-        },
-        {
-            "transition_id": 2,
-            "phase": 1,
-            "text": "Prêt ? Suis les jauges en haut de l'écran. Elles te montreront l'impact de tes décisions sur le budget, les émissions de gaz à effet de serre et sur la satisfaction de ta population." 
-        },
-        {
-            "transition_id": 3,
-            "phase": 1,
-            "text": "Chaque choix compte. Chaque décision peut accélérer ou freiner ta progression. Les bonnes stratégies te rapprocheront de ton objectif."
-        },
-        {
-            "transition_id": 4,
-            "phase": 1,
-            "text": "Ton premier défi en tant que ministre du Climat et de l'Énergie est de réduire les émissions de CO₂ des transports, encore trop dépendants du pétrole. "
-        }
     ]
   }
   

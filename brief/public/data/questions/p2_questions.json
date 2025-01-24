@@ -3,6 +3,16 @@
     {
         "question_id": "4",
         "question_text": "Que souhaites-tu faire ?",
+        "transition":[
+            {
+                "id":9,
+                "text": "Félicitations ! Tes choix transforment le monde : moins d’émissions, des écosystèmes qui renaissent. Cependant, les défis s'intensifient : montée des eaux, ressources limitées, tensions sociales."
+            },
+            {
+                "id":10,
+                "text": "Les objectifs 2050 approchent, et ton pays dépend encore trop des importations d'énergie. Il est urgent de produire localement, de manière fiable et durable, tout en respectant l'écologie et l'économie."
+            }
+        ],
         "responses": [
         {
             "response_id": "1",
@@ -145,6 +155,20 @@
     {
         "question_id": "5",
         "question_text": " Ton défi ? Trouver comment garder l’énergie accessible à tous tout en poursuivant ton chemin vers un avenir durable. Les regards se tournent vers toi. Quelles décisions vas-tu prendre?",
+        "transition":[
+            {
+                "id":11,
+                "text": " Bravo pour tes efforts jusqu’ici, la transition avance à grands pas."
+            },
+            {
+                "id":12,
+                "text": "Mais une nouvelle difficulté apparaît : les coûts de l’énergie explosent. Les foyers les plus modestes peinent à suivre, et les tensions montent. Dans les rues, on réclame des solutions pour ne pas sacrifier le pouvoir d’achat à la transition."
+            },
+            {
+                "id":13,
+                "text": "Ton défi ? Trouver comment garder l’énergie accessible à tous tout en poursuivant ton chemin vers un avenir durable. Les regards se tournent vers toi."
+            }
+        ],
         "responses": [
         {
             "response_id": "1",
@@ -253,8 +277,27 @@
         ]
     },
     
-    {"question_id": "6",
+    {
+        "question_id": "6",
         "question_text": " Ce moment est inévitable, et il te faudra anticiper son arrivée. Comment vas-tu préparer ton pays à ce tournant?",
+        "transition":[
+            {
+                "id":14,
+                "text": " La demande en énergies renouvelables augmente rapidement, mais un moment clé approche : le pic de la demande."
+            },
+            {
+                "id":15,
+                "text": " Ce 'pic' correspond au point où la consommation d’énergies renouvelables atteindra son maximum, avant de commencer à se stabiliser ou même à légèrement décroître."
+            },
+            {
+                "id":16,
+                "text": "Cela se produira grâce à une amélioration de l’efficacité énergétique et à une réduction de la consommation globale, notamment avec des comportements plus sobres et une meilleure gestion des ressources."
+            },
+            {
+                "id":17,
+                "text": " Ce moment est inévitable, et il te faudra anticiper son arrivée."
+            }
+        ],
         "responses": [
         {
             "response_id": "1",
