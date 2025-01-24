@@ -7,7 +7,7 @@ function Home() {
 
   return (
     <>
-    <Header titre={"Dans leur peau"} textColor={"white"}/>
+    <Header titre={"Dans leur peau"} textColor={"black"} isHome="true"/>
     <div className='home_page'>
       <div className='content'>
         <button className="start-button" onClick={() => navigate("/map")}>
