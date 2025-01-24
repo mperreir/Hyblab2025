@@ -21,7 +21,7 @@
 </head>
 <body class="position-relative">
 <div id="background" class="z-n1"></div>
-<main class="z-2">
+<main class="z-2" id="main">
 
   <div id="intro" class="z-0">
     <svg width="324" height="692" class="position-absolute" viewBox="0 0 324 692" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -49,7 +49,7 @@
       Des drames étranges, des crimes glaçants, des secrets que le temps n’a pas effacés.
       C’est ici, au cœur de ces paysages hantés par l’histoire, que débute un voyage dans l’inconnu.
     </p><p>
-      Écoutez... Peut-être entendrez-vous les échos des ombres du passé. Chaque récit est une porte, oserez-vous l’ouvrir ?</p>
+    Écoutez... Peut-être entendrez-vous les échos des ombres du passé. Chaque récit est une porte, oserez-vous l’ouvrir ?</p>
     <img src="img/article.png" alt="">
   </div>
   <div id="une">
@@ -62,15 +62,18 @@
       <div id="case-1" class="cases z-1">
         <div id="desc-case-1">
           <div class="row w-100">
-          <div class="col-10">
-            <h1>TITRE</h1>
-          </div>
-          <div class="col-2">
-            <img src="img/clue-1.png">
-          </div>
-          <div class="col-12">
-            Bla bla bla bla bla bla bla bla bla bla bla
-          </div>
+            <div class="col-10">
+              <h1>Jules Bonnot</h1>
+            </div>
+            <div class="col-2">
+              <img src="img/clue-1.png">
+            </div>
+            <div class="col-12">
+              Le premier bandit en auto était franc-comtois
+            </div>
+            <div class="col-12 mt-2 d-flex justify-content-center">
+              <button class="btn ">Ouvrir ></button>
+            </div>
           </div>
         </div>
         <div id="div1" class="videos"></div>
@@ -81,13 +84,16 @@
         <div id="desc-case-2">
           <div class="row w-100">
             <div class="col-10">
-              <h1>TITRE</h1>
+              <h1>Le concierge</h1>
             </div>
             <div class="col-2">
               <img src="img/clue-2.png">
             </div>
             <div class="col-12">
-              Bla bla bla bla bla bla bla bla bla bla bla
+              L’inquiétant concierge de l’hôtel Continental de Strasbourg
+            </div>
+            <div class="col-12 mt-2 d-flex justify-content-center">
+              <button class="btn ">Ouvrir ></button>
             </div>
           </div>
         </div>
@@ -97,13 +103,16 @@
         <div id="desc-case-3">
           <div class="row w-100">
             <div class="col-10">
-              <h1>TITRE</h1>
+              <h1>Le curé d’Uruffe</h1>
             </div>
             <div class="col-2">
               <img src="img/clue-3.png">
             </div>
             <div class="col-12">
-              Bla bla bla bla bla bla bla bla bla bla bla
+              Il met enceinte et tue une de ses paroissienne
+            </div>
+            <div class="col-12 mt-2 d-flex justify-content-center">
+              <button class="btn ">Ouvrir ></button>
             </div>
           </div>
         </div>
@@ -114,13 +123,16 @@
         <div id="desc-case-4">
           <div class="row w-100">
             <div class="col-10">
-              <h1>TITRE</h1>
+              <h1>Eric Peugeot</h1>
             </div>
             <div class="col-2">
               <img src="img/clue-4.png">
             </div>
             <div class="col-12">
-              Bla bla bla bla bla bla bla bla bla bla bla
+              L’enlèvement d’Eric Peugeot : héritier du Lion disparaît
+            </div>
+            <div class="col-12 mt-2 d-flex justify-content-center">
+              <button class="btn ">Ouvrir ></button>
             </div>
           </div>
         </div>
@@ -133,13 +145,16 @@
         <div id="desc-case-5">
           <div class="row w-100">
             <div class="col-10">
-              <h1>TITRE</h1>
+              <h1>Peiper</h1>
             </div>
             <div class="col-2">
               <img src="img/clue-5.png">
             </div>
             <div class="col-12">
-              Bla bla bla bla bla bla bla bla bla bla bla
+              Peiper, l’ancien SS réfugié dans une forêt
+            </div>
+            <div class="col-12 mt-2 d-flex justify-content-center">
+              <button class="btn ">Ouvrir ></button>
             </div>
           </div>
         </div>
@@ -152,13 +167,16 @@
         <div id="desc-case-6">
           <div class="row w-100">
             <div class="col-10">
-              <h1>TITRE</h1>
+              <h1>Heaulme</h1>
             </div>
             <div class="col-2">
               <img src="img/clue-6.png">
             </div>
             <div class="col-12">
-              Bla bla bla bla bla bla bla bla bla bla bla
+              L'itinéraire du "routard du crime"
+            </div>
+            <div class="col-12 mt-2 d-flex justify-content-center">
+              <button class="btn ">Ouvrir ></button>
             </div>
           </div>
         </div>
@@ -169,8 +187,20 @@
 
     </div>
   </div>
-  <div id="nos-podcast" class="z-1">
-    <img src="img/dech_blanc.png" alt="" class="dech-transition-haut">
+  <div id="nos-podcast" class="z-2">
+    <svg id="podcasts-bg" class="z-1" viewBox="0 0 294 1760" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M180.895 0.555664C185.177 41.47 189.718 126.231 268.055 107.153C315.104 95.6945 288.368 39.6182 255.729 34.7571C169.002 21.8402 7.10364 78.0357 0.867914 189.097C-5.5558 303.507 121.528 319.132 219.444 344.826C316.971 370.419 259.028 243.958 206.944 250.035C122.779 259.854 252.43 559.063 127.257 514.965C2.08302 470.868 -0.694711 624.167 47.222 624.167C94.2735 624.167 221.18 585.625 255.729 671.215C290.278 756.806 125.521 997.604 52.0831 896.042C-21.3545 794.479 170.833 881.632 239.583 970.868C308.333 1060.1 311.632 1203.51 218.403 1265.49C114.793 1334.37 17.0136 1281.28 16.3192 1237.01C15.6247 1192.74 52.0831 1148.47 122.743 1170.52C179.559 1188.25 308.673 1352.99 193.568 1375.73C139.925 1383.54 37.2221 1425.07 55.5554 1528.68C73.8888 1632.29 206.192 1627 273.437 1609.93C305.382 1601.82 293.923 1564.79 267.882 1571.74C194.888 1591.2 295.312 1754.9 227.083 1756.28" stroke="#E2000B"/>
+      <g clip-path="url(#clip0_0_1)">
+        <path d="M234.912 1740.53C234.525 1741.98 233.59 1743.13 232.391 1743.82C231.406 1744.39 230.243 1744.66 229.06 1744.52L224.665 1757.89L227.547 1744.11C225.121 1743.07 223.765 1740.37 224.471 1737.73C224.858 1736.29 225.793 1735.14 226.992 1734.44C228.19 1733.75 229.652 1733.51 231.094 1733.9C232.536 1734.29 233.684 1735.22 234.375 1736.42C235.066 1737.62 235.299 1739.09 234.912 1740.53Z" fill="white"/>
+      </g>
+      <defs>
+        <clipPath id="clip0_0_1">
+          <rect width="10.8098" height="24.8394" fill="white" transform="translate(225.873 1732.5) rotate(15)"/>
+        </clipPath>
+      </defs>
+    </svg>
+
+    <img src="img/dech_blanc.png" alt="" class="dech-transition-haut z-n1">
     <h1>Nos podcasts</h1>
     <div id="mySwiper" class="swiper">
       <!-- le main est aussi le conteneur des différents slides (contenus à chaque fois dans des sections-->
@@ -179,7 +209,8 @@
       </main>
       <div class="swiper-pagination"></div>
     </div>
-    <img src="img/dech_gris.png" alt="" class="dech-transition-bas">
+
+    <img src="img/dech_gris.png" alt="" class="dech-transition-bas z-n1">
   </div>
   <div id="retrouvez-nous" class="z-0">
     <h1>Retrouvez-nous</h1>
@@ -197,7 +228,9 @@
   </div>
 
 
-  <a href="" id="logo-ler" class="z-3"><img src="img/ler.png" alt=""></a>
 </main>
+<a href="" id="logo-ler" class="z-3"><img src="img/ler.png" alt=""></a>
+<div class="z-3" id="modals"></div>
+
 </body>
 </html>
