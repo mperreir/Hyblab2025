@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { useEffect } from "react";
 import './creditPage.css';
+import { useNavigate } from "react-router-dom";
 
 const Credit = () => {
+    const navigate = useNavigate();
+    useEffect(() => {
+        const timer = setTimeout(() => {
+          navigate("/final"); 
+        }, 5000);
+    
+        return () => clearTimeout(timer); 
+      }, [navigate]);
 
     return (
         <div className="background">

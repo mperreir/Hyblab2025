@@ -183,6 +183,7 @@ body {
 .hint-text {
   margin-top: 10px;
   font-size: 12px;
+  color: #000000;
   
 }
 
@@ -278,3 +279,33 @@ body.modal-open {
   color: #4D95AF;
   text-decoration: none;
 }
+
+
+/*rajouter ca pour blur*/
+.blur-background {
+  filter: blur(8px);
+  transition: filter 0.3s ease-in-out;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* Fond sombre semi-transparent */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.enlarged-image {
+  position: relative;
+  z-index: 1001; /* Assurez-vous qu'elle est au-dessus de l'overlay */
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px; /* Bords arrondis */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Ombre légère */
+}
+/*jusqua ici*/

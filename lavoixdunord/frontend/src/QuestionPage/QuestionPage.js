@@ -12,7 +12,6 @@ const QuestionPage = () => {
   const [validated, setValidated] = useState(false);
   const [showHintText, setShowHintText] = useState(false);
   const [showHintImage, setShowHintImage] = useState(false);
-  const [isEnlarged, setIsEnlarged] = useState(false); // Ajout de l'état pour l'agrandissement
   const [score, setScore] = useState(localStorage.getItem("score") || 0);
   const [hint1Used, setHint1Used] = useState(false);
   const [hint2Used, setHint2Used] = useState(false);
@@ -20,6 +19,8 @@ const QuestionPage = () => {
   const navigate = useNavigate(); // Initialisation de useNavigate
   const { difficulty, id } = useParams(); // Récupère les paramètres de l'URL
   const [showMap, setShowMap] = useState(false);
+  const [isEnlarged, setIsEnlarged] = useState(false); // État pour agrandir l'image
+
 
 
   const updateScore = (score) => {
@@ -104,22 +105,33 @@ const QuestionPage = () => {
   };
 
   const currentQuestion = questions[currentQuestionIndex];
-
   return (
-    <div className="question-container">
-      <h2 className="question-number">
-        QUESTION {currentQuestionIndex + 1}/{questions.length}
-      </h2>
+    <>
+      {/* Gestion de l'image agrandie avec flou */}
+      {isEnlarged && (
+        <div className="overlay" onClick={() => setIsEnlarged(false)}>
+          <img
+            src={`/${currentQuestion.hints.image}`}
+            alt="Indice agrandi"
+            className="enlarged-image"
+          />
+        </div>
+      )}
 
-      <div className="question-box">
-        <p className="question-text">{currentQuestion.text}</p>
+      {/* Ajout dynamique de la classe pour flouter le contenu */}
+      <div className={`question-container ${isEnlarged ? "blur-background" : ""}`}>
+        <h2 className="question-number">
+          QUESTION {currentQuestionIndex + 1}/{questions.length}
+        </h2>
 
-        <div className="answers">
-          {currentQuestion.options.map((option, index) => (
-            <button
-              key={index}
-              className={`answer-btn ${selectedOptionIndex === index ? "selected" : ""
-                } ${validated
+        <div className="question-box">
+          <p className="question-text">{currentQuestion.text}</p>
+
+          <div className="answers">
+            {currentQuestion.options.map((option, index) => (
+              <button
+                key={index}
+                className={`answer-btn ${selectedOptionIndex === index ? "selected" : ""} ${validated
                   ? index === selectedOptionIndex
                     ? option.correct
                       ? "correct"
@@ -128,83 +140,82 @@ const QuestionPage = () => {
                       ? "correct"
                       : ""
                   : ""
-                }`}
-              onClick={() => handleOptionClick(index)}
-              disabled={validated}
-            >
-              {option.text}
-            </button>
-          ))}
+                  }`}
+                onClick={() => handleOptionClick(index)}
+                disabled={validated}
+              >
+                {option.text}
+              </button>
+            ))}
+          </div>
+
+          {currentQuestion.hints.link && (
+            <p className="article-link">
+              <a
+                href={currentQuestion.hints.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Lien vers l'article
+              </a>
+            </p>
+          )}
+          <button
+            className="next-btn"
+            onClick={handleNext}
+            disabled={selectedOptionIndex === null}
+          >
+            {validated
+              ? currentQuestionIndex < questions.length - 1
+                ? "SUIVANT"
+                : "FINIR"
+              : "VALIDER"}
+          </button>
+
+          <div className="hints-container">
+            <div className="hint-item">
+              <button
+                className="toggle-btn"
+                onClick={() => setShowHintText(!showHintText)}
+              >
+                {showHintText ? "−" : "+"}
+              </button>
+              <span className="hint-title">INDICE 1</span>
+              {showHintText && <p className="hint-text">{currentQuestion.hints.text}</p>}
+            </div>
+
+            <div className="hint-item">
+              <button
+                className={`toggle-btn ${!showHintText ? "disabled" : ""}`}
+                onClick={() => setShowHintImage(!showHintImage)}
+                disabled={!showHintText}
+              >
+                {showHintImage ? "−" : "+"}
+              </button>
+              <span className="hint-title">INDICE 2</span>
+              {showHintImage && currentQuestion.hints.image && (
+                <img
+                  src={`/${currentQuestion.hints.image}`}
+                  alt="Indice"
+                  className="hint-img"
+                  onClick={() => setIsEnlarged(true)}
+                />
+              )}
+            </div>
+          </div>
         </div>
 
-        {currentQuestion.hints.link && (
-          <p className="article-link">
-            <a
-              href={currentQuestion.hints.link}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Lien vers l'article
-            </a>
-          </p>
+        {showMap && (
+          <MapComponent
+            questions={questions}
+            difficulty={difficulty}
+            level_id={id}
+            currentQuestionIndex={currentQuestionIndex}
+            onClose={() => setShowMap(false)}
+          />
         )}
-        <button
-          className="next-btn"
-          onClick={handleNext}
-          disabled={selectedOptionIndex === null}
-        >
-          {validated
-            ? currentQuestionIndex < questions.length - 1
-              ? "SUIVANT"
-              : "FINIR"
-            : "VALIDER"}
-        </button>
-
-        <div className="hints-container">
-          <div className="hint-item">
-            <button
-              className="toggle-btn"
-              onClick={() => setShowHintText(!showHintText)}
-            >
-              {showHintText ? "−" : "+"}
-            </button>
-            <span className="hint-title">INDICE 1</span>
-            {showHintText && (
-              <p className="hint-text">{currentQuestion.hints.text}</p>
-            )}
-          </div>
-
-          <div className="hint-item">
-            <button
-              className={`toggle-btn ${!showHintText ? "disabled" : ""}`}
-              onClick={() => setShowHintImage(!showHintImage)}
-              disabled={!showHintText}
-            >
-              {showHintImage ? "−" : "+"}
-            </button>
-            <span className="hint-title">INDICE 2</span>
-            {showHintImage && currentQuestion.hints.image && (
-              <img
-                src={`/${currentQuestion.hints.image}`}
-                alt="Indice"
-                className={`hint-img ${isEnlarged ? "enlarged" : ""}`}
-                onClick={toggleImageSize}
-              />
-            )}
-          </div>
-        </div>
       </div>
-
-      {showMap && (
-        <MapComponent
-          questions={questions}
-          difficulty={difficulty}
-          level_id={id}
-          currentQuestionIndex={currentQuestionIndex}
-          onClose={() => setShowMap(false)}
-        />
-      )}
-    </div>
+    </>
   );
 };
 
