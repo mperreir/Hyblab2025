@@ -82,4 +82,22 @@
     text-align: center;
     margin-top: 20px;
 }
+.custom-button {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    color: #ff0000;
+    background: none;
+    border: 2px solid #ff0000;
+    border-radius: 50px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    outline: none;
+    transition: all 0.3s ease;
+  }
   
+  .custom-button:hover {
+    background-color: #ff0000;
+    color: #ffffff;
+  }
