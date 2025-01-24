@@ -5,8 +5,7 @@ import { scrollToSection } from './utils';
 
 import Home from './screens/Home';
 import ChoosePlayer from './screens/ChoosePlayer/ChoosePlayer';
-import Article1 from './screens/Article1';
-import Article2 from './screens/Article2';
+import Article from './screens/Article';
 import Quiz from './screens/Quiz';
 
 const App = () => {
@@ -28,7 +27,6 @@ const App = () => {
 
     setQuizData(quizJson);
     setArticleData(articleJson);
-    console.log('article json', articleJson);
   };
 
   useEffect(() => {
@@ -38,17 +36,13 @@ const App = () => {
   }, [quizData, articleData]);
 
   return (
-    <div className='h-screen w-full overflow-y-scroll snap-y snap-mandatory [scroll-behavior:smooth]'>
+    <div className='app-container h-screen w-full overflow-y-scroll snap-y snap-mandatory [scroll-behavior:smooth]'>
       <Home />
       <ChoosePlayer onSelectPlayer={handleQuizSelection} />
       {quizData && (
         <>
           <Quiz data={quizData} />
-          <Article1 data={articleData[0]}/>
-          {/* <Article2 data={articleData[1]}/>
-          <Article1 data={articleData[2]}/>
-          <Article2 data={articleData[3]}/>
-          <Article1 data={articleData[4]}/> */}
+          <Article data={articleData}/>
         </>
         )}
     </div>
