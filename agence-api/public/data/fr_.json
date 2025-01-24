@@ -232,8 +232,8 @@
                 "5_nonfrenchtech": "Non, je préfère développer mon activité de manière indépendante"
             }
         ],
-        "contexte": {
-            "1": {
+        "contexte": [
+            {
                 "avant": [
                     "Une technopole est un grand centre urbain disposant d’un fort potentiel d’enseignement et de recherche, favorable au développement d’industries de pointe.",
                     "C'est à ne pas confondre avec un technopôle, qui est un site spécialement aménagé pour accueillir les entreprises de haute technologie ou en favoriser la création.",
@@ -250,7 +250,7 @@
                     "1": []
                 }
             },
-            "2": {
+            {
                 "avant": [
                     "Maintenant, parlons de financement. As-tu déjà entendu parler du crowdfunding ?"
                 ],
@@ -258,7 +258,7 @@
                     "Grâce à ton financement, tu vas pouvoir démarrer ton activité. Félicitations !"
                 ]
             },
-            "3": {
+            {
                 "avant": [
                     "Ton innovation ne se concrétisera pas toute seule ! Pour la faire avancer, il te faut une équipe.",
                     "Ça te dit de parler recrutement ?"
@@ -270,7 +270,7 @@
                     }
                 ]
             },
-            "4": {
+            {
                 "avant": [
                     "Tu connais le terme RSE ?",
                     "La RSE, c’est la Responsabilité Sociétale des Entreprises. C’est un engagement volontaire des entreprises à intégrer les préoccupations sociales, environnementales et économiques dans leurs activités et leurs interactions avec leurs parties prenantes.",
@@ -286,7 +286,7 @@
                     }
                 ]
             },
-            "5": {
+            {
                 "avant": [
                     "Tu as bien avancé dans ta réflexion !",
                     "Il faut maintenant que ton entreprise trouve sa place au sein de l'écosystème local.",
@@ -296,16 +296,16 @@
                     "Super !"
                 ]
             }
-        },
-        "informations": {
-            "1": {
+        ],
+        "informations": [
+            {
                 "titre": "Les technopoles de l'Ouest",
                 "images": [],
                 "paragraphes": [
                     "Dans l’Ouest, les technopoles se répartissent en fonction de la taille des villes qui les accueillent. On retrouve d’abord celles situées dans des villes de plus de 100 000 habitants, comme Rennes, Nantes, Brest, Le Mans et Angers ; celles des villes de plus de 40 000 habitants, telles que Lorient, Laval, Vannes, Saint-Brieuc et Quimper ; et enfin, les plus petites, dans des villes de plus de 20 000 habitants, avec Lannion."
                 ]
             },
-            "2": {
+            {
                 "titre": "Financement : Le crownfunding",
                 "images": [],
                 "paragraphes": [
@@ -314,7 +314,7 @@
                     "Au-delà de l'aspect financier, le crowdfunding permet également de créer une véritable communauté autour du projet, en fédérant des soutiens qui partagent les valeurs et l'ambition de l'initiative, et qui peuvent devenir des ambassadeurs précieux pour sa réussite et son développement."
                 ]
             },
-            "3": {
+            {
                 "titre": {
                     "1_nantes": "Les actifs en Loire-Atlantique",
                     "1_lorient": "Les actifs dans le Morbihan",
@@ -331,7 +331,7 @@
                     "Ces chiffres démontrent un environnement favorable qui pourrait représenter une opportunité intéressante pour un entrepreneur souhaitant recruter des jeunes talents et développer son activité"
                 ]
             },
-            "4": {
+            {
                 "titre": "Les labels RSE des entreprises de l'Ouest",
                 "images": [],
                 "paragraphes": [{
@@ -367,10 +367,10 @@
                     }
                 }]
             },
-            "5": [
+            [
                 "La French Tech, c’est un écosystème national qui soutient les startups françaises et leur croissance. Dans l’Ouest, elle se décline en 3 Capitales (Nantes, Rennes Saint-Malo, Angers) et 7 Communautés, fédérant des centaines d’acteurs de l’innovation. Avec des programmes comme French Tech Next 120 et French Tech 2030, les entreprises locales accèdent à des opportunités de croissance et de financement stratégiques."
             ]
-        }
+        ]
     },
 
 
@@ -429,8 +429,8 @@
                 }
             ]
         ],
-        "contexte": {
-            "1": {
+        "contexte": [
+            {
                 "avant": [
                     "On passe sur ta première page d'information ? Tu vas découvrir la place de l'artisanat en Bretagne et dans les Pays de la Loire.",
                     "Allez, on y va !"
@@ -443,7 +443,7 @@
                     }
                 ]
             },
-            "2": {
+            {
                 "avant": [
                     "Il est maintenant temps de parler financement. Les sources de ce financement peuvent être multiples.",
                     " Je vais te présenter en quelques mots le prêt bancaire traditionnel. Si tu souhaites en savoir plus sur les autres types de financements proposés, je te laisse découvrir les autres parcours !"
@@ -452,7 +452,7 @@
                     "Tu as reçu le financement dont tu avais besoin pour démarrer ton activité. Félicitations !"
                 ]
             },
-            "3": {
+            {
                 "avant": [
                     "Que penses tu d'agrandir ton équipe ? Voyons la situation de l'emploi dans ton département."
                 ],
@@ -460,7 +460,7 @@
                     "Super ! Te voilà prêt à démarrer ton activité avec une équipe solide."
                 ]
             },
-            "4":{
+            {
                 "avant": [
                     "La RSE, ça te dit quelque chose ?",
                     "Il s'agit de la Responsabilité Sociétale des Entreprises. C'est un engagement volontaire des entreprises à intégrer les préoccupations sociales, environnementales et économiques dans leurs activités et leurs interactions avec leurs parties prenantes.",
@@ -472,7 +472,7 @@
                     "4_mission": "Tu as choisi de devenir une entreprise à mission. C'est un engagement fort qui peut te démarquer de la concurrence !"
                 }
             },
-            "5": {
+            {
                 "avant": [
                     "Tu as bien avancé dans ta réflexion !",
                     "Il faut maintenant s'occuper des matières premières et des produits que tu vas utiliser.",
@@ -482,9 +482,9 @@
                     "Très bien !"
                 ]
             }
-        },
-        "informations": {
-            "1": {
+        ],
+        "informations": [
+            {
                 "titre": "La place de l'artisanat dans l'Ouest",
                 "images": [],
                 "paragraphes": [
@@ -492,14 +492,14 @@
                     "Savais-tu que 79 % des entreprises artisanales dans nos régions emploient moins de 10 salariés ? Il s'agit d'un cadre idéal pour un projet artisanal à échelle humaine."
                 ]
             },
-            "2": {
+            {
                 "titre": "Financement : Le prêt bancaire traditionnel",
                 "images": [],
                 "paragraphes": [
                     "Le prêt bancaire traditionnel est une solution de financement courante permettant aux entreprises de couvrir des besoins variés, tels que l'achat d'équipements, le financement de projets ou la gestion de trésorerie. Il est accordé par les banques sous certaines conditions, notamment la solidité financière de l'entreprise et sa capacité de remboursement. Ce type de prêt offre généralement des taux d'intérêt fixes ou variables, avec des durées adaptées aux besoins spécifiques de l'entreprise."
                 ]
             },
-            "3": {
+            {
                 "titre": {
                     "1_menuisier": "Les actifs dans la Sarthe",
                     "1_ceramiste": "Les actifs en Ille-et-Vilaine",
@@ -514,7 +514,7 @@
                     "En Bretagne, l'enseignement professionnel compte 42 323 inscrits, tandis qu'en Pays de la Loire, il enregistre 47 262 inscrits. Parallèlement, l'emploi des jeunes de 15 à 24 ans a connu une progression notable sur la dernière décennie, avec une augmentation de +25,7 % en Bretagne et +29,6 % en Pays de la Loire. Ces évolutions témoignent d’une dynamique favorable à l’insertion des jeunes dans le marché du travail, portée par des secteurs clés tels que l’industrie, le commerce et les services."
                 ]
             },
-            "4":{
+            {
                 "titre": "Les entreprises à mission dans l'Ouest",
                 "images": [],
                 "paragraphes":[
@@ -524,7 +524,7 @@
                     "L'artisanat n'est pas en reste. Par exemple, la pizzeria nantaise Agapé s'engage à utiliser \"100% d'ingrédients bio ou issus d'exploitations en conversion à l'agriculture biologique\"."
                 ]
             },
-            "5":{
+            {
                 "titre": "L'importation de marchandises dans l'Ouest",
                 "images": [],
                 "paragraphes":[
@@ -537,6 +537,6 @@
 
                 ]
             }
-        }
+        ]
     }
 }

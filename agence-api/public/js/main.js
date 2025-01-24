@@ -216,6 +216,10 @@ async function histoire(texts){
     await displayMessages(texts.introduction);
 
     for (let i = 0; i < texts.questions.length; i++) {
+
+        await displayMessages(texts.questions[i]);
+
+
         await displayMessages(texts.questions[i]);
 
         /* Ouais bon la solution est dégeu, mais ça fonctionne */
