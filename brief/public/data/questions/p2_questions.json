@@ -1,0 +1,223 @@
+{
+    "questions": [
+    {
+        "question_id": "4",
+        "question_text": "Que souhaites-tu faire ?",
+        "responses": [
+        {
+            "response_id": "1",
+            "response_text": "Prioriser le développement massif des énergies renouvelables.",
+            "advantages":"",
+            "inconvenient":"",
+            "next_question_id": "41",
+            "subquestion": [
+                {
+                    "question_id": "41",
+                    "question_text": "Sur quoi souhaitez-vous vous focaliser ?",
+                    "responses": [
+                    {
+                        "response_id": "1",
+                        "response_text": "Développer des parcs éoliens sur les côtes.",
+                        "advantages":"",
+                        "inconvenient":"",
+                        "Budget":"-10",
+                        "GES":"+10",
+                        "Satisfaction": "-5",
+                        "next_question_id": "5",
+                        "subquestion": []
+                    },
+                    {
+                        "response_id": "2",
+                        "response_text": "Exploiter l'énergie hydraulique dans les zones avec des chutes d'eau ou des rivières.",
+                        "advantages":"",
+                        "inconvenient":"",
+                        "Budget":"-15",
+                        "GES":"+10",
+                        "Satisfaction": "-10",
+                        "next_question_id": "5",
+                        "subquestion": []
+                    }
+                    ]
+                }
+            ]
+        },
+        {
+            "response_id": "2",
+            "response_text": " Concentration sur le développement du nucléaire et des technologies associées.",
+            "advantages":"",
+            "inconvenient":"",
+            "next_question_id": "42",
+            "subquestion": [
+                {
+                    "question_id": "42",
+                    "question_text": "Sur quoi souhaitez-vous vous focaliser ?",
+                    "responses": [
+                    {
+                        "response_id": "1",
+                        "response_text": "Relancer la construction de nouvelles centrales nucléaires pour augmenter la production d'électricité stable.",
+                        "advantages":"",
+                        "inconvenient":"",
+                        "Budget":"-5",
+                        "GES":"0",
+                        "Satisfaction": "+5",
+                        "next_question_id": "5",
+                        "subquestion": []
+                    },
+                    {
+                        "response_id": "2",
+                        "response_text": " Accélérer le retraitement des déchets nucléaires pour réduire leur durée de vie et augmenter leur sécurité.",
+                        "advantages":"",
+                        "inconvenient":"",
+                        "Budget":"-15",
+                        "GES":"+5",
+                        "Satisfaction": "+5",
+                        "next_question_id": "5",
+                        "subquestion": []
+                    }
+                    ]
+                }
+            ]
+        }
+        ]
+    },
+    
+    
+    {
+        "question_id": "5",
+        "question_text": " Ton défi ? Trouver comment garder l’énergie accessible à tous tout en poursuivant ton chemin vers un avenir durable. Les regards se tournent vers toi. Quelles décisions vas-tu prendre?",
+        "responses": [
+        {
+            "response_id": "1",
+            "response_text": "Favoriser une transition énergétique à moindre coût en augmentant la part des énergies peu onéreuses.",
+            "advantages":"",
+            "inconvenient":"",
+            "Budget":"",
+            "GES":"",
+            "Satisfaction": "",
+            "next_question_id": "51",
+            "subquestion": [
+                {
+                "question_id": "51",
+                "question_text": " Quelle énergie développer prioritairement pour minimiser les coûts?",
+                "responses": [
+                {
+                    "response_id": "1",
+                    "response_text": "Augmenter la production de gaz naturel comme source intermédiaire.",
+                    "advantages":"",
+                    "inconvenient":"",
+                    "Budget":"-5",
+                    "GES":"-10",
+                    "Satisfaction": "-5",
+                    "next_question_id": "6",
+                    "subquestion": []
+                },
+                {
+                    "response_id": "2",
+                    "response_text": "Augmenter la part du nucléaire pour stabiliser les prix.",
+                    "advantages":"",
+                    "inconvenient":"",
+                    "Budget":"-10",
+                    "GES":"0",
+                    "Satisfaction": "0",
+                    "next_question_id": "6",
+                    "subquestion": []
+                }
+                ]
+            }
+        ]
+        },
+        {
+            "response_id": "2",
+            "response_text": "Réduire les coûts énergétiques grâce à une coopération européenne pour mutualiser les ressources et diversifier le mix énergétique commun.",
+            "advantages":"",
+            "inconvenient":"",
+            "Budget":"-5",
+            "GES":"+10",
+            "Satisfaction": "+10",
+            "next_question_id": "6",
+            "subquestion": []
+        },
+        {
+            "response_id": "3",
+            "response_text": "Adopter une approche décentralisée où chaque région privilégie les énergies renouvelables adaptées à son environnement naturel.",
+            "advantages":"",
+            "inconvenient":"",
+            "Budget":"-10",
+            "GES":"+10",
+            "Satisfaction": "+15",
+            "next_question_id": "6",
+            "subquestion": []
+        }
+        ]
+    },
+    
+    {"question_id": "6",
+        "question_text": " Ce moment est inévitable, et il te faudra anticiper son arrivée. Comment vas-tu préparer ton pays à ce tournant?",
+        "responses": [
+        {
+            "response_id": "1",
+            "response_text": "Investir dans les recherches pour améliorer la capacité de stockage des énergies renouvelables.",
+            "advantages":"",
+            "inconvenient":"",
+            "Budget":"-10",
+            "GES":"+10",
+            "Satisfaction": "+10",
+            "next_question_id": "7",
+            "subquestion": []
+        },
+        {
+            "response_id": "2",
+            "response_text": "Continuer à développer massivement le solaire.",
+            "advantages":"",
+            "inconvenient":"",
+            "Budget":"-10",
+            "GES":"+10",
+            "Satisfaction": "+5",
+            "next_question_id": "7",
+            "subquestion": []
+        },
+        {
+            "response_id": "3",
+            "response_text": "Maintenir un équilibre entre les énergies renouvelables et d'autres sources d'énergie afin de ne pas trop dépendre d'une seule.",
+            "advantages":"",
+            "inconvenient":"",
+            "Budget":"",
+            "GES":"",
+            "Satisfaction": "+5",
+            "next_question_id": "63",
+            "subquestion": [
+                {"question_id": "63",
+        "question_text": "Quel levier privilégié pour optimiser les coûts et anticiper la montée en puissance de la demande énergétique ?",
+        "responses": [
+        {
+            "response_id": "1",
+            "response_text": "Augmenter la production de gaz naturel comme source intermédiaire.",
+            "advantages":"",
+            "inconvenient":"",
+            "Budget":"-10",
+            "GES":"-5",
+            "Satisfaction": "-10",
+            "next_question_id": "7",
+            "subquestion": []
+        },
+        {
+            "response_id": "2",
+            "response_text": "Importer plus de gaz naturel des autres pays.",
+            "advantages":"",
+            "inconvenient":"",
+            "Budget":"-5",
+            "GES":"-5",
+            "Satisfaction": "-5",
+            "next_question_id": "7",
+            "subquestion": []
+        }
+        ]
+    }
+            ]
+        }
+        ]
+    }
+    
+    ]
+  }
+  

@@ -8,7 +8,7 @@ const ContextePage = () => {
   const navigate = useNavigate();
   return (
     <IntroLayout>
-      <LandingComponent onStart={() => navigate("/brief/Intro")} />
+      <LandingComponent onStart={() => navigate("/brief/Information")} />
     </IntroLayout>
   );
 };
