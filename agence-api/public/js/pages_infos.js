@@ -1,18 +1,23 @@
 //première idée d'affichage de la page d'explication --> Contexte d'ouverture à adapter
-function displayExplanation(data, liste_choix, contenu_message) {
-    const num_question = liste_choix.length + 1;
-    setTimeout(() => {
-        const reply = { text: contenu_message, type: 'received', id:`info_${num_question}`, choix: liste_choix}; //id à adapter selon le parametrage du JSON
-        addMessage(reply);
-        enableClickForExpansion(reply.text, data);
-  
-        // Agrandissement automatique 1 seconde après apparition
+async function displayExplanation(data, liste_choix, contenu_message) {
+    return new Promise((resolve) => {
+        const num_question = liste_choix.length + 1;
+        console.log(liste_choix);
         setTimeout(() => {
-            const lastMessage = document.querySelector(`#${reply.id}`);
-            expandMessage(lastMessage, data);
+            const reply = { text: contenu_message, type: 'received', id: `info_${num_question}`, choix: liste_choix }; // id à adapter selon le parametrage du JSON
+            addMessage(reply);
+            enableClickForExpansion(reply.text, data);
+
+            // Agrandissement automatique 1 seconde après apparition
+            setTimeout(() => {
+                const lastMessage = document.querySelector(`#${reply.id}`);
+                expandMessage(lastMessage, data);
+                resolve(); // Resolve the promise after expandMessage
+            }, 1000);
         }, 1000);
-    }, 1000);
-  };
+    });
+}
+
 
 // Fonction pour permettre l'agrandissement manuel
 function enableClickForExpansion(text, data) {
@@ -44,7 +49,7 @@ function expandMessage(messageElement, data) {
     expandingElement.appendChild(title);
 
     images.forEach(image => {
-        const img = document.createElement('p');
+        const img = document.createElement('img');
         img.src = image;
         expandingElement.appendChild(img);
     });
@@ -123,7 +128,8 @@ function match(data, liste_choix) {
         return [];
     }
     const num_question = parseInt(Object.keys(data)[0].split('_')[0], 10);
-    return data[String(liste_choix[num_question - 1])];
+    console.log(liste_choix);
+    return data[liste_choix[num_question - 1]];
 };
 
 // Fonction pour détecter le type de l'élément
