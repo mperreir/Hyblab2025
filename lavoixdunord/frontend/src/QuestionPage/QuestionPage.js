@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom"; // Importer useNavigate
+import { useNavigate } from "react-router-dom";
 import yaml from "js-yaml";
 import "./QuestionPage.css";
 import { useParams } from "react-router-dom";
@@ -11,10 +11,13 @@ const QuestionPage = () => {
   const [validated, setValidated] = useState(false);
   const [showHintText, setShowHintText] = useState(false);
   const [showHintImage, setShowHintImage] = useState(false);
-  const [isEnlarged, setIsEnlarged] = useState(false); // Ajout de l'état pour l'agrandissement
+  const [isEnlarged, setIsEnlarged] = useState(false);
+  const [score, setScore] = useState(0);
+  const [hint1Used, setHint1Used] = useState(false);
+  const [hint2Used, setHint2Used] = useState(false);
 
   const basename = process.env.REACT_APP_BASENAME || "/";
-  const navigate = useNavigate(); // Initialisation de useNavigate
+  const navigate = useNavigate();
   const { id } = useParams();
 
   useEffect(() => {
@@ -33,7 +36,14 @@ const QuestionPage = () => {
 
   const handleNext = () => {
     if (!validated) {
+      const isCorrect = questions[currentQuestionIndex].options[selectedOptionIndex].correct;
+
+      if (!isCorrect) {
+        setScore((prevScore) => prevScore + 15); // Ajouter 15 points si réponse incorrecte
+      }
+  
       setValidated(true);
+      setScore((prevScore) => prevScore + 20); // Ajouter 20 points après validation
     } else {
       if (currentQuestionIndex < questions.length - 1) {
         setCurrentQuestionIndex(currentQuestionIndex + 1);
@@ -41,7 +51,9 @@ const QuestionPage = () => {
         setValidated(false);
         setShowHintText(false);
         setShowHintImage(false);
-        setIsEnlarged(false); // Réinitialiser l'agrandissement de l'image
+        setIsEnlarged(false);
+        setHint1Used(false);
+        setHint2Used(false);
       } else {
         navigate("/etape/" + (parseInt(id) + 1));
         setQuestions([]);
@@ -51,12 +63,30 @@ const QuestionPage = () => {
         setShowHintText(false);
         setShowHintImage(false);
         setIsEnlarged(false);
+        setHint1Used(false);
+        setHint2Used(false);
       }
     }
   };
 
   const handleOptionClick = (index) => {
     setSelectedOptionIndex(index);
+  };
+
+  const handleHint1Click = () => {
+    if (!hint1Used) {
+      setScore((prevScore) => prevScore + 5);
+      setHint1Used(true);
+    }
+    setShowHintText(true);
+  };
+
+  const handleHint2Click = () => {
+    if (!hint2Used && showHintText) {
+      setScore((prevScore) => prevScore + 10);
+      setHint2Used(true);
+    }
+    setShowHintImage(true);
   };
 
   const toggleImageSize = () => {
@@ -70,6 +100,7 @@ const QuestionPage = () => {
       <h2 className="question-number">
         QUESTION {currentQuestionIndex + 1}/{questions.length}
       </h2>
+      <h3 className="score">Score: {score}</h3>
 
       <div className="question-box">
         <p className="question-text">{currentQuestion.text}</p>
@@ -124,10 +155,7 @@ const QuestionPage = () => {
 
         <div className="hints-container">
           <div className="hint-item">
-            <button
-              className="toggle-btn"
-              onClick={() => setShowHintText(!showHintText)}
-            >
+            <button className="toggle-btn" onClick={handleHint1Click}>
               {showHintText ? "−" : "+"}
             </button>
             <span className="hint-title">INDICE 1</span>
@@ -139,7 +167,7 @@ const QuestionPage = () => {
           <div className="hint-item">
             <button
               className={`toggle-btn ${!showHintText ? "disabled" : ""}`}
-              onClick={() => setShowHintImage(!showHintImage)}
+              onClick={handleHint2Click}
               disabled={!showHintText}
             >
               {showHintImage ? "−" : "+"}
