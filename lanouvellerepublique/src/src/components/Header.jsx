@@ -6,7 +6,7 @@ function Header({ titre, textColor, isHome = false}) {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    const bgColor = (textColor=="white") ? "black" : "white";
+    const bgColor = (textColor=="black") ? "white" : "transparent";
 
     function toggleMenu() {
         setIsMenuOpen(!isMenuOpen);
