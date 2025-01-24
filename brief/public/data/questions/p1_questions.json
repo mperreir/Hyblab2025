@@ -9,6 +9,18 @@
             "response_text": "Interdire progressivement les véhicules thermiques au profit des voitures électriques",
             "advantages":"Réduit les émissions rapidement",
             "inconvenient":" Coût élevé des infrastructures de recharge",
+            "Budget":{
+                "plus": 0,
+                "moins": 0
+              },
+            "GES":{
+                "plus": 0,
+                "moins": 0
+              },
+            "Satisfaction": {
+                "plus": 0,
+                "moins": 0
+              },
             "next_question_id": "11",
             "subquestion":[
                 {
@@ -61,6 +73,18 @@
             "response_text": "Le développement massif des transports en commun",
             "advantages":"Accessible à tous et réduit la dépendance à la voiture",
             "inconvenient":"Long et coûteux à mettre en place",
+            "Budget":{
+                "plus": 0,
+                "moins": 0
+              },
+            "GES":{
+                "plus": 0,
+                "moins": 0
+              },
+            "Satisfaction": {
+                "plus": 0,
+                "moins": 0
+              },
             "next_question_id": "12",
             "subquestion": [
                 {
@@ -112,6 +136,18 @@
             "response_text": " Une approche combinée, misant sur l’innovation technologique et une transformation progressive des usages",
             "advantages": "Équilibre plusieurs solutions complémentaires",
             "inconvenient": "Transition plus lente",
+            "Budget":{
+                "plus": 0,
+                "moins": 0
+              },
+            "GES":{
+                "plus": 0,
+                "moins": 0
+              },
+            "Satisfaction": {
+                "plus": 0,
+                "moins": 0
+              },
             "next_question_id": "13",
             "subquestion":[
                 {
@@ -314,10 +350,10 @@
             "response_text": "Moderniser les infrastructures en place pour limiter leur impact environnemental.",
             "Budget":{
                 "plus": 0,
-                "moins": 10
+                "moins": 0
               },
             "GES":{
-                "plus": 5,
+                "plus": 0,
                 "moins": 0
               },
             "Satisfaction": {
@@ -358,24 +394,6 @@
                           },
                         "GES":{
                             "plus": 0,
-                            "moins": 0
-                          },
-                        "Satisfaction": {
-                            "plus": 0,
-                            "moins": 0
-                          },
-                        "next_question_id": "4",
-                        "subquestion": []
-                    },
-                    {
-                        "response_id": "3",
-                        "response_text": "Moderniser les infrastructures en place pour limiter leur impact environnemental.",
-                        "Budget":{
-                            "plus": 0,
-                            "moins": 10
-                          },
-                        "GES":{
-                            "plus": 5,
                             "moins": 0
                           },
                         "Satisfaction": {

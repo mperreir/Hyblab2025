@@ -9,9 +9,18 @@
             "response_text": "Réduire la consommation énergétique avec des politiques de rationnement.",
             "advantages":"",
             "inconvenient":"",
-            "Budget":"0",
-            "GES":"+5",
-            "Satisfaction": "-15",
+            "Budget":{
+                "plus": 0,
+                "moins": 0
+              },
+            "GES":{
+                "plus": 5,
+                "moins": 0
+              },
+            "Satisfaction": {
+                "plus": 0,
+                "moins": 15
+              },
             "next_question_id": "8",
             "subquestion": []
         },
@@ -20,6 +29,18 @@
             "response_text": "Diversifier les sources d’énergie pour réduire la dépendance à l’eau dans la production électrique.",
             "advantages":"",
             "inconvenient":"",
+            "Budget":{
+                "plus": 0,
+                "moins": 0
+              },
+            "GES":{
+                "plus": 0,
+                "moins": 0
+              },
+            "Satisfaction": {
+                "plus": 0,
+                "moins": 0
+              },
             "next_question_id": "72",
             "subquestion": [
                 {
@@ -31,9 +52,18 @@
                         "response_text": "Développer massivement l’énergie solaire.",
                         "advantages":"",
                         "inconvenient":"",
-                        "Budget":"-10",
-                        "GES":"+10",
-                        "Satisfaction": "0",
+                        "Budget":{
+                            "plus": 0,
+                            "moins": 10
+                          },
+                        "GES":{
+                            "plus": 10,
+                            "moins": 0
+                          },
+                        "Satisfaction": {
+                            "plus": 0,
+                            "moins": 0
+                          },
                         "next_question_id": "8",
                         "subquestion": []
                     },
@@ -42,9 +72,18 @@
                         "response_text": "Augmenter l’utilisation du gaz naturel comme complément au mix énergétique.",
                         "advantages":"",
                         "inconvenient":"",
-                        "Budget":"-5",
-                        "GES":"-5",
-                        "Satisfaction": "0",
+                        "Budget":{
+                            "plus": 0,
+                            "moins": 5
+                          },
+                        "GES":{
+                            "plus": 0,
+                            "moins": 5
+                          },
+                        "Satisfaction": {
+                            "plus": 0,
+                            "moins": 0
+                          },
                         "next_question_id": "8",
                         "subquestion": []
                     }
@@ -57,6 +96,18 @@
             "response_text": "Optimiser l’utilisation de l’eau pour le refroidissement des centrales nucléaires et thermiques.",
             "advantages":"",
             "inconvenient":"",
+            "Budget":{
+                "plus": 0,
+                "moins": 0
+              },
+            "GES":{
+                "plus": 0,
+                "moins": 0
+              },
+            "Satisfaction": {
+                "plus": 0,
+                "moins": 0
+              },
             "next_question_id": "73",
             "subquestion": [
                 {
@@ -68,9 +119,18 @@
                         "response_text": "Installer des réservoirs d’eau près des centrales nucléaires pour limiter la consommation d’eau naturelle.",
                         "advantages":"",
                         "inconvenient":"",
-                        "Budget":"-5",
-                        "GES":"-5",
-                        "Satisfaction": "-5",
+                        "Budget":{
+                            "plus": 0,
+                            "moins": 5
+                          },
+                        "GES":{
+                            "plus": 0,
+                            "moins": 5
+                          },
+                        "Satisfaction": {
+                            "plus": 0,
+                            "moins": 5
+                          },
                         "next_question_id": "8",
                         "subquestion": []
                     },
@@ -79,9 +139,18 @@
                         "response_text": "Construire des réservoirs d’eau autour des centrales thermiques pour garantir un approvisionnement constant.",
                         "advantages":"",
                         "inconvenient":"",
-                        "Budget":"-5",
-                        "GES":"-5",
-                        "Satisfaction": "-10",
+                        "Budget":{
+                            "plus": 0,
+                            "moins": 5
+                          },
+                        "GES":{
+                            "plus": 0,
+                            "moins": 5
+                          },
+                        "Satisfaction": {
+                            "plus": 0,
+                            "moins": 10
+                          },
                         "next_question_id": "8",
                         "subquestion": []
                     },
@@ -90,9 +159,18 @@
                         "response_text": "Retourner aux méthodes anciennes de refroidissement en circuit fermé pour réduire l’usage de l’eau naturelle.",
                         "advantages":"",
                         "inconvenient":"",
-                        "Budget":"+0",
-                        "GES":"-10",
-                        "Satisfaction": "-5",
+                        "Budget":{
+                            "plus": 0,
+                            "moins": 0
+                          },
+                        "GES":{
+                            "plus": 0,
+                            "moins": 10
+                          },
+                        "Satisfaction": {
+                            "plus": 0,
+                            "moins": 5
+                          },
                         "next_question_id": "8",
                         "subquestion": []
                     }
@@ -113,9 +191,18 @@
             "response_text": "Investir massivement dans le recyclage et la revalorisation déchets nucléaires.",
             "advantages":"",
             "inconvenient":"",
-            "Budget":"-15",
-            "GES":"+10",
-            "Satisfaction": "+10",
+            "Budget":{
+                "plus": 0,
+                "moins": 15
+              },
+            "GES":{
+                "plus": 10,
+                "moins": 0
+              },
+            "Satisfaction": {
+                "plus": 10,
+                "moins": 0
+              },
             "next_question_id": "9",
             "subquestion": []
         },
@@ -124,9 +211,18 @@
             "response_text": " Construire des usines de batteries dans votre pays.",
             "advantages":"",
             "inconvenient":"",
-            "Budget":"-10",
-            "GES":"+5",
-            "Satisfaction": "+0",
+            "Budget":{
+                "plus": 0,
+                "moins": 10
+              },
+            "GES":{
+                "plus": 5,
+                "moins": 0
+              },
+            "Satisfaction": {
+                "plus": 0,
+                "moins": 0
+              },
             "next_question_id": "6",
             "subquestion": []
         },
@@ -135,9 +231,18 @@
             "response_text": "Développer des installations de recyclage des panneaux solaires et des batteries usagées.",
             "advantages":"",
             "inconvenient":"",
-            "Budget":"-10",
-            "GES":"+5",
-            "Satisfaction": "+5",
+            "Budget":{
+                "plus": 0,
+                "moins": 10
+              },
+            "GES":{
+                "plus": 5,
+                "moins": 0
+              },
+            "Satisfaction": {
+                "plus": 5,
+                "moins": 0
+              },
             "next_question_id": "6",
             "subquestion": []
         }
