@@ -3,8 +3,6 @@ import { MapContainer, TileLayer, Marker, Popup, GeoJSON, useMap } from 'react-l
 import yaml from 'js-yaml';
 import 'leaflet/dist/leaflet.css';
 import './MapComponent.css';
-import markerIcon from 'leaflet/dist/images/marker-icon.png';
-import markerShadow from 'leaflet/dist/images/marker-shadow.png';
 import L from 'leaflet';
 
 // Configuration du marqueur personnalisé avec la nouvelle couleur
