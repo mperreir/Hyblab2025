@@ -63,3 +63,32 @@
   }
 
 
+
+  .decoration {
+    position: relative;
+    margin-top: 40px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .green-circle {
+    position: absolute;
+    width: 580px; 
+    height: 580px;
+    background-color: #228B22; 
+    border-radius: 50%; 
+    z-index: 1; 
+  }
+  
+  .gray-rectangle {
+    position: absolute;
+    width: 310px; 
+    height: 280px; 
+    background-color: #D3D3D3; 
+    z-index: 2; 
+    margin-bottom: 320px;
+  }
+  
+
+
