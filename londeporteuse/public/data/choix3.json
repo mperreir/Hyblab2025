@@ -3,7 +3,7 @@
   "sections": [
     {
       "title": "Quelle taille pour mon festival ?",
-      "options1": [
+      "options": [
         {
           "name": "Grand festival",
           "cost": 3,
@@ -26,7 +26,7 @@
     },
     {
       "title": "Quelles actions pour la transition écologique ?",
-      "options2": [
+      "options": [
         {
           "name": "Beaucoup d’actions écologiques",
           "cost": 3,
@@ -50,7 +50,7 @@
     {
       "title": "Quelles actions pour la médiation culturelle ?",
       "subtitle": "Je souhaite faciliter l’accès à la culture en organisant divers ateliers ouverts à tous.tes.",
-      "options3": [
+      "options": [
         {
           "name": "Monter un atelier de pratique musicale sur le festival",
           "cost": 3,
@@ -80,7 +80,7 @@
     {
       "title": "Quelles actions pour la prévention des risques ?",
       "subtitle": "Je veille à l’accessibilité et à la sécurité de tous.tes lors de mon évènement.",
-      "options4": [
+      "options": [
         {
           "name": "Mener activement des actions de prévention",
           "cost": 3,
