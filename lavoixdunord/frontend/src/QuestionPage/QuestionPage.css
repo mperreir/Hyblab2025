@@ -170,6 +170,8 @@ body {
 .hint-text {
   margin-top: 10px;
   font-size: 12px;
+  text-align: justify;
+  padding-left: 8px;
 }
 
 .hint-img {
