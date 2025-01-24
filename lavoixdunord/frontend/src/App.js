@@ -4,10 +4,10 @@ import Page0 from "./page0/page0";
 import QuestionPage from "./QuestionPage/QuestionPage";
 import DifficultyPage from "./DifficultyPage/DifficultyPage";
 import Etape from "./EtapePage/Etape";
-
+const basename = process.env.REACT_APP_BASENAME || "/";
 function App() {
   return (
-    <Router>
+    <Router basename={basename}>
       <Routes>
         {/* Page par défaut : choix de difficulté */}
         <Route path="/difficulty" element={<DifficultyPage />} />

@@ -11,13 +11,18 @@ const QuestionPage = () => {
   const [validated, setValidated] = useState(false);
   const [showHintText, setShowHintText] = useState(false);
   const [showHintImage, setShowHintImage] = useState(false);
+<<<<<<< HEAD
   const [isEnlarged, setIsEnlarged] = useState(false); // Ajout de l'état pour l'agrandissement
 
   const navigate = useNavigate();
+=======
+  const basename = process.env.REACT_APP_BASENAME || "/";
+  const navigate = useNavigate(); // Initialisation de useNavigate
+>>>>>>> a6d9baf1d4390be507a3bc405218d5aa7f05e465
   const { id } = useParams();
 
   useEffect(() => {
-    fetch("/data/questions.yaml")
+    fetch(basename + "data/questions.yaml")
       .then((response) => response.text())
       .then((text) => {
         const data = yaml.load(text);
