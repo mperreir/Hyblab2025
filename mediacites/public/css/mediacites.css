@@ -1,3 +1,8 @@
+*{
+    padding:0;
+    margin:0;
+}
+
 .navigation-header {
     display: flex; 
     flex-direction: row; 
@@ -34,10 +39,3 @@
    button:nth-child(3) { border-right:red; }
    button:nth-child(6) { border-left:red; }
 }
-
-
-*{
-    padding:0;
-    margin:0;
-}
-
