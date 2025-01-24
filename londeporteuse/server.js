@@ -4,6 +4,8 @@
 // Load usefull expressjs and nodejs objects / modules
 const express = require('express');
 const path = require('path');
+const mustacheExpress = require('mustache');
+const fs = require('fs');
 
 // Create our application
 const app = express();
@@ -17,6 +19,19 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, '../__common-logos__')));
 
 // You can then add whatever routing code you need
+
+/****************************The code I added to this file************************************* */
+
+// Configure Mustache
+app.engine('mustache', mustacheExpress());
+app.set('view engine', 'mustache');
+app.set('views', path.join(__dirname, 'views'));
+
+app.use(express.json());
+
+
+/***************************************The end of my modifications******************************************************** */
+
 
 // This module is exported and served by the main server.js located
 // at the root of this set of projects. You can access it by lanching the main
