@@ -16,7 +16,7 @@ const initSlide2 = async function () {
     const texts = await response.json();
     
     initMenu(texts);
-    displayExplanation(texts.agro.informations["3"],["1_porc", "2_trucmuche"] , "Message d'explications");
+    //displayExplanation(texts.agro.informations["3"],["1_porc", "2_trucmuche"] , "Message d'explications");
     // await histoire(texts.tech);
 
     // Load the intro story
@@ -239,8 +239,9 @@ async function histoire(texts){
 
     for (let i = 0; i < texts.questions.length; i++) {
 
-        await displayMessages(texts.questions[i]);
-
+        await displayMessages(texts.contexte[i].avant.slice(0,-1));
+        await displayExplanation(texts.informations[i], choices, texts.contexte[i].avant[texts.contexte[i].avant.length-1]);
+        
 
         await displayMessages(texts.questions[i]);
 
@@ -260,6 +261,16 @@ async function histoire(texts){
         console.log(choices);
 
         toggleTapIconDisplay(false);
+
+        // Sometimes the "after" message is not dependent on the choice made
+        if(typeof texts.contexte[i].apres[0] === "string"){
+            addMessage({ text: texts.contexte[i].apres[0], type: "received", timestamp: new Date().toISOString() });
+        } else {
+            // console.log(texts.contexte[i].apres[0][answer[0]]);
+            addMessage({ text: texts.contexte[i].apres[0][answer[0]], type: "received", timestamp: new Date().toISOString() });
+        }
+        scrollToBottom();
+        await waitForUserTouch();
     }
 
 }
