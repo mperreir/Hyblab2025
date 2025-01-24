@@ -238,28 +238,6 @@
         }
         ]
     }
-    ],
-    "transitions": [
-        {
-            "transition_id": 1,
-            "phase": 1,
-            "text": "À toi de jouer ! Tu as maintenant tous les leviers pour diriger ton pays. L’objectif final : réduire les émissions de CO₂ et respecter l’Accord de Paris d'ici 2050."
-        },
-        {
-            "transition_id": 2,
-            "phase": 1,
-            "text": "Prêt ? Suis les jauges en haut de l'écran. Elles te montreront l'impact de tes décisions sur le budget, les émissions de gaz à effet de serre et sur la satisfaction de ta population." 
-        },
-        {
-            "transition_id": 3,
-            "phase": 1,
-            "text": "Chaque choix compte. Chaque décision peut accélérer ou freiner ta progression. Les bonnes stratégies te rapprocheront de ton objectif."
-        },
-        {
-            "transition_id": 4,
-            "phase": 1,
-            "text": "Ton premier défi en tant que ministre du Climat et de l'Énergie est de réduire les émissions de CO₂ des transports, encore trop dépendants du pétrole. "
-        }
     ]
   }
   

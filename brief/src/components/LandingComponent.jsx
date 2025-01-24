@@ -2,7 +2,7 @@
 import React from 'react';
 import { Box, Button, Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import isoVille from '../assets/isoVille.jpg';
+import isoVille from '../assets/isoVille.png';
 
 
 const LandingComponent = () => {
