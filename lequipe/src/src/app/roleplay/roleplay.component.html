@@ -4,8 +4,11 @@
         <app-slider [items]="data" (selected_output)="selectScenario($event)"></app-slider>
     }
     @else {
-        <button>retour</button>
-        <div>image</div>
+        <div class="back" (click)="selected_scenario=undefined">< retour</div>
+        <div class="item">
+            <img [src]=selected_scenario.image [alt]="selected_scenario.title">
+            <h2>{{ selected_scenario.title }}</h2>
+        </div>
     }
     <!-- <div id="scenarios">
         <div class="placeholder"></div>
