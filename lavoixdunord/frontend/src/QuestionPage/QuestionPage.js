@@ -11,19 +11,20 @@ const QuestionPage = () => {
   const [validated, setValidated] = useState(false);
   const [showHintText, setShowHintText] = useState(false);
   const [showHintImage, setShowHintImage] = useState(false);
-
-  const navigate = useNavigate(); // Initialisation de useNavigate
-  const { id } = useParams();
+  const { difficulty, id } = useParams(); // Récupère la difficulté et l'étape depuis l'URL
+  const navigate = useNavigate();
+  const basename = process.env.REACT_APP_BASENAME || "/";
 
   useEffect(() => {
-    fetch("/data/questions.yaml")
+    fetch(basename + "data/questions.yaml")
       .then((response) => response.text())
       .then((text) => {
         const data = yaml.load(text);
         setQuestions(data.game.levels[0].stages[parseInt(id)-1].questions);
       })
       .catch((error) => console.error("Erreur de chargement YAML :", error));
-  }, [id]);
+  }, [difficulty, id, basename]);
+
 
   if (questions.length === 0) {
     return <p>Chargement des questions...</p>;
