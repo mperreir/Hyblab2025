@@ -14,15 +14,9 @@ export class SliderComponent {
 
   selectItem(item: Item, evt: EventTarget | null): void {
     this.selected = item;
-    this.scrollToSelectedItem(evt);
+    this.scrollToSelectedItem(evt as Element);
   }
-  scrollToSelectedItem(evt: EventTarget | null): void {
-    // const selectedElement = document.querySelector('.selected');
-    // if (selectedElement) {
-    //   selectedElement.scrollIntoView({ behavior: "smooth",block: 'start', inline: 'center' });
-    // }
-    if (evt) {
-      (evt as Element).scrollIntoView({ behavior: "auto",block: 'start', inline: 'center' });
-      }
+  scrollToSelectedItem(evt: Element): void {
+    evt.scrollIntoView({ behavior: "auto", block: 'start', inline: 'center' });
   }
 }

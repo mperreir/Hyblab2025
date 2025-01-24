@@ -35,14 +35,11 @@ export class RoleplayComponent implements OnInit {
         return this.http.get<ContentData[]>('assets/data.json');
     }
 
-    selectScenario(item: ContentData): void {
+    selectScenario(item: ContentData,evt: EventTarget | null): void {
         this.selected_scenario = item;
-        this.scrollToSelectedScenario();
+        this.scrollToSelectedScenario(evt as Element);
     }
-    scrollToSelectedScenario(): void {
-        const selectedElement = document.querySelector('.selected');
-        if (selectedElement) {
-            //selectedElement.scrollIntoView({ block: 'end', inline: 'center' });
-        }
+    scrollToSelectedScenario(evt: Element): void {
+        evt.scrollIntoView({ behavior: "auto", block: 'end', inline: 'center' });
     }
 }
