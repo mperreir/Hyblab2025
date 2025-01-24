@@ -2,7 +2,7 @@
 
 const initSlide2 = async function () {
 
-    initMenu();
+    
 
     const chatBox = document.getElementById('chatBox');
     const messageList = document.getElementById('messageList');
@@ -14,7 +14,8 @@ const initSlide2 = async function () {
     // Retrieve the intro's messages from our API
     let response = await fetch('data/fr_.json');
     const texts = await response.json();
-
+    
+    initMenu(texts);
     //displayExplanation(texts.agro.informations["3"],["1_porc", "2_trucmuche"] , "Message d'explications");
     await histoire(texts.tech);
 
@@ -23,9 +24,10 @@ const initSlide2 = async function () {
 
     // Select the character
     // const character = await selectCharacter(texts.introduction.secteurs);
-
     // Select the character
     const secteur = await selectSecteur(texts.introduction.secteurs);
+
+    displayExplanation(texts.agro.informations["3"],["1_porc", "2_trucmuche"] , "Message d'explications");
 
     switch (secteur) {
         case 0:
@@ -42,14 +44,17 @@ const initSlide2 = async function () {
     await displayMessages(texts.fin.avant, userName)
 
 
-
 };
 
-function initMenu(){
+function initMenu(texts){
     const menuBtn = document.getElementById("menu-btn");
     const menuPopup = document.getElementById("menu-popup");
     const closeMenuBtn = document.getElementById("close-menu");
-
+    const goPauseLink = document.getElementById("go-pause"); // 暂停按钮
+    const pausePopup = document.getElementById("pause-popup"); // 暂停弹窗
+    const resumeGameBtn = document.getElementById("resume-game"); // 继续游戏按钮
+    const quitGameBtn = document.getElementById("quit-game"); // 结束游戏按钮
+  
     // 点击「Menu」打开弹窗
     menuBtn.addEventListener("click", () => {
         menuPopup.classList.remove("hidden");
@@ -66,8 +71,29 @@ function initMenu(){
         menuPopup.classList.add("hidden");
         }
     });
+    const goCharactersLink = document.getElementById("go-characters");
+    goCharactersLink.addEventListener("click", (e) => {
+        e.preventDefault();              // 阻止 href 跳转
+        menuPopup.classList.add("hidden");  // 先关菜单
+        selectSecteur(texts.introduction.secteurs);
+    });
+    goPauseLink.addEventListener("click", (e) => {
+        e.preventDefault(); // 阻止默认行为
+        menuPopup.classList.add("hidden"); // 关闭菜单
+        pausePopup.classList.remove("hidden"); // 打开暂停弹窗
+      });
+    
+      // 点击“继续游戏”关闭暂停弹窗
+      resumeGameBtn.addEventListener("click", () => {
+        pausePopup.classList.add("hidden"); // 关闭暂停弹窗
+      });
+    
+      // 点击“结束游戏”跳转到首页
+      quitGameBtn.addEventListener("click", () => {
+        window.location.href = "../agence-api/"; // 跳转到首页
+      });
 }
-
+  
 function wait(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -207,8 +233,6 @@ async function loadIntroStory(introStory) {
 
       return char;
   }
-  
-
 async function histoire(texts){
 
     let choices = [];

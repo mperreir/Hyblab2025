@@ -32,13 +32,12 @@ function enableClickForExpansion(text, data) {
 // Fonction pour agrandir le message et afficher l'image
 function expandMessage(messageElement, data) {
     const rect = messageElement.getBoundingClientRect();
-    expandingElement.querySelectorAll('*').forEach(element => element.style.display = 'none');
 
+    // Récupération de la liste des choix sur la balise HTML
     let liste_choix = [];
     for (let i = 0; i < messageElement.dataset.taillechoix; i++) {
         liste_choix.push(messageElement.dataset[`choix${i}`]);
     }
-
     //Ajout des données du JSON dans des listes respectives
     const fields = ['titre', 'images', 'paragraphes'];
 
@@ -60,6 +59,7 @@ function expandMessage(messageElement, data) {
         expandingElement.appendChild(text);
     });
 
+    expandingElement.querySelectorAll('*').forEach(element => element.style.display = 'none');
     expandingElement.style.display = 'flex';
     expandingElement.style.top = rect.top + 'px';
     expandingElement.style.left = rect.left + 'px';
@@ -88,7 +88,8 @@ function closeOverlay() {
     // Pour l'instant la fermeture est définie statiquement dans le HTML
     // Faire un inner.html clear
 
-    expandingElement.querySelectorAll('*').forEach(element => element.style.display = 'none');
+    //expandingElement.querySelectorAll('*').forEach(element => element.style.display = 'none');
+    expandingElement.innerHTML = '';
     if (lastMessage.length > 0) {
         const rect = lastMessage[lastMessage.length - 1].getBoundingClientRect();
 
@@ -105,6 +106,7 @@ function closeOverlay() {
 
 // Fonction pour répartir les champs du JSON dans des listes respectives
 function repartitionChamps(fields, data, liste_choix){
+    console.log(liste_choix);
     let result = {titre: "", images: [], paragraphes: []};
     fields.forEach(field => {
         switch (detectType(data[field])){
@@ -112,6 +114,10 @@ function repartitionChamps(fields, data, liste_choix){
                 result[field] = data[field];
                 break;
             case "string":
+                if (field !== "titre") {
+                    console.error("Le champ " + field + " n'est pas un tableau");
+                    break;
+                }
                 result[field] = data[field];
                 break;
             case "dico":
