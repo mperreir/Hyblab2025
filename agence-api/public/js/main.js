@@ -2,7 +2,7 @@
 
 const initSlide2 = async function () {
 
-    initMenu();
+    
 
     const chatBox = document.getElementById('chatBox');
     const messageList = document.getElementById('messageList');
@@ -14,8 +14,10 @@ const initSlide2 = async function () {
     // Retrieve the intro's messages from our API
     let response = await fetch('data/fr_.json');
     const texts = await response.json();
-
-    // displayExplanation(texts.agro.informations["3"],["1_porc", "2_trucmuche"] , "Message d'explications");
+    
+    initMenu(texts);
+    //displayExplanation(texts.agro.informations["3"],["1_porc", "2_trucmuche"] , "Message d'explications");
+    // await histoire(texts.tech);
 
     // Load the intro story
     const userName = await loadIntroStory(texts.introduction.general);
@@ -44,7 +46,7 @@ const initSlide2 = async function () {
 
 };
 
-function initMenu(){
+function initMenu(texts){
     const menuBtn = document.getElementById("menu-btn");
     const menuPopup = document.getElementById("menu-popup");
     const closeMenuBtn = document.getElementById("close-menu");
@@ -64,6 +66,12 @@ function initMenu(){
         if (event.target === menuPopup) {
         menuPopup.classList.add("hidden");
         }
+    });
+    const goCharactersLink = document.getElementById("go-characters");
+    goCharactersLink.addEventListener("click", (e) => {
+        e.preventDefault();              // 阻止 href 跳转
+        menuPopup.classList.add("hidden");  // 先关菜单
+        selectSecteur(texts.introduction.secteurs);
     });
 }
 
@@ -206,8 +214,6 @@ async function loadIntroStory(introStory) {
 
       return char;
   }
-  
-
 async function histoire(texts){
 
     let choices = [];
