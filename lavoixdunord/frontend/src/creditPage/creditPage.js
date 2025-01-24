@@ -9,6 +9,8 @@ const Credit = () => {
                 <p><b>Designed by :</b> Ivana RONTARD</p>
                 <br></br>
                 <p><b>Developped by :</b> Youssef IBNOUALI, Théophile TAGNE, Ghassen JRAD, Arwa OUERIEMMI, Mohammed JAOUADA & Mehdi BEN SALHA</p>
+                <br></br>
+                <p><b>Narration :</b> Quentin MALLET</p>
             </div>
         </div>
     );
