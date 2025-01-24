@@ -12,19 +12,17 @@ import {
 // Le composant Layout de base
 const IntroductionLayout = ({ children }) => {
   return (
-    <Box sx={{ display: "flex", justifyContent: 'center', alignItems: 'center', flexDirection: "column", minHeight: "100vh",backgroundColor: '#f0f0f5', }}>
+    <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', backgroundColor: 'white' }}>
       <CssBaseline /> {/* Assure une base de style cohérente pour MUI */}
-      <AppBar
-        position="static"
-        sx={{
-          backgroundColor: "#007BFF",
-          width: "100%", // S'étend sur toute la largeur
-          maxWidth: "400px", // Limite pour correspondre au format mobile
-        }}
+
+      <AppBar position="static"
+        sx={{ backgroundColor: 'white', boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)', padding: '5px 0' }}
       >
         <Toolbar>
-          <Typography variant="h6" sx={{ flexGrow: 1, textAlign: "center" }}>
-            Bienvenue dans le Jeu !
+          {/* Titre avec 'Brief' en blanc et 'sciences' en couleur #991756 */}
+          <Typography sx={{ flexGrow: 1, textAlign: 'left', fontSize: '18px' }}>
+            <span style={{ color: 'black', fontWeight: "bold" }}>Brief</span>
+            <span style={{ color: '#991756', fontWeight: "bold" }}>.science</span>
           </Typography>
         </Toolbar>
       </AppBar>
@@ -45,20 +43,8 @@ const IntroductionLayout = ({ children }) => {
         {children} {/* Les composants enfants seront ici */}
       </Container>
       {/* Footer */}
-      <Box
-        component="footer"
-        sx={{
-          backgroundColor: "#333",
-          color: "white",
-          padding: "10px",
-          textAlign: "center",
-          width: "100%",
-          maxWidth: "400px",
-        }}
-      >
-        <Typography variant="body2">
-          © 2025 Mon Jeu. Tous droits réservés.
-        </Typography>
+      <Box component="footer" sx={{ backgroundColor: '#c1c1c1', color: 'black', padding: '10px', textAlign: 'center' }}>
+        <Typography variant="body2">© 2025 Transition 2050. Tous droits réservés.</Typography>
       </Box>
     </Box>
   );

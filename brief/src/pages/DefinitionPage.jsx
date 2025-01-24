@@ -1,10 +1,10 @@
-// /src/pages/LandingPage.jsx
+// /src/pages/DefinitionPage.jsx
 import React from 'react';
 import IntroLayout from '../Layout/IntroductionLayout'; 
 import { useNavigate } from 'react-router-dom'; 
-import LandingComponent from '../components/LandingComponent';  
+import LandingComponent from '../components/DefinitionComponent';  
 
-const LandingPage = () => {
+const DefinitionPage = () => {
   const navigate = useNavigate();
   return (
     <IntroLayout>
@@ -13,4 +13,4 @@ const LandingPage = () => {
   );
 };
 
-export default LandingPage;
+export default DefinitionPage;

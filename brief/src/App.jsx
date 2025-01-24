@@ -1,7 +1,13 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import IntroLayout from './Layout/IntroductionLayout'; // Le layout principal
 import LandingPage from './pages/LandingPage';
 import QuestionsPage from './pages/QuestionsPages';
+//import Intro from './pages/Intro';
+import ContextePage from './pages/ContextePage';
+import OutroPage from './pages/OutroPage';
+import DefinitionPage from './pages/DefinitionPage';
+import InformationMixPage from './pages/InformationMixPage';
+
+
 
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
@@ -17,6 +23,28 @@ const theme = createTheme({
     subtitle2: { textTransform: 'none' },
     button: { textTransform: 'none' }, // Pour les boutons également
   },
+  palette: {
+    primary: {
+      main: '#991756', 
+      light: '#42A5F5',
+      dark: '#1565C0',
+      contrastText: '#FFFFFF', // Texte contrasté sur la couleur primaire
+    },
+    secondary: {
+      main: '#F5E8EE',
+      light: '#E57373',
+      dark: '#C62828',
+      contrastText: '#FFFFFF',
+    },
+    background: {
+      default: '#F5F5F5', // Fond général
+      paper: '#FFFFFF', // Fond des cartes
+    },
+    text: {
+      primary: '#991756', // Couleur principale des textes
+      secondary: '#757575', // Couleur secondaire des textes
+    },
+  },
 });
 
 const App = () => {
@@ -27,6 +55,11 @@ const App = () => {
           <Route path="/brief/" element={<Navigate to="/brief/landing" replace />} />
           <Route path="/brief/landing" element={<LandingPage/>} />
           <Route path="/brief/questions" element={<QuestionsPage/> } />
+          <Route path="/brief/contexte" element={<ContextePage/>} />
+          <Route path="/brief/outro" element={<OutroPage/>} />
+          <Route path="/brief/Introduction" element={<DefinitionPage/>} />
+          <Route path="/brief/Information" element={<InformationMixPage/>} />
+
         </Routes>
     </Router>
     </ThemeProvider>
