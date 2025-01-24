@@ -11,6 +11,7 @@ function DonutChart({ size = 300 }) {
   // Initialisation des couleurs dynamiques
   const initialColors = jsonData.sources.map((source) => source.color);
   const [segmentColors, setSegmentColors] = useState(initialColors); // État des couleurs actuelles
+  const [showGreySquare, setShowGreySquare] = useState(false); // Contrôle de l'affichage du carré gris
 
   const labels = jsonData.sources.map((source) => source.name);
   const dataValues = jsonData.sources.map((source) => source.percentage);
@@ -24,31 +25,6 @@ function DonutChart({ size = 300 }) {
       },
     ],
   };
-
-    /* fonction pour changer de couleur au moment de du swipe
-  // Fonction pour gérer les clics sur un segment
-  const handleClick = (event) => {
-    const chart = chartRef.current;
-
-    if (!chart) {
-      console.error('Chart not found');
-      return;
-    }
-
-    const activePoints = chart.getElementsAtEventForMode(event, 'nearest', { intersect: true }, true);
-
-    if (activePoints.length > 0) {
-      const index = activePoints[0].index; // Récupère l'index du segment cliqué
-
-      // Met à jour les couleurs : le segment cliqué conserve sa couleur, les autres deviennent gris
-      const newColors = segmentColors.map((color, i) =>
-        i === index ? initialColors[i] : '#D3D3D3' // Gris pour les autres
-      );
-
-      setSegmentColors(newColors); // Applique les nouvelles couleurs
-    }
-  };
-*/
 
   const options = {
     responsive: true,
@@ -73,13 +49,74 @@ function DonutChart({ size = 300 }) {
     },
   };
 
+  // Styles pour le carré gris
+  const greySquareStyles = {
+    position: 'absolute',
+    top: '100px',
+    left: '100px',
+    width: '250px',
+    backgroundColor: 'gray',
+    padding: '10px',
+    color: 'white',
+    borderRadius: '5px',
+    boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)',
+  };
+
+  const rowStyles = {
+    display: 'flex',
+    alignItems: 'center',
+    marginBottom: '5px',
+  };
+
+  const colorBoxStyles = (color) => ({
+    width: '20px',
+    height: '20px',
+    backgroundColor: color,
+    marginRight: '10px',
+    border: '1px solid white',
+  });
+
+  const handleToggleGreySquare = (e) => {
+    // Empêche la propagation de l'événement
+    e.stopPropagation();
+    setShowGreySquare((prevState) => !prevState); // Alterne entre afficher et masquer
+  };
+
+  const handleHideGreySquare = () => {
+    // Masque le carré gris uniquement s'il est visible
+    if (showGreySquare) {
+      setShowGreySquare(false);
+    }
+  };
+
   return (
-    <div style={{ width: `${size}px`, height: `${size}px` }}>
-      <Doughnut
-        data={data}
-        options={options}
-        ref={chartRef}
-      />
+    <div
+      style={{ position: 'relative', width: '100%', height: '100vh' }}
+      onClick={handleHideGreySquare} // Gestionnaire global pour masquer le carré
+    >
+      {/* Donut Chart */}
+      <div
+        style={{ width: `${size}px`, height: `${size}px` }}
+        onClick={handleToggleGreySquare} // Gère l'affichage du carré gris
+      >
+        <Doughnut data={data} options={options} ref={chartRef} />
+      </div>
+
+      {/* Carré gris affiché dynamiquement */}
+      {showGreySquare && (
+        <div
+          style={greySquareStyles}
+          onClick={(e) => e.stopPropagation()} // Empêche le clic sur le carré gris de se propager
+        >
+          {jsonData.sources.map((source, index) => (
+            <div key={index} style={rowStyles}>
+              <div style={colorBoxStyles(source.color)}></div>
+              <span>{source.name}</span>
+              <span style={{ marginLeft: 'auto' }}>{source.percentage}%</span>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
