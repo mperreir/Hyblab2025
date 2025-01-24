@@ -17,17 +17,16 @@ app.use(cors({ origin: 'http://localhost:5173' }));
 app.use('/api', api);
 
 // Minimum routing: serve static content from the html directory
-app.use(express.static(path.join(__dirname, 'public')));
+// app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, '../__common-logos__')));
 
 // En production, servir les fichiers du build React (dist)
-if (process.env.NODE_ENV === 'production') {
+  console.log('Production mode');
   app.use(express.static(path.join(__dirname, 'dist')));
   // Toute autre route demandée renvoie l'index.html pour permettre le routage côté client avec React
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'dist', 'index.html'));
-  });
-}
+  // app.get('*', (req, res) => {
+  //   res.sendFile(path.resolve(__dirname, 'dist', 'index.html'));
+  // });
 
 
 // This module is exported and served by the main server.js located

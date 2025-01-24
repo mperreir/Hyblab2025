@@ -1,12 +1,11 @@
 import React from 'react';
 import IntroLayout from '../Layout/IntroductionLayout';  
-import DonutChart from '../components/DonutComponent';
-import GreySquare from '../components/PopupMix';
+import DonutChart from '../components/Bilan';
 
 const Intro = () => {
     return (
       <IntroLayout>
-        <DonutChart size={200} />
+        <DonutChart/>
       </IntroLayout>
     );
   };
