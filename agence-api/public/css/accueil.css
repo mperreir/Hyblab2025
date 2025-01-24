@@ -1,0 +1,73 @@
+/*---------------- Partie accueil ---------------*/
+
+/*pour le contraste du logo: filter: contrast(1);*/
+
+
+#accueilbody {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #ffffff;
+}
+
+/* Footer of last slide is at the bottom and content is centered */
+#first-slide footer{
+    bottom: 5%;
+    position: absolute;
+    box-sizing: border-box; /* So that padding is not added to width (and width: 100% works) */
+    width: 100%; /* could also use  width: calc(100% - 2em) if not using box-sizing */
+    font-size: 20%;
+    text-align: center;
+    padding: 1em;
+}
+
+/* conteneur parent de #bloc-centre */
+.parent-container {
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center;    /* Centre verticalement */
+    height: 100vh;          /* Occupe toute la hauteur de la fenêtre */
+    width: 100%;            /* Occupe toute la largeur disponible */
+    box-sizing: border-box; /* Inclut le padding et les bordures dans les dimensions */
+    padding: 20px;          /* Ajoute un peu de padding autour */
+}
+
+/* Style pour #bloc-centre */
+#bloc-centre {
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px #1D1D1D;
+    filter: contrast(1); /*ajout de contraste*/
+    
+    /* Centrage et ajustement de la taille */
+    max-width: 600px; /* Ajustez selon vos besoins */
+    height: auto;     /* Adapté en hauteur en fonction du contenu */
+
+    /* Utilisation de Flexbox pour le contenu interne */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* Réactivité */
+    font-size: 2vw; /* Ajuste la taille du texte en fonction de la largeur de la fenêtre */
+    box-sizing: border-box;
+
+    margin:auto;
+}
+
+/* Style pour le texte */
+#bloc-centre p {
+    font-size: 4em;
+}
+
+#texte {
+    font-size: 8vw; /* Ajustez cette valeur selon vos besoins */
+    font-weight:bold; /* Optionnel : rend le texte en gras */
+    color: #1D1D1D; /* Optionnel : change la couleur du texte */
+    font-family: 'Helvetica' /* Optionnel : change la police du texte */
+}
+
