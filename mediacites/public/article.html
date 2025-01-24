@@ -16,8 +16,8 @@
             <button onclick="location.href='https://google.com' " class="btn btn-outline-secondary" type="button" disabled> ACTION SOCIALE ET SANTÉ</button>
             <button onclick="location.href='https://google.com' " class="btn btn-outline-secondary" type="button" disabled> CITOYENNETÉ</button>
             <button onclick="location.href='https://google.com' " class="btn btn-outline-secondary" type="button" disabled> CULTURE ET TOURISME</button>
-            <button onclick="location.href='https://google.com' " class="btn btn-outline-secondary" type="button"> ÉDUCATION</button>
-            <button onclick="location.href='https://google.com' " class="btn btn-outline-secondary" type="button"> ENVIRONNEMENT</button> <!-- TODO illuminer bouton-->
+            <button onclick="redirect('education')"  class="btn btn-outline-secondary" type="button"> ÉDUCATION</button>
+            <button onclick="redirect('environnement')"  class="btn btn-outline-secondary" type="button"> ENVIRONNEMENT</button> <!-- TODO illuminer bouton-->
             <button onclick="location.href='https://google.com' " class="btn btn-outline-secondary" type="button" disabled> MOBILITÉS</button>
             <button onclick="location.href='https://google.com' " class="btn btn-outline-secondary" type="button" disabled> SÉCURITÉ</button>
             <button onclick="location.href='https://google.com' " class="btn btn-outline-secondary" type="button" disabled> URBANISME ET LOGEMENT</a>
@@ -198,8 +198,6 @@
     const name = urlParams.get('name')
     console.log(name);
 
-    const saucisse = document.getElementById("saucisse");
-
     const kpi1 = document.getElementById("kpi1");
     const kpi2 = document.getElementById("kpi2");
     const textkpi1 = document.getElementById("textkpi1");
@@ -253,6 +251,12 @@
 
         })
         .catch(error => console.error('Error fetching JSON:', error));
+
+     // pour les boutons en haut de page
+     function redirect(name) {
+        newUrl = window.location.href.split("?")[0]+"?name="+name;
+        location.href = newUrl;
+    }
     </script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
