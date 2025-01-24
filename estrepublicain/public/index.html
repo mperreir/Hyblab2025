@@ -59,7 +59,7 @@
 
 
     <div id="content" class="position-relative">
-      <div id="case-1" class="cases z-1">
+      <div id="case-1" class="cases z-1" onclick="displayPodcastModal(1)">
         <div id="desc-case-1">
           <div class="row w-100">
             <div class="col-10">
@@ -71,15 +71,13 @@
             <div class="col-12">
               Le premier bandit en auto était franc-comtois
             </div>
-            <div class="col-12 mt-2 d-flex justify-content-center">
-              <button class="btn ">Ouvrir ></button>
-            </div>
+            
           </div>
         </div>
         <div id="div1" class="videos"></div>
       </div>
       <div id="line1" class="line z-0"></div>
-      <div id="case-2" class="cases z-1">
+      <div id="case-2" class="cases z-1" onclick="displayPodcastModal(6)">
         <div id="div2" class="videos"></div>
         <div id="desc-case-2">
           <div class="row w-100">
@@ -92,14 +90,12 @@
             <div class="col-12">
               L’inquiétant concierge de l’hôtel Continental de Strasbourg
             </div>
-            <div class="col-12 mt-2 d-flex justify-content-center">
-              <button class="btn ">Ouvrir ></button>
-            </div>
+            
           </div>
         </div>
       </div>
       <div id="line2" class="line z-0"></div>
-      <div id="case-3" class="cases z-1">
+      <div id="case-3" class="cases z-1" onclick="displayPodcastModal(26)">
         <div id="desc-case-3">
           <div class="row w-100">
             <div class="col-10">
@@ -111,15 +107,13 @@
             <div class="col-12">
               Il met enceinte et tue une de ses paroissienne
             </div>
-            <div class="col-12 mt-2 d-flex justify-content-center">
-              <button class="btn ">Ouvrir ></button>
-            </div>
+            
           </div>
         </div>
         <div id="div3" class="videos"></div>
       </div>
       <div id="line3" class="line z-0"></div>
-      <div id="case-4" class="cases z-1">
+      <div id="case-4" class="cases z-1" onclick="displayPodcastModal(30)">
         <div id="desc-case-4">
           <div class="row w-100">
             <div class="col-10">
@@ -131,9 +125,7 @@
             <div class="col-12">
               L’enlèvement d’Eric Peugeot : héritier du Lion disparaît
             </div>
-            <div class="col-12 mt-2 d-flex justify-content-center">
-              <button class="btn ">Ouvrir ></button>
-            </div>
+            
           </div>
         </div>
         <div id="div4" class="videos"></div>
@@ -141,7 +133,7 @@
 
       <div id="line4" class="line z-0"></div>
 
-      <div id="case-5" class="cases z-1">
+      <div id="case-5" class="cases z-1" onclick="displayPodcastModal(39)">
         <div id="desc-case-5">
           <div class="row w-100">
             <div class="col-10">
@@ -153,9 +145,7 @@
             <div class="col-12">
               Peiper, l’ancien SS réfugié dans une forêt
             </div>
-            <div class="col-12 mt-2 d-flex justify-content-center">
-              <button class="btn ">Ouvrir ></button>
-            </div>
+            
           </div>
         </div>
         <div id="div5" class="videos"></div>
@@ -163,7 +153,7 @@
 
       <div id="line5" class="line z-0"></div>
 
-      <div id="case-6" class="cases z-1">
+      <div id="case-6" class="cases z-1" onclick="displayPodcastModal(50)">
         <div id="desc-case-6">
           <div class="row w-100">
             <div class="col-10">
@@ -175,13 +165,17 @@
             <div class="col-12">
               L'itinéraire du "routard du crime"
             </div>
-            <div class="col-12 mt-2 d-flex justify-content-center">
-              <button class="btn ">Ouvrir ></button>
-            </div>
+            
           </div>
         </div>
         <div id="div6" class="videos"></div>
       </div>
+
+      <div id="line6" class="line z-0"></div>
+      <div id="line7" class="line z-0"></div>
+      <div id="line8" class="line z-0"></div>
+
+
     </div>
     <div id="line-container">
 
@@ -231,6 +225,13 @@
 </main>
 <a href="" id="logo-ler" class="z-3"><img src="img/ler.png" alt=""></a>
 <div class="z-3" id="modals"></div>
-
+<div id="links">
+  <div class="title">
+    <h1>Retrouvez tout nos podcasts</h1>
+  </div>
+  <div class="links_list">
+    <img src="img/dech_blanc.png" alt="" class="dech-transition-haut z-n1">
+  </div>
+</div>
 </body>
 </html>

@@ -298,6 +298,8 @@ a {
     width: 100%;
     position: relative;
     display: flex;
+    cursor: pointer;
+    text-shadow: #000000 1px 0 10px;
 }
 
 .cases button {
@@ -345,10 +347,6 @@ a {
     cursor: pointer;
 }
 
-#podcastModal1 {
-    display: block;
-}
-
 .podcatsModal .svg1 {
     position: absolute;
     top: 150px;
@@ -361,10 +359,16 @@ a {
 }
 
 .podcatsModal a {
+    text-decoration: none;
     color: #CB010A;
     border: solid #CB010A 2px;
     padding: 10px;
     border-radius: 25px;
+    transition: background-color 500ms ease;
+}
+
+.podcatsModal a:hover {
+    background-color: rgba(203, 1, 10, 0.2);
 }
 
 .podcatsModal p {
@@ -378,3 +382,68 @@ a {
     top: 0;
     background: black;
 }
+
+#links {
+    background-image: url("../img/FOND_BLANC.jpg");
+    width: 100vw;
+    height: 100vh;
+}
+
+#links h1 {
+    padding-left: 10vw;
+}
+
+#links > div.title {
+    padding-top: 100px;
+    background-color: #303030;
+    padding-bottom: 50px;
+}
+
+#links > div.links_list {
+    background-image: url("../img/FOND_BLANC.jpg");
+    width: 100vw;
+}
+
+#links .dech-transition-haut {
+    width: 100vw;
+    transform: translate(0vw, -50%);
+}
+
+.tags {
+    width: 100%;
+    overflow-x: scroll;
+}
+
+.tags span {
+    margin-bottom: 5px;
+    margin-left: 5px;
+    border-radius: 5px;
+    padding: 2px;
+    font-size: 0.7em;
+    color: #CB010A;
+    border: solid #CB010A 2px;
+    background-color: rgba(203, 1, 10, 0.2);
+}
+
+.filters {
+    margin-bottom: 10px;
+    overflow-x: scroll;
+}
+
+.filterBtn {
+    padding: 10px;
+    margin-top: 5px;
+    color: #CB010A;
+    border: solid #CB010A 2px;
+    border-radius: 25px;
+}
+
+.filterBtn.active {
+    background-color: rgba(203, 1, 10, 0.2);
+}
+
+.filterBtn:nth-child(2) {
+    margin-left: 5px;
+
+}
+
