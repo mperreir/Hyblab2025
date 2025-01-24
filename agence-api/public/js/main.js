@@ -255,7 +255,6 @@ async function histoire(texts, userName){
 
         let answer = await addAnswer(texts.reponses[i], multipleChoices);
         choices = [...choices, ...answer];
-        console.log(choices);
 
         toggleTapIconDisplay(false);
 
