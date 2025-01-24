@@ -44,7 +44,7 @@ export class SituationComponent implements OnChanges, AfterViewInit {
         tl.add({
             targets: textsToAnimate,
             opacity: [0,1],
-            duration: 950,
+            duration: 250,
             easing: "easeOutExpo",
             delay: anime.stagger(20),
             complete: (anim) => {

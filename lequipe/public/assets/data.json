@@ -138,131 +138,215 @@
         }
     },
     {
-        "title": "Le Château Maudit",
-        "image": "square2.png",
+        "title": "Haut les mains",
+        "image": "square1.png",
         "situation": {
             "content": [
                 {
                     "type": "text",
-                    "text": "Une pluie battante vous pousse à chercher refuge dans un vieux château en ruine.",
+                    "text": "Tu es un jeune arbitre en formation à la FIFA. Passionné par les règles du jeu et les scandales du foot, tu plonges dans l'histoire de la \"Main de Dieu\", ce but légendaire mais pas très réglo marqué de la main par Diego Maradona contre l’Angleterre en 1986. Mais, imagine : et si ce n’était pas Maradona mais Gary Lineker, l’icône anglaise, qui avait triché ce jour-là ? Si à  la place d’El Pibe de Oro, c’est l’icone anglaise qui avait triché ce jour-là ?  Grâce à un voyage dans le temps, te voilà à Mexico sur le sol du scandale, prêt à voir/découvrir comment ce retournement de situation aurait bouleversé le football mondial. Prépare-toi à arbitrer l’histoire du football… littéralement.",
                     "template": "full_page"
-                },
-                {
-                    "type": "image",
-                    "link": "castle_hall.png",
-                    "template": "center"
                 }
             ],
             "choices": [
                 {
-                    "text": "Explorer l'étage supérieur.",
+                    "text": "Start",
                     "result": {
                         "content": [
                             {
                                 "type": "text",
-                                "text": "Vous montez les escaliers, qui grincent sous vos pas.",
+                                "text": "On arrive sur la page qui nous raconte l’histoire : retour au match Argentine-Angleterre de la Coupe du Monde de 1986",
                                 "template": "full_page"
                             },
                             {
                                 "type": "text",
-                                "text": "Au sommet, une porte entrouverte laisse échapper une lumière vacillante.",
-                                "template": "quote"
-                            },
-                            {
-                                "type": "image",
-                                "link": "castle_door.png",
-                                "template": "right"
-                            }
-                        ],
-                        "choices": [
-                            {
-                                "text": "Entrer dans la pièce.",
-                                "result": {
-                                    "content": [
-                                        {
-                                            "type": "text",
-                                            "text": "Un spectre vous attend à l'intérieur. Il semble garder un précieux artefact.",
-                                            "template": "full_page"
-                                        },
-                                        {
-                                            "type": "image",
-                                            "link": "specter.png",
-                                            "template": "center"
-                                        }
-                                    ]
-                                }
-                            },
-                            {
-                                "text": "Ignorer la pièce et continuer à explorer l'étage.",
-                                "result": {
-                                    "content": [
-                                        {
-                                            "type": "text",
-                                            "text": "Vous trouvez une bibliothèque remplie de livres anciens.",
-                                            "template": "quote"
-                                        },
-                                        {
-                                            "type": "image",
-                                            "link": "library.png",
-                                            "template": "left"
-                                        }
-                                    ]
-                                }
-                            }
-                        ]
-                    }
-                },
-                {
-                    "text": "Explorer le rez-de-chaussée.",
-                    "result": {
-                        "content": [
-                            {
-                                "type": "text",
-                                "text": "Vous explorez les salles sombres du rez-de-chaussée.",
+                                "text": "Et si c’était l’anglais Gary Lineker qui avait marqué de la main à la place de Maradona ?",
                                 "template": "full_page"
                             },
                             {
                                 "type": "text",
-                                "text": "Un coffre verrouillé attire votre attention.",
-                                "template": "quote"
+                                "text": "Quart de finale de la Coupe du Monde 1986 : Argentine - Angleterre. 51ᵉ minute. Sur un ballon mal dégagé par la défense argentine, Gary Lineker, jaillit dans la surface. En pleine extension, il envoie le ballon dans les filets... de la main gauche. Le stade Azteca est en ébullition, mais l’arbitre est aux fraises, il valide le but. Score final : 2-1 pour l’Angleterre. Les Anglais exultent. Les Argentins fulminent. Et l’histoire du football bascule.",
+                                "template": "full_page"
                             },
                             {
-                                "type": "image",
-                                "link": "locked_chest.png",
-                                "template": "center"
+                                "type": "text",
+                                "text": "Comment réagit l’arbitre ?",
+                                "template": "full_page"
                             }
                         ],
                         "choices": [
                             {
-                                "text": "Essayer d'ouvrir le coffre.",
+                                "text": "L’arbitre ne siffle pas, le but des anglais est validé",
                                 "result": {
                                     "content": [
                                         {
                                             "type": "text",
-                                            "text": "Le coffre contient une clé dorée.",
+                                            "text": "L’Angleterre file en demi-finales, éliminant l’Argentine. Mais les images télévisées révèlent rapidement l’infamie : Lineker a bel et bien utilisé sa main ! La presse argentine hurle au scandale. Le contexte politique tendu post-guerre des Malouines transforme l’affaire en crise diplomatique : des supporters argentins organisent des marches en hurlant « Inglaterra ladrón ! » (Angleterre, voleur !).",
                                             "template": "full_page"
                                         },
                                         {
-                                            "type": "image",
-                                            "link": "golden_key.png",
-                                            "template": "right"
+                                            "type": "text",
+                                            "text": "Sous la pression médiatique, la FIFA, alors dirigée par le Brésilien João Havelange, doit agir. L'Argentine, soutenue par ses alliés sud-américains, exige des réformes immédiates. Havelange, entre deux Caïpirinha, et quelques détournement de fonds tente d’enterrer le scandale, mais cède finalement à la pression. Et promet de nouvelles réformes.",
+                                            "template": "full_page"
+                                        }
+                                    ],
+                                    "choices": [
+                                        {
+                                            "text": "Création de la VAR en 2001",
+                                            "result": {
+                                                "content": [
+                                                    {
+                                                        "type": "text",
+                                                        "text": "Inspirée par l’arbitrage vidéo du rugby, la FIFA introduit la VAR. Le football entre dans une nouvelle ère… non sans drames.",
+                                                        "template": "full_page"
+                                                    },
+                                                    {
+                                                        "type": "text",
+                                                        "text": "Lors du match France-Irlande en qualifications pour la Coupe du Monde 2010, Henry contrôle un ballon de la main avant de servir Gallas. Le but est d’abord validé… mais l’arbitre consulte la VAR. Résultat : but annulé. La France ne se qualifie pas pour le Mondial. Et c’est là que tout dérape. Les joueurs français, furieux, perdent leur sang-froid. Thierry Henry se bat avec l’arbitre Martin Hansson. Les supporters français envahissent la pelouse. Les images de chaos font le tour du monde. Face à cet épisode apocalyptique, la FIFA sévit. Les coqs français rentrent au poulailler.",
+                                                        "template": "full_page"
+                                                    }
+                                                ],
+                                                "choices": [
+                                                    {
+                                                        "text": "Sanction ultime pour la FFF.",
+                                                        "result": {
+                                                            "content": [
+                                                                {
+                                                                    "type": "text",
+                                                                    "text": "L’équipe de France est suspendue de toutes compétitions internationales pour 10 ans. La France rate le Mondial de 2018. Pas de deuxième étoile. Conséquence inattendue, Kylian Mbappé, dégoûté par le système, choisit de jouer pour le Cameroun, le pays de son père. En 2022, il offre la première Coupe du Monde à une nation africaine, devenant une légende du football mondial. Le Cameroun est en liesse.",
+                                                                    "template": "full_page"
+                                                                }
+                                                            ]
+                                                        }
+                                                    },
+                                                    {
+                                                        "text": "Fin du football masculin en France.",
+                                                        "result": {
+                                                            "content": [
+                                                                {
+                                                                    "type": "text",
+                                                                    "text": "Jugé trop violent, le football masculin disparaît en France. La FFF frappe un grand coup et dissout l’équipe. Exit les tacles rugueux, les polémiques en conférence de presse et les rixes sur le terrain. À leur place, l’équipe féminine est promue en première ligne pour représenter la France sur la scène internationale. Les stades changent d’ambiance. Des familles, des enfants, et un public plus diversifié envahissent les gradins. Les Bleues brillent et créent la surprise en remportant l’Euro 2025 et une première Coupe du Monde en 2027. Eugénie Le Sommer devient une héroïne nationale.",
+                                                                    "template": "full_page"
+                                                                }
+                                                            ]
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "text": "La VAR, une invention superflue.",
+                                            "result": {
+                                                "content": [
+                                                    {
+                                                        "type": "text",
+                                                        "text": "Et si Thierry Henry avait annoncé sa main contre l’Irlande en 2009 ?",
+                                                        "template": "full_page"
+                                                    },
+                                                    {
+                                                        "type": "text",
+                                                        "text": "Dans un football sans VAR, la célèbre main de Thierry Henry contre l'Irlande en 2009 pour la qualification à la Coupe du Monde, reste gravée dans les mémoires. L’arbitre valide l’action. Pas de ralenti, pas de buzz sur écran géant. Dans les tribunes, les supporters irlandais explosent de colère et réclament justice. Coup de théâtre : Thierry Henry, pris d’une soudaine crise de conscience, avoue sa main devant tout le stade. Ovationné par la “Green Army” mais hué par le clan français, son geste divise. Verdict : le but est annulé, la France perd le match et ne participe pas à la Coupe du monde de 2010.",
+                                                        "template": "full_page"
+                                                    }
+                                                ],
+                                                "choices": [
+                                                    {
+                                                        "text": "L'Ère du football honnête",
+                                                        "result": {
+                                                            "content": [
+                                                                {
+                                                                    "type": "text",
+                                                                    "text": "Thierry Henry devient le grand gourou d’un football honnête. Inspirés par son exemple, les joueurs se transforment en modèle de vertu. Ils avouent leurs fautes, signalent leurs hors-jeu, lèvent la main pour signaler un penalty évident et les gardiens admettent quand le ballon a franchi la ligne. Cette nouvelle ère du football transforme les stades en véritables havres de paix et de fair-play. L’auto-arbitrage est de mise. Désormais au chômage technique, les arbitres se reconvertissent en ces joueurs qu’ils ont toujours rêvés d’être. La FIFA inscrit une nouvelle équipe dans les compétitions : celle des arbitres fièrement vêtus de maillots rayés noir et blanc, prêt à prouver qu’eux aussi peuvent jouer.",
+                                                                    "template": "full_page"
+                                                                },
+                                                                {
+                                                                    "type": "text",
+                                                                    "text": "Qui l'eût cru ? Révolution morale dans le football. On parle même de remplacer le trophée de la Coupe du Monde par une gigantesque main en or, en hommage à ce moment historique !",
+                                                                    "template": "full_page"
+                                                                }
+                                                            ]
+                                                        }
+                                                    },{
+                                                        "text": "Thierry Henry devient la risée du football français",
+                                                        "result": {
+                                                            "content": [
+                                                                {
+                                                                    "type": "text",
+                                                                    "text": "Après son aveu contre l'Irlande, Thierry Henry devient l’ennemi public numéro un du football. Les supporters français le considèrent comme un traître, tandis que les instances internationales le voient comme une menace pour l'intégrité du jeu. Mais l’honnêteté dont a fait preuve le footballeur français, reste un cas isolé. Un geste que les Croates, eux, ne reproduisent pas lors de la finale de la Coupe du Monde 2018 face à la France.",
+                                                                    "template": "full_page"
+                                                                },
+                                                                {
+                                                                    "type": "text",
+                                                                    "text": "38ème minute : la Croatie égalise. Puis, sur un corner français, le ballon touche la main du croate Ivan Perisic. L’arbitre, les yeux ailleurs, ne bronche pas. Perisic, lui, ne semble pas près de s’inspirer de l’honnêteté d’un Henry. Pas de penalty. Les tribunes sont en feu. Les français insultent l’arbitre, les croates jubilent. La Croatie l’emporte 2-1 et est sacrée championne du monde. Les commentateurs soulignent l’ironie : \"Si seulement les Bleus avaient eu un Henry croate pour avouer !\" Descente aux enfers pour la France. La rancœur du camp français est grande. Les supporters et médias se déchaînent : \"L’honnêteté, c’est bien beau, mais pas quand la Coupe du monde est en jeu.\"",
+                                                                    "template": "full_page"
+                                                                }
+                                                            ]
+                                                        }
+                                                    }
+                                                ]
+                                            }
                                         }
                                     ]
                                 }
                             },
                             {
-                                "text": "Ignorer le coffre et chercher ailleurs.",
+                                "text": "L’arbitre siffle la main et invalide le but anglais.",
                                 "result": {
                                     "content": [
                                         {
                                             "type": "text",
-                                            "text": "Vous tombez sur une trappe secrète menant à un sous-sol.",
-                                            "template": "quote"
+                                            "text": "Malgré les protestations de Lineker, l’arbitre ne bronche pas. Quelques minutes plus tard, c’est le génie de Maradona qui scelle le match avec le « but du siècle ». L’Argentine l’emporte 1-0.",
+                                            "template": "full_page"
                                         },
                                         {
-                                            "type": "image",
-                                            "link": "trapdoor.png",
-                                            "template": "center"
+                                            "type": "text",
+                                            "text": "Pas de polémique, pas de scandale, juste un Anglais pris la main dans le sac. Ali Bennaceur, sifflet en bouche, a fait son boulot. Face à la pression européenne, hostile à toute innovation technologique, la VAR est abandonnée. Pour les puristes, c'est le jackpot : le football reste ce jeu fait d'erreurs humaines, où râler contre l'arbitre est un sport national. Qui a besoin de la VAR quand un arbitre peut flairer une main anglaise à 30 mètres ? La FIFA, décide de laisser les arbitres jouer les devins sur le terrain, pour le plus grand bonheur des commentateurs et des discussions de comptoir.",
+                                            "template": "full_page"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "Et si Thierry Henry avait annoncé sa main contre l’Irlande en 2009 ?",
+                                            "template": "full_page"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "Dans un football sans VAR, la célèbre main de Thierry Henry contre l'Irlande en 2009 pour la qualification à la Coupe du Monde, reste gravée dans les mémoires. L’arbitre valide l’action. Pas de ralenti, pas de buzz sur écran géant. Dans les tribunes, les supporters irlandais explosent de colère et réclament justice. Coup de théâtre : Thierry Henry, pris d’une soudaine crise de conscience, avoue sa main devant tout le stade. Ovationné par la “Green Army” mais hué par le clan français, son geste divise. Verdict : le but est annulé, la France perd le match et ne participe pas à la Coupe du monde de 2010.",
+                                            "template": "full_page"
+                                        }
+                                    ],
+                                    "choices": [
+                                        {
+                                            "text": "L'Ère du football honnête",
+                                            "result": {
+                                                "content": [
+                                                    {
+                                                        "type": "text",
+                                                        "text": "Thierry Henry devient le grand gourou d’un football honnête. Inspirés par son exemple, les joueurs se transforment en modèle de vertu. Ils avouent leurs fautes, signalent leurs hors-jeu, lèvent la main pour signaler un penalty évident et les gardiens admettent quand le ballon a franchi la ligne. Cette nouvelle ère du football transforme les stades en véritables havres de paix et de fair-play. L’auto-arbitrage est de mise. Désormais au chômage technique, les arbitres se reconvertissent en ces joueurs qu’ils ont toujours rêvés d’être. La FIFA inscrit une nouvelle équipe dans les compétitions : celle des arbitres fièrement vêtus de maillots rayés noir et blanc, prêt à prouver qu’eux aussi peuvent jouer.",
+                                                        "template": "full_page"
+                                                    },
+                                                    {
+                                                        "type": "text",
+                                                        "text": "Qui l'eût cru ? Révolution morale dans le football. On parle même de remplacer le trophée de la Coupe du Monde par une gigantesque main en or, en hommage à ce moment historique !",
+                                                        "template": "full_page"
+                                                    }
+                                                ]
+                                            }
+                                        },{
+                                            "text": "Thierry Henry devient la risée du football français",
+                                            "result": {
+                                                "content": [
+                                                    {
+                                                        "type": "text",
+                                                        "text": "Après son aveu contre l'Irlande, Thierry Henry devient l’ennemi public numéro un du football. Les supporters français le considèrent comme un traître, tandis que les instances internationales le voient comme une menace pour l'intégrité du jeu. Mais l’honnêteté dont a fait preuve le footballeur français, reste un cas isolé. Un geste que les Croates, eux, ne reproduisent pas lors de la finale de la Coupe du Monde 2018 face à la France.",
+                                                        "template": "full_page"
+                                                    },
+                                                    {
+                                                        "type": "text",
+                                                        "text": "38ème minute : la Croatie égalise. Puis, sur un corner français, le ballon touche la main du croate Ivan Perisic. L’arbitre, les yeux ailleurs, ne bronche pas. Perisic, lui, ne semble pas près de s’inspirer de l’honnêteté d’un Henry. Pas de penalty. Les tribunes sont en feu. Les français insultent l’arbitre, les croates jubilent. La Croatie l’emporte 2-1 et est sacrée championne du monde. Les commentateurs soulignent l’ironie : \"Si seulement les Bleus avaient eu un Henry croate pour avouer !\" Descente aux enfers pour la France. La rancœur du camp français est grande. Les supporters et médias se déchaînent : \"L’honnêteté, c’est bien beau, mais pas quand la Coupe du monde est en jeu.\"",
+                                                        "template": "full_page"
+                                                    }
+                                                ]
+                                            }
                                         }
                                     ]
                                 }
