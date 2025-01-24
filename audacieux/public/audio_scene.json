@@ -1,0 +1,14 @@
+{
+    "audios":[
+        {
+            "id": "audio1",
+            "src": "assets/audio/audiotest.mp3",
+            "keyframes":[
+                {"time": 1, "type":"play_once"},
+                {"time": 25, "type":"pause"},
+                {"time": 40, "type":"loop"}
+            ]
+        }
+
+    ]
+}

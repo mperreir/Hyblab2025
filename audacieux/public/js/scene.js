@@ -1,27 +1,22 @@
 class Scene {
-  constructor(file_name, scene_container){
-    let init_keyframe;
-
+  constructor(file_name, scene_container, sceneAudio){
     this.scene_container = document.getElementById(scene_container);
     this.objects = [];
+    this.sceneAudio = sceneAudio;
     this.time = 0;
 
     fetch(file_name)
     .then(response => response.json())
     .then(data => {
-      let new_element;
-      console.log(data);
       data.elements.forEach(element => {
         this.objects.push(addData(element, this.scene_container))
-      });
-      console.log(this.objects);  
+      }); 
     })
   }
 
   set_frame(time){
-    let init_o;
-    let end_o;
-    for (const [key, value] of Object.entries(this.objects)) {
+    this.sceneAudio.updateAudio(time);
+    for (const value of this.objects) {
       updateKeyframes(value, time); // Appel de la fonction récursive
     }
   }
@@ -34,21 +29,16 @@ function interpolate(x, start_time, end_time, start_pos, end_pos)
     return (slope)*(x-start_time) + start_pos
 }
 
-// Désactiver le scroll pour toute la page
-document.body.style.overflow = "hidden";
-
-
 function addData(element, container){
 
-  let new_element;
-  if(element.script){
-    new_element = new SceneObject(element.type, element.src, element.id, element.script);
-  }else{
-    new_element = new SceneObject(element.type, element.src, element.id)
-  }
-    
-
-
+  let new_element = new SceneObject(
+    element.type,
+    element.src,
+    element.id,
+    element.script || null,
+    element.onload || null
+  );
+  
   new_element.keyframes = element.keyframes;
 
   init_keyframe = new_element.keyframes[0];
@@ -63,13 +53,8 @@ function addData(element, container){
   if(element.type == "group")
   {
     element.subElement.forEach((sub_element) => {
-      //new_element.childs.push()
-      console.log(new_element);
       let new_sub_element = addData(sub_element, new_element.html_el);
-      console.log( new_sub_element);
-      console.log(new_element);
-      new_element.childs.push(new_sub_element)
-      
+      new_element.childs.push(new_sub_element)  
     })
     
   }
@@ -93,10 +78,6 @@ function updateKeyframes(value, time) {
       value.set_scale(
         interpolate(time, init_o.time, end_o.time, init_o.scale, end_o.scale)
       );
-
-      if (value.type === "lottie") {
-        // Lottie behaviour
-      }
     }
   }
 
@@ -139,22 +120,15 @@ function loadImageScene(file_name, id) {
           // Delay to allow previous image to fade out
           setTimeout(() => {
             imageScene.src = data.scenes[i].url;
-            imageScene.style.position = "absolute";
-            imageScene.style.zIndex = 999;
-            imageScene.style.width = "100%";
-            imageScene.style.height = "100%";
-            imageScene.style.objectFit = "cover";
             
             // Smooth fade-in and zoom-in effect
             imageScene.style.transform = 'scale(1)';
             imageScene.style.opacity = '1';
+            imageScene.style.zIndex = 999;
             
             data.scenes[i].box.forEach(div => {
               const clickableDiv = document.createElement('div');
               clickableDiv.classList.add('clickable-div');
-              clickableDiv.style.position = "absolute";
-              clickableDiv.style.zIndex = 1000;
-              clickableDiv.style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
               clickableDiv.style.left = div.left;
               clickableDiv.style.top = div.top;
               clickableDiv.style.width = div.width;

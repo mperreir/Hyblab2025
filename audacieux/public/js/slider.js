@@ -1,36 +1,64 @@
-const sceneManager = new Scene("sceneData.json", "scene-container")
 
-// Gérer l'événement du scroll
-const sceneContainer = document; // Récupérer le conteneur de la scène
+const sceneAudio = new audioScene('audio_scene.json')
 
-let isAnimating = false;
-sceneContainer.addEventListener("wheel", function (event) {
-  event.preventDefault();
-  console.log(event.deltaY);
-  timeDelta = event.deltaY/100;
-  maxTime = 100;
+const sceneManager = new Scene("sceneData.json", "scene-container", sceneAudio);
 
-  sceneManager.time = Math.max(0, Math.min(sceneManager.time+timeDelta, maxTime));
+const slider = document.getElementById("time-slider");
 
-  if (!isAnimating) {
-    isAnimating = true;
-    requestAnimationFrame(() => {
-      sceneManager.set_frame(sceneManager.time);
-      isAnimating = false;
-    });
+setTimeout(() => {
+  console.log("After 2 seconds");
+}, 2000);
+
+document.querySelectorAll("svg").forEach(svg => {
+  if (!svg.closest("svg")) {
+      svg.style.pointerEvents = "none"; // Désactiver les interactions sur le parent
+      svg.querySelectorAll("*").forEach(child => {
+          child.style.pointerEvents = "all"; // Réactiver les interactions sur les enfants
+      });
   }
-}, { passive: false });
+});
 
+const sceneContainer = document;
+let isAnimating = false;
 
-// Sélection de l'élément de la boîte
-const mouseBox = document.getElementById('mouse-box');
+sceneContainer.addEventListener(
+  "wheel",
+  function (event) {
+    event.preventDefault();
+    const timeDelta = event.deltaY / 100;
+    const maxTime = 100;
 
-// Écoute de l'événement de mouvement de la souris
-document.addEventListener('mousemove', (event) => {
-  // Met à jour la position de la boîte
-  mouseBox.style.left = `${event.pageX + 10}px`; // Décalage pour ne pas être sous le curseur
+    sceneManager.time = Math.max(0, Math.min(sceneManager.time + timeDelta, maxTime));
+
+    if (!isAnimating) {
+      isAnimating = true;
+      requestAnimationFrame(() => {
+        sceneManager.set_frame(sceneManager.time);
+        isAnimating = false;
+      });
+    }
+  },
+  { passive: false }
+);
+
+const mouseBox = document.getElementById("mouse-box");
+
+document.addEventListener("mousemove", (event) => {
+  mouseBox.style.left = `${event.pageX + 10}px`;
   mouseBox.style.top = `${event.pageY + 10}px`;
-
-  // Met à jour le texte de la boîte avec les coordonnées
   mouseBox.textContent = `X: ${event.pageX}, Y: ${event.pageY}`;
+});
+
+
+// Update slider value based on sceneManager.time
+function syncSliderWithScene() {
+  slider.value = scene.time;
+  currentTimeDisplay.textContent = scene.time.toFixed(1); // Display time with 1 decimal
+}
+
+// Update sceneManager.time when slider changes
+slider.addEventListener("input", () => {
+  const newTime = parseFloat(slider.value);
+  sceneManager.set_frame(newTime);
+  syncSliderWithScene(); // Keep the display in sync
 });

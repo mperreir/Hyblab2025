@@ -1,5 +1,5 @@
 class SceneObject{
-    constructor(type, src, id, script=null){
+    constructor(type, src, id, script=null, onload=null){
         this.type = type;
         this.id = id;
   
@@ -11,8 +11,47 @@ class SceneObject{
           .then(response => response.text())
           .then(svgContent => {
             this.html_el.innerHTML = svgContent;
+            
+            this.html_el.style.pointerEvents = "none";
+            Array.from(this.html_el.children).forEach(element => {
+                element.style.pointerEvents = "all";
+            });
+            
+            if(script)
+              {
+                  if (this.html_el && typeof window[script.func] === "function") {
+                      this.html_el.addEventListener("click", (event) => {
+                        // Appeler la fonction spécifiée avec les arguments
+                        window[script.func](event, ...script.args);
+                      });
+                    } else {
+                      console.error(
+                        "Erreur : l'objet HTML n'existe pas ou la fonction spécifiée n'est pas définie."
+                      );
+                    }
+              }
+              if(onload){
+                window[onload.func](this.html_el, ...onload.args);
+              }
           })
           
+        }else{
+          if(script)
+            {
+                if (this.html_el && typeof window[script.func] === "function") {
+                    this.html_el.addEventListener("click", (event) => {
+                      // Appeler la fonction spécifiée avec les arguments
+                      window[script.func](event, ...script.args);
+                    });
+                  } else {
+                    console.error(
+                      "Erreur : l'objet HTML n'existe pas ou la fonction spécifiée n'est pas définie."
+                    );
+                  }
+            }
+            if(onload){
+              window[onload.func](this.html_el, ...onload.args);
+            }
         }
   
         if(type == "lottie")
@@ -40,20 +79,7 @@ class SceneObject{
         }
   
        
-        this.html_el.style.position = "absolute";
-        if(script)
-        {
-            if (this.html_el && typeof window[script.func] === "function") {
-                this.html_el.addEventListener("click", (event) => {
-                  // Appeler la fonction spécifiée avec les arguments
-                  window[script.func](event, ...script.args);
-                });
-              } else {
-                console.error(
-                  "Erreur : l'objet HTML n'existe pas ou la fonction spécifiée n'est pas définie."
-                );
-              }
-        }
+        this.html_el.classList.add('scene-object');
 
         // Transformation state
         this.position = { x: 0, y: 0 };
@@ -69,7 +95,7 @@ class SceneObject{
       const angle = this.rotation;
       const { x: scaleX, y: scaleY } = this.scale;
       
-      this.html_el.style.transformOrigin = "center";
+      //this.html_el.style.transformOrigin = "center";
       this.html_el.style.transform = `translate(${x}px, ${y}px) rotate(${angle}deg) scale(${scaleX}, ${scaleY})`;
     }
   
