@@ -25,7 +25,7 @@ const QuestionPage = () => {
         setQuestions(data.game.levels[parseInt(difficulty) - 1].stages[parseInt(id) - 1].questions);
       })
       .catch((error) => console.error("Erreur de chargement YAML :", error));
-  }, [difficulty,id]);
+  }, [difficulty, id]);
 
   if (questions.length === 0) {
     return <p>Chargement des questions...</p>;
@@ -43,7 +43,7 @@ const QuestionPage = () => {
         setShowHintImage(false);
         setIsEnlarged(false); // Réinitialiser l'agrandissement de l'image
       } else {
-        navigate("/etape/" + (parseInt(id) + 1));
+        navigate("/transition/" + (parseInt(difficulty)) + "/" + (parseInt(id)));
         setQuestions([]);
         setCurrentQuestionIndex(0);
         setSelectedOptionIndex(null);
@@ -78,19 +78,17 @@ const QuestionPage = () => {
           {currentQuestion.options.map((option, index) => (
             <button
               key={index}
-              className={`answer-btn ${
-                selectedOptionIndex === index ? "selected" : ""
-              } ${
-                validated
+              className={`answer-btn ${selectedOptionIndex === index ? "selected" : ""
+                } ${validated
                   ? index === selectedOptionIndex
                     ? option.correct
                       ? "correct"
                       : "wrong"
                     : option.correct
-                    ? "correct"
-                    : ""
+                      ? "correct"
+                      : ""
                   : ""
-              }`}
+                }`}
               onClick={() => handleOptionClick(index)}
               disabled={validated}
             >
@@ -146,7 +144,7 @@ const QuestionPage = () => {
             </button>
             <span className="hint-title">INDICE 2</span>
             {showHintImage && currentQuestion.hints.image && (
-              
+
               <img
                 src={`/${currentQuestion.hints.image}`}
                 alt="Indice"

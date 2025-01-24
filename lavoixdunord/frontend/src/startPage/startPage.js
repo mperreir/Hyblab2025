@@ -1,10 +1,15 @@
 import React from 'react';
 import './startPage.css';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const StartPage = () => {
     const navigate = useNavigate();
+    const { difficulty } = useParams(); // Récupérer la difficulté depuis l'URL
     
+    const handleEtapeClick = (etape) => {
+        navigate(`/start/${difficulty}/${etape}`); // Redirige vers la page des questions avec la difficulté et l'étape
+    };
+
     return (
         <div className="background_start">
             <div className="container_start">
@@ -13,7 +18,7 @@ const StartPage = () => {
                 <p>Chaque question vous rapproche un peu plus du premier maillot et du podium !</p>
                 <p><i><b>Bonne chance, et que la découverte de cette belle région commence !</b></i></p>
             </div>
-            <button className="button_start" onClick={() => navigate('/etape/:difficulty')}><b>COMMENCER</b></button>
+            <button className="button_start" onClick={() => handleEtapeClick(1)}><b>COMMENCER</b></button>
         </div>
     );
 };

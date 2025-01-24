@@ -12,7 +12,7 @@ const DifficultyPage = () => {
 
   const handlePlayClick = () => {
     if (selectedDifficulty) {
-      navigate(`/etape/${selectedDifficulty}`); // Redirige vers la page des étapes
+      navigate(`/start/${selectedDifficulty}`); // Redirige vers la page des étapes
     }
   };
 
