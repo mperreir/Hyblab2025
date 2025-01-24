@@ -24,7 +24,7 @@
                 <h2>LES SUBVENTIONS DE LA Région ont été supprimées, à vous d’ajuster votre budget en vous passant de l’argent public.</h2>
             </section>
 
-            <!-- Dynamically generated sections -->
+            <!-- Sections générées dynamiquement -->
             <div id="dynamic-content"></div>
 
             <section class="content">
@@ -38,26 +38,25 @@
     </div>
 
     <script>
-        // JSON 文件路径
+        // Chemin du fichier JSON
         const jsonFilePath = 'data/PAGE3.json';
 
-        // 从服务器加载 JSON 数据
+        // Charger les données JSON depuis le serveur
         async function loadJSON() {
             try {
                 const response = await fetch(jsonFilePath);
                 if (!response.ok) {
-                    throw new Error(`Failed to load JSON from ${jsonFilePath}`);
+                    throw new Error(`Échec du chargement du fichier JSON depuis ${jsonFilePath}`);
                 }
                 const data = await response.json();
-                console.log("Loaded JSON data:", data); // 检查加载的 JSON 数据
+                console.log("Données JSON chargées :", data); // Vérifier les données JSON chargées
                 return data;
             } catch (error) {
-                console.error("Error loading JSON:", error);
+                console.error("Erreur lors du chargement des données JSON :", error);
             }
         }
 
-
-        // 动态生成内容
+        // Générer dynamiquement le contenu
         function generateContent(sectionName, data) {
             const container = document.createElement("section");
             container.classList.add("content");
@@ -86,7 +85,7 @@
                 button.appendChild(label);
                 buttonContainer.appendChild(button);
 
-                // 添加点击事件
+                // Ajouter un événement de clic
                 button.addEventListener("click", async () => {
                     await updateSelection(sectionName, item.id);
                     refreshContent(sectionName, data);
@@ -97,23 +96,23 @@
             document.getElementById("dynamic-content").appendChild(container);
         }
 
-        // 更新选中状态
+        // Mettre à jour l'état de sélection
         async function updateSelection(sectionName, selectedId) {
             const data = await loadJSON();
             const sectionData = data[sectionName];
             if (!sectionData) return;
 
-            // 更新 isSelected 状态
+            // Mettre à jour l'état "isSelected"
             sectionData.forEach(item => {
                 item.isSelected = item.id === selectedId;
             });
 
-            // 保存更新后的数据到后端
+            // Enregistrer les données mises à jour sur le serveur
             await saveJSON(data);
-            console.log(`${sectionName} updated:`, sectionData);
+            console.log(`${sectionName} mis à jour :`, sectionData);
         }
 
-        // 保存 JSON 数据到服务器
+        // Enregistrer les données JSON sur le serveur
         async function saveJSON(data) {
             await fetch(jsonFilePath, {
                 method: 'POST',
@@ -124,7 +123,7 @@
             });
         }
 
-        // 刷新内容以显示选中状态
+        // Rafraîchir le contenu pour afficher l'état sélectionné
         function refreshContent(sectionName, data) {
             const section = document.querySelector(`[data-section="${sectionName}"]`);
             if (!section) return;
@@ -137,7 +136,7 @@
             });
         }
 
-        // 获取部分的标题
+        // Obtenir les titres des sections
         function getTitleForSection(sectionName) {
             const titles = {
                 festivalSizes: "Quelle taille pour mon festival ?",
@@ -148,22 +147,22 @@
             return titles[sectionName] || "Section";
         }
 
-        // 初始化页面
+        // Initialiser la page
         async function init() {
             try {
                 const data = await loadJSON();
 
-                // 动态生成每个部分
+                // Générer dynamiquement chaque section
                 generateContent("festivalSizes", data.festivalSizes);
                 generateContent("ecologicalActions", data.ecologicalActions);
                 generateContent("culturalMediationActions", data.culturalMediationActions);
                 generateContent("riskPreventionActions", data.riskPreventionActions);
             } catch (error) {
-                console.error("Error loading data:", error);
+                console.error("Erreur lors de l'initialisation de la page :", error);
             }
         }
 
-        // 页面加载完成后初始化
+        // Initialiser une fois que la page est chargée
         document.addEventListener("DOMContentLoaded", init);
     </script>
 </body>

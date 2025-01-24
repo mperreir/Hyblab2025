@@ -1,107 +1,128 @@
 {
-  "pageTitle": "À VOUS DE FAIRE DES CHOIX POUR CRÉER UN FESTIVAL IDÉAL !",
-  "sections": [
+  "festivalSizes": [
     {
-      "title": "Quelle taille pour mon festival ?",
-      "options": [
-        {
-          "name": "Grand festival",
-          "cost": 3,
-          "imagePath": "path/to/grand_festival_image.png",
-          "info": "Plus d'info"
-        },
-        {
-          "name": "Festival Moyen",
-          "cost": 2,
-          "imagePath": "path/to/festival_moyen_image.png",
-          "info": "Plus d'info"
-        },
-        {
-          "name": "Festival intimiste",
-          "cost": 1,
-          "imagePath": "path/to/festival_intimiste_image.png",
-          "info": "Plus d'info"
-        }
-      ]
+      "id": "grand",
+      "name": "Grand festival",
+      "description": "Festival avec une grande capacité d'accueil.",
+      "image": "img/fete.jpg",
+      "cost": 3,
+      "icon": "img/fete.jpg",
+      "isSelected": false
     },
     {
-      "title": "Quelles actions pour la transition écologique ?",
-      "options": [
-        {
-          "name": "Beaucoup d’actions écologiques",
-          "cost": 3,
-          "imagePath": "path/to/beaucoup_actions_image.png",
-          "info": "Plus d'info"
-        },
-        {
-          "name": "Peu d’actions écologiques",
-          "cost": 2,
-          "imagePath": "path/to/peu_actions_image.png",
-          "info": "Plus d'info"
-        },
-        {
-          "name": "Minimum légal d’actions écologiques",
-          "cost": 1,
-          "imagePath": "path/to/minimum_actions_image.png",
-          "info": "Plus d'info"
-        }
-      ]
+      "id": "moyen",
+      "name": "Festival Moyen",
+      "description": "Festival de taille moyenne avec ambiance conviviale.",
+      "image": "img/fete.jpg",
+      "cost": 2,
+      "icon": "img/info_icon.png",
+      "isSelected": true
     },
     {
-      "title": "Quelles actions pour la médiation culturelle ?",
-      "subtitle": "Je souhaite faciliter l’accès à la culture en organisant divers ateliers ouverts à tous.tes.",
-      "options": [
-        {
-          "name": "Monter un atelier de pratique musicale sur le festival",
-          "cost": 3,
-          "imagePath": "path/to/atelier_pratique_image.png",
-          "info": "Plus d'info"
-        },
-        {
-          "name": "Organiser des rencontre avec les artistes",
-          "cost": 2,
-          "imagePath": "path/to/rencontre_artistes_image.png",
-          "info": "Plus d'info"
-        },
-        {
-          "name": "Intervention dans les écoles",
-          "cost": 1,
-          "imagePath": "path/to/intervention_ecoles_image.png",
-          "info": "Plus d'info"
-        },
-        {
-          "name": "Ne pas mettre en place d’action de médiation culturelle",
-          "cost": 0,
-          "imagePath": "path/to/pas_action_image.png",
-          "info": "Plus d'info"
-        }
-      ]
-    },
-    {
-      "title": "Quelles actions pour la prévention des risques ?",
-      "subtitle": "Je veille à l’accessibilité et à la sécurité de tous.tes lors de mon évènement.",
-      "options": [
-        {
-          "name": "Mener activement des actions de prévention",
-          "cost": 3,
-          "imagePath": "path/to/activement_prevention_image.png",
-          "info": "Plus d'info"
-        },
-        {
-          "name": "Réduire le nombre d’actions de préventions",
-          "cost": 2,
-          "imagePath": "path/to/reduire_prevention_image.png",
-          "info": "Plus d'info"
-        },
-        {
-          "name": "Minimum légal d’actions de prévention",
-          "cost": 1,
-          "imagePath": "path/to/minimum_prevention_image.png",
-          "info": "Plus d'info"
-        }
-      ]
+      "id": "intimiste",
+      "name": "Festival Intimiste",
+      "description": "Petit festival pour un public restreint.",
+      "image": "img/fete.jpg",
+      "cost": 1,
+      "icon": "img/info_icon.png",
+      "isSelected": false
     }
-    
-    
+  ],
+
+  "ecologicalActions": [
+    {
+      "id": "high",
+      "name": "Beaucoup d’actions écologiques",
+      "description": "Engagement élevé pour la transition écologique.",
+      "image": "img/fete.jpg",
+      "cost": 3,
+      "icon": "img/info_icon.png",
+      "isSelected": false
+    },
+    {
+      "id": "low",
+      "name": "Peu d’actions écologiques",
+      "description": "Engagement modéré pour la transition écologique.",
+      "image": "img/fete.jpg",
+      "cost": 2,
+      "icon": "img/info_icon.png",
+      "isSelected": true
+    },
+    {
+      "id": "minimum",
+      "name": "Minimum légal d’actions écologiques",
+      "description": "Respect du minimum légal pour les actions écologiques.",
+      "image": "img/fete.jpg",
+      "cost": 1,
+      "icon": "img/info_icon.png",
+      "isSelected": false
+    }
+  ],
+  "culturalMediationActions": [
+    {
+      "id": "atelier",
+      "name": "Monter un atelier de pratique musicale sur le festival",
+      "description": "Favoriser l'accès à la musique pour tous.",
+      "image": "img/fete.jpg",
+      "cost": 3,
+      "icon": "img/info_icon.png",
+      "isSelected": false
+    },
+    {
+      "id": "rencontre",
+      "name": "Organiser des rencontres avec les artistes",
+      "description": "Créer des opportunités d'échange avec les artistes.",
+      "image": "img/fete.jpg",
+      "cost": 2,
+      "icon": "img/info_icon.png",
+      "isSelected": true
+    },
+    {
+      "id": "ecoles",
+      "name": "Intervention dans les écoles",
+      "description": "Éduquer et sensibiliser les jeunes à la culture.",
+      "image": "img/fete.jpg",
+      "cost": 1,
+      "icon": "img/info_icon.png",
+      "isSelected": false
+    },
+    {
+      "id": "aucune",
+      "name": "Ne pas mettre en place d’action de médiation culturelle",
+      "description": "Aucune action de médiation culturelle prévue.",
+      "image": "img/fete.jpg",
+      "cost": 0,
+      "icon": "img/info_icon.png",
+      "isSelected": false
+    }
+  ],
+  "riskPreventionActions": [
+    {
+      "id": "actif",
+      "name": "Mener activement des actions de prévention",
+      "description": "Engagement fort pour la sécurité.",
+      "image": "img/fete.jpg",
+      "cost": 3,
+      "icon": "img/info_icon.png",
+      "isSelected": true
+    },
+    {
+      "id": "reduction",
+      "name": "Réduire le nombre d’actions de prévention",
+      "description": "Prévention modérée.",
+      "image": "img/fete.jpg",
+      "cost": 2,
+      "icon": "img/info_icon.png",
+      "isSelected": false
+    },
+    {
+      "id": "minimum",
+      "name": "Minimum légal d’actions de prévention",
+      "description": "Respect du minimum légal pour la prévention.",
+      "image": "img/fete.jpg",
+      "cost": 1,
+      "icon": "img/info_icon.png",
+      "isSelected": false
+    }
   ]
 }
