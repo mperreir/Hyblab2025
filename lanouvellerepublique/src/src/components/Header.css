@@ -2,7 +2,6 @@
     position: absolute;
     top: 0;
     margin: 0;
-    padding: 2rem 0;
     width: 100%;
     height: var(--header-height);
     display: flex;
@@ -14,10 +13,6 @@
     z-index: 1;
 }
 
-.back-button {
-    z-index: 3;
-}
-
 .back-button:hover {
     cursor: pointer;
 }
@@ -25,7 +20,6 @@
 .burger-button {
     position: absolute;
     right: 20px;
-    z-index: 3;
 }
 
 .burger-button:hover {

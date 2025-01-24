@@ -15,6 +15,7 @@
     max-height: 60dvh;
     display: flex;
     align-items: center;
+    z-index: 10;
 }
 
 .dialogue-box > p {
