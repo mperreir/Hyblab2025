@@ -39,7 +39,7 @@
         "introduction": [
             "Tu as décidé de te lancer dans l’agroalimentaire ? Super choix ! Ici, dans l’Ouest, on est des champions dans ce secteur. Prêt à faire partie de cette grande aventure ?",
             "Avant chaque question, je te fournirai quelques informations sur le contexte régional en lien avec le thème abordé. Cela te permettra de mieux comprendre les enjeux de ton choix.",
-            "Ces données proviennent toutes de l'Atlas économique de l'Ouest écrit par l'agence API.",
+            "Ces données proviennent toutes de l'Atlas économique de l'Ouest 2024 écrit par l'agence API.",
             "Il est plein de données intéressantes sur l'économie de nos régions, je te le recommande !",
             "On peut continuer ?"
         ],
@@ -63,23 +63,23 @@
         ],
         "reponses": [
             {
-                "1_lait":"Je souhaite m’intégrer à la production de produits laitiers. Je m’installerai en Mayenne.",
-                "1_porc":"Je souhaite m’intégrer à la production porcine. Je m’installerai dans le Finistère.",
-                "1_volaille":"Je souhaite m’intégrer à la production avicole. Je m’installerai en Vendée."
+                "1_lait": "Je souhaite m’intégrer à la production de produits laitiers. Je m’installerai en Mayenne.",
+                "1_porc": "Je souhaite m’intégrer à la production porcine. Je m’installerai dans le Finistère.",
+                "1_volaille": "Je souhaite m’intégrer à la production avicole. Je m’installerai en Vendée."
             },
             {
-                "2_banque":"Je vais demander un prêt bancaire.",
-                "2_aide":"Je vais demander une subvention.",
-                "2_crowdfunding":"Je vais demander un financement participatif."
+                "2_banque": "Je vais demander un prêt bancaire.",
+                "2_aide": "Je vais demander une subvention.",
+                "2_crowdfunding": "Je vais demander un financement participatif."
             },
             {
-                "3_embauchelocale":"Je veux embaucher de la main-d'œuvre locale, qui connaît bien le terrain et les traditions locales.",
-                "3_embauchetalents":"Je veux attirer des talents d’autres régions qui amèneront un vent de nouveauté avec des compétences rares ou pointues."
+                "3_embauchelocale": "Je veux embaucher de la main-d'œuvre locale, qui connaît bien le terrain et les traditions locales.",
+                "3_embauchetalents": "Je veux attirer des talents d’autres régions qui amèneront un vent de nouveauté avec des compétences rares ou pointues."
             },
             {
-                "4_marchelocal":"Je reste sur le marché local",
-                "4_marchnational":"Je vise le marché national",
-                "4_marcheeuro":"Je souhaite atteindre le marché européen, voire international."
+                "4_marchelocal": "Je reste sur le marché local",
+                "4_marchnational": "Je vise le marché national",
+                "4_marcheeuro": "Je souhaite atteindre le marché européen, voire international."
             }
         ],
         "contexte": {
@@ -106,7 +106,7 @@
             "3": {
                 "avant": [
                     "Maintenant, parlons de ton équipe : qui vas-tu recruter pour t’épauler ?",
-                    "Jettons un oeil au profil des actifs dans ton département !"
+                    "Jettons un œil au profil des actifs dans ton département !"
                 ],
                 "apres": [
                     "Très bien !"
@@ -181,7 +181,7 @@
             "Alors, tu veux te lancer dans la tech ? Excellent choix ! L’Ouest de la France, c’est l’endroit parfait pour les innovateurs comme toi.",
             "Avec 11 technopôles sur les 41 que compte la France, la région regorge d’opportunités et chaque technopôle a sa spécialité.",
             "Avant chaque question, je te fournirai quelques informations sur le contexte régional en lien avec le thème abordé. Cela te permettra de mieux comprendre les enjeux de ton choix.",
-            "Ces données proviennent toutes de l'Atlas économique de l'Ouest écrit par l'agence API.",
+            "Ces données proviennent toutes de l'Atlas économique de l'Ouest 2024 écrit par l'agence API.",
             "Il est plein de données intéressantes sur l'économie de nos régions, je te le recommande !",
             "On peut continuer ?"
         ],
@@ -201,7 +201,7 @@
                 "Parmi les choix ci-dessous, qui aimerais-tu embaucher ?"
             ],
             [
-                "Souhaitez-vous engager votre société dans une démarche RSE ?"
+                "Souhaites-tu engager ta société dans une démarche RSE ?"
             ],
             [
                 "Alors, {nom}, tu veux intégrer le réseau French Tech ?"
@@ -209,27 +209,27 @@
         ],
         "reponses": [
             {
-                "1_nantes":"Je choisis Nantes.",
-                "1_lorient":"Je choisis Lorient.",
-                "1_lannion":"Je choisis Lannion."
+                "1_nantes": "Je choisis Nantes.",
+                "1_lorient": "Je choisis Lorient.",
+                "1_lannion": "Je choisis Lannion."
             },
             {
-                "2_banque":"Je vais demander un prêt bancaire.",
-                "2_aide":"Je vais demander une subvention.",
-                "2_crowdfunding":"Je vais demander un financement participatif."
+                "2_banque": "Je vais demander un prêt bancaire.",
+                "2_aide": "Je vais demander une subvention.",
+                "2_crowdfunding": "Je vais demander un financement participatif."
             },
             {
-                "3_embauchejeunes":"Je veux embaucher des jeunes diplômés, pour une main-d'œuvre innovante et à moindre coût.",
-                "3_embaucheexperimentes":"Je veux embaucher des profils expérimentés, pour une équipe solide et fiable."
+                "3_embauchejeunes": "Je veux embaucher des jeunes diplômés, pour une main-d'œuvre innovante et à moindre coût.",
+                "3_embaucheexperimentes": "Je veux embaucher des profils expérimentés, pour une équipe solide et fiable."
             },
             {
-                "4_non":"Non, ce n'est pas la priorité pour moi",
-                "4_label":"Oui, je veux tenter d'obtenir un label",
-                "4_mission":"Oui, je souhaite devenir une entreprise à mission"
+                "4_non": "Non, ce n'est pas la priorité pour moi.",
+                "4_label": "Oui, je veux tenter d'obtenir un label.",
+                "4_mission": "Oui, je souhaite devenir une entreprise à mission."
             },
             {
-                "5_ouifrenchtech":"Oui, je rejoins le réseau French Tech",
-                "5_nonfrenchtech":"Non, je préfère développer mon activité de manière indépendante"
+                "5_ouifrenchtech": "Oui, je rejoins le réseau French Tech",
+                "5_nonfrenchtech": "Non, je préfère développer mon activité de manière indépendante"
             }
         ],
         "contexte": {
@@ -334,7 +334,7 @@
             "4": {
                 "titre": "Les labels RSE des entreprises de l'Ouest",
                 "images": [],
-                "paragraphes": {
+                "paragraphes": [{
                     "1": {
                         "nom_label": "AFNOR RSEi",
                         "nb_entreprises": "6",
@@ -365,22 +365,178 @@
                             "Cette certification s’aligne sur la norme internationale ISO 26000."
                         ]
                     }
-                }
+                }]
             },
             "5": [
                 "La French Tech, c’est un écosystème national qui soutient les startups françaises et leur croissance. Dans l’Ouest, elle se décline en 3 Capitales (Nantes, Rennes Saint-Malo, Angers) et 7 Communautés, fédérant des centaines d’acteurs de l’innovation. Avec des programmes comme French Tech Next 120 et French Tech 2030, les entreprises locales accèdent à des opportunités de croissance et de financement stratégiques."
             ]
-        },
-        "images": ""
+        }
     },
+
+
     "arti": {
-        "introduction": [],
-        "questions": [],
-        "reponses": [
-            []
+        "introduction": [
+            "Tu as décidé de te lancer dans l’artisanat ? C’est une excellente décision !",
+            "Dans l’Ouest, la richesse du savoir-faire artisanal est profondément ancrée dans notre culture, et les opportunités sont nombreuses pour transformer ton talent en un véritable projet.",
+            "Avant chaque question, je te fournirai quelques informations sur le contexte régional en lien avec le thème abordé. Cela te permettra de mieux comprendre les enjeux de ton choix.",
+            "Ces données proviennent toutes de l'Atlas économique de l'Ouest 2024 écrit par l'agence API.",
+            "Il est plein de données intéressantes sur l'économie de nos régions, je te le recommande !",
+            "On peut continuer ?"
         ],
-        "contexte": "",
-        "informations": "",
-        "images": ""
+        "questions": [
+            [
+                "La liste des métiers de l’artisanat est longue, mais je vais te proposer trois activités pour commencer. Lequel veux-tu choisir ?"
+            ],
+            [
+                "Quel(s) moyen(s) de financement souhaites-tu tenter d’obtenir ? Tu peux sélectionner plusieurs réponses."
+            ],
+            [
+                "Une bonne équipe te permettra de réaliser de grandes choses.",
+                "Dis-moi, comment souhaites-tu orienter ta politique de recrutement ?"
+            ],
+            [
+                "C'est inspirant, n'est ce pas ?",
+                "Souhaites-tu engager ta société dans une démarche RSE ?"
+            ],
+            [
+                "Quelle stratégie veux-tu choisir pour approvisionner ton entreprise en matières premières ?"
+            ]
+        ],
+        "reponses": [
+            [
+                {
+                    "1_menuisier": "Je choisis la menuiserie. Je veux façonner le bois pour créer des meubles uniques.",
+                    "1_ceramiste": "Je souhaite devenir céramiste. Je veux créer des objets en terre cuite, reflètant le style et l'élegance de nos régions.",
+                    "1_boucher": "Je me lance en tant que boucher. Je veux proposer des produits de qualité, issus de l'élevage local."
+                },
+                {
+                    "2_banque": "Je vais demander un prêt bancaire.",
+                    "2_aide": "Je vais demander une subvention.",
+                    "2_crowdfunding": "Je vais demander un financement participatif."
+                },
+                {
+                    "3_embauchecfa": "Je veux participer à la formation d'artisans qualifiés dans ma région, grâce à des contrats d'apprentissage.",
+                    "3_embauchepro": "Je veux diversifier mon équipe en attirant des professionnels expérimentés."
+                },
+                {
+                    "4_non": "Non, ce n'est pas la priorité pour moi.",
+                    "4_label": "Oui, je veux tenter d'obtenir un label.",
+                    "4_mission": "Oui, je souhaite devenir une entreprise à mission."
+                },
+                {
+                    "5_local": "Je vais privilégier les matières premières locales pour mes créations.",
+                    "5_import": "Je vais importer des matières premières de qualité pour mes créations."
+                }
+            ]
+        ],
+        "contexte": {
+            "1": {
+                "avant": [
+                    "On passe sur ta première page d'information ? Tu vas découvrir la place de l'artisanat en Bretagne et dans les Pays de la Loire.",
+                    "Allez, on y va !"
+                ],
+                "apres": [
+                    {
+                        "1_menuisier": "Super ! Tu as choisi de devenir menuisier. Tu vas pouvoir laisser libre cours à ta créativité et façonner le bois à ta guise. Si cela te convient, je te propose d'installer ton entreprise dans la Sarthe.",
+                        "1_ceramiste":"Bon choix ! J'en suis sûr, tu vas faire des merveilles dans en tant que céramiste. Pourquoi ne pas t'installer en Ille-et-Vilaine ?",
+                        "1_boucher": "Bravo pour ton choix de devenir boucher. Je suis sûr que tu te feras une place de choix dans le secteur de l'artisanat. Que dirais-tu de t'installer dans le Maine-et-Loire ?"
+                    }
+                ]
+            },
+            "2": {
+                "avant": [
+                    "Il est maintenant temps de parler financement. Les sources de ce financement peuvent être multiples.",
+                    " Je vais te présenter en quelques mots le prêt bancaire traditionnel. Si tu souhaites en savoir plus sur les autres types de financements proposés, je te laisse découvrir les autres parcours !"
+                ],
+                "apres": [
+                    "Tu as reçu le financement dont tu avais besoin pour démarrer ton activité. Félicitations !"
+                ]
+            },
+            "3": {
+                "avant": [
+                    "Que penses tu d'agrandir ton équipe ? Voyons la situation de l'emploi dans ton département."
+                ],
+                "apres": [
+                    "Super ! Te voilà prêt à démarrer ton activité avec une équipe solide."
+                ]
+            },
+            "4":{
+                "avant": [
+                    "La RSE, ça te dit quelque chose ?",
+                    "Il s'agit de la Responsabilité Sociétale des Entreprises. C'est un engagement volontaire des entreprises à intégrer les préoccupations sociales, environnementales et économiques dans leurs activités et leurs interactions avec leurs parties prenantes.",
+                    "Attends, je vais te parler des entreprises à mission et de leur place dans l'Ouest."
+                ],
+                "apres": {
+                    "4_non": "Tu as choisi de ne pas t'engager dans une démarche RSE. C'est ton choix !",
+                    "4_label": "Tu as choisi de tenter d'obtenir un label RSE. C'est un engagement fort qui peut te démarquer de la concurrence !",
+                    "4_mission": "Tu as choisi de devenir une entreprise à mission. C'est un engagement fort qui peut te démarquer de la concurrence !"
+                }
+            },
+            "5": {
+                "avant": [
+                    "Tu as bien avancé dans ta réflexion !",
+                    "Il faut maintenant s'occuper des matières premières et des produits que tu vas utiliser.",
+                    "Jettons un œil à l'importation de marchandises dans ta région."
+                ],
+                "apres": [
+                    "Très bien !"
+                ]
+            }
+        },
+        "informations": {
+            "1": {
+                "titre": "La place de l'artisanat dans l'Ouest",
+                "images": [],
+                "paragraphes": [
+                    "L’artisanat est au cœur de notre économie locale. En Bretagne et dans les Pays de la Loire, nous sommes fiers de cette diversité qui caractérise nos régions : des plombiers aux bijoutiers, en passant par les commerçants de produits régionaux, chacun apporte une richesse unique à nos territoires.",
+                    "Savais-tu que 79 % des entreprises artisanales dans nos régions emploient moins de 10 salariés ? Il s'agit d'un cadre idéal pour un projet artisanal à échelle humaine."
+                ]
+            },
+            "2": {
+                "titre": "Financement : Le prêt bancaire traditionnel",
+                "images": [],
+                "paragraphes": [
+                    "Le prêt bancaire traditionnel est une solution de financement courante permettant aux entreprises de couvrir des besoins variés, tels que l'achat d'équipements, le financement de projets ou la gestion de trésorerie. Il est accordé par les banques sous certaines conditions, notamment la solidité financière de l'entreprise et sa capacité de remboursement. Ce type de prêt offre généralement des taux d'intérêt fixes ou variables, avec des durées adaptées aux besoins spécifiques de l'entreprise."
+                ]
+            },
+            "3": {
+                "titre": {
+                    "1_menuisier": "Les actifs dans la Sarthe",
+                    "1_ceramiste": "Les actifs en Ille-et-Vilaine",
+                    "1_boucher": "Les actifs dans le Maine-et-Loire"
+                },
+                "images": {
+                    "1_menuisier": [],
+                    "1_ceramiste": [],
+                    "1_boucher": []
+                },
+                "paragraphes": [
+                    "En Bretagne, l'enseignement professionnel compte 42 323 inscrits, tandis qu'en Pays de la Loire, il enregistre 47 262 inscrits. Parallèlement, l'emploi des jeunes de 15 à 24 ans a connu une progression notable sur la dernière décennie, avec une augmentation de +25,7 % en Bretagne et +29,6 % en Pays de la Loire. Ces évolutions témoignent d’une dynamique favorable à l’insertion des jeunes dans le marché du travail, portée par des secteurs clés tels que l’industrie, le commerce et les services."
+                ]
+            },
+            "4":{
+                "titre": "Les entreprises à mission dans l'Ouest",
+                "images": [],
+                "paragraphes":[
+                    "La Bretagne et les Pays de la Loire comptaient 26 sociétés à missions en 2020. Ce nombre a été multiplié par 6 entre 2020 et 2023, atteignant 151 sociétés à missions en 2023.",
+                    "Une entreprise dite \"à mission\" est une entreprise qui se fixe des objectifs sociaux et environnementaux dans ses statuts juridiques.",
+                    "Peu importe son secteur d'activité et sa taille, une société peut devenir une entreprise à mission. Dans nos régions, de nombreux secteurs sont représentés, comme le conseil, l'industrie ou les services.",
+                    "L'artisanat n'est pas en reste. Par exemple, la pizzeria nantaise Agapé s'engage à utiliser \"100% d'ingrédients bio ou issus d'exploitations en conversion à l'agriculture biologique\"."
+                ]
+            },
+            "5":{
+                "titre": "L'importation de marchandises dans l'Ouest",
+                "images": [],
+                "paragraphes":[
+                    "En 2023, les régions Bretagne et Pays de la Loire ont représenté 7,1 % des importations totales de la France, avec un coût s’élevant à 37 409 millions d’euros pour les Pays de la Loire et 15 538 millions d’euros pour la Bretagne.",
+                    {
+                        "1_menuisier":"Les Pays de la Loire ont importé 577 millions de kilos de bois, répondant aux besoins de l'industrie locale de la transformation et de la construction.",
+                        "1_céramiste":"La Bretagne a importé 2 077 millions de kilos de produits chimiques de base. Ces matières premières sont essentielles pour l'industrie chimique régionale, et peuvent t'être utiles en tant que céramiste pour tes émaux.",
+                        "1_boucher":"Dans les Pays de la Loire, les importations en produits de la culture et de l’élevage ont atteint 1 431 millions de kilos, tandis que les huiles et graisses végétales et animales ont représenté 6 596 millions de kilos, illustrant l'importance de ces matières premières pour l’agroalimentaire régional."
+                    }
+
+                ]
+            }
+        }
     }
 }
