@@ -1,0 +1,168 @@
+/* Mise en forme de la page */
+body {
+    display: flex; /* Centrage horizontal et vertical */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #121212;
+    font-family: 'Arial', sans-serif;
+    color: white;
+}
+
+#app-container {
+    width: 390px;
+    height: 700px;
+    max-width: 100%;
+    max-height: 100vh;
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden; /* Cache les débordements de contenu */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* Effet d'ombre autour du conteneur */
+    display: flex; /* Flexbox pour organiser le contenu verticalement */
+    flex-direction: column; /* Les éléments sont empilés verticalement */
+}
+
+/* Header */
+header {
+    background-color: #000;
+    padding: 10px 20px;
+}
+
+header .navbar {
+    display: flex; /* Organisation en ligne */
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo-container img {
+    height: 40px;
+
+}
+
+header .btn-en-savoir-plus {
+    background-color: #00EB1E;
+    color: black;
+    padding: 6px 14px;
+    font-size: 12px;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s; /* Animation au survol */
+}
+
+header .btn-en-savoir-plus:hover {
+    transform: scale(1.05); /* Agrandit légèrement le bouton */
+    box-shadow: 0px 4px 10px rgba(0, 235, 30, 0.5); /* Ajoute une ombre verte */
+}
+
+/* Bannière */
+.banner {
+    width: 100%;
+    height: 50%;
+    position: relative; /* Permet de positionner le texte par-dessus */
+    display: flex; /* Flexbox pour centrer le contenu */
+    align-items: center; /* Aligne verticalement le texte */
+    justify-content: center; /* Centre horizontalement le texte */
+    overflow: hidden; /* Cache les débordements de l'image */
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* L'image s'adapte sans déformation */
+}
+
+.banner h1 {
+    position: absolute; /* Superpose le titre sur l'image */
+    font-size: 2rem;
+    color: white;
+    text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7); /* Ombre pour améliorer la lisibilité */
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Contenu principal */
+.content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: white;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.content-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.content-text {
+    font-size: 0.8rem;
+    line-height: 1.4;
+    color: #333;
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+/* Bouton principal */
+.btn-create-event {
+    background-color: #00EB1E;
+    color: white;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 25px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0px 4px 10px rgba(0, 235, 30, 0.3);
+}
+
+.btn-create-event:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 12px rgba(0, 235, 30, 0.5);
+}
+
+/* Footer */
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-top: auto;
+    flex-shrink: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #app-container {
+        width: 360px;
+        height: 680px;
+    }
+
+    header .btn-en-savoir-plus {
+        padding: 5px 12px;
+        font-size: 11px;
+    }
+
+    .btn-create-event {
+        font-size: 13px;
+        padding: 10px 16px;
+    }
+
+    .banner h1 {
+        font-size: 1.6rem;
+    }
+}
