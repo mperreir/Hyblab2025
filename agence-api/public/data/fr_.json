@@ -3,7 +3,7 @@
         "general": {
             "avant_nom": [
                 "Salut ! Moi, c’est Api.",
-                "Si tu hésites à lancer ton entreprise en Bretagne ou dans les Pays de la Loire, tu es au bon endroit.",
+                "Tu souhaites créer ton entreprise en Bretagne ou Pays de la Loire ? Ce serious game est fait pour toi.",
                 "Au cours de cette aventure, tu découvriras les chiffres clés de l’économie de ces régions et tu pourras faire tes propres choix pour créer ton entreprise.",
                 "Comment t’appelles-tu ?"
             ],
@@ -25,7 +25,7 @@
         "secteurs": {
             "agro": "Tu veux te lancer dans l’agroalimentaire ? Parfait, l’Ouest est une référence dans ce domaine ! La Bretagne est la première région agricole de France, et les Pays de la Loire sont en troisième position. Produire ou transformer des aliments ici, c’est contribuer activement à nourrir la France !",
             "tech": "Ton rêve c’est d’être dans l’innovation ? L’Ouest pourrait bien répondre à tes ambitions ! Aujourd’hui, un quart des technopoles françaises y sont réunies. Aujourd’hui, un quart des technopôles français sont réunis ici . Ta prochaine innovation pourrait t’amener à changer le monde depuis nos régions !",
-            "arti": "Créer de tes mains te passionne ? L’Ouest est fait pour toi ! Ici, on cultive le savoir-faire entre traditions bien ancrées et forte demande locale. Que tu sois menuisier, boulanger ou bijoutier, ta créativité pourra s’épanouir et marquer les esprits."
+            "arti": "Créer de tes mains te passionne ? L’Ouest est fait pour toi ! Ici, on cultive le savoir-faire entre traditions bien ancrées et forte demande locale. Ta créativité pourra s’épanouir et marquer les esprits."
         }
     },
     "fin":{
@@ -78,7 +78,7 @@
             },
             {
                 "4_marchelocal": "Je reste sur le marché local",
-                "4_marchnational": "Je vise le marché national",
+                "4_marchenational": "Je vise le marché national",
                 "4_marcheeuro": "Je souhaite atteindre le marché européen, voire international."
             }
         ],

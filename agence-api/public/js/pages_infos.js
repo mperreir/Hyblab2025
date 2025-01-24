@@ -29,11 +29,13 @@ function enableClickForExpansion(text, data) {
 // Fonction pour agrandir le message et afficher l'image
 function expandMessage(messageElement, data) {
     const rect = messageElement.getBoundingClientRect();
-    expandingElement.querySelectorAll('*').forEach(element => element.style.display = 'none');
 
     // Récupération de la liste des choix sur la balise HTML
-    const liste_choix = messageElement.dataset.choix;
-
+    let liste_choix = [];
+    for (let i = 0; i < messageElement.dataset.taillechoix; i++) {
+        liste_choix.push(messageElement.dataset[`choix${i}`]);
+    }
+    console.log("depuis expand message, liste_choix :", liste_choix);
     //Ajout des données du JSON dans des listes respectives
     const fields = ['titre', 'images', 'paragraphes'];
 
@@ -55,6 +57,7 @@ function expandMessage(messageElement, data) {
         expandingElement.appendChild(text);
     });
 
+    expandingElement.querySelectorAll('*').forEach(element => element.style.display = 'none');
     expandingElement.style.display = 'flex';
     expandingElement.style.top = rect.top + 'px';
     expandingElement.style.left = rect.left + 'px';
@@ -83,7 +86,8 @@ function closeOverlay() {
     // Pour l'instant la fermeture est définie statiquement dans le HTML
     // Faire un inner.html clear
 
-    expandingElement.querySelectorAll('*').forEach(element => element.style.display = 'none');
+    //expandingElement.querySelectorAll('*').forEach(element => element.style.display = 'none');
+    expandingElement.innerHTML = '';
     if (lastMessage.length > 0) {
         const rect = lastMessage[lastMessage.length - 1].getBoundingClientRect();
 
