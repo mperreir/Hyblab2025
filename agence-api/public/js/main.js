@@ -1,9 +1,10 @@
 "use strict";
 
+let userName;
+let secteur;
+let choices;
+
 const initSlide2 = async function () {
-
-    
-
     const chatBox = document.getElementById('chatBox');
     const messageList = document.getElementById('messageList');
     const messageInput = document.getElementById('messageInput');
@@ -11,20 +12,19 @@ const initSlide2 = async function () {
 
     scrollToBottom();
 
-    // Retrieve the intro's messages from our API
+    // Retrieve the data from our json file
     let response = await fetch('data/fr_.json');
     const texts = await response.json();
     
     initMenu(texts);
 
     // Load the intro story
-    const userName = await loadIntroStory(texts.introduction.general);
+    userName = await loadIntroStory(texts.introduction.general);
 
     // Select the character
     // const character = await selectCharacter(texts.introduction.secteurs);
     // Select the character
-    const secteur = (await selectSecteur(texts.introduction.secteurs))[0];
-    console.log(secteur);
+    secteur = (await selectSecteur(texts.introduction.secteurs))[0];
 
     switch (secteur) {
         case "agro":
@@ -157,7 +157,7 @@ async function getUserName() {
     chatInput.style.display='flex';
     messageInput.focus();
 
-    let userName = await waitForNameInput();
+    userName = await waitForNameInput();
 
     messageInput.blur();
     chatInput.style.display='none';
@@ -188,7 +188,7 @@ async function selectSecteur(presentationSecteurs) {
     return await addAnswer(presentationSecteurs.reponses);
   }
 
-async function displayMessages(message, userName) {
+async function displayMessages(message) {
     for (const key in message) {
         if(message[key].includes("{nom}")){
         addMessage({ text: message[key].replace("{nom}", userName), type: "received"});
@@ -217,19 +217,19 @@ async function loadIntroStory(introStory) {
 
     await displayMessages(introStory.avant_nom);
 
-    const userName = await getUserName();
+    userName = await getUserName();
     addMessage({ text: userName, type: "sent"});
 
-    await displayMessages(introStory.apres_nom, userName);
+    await displayMessages(introStory.apres_nom);
 
     return userName;
 }
 
 async function histoire(texts, userName){
 
-    let choices = [];
+    choices = [];
 
-    await displayMessages(texts.introduction,userName);
+    await displayMessages(texts.introduction);
 
     for (let i = 0; i < texts.questions.length; i++) {
 
@@ -237,7 +237,7 @@ async function histoire(texts, userName){
         await displayExplanation(texts.informations[i], choices, texts.contexte[i].avant[texts.contexte[i].avant.length-1]);
         
 
-        await displayMessages(texts.questions[i],userName);
+        await displayMessages(texts.questions[i]);
 
         /* Ouais bon la solution est dégeu, mais ça fonctionne */
         let multipleChoices = false;

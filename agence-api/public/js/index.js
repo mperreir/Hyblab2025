@@ -40,16 +40,6 @@ document.addEventListener('DOMContentLoaded', function() {
         clickable: true,
       },
     });
-    // Function to enable or disable Swiper controls
-    function toggleSwiper(enable) {
-      if (enable) {
-        swiper.mousewheel.enable();
-        swiper.allowTouchMove = true;
-      } else {
-        swiper.mousewheel.disable();
-        swiper.allowTouchMove = false;
-      }
-    }
 
 
     swiper.on("slideChange", function () {
@@ -65,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
           break;
         case 2:
           initSlide3();
-          toggleSwiper(true);
+          toggleSwiper(false);
           break;
       }
     });
@@ -96,6 +86,17 @@ document.addEventListener('DOMContentLoaded', function() {
     console.error('Erreur lors du chargement des contenus:', error);
   });
 });
+
+// Function to enable or disable Swiper controls
+function toggleSwiper(enable) {
+  if (enable) {
+    swiper.mousewheel.enable();
+    swiper.allowTouchMove = true;
+  } else {
+    swiper.mousewheel.disable();
+    swiper.allowTouchMove = false;
+  }
+}
 
 
 let timeout;

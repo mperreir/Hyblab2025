@@ -45,7 +45,9 @@
             "Félicitations, {nom} ! Tu as terminé ton aventure.",
             "Tu as pris des décisions importantes pour ton entreprise, et tu as découvert les opportunités qui t'attendent en Bretagne et dans les Pays de la Loire.",
             "Va vite voir tes résultats !"
-        ]
+        ],
+        "title": "Résultats de ton aventure",
+        "paragraphe": "Et voila {nom} tu as finis ton aventure d’artisant ! Découvre en cliquant sur les cases tes résultats selon les catégories.  "
     },
     "agro": {
         "introduction": [
