@@ -147,9 +147,9 @@ async function loadIntroStory(introStory) {
 
   async function selectSecteur(textsPresentationPersos) {
     const images = [
-        { src: 'img/perso1.png', alt: '1', index: 0 },
-        { src: 'img/perso2.png', alt: '2', index: 1, active: true },
-        { src: 'img/perso3.png', alt: '3', index: 2 }
+        { src: 'img/agro.jpg', alt: '1', index: 0 },
+        { src: 'img/tech.jpeg', alt: '2', index: 1, active: true },
+        { src: 'img/arti.jpg', alt: '3', index: 2 }
       ];
       const carousel = new Carousel(images, [textsPresentationPersos.agro, textsPresentationPersos.tech, textsPresentationPersos.arti]);
       await carousel.createCarousel();
