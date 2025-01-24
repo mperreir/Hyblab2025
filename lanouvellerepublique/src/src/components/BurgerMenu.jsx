@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import anime from 'animejs';
 
 function BurgerMenu({ isMenuOpen, setIsMenuOpen }) {
+    const [isClosing, setIsClosing] = useState(false);
 
     const navigate = useNavigate();
     let menuRef = useRef(null);
@@ -24,26 +25,32 @@ function BurgerMenu({ isMenuOpen, setIsMenuOpen }) {
         setIsMenuOpen(false);
     }
 
+    const animDuration = 250;
+
     useEffect(() => {
-        if (isMenuOpen && menuRef.current) {
+        if (isMenuOpen && menuRef.current && !isClosing) {
             anime({
                 targets: menuRef.current,
                 translateX: ['100%', '0%'],
-                duration: 250,
+                duration: animDuration,
                 easing: 'easeOutQuad',
             });
-        } else if (!isMenuOpen && menuRef.current) {
+        } else if (isMenuOpen && menuRef.current && isClosing) {
             anime({
                 targets: menuRef.current,
                 translateX: ['0%', '100%'],
-                duration: 250,
+                duration: animDuration,
                 easing: 'easeInQuad',
             });
         }
-    }, [isMenuOpen]);
+    }, [isMenuOpen, isClosing]);
 
     function closeMenu(){
-        setIsMenuOpen(false);
+        setIsClosing(true);
+        setTimeout(() => {
+            setIsMenuOpen(false);
+            setIsClosing(false);
+        }, animDuration);
     }
 
     return (
@@ -51,8 +58,8 @@ function BurgerMenu({ isMenuOpen, setIsMenuOpen }) {
             {isMenuOpen ? (
                 <div className='button-burger-menu'>
                     <div className="home-button" onClick={goHome}>Accueil</div>
-                    <div className="articles-button" onClick={goArticles}>Articles</div>
-                    <div className="carte-button" onClick={goCarte}>Vers la Carte</div>
+                    <div className="carte-button" onClick={goCarte}>Carte</div>
+                    <div className="articles-button" onClick={goArticles}>Article</div>
                     <div className="credits-button" onClick={goCredits}>Crédits</div>
                     <div className='cross-button' onClick={closeMenu}>
                         <svg width="74" height="74" viewBox="0 0 74 74" fill="none" xmlns="http://www.w3.org/2000/svg">
