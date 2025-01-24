@@ -85,9 +85,10 @@
 
 /* Messages reçus */
 .received {
-    background: #39a276;
+    background: #e2e2e2;
     color: #fff;
     align-self: flex-start;
+    color: black;
 }
 
 
