@@ -1,24 +1,26 @@
-<div id="animatedText">
-@for (item of situation.content; track $index) {
-    @switch (item.type) {
-        @case ("text") {
-            <p [innerHTML]="(item.text ? item.text : '') | textAnimation"> {{item.text}} </p>
+<div id="main">
+    <div id="animatedText">
+        @for (item of situation.content; track $index) {
+            @switch (item.type) {
+                @case ("text") {
+                    <p [innerHTML]="(item.text ? item.text : '') | textAnimation"> {{item.text}} </p>
+                }
+                @case ("image") {
+                    <!-- <img [src]="item.link" [alt]="item?.altText || ''"> -->
+                }
+            }
         }
-        @case ("image") {
-            <!-- <img [src]="item.link" [alt]="item?.altText || ''"> -->
+    </div>
+    @if (choice_visible) {
+        <div id="choice_div">
+        @for (item of situation.choices; track $index) {
+            <div (click)="selected_choice = item" class="choice" [ngClass]="{'selected' : selected_choice == item, 'not_selected': selected_choice && selected_choice != item}" [ngStyle]="{'background-image': 'url(' + item.image + ')','background-position': 'center ' + item.position + ''}">
+            <div id="gris"><p>{{item.text}}</p></div>
+        </div>
         }
+        </div>
     }
-}
 </div>
-@if (choice_visible) {
-    <div id="choice_div">
-    @for (item of situation.choices; track $index) {
-        <div (click)="selected_choice = item" class="choice" [ngClass]="{'selected' : selected_choice == item, 'not_selected': selected_choice && selected_choice != item}" [ngStyle]="{'background-image': 'url(' + item.image + ')','background-position': 'center ' + item.position + ''}">
-         <div id="gris"><p>{{item.text}}</p></div>
-    </div>
-    }
-    </div>
-}
 @if (selected_choice) {
     <app-situation [situation]="selected_choice.result"></app-situation>
 }
