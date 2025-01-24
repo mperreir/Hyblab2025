@@ -16,7 +16,7 @@
 }
 
 .home_page .start-button {
-  margin-top: -60%;
+  margin-top: -65%;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -42,7 +42,7 @@
 
 .home_page .titles {
   margin-bottom: 80%;
-  margin-top: -60%;
+  margin-top: -50%;
 }
 
 .home_page .main-title {
