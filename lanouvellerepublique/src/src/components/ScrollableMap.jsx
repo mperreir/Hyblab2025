@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { useRef, useState } from "react";
 import POIs from "./POIs.jsx";
 import "./ScrollableMap.css"; // Create this file for styles
