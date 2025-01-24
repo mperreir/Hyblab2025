@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Work Sans";
     background-color: #4D95AF;
     display: flex;
     justify-content: center;
@@ -61,3 +61,4 @@ body {
     margin-left: 10px;
     font-size: 14px;
   }
+  

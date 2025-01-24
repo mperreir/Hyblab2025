@@ -1,4 +1,4 @@
-.background {
+.background_home {
     background: url('homePage.png');
     background-size: auto 100%;
     background-position: center; /* Centre l'image dans le conteneur */
@@ -16,25 +16,25 @@
     font-family: "Work Sans";
 }
 
-.container {
+.container_home {
     background-color: white;
     padding: 1px;
     text-align: center;
     margin-top: 150px;
     margin-inline: 16px;
-    width: 160px;
+    width: 220px;
 }
 
 
-p {
-    font-size: 8.5px;
+.container_home p {
+    font-size: 11px;
     line-height: 1.5;
     color: #1A3347;
     margin: 1px;
 
 }
 
-button {
+.button_home {
     margin-top: 20px;
     padding: 8px 40px;
     margin-bottom: 50px;
@@ -53,7 +53,7 @@ button {
     justify-content: center;
 }
 
-button:hover {
+.button_home:hover {
     background-color: #1A3347; /* Couleur bleue plus foncée au survol */
     color: white;
 }
