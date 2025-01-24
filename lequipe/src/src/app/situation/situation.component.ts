@@ -46,7 +46,7 @@ export class SituationComponent implements OnChanges, AfterViewInit {
             opacity: [0,1],
             duration: 250,
             easing: "easeOutExpo",
-            delay: anime.stagger(20),
+            delay: anime.stagger(5),
             complete: (anim) => {
                 textsToAnimate.forEach((el) => (el as HTMLElement).setAttribute("data-text-visible", "true"));
             },
