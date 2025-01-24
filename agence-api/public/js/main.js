@@ -141,6 +141,7 @@ async function addButtonGoToResults() {
     confirmButton.textContent = 'Voir les résultats';
     confirmButton.classList.add('button');
     document.getElementById('chatBox').appendChild(confirmButton);
+    scrollToBottom();
     confirmButton.addEventListener('click', () => {
         swiper.slideNext();
     });
