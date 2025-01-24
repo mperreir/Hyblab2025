@@ -14,10 +14,10 @@ p {
     text-align: center;
     cursor: pointer;
     transition: all 0.3s ease;
-    background-color: lighten(black, 10%);
+    background-color: lighten(#d61d00cd, 10%);
 
     &:hover {
-        background-color: lighten(black, 20%);
+        background-color: lighten(#D61E00, 5%);
     }
 }
 
@@ -26,5 +26,6 @@ p {
 }
 
 .selected {
-    background-color: lighten(black, 25%);
+    background-color: lighten(#D61E00, 5%);
+    border:black;
 }
