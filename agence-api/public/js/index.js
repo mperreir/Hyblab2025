@@ -21,14 +21,14 @@ async function loadContent(url, elementId) {
   }
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', async function() {
   // Charger tous les contenus HTML des slides
   Promise.all([
-    loadContent('html/accueil.html', 'content-accueil'),
-    loadContent('html/chat.html', 'content-chat'),
-    loadContent('html/fin.html', 'content-fin'),
-    loadContent('html/header.html', 'chat-header'),
-    loadContent('html/menu.html', 'menu'),
+    await loadContent('html/accueil.html', 'content-accueil'),
+    await loadContent('html/chat.html', 'content-chat'),
+    await loadContent('html/fin.html', 'content-fin'),
+    await loadContent('html/header.html', 'chat-header'),
+    await loadContent('html/menu.html', 'menu'),
   ]).then(() => {
 
     // Init of the (touch friendly) Swiper slider
