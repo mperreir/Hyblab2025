@@ -215,9 +215,9 @@
                 "3_embauchetalents": "Talents d'autres régions"
             },
             {
-                "4_local": "Marché local",
-                "4_national": "Marché national",
-                "4_international": "Marché international"
+                "4_marchelocal": "Marché local",
+                "4_marchenational": "Marché national",
+                "4_marcheinternational": "Marché international"
             }
         ]
     },
