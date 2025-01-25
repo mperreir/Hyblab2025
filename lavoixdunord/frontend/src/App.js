@@ -11,6 +11,7 @@ import TransitionPage2 from "./TransitionPage2/TransitionPage2";
 import TransitionPage3 from "./TransitionPage3/TransitionPage3";
 import Credit from "./creditPage/creditPage";
 import FinalPage from "./finalPage/finalPage";
+import NavBarComponent from "./NavBarComponent/NavBarComponent";
 
 const basename = process.env.REACT_APP_BASENAME || "/";
 
@@ -18,6 +19,7 @@ function App() {
   return (
     <Router basename={basename}>
       <div className="mobile-container">
+        <NavBarComponent />
         <Routes>
           <Route path="/" element={<Page0 />} />
           <Route path="/home" element={<HomePage />} />
