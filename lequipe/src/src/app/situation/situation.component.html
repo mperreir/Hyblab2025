@@ -2,11 +2,22 @@
     <div id="animatedText">
         @for (item of situation.content; track $index) {
             @switch (item.type) {
-                @case ("text") {
-                    <p [innerHTML]="(item.text ? item.text : '') | textAnimation"></p>
+                @case ("text")  {
+                    <ng-container *ngIf="!isTextVisible">
+                        <p [innerHTML]="(item.text ? item.text : '') | textAnimation" data-text-visible="false"></p>
+                    </ng-container>
+                    <ng-container *ngIf="isTextVisible">
+                        <p [innerHTML]="(item.text ? item.text : '')" data-text-visible="true"></p>
+                    </ng-container>
                 }
                 @case ("question") {
-                    <p [innerHTML]="(item.text ? item.text : '') | textAnimation" class="question"></p>
+                    <ng-container *ngIf="!isTextVisible">
+                        <p [innerHTML]="(item.text ? item.text : '') | textAnimation" class="question" data-text-visible="false"></p>
+                    </ng-container>
+                    <ng-container *ngIf="isTextVisible">
+                        <p [innerHTML]="(item.text ? item.text : '')" class="question" data-text-visible="false"></p>
+                    </ng-container>
+                    
                 }
                 @case ("image") {
                     <!-- <img [src]="item.link" [alt]="item?.altText || ''"> -->
