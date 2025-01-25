@@ -13,6 +13,7 @@ function initMenu(texts){
     // 点击「×」关闭弹窗
     closeMenuBtn.addEventListener("click", () => {
         menuPopup.classList.add("hidden");
+        menuBtn.checked = false;
     });
 
     // 点击背景(除 .menu-content 以外的区域)也关闭
