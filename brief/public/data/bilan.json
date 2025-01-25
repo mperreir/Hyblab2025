@@ -1,0 +1,66 @@
+{
+    "bilans": [
+      {
+        "question_id": 1,
+        "reponse_id": 1,
+        "text": "Adoption accrue des véhicules électriques"
+      },
+      {
+        "question_id": 1,
+        "reponse_id": 2,
+        "text": "Développement des transports publics"
+      },
+      {
+        "question_id": 13,
+        "reponse_id": 1,
+        "text": "Soutien aux biocarburants et à l'hydrogène pour les transports lourds"
+      },
+      {
+        "question_id": 13,
+        "reponse_id": 2,
+        "text": "Incitations au covoiturage et à l'autopartage"
+      },
+      {
+        "question_id": 2,
+        "reponse_id": 1,
+        "text": "Investissement dans l'énergie nucléaire"
+      },
+      {
+        "question_id": 12,
+        "reponse_id": 1,
+        "text": "Développement des projets d'énergies renouvelables"
+      },
+      {
+        "question_id": 12,
+        "reponse_id": 2,
+        "text": "Augmentation des importations d'énergie"
+      },
+      {
+        "question_id": 2,
+        "reponse_id": 3,
+        "text": "Entretien des réacteurs nucléaires actuels"
+      },
+      {
+        "question_id": 3,
+        "reponse_id": 1,
+        "text": "Développement du biogaz"
+      },
+      {
+        "question_id": 3,
+        "reponse_id": 2,
+        "text": "Investissements dans l'énergie géothermique"
+      },
+      {
+        "question_id": 31,
+        "reponse_id": 1,
+        "text": "Modernisation des infrastructures pétrolières"
+      },
+      {
+        "question_id": 32,
+        "reponse_id": 2,
+        "text": "Réacteurs nucléaires de nouvelle génération"
+      }
+    ]
+  }
+  
+  

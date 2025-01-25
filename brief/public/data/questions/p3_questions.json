@@ -3,15 +3,34 @@
     {
         "question_id": "7",
         "question_text": " Il est urgent de protéger les ressources en eau, de renforcer les infrastructures et de garantir la sécurité énergétique. Comment vas-tu répondre à ces défis ?",
+        "transition":[
+            {
+                "id":18,
+                "text": "Félicitations, tu as mené ton pays à une étape clé ! Nous sommes en 2045, la dernière ligne droite pour atteindre tes objectifs. Les efforts commencent à payer, mais les choix restants seront cruciaux pour une transition durable et équitable."
+            },
+            {
+                "id":19,
+                "text": "Le réchauffement climatique s'accélère : sécheresses extrêmes, pénuries d’eau, impacts sur l’agriculture et l’énergie (hydraulique, nucléaire). La demande en électricité explose, tandis que les infrastructures souffrent. Il est urgent de protéger l’eau, renforcer les infrastructures et assurer la sécurité énergétique."
+            }
+        ],
         "responses": [
         {
             "response_id": "1",
             "response_text": "Réduire la consommation énergétique avec des politiques de rationnement.",
             "advantages":"",
             "inconvenient":"",
-            "Budget":"0",
-            "GES":"+5",
-            "Satisfaction": "-15",
+            "Budget":{
+                "plus": 0,
+                "moins": 0
+              },
+            "GES":{
+                "plus": 5,
+                "moins": 0
+              },
+            "Satisfaction": {
+                "plus": 0,
+                "moins": 15
+              },
             "next_question_id": "8",
             "subquestion": []
         },
@@ -20,6 +39,18 @@
             "response_text": "Diversifier les sources d’énergie pour réduire la dépendance à l’eau dans la production électrique.",
             "advantages":"",
             "inconvenient":"",
+            "Budget":{
+                "plus": 0,
+                "moins": 0
+              },
+            "GES":{
+                "plus": 0,
+                "moins": 0
+              },
+            "Satisfaction": {
+                "plus": 0,
+                "moins": 0
+              },
             "next_question_id": "72",
             "subquestion": [
                 {
@@ -31,9 +62,18 @@
                         "response_text": "Développer massivement l’énergie solaire.",
                         "advantages":"",
                         "inconvenient":"",
-                        "Budget":"-10",
-                        "GES":"+10",
-                        "Satisfaction": "0",
+                        "Budget":{
+                            "plus": 0,
+                            "moins": 10
+                          },
+                        "GES":{
+                            "plus": 10,
+                            "moins": 0
+                          },
+                        "Satisfaction": {
+                            "plus": 0,
+                            "moins": 0
+                          },
                         "next_question_id": "8",
                         "subquestion": []
                     },
@@ -42,9 +82,18 @@
                         "response_text": "Augmenter l’utilisation du gaz naturel comme complément au mix énergétique.",
                         "advantages":"",
                         "inconvenient":"",
-                        "Budget":"-5",
-                        "GES":"-5",
-                        "Satisfaction": "0",
+                        "Budget":{
+                            "plus": 0,
+                            "moins": 5
+                          },
+                        "GES":{
+                            "plus": 0,
+                            "moins": 5
+                          },
+                        "Satisfaction": {
+                            "plus": 0,
+                            "moins": 0
+                          },
                         "next_question_id": "8",
                         "subquestion": []
                     }
@@ -57,6 +106,18 @@
             "response_text": "Optimiser l’utilisation de l’eau pour le refroidissement des centrales nucléaires et thermiques.",
             "advantages":"",
             "inconvenient":"",
+            "Budget":{
+                "plus": 0,
+                "moins": 0
+              },
+            "GES":{
+                "plus": 0,
+                "moins": 0
+              },
+            "Satisfaction": {
+                "plus": 0,
+                "moins": 0
+              },
             "next_question_id": "73",
             "subquestion": [
                 {
@@ -68,9 +129,18 @@
                         "response_text": "Installer des réservoirs d’eau près des centrales nucléaires pour limiter la consommation d’eau naturelle.",
                         "advantages":"",
                         "inconvenient":"",
-                        "Budget":"-5",
-                        "GES":"-5",
-                        "Satisfaction": "-5",
+                        "Budget":{
+                            "plus": 0,
+                            "moins": 5
+                          },
+                        "GES":{
+                            "plus": 0,
+                            "moins": 5
+                          },
+                        "Satisfaction": {
+                            "plus": 0,
+                            "moins": 5
+                          },
                         "next_question_id": "8",
                         "subquestion": []
                     },
@@ -79,9 +149,18 @@
                         "response_text": "Construire des réservoirs d’eau autour des centrales thermiques pour garantir un approvisionnement constant.",
                         "advantages":"",
                         "inconvenient":"",
-                        "Budget":"-5",
-                        "GES":"-5",
-                        "Satisfaction": "-10",
+                        "Budget":{
+                            "plus": 0,
+                            "moins": 5
+                          },
+                        "GES":{
+                            "plus": 0,
+                            "moins": 5
+                          },
+                        "Satisfaction": {
+                            "plus": 0,
+                            "moins": 10
+                          },
                         "next_question_id": "8",
                         "subquestion": []
                     },
@@ -90,9 +169,18 @@
                         "response_text": "Retourner aux méthodes anciennes de refroidissement en circuit fermé pour réduire l’usage de l’eau naturelle.",
                         "advantages":"",
                         "inconvenient":"",
-                        "Budget":"+0",
-                        "GES":"-10",
-                        "Satisfaction": "-5",
+                        "Budget":{
+                            "plus": 0,
+                            "moins": 0
+                          },
+                        "GES":{
+                            "plus": 0,
+                            "moins": 10
+                          },
+                        "Satisfaction": {
+                            "plus": 0,
+                            "moins": 5
+                          },
                         "next_question_id": "8",
                         "subquestion": []
                     }
@@ -107,15 +195,34 @@
     {
         "question_id": "8",
         "question_text": "Comment vas-tu gérer cet impact environnemental global tout en poursuivant ta stratégie énergétique ?",
+        "transition":[
+            {
+                "id":20,
+                "text": "Les technologies énergétiques utilisées pour ton mix énergétique ont des avantages, mais elles entraînent aussi des impacts environnementaux."
+            },
+            {
+                "id":21,
+                "text": "Entre les effets de la production de panneaux solaires, l'extraction de matières premières pour les batteries ou les déchets des installations, il est essentiel de prendre en compte ces conséquences pour garantir une transition véritablement durable."
+            }
+        ],
         "responses": [
         {
             "response_id": "1",
             "response_text": "Investir massivement dans le recyclage et la revalorisation déchets nucléaires.",
             "advantages":"",
             "inconvenient":"",
-            "Budget":"-15",
-            "GES":"+10",
-            "Satisfaction": "+10",
+            "Budget":{
+                "plus": 0,
+                "moins": 15
+              },
+            "GES":{
+                "plus": 10,
+                "moins": 0
+              },
+            "Satisfaction": {
+                "plus": 10,
+                "moins": 0
+              },
             "next_question_id": "9",
             "subquestion": []
         },
@@ -124,9 +231,18 @@
             "response_text": " Construire des usines de batteries dans votre pays.",
             "advantages":"",
             "inconvenient":"",
-            "Budget":"-10",
-            "GES":"+5",
-            "Satisfaction": "+0",
+            "Budget":{
+                "plus": 0,
+                "moins": 10
+              },
+            "GES":{
+                "plus": 5,
+                "moins": 0
+              },
+            "Satisfaction": {
+                "plus": 0,
+                "moins": 0
+              },
             "next_question_id": "6",
             "subquestion": []
         },
@@ -135,9 +251,18 @@
             "response_text": "Développer des installations de recyclage des panneaux solaires et des batteries usagées.",
             "advantages":"",
             "inconvenient":"",
-            "Budget":"-10",
-            "GES":"+5",
-            "Satisfaction": "+5",
+            "Budget":{
+                "plus": 0,
+                "moins": 10
+              },
+            "GES":{
+                "plus": 5,
+                "moins": 0
+              },
+            "Satisfaction": {
+                "plus": 5,
+                "moins": 0
+              },
             "next_question_id": "6",
             "subquestion": []
         }
