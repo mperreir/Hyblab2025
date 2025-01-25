@@ -4,48 +4,65 @@ let userName;
 let secteur;
 let choices;
 
-const initSlide2 = async function () {
-    const chatBox = document.getElementById('chatBox');
-    const messageList = document.getElementById('messageList');
-    const messageInput = document.getElementById('messageInput');
+let abortController = null;
 
+const initSlide2 = async function (afterIntro = false) {
 
-    scrollToBottom();
-    initMenu(texts);
+    if (abortController) {
+        abortController.abort(); // Abort the previous call
+        console.log('aborting previous call');
+    }
+    
+    abortController = new AbortController();
+    const signal = abortController.signal;
 
-    // Initialiser la barre de progression
-    updateProgress();
+    try {
+        const chatBox = document.getElementById('chatBox');
+        const messageList = document.getElementById('messageList');
+        const messageInput = document.getElementById('messageInput');
 
-    // Load the intro story
-    userName = await loadIntroStory(texts.introduction.general);
+        if(!afterIntro){
+            scrollToBottom();
+            initMenu(texts);
 
-    // Select the character
-    // const character = await selectCharacter(texts.introduction.secteurs);
-    // Select the character
-    secteur = (await selectSecteur(texts.introduction.secteurs))[0];
+            // Initialiser la barre de progression
+            updateProgress();
 
-    switch (secteur) {
-        case "agro":
-            await histoire(texts.agro, userName);
-            break;
-        case "tech":
-            await histoire(texts.tech, userName);
-            break;
-        case "arti":
-            await histoire(texts.arti, userName);
-            break;
-    };
+            // Load the intro story
+            userName = await loadIntroStory(texts.introduction.general, signal);
+        } else {
+            document.getElementById('messageList').innerHTML = '';
+            await loadIntroStory(texts.introduction.general, signal, true);
+        }
 
-    await displayMessages(texts.fin.avant, userName)
+        // Select the sector
+        secteur = (await selectSecteur(texts.introduction.secteurs, signal))[0];
 
-    await addButtonGoToResults();
+        switch (secteur) {
+            case "agro":
+                await histoire(texts.agro, userName, signal);
+                break;
+            case "tech":
+                await histoire(texts.tech, userName, signal);
+                break;
+            case "arti":
+                await histoire(texts.arti, userName, signal);
+                break;
+        };
+
+        await displayMessages(texts.fin.avant, userName, signal);
+
+        await addButtonGoToResults(signal);
+    } catch (error) {
+        if (error.name === 'AbortError') {
+            console.log("Changement of sector detected, aborting old path");
+        } else {
+            console.error('Error:', error);
+        }
+    }
 
 
 };
-  
-function wait(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
 
 function waitForNameInput() {
     return new Promise((resolve) => {
@@ -138,56 +155,60 @@ async function selectSecteur(presentationSecteurs) {
     return await addAnswer(presentationSecteurs.reponses);
   }
 
-async function displayMessages(message) {
+async function displayMessages(message, signal, skipInteraction = false) {
     for (const key in message) {
+        if (signal.aborted) {
+            console.log('Aborted');
+            throw new DOMException("Aborted", "AbortError"); // Standard way to handle abort;
+        }
         if(message[key].includes("{nom}")){
         addMessage({ text: message[key].replace("{nom}", userName), type: "received"});
         } else {
         addMessage({ text: message[key], type: "received"});
         }
         scrollToBottom();
-        let next = false;
-        while (!next) {
-            next = await waitForUserTouch();
+        if (!skipInteraction) {
+            let next = false;
+            while (!next) {
+                next = await waitForUserTouch();
+            }
         }
     }
 }
-
-async function displayResponses(message) {
-    console.log(message);
-    for (const key in message) {
-        addMessage({ text: message[key], type: "answer"});
-        scrollToBottom();
-    }
-    await waitForUserTouch();
-}
   
-async function loadIntroStory(introStory) {
+async function loadIntroStory(introStory, signal, skipInteraction = false) {
   document.getElementById('chat-input').style.display = 'none';
 
-    await displayMessages(introStory.avant_nom);
+    await displayMessages(introStory.avant_nom, signal, skipInteraction);
 
-    userName = await getUserName();
+    if (!skipInteraction){
+        userName = await getUserName();
+    }
     addMessage({ text: userName, type: "sent"});
 
-    await displayMessages(introStory.apres_nom);
+    await displayMessages(introStory.apres_nom, signal, skipInteraction);
 
     return userName;
 }
 
-async function histoire(texts, userName){
+async function histoire(texts, userName, signal){
 
     choices = [];
 
-    await displayMessages(texts.introduction);
+    await displayMessages(texts.introduction, signal);
 
     for (let i = 0; i < texts.questions.length; i++) {
 
-        await displayMessages(texts.contexte[i].avant.slice(0,-1));
+        if (signal.aborted) {
+            console.log('Aborted');
+            throw new DOMException("Aborted", "AbortError"); // Standard way to handle abort;
+        }
+
+        await displayMessages(texts.contexte[i].avant.slice(0,-1), signal);
         await displayExplanation(texts.informations[i], choices, texts.contexte[i].avant[texts.contexte[i].avant.length-1]);
         
 
-        await displayMessages(texts.questions[i]);
+        await displayMessages(texts.questions[i], signal);
 
         /* Ouais bon la solution est dégeu, mais ça fonctionne */
         let multipleChoices = false;

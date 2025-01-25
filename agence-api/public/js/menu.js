@@ -21,15 +21,16 @@ function initMenu(texts){
         menuPopup.classList.add("hidden");
         }
     });
-    const goCharactersLink = document.getElementById("go-characters");
+    const goCharactersLink = document.getElementById("go-secteurs"); // 选择角色按钮
     goCharactersLink.addEventListener("click", (e) => {
         e.preventDefault();              // 阻止 href 跳转
         menuPopup.classList.add("hidden");  // 先关菜单
-        selectSecteur(texts.introduction.secteurs);
+        initSlide2(true);
     });
     // 点击“结束游戏”跳转到首页
     const quitGameLink = document.getElementById("quit-game"); // 结束游戏按钮
     quitGameLink.addEventListener("click", () => {
+    choices = []; // reset choices
     window.location.href = "../agence-api/"; // 跳转到首页
     });
 
