@@ -12,7 +12,7 @@ const QuestionPage = () => {
   const [validated, setValidated] = useState(false);
   const [showHintText, setShowHintText] = useState(false);
   const [showHintImage, setShowHintImage] = useState(false);
-  const [score, setScore] = useState(localStorage.getItem("score") || 0);
+  const [score, setScore] = useState(parseInt(localStorage.getItem("score")) || 0);
   const [hint1Used, setHint1Used] = useState(false);
   const [hint2Used, setHint2Used] = useState(false);
   const basename = process.env.REACT_APP_BASENAME || "/";
@@ -23,10 +23,10 @@ const QuestionPage = () => {
 
 
 
-  const updateScore = (score) => {
-    localStorage.setItem("score", score);
-    console.log("Score: ", score);
-    setScore(score);
+  const addScore = (value) => {
+    const new_value = parseInt(score + value);
+    localStorage.setItem("score", parseInt(new_value));
+    setScore(new_value);
   };
 
   useEffect(() => {
@@ -46,12 +46,9 @@ const QuestionPage = () => {
   const handleNext = () => {
     if (!validated) {
       const isCorrect = questions[currentQuestionIndex].options[selectedOptionIndex].correct;
-      if (!isCorrect) {
-        updateScore((prevScore) => prevScore + 15); // Ajouter 15 points si réponse incorrecte
-      }
-
+      const pointsToAdd = !isCorrect ? 35 : 20; // 35 points si incorrect (15 + 20), 20 si correct
+      addScore(pointsToAdd);
       setValidated(true);
-      updateScore((prevScore) => prevScore + 20); // Ajouter 20 points après validation
       setShowMap(true); // Afficher la carte après validation
 
 
@@ -86,7 +83,7 @@ const QuestionPage = () => {
 
   const handleHint1Click = () => {
     if (!hint1Used) {
-      updateScore((prevScore) => prevScore + 5);
+      addScore(5);
       setHint1Used(true);
     }
     setShowHintText(true);
@@ -94,7 +91,7 @@ const QuestionPage = () => {
 
   const handleHint2Click = () => {
     if (!hint2Used && showHintText) {
-      updateScore((prevScore) => prevScore + 10);
+      addScore(10);
       setHint2Used(true);
     }
     setShowHintImage(true);

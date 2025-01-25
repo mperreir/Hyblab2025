@@ -1,18 +1,13 @@
 import React from 'react';
-import { useLocation, useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './TransitionPage3.css';
 
 const TransitionPage3 = () => {
-
-    const location = useLocation();
     const navigate = useNavigate();
         
     // Récupérer les valeurs passées via navigate
-    const finalScore = location.state?.finalScore || 0;
+    const finalScore = parseInt(localStorage.getItem("score")) || 0;
     // const difficulty = location.state?.difficulty || 1;
-
-    let {id, difficulty} = useParams();
-
 
     // Convertir le score en minutes et secondes
     const minutes = Math.floor(finalScore / 60);

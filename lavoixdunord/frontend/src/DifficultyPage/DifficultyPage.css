@@ -106,8 +106,8 @@
 }
 
 /* Conteneur pour l'image décorative */
-.image-container {
-  margin-top: 20px;
+.start_page_img {
+  width: 100%;
 }
 
 .decorative-image {

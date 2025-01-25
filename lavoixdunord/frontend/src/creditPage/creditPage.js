@@ -14,7 +14,7 @@ const Credit = () => {
 
     return (
         <div className="background">
-            <div className="container">
+            <div className="container_credit">
                 <p><b>Designed by :</b> Ivana RONTARD</p>
                 <br></br>
                 <p><b>Developped by :</b> Youssef IBNOUALI, Théophile TAGNE, Ghassen JRAD, Arwa OUERIEMMI, Mohammed JAOUADA & Mehdi BEN SALHA</p>
