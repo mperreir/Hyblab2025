@@ -11,11 +11,6 @@ const initSlide2 = async function () {
 
 
     scrollToBottom();
-
-    // Retrieve the data from our json file
-    let response = await fetch('data/fr_.json');
-    const texts = await response.json();
-    
     initMenu(texts);
 
     // Initialiser la barre de progression

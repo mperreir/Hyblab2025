@@ -1,15 +1,6 @@
 "use strict";
 
 const initSlide3 = async function(){
-
-
-  // Retrieve the data from our json file
-  let response = await fetch('data/fr_.json');
-  const texts = await response.json();
-
-  response = await fetch('data/article.json');
-  const articles = await response.json();
-
   if (!secteur) {
     secteur = 'arti';
   }
@@ -86,31 +77,23 @@ function addCard(textFront, textBack){
 }
 
 async function findBestMatchingArticle(customKeywords) {
-  try {
-    // Fetch the JSON data
-    const response = await fetch('data/article.json');
-    const articlesData = await response.json();
+  // Map articles to a score based on matching keywords
+  const scoredArticles = articles.articles.map(article => {
+    const matchingKeywords = article.keywords.filter(keyword => customKeywords.includes(keyword));
+    return {
+      article,
+      matchCount: matchingKeywords.length
+    };
+  });
 
-    // Map articles to a score based on matching keywords
-    const scoredArticles = articlesData.articles.map(article => {
-      const matchingKeywords = article.keywords.filter(keyword => customKeywords.includes(keyword));
-      return {
-        article,
-        matchCount: matchingKeywords.length
-      };
-    });
+  // Find the highest match count
+  const highestScore = Math.max(...scoredArticles.map(item => item.matchCount));
 
-    // Find the highest match count
-    const highestScore = Math.max(...scoredArticles.map(item => item.matchCount));
+  // Get all articles with the highest match count
+  const bestArticles = scoredArticles.filter(item => item.matchCount === highestScore);
 
-    // Get all articles with the highest match count
-    const bestArticles = scoredArticles.filter(item => item.matchCount === highestScore);
+  // Randomly pick one from the best matching articles
+  const randomBestArticle = bestArticles[Math.floor(Math.random() * bestArticles.length)];
 
-    // Randomly pick one from the best matching articles
-    const randomBestArticle = bestArticles[Math.floor(Math.random() * bestArticles.length)];
-
-    return randomBestArticle.article;
-  } catch (error) {
-    console.error('Error fetching or processing data:', error);
-  }
+  return randomBestArticle.article;
 }
