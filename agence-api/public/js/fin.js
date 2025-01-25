@@ -7,9 +7,23 @@ const initSlide3 = async function(){
   let response = await fetch('data/fr_.json');
   const texts = await response.json();
 
+  response = await fetch('data/article.json');
+  const articles = await response.json();
 
-  document.getElementById("titleFin").textContent = texts.fin.title;
-  document.getElementById("textFin").textContent = texts.fin.paragraphe.replace("{nom}", userName);
+
+  document.getElementById("titleFin1").textContent = texts.fin.title1;
+  document.getElementById("textFin1").textContent = texts.fin.paragraphe1.replace("{nom}", userName);
+  document.getElementById("titleFin2").textContent = texts.fin.title1;
+  document.getElementById("textFin2").textContent = texts.fin.paragraphe2;
+
+  const article = articles.articles.find(article => article.name === "MM Process");
+
+  document.getElementById("imgArticle").src=article.img;
+  document.getElementById("accrocheArticle").textContent = article.accroche;
+
+  document.getElementById("articleContainer").addEventListener('click', () => {
+    window.open(article.url, '_blank');
+  });
 
   if (!secteur) {
     secteur = 'arti';

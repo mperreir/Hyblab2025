@@ -130,3 +130,34 @@
     text-align: center;
     margin: 0.5em 0;
 }
+
+#articleContainer {
+  margin: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+#articleContainer img{
+  width: 90%;
+  margin-top: 10px;
+}
+
+#articleContainer p{
+  font-size: 16px;
+  text-align: justify;
+  width: 90%;
+}
+
+#titleFin2{
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+#textFin2{
+  margin-bottom: 30px;
+}

@@ -1,0 +1,83 @@
+{
+    "articles": [
+      {
+        "name": "Pixel Butter",
+        "specialization": "Jeux mobiles",
+        "url": "https://agence-api.ouest-france.fr/article/le-studio-rennais-pixel-butter-transforme-les-dessins-en-jeux-video?security_key=56aebe07b3956623727f3be92156cba3",
+        "keywords": ["tech", "1_lannion"]
+      },
+      {
+        "name": "MM Process",
+        "accroche": "Après avoir marqué la cérémonie d'ouverture des JO en remontant la Seine au galop sur le cheval mécanique porté par leur trimaran motorisé, les dirigeants de MMProcess Morgane Suquart et Madeg Ciret Le Cosquer se lancent un défi : battre le record du monde de vitesse à la voile. Leur bureau d'études en ingénierie navale basé à Saint-Pierre-Quiberon travaille aussi sur un concept de vedette motorisée à foils, un projet d'Imoca et des \"skis volants\".",
+        "url": "https://agence-api.ouest-france.fr/article/apres-avoir-fait-galoper-un-cheval-dargent-sur-la-seine-mm-process-veut-battre-le-record-du-monde-a-la-voile?security_key=4fda3c6e5736dee15ab11c08de95362e",
+        "img": "data/article1.png",
+        "keywords": ["tech", "1_lorient"]
+      },
+      {
+        "name": "CDoudeh",
+        "specialization": "Glaces exotiques",
+        "url": "https://agence-api.ouest-france.fr/article/cdoudeh-poursuit-le-developpement-de-ses-glaces-exotiques-a-saint-brieuc?security_key=6ccd99085455adb2b343419702ed78d4",
+        "keywords": ["agro", "arti", "1_porc"]
+      },
+      {
+        "name": "Kermeur Spirits",
+        "specialization": "Boissons",
+        "url": "https://agence-api.ouest-france.fr/article/apres-le-ty-jaune-kermeur-spirits-mise-sur-une-liqueur-de-menthe-sans-colorant-artificiel",
+        "keywords": ["agro", "arti", "1_porc"]
+      },
+      {
+        "name": "Lhyfe",
+        "specialization": "Hydrogène vert",
+        "url": "https://agence-api.ouest-france.fr/article/de-nouvelles-usines-dhydrogene-vert-pour-lhyfe?security_key=dd2c6325a20165f1c176b273d395eca8",
+        "keywords": ["tech", "1_nantes"]
+      },
+      {
+        "name": "Poreva",
+        "specialization": "Recyclage du cuir",
+        "url": "https://agence-api.ouest-france.fr/article/poreva-donne-une-nouvelle-vie-aux-chutes-de-cuir-industrielles?security_key=ae06c9729501564ac347b2a65039ddfc",
+        "keywords": ["arti", "1_volaille"]
+      },
+      {
+        "title": "Cocoonr Hosting School",
+        "description": "École des métiers de la location courte durée",
+        "url": "https://agence-api.ouest-france.fr/article/le-rennais-cocoonr-cofonde-la-hosting-school-une-ecole-des-metiers-de-la-location-courte-duree",
+        "keywords": ["1_lannion", "tech"]
+      },
+      {
+        "title": "Les Mini Mondes",
+        "description": "Produits pour enfants",
+        "url": "https://agence-api.ouest-france.fr/article/nes-a-nantes-les-mini-mondes-desormais-cousins-du-journal-de-mickey-suite-a-leur-rachat",
+        "keywords": ["1_nantes", "tech"]
+      },
+      {
+        "title": "La Cantine",
+        "description": "Échanges entre start-ups et entreprises",
+        "url": "https://agence-api.ouest-france.fr/article/la-cantine-ouvre-sa-feuille-de-route-pour-stimuler-les-echanges-entre-start-up-pme-et-eti",
+        "keywords": ["tech", "1_lannion"]
+      },
+      {
+        "title": "Mare Custos",
+        "description": "Développement de robots sous-marins",
+        "url": "https://agence-api.ouest-france.fr/article/mare-custos-sancre-a-brest-pour-developper-et-produire-ses-robots-sous-marins",
+        "keywords": ["1_lorient", "tech", "1_lannion"]
+      },
+      {
+        "title": "Oryon",
+        "description": "Parc de Tiny Houses",
+        "url": "https://agence-api.ouest-france.fr/article/oryon-experimente-un-premier-parc-de-tiny-houses-a-la-roche-sur-yon",
+        "keywords": ["1_volaille"]
+      },
+      {
+        "title": "Timac Agro",
+        "description": "Investissement dans une chaudière biomasse pour décarboner le site de Saint-Malo",
+        "url": "https://agence-api.ouest-france.fr/article/timac-agro-investit-dans-une-chaudiere-biomasse-pour-decarboner-son-site-de-saint-malo",
+        "keywords": ["agro"]
+      },
+      {
+        "title": "Avem",
+        "description": "Entreprise engagée en faveur du handicap",
+        "url": "https://agence-api.ouest-france.fr/article/avem-une-entreprise-engagee-en-faveur-du-handicap",
+        "keywords": ["RSE"]
+      }
+    ]
+  }
