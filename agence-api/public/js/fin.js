@@ -43,21 +43,19 @@ function addCard(textFront, textBack, noChoices = false){
   const cardContainer = document.createElement('div');
   cardContainer.className = 'card-container';
   cardContainer.id = 'flipCard';
+  if (noChoices) {
+    cardContainer.classList.add('no-choices');
+  }
 
   // Create the card
   const card = document.createElement('div');
   card.className = 'card';
-  card.id = 'flipCard';
 
   // Create the front side
   const cardFront = document.createElement('div');
   cardFront.className = 'card-front';
   const p = document.createElement('p');
   p.textContent = textFront;
-
-  if (noChoices) {
-    p.id = 'no-choices';
-  }
 
   cardFront.appendChild(p);
 

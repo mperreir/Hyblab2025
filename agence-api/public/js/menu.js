@@ -1,6 +1,6 @@
 "use strict";
 
-function initMenu(texts){
+function initMenu(){
     const menuBtn = document.getElementById("menu-btn");
     const menuPopup = document.getElementById("menu-popup");
     const closeMenuBtn = document.getElementById("close-menu");
@@ -20,6 +20,7 @@ function initMenu(texts){
     menuPopup.addEventListener("click", (event) => {
         if (event.target === menuPopup) {
         menuPopup.classList.add("hidden");
+        menuBtn.checked = false;
         }
     });
     const goCharactersLink = document.getElementById("go-secteurs"); // 选择角色按钮
