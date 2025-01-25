@@ -9,7 +9,7 @@ export type Situation = {
     choices?: Choice[]; // Liste des choix disponibles depuis cette situation
 };
 
-export type ContentBlock = TextBlock | ImageBlock;
+export type ContentBlock = TextBlock | ImageBlock | QuestionBlock;
 
 export type ImageBlock = {
     type: "image";
@@ -20,6 +20,12 @@ export type ImageBlock = {
 
 export type TextBlock = {
     type: "text";
+    text: string; // texte du bloc
+    template: "full_page" | "quote"; // Format du texte
+};
+
+export type QuestionBlock = {
+    type: "question";
     text: string; // texte du bloc
     template: "full_page" | "quote"; // Format du texte
 };

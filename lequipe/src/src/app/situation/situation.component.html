@@ -5,6 +5,9 @@
                 @case ("text") {
                     <p [innerHTML]="(item.text ? item.text : '') | textAnimation"></p>
                 }
+                @case ("question") {
+                    <p [innerHTML]="(item.text ? item.text : '') | textAnimation" class="question"></p>
+                }
                 @case ("image") {
                     <!-- <img [src]="item.link" [alt]="item?.altText || ''"> -->
                 }

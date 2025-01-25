@@ -5,9 +5,7 @@ import { NgClass } from '@angular/common';
 @Component({
   selector: 'app-slider',
   standalone: true,
-  imports: [
-    NgClass
-  ],
+  imports: [],
   templateUrl: './slider.component.html',
   styleUrl: './slider.component.scss'
 })
