@@ -89,7 +89,7 @@ const NavBarComponent = () => {
             <Navbar className="custom-navbar" expand="lg" style={{ position: 'absolute' }}>
                 <Container fluid className="p-0 px-1">
                     <div className="d-flex justify-content-between align-items-center w-100">
-                        <Navbar.Brand href="#home">
+                        <Navbar.Brand href={`${basename}`}>
                             <img
                                 src={`${basename}images/logo_jeu.png`}
                                 height="30"
