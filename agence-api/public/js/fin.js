@@ -1,21 +1,23 @@
 "use strict";
 
 const initSlide3 = async function(){
-  if (!secteur) {
-    secteur = 'arti';
-  }
-  if (!choices) {
-    choices = ['1_ceramiste', '2_banque', '3_embauchecfa', '4_mission', '5_import'];
-  }
-  if (!userName) {
-    userName = 'Jean';
-  }
-
-
   document.getElementById("titleFin1").textContent = texts.fin.title1;
   document.getElementById("textFin1").textContent = texts.fin.paragraphe1.replace("{nom}", userName);
   document.getElementById("titleFin2").textContent = texts.fin.title1;
   document.getElementById("textFin2").textContent = texts.fin.paragraphe2;
+
+  if(secteur && choices ) {
+    // Load the results on the cards
+    texts[secteur].cartes_fin_arriere.forEach((frontText, index) => {
+      addCard(frontText, texts[secteur].cartes_fin_avant[index][choices[index]]);
+    });
+  } else {
+    addCard("Vous n'avez fait aucun choix", "Veuillez recommencer le jeu");
+  }
+
+  if (!choices) {
+    choices = [];
+  }
 
   const article = await findBestMatchingArticle(choices);
 
@@ -24,11 +26,6 @@ const initSlide3 = async function(){
 
   document.getElementById("articleContainer").addEventListener('click', () => {
     window.open(article.url, '_blank');
-  });
-
-  // Load the results on the cards
-  texts[secteur].cartes_fin_arriere.forEach((frontText, index) => {
-    addCard(frontText, texts[secteur].cartes_fin_avant[index][choices[index]]);
   });
 
 };
