@@ -41,6 +41,8 @@ document.addEventListener('DOMContentLoaded', async function() {
       },
     });
 
+    initMenu();
+
 
     swiper.on("slideChange", function () {
       switch( swiper.activeIndex ) {

@@ -23,7 +23,6 @@ const initSlide2 = async function (afterIntro = false) {
 
         if(!afterIntro){
             scrollToBottom();
-            initMenu();
 
             // Initialiser la barre de progression
             updateProgress();
