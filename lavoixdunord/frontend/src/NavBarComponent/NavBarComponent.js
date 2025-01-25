@@ -11,7 +11,6 @@ const NavBarComponent = () => {
     const location = useLocation();
 
     React.useEffect(() => {
-        console.log('show', show);
         if (location.pathname === '/') {
             setShow(false);
         } else {

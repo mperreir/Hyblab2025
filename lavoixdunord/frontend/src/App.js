@@ -6,9 +6,7 @@ import DifficultyPage from "./DifficultyPage/DifficultyPage";
 import HomePage from "./homePage/homePage";
 import RulesPage from "./pageRegles/pageRegles";
 import StartPage from "./startPage/startPage";
-import TransitionPage1 from "./TransitionPage1/TransitionPage1";
-import TransitionPage2 from "./TransitionPage2/TransitionPage2";
-import TransitionPage3 from "./TransitionPage3/TransitionPage3";
+import TransitionPage from "./TransitionPage/TransitionPage";
 import Credit from "./creditPage/creditPage";
 import FinalPage from "./finalPage/finalPage";
 import NavBarComponent from "./NavBarComponent/NavBarComponent";
@@ -28,12 +26,8 @@ function App() {
           <Route path="/start/:difficulty" element={<StartPage />} />
           <Route path="/start/:difficulty/:id" element={<QuestionPage />} />
           <Route path="/final" element={<FinalPage />} />
-          {/* Page de transition 1 */}
-          <Route path="/transition/:difficulty/1" element={<TransitionPage1 />} />
-          {/* Page de transition 2 */}
-          <Route path="/transition/:difficulty/2" element={<TransitionPage2 />} />
-          {/* Page de transition 3 */}
-          <Route path="/transition/:difficulty/3" element={<TransitionPage3 />} />
+          {/* Page de transition */}
+          <Route path="/transition/:difficulty/:level_id" element={<TransitionPage />} />
           {/* Page de credits */}
           <Route path="/credit" element={<Credit />} />
           {/* Page final */}
