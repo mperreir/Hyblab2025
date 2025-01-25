@@ -125,7 +125,7 @@ function waitForNameInput() {
     });
   }
 
-function waitForUserTouch(){
+async function waitForUserTouch(){
     return new Promise((resolve) => {
         const messageInput = document.getElementById('chatBox');
         messageInput.addEventListener('click', (event) => {
