@@ -1,10 +1,9 @@
 /* eslint-disable react/prop-types */
-import { useRef, useState } from "react";
+import { useState } from "react";
 import POIs from "./POIs.jsx";
 import "./ScrollableMap.css"; // Create this file for styles
 
-function ScrollableMap({ width = 3000, height = 3000, background, setSelectedText }) {
-  const mapRef = useRef(null);
+function ScrollableMap({ mapRef, width = 3000, height = 3000, background, setSelectedText }) {
   const [isDragging, setIsDragging] = useState(false);
   const [startPos, setStartPos] = useState({ x: 0, y: 0 });
   const [scrollPos, setScrollPos] = useState({ left: 0, top: 0 });
