@@ -2,8 +2,13 @@
 
 const initSlide3 = async function(){
   document.getElementById("titleFin1").textContent = texts.fin.title1;
+
+  if(!userName){
+    userName = "";
+  }
+
   document.getElementById("textFin1").textContent = texts.fin.paragraphe1.replace("{nom}", userName);
-  document.getElementById("titleFin2").textContent = texts.fin.title1;
+  document.getElementById("titleFin2").textContent = texts.fin.title2;
   document.getElementById("textFin2").textContent = texts.fin.paragraphe2;
 
   if(secteur && choices ) {
@@ -12,7 +17,7 @@ const initSlide3 = async function(){
       addCard(frontText, texts[secteur].cartes_fin_avant[index][choices[index]]);
     });
   } else {
-    addCard("Vous n'avez fait aucun choix", "Veuillez recommencer le jeu");
+    addCard("Vous n'avez fait aucun choix", "Veuillez recommencer le jeu", true);
   }
 
   if (!choices) {
@@ -31,7 +36,7 @@ const initSlide3 = async function(){
 };
 
 
-function addCard(textFront, textBack){
+function addCard(textFront, textBack, noChoices = false){
   const cardsContainer = document.getElementById('cardsContainer');
 
   // Create the card container
@@ -42,12 +47,18 @@ function addCard(textFront, textBack){
   // Create the card
   const card = document.createElement('div');
   card.className = 'card';
+  card.id = 'flipCard';
 
   // Create the front side
   const cardFront = document.createElement('div');
   cardFront.className = 'card-front';
   const p = document.createElement('p');
   p.textContent = textFront;
+
+  if (noChoices) {
+    p.id = 'no-choices';
+  }
+
   cardFront.appendChild(p);
 
   // Create the back side
