@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style1.css">
+  </head>
+  <body>
+    <div id="app-container">
+      <header>
+        <!-- Logo SVG minimaliste -->
+        <div class="logo-only">
+          <svg width="60" height="60" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="40" fill="#0066cc" />
+            <text x="50" y="57" fill="#fff" text-anchor="middle" font-size="20" font-family="Arial">LOGO</text>
+          </svg>
+        </div>
+      </header>
+      
+      <main>
+        <section class="content">
+          <h2>À vous de faire des choix pour créer un festival idéal !</h2>
+        </section>
+
+        <!-- Festival Sizes -->
+        <section class="content">
+          <div class="choice-header">
+            <img src="img/picto1.jpg" alt="Festival Size Icon" class="choice-icon">
+            <p class="content-title">Quelle taille pour mon festival ?</p>
+          </div>
+          <div class="choice-options">
+            {{#festivalSizes}}
+            <div class="option-item">
+              <button class="btn-choice {{#isSelected}}selected{{/isSelected}}">
+                <img src="{{image}}" alt="{{name}}">
+                <div class="option-details">
+                  <p class="option-name">{{name}}</p>
+                  <p class="option-description">{{description}}</p>
+                  <img src="{{icon}}" alt="Info Icon" class="info-icon">
+                </div>
+              </button>
+            </div>
+            {{/festivalSizes}}
+          </div>
+        </section>
+
+        <!-- Ecological Actions -->
+        <section class="content">
+          <div class="choice-header">
+            <img src="img/picto2.jpg" alt="Ecological Actions Icon" class="choice-icon">
+            <p class="content-title">Quelles actions pour la transition écologique ?</p>
+          </div>
+          <div class="choice-options">
+            {{#ecologicalActions}}
+            <div class="option-item">
+              <button class="btn-choice {{#isSelected}}selected{{/isSelected}}">
+                <img src="{{image}}" alt="{{name}}">
+                <div class="option-details">
+                  <p class="option-name">{{name}}</p>
+                  <p class="option-description">{{description}}</p>
+                  <img src="{{icon}}" alt="Info Icon" class="info-icon">
+                </div>
+              </button>
+            </div>
+            {{/ecologicalActions}}
+          </div>
+        </section>
+
+        <!-- Cultural Mediation Actions -->
+        <section class="content">
+          <div class="choice-header">
+            <img src="img/picto3.jpg" alt="Cultural Mediation Icon" class="choice-icon">
+            <p class="content-title">Quelles actions pour la médiation culturelle ?</p>
+          </div>
+          <div class="choice-options">
+            {{#culturalMediationActions}}
+            <div class="option-item">
+              <button class="btn-choice {{#isSelected}}selected{{/isSelected}}">
+                <img src="{{image}}" alt="{{name}}">
+                <div class="option-details">
+                  <p class="option-name">{{name}}</p>
+                  <p class="option-description">{{description}}</p>
+                  <img src="{{icon}}" alt="Info Icon" class="info-icon">
+                </div>
+              </button>
+            </div>
+            {{/culturalMediationActions}}
+          </div>
+        </section>
+
+        <!-- Risk Prevention Actions -->
+        <section class="content">
+          <div class="choice-header">
+            <img src="img/picto4.jpg" alt="Risk Prevention Icon" class="choice-icon">
+            <p class="content-title">Quelles actions pour la prévention des risques ?</p>
+          </div>
+          <div class="choice-options">
+            {{#riskPreventionActions}}
+            <div class="option-item">
+              <button class="btn-choice {{#isSelected}}selected{{/isSelected}}">
+                <img src="{{image}}" alt="{{name}}">
+                <div class="option-details">
+                  <p class="option-name">{{name}}</p>
+                  <p class="option-description">{{description}}</p>
+                  <img src="{{icon}}" alt="Info Icon" class="info-icon">
+                </div>
+              </button>
+            </div>
+            {{/riskPreventionActions}}
+          </div>
+        </section>
+
+        <section class="content">
+          <button class="btn btn-create-event" onclick="submitChoices()">Je valide mes choix</button>
+        </section>
+      </main>
+
+      <footer>
+        <p>En partenariat avec <strong>L’Onde Porteuse</strong> &amp; <strong>Le Pôle</strong></p>
+      </footer>
+    </div>
+
+    <script>
+      function submitChoices() {
+        console.log('Submitting choices...');
+        // Implement your submission logic here
+      }
+    </script>
+  </body>
+</html>

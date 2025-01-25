@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style1.css">
+    <title>{{ titles.content }}</title>
+  </head>
+  <body>
+    <div id="app-container">
+      <header>
+        <nav class="navbar">
+          <div class="logo-container">
+            <img src="./img/logo.png" alt="Logo Tpole" />
+          </div>
+          <a href="#" class="btn-en-savoir-plus">En savoir plus</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="banner">
+          <h1>{{ titles.content }}</h1>
+          <img src="./img/{{ image }}" alt="Image spectacle" class="img">
+        </section>
+
+        <section class="content">
+          <p class="content-title">
+            {{ descriptions.0.content }}
+          </p>
+          <p class="content-text">
+            {{ descriptions.1.content }}
+          </p>
+          <a href="/londeporteuse/choices" class="btn btn-create-event">{{ cta }}</a>
+        </section>
+      </main>
+
+      <footer>
+        <p>En partenariat avec <strong>L’Onde Porteuse</strong> &amp; <strong>Le Pôle</strong></p>
+      </footer>
+    </div>
+  </body>
+</html>

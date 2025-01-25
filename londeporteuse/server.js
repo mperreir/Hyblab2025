@@ -1,40 +1,56 @@
-// Use strict mode
 'use strict';
 
-// Load usefull expressjs and nodejs objects / modules
+// Load useful expressjs and nodejs modules
 const express = require('express');
 const path = require('path');
-const mustacheExpress = require('mustache');
-const fs = require('fs');
+const mustacheExpress = require('mustache-express'); // Import mustache-express
 
 // Create our application
 const app = express();
+
+// Configure Mustache as the view engine
+app.engine('mustache', mustacheExpress());
+app.set('view engine', 'mustache');
+app.set('views', path.join(__dirname, '/public/views')); // Set views directory
 
 // Load and register our REST API
 const api = require('./api/api');
 app.use('/api', api);
 
-// Minimum routing: serve static content from the html directory
+// Serve static content
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, '../__common-logos__')));
 
-// You can then add whatever routing code you need
+// Route for the home page
+app.get('/start', async (req, res) => {
+    try {
+        // Fetch data from the API endpoint
+        const response = await fetch('http://localhost:8080/londeporteuse/api/home');
+        const data = await response.json();
 
-/****************************The code I added to this file************************************* */
+        // Render the Mustache template with the fetched data
+        res.render('index.mustache', data);
+    } catch (error) {
+        console.error('Error fetching home page data:', error);
+        res.status(500).send('Error loading the home page');
+    }
+});
 
-// Configure Mustache
-app.engine('mustache', mustacheExpress());
-app.set('view engine', 'mustache');
-app.set('views', path.join(__dirname, 'views'));
+// Route for the choices page
+app.get('/choices', async (req, res) => {
+    try {
+      // Fetch data from the API endpoint
+      const response = await fetch('http://localhost:8080/londeporteuse/api/choices');
+      const data = await response.json();
+  
+      // Render the Mustache template with the fetched data
+      res.render('choices.mustache', data);
+    } catch (error) {
+      console.error('Error fetching choices data:', error);
+      res.status(500).send('Error loading the choices page');
+    }
+  });
+  
 
-app.use(express.json());
-
-
-/***************************************The end of my modifications******************************************************** */
-
-
-// This module is exported and served by the main server.js located
-// at the root of this set of projects. You can access it by lanching the main
-// server and visiting http(s)://127.0.0.1:8080/name_of_you_project/ (if on a local server)
-// or more generally: http(s)://server_name:port/name_of_you_project/
+// Export the app
 module.exports = app;
