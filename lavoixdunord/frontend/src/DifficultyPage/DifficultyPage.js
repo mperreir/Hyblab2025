@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./DifficultyPage.css";
+import useBasename from "../hooks/useBasenameHook";
 
 const DifficultyPage = () => {
   const [selectedDifficulty, setSelectedDifficulty] = useState(null);
   const navigate = useNavigate();
+  const basename = useBasename();
 
   const handleDifficultySelect = (difficulty) => {
     setSelectedDifficulty(difficulty);
@@ -17,32 +19,43 @@ const DifficultyPage = () => {
   };
 
   return (
-    <div className="difficulty-container">
-      <h1 className="difficulty-title">DIFFICULTÉS</h1>
-      <div className="difficulty-box">
-        <h2 className="difficulty-subtitle">CHOISISSEZ UN NIVEAU <br></br> DE DIFFICULTÉ</h2>
-        <div className="difficulty-buttons">
+    <div className="bg_gradient_fond_vague w-100 position-relative">
+      <div className="mt-84 text-center">
+        <h1 className="text-white">DIFFICULTÉS</h1>
+
+        <div className="bg-white text-dark border border-41 border-light rounded-3 mx-5 mt-5 p-4">
+          <h6 className="py-4">CHOISISSEZ UN NIVEAU DE DIFFICULTÉ</h6>
+
+          <div className="d-flex flex-column gap-5 pb-5">
+            <button
+              className={`btn ${selectedDifficulty === 1 ? "btn-dark" : "btn-outline-dark"}`}
+              onClick={() => handleDifficultySelect(1)}
+            >
+              FACILE
+            </button>
+            <button
+              className={`btn ${selectedDifficulty === 2 ? "btn-dark" : "btn-outline-dark"}`}
+              onClick={() => handleDifficultySelect(2)}
+            >
+              DIFFICILE
+            </button>
+          </div>
+        </div>
+
+        <div className="d-flex flex-column mx-5 mt-5">
           <button
-            className={`difficulty-btn ${selectedDifficulty === 1 ? "selected" : ""}`}
-            onClick={() => handleDifficultySelect(1)}
+            className="btn btn-light fw-bold mx-5"
+            onClick={handlePlayClick}
+            disabled={!selectedDifficulty} // Désactiver tant qu'aucune difficulté n'est sélectionnée
           >
-            FACILE
+            JOUER
           </button>
-          <button
-            className={`difficulty-btn ${selectedDifficulty === 2 ? "selected" : ""}`}
-            onClick={() => handleDifficultySelect(2)}
-          >
-            DIFFICILE
-          </button>
+
         </div>
       </div>
-      <button
-        className="play-btn"
-        onClick={handlePlayClick}
-        disabled={!selectedDifficulty} // Désactiver tant qu'aucune difficulté n'est sélectionnée
-      >
-        JOUER
-      </button>
+
+      <img src={`${basename}images/illustrations/illustration_arbre_jaune_orange.png`} alt="illustration_arbre_jaune_orange" className="illustration_arbre_jaune_orange" />
+
     </div>
   );
 };
