@@ -1,12 +1,12 @@
 import React from 'react';
 import QuestionsComponent from '../components/QuestionsComponent';
-import IntroductionLayout from '../Layout/IntroductionLayout';
+import IntroLayout from '../Layout/IntroductionLayout'; 
 
 const QuestionsPage = () => {
     return (
-        <IntroductionLayout>
+        <IntroLayout>
             <QuestionsComponent />
-        </IntroductionLayout>
+        </IntroLayout>
     );
 };
 
