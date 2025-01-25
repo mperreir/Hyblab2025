@@ -6,8 +6,18 @@
             "content": [
                 {
                     "type": "text",
-                    "text": "Le vainqueur du Tour de France 2024, Tadej Pogacar, fait taire les rumeurs de dopage sur ses performances. Comme un air de déjà vu, non ? La plaie ouverte par Lance Armstrong est loin d’être cicatrisée. L’histoire est-elle en train de se répéter ? Dans ton rôle de président de l’Union Cycliste Internationale, tu ne peux t’empêcher de te replonger dans ce scandale qui a secoué le cyclisme mondial. Une idée te taraude : et si Armstrong n’avait jamais été testé positif au dopage ? Direction 1999, pour changer le cours des événements.",
+                    "text": "Le vainqueur du Tour de France 2024, Tadej Pogacar, fait taire les rumeurs de dopage sur ses performances. Comme un air de déjà vu, non ? La plaie ouverte par Lance Armstrong est loin d’être cicatrisée. L’histoire est-elle en train de se répéter ? Dans ton rôle de président de l’Union Cycliste Internationale, tu ne peux t’empêcher de te replonger dans ce scandale qui a secoué le cyclisme mondial. Une idée te taraude : ",
                     "template": "full_page"
+                },
+                {
+                    "type": "question",
+                    "text":"Et si Armstrong n’avait jamais été testé positif au dopage ?",
+                    "template": "full_page" 
+                },
+                {
+                    "type": "text",
+                    "text":"Direction 1999, pour changer le cours des événements.",
+                    "template": "full_page" 
                 }
             ],
             "choices": [
@@ -33,7 +43,7 @@
                                             "template": "full_page"
                                         },
                                         {
-                                            "type": "text",
+                                            "type": "question",
                                             "text": "Quelle est la réaction de l’UCI ?",
                                             "template": "full_page"
                                         }
@@ -109,6 +119,7 @@
                                     ],
                                     "choices": [
                                         {
+                                            "type": "question",
                                             "text": "Et si Marco Pantani avait eu une seconde chance pour pédaler droit ?",
                                             "image": "midjourney/velo5.png",
                                             "position": "55%",
@@ -140,11 +151,16 @@
             "content": [
                 {
                     "type": "text",
-                    "text": "Tu es un jeune arbitre en formation à la FIFA. Passionné par les règles du jeu et les scandales du foot, tu plonges dans l'histoire de la \"Main de Dieu\", ce but légendaire mais pas très réglo marqué de la main par Diego Maradona contre l’Angleterre en 1986. Mais, imagine : et si à  la place d’El Pibe de Oro, c’est Gary Lineker, l'icône anglaise qui avait triché ce jour-là ?  Grâce à un voyage dans le temps, te voilà à Mexico sur le sol du scandale, prêt à découvrir comment ce retournement de situation aurait bouleversé le football mondial. Prépare-toi à arbitrer l’histoire du football… littéralement.",
+                    "text": "Tu es un jeune arbitre en formation à la FIFA. Passionné par les règles du jeu et les scandales du foot, tu plonges dans l'histoire de la \"Main de Dieu\", ce but légendaire mais pas très réglo marqué de la main par Diego Maradona contre l’Angleterre en 1986.",
                     "template": "full_page"
                 },
                 {
                     "type": "text",
+                    "text": "Mais, imagine : et si à  la place d’El Pibe de Oro, c’est Gary Lineker, l'icône anglaise qui avait triché ce jour-là ?  Grâce à un voyage dans le temps, te voilà à Mexico sur le sol du scandale, prêt à découvrir comment ce retournement de situation aurait bouleversé le football mondial. Prépare-toi à arbitrer l’histoire du football… littéralement.",
+                    "template": "full_page"
+                },
+                {
+                    "type": "question",
                     "text": "Et si c’était l’anglais Gary Lineker qui avait marqué de la main à la place de Maradona ?",
                     "template": "full_page"
                 },
@@ -154,7 +170,7 @@
                     "template": "full_page"
                 },
                 {
-                    "type": "text",
+                    "type": "question",
                     "text": "Comment réagit l’arbitre ?",
                     "template": "full_page"
                 }
@@ -226,7 +242,7 @@
                                 "result": {
                                     "content": [
                                         {
-                                            "type": "text",
+                                            "type": "question",
                                             "text": "Et si Thierry Henry avait annoncé sa main contre l’Irlande en 2009 ?",
                                             "template": "full_page"
                                         },
@@ -293,7 +309,7 @@
                                 "template": "full_page"
                             },
                             {
-                                "type": "text",
+                                "type": "question",
                                 "text": "Et si Thierry Henry avait annoncé sa main contre l’Irlande en 2009 ?",
                                 "template": "full_page"
                             },
@@ -350,7 +366,12 @@
             "content": [
                 {
                     "type": "text",
-                    "text": "Tu es un jeune rookie de l'Académie Ferrari, plein d’ambition mais terrifié par les récits des accidents tragiques qui jalonnent l’histoire de la Formule 1. Chaque course semble être une prise de risque insensée. Alors que tu t’entraînes dans l’ombre des légendes du paddock, une question t’obsèdes : et si le halo, ce dispositif qui sauve tant de vies aujourd’hui, avait été introduit dès 2010 ?",
+                    "text": "Tu es un jeune rookie de l'Académie Ferrari, plein d’ambition mais terrifié par les récits des accidents tragiques qui jalonnent l’histoire de la Formule 1. Chaque course semble être une prise de risque insensée. Alors que tu t’entraînes dans l’ombre des légendes du paddock, une question t’obsèdes :",
+                    "template": "full_page"
+                },
+                {
+                    "type": "question",
+                    "text": "Et si le halo, ce dispositif qui sauve tant de vies aujourd’hui, avait été introduit dès 2010 ?",
                     "template": "full_page"
                 },
                 {

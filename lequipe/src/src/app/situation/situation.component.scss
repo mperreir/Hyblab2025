@@ -1,8 +1,9 @@
 p {
     margin: 35px 20px;
     font-size: 25%;
-    &:question {
-        font-weight: 300;
+    &.question {
+        font-weight: bold;
+        font-style: italic;
     }
 }
 
