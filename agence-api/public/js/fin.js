@@ -10,21 +10,6 @@ const initSlide3 = async function(){
   response = await fetch('data/article.json');
   const articles = await response.json();
 
-
-  document.getElementById("titleFin1").textContent = texts.fin.title1;
-  document.getElementById("textFin1").textContent = texts.fin.paragraphe1.replace("{nom}", userName);
-  document.getElementById("titleFin2").textContent = texts.fin.title1;
-  document.getElementById("textFin2").textContent = texts.fin.paragraphe2;
-
-  const article = articles.articles.find(article => article.name === "MM Process");
-
-  document.getElementById("imgArticle").src=article.img;
-  document.getElementById("accrocheArticle").textContent = article.accroche;
-
-  document.getElementById("articleContainer").addEventListener('click', () => {
-    window.open(article.url, '_blank');
-  });
-
   if (!secteur) {
     secteur = 'arti';
   }
@@ -34,6 +19,21 @@ const initSlide3 = async function(){
   if (!userName) {
     userName = 'Jean';
   }
+
+
+  document.getElementById("titleFin1").textContent = texts.fin.title1;
+  document.getElementById("textFin1").textContent = texts.fin.paragraphe1.replace("{nom}", userName);
+  document.getElementById("titleFin2").textContent = texts.fin.title1;
+  document.getElementById("textFin2").textContent = texts.fin.paragraphe2;
+
+  const article = await findBestMatchingArticle(choices);
+
+  document.getElementById("imgArticle").src=article.img;
+  document.getElementById("accrocheArticle").textContent = article.accroche;
+
+  document.getElementById("articleContainer").addEventListener('click', () => {
+    window.open(article.url, '_blank');
+  });
 
   // Load the results on the cards
   texts[secteur].cartes_fin_arriere.forEach((frontText, index) => {
@@ -83,4 +83,34 @@ function addCard(textFront, textBack){
   cardContainer.addEventListener('click', () => {
     cardContainer.classList.toggle('flipped'); // Toggle the "flipped" class
   });
+}
+
+async function findBestMatchingArticle(customKeywords) {
+  try {
+    // Fetch the JSON data
+    const response = await fetch('data/article.json');
+    const articlesData = await response.json();
+
+    // Map articles to a score based on matching keywords
+    const scoredArticles = articlesData.articles.map(article => {
+      const matchingKeywords = article.keywords.filter(keyword => customKeywords.includes(keyword));
+      return {
+        article,
+        matchCount: matchingKeywords.length
+      };
+    });
+
+    // Find the highest match count
+    const highestScore = Math.max(...scoredArticles.map(item => item.matchCount));
+
+    // Get all articles with the highest match count
+    const bestArticles = scoredArticles.filter(item => item.matchCount === highestScore);
+
+    // Randomly pick one from the best matching articles
+    const randomBestArticle = bestArticles[Math.floor(Math.random() * bestArticles.length)];
+
+    return randomBestArticle.article;
+  } catch (error) {
+    console.error('Error fetching or processing data:', error);
+  }
 }
