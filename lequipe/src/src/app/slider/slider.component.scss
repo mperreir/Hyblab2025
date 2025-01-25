@@ -1,6 +1,6 @@
 #container {
     gap: 10px; /* Espacement entre les éléments */
-    padding: 10% 10px;
+    padding: 5% 10px;
     scroll-snap-type: x mandatory; /* Optionnel pour un défilement fluide */
     overflow-x: scroll;
     display: flex;
@@ -23,8 +23,9 @@
     }
 
     .item {
+        margin-top: 12%;
         flex: 0 0 auto;
-        width: 25%;
+        width: 40%;
         scroll-snap-align: center; /* Optionnel : alignement précis lors du défilement */
         display: flex;
         flex-direction: column;
@@ -34,7 +35,8 @@
         cursor: pointer;
 
         &.selected {
-            width: 60%; /* Agrandit l'élément sélectionné */
+            margin-top: 0%;
+            width: 50%; /* Agrandit l'élément sélectionné */
             z-index: 1; /* Assure que l'élément agrandi reste au-dessus des autres */
             background-color: darken(rgb(255, 255, 255), 5%);
 

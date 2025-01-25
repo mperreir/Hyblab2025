@@ -1,10 +1,13 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ContentData } from '../models/content-data';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-slider',
   standalone: true,
-  imports: [],
+  imports: [
+    NgClass
+  ],
   templateUrl: './slider.component.html',
   styleUrl: './slider.component.scss'
 })
