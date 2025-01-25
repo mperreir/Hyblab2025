@@ -61,11 +61,11 @@
 
 /* Style pour le texte */
 #bloc-centre p {
-    font-size: 4em;
+    font-size: 24px;
 }
 
 #texte {
-    font-size: 8vw; /* Ajustez cette valeur selon vos besoins */
+    font-size: 30px; /* Ajustez cette valeur selon vos besoins */
     font-weight:bold; /* Optionnel : rend le texte en gras */
     color: #1D1D1D; /* Optionnel : change la couleur du texte */
     font-family: 'Helvetica' /* Optionnel : change la police du texte */
