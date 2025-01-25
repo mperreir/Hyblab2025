@@ -42,28 +42,31 @@
 
 /*** Images & hover parallax ***/
 .choice img {
-    width: 100%;
+    object-fit: cover;
     transform: skew(20deg);
-    position: absolute;
+    position: relative;
     transition: all ease 0.6s;
     filter: brightness(85%);
-
 }
 .choice.right img {
-    right: 30%;
+    right: 21%;
+    transform: skew(20deg) scale(1.2);
+    top: 100px;
 }
 .choice.right:hover img{
-    right: 10%;
+    right: 5%;
 }
 #choose-player.hv-left .choice.right img{
-    right: 40%;
+    right: 30%;
 }
 
 .choice.left img {
     left: 30%;
+    transform: skew(20deg) scale(1.5);
+    top: -100px;
 }
 .choice.left:hover img{
-    left: 13%;
+    left: 6%;
 }
 #choose-player.hv-right .choice.left img{
     left: 40%;
@@ -89,22 +92,22 @@
 
 /*** divider ***/
 .choice h1.divider{
-    position: relative;
+    position: absolute;
     rotate: -90deg;
     text-align: center;
     line-height: 150px;
-    width: 100vh;
     transition: all ease .3s;
     font-size: 22vh;
     opacity: 0;
     white-space: nowrap;
     transform: skew(-20deg);
-    top: 15%;
+    top: 44%;
 }
 .choice.right h1.divider{
+    left: -25%;
 }
 .choice.left h1.divider{
-    left: 92%;
+    right: -16%;
 }
 .choice:hover h1.divider{
     opacity: 1;
@@ -141,7 +144,7 @@
     align-items: start;
 }
 .choice.right .content{
-    left: 25%;
+    left: 20%;
     text-align: right;
     align-items: end;
 }
