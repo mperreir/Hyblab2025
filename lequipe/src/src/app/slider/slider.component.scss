@@ -23,15 +23,18 @@
     }
 
     .item {
-        margin-top: 12%;
-        flex: 0 0 auto;
-        width: 40%;
-        scroll-snap-align: center; /* Optionnel : alignement précis lors du défilement */
         display: flex;
         flex-direction: column;
+        scroll-snap-align: center; /* Optionnel : alignement précis lors du défilement */
+        flex: 0 0 auto;
+        width: 40%;
+        margin-top: 12%;
         padding: 1.5%;
+
         border: 1px solid #D61E00;
         border-radius: 14px;
+
+        transition: all 0.2s ease-in-out;
         cursor: pointer;
 
         &.selected {

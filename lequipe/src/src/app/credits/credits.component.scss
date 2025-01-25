@@ -45,6 +45,9 @@ header {
         margin-top: 2%;
         img {
             width: 50%;
+            border-radius: 20px;
+            aspect-ratio: 1;
+            object-fit: cover;
         }
     }
 }
