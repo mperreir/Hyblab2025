@@ -66,7 +66,7 @@ function ScrollableMap({ mapRef, width = 3000, height = 3000, background, setSel
           background: background || "lightgray",
         }}
       >
-      <POIs setSelectedText={setSelectedText}/>
+      <POIs setSelectedText={setSelectedText} points={points}/>
       </div>
     </div>
   );
