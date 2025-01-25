@@ -26,6 +26,7 @@ const initSlide3 = async function(){
   document.getElementById("titleFin2").textContent = texts.fin.title1;
   document.getElementById("textFin2").textContent = texts.fin.paragraphe2;
 
+  console.log(choices);
   const article = await findBestMatchingArticle(choices);
 
   document.getElementById("imgArticle").src=article.img;
@@ -108,6 +109,9 @@ async function findBestMatchingArticle(customKeywords) {
 
     // Randomly pick one from the best matching articles
     const randomBestArticle = bestArticles[Math.floor(Math.random() * bestArticles.length)];
+
+    //log best matching keywords
+    console.log('Best matching keywords:', randomBestArticle.article.keywords);
 
     return randomBestArticle.article;
   } catch (error) {

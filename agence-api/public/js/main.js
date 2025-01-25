@@ -140,7 +140,7 @@ async function waitForUserTouch(){
 
 async function addButtonGoToResults() {
     const confirmButton = document.createElement('button');
-    confirmButton.id = 'confirmButton';
+    confirmButton.id = 'seeResultsButton';
     confirmButton.textContent = 'Voir les résultats';
     confirmButton.classList.add('button');
     document.getElementById('chatBox').appendChild(confirmButton);
