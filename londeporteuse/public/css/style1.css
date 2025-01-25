@@ -23,6 +23,16 @@ body {
     flex-direction: column; /* Les éléments sont empilés verticalement */
 }
 
+#page_scrollable_container {
+    width: 100%;
+    max-width: 390px; /* Largeur adaptée à un appareil mobile */
+    height: 100vh; /* Hauteur de la fenêtre visible */
+    overflow-y: scroll; /* Active le défilement vertical */
+    background-color: #121212; /* Couleur de fond sombre */
+    display: flex;
+    flex-direction: column;
+  }
+
 /* Header */
 header {
     background-color: #000;

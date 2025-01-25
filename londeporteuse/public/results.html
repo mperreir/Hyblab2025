@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style1.css">
+    <title>Festival Budget</title>
+</head>
+<body>
+    <div id="app-container">
+        <header>
+            <div class="logo-only">
+                <svg width="60" height="60" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="40" fill="#0066cc" />
+                    <text x="50" y="57" fill="#fff" text-anchor="middle" font-size="20" font-family="Arial">LOGO</text>
+                </svg>
+            </div>
+        </header>
+        <main>
+            <div>
+                <section class="content">
+                    <h2 id="page-title-1">Chargement...</h2>
+                    <h2 id="page-title-2"></h2>
+                </section>
+                <section class="content">
+                    <h2 id="budget-title"></h2>
+                </section>
+                <section class="content">
+                    <p class="content-title" id="budget-info"></p>
+                </section>
+                <section class="content">
+                    <div id="budget-composition"></div>
+                </section>
+                <section class="content">
+                    <p class="content-texte" id="context-text"></p>
+                    <p class="content-texte" id="example-text"></p>
+                    <h2 id="highlight-text"></h2>
+                    <h2 id="advice-text"></h2>
+                </section>
+                <a href="#" class="btn btn-create-event">Je valide mes choix</a>
+            </div>
+        </main>
+        <footer>
+            <p>En partenariat avec <strong>L’Onde Porteuse</strong> &amp; <strong>Le Pôle</strong></p>
+        </footer>
+    </div>
+
+    <script>
+        // Chemin du fichier JSON
+        const jsonFilePath = 'data/etape2.json';
+
+        // Charger les données JSON depuis le serveur
+        async function loadJSON() {
+            try {
+                const response = await fetch(jsonFilePath);
+                if (!response.ok) {
+                    throw new Error(`Échec du chargement du fichier JSON depuis ${jsonFilePath}`);
+                }
+                return await response.json();
+            } catch (error) {
+                console.error("Erreur lors du chargement des données JSON :", error);
+            }
+        }
+
+        // Générer le contenu dynamique
+        async function generateContent() {
+            const data = await loadJSON();
+
+            // Mettre à jour les titres principaux
+            document.getElementById("page-title-1").textContent = data.pageTitle1;
+            document.getElementById("page-title-2").textContent = data.pageTitle2;
+
+            // Mettre à jour le budget
+            document.getElementById("budget-title").textContent = data.budget.title;
+            document.getElementById("budget-info").textContent = data.budget.infoLink.text;
+
+            // Composition du budget
+            const budgetCompositionContainer = document.getElementById("budget-composition");
+            data.budgetComposition.forEach(item => {
+                const section = document.createElement("div");
+                section.classList.add("budget-item");
+
+                const colorBox = document.createElement("div");
+                colorBox.style.backgroundColor = item.color;
+                colorBox.style.width = "20px";
+                colorBox.style.height = "20px";
+                colorBox.style.display = "inline-block";
+                colorBox.style.marginRight = "10px";
+
+                const text = document.createElement("p");
+                text.textContent = `${item.name} (${item.percentage}%) : ${item.details}`;
+
+                section.appendChild(colorBox);
+                section.appendChild(text);
+                budgetCompositionContainer.appendChild(section);
+            });
+
+            // Texte du contexte et exemple
+            document.getElementById("context-text").textContent = data.content1.context;
+            document.getElementById("example-text").textContent = data.content1.example.text;
+
+            // Texte de mise en évidence et conseils
+            document.getElementById("highlight-text").textContent = data.content2.highlight;
+            document.getElementById("advice-text").textContent = data.content2.advice;
+        }
+
+        // Initialiser la page après le chargement
+        document.addEventListener("DOMContentLoaded", generateContent);
+    </script>
+</body>
+</html>
