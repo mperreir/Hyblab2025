@@ -3,7 +3,7 @@ import { useState } from "react";
 import POIs from "./POIs.jsx";
 import "./ScrollableMap.css"; // Create this file for styles
 
-function ScrollableMap({ mapRef, width = 3000, height = 3000, background, setSelectedText }) {
+function ScrollableMap({ mapRef, width = 3000, height = 3000, background, setSelectedText, points }) {
   const [isDragging, setIsDragging] = useState(false);
   const [startPos, setStartPos] = useState({ x: 0, y: 0 });
   const [scrollPos, setScrollPos] = useState({ left: 0, top: 0 });

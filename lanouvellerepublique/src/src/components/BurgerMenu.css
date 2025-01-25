@@ -9,7 +9,6 @@
     align-items: center;
     text-align: center;
     justify-content: center;
-    z-index: 1;
     background: radial-gradient(110.13% 110.13% at 50% 50%, #EFD8B8 34.75%, #897C69 100%);
 }
 
