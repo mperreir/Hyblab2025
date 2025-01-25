@@ -11,7 +11,9 @@ body {
 .question-container {
   text-align: center;
   width: 100%;
-  max-width: 400px;
+  height: fit-content;
+  min-height: 100%;
+  padding-top: 72px;
 }
 
 .blur-background {
@@ -28,11 +30,9 @@ body {
   pointer-events: none;
 }
 .question-number {
-  color: #ffffff;
-  margin-top: 50px;
   font-family: 'Pathway Extreme';
   font-weight: 800;
-
+  color: white;
 }
 
 .question-box {
@@ -40,6 +40,7 @@ body {
   padding: 20px;
   border-radius: 15px;
   box-shadow: 0 4px 6px #1A3347;
+  margin-inline: 32px;
 }
 
 .question-text {
@@ -145,6 +146,7 @@ body {
   background-color: white;
   padding: 10px;
   border-radius: 10px;
+  text-align: justify;
 }
 
 .hint-item {

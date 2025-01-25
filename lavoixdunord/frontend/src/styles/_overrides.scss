@@ -20,7 +20,8 @@
     /* Supprime toute restriction de largeur */
     padding-inline: 4px;
     /* Ajoute un peu d'espace intérieur */
-    min-height: 100vh;
+    height: 100vh;
+    overflow-y: auto;
     /* Occupe toute la hauteur de l'écran */
     background-color: $body-bg;
     /* Couleur de fond pour l'app */

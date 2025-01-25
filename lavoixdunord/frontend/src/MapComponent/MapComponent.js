@@ -143,8 +143,8 @@ const MapComponent = ({ difficulty, level_id, currentQuestionIndex, onClose }) =
                     </Marker>
                 )}
             </MapContainer>
-            <button className="close-map-btn" onClick={onClose}>
-                Fermer la carte
+            <button className="btn btn-light my-1 text-uppercase fw-bold" onClick={onClose}>
+                Suivant
             </button>
         </div>
     );

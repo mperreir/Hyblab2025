@@ -49,8 +49,6 @@ const QuestionPage = () => {
       const pointsToAdd = !isCorrect ? 35 : 20; // 35 points si incorrect (15 + 20), 20 si correct
       addScore(pointsToAdd);
       setValidated(true);
-      setShowMap(true); // Afficher la carte après validation
-
 
     } else {
       setShowMap(false);
@@ -102,6 +100,12 @@ const QuestionPage = () => {
   };
 
   const currentQuestion = questions[currentQuestionIndex];
+
+  const onCloseMap = () => {
+    handleNext();
+    setShowMap(false);
+  }
+
   return (
     <>
       {/* Gestion de l'image agrandie avec flou */}
@@ -116,7 +120,7 @@ const QuestionPage = () => {
       )}
 
       {/* Ajout dynamique de la classe pour flouter le contenu */}
-      <div className={`question-container ${isEnlarged ? "blur-background" : ""}`}>
+      <div className={`question-container bg_gradient_fond_vague ${isEnlarged ? "blur-background" : ""}`}>
         <h2 className="question-number">
           QUESTION {currentQuestionIndex + 1}/{questions.length}
         </h2>
@@ -155,7 +159,13 @@ const QuestionPage = () => {
               >
                 Lien vers l'article
               </a>
+
             </p>
+          )}
+
+          {validated && (
+            <button type="button" onClick={() => { setShowMap(true) }}
+              class="btn btn-sm btn-outline-warning me-2 p-2 text-uppercase fw-bold fs-6">Voir sur la carte</button>
           )}
           <button
             className="next-btn"
@@ -208,7 +218,7 @@ const QuestionPage = () => {
             difficulty={difficulty}
             level_id={id}
             currentQuestionIndex={currentQuestionIndex}
-            onClose={() => setShowMap(false)}
+            onClose={() => onCloseMap()}
           />
         )}
       </div>
