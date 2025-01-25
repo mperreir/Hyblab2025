@@ -28,13 +28,13 @@ const DifficultyPage = () => {
 
           <div className="d-flex flex-column gap-5 pb-5">
             <button
-              className={`btn ${selectedDifficulty === 1 ? "btn-dark" : "btn-outline-dark"}`}
+              className={`btn fw-bold ${selectedDifficulty === 1 ? "btn-dark" : "btn-outline-dark"}`}
               onClick={() => handleDifficultySelect(1)}
             >
               FACILE
             </button>
             <button
-              className={`btn ${selectedDifficulty === 2 ? "btn-dark" : "btn-outline-dark"}`}
+              className={`btn fw-bold ${selectedDifficulty === 2 ? "btn-dark" : "btn-outline-dark"}`}
               onClick={() => handleDifficultySelect(2)}
             >
               DIFFICILE
