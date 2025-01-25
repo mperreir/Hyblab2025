@@ -138,11 +138,7 @@ async function addAnswer(answers, multipleChoices=false) {
           if (currentQuestion < totalQuestions) {
             currentQuestion++;
             updateProgress();
-          } else {
-            // Optionnel : Afficher un message ou finaliser le processus
-            alert('Vous avez terminé toutes les questions !');
           }
-
           resolve(answerKeys);
         }
       });
