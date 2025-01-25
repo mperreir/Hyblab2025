@@ -40,11 +40,11 @@ const NavBarComponent = () => {
             case '/':
                 return 'Accueil';
             case '/home':
-                return 'Bienvenue !';
+                return '';
             case '/regles':
-                return 'Règles';
+                return '';
             case '/difficulty':
-                return 'Difficulté';
+                return '';
             case '/credit':
                 return 'Crédits';
             case '/final':

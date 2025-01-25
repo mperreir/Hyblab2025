@@ -9,7 +9,7 @@ const RulesPage = () => {
 
     return (
         <div className="background_rules">
-            <div className="text-center p-4">
+            <div className="text-center p-4 mt-4">
                 <h1 className="text-white mb-4">LES RÈGLES</h1>
                 <div className="fs-6">
                     <p><i><b>Dans le Défi des 3 maillots, chaque étape est jalonnée de questions sur les lieux marquants traversés par son itinéraire.</b></i></p>
@@ -21,9 +21,10 @@ const RulesPage = () => {
 
                     <p><i><b>L’objectif final est de récolter les trois maillots en réussissant les trois étapes. Vous débloquez un maillot à la fin de chaque étape.</b></i></p>
                 </div>
+
+                <button className="btn btn-outline-dark  mt-4" onClick={() => navigate("/difficulty")}><b>JOUER</b></button>
             </div>
 
-            <button className="btn btn-outline-dark" onClick={() => navigate("/difficulty")}><b>JOUER</b></button>
         </div>
     );
 };
