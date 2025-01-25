@@ -1,16 +1,6 @@
 "use strict";
 
 const initSlide3 = async function(){
-
-
-  // Retrieve the data from our json file
-  let response = await fetch('data/fr_.json');
-  const texts = await response.json();
-
-
-  document.getElementById("titleFin").textContent = texts.fin.title;
-  document.getElementById("textFin").textContent = texts.fin.paragraphe.replace("{nom}", userName);
-
   if (!secteur) {
     secteur = 'arti';
   }
@@ -20,6 +10,21 @@ const initSlide3 = async function(){
   if (!userName) {
     userName = 'Jean';
   }
+
+
+  document.getElementById("titleFin1").textContent = texts.fin.title1;
+  document.getElementById("textFin1").textContent = texts.fin.paragraphe1.replace("{nom}", userName);
+  document.getElementById("titleFin2").textContent = texts.fin.title1;
+  document.getElementById("textFin2").textContent = texts.fin.paragraphe2;
+
+  const article = await findBestMatchingArticle(choices);
+
+  document.getElementById("imgArticle").src=article.img;
+  document.getElementById("accrocheArticle").textContent = article.accroche;
+
+  document.getElementById("articleContainer").addEventListener('click', () => {
+    window.open(article.url, '_blank');
+  });
 
   // Load the results on the cards
   texts[secteur].cartes_fin_arriere.forEach((frontText, index) => {
@@ -69,4 +74,26 @@ function addCard(textFront, textBack){
   cardContainer.addEventListener('click', () => {
     cardContainer.classList.toggle('flipped'); // Toggle the "flipped" class
   });
+}
+
+async function findBestMatchingArticle(customKeywords) {
+  // Map articles to a score based on matching keywords
+  const scoredArticles = articles.articles.map(article => {
+    const matchingKeywords = article.keywords.filter(keyword => customKeywords.includes(keyword));
+    return {
+      article,
+      matchCount: matchingKeywords.length
+    };
+  });
+
+  // Find the highest match count
+  const highestScore = Math.max(...scoredArticles.map(item => item.matchCount));
+
+  // Get all articles with the highest match count
+  const bestArticles = scoredArticles.filter(item => item.matchCount === highestScore);
+
+  // Randomly pick one from the best matching articles
+  const randomBestArticle = bestArticles[Math.floor(Math.random() * bestArticles.length)];
+
+  return randomBestArticle.article;
 }

@@ -238,12 +238,21 @@
   #confirm-button {
     padding: 10px 20px;
     cursor: not-allowed;
+    width: auto;
+    margin-left: 30px;
   }
   
   #confirm-button:enabled {
     cursor: pointer;
-    background-color: blue;
-    color: white;
+    /* background-color: blue; */
+    /* color: white; */
+  }
+
+  #confirm-button:disabled {
+    cursor: pointer;
+    background-color: white;
+    color: rgb(76, 76, 76);
+    border: 2px solid gray;
   }
 
 .chat-input {
@@ -266,9 +275,9 @@
     margin-left: 10px;
     padding: 12px 20px;
     border: none;
-    background: #007bff;
-    color: #fff;
-    border-radius: 20px;
+    /* background: #007bff; */
+    /* color: #fff; */
+    /* border-radius: 20px; */
     cursor: pointer;
     font-size: 16px;
 }
@@ -296,4 +305,8 @@
   50% {
       transform: scale(0.9); /* Shrink slightly */
   }
+}
+
+#seeResultsButton{
+    width: 100%;
 }

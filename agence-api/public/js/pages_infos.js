@@ -1,20 +1,13 @@
 //première idée d'affichage de la page d'explication --> Contexte d'ouverture à adapter
 async function displayExplanation(data, liste_choix, contenu_message) {
-    return new Promise((resolve) => {
-        const num_question = liste_choix.length + 1;
-        setTimeout(() => {
-            const reply = { text: contenu_message, type: 'received', id: `info_${num_question}`, class: 'info', choix: liste_choix }; // id à adapter selon le parametrage du JSON
-            addMessage(reply);
-            enableClickForExpansion(reply.text, data);
+    const num_question = liste_choix.length + 1;
+    const reply = { text: contenu_message, type: 'received', id: `info_${num_question}`, class: 'info', choix: liste_choix }; // id à adapter selon le parametrage du JSON
+    addMessage(reply);
+    enableClickForExpansion(reply.text, data);
 
-            // Agrandissement automatique 1 seconde après apparition
-            setTimeout(() => {
-                const lastMessage = document.querySelector(`#${reply.id}`);
-                expandMessage(lastMessage, data);
-                resolve(); // Resolve the promise after expandMessage
-            }, 2000);
-        }, 10);
-    });
+    await waitForUserTouch();
+    const lastMessage = document.querySelector(`#${reply.id}`);
+    expandMessage(lastMessage, data);
 }
 
 // Fonction pour permettre l'agrandissement manuel

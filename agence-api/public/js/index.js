@@ -1,34 +1,34 @@
 "use strict";
 
-/**
- * Fonction pour charger le contenu HTML dans un élément spécifique.
- * @param {string} url - L'URL du fichier HTML à charger.
- * @param {string} elementId - L'ID de l'élément où le contenu sera injecté.
- * @returns {Promise} - Une promesse qui se résout une fois le contenu chargé.
- */
-
-function loadContent(url, elementId) {
-  return fetch(url)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(`Erreur HTTP! statut: ${response.status}`);
-      }
-      return response.text();
-    })
-    .then(data => {
-      document.getElementById(elementId).innerHTML = data;
-    })
-    .catch(error => console.error(`Erreur lors du chargement de ${url}:`, error));
-}
-
 let swiper;
+let texts;
+let articles;
+
+
+async function loadContent(url, elementId) {
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Erreur HTTP! statut: ${response.status}`);
+    }
+    const data = await response.text();
+    document.querySelectorAll(`#${elementId}`).forEach(element => {
+      element.innerHTML = data;
+    });
+      
+  } catch (error) {
+    return console.error(`Erreur lors du chargement de ${url}:`, error);
+  }
+}
 
 document.addEventListener('DOMContentLoaded', function() {
   // Charger tous les contenus HTML des slides
   Promise.all([
     loadContent('html/accueil.html', 'content-accueil'),
     loadContent('html/chat.html', 'content-chat'),
-    loadContent('html/fin.html', 'content-fin')
+    loadContent('html/fin.html', 'content-fin'),
+    loadContent('html/header.html', 'chat-header'),
+    loadContent('html/menu.html', 'menu'),
   ]).then(() => {
 
     // Init of the (touch friendly) Swiper slider
@@ -45,7 +45,6 @@ document.addEventListener('DOMContentLoaded', function() {
     swiper.on("slideChange", function () {
       switch( swiper.activeIndex ) {
         case 0:
-          initSlide1();
           toggleSwiper(true);
           break;
         case 1:
@@ -60,28 +59,38 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
 
-    
-    
-    
+    // Simulate content loading with a promise
+    async function loadContent() {
+        let response = await fetch('data/fr_.json');
+        texts = await response.json();
 
+        response = await fetch('data/article.json');
+        articles = await response.json();
+    }
 
-
-    // Wait for the content to preload and display 1st slide
-    // Here we simulate a loading time of one second
-    setTimeout(() => { 
-      // fade out the loader "slide"
-      // and send it to the back (z-index = -1)
+    async function startLoading() {
       anime({
-        delay: 10,
+        targets: '#loader',
+        opacity: [1, 0.5, 1], // Pulse effect
+        easing: 'easeInOutQuad',
+        duration: 1000,
+        loop: true, // Loop animation during loading
+      });
+
+      await loadContent();
+
+      anime({
         targets: '#loader',
         opacity: '0',
-        'z-index' : -1,
+        'z-index': -1,
         easing: 'easeOutQuad',
+        duration: 1000,
+        complete: () => {
+          // initSlide1();
+        },
       });
-      
-      // Init first slide
-      initSlide1();
-    }, 10);
+    }
+    startLoading();    
   }).catch(error => {
     console.error('Erreur lors du chargement des contenus:', error);
   });
@@ -138,3 +147,4 @@ function toggleTapIconDisplay(shouldPrevent) {
     timeout = setTimeout(showTapIcon, 7000); // Restart the timer
   }
 }
+

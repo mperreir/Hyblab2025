@@ -46,8 +46,10 @@
             "Tu as pris des décisions importantes pour ton entreprise, et tu as découvert les opportunités qui t'attendent en Bretagne et dans les Pays de la Loire.",
             "Va vite voir tes résultats !"
         ],
-        "title": "Résultats de ton aventure",
-        "paragraphe": "Et voila {nom} tu as finis ton aventure d’artisant ! Découvre en cliquant sur les cases tes résultats selon les catégories.  "
+        "title1": "Résultats de ton aventure",
+        "paragraphe1": "Et voila {nom} tu as finis ton aventure d’artisant ! Découvre en cliquant sur les cases tes résultats selon les catégories.",
+        "title2": "Des profils qui te ressemblent",
+        "paragraphe2": "Découvre des profils et articles qui te ressemblent provenant du site de l'agence API !"
     },
     "agro": {
         "introduction": [
@@ -192,7 +194,7 @@
             }
         ],
         "cartes_fin_arriere": [
-            "Localisation",
+            "Production",
             "Financement",
             "Recrutement",
             "Politique d'export"
@@ -213,9 +215,9 @@
                 "3_embauchetalents": "Talents d'autres régions"
             },
             {
-                "4_local": "Marché local",
-                "4_national": "Marché national",
-                "4_international": "Marché international"
+                "4_marchelocal": "Marché local",
+                "4_marchenational": "Marché national",
+                "4_marcheinternational": "Marché international"
             }
         ]
     },
