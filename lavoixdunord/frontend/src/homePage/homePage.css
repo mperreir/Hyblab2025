@@ -1,6 +1,6 @@
 .background_home {
-    background: url('homePage.png');
-    background-size: auto 100%;
+    background: url('homePage2.png');
+    background-size: 100% 100%;
     background-position: center; /* Centre l'image dans le conteneur */
     background-repeat: no-repeat; /* Empêche l'image de se répéter */
     width: 100%; /* Prend toute la largeur de l'élément parent */
@@ -10,12 +10,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    width: 100%;
+    /* min-height: 100vh; */
     margin-inline: auto;
     font-family: "Work Sans";
 }
-
+/* 
 .container_home {
     background-color: white;
     padding: 1px;
@@ -32,7 +31,7 @@
     color: #1A3347;
     margin: 1px;
 
-}
+} */
 
 .button_home {
     margin-top: 20px;
