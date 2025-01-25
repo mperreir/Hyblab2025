@@ -34,12 +34,8 @@ export class SituationComponent implements OnChanges, AfterViewInit {
     }
     caracterAnimation(){
         const targetText = document.querySelectorAll("#animatedText p span");
-        const targetChoice = document.querySelectorAll("#choice_div") ;
 
         const textsToAnimate = Array.from(targetText).filter((el) =>
-            (el as HTMLElement).getAttribute("data-text-visible") !== "true"
-        );
-        const choicesToAnimate = Array.from(targetChoice).filter((el) =>
             (el as HTMLElement).getAttribute("data-text-visible") !== "true"
         );
 
