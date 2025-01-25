@@ -3,7 +3,7 @@
 /* 按钮样式，只在 .menu-wrapper 下的 #menu-btn 才生效 */
 .menu-wrapper #menu-btn {
   position: fixed; /* 或 absolute, 看你想怎么定位 */
-  top: 20px;
+  top: 35px;
   right: 20px;
   z-index: 2; 
 }
