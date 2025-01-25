@@ -106,5 +106,11 @@
 
 }
 
+/* Style pour le GIF arrow */
+.arrow {
+    max-width: 60px;    /* Ajustez la largeur selon vos besoins */
+    align-items: center; /* Ajouté pour centrer horizontalement */
+}
+
 
 
