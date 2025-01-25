@@ -13,6 +13,7 @@ async function loadContent(url, elementId) {
     }
     const data = await response.text();
     document.querySelectorAll(`#${elementId}`).forEach(element => {
+      console.log(`Chargement de ${url} dans #${elementId}`);
       element.innerHTML = data;
     });
       
