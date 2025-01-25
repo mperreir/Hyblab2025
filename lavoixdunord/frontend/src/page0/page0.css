@@ -1,16 +1,14 @@
 .background_page0 {
-    background: url('page0.png');
+    background: url('welcome_bg.png');
     background-size: 100% 100%;
-    background-position: center; /* Centre l'image dans le conteneur */
-    background-repeat: no-repeat; /* Empêche l'image de se répéter */
     width: 100%; /* Prend toute la largeur de l'élément parent */
-    height: 100%; /* Prend toute la hauteur de l'élément parent, ajustez selon le besoin */
-    
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin-inline: auto;
-    font-family: "Work Sans";
+    position: relative;
+}
+
+.logo_page0 {
+    width: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

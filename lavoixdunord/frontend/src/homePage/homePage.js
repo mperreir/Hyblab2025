@@ -18,7 +18,7 @@ const HomePage = () => {
                     Votre mission ?</p>
                 <p><i><b>Testez vos connaissances sur la région et décrocher les trois maillots emblématiques du tour.</b></i></p>
             </div>
-            <button className="btn btn-outline-dark mt-5" onClick={() => navigate('/regles')}><b>SUIVANT</b></button>
+            <button className="btn btn-outline-dark mt-4" onClick={() => navigate('/regles')}><b>SUIVANT</b></button>
         </div>
     );
 };

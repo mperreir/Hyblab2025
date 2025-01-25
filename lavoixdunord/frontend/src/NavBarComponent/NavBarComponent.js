@@ -5,8 +5,19 @@ import './NavBarComponent.scss';
 import useBasename from '../hooks/useBasenameHook';
 
 const NavBarComponent = () => {
+
+    const [show, setShow] = React.useState(true);
     const basename = useBasename();
     const location = useLocation();
+
+    React.useEffect(() => {
+        console.log('show', show);
+        if (location.pathname === '/') {
+            setShow(false);
+        } else {
+            setShow(true);
+        }
+    }, [location.pathname, show]);
 
     const getUrlParams = () => {
         const parts = location.pathname.split('/');
@@ -29,11 +40,11 @@ const NavBarComponent = () => {
             case '/':
                 return 'Accueil';
             case '/home':
-                return 'Menu';
+                return '';
             case '/regles':
-                return 'Règles';
+                return '';
             case '/difficulty':
-                return 'Difficulté';
+                return '';
             case '/credit':
                 return 'Crédits';
             case '/final':
@@ -64,7 +75,7 @@ const NavBarComponent = () => {
                 label: "Parcours 3",
                 active: !!difficulty && (
                     ((level_id && parseInt(level_id) >= 2) &&
-                    (isTransition && (parseInt(level_id) >= 2)))
+                        (isTransition && (parseInt(level_id) >= 2)))
                     || ((level_id && parseInt(level_id) >= 3) && !isTransition)
                 )
             }
@@ -74,43 +85,44 @@ const NavBarComponent = () => {
     const progress = getBreadcrumbItems().filter(item => item.active).length * 33.33;
 
     return (
-        <Navbar className="custom-navbar" expand="lg" style={{ position: 'absolute' }}>
-            <Container fluid className="p-0 px-1">
-                <div className="d-flex justify-content-between align-items-center w-100">
-                    <Navbar.Brand href="#home">
-                        <img
-                            src={`${basename}images/logo_jeu.png`}
-                            height="30"
-                            className="d-inline-block align-top"
-                            alt="Logo"
-                        />
-                    </Navbar.Brand>
+        show && (
+            <Navbar className="custom-navbar" expand="lg" style={{ position: 'absolute' }}>
+                <Container fluid className="p-0 px-1">
+                    <div className="d-flex justify-content-between align-items-center w-100">
+                        <Navbar.Brand href="#home">
+                            <img
+                                src={`${basename}images/logo_jeu.png`}
+                                height="30"
+                                className="d-inline-block align-top"
+                                alt="Logo"
+                            />
+                        </Navbar.Brand>
 
-                    {shouldShowBreadcrumb() ? (
-                        <Breadcrumb className="mb-0">
-                            {getBreadcrumbItems().map((item) => (
-                                <Breadcrumb.Item
-                                    key={item.id}
-                                    active={item.active}
-                                >
-                                    {item.label}
-                                </Breadcrumb.Item>
-                            ))}
-                        </Breadcrumb>
-                    ) : (
-                        <h6 className="mb-0">{getPageTitle()}</h6>
-                    )}
-                </div>
+                        {shouldShowBreadcrumb() ? (
+                            <Breadcrumb className="mb-0">
+                                {getBreadcrumbItems().map((item) => (
+                                    <Breadcrumb.Item
+                                        key={item.id}
+                                        active={item.active}
+                                    >
+                                        {item.label}
+                                    </Breadcrumb.Item>
+                                ))}
+                            </Breadcrumb>
+                        ) : (
+                            <h6 className="mb-0">{getPageTitle()}</h6>
+                        )}
+                    </div>
 
-                {/* <ProgressBar
+                    {/* <ProgressBar
                     now={progress}
                     className="navbar-progress"
                     variant='warning'
                     animated
                     style={{ height: '5px' }}
                 /> */}
-            </Container>
-        </Navbar>
+                </Container>
+            </Navbar>)
     );
 };
 
