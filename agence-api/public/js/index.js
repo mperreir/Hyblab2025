@@ -12,7 +12,10 @@ async function loadContent(url, elementId) {
       throw new Error(`Erreur HTTP! statut: ${response.status}`);
     }
     const data = await response.text();
-    document.getElementById(elementId).innerHTML = data;
+    document.querySelectorAll(`#${elementId}`).forEach(element => {
+      element.innerHTML = data;
+    });
+      
   } catch (error) {
     return console.error(`Erreur lors du chargement de ${url}:`, error);
   }
@@ -23,7 +26,9 @@ document.addEventListener('DOMContentLoaded', function() {
   Promise.all([
     loadContent('html/accueil.html', 'content-accueil'),
     loadContent('html/chat.html', 'content-chat'),
-    loadContent('html/fin.html', 'content-fin')
+    loadContent('html/fin.html', 'content-fin'),
+    loadContent('html/header.html', 'chat-header'),
+    loadContent('html/menu.html', 'menu'),
   ]).then(() => {
 
     // Init of the (touch friendly) Swiper slider
@@ -40,7 +45,6 @@ document.addEventListener('DOMContentLoaded', function() {
     swiper.on("slideChange", function () {
       switch( swiper.activeIndex ) {
         case 0:
-          initSlide1();
           toggleSwiper(true);
           break;
         case 1:
@@ -82,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
         easing: 'easeOutQuad',
         duration: 1000,
         complete: () => {
-          initSlide1();
+          // initSlide1();
         },
       });
     }

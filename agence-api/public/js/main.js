@@ -42,54 +42,6 @@ const initSlide2 = async function () {
 
 
 };
-
-function initMenu(texts){
-    const menuBtn = document.getElementById("menu-btn");
-    const menuPopup = document.getElementById("menu-popup");
-    const closeMenuBtn = document.getElementById("close-menu");
-    const goPauseLink = document.getElementById("go-pause"); // 暂停按钮
-    const pausePopup = document.getElementById("pause-popup"); // 暂停弹窗
-    const resumeGameBtn = document.getElementById("resume-game"); // 继续游戏按钮
-    const quitGameBtn = document.getElementById("quit-game"); // 结束游戏按钮
-  
-    // 点击「Menu」打开弹窗
-    menuBtn.addEventListener("click", () => {
-        menuPopup.classList.remove("hidden");
-    });
-
-    // 点击「×」关闭弹窗
-    closeMenuBtn.addEventListener("click", () => {
-        menuPopup.classList.add("hidden");
-    });
-
-    // 点击背景(除 .menu-content 以外的区域)也关闭
-    menuPopup.addEventListener("click", (event) => {
-        if (event.target === menuPopup) {
-        menuPopup.classList.add("hidden");
-        }
-    });
-    const goCharactersLink = document.getElementById("go-characters");
-    goCharactersLink.addEventListener("click", (e) => {
-        e.preventDefault();              // 阻止 href 跳转
-        menuPopup.classList.add("hidden");  // 先关菜单
-        selectSecteur(texts.introduction.secteurs);
-    });
-    goPauseLink.addEventListener("click", (e) => {
-        e.preventDefault(); // 阻止默认行为
-        menuPopup.classList.add("hidden"); // 关闭菜单
-        pausePopup.classList.remove("hidden"); // 打开暂停弹窗
-      });
-    
-      // 点击“继续游戏”关闭暂停弹窗
-      resumeGameBtn.addEventListener("click", () => {
-        pausePopup.classList.add("hidden"); // 关闭暂停弹窗
-      });
-    
-      // 点击“结束游戏”跳转到首页
-      quitGameBtn.addEventListener("click", () => {
-        window.location.href = "../agence-api/"; // 跳转到首页
-      });
-}
   
 function wait(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));

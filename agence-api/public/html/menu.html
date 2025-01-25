@@ -1,44 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Bottom Menu Demo</title>
-  
-  <!-- 引入CSS -->
-  <link rel="stylesheet" href="../css/menu.css" />
+<!-- 右上角 Menu 按钮 -->
+<button id="menu-btn">Menu</button>
 
-</head>
-<body>
-
-  <!-- 右上角 Menu 按钮 -->
-  <button id="menu-btn">Menu</button>
-
-  <!-- 弹窗蒙层 -->
-  <div id="menu-popup" class="hidden">
-    <!-- 弹窗主体 -->
-    <div class="menu-content">
-      <button id="close-menu" class="close-btn">×</button>
-      <h1>Hello Marc 👋</h1>
-      <p>
-        Bienvenue dans l'espace menu.<br>
-        Ici tu retrouves les points principaux de l'application.<br>
-        Que souhaites-tu faire ?
-      </p>
-      <ul>
-        <li><a href="#characters">Revenir aux choix des personnages</a></li>
-        <li><a href="#pause">Mettre pause au jeu</a></li>
-        <li><a href="#results">Mes résultats</a></li>
-        <li><a href="#interviews">Les interviews</a></li>
-        <li><a href="#exit">Quitter le jeu</a></li>
-      </ul>
-      <footer>
-        <p>© 2025 Nom de l'application - <a href="#legal">Mentions légales</a></p>
-      </footer>
-    </div>
+<!-- 弹窗蒙层 -->
+<div id="menu-popup" class="hidden">
+  <!-- 弹窗主体 -->
+  <div class="menu-content">
+    <button id="close-menu" class="close-btn">×</button>
+    <h1>Hello </h1>
+    <p>
+      Bienvenue dans l'espace menu.<br>
+      Ici tu retrouves les points principaux de l'application.<br>
+      Que souhaites-tu faire ?
+    </p>
+    <ul>
+      <li id="go-characters"><a>Revenir aux choix des secteurs</a></li>
+      <li id="go-results"><a>Mes résultats</a></li>
+      <li id="quit-game"><a>Quitter le jeu</a></li>
+    </ul>
+    <footer>
+      <p>© 2025 APIStory - <a href="#legal">Mentions légales</a></p>
+    </footer>
   </div>
-
-  <!-- 引入JS -->
-  <script src="../js/menu.js"></script>
-</body>
-</html>
+</div>

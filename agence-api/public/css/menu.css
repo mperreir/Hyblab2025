@@ -1,7 +1,4 @@
 /* ========== 菜单整体只在 .menu-wrapper 下生效 ========== */
-.menu-wrapper {
-  /* 如果要自身宽高之类，在这里写。一般不需要 */
-}
 
 /* 按钮样式，只在 .menu-wrapper 下的 #menu-btn 才生效 */
 .menu-wrapper #menu-btn {
@@ -43,10 +40,8 @@
 
 /* 弹窗内部 */
 .menu-wrapper .menu-content {
-  width: 393px; /* 设计师给的尺寸 */
-  max-width: 90%;
-  height: 614px; 
-  max-height: 90%;
+  width: 90%;
+  max-height: 70%;
   background: #d9d9d9;
   border-radius: 50px 50px 0 0;
   padding: 20px;
@@ -65,9 +60,8 @@
 /* 关闭按钮 */
 .menu-wrapper .close-btn {
   position: absolute;
-  top: 15px;
-  right: 15px;
-  background: none;
+  top: 25px;
+  right: 25px;
   border: none;
   font-size: 1.4rem;
   cursor: pointer;
@@ -170,4 +164,3 @@
 .pause-btn:active {
   transform: scale(0.95); /* 点击时按钮缩小 */
 }
-
