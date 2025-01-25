@@ -8,7 +8,7 @@ const Page0 = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       navigate("/home"); 
-    }, 5000);
+    }, 1000);
 
     return () => clearTimeout(timer); 
   }, [navigate]);

@@ -17,27 +17,29 @@ const basename = process.env.REACT_APP_BASENAME || "/";
 function App() {
   return (
     <Router basename={basename}>
-      <Routes>
-        <Route path="/" element={<Page0 />} />
-        <Route path="/home" element={<HomePage />} />
-        <Route path="/regles" element={<RulesPage />} />
-        <Route path="/difficulty" element={<DifficultyPage />} />
-        <Route path="/start/:difficulty" element={<StartPage />} />
-        <Route path="/start/:difficulty/:id" element={<QuestionPage />} />
-        <Route path="/final" element={<FinalPage />} />
-        {/* Page de transition 1 */}
-        <Route path="/transition/:difficulty/1" element={<TransitionPage1 />} />
-        {/* Page de transition 2 */}
-        <Route path="/transition/:difficulty/2" element={<TransitionPage2 />} />
-        {/* Page de transition 3 */}
-        <Route path="/transition/:difficulty/3" element={<TransitionPage3 />} />
-        {/* Page de credits */}
-        <Route path="/credit" element={<Credit />} />
-        {/* Page final */}
-        <Route path="/final" element={<FinalPage />} />
+      <div className="mobile-container">
+        <Routes>
+          <Route path="/" element={<Page0 />} />
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/regles" element={<RulesPage />} />
+          <Route path="/difficulty" element={<DifficultyPage />} />
+          <Route path="/start/:difficulty" element={<StartPage />} />
+          <Route path="/start/:difficulty/:id" element={<QuestionPage />} />
+          <Route path="/final" element={<FinalPage />} />
+          {/* Page de transition 1 */}
+          <Route path="/transition/:difficulty/1" element={<TransitionPage1 />} />
+          {/* Page de transition 2 */}
+          <Route path="/transition/:difficulty/2" element={<TransitionPage2 />} />
+          {/* Page de transition 3 */}
+          <Route path="/transition/:difficulty/3" element={<TransitionPage3 />} />
+          {/* Page de credits */}
+          <Route path="/credit" element={<Credit />} />
+          {/* Page final */}
+          <Route path="/final" element={<FinalPage />} />
 
 
-      </Routes>
+        </Routes>
+      </div>
     </Router>
   );
 }

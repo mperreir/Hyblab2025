@@ -1,6 +1,6 @@
 .background_page0 {
     background: url('page0.png');
-    background-size: auto 100%;
+    background-size: 100% 100%;
     background-position: center; /* Centre l'image dans le conteneur */
     background-repeat: no-repeat; /* Empêche l'image de se répéter */
     width: 100%; /* Prend toute la largeur de l'élément parent */
@@ -11,7 +11,6 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    width: 350px;
     margin-inline: auto;
     font-family: "Work Sans";
 }
