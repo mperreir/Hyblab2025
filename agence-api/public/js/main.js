@@ -92,11 +92,9 @@ async function waitForUserTouch(){
     return new Promise((resolve) => {
         const messageInput = document.getElementById('chatBox');
         messageInput.addEventListener('click', (event) => {
-            if(!event.target.classList.contains("info")){
+            if(!event.target.classList.contains("info") && !event.target.classList.contains("expanding")){
                 resolve(true);
-            } else {
-                resolve(false);
-            }
+            } 
         });
     });
 }
