@@ -61,7 +61,7 @@ body {
   padding: 10px 20px;
   margin: 5px;
   border: 2px solid;
-  border-radius: 20px;
+  border-radius: 100px;
   cursor: pointer;
   background-color: rgb(255, 255, 255);
   font-size: 16px;
@@ -76,12 +76,12 @@ body {
 
 
 .answer-btn.correct {
-  background-color: green;
+  background-color: #739916;
   color: white;
 }
 
 .answer-btn.wrong {
-  background-color: red;
+  background-color: #C1121F;
   color: white;
 }
 
@@ -113,12 +113,14 @@ body {
   font-weight: bold;
   cursor: pointer;
   transition: 0.3s;
+  border-radius: 400px;
 }
 
 .hint-btn {
   background-color: white;
   color: #1A3347;
   border: 2px solid #1A3347;
+  margin-left: auto;
 }
 
 .hint-btn:hover {
@@ -153,51 +155,63 @@ body {
 
 .hint-item {
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  flex-direction: row;
+  align-items: center; 
+  justify-content: center;
   margin-bottom: 10px;
   padding: 10px;
   background: #f9f9f9;
-  border-radius: 8px;
+  border-radius: 18px;
+  flex-wrap: wrap;
 }
 
 .toggle-btn {
     padding: 5px 10px;
     margin-right: 10px;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
-    background-color: lightgray;
-    font-size: 14px;
+    background-color: #f9f9f9;
+    font-size: 17px;
+    font-weight: 600;
+    order: 2;
+
   }
   
-  .toggle-btn.disabled {
-    cursor: not-allowed;
-    background-color: gray;
-    color: white;
-  }
+.toggle-btn.disabled {
+  cursor: not-allowed;
+  background-color: #f9f9f9;
+  color: #1A3347;
+}
   
 
 .hint-title {
+  flex-grow: 1;
   font-weight: bold;
   font-style: italic;
+  align-items: center;
   margin-right: 6px;
+  order: 1;
+  margin-right: auto;
+  margin-left: auto;
+  
 }
 
 .hint-text {
   margin-top: 10px;
   font-size: 12px;
   color: #000000;
-  
+  order: 3;
 }
 
-
 .hint-img {
-  max-width: 60%;
+  max-width: 90%;
   border-radius: 10px;
+  margin: 12px;
   margin-top: 10px;
   cursor: pointer;
   transition: transform 0.3s ease-in-out;
+  order: 3;
 }
 /* Agrandissement adapté aux mobiles */
 .hint-img.enlarged {
@@ -228,7 +242,7 @@ body.modal-open {
   overflow: hidden;
 }
 .next-btn {
-  margin-top: 15px;
+  margin-top: 10px;
   padding: 10px 20px;
   background-color: white;
   color: #1A3347;
@@ -242,7 +256,6 @@ body.modal-open {
 }
 
 
-
 .article-link {
   margin-top: 10px;
   font-size: 12px;
@@ -250,6 +263,7 @@ body.modal-open {
 }
 
 .article-link a {
+  font-size: 13.5px;
   color: #1A3347;
   text-decoration: underline;
 }
