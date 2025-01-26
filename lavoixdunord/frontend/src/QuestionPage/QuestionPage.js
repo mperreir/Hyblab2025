@@ -4,6 +4,8 @@ import yaml from "js-yaml";
 import "./QuestionPage.css";
 import { useParams } from "react-router-dom";
 import MapComponent from "../MapComponent/MapComponent";
+import correctSoundFile from './sounds/rightanswer.mp3';
+import wrongSoundFile from './sounds/wronganswer.mp3';
 
 const QuestionPage = () => {
   const [questions, setQuestions] = useState([]);
@@ -21,7 +23,8 @@ const QuestionPage = () => {
   const [showMap, setShowMap] = useState(false);
   const [isEnlarged, setIsEnlarged] = useState(false); // État pour agrandir l'image
 
-
+  const correctSound = new Audio(correctSoundFile);
+  const wrongSound = new Audio(wrongSoundFile);
 
   const addScore = (value) => {
     const new_value = parseInt(score + value);
@@ -46,6 +49,11 @@ const QuestionPage = () => {
   const handleNext = () => {
     if (!validated) {
       const isCorrect = questions[currentQuestionIndex].options[selectedOptionIndex].correct;
+      if (isCorrect) {
+        correctSound.play();
+      } else {
+        wrongSound.play();
+      }
       const pointsToAdd = !isCorrect ? 35 : 20; // 35 points si incorrect (15 + 20), 20 si correct
       addScore(pointsToAdd);
       setValidated(true);
