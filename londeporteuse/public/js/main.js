@@ -35,12 +35,6 @@ console.log("La page index.html a été générée avec succès !");
 
 /*---------------------------------------------------------------------------------------------*/
 
-
-const headerLogo = fs.readFileSync(
-    path.join(__dirname, "..", "contentFixe", "headerLogo.mustache"), // header avec le logo de l'appli
-    "utf8"
-);
-
 const choicesContent = fs.readFileSync(path.join(__dirname, "..", "1.mustache"),"utf8");
   
 // 5b. Préparation des données pour la page de choix
@@ -50,7 +44,7 @@ const choice = {
 
 // Contenus fixes pour la deuxième page
 const contentFixeBudget = {
-    header: headerLogo, // On injecte le header "logo seulement"
+    header: header, // On injecte le header "logo seulement"
     footer: footer
   };
 
@@ -73,7 +67,7 @@ const results = {
 
 // Contenus fixes pour la deuxième page
 const contentFixeResult = {
-    header: headerLogo, // On injecte le header "logo seulement"
+    header: header, // On injecte le header "logo seulement"
     footer: footer
   };
 
@@ -96,7 +90,7 @@ const ajustements = {
 
 // Contenus fixes pour la deuxième page
 const contentFixeAjustement = {
-    header: headerLogo, // On injecte le header "logo seulement"
+    header: header, // On injecte le header "logo seulement"
     footer: footer
   };
 
@@ -120,7 +114,7 @@ const affiche = {
 
 // Contenus fixes pour la deuxième page
 const contentFixeAffiche = {
-    header: headerLogo, // On injecte le header "logo seulement"
+    header: header, // On injecte le header "logo seulement"
     footer: footer
   };
 

@@ -1,120 +1,64 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style1.css">
-    <title>Festival Résultats</title>
-</head>
-<body>
+  </head>
+  <body>
     <div id="app-container">
-        <header>
-            <!-- Logo SVG minimaliste | 最小化的Logo SVG -->
-            <div class="logo-only">
-                <svg width="60" height="60" viewBox="0 0 100 100">
-                    <circle cx="50" cy="50" r="40" fill="#0066cc" />
-                    <text x="50" y="57" fill="#fff" text-anchor="middle" font-size="20" font-family="Arial">LOGO</text>
-                </svg>
-            </div>
-        </header>
-        <main>
-            <div>
-                <section class="content">
-                    <!-- Section pour afficher le titre principal | 用于显示主标题的部分 -->
-                    <h2>Votre festival est prêt ! voilà vos résultats.</h2>
-                </section>
-                <section class="content">
-                    <!-- Section pour afficher une image de résultat | 用于显示结果图片的部分 -->
-                    <img src="img/resultat.jpg" alt="resultat" class="img">
-                </section>
-                <section class="content">
-                    <!-- Section pour afficher les conséquences du festival | 用于显示节日后果的部分 -->
-                    <h2>Vos choix ont eu des conséquences</h2>
-                    <p id="festival-consequences" class="content-texte"></p>
-                </section>
-                <section class="content">
-                    <!-- Section pour afficher le résumé des choix | 用于显示选择摘要的部分 -->
-                    <h2>Résumé de vos choix</h2>
-                    <div id="selected-choices" class="button-container"></div>
-                </section>
-                <!-- Bouton pour rejouer | 重玩按钮 -->
-                <a href="#" class="btn btn-create-event">Rejouer</a>
-            </div>
-        </main>
-        <footer>
-            <!-- Pied de page avec partenaires | 显示合作伙伴的页脚 -->
-            <p>En partenariat avec <strong>L’Onde Porteuse</strong> &amp; <strong>Le Pôle</strong></p>
-        </footer>
+      <header>
+        <nav class="navbar">
+          <div class="logo-container">
+            <!-- Exemple de logos ou de texte -->
+            <img src="./img/logo.svg" alt="logo du site web"/>
+          </div>
+        </nav>
+      </header>
+
+      <main>
+        <div>
+  <section class="content">
+    <h2>Votre festival est prêt !
+      voilà vos résultats.</h2>
+  </section>
+  <section class="content">
+    <img src="img/resultat.jpg" alt="resultat" class="img">
+  </section>
+  <section class="content">
+    <h2>Vos choix ont eu des conséquences</h2>
+  </section>
+  <section class="content">
+    <p class="content-texte">Votre festival n'est plus accessible à un large public car le billet est cher.
+      La réduction de la taille du festival engendre
+      une baisse de l'activité des entreprises /
+      associations partenaires.
+      La réduction ou disparition des festivals affecte négativement l'économie locale, sachant que 1€ dépensé dans la culture génère en moyenne 6€
+      de retombées économiques locales.</p>
+  </section>
+  <section class="content">
+    <h2>Résumé de vos choix</h2>
+  </section>
+  <section class="content">
+    <div class="button-container">
+      <button class="btn-choice">
+        <img src="img/option1.jpg" alt="Option 1">
+      </button>
+      <button class="btn-choice">
+        <img src="img/option2.jpg" alt="Option 2">
+      </button>
+      <button class="btn-choice">
+        <img src="img/option3.jpg" alt="Option 3">
+      </button>
     </div>
+  </section>
+  <a href="index.html" class="btn btn-next">Rejouer</a>
+</div>
+      </main>
 
-    <script>
-        // Chemin vers les fichiers JSON | JSON 文件路径
-        const page3FilePath = 'data/PAGE3.json';
-        const page4FilePath = 'data/PAGE4.json';
-
-        // Charger les données JSON | 加载 JSON 数据
-        async function loadJSON(filePath) {
-            try {
-                const response = await fetch(filePath);
-                if (!response.ok) {
-                    throw new Error(`Failed to load JSON from ${filePath}`);
-                }
-                return await response.json();
-            } catch (error) {
-                console.error(`Error loading JSON from ${filePath}:`, error);
-            }
-        }
-
-        // Remplir les conséquences depuis PAGE4 | 从 PAGE4 填充后果内容
-        async function loadFestivalConsequences() {
-            const page4Data = await loadJSON(page4FilePath);
-            if (page4Data && page4Data.festivalConsequences) {
-                const consequences = page4Data.festivalConsequences[0]?.content || '';
-                document.getElementById('festival-consequences').textContent = consequences;
-            }
-        }
-
-        // Remplir les choix sélectionnés depuis PAGE3 | 从 PAGE3 填充被选中的选项
-        async function loadSelectedChoices() {
-            const page3Data = await loadJSON(page3FilePath);
-            const selectedChoicesContainer = document.getElementById('selected-choices');
-
-            if (page3Data) {
-                // Filtrer les éléments sélectionnés | 筛选被选中的选项
-                const selectedItems = [
-                    ...(page3Data.festivalSizes || []),
-                    ...(page3Data.ecologicalActions || []),
-                    ...(page3Data.culturalMediationActions || []),
-                    ...(page3Data.riskPreventionActions || [])
-                ].filter(item => item.isSelected);
-
-                // Créer un bouton pour chaque élément sélectionné | 为每个选中的选项创建按钮
-                selectedItems.forEach(item => {
-                    const button = document.createElement('button');
-                    button.classList.add('btn-choice');
-
-                    const img = document.createElement('img');
-                    img.src = item.image;
-                    img.alt = item.name;
-
-                    const label = document.createElement('p');
-                    label.textContent = item.name;
-
-                    button.appendChild(img);
-                    button.appendChild(label);
-                    selectedChoicesContainer.appendChild(button);
-                });
-            }
-        }
-
-        // Initialiser la page | 初始化页面
-        async function init() {
-            await loadFestivalConsequences();
-            await loadSelectedChoices();
-        }
-
-        // Démarrer l'initialisation une fois la page chargée | 页面加载完成后初始化
-        document.addEventListener('DOMContentLoaded', init);
-    </script>
-</body>
+      <footer>
+        <p>En partenariat avec <strong>L’Onde Porteuse</strong> &amp; <strong>Le Pôle</strong></p>
+      </footer>
+    </div>
+  </body>
 </html>

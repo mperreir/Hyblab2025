@@ -1,24 +1,21 @@
-
 <!DOCTYPE html>
 <html lang="fr">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style1.css">
-    <title>Festival Budget</title>
-</head>
-<body>
+  </head>
+  <body>
     <div id="app-container">
       <header>
-        <!-- Logo SVG minimaliste -->
-        <div class="logo-only">
-          <!-- Exemple d'un SVG placeholder -->
-          <svg width="60" height="60" viewBox="0 0 100 100">
-            <circle cx="50" cy="50" r="40" fill="#0066cc" />
-            <text x="50" y="57" fill="#fff" text-anchor="middle" font-size="20" font-family="Arial">LOGO</text>
-          </svg>
-        </div>
+        <nav class="navbar">
+          <div class="logo-container">
+            <!-- Exemple de logos ou de texte -->
+            <img src="./img/logo.svg" alt="logo du site web"/>
+          </div>
+        </nav>
       </header>
+
       <main>
         <div id="page_scrollable_container">
   <!-- Titre principal -->
@@ -126,135 +123,5 @@
         <p>En partenariat avec <strong>L’Onde Porteuse</strong> &amp; <strong>Le Pôle</strong></p>
       </footer>
     </div>
-
-    <script>
-      // Chemin du fichier JSON
-      const jsonFilePath = 'data/choix3.json';
-
-      // Charger les données JSON depuis le serveur
-      async function loadJSON() {
-          try {
-              const response = await fetch(jsonFilePath);
-              if (!response.ok) {
-                  throw new Error(`Failed to load JSON from ${jsonFilePath}`);
-              }
-              const data = await response.json();
-              console.log("Loaded JSON data:", data); // Vérifiez les données JSON chargées
-              return data;
-          } catch (error) {
-              console.error("Error loading JSON:", error);
-          }
-      }
-
-
-      // Générer du contenu de manière dynamique
-      function generateContent(sectionName, data) {
-          const container = document.createElement("section");
-          container.classList.add("content");
-
-          const title = document.createElement("p");
-          title.classList.add("content-title");
-          title.textContent = getTitleForSection(sectionName);
-          container.appendChild(title);
-
-          const buttonContainer = document.createElement("div");
-          buttonContainer.classList.add("button-container");
-
-          data.forEach(item => {
-              const button = document.createElement("button");
-              button.classList.add("btn-choice");
-              button.setAttribute("data-id", item.id);
-
-              const img = document.createElement("img");
-              img.src = item.image;
-              img.alt = item.name;
-
-              const label = document.createElement("p");
-              label.textContent = item.name;
-
-              button.appendChild(img);
-              button.appendChild(label);
-              buttonContainer.appendChild(button);
-
-              // Ajouter un événement de clic
-              button.addEventListener("click", async () => {
-                  await updateSelection(sectionName, item.id);
-                  refreshContent(sectionName, data);
-              });
-          });
-
-          container.appendChild(buttonContainer);
-          document.getElementById("dynamic-content").appendChild(container);
-      }
-
-      // Mettre à jour l'état sélectionné
-      async function updateSelection(sectionName, selectedId) {
-          const data = await loadJSON();
-          const sectionData = data[sectionName];
-          if (!sectionData) return;
-
-          // Mettre à jour le statut isSelected
-          sectionData.forEach(item => {
-              item.isSelected = item.id === selectedId;
-          });
-
-          // Enregistrer les données mises à jour dans le backend
-          await saveJSON(data);
-          console.log(`${sectionName} updated:`, sectionData);
-      }
-
-      // Enregistrer les données JSON sur le serveur
-      async function saveJSON(data) {
-          await fetch(jsonFilePath, {
-              method: 'POST',
-              headers: {
-                  'Content-Type': 'application/json'
-              },
-              body: JSON.stringify(data)
-          });
-      }
-
-      // Actualiser le contenu pour afficher l'état sélectionné
-      function refreshContent(sectionName, data) {
-          const section = document.querySelector(`[data-section="${sectionName}"]`);
-          if (!section) return;
-
-          const buttons = section.querySelectorAll(".btn-choice");
-          buttons.forEach(button => {
-              const id = button.getAttribute("data-id");
-              const isSelected = data.find(item => item.id === id)?.isSelected;
-              button.classList.toggle("selected", isSelected);
-          });
-      }
-
-      // Obtenir le titre de la section
-      function getTitleForSection(sectionName) {
-          const titles = {
-              festivalSizes: "Quelle taille pour mon festival ?",
-              ecologicalActions: "Quelles actions pour la transition écologique ?",
-              culturalMediationActions: "Quelles actions pour la médiation culturelle ?",
-              riskPreventionActions: "Quelles actions pour la prévention des risques ?"
-          };
-          return titles[sectionName] || "Section";
-      }
-
-      // Initialiser la page
-      async function init() {
-          try {
-              const data = await loadJSON();
-
-              // Générer dynamiquement chaque partie
-              generateContent("festivalSizes", data.festivalSizes);
-              generateContent("ecologicalActions", data.ecologicalActions);
-              generateContent("culturalMediationActions", data.culturalMediationActions);
-              generateContent("riskPreventionActions", data.riskPreventionActions);
-          } catch (error) {
-              console.error("Error loading data:", error);
-          }
-      }
-
-      // Initialiser après le chargement de la page
-      document.addEventListener("DOMContentLoaded", init);
-  </script>
-</body>
+  </body>
 </html>
