@@ -177,6 +177,20 @@
     align-items: center;
 }
 
+.message.first{
+    margin-top: 20px;
+    border-radius: 20px 20px 20px 5px;
+}
+
+.message.middle{
+    border-radius: 20px;
+}
+
+.message.last{
+    margin-bottom: 20px;
+    border-radius: 5px 20px 20px 20px;
+}
+
 .message img {
     width: 200px;
     height: 200px;

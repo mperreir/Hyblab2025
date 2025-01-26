@@ -38,7 +38,7 @@ function sendMessage() {
 };
 
 // Fonction pour ajouter un message dans la liste
-function addMessage(message) {
+function addMessage(message, type) {
     const messageElement = document.createElement('li');
     if (message.img){
         const div = document.createElement('div');
@@ -55,6 +55,18 @@ function addMessage(message) {
 
     if(message.class){
         messageElement.classList.add(message.class);
+    }
+
+    switch(type){
+        case 'first':
+            message.classList.add('first');
+            break;
+        case 'middle':
+            message.classList.add('middle');
+            break;
+        case 'last':
+            message.classList.add('last');
+            break;
     }
     
     messageList.appendChild(messageElement);

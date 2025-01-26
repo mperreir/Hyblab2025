@@ -155,15 +155,29 @@ async function selectSecteur(presentationSecteurs) {
   }
 
 async function displayMessages(message, signal, skipInteraction = false) {
+    let i=0;
     for (const key in message) {
         if (signal.aborted) {
             console.log('Aborted');
             throw new DOMException("Aborted", "AbortError"); // Standard way to handle abort;
         }
         if(message[key].includes("{nom}")){
-        addMessage({ text: message[key].replace("{nom}", userName), type: "received"});
+            if(i === 0){
+                addMessage({ text: message[key].replace("{nom}", userName), type: "received", class: "first"});
+            } else if(i === message.length-1){
+                addMessage({ text: message[key].replace("{nom}", userName), type: "received", class: "last"});
+            } else {
+                addMessage({ text: message[key].replace("{nom}", userName), type: "received", class: "middle"});
+            }
         } else {
-        addMessage({ text: message[key], type: "received"});
+            if(i === 0){
+                addMessage({ text: message[key], type: "received", class: "first"});
+            } else if(i === message.length-1){
+                addMessage({ text: message[key], type: "received", class: "last"});
+            }
+            else {
+                addMessage({ text: message[key], type: "received", class: "middle"});
+            }
         }
         scrollToBottom();
         if (!skipInteraction) {
@@ -172,6 +186,7 @@ async function displayMessages(message, signal, skipInteraction = false) {
                 next = await waitForUserTouch();
             }
         }
+        i++;
     }
 }
   
