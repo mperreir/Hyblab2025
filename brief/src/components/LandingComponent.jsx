@@ -2,7 +2,7 @@
 import React from 'react';
 import { Box, Button, Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import isoVille from '../assets/isoVille.png'
+import isoVille from '../assets/Transition2050.png'
 
 
 const LandingComponent = () => {
@@ -20,7 +20,9 @@ const LandingComponent = () => {
       <Typography variant="body1" sx={{ marginBottom: 4 }}>
       Découvrez comment gérer un pays face aux défis énergétiques et climatiques.
       </Typography>
-      <img src={isoVille} style={{ width: '80%', marginRight: '10%' }} sx={{ marginBottom: 2}} alt= 'image de ville'/>
+      <Box display="flex" justifyContent="center" marginBottom={2}>
+    <img src={isoVille} style={{ width: '80%' }} alt="image de ville" />
+</Box>
 
 
       <Button

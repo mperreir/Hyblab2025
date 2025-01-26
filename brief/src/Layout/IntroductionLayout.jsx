@@ -44,7 +44,7 @@ const IntroductionLayout = ({ children }) => {
       </Container>
       {/* Footer */}
       <Box component="footer" sx={{ backgroundColor: '#c1c1c1', color: 'black', padding: '10px', textAlign: 'center' }}>
-        <Typography variant="body2">© 2025 Transition 2050. Tous droits réservés.</Typography>
+        <Typography variant="body2">Tous les contenus ont été réalisés sous une licence ouverte, leur diffusion est libre.</Typography>
       </Box>
     </Box>
   );

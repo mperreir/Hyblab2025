@@ -3,11 +3,14 @@ import React, { useState } from "react";
 import { Doughnut } from "react-chartjs-2";
 import SwipeableViews from "react-swipeable-views";
 import { Box, Typography, Container, useTheme, styled, Button } from "@mui/material";
-import { Chart, ArcElement, Tooltip } from "chart.js";
+import { Chart, ArcElement, Tooltip, Legend } from "chart.js";
 import { useNavigate } from 'react-router-dom';
 import energyData from "../../public/data/debut/sources_energie.json";
 
 Chart.register(ArcElement, Tooltip);
+
+const colors = ["#991756", "#8670CF" , "#5A88FF" , "#14A473" , "#F86A1B"];
+
 
 const IndicatorContainer = styled(Box)(({ theme }) => ({
     display: "flex",
@@ -39,23 +42,20 @@ const handleClick = () => {
 
 
 const [activeIndex, setActiveIndex] = useState(0);
-  const [hoveredIndex, setHoveredIndex] = useState(null);
+const [hoveredIndex, setHoveredIndex] = useState(null);
 
-  const sources = energyData.sources;
+const sources = energyData.sources;
 
-  // Générer les couleurs en mettant en valeur la section sélectionnée
-  const getColors = (index) => {
-    return sources.map((e, i) =>
-      i === index ? e.color.replace("D9", "FF") : e.color.replace("D9", "AA")
-    );
-  };
 
-  const chartData = {
+
+const chartData = {
     labels: sources.map((e) => e.name),
     datasets: [
       {
-        data: sources.map((e) => e.percentage),
-        backgroundColor: getColors(hoveredIndex ?? activeIndex),
+        data: sources.map((e, index) =>
+          index === activeIndex ? e.percentage * 1.1 : e.percentage
+        ),
+        backgroundColor: colors,
         hoverOffset: 10,
       },
     ],
@@ -71,9 +71,8 @@ const [activeIndex, setActiveIndex] = useState(0);
           data={chartData}
           options={{
             plugins: { legend: { display: false } },
-            onHover: (_, elements) => {
-              if (elements.length > 0) setHoveredIndex(elements[0].index);
-              else setHoveredIndex(null);
+            animation: {
+              animateScale: true,
             },
           }}
         />
@@ -98,7 +97,14 @@ const [activeIndex, setActiveIndex] = useState(0);
               position: "relative",
             }}
           >
-            <Typography variant="h5" sx={{ color: item.color, fontWeight: "bold" }}>
+            <Typography
+              variant="h5"
+              sx={{
+                color: colors[index],
+                fontWeight: "bold",
+                textShadow: "0.5px 0.5px 1px black",
+              }}
+            >
               {item.name}
             </Typography>
             <Typography variant="body1">{item.description}</Typography>

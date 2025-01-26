@@ -12,6 +12,15 @@
       "notes": "Responsable d'environ 1/3 des émissions de CO2 liées à l'énergie."
     },
     {
+      "name": "Électricité",
+      "percentage": 27,
+      "color":"#ECDE4BD9",
+      "description": "Générique couvrant diverses sources de production électrique.",
+      "carbon_emissions": {
+        "notes": "Dépend de la source utilisée pour la production."
+      }
+    },
+    {
       "name": "Gaz naturel",
       "percentage": 18,
       "color":"#C8C8C8D9",
@@ -51,16 +60,8 @@
         "unit": "kg CO2/kWh"
       },
       "notes": "Abondant et bon marché mais contribue au réchauffement climatique et à la pollution de l'air."
-    },
-    {
-      "name": "Électricité",
-      "percentage": 27,
-      "color":"#ECDE4BD9",
-      "description": "Générique couvrant diverses sources de production électrique.",
-      "carbon_emissions": {
-        "notes": "Dépend de la source utilisée pour la production."
-      }
     }
+
   ],
   "complement": [
     {

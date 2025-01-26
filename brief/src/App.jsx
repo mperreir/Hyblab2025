@@ -7,6 +7,8 @@ import OutroPage from './pages/OutroPage';
 import DefinitionPage from './pages/DefinitionPage';
 import InformationMixPage from './pages/InformationMixPage';
 
+import ScrollTop from "./components/ScrollTop";
+
 
 
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -25,7 +27,7 @@ const theme = createTheme({
   },
   palette: {
     primary: {
-      main: '#991756', 
+      main: '#991756',
       light: '#42A5F5',
       dark: '#1565C0',
       contrastText: '#FFFFFF', // Texte contrasté sur la couleur primaire
@@ -50,18 +52,20 @@ const theme = createTheme({
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
-    <Router>
+      <Router>
+        <ScrollTop />
+
         <Routes>
           <Route path="/brief/" element={<Navigate to="/brief/landing" replace />} />
-          <Route path="/brief/landing" element={<LandingPage/>} />
-          <Route path="/brief/questions" element={<QuestionsPage/> } />
-          <Route path="/brief/contexte" element={<ContextePage/>} />
-          <Route path="/brief/outro" element={<OutroPage/>} />
-          <Route path="/brief/Introduction" element={<DefinitionPage/>} />
-          <Route path="/brief/Information" element={<InformationMixPage/>} />
+          <Route path="/brief/landing" element={<LandingPage />} />
+          <Route path="/brief/questions" element={<QuestionsPage />} />
+          <Route path="/brief/contexte" element={<ContextePage />} />
+          <Route path="/brief/outro" element={<OutroPage />} />
+          <Route path="/brief/Introduction" element={<DefinitionPage />} />
+          <Route path="/brief/Information" element={<InformationMixPage />} />
 
         </Routes>
-    </Router>
+      </Router>
     </ThemeProvider>
   );
 };
