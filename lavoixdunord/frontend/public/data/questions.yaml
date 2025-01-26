@@ -487,13 +487,13 @@ game:
                   correct: false
               hints:
                 text: "Ce site est prisé pour sa beauté naturelle, mais surtout pour la diversité de sa faune et de sa flore, qui en fait un espace unique." 
-                image: "images/Etape 2/dune d'ecault.jpg"
+                image: "images/Etape 2/dune d_ecault.jpg"
                 link: "https://www.lavoixdunord.fr/1418169/article/2024-01-12/saint-etienne-au-mont-le-sol-d-un-sentier-s-effondre-dans-les-dunes-d-ecault"
               map:
                 longitude: 1.62
                 latitude: 50.68
                 label: "Saint-Étienne-au-Mont"
-                image: "images/Etape 2/dune d'ecault.jpg"
+                image: "images/Etape 2/dune d_ecault.jpg"
 
             - id: 5
               category: Histoire
