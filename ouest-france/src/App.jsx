@@ -5,7 +5,7 @@ import { scrollToSection } from './utils';
 
 import Home from './screens/Home';
 import ChoosePlayer from './screens/ChoosePlayer/ChoosePlayer';
-import Article from './screens/Article';
+import Article from './screens/Article/Article';
 import Quiz from './screens/Quiz';
 
 const App = () => {
