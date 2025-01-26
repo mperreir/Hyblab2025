@@ -72,8 +72,8 @@ function expandMessage(messageElement, data) {
 
     expandingElement.querySelectorAll('*').forEach(element => element.style.display = 'none');
     expandingElement.style.display = 'flex';
-    expandingElement.style.top = rect.top + 'px';
-    expandingElement.style.left = rect.left + 'px';
+    // expandingElement.style.top = rect.top + 'px';
+    // expandingElement.style.left = rect.left + 'px';
     expandingElement.style.width = messageElement.offsetWidth + 'px';
     expandingElement.style.height = messageElement.offsetHeight + 'px';
 
@@ -83,11 +83,13 @@ function expandMessage(messageElement, data) {
         expandingElement.removeEventListener('transitionend', onTransitionEnd);  // Nettoyer l'événement
     });
 
+    document.getElementById('chatBox').appendChild(expandingElement);
+
     setTimeout(() => {
-        expandingElement.style.top = '0';
+        expandingElement.style.bottom = '0';
         expandingElement.style.left = '0';
         expandingElement.style.width = '100vw';
-        expandingElement.style.height = '100vh';
+        expandingElement.style.height = '86%';
 
     }, 100);
 };
