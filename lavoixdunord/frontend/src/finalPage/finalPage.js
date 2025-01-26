@@ -4,6 +4,22 @@ import { useNavigate } from "react-router-dom";
 
 const FinalPage = () => {
     const navigate = useNavigate(); // Initialisation de navigate
+    const gameLink = "https://hyblab.polytech.univ-nantes.fr/lavoixdunord"; // Lien de votre jeu
+
+    // Fonction pour partager avec l'API Web Share
+    const handleShare = () => {
+        if (navigator.share) {
+            navigator.share({
+                title: "Le Défi des 3 maillots",
+                text: "Rejoignez-moi pour jouer au jeu 'Le Défi des 3 maillots' !",
+                url: gameLink, // Lien du jeu
+            })
+                .then(() => console.log("Partage réussi"))
+                .catch((error) => console.error("Erreur lors du partage:", error));
+        } else {
+            alert("Le partage n'est pas pris en charge par votre navigateur.");
+        }
+    };
 
     return (
         <div className="background_final">
@@ -19,10 +35,10 @@ const FinalPage = () => {
                 <button className="btn btn-outline-primary fw-bold my-2" onClick={() => navigate("/")}>RÉESSAYER</button>
 
                 <p><i><b>Partagez ce jeu avec vos proches !</b></i></p>
-                <button className="btn btn-outline-info fw-bold my-2" onClick={() => navigate("/")}>PARTAGER</button>
 
+                {/* Bouton pour partager via l'API Web Share */}
+                <button className="btn btn-outline-info fw-bold my-2" onClick={handleShare}>PARTAGER</button>
             </div>
-
         </div>
     );
 };
