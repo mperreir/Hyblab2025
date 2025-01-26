@@ -24,6 +24,7 @@ const RulesPage = () => {
 
                 <button className="btn btn-outline-dark  mt-4" onClick={() => navigate("/difficulty")}><b>JOUER</b></button>
             </div>
+            <img className="arbre" src="arbre.gif" alt="arbreSotant" />
 
         </div>
     );

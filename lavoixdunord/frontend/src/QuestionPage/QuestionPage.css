@@ -33,6 +33,7 @@ body {
   font-family: 'Pathway Extreme';
   font-weight: 800;
   color: white;
+  margin-top: 15px;
 }
 
 .question-box {
@@ -41,6 +42,7 @@ body {
   border-radius: 15px;
   box-shadow: 0 4px 6px #1A3347;
   margin-inline: 32px;
+  margin-top: 25px;
 }
 
 .question-text {
@@ -226,7 +228,7 @@ body.modal-open {
   overflow: hidden;
 }
 .next-btn {
-  margin-top: 20px;
+  margin-top: 15px;
   padding: 10px 20px;
   background-color: white;
   color: #1A3347;
@@ -265,9 +267,8 @@ body.modal-open {
 }
 
 
-
 .article-link {
-  margin-top: 10px;
+  margin-top: 20px;
   font-size: 12px;
   text-align: center;
 }

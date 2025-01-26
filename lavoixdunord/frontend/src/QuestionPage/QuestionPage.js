@@ -150,19 +150,6 @@ const QuestionPage = () => {
             ))}
           </div>
 
-          {currentQuestion.hints.link && (
-            <p className="article-link">
-              <a
-                href={currentQuestion.hints.link}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Lien vers l'article
-              </a>
-
-            </p>
-          )}
-
           {validated && (
             <button type="button" onClick={() => { setShowMap(true) }}
               className="btn btn-sm btn-outline-warning me-2 p-2 text-uppercase fw-bold fs-6">Voir sur la carte</button>
@@ -178,6 +165,19 @@ const QuestionPage = () => {
                 : "FINIR"
               : "VALIDER"}
           </button>
+
+          {currentQuestion.hints.link && (
+            <p className="article-link">
+              <a
+                href={currentQuestion.hints.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <b><i>Un indice se cache <br></br>dans cet article</i></b>
+              </a>
+
+            </p>
+          )}
 
           <div className="hints-container">
             <div className="hint-item">
