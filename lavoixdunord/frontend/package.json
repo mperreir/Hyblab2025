@@ -1,7 +1,6 @@
 {
   "name": "ph",
   "version": "0.1.0", 
-  "homepage": "/lavoixdunord",
   "private": true,
   "dependencies": {
     "bootstrap": "^5.3.3",
