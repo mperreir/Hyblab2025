@@ -84,12 +84,23 @@ async function addAnswer(answers, multipleChoices=false) {
     const answersContainer = document.createElement('div');
     answersContainer.id = 'answers-container';
 
+    let i = 0;
     for(let key in answers) {
         const answerElement = document.createElement('div');
         answerElement.classList.add('answer');
         answerElement.dataset.answer = answers[key];
         answerElement.textContent = answers[key];
+
+        if (i === 0) {
+            answerElement.classList.add('first');
+        } else if (i === Object.keys(answers).length - 1) {
+            answerElement.classList.add('last');
+        } else {
+            answerElement.classList.add('middle');
+        }
+
         answersContainer.appendChild(answerElement);
+        i++;
     }
 
 
