@@ -26,7 +26,7 @@ const TransitionPage = () => {
             paragraph3: "Place désormais à la deuxième étape qui vous mènera de Lauwin-Planque à Boulogne-sur-mer.",
             paragraph4: "Bonne chance pour décrocher votre deuxième maillot !",
             button_text: "ÉTAPE SUIVANTE",
-            navigate: `/start/${difficulty}/2`
+            navigate_to: `/start/${difficulty}/2`
         },
         {
             id: 2,
@@ -37,7 +37,7 @@ const TransitionPage = () => {
             paragraph3: "Place désormais à la troisième étape qui vous mènera de Lauwin-Planque à Boulogne-sur-mer.",
             paragraph4: "Bonne chance pour décrocher votre troisième maillot !",
             button_text: "ÉTAPE SUIVANTE",
-            navigate: `/start/${difficulty}/3`
+            navigate_to: `/start/${difficulty}/3`
         },
         {
             id: 3,
