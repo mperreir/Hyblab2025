@@ -2,10 +2,13 @@ import React from "react";
 import { scrollToSection } from "../utils";
 import { useState, useEffect } from "react";
 import Button from "../ui/Button";
-import Icon from "../ui/Icon";
 import Typewriter from "../ui/Typewriter";
+import { useInView } from "react-intersection-observer";
+import "../main.css";
+import QuizResults from "./QuizResults/QuizResults";
 
-const Quiz = ({ data }) => {
+const Quiz = ({ data, player, onSelectPlayer }) => {
+
   const [userAnswers, setUserAnswers] = useState(
     new Array(data.length).fill(null)
   );
@@ -63,6 +66,23 @@ const Quiz = ({ data }) => {
     setAnswerStatus(newAnswerStatus);
   };
 
+  const observers = data.map((_, index) => {
+    const [ref, inView] = useInView({
+      threshold: 0.5,
+      root: document.querySelector(".snap-x"),
+    });
+
+    useEffect(() => {
+      if (inView) {
+        setIsTypingComplete(false);
+        setCurrentQuestionIndex(index + 1);
+        setProgress(((index + 1) / data.length) * 100);
+      }
+    }, [inView]);
+
+    return ref;
+  });
+
   return (
     <div className="h-screen w-screen overflow-x-auto snap-start snap-x snap-mandatory">
       <div className="flex h-full">
@@ -70,9 +90,10 @@ const Quiz = ({ data }) => {
           <section
             className="h-screen w-screen flex-shrink-0 bg-white snap-start flex items-center justify-center flex-col"
             id={"quiz" + questionIndex}
+            ref={observers[questionIndex]}
           >
             <div className="flex w-full h-full">
-              <div className="w-1/3 h-full flex items-center justify-center">
+              <div className="w-1/2 h-full flex items-center justify-center">
                 <div className="w-full h-full p-6">
                   <img
                     src="./pavon.jpg"
@@ -82,10 +103,11 @@ const Quiz = ({ data }) => {
               </div>
               <div className="w-1/2 h-full flex flex-col justify-end">
                 <div className="p-6 py-16 flex flex-col gap-4 w-full">
-                  <p className="text-lg font-bold text-black">{question.question}</p>
-                  <span className="accent h-[2px] w-[60%]"></span>
+                  <p className="text-2xl font-bold text-black">
+                    {question.question}
+                  </p>
+                  <span className="accent h-[2px] w-full"></span>
                 </div>
-
 
                 <div className="flex flex-wrap px-6 gap-4 w-full">
                   {question.answers.map((answer, answerIndex) => (
@@ -93,15 +115,13 @@ const Quiz = ({ data }) => {
                       key={answerIndex}
                       onClick={() => {
                         handleAnswerClick(questionIndex, answer);
-                        console.log("userAnswers", userAnswers[questionIndex]);
-                        console.log("answer", answer);
                       }}
                       className={`duration-300 ease-initial grow basis-[calc(50%-0.5rem)] p-4 text-lg rounded-lg border ${
                         userAnswers[questionIndex] === answer
                           ? answerStatus[questionIndex] === "correct"
                             ? "bg-green-500 text-white"
                             : "bg-red-500 text-white"
-                          : "bg-green-100 hover:bg-green-200"
+                          : "bg-white border-black hover:bg-[#CC2229] hover:text-white"
                       }`}
                     >
                       {answer}
@@ -136,61 +156,17 @@ const Quiz = ({ data }) => {
                       onComplete={() => setIsTypingComplete(true)}
                       className="text-justify text-lg"
                     />
-                    {isTypingComplete && (
-                    <div className="w-full flex justify-end">
-                      <Button
-                        className={"bg-green-100 hover:bg-green-200"}
-                        onClick={() =>
-                          scrollToSection(`article${questionIndex}`)
-                        }
-                      >
-                        Aller à l'article
-                      </Button>
-                    </div>
-                    )}
                   </div>
                 )}
-                <div className="flex justify-between items-end gap-4 w-full h-full p-6">
-                  <div className="flex flex-start items-center flex-row gap-4 p-6 w-3/4">
-                    <div className="relative w-full h-2 bg-gray-200">
-                      <div
-                        className="h-full bg-green-500 transition-all duration-300"
-                        style={{ width: `${progress}%` }}
-                      ></div>
-                      <div
-                        className="absolute top-1/2 w-4 h-4 bg-white border-2 border-grey-200 rounded-full transition-all duration-300 shadow-lg"
-                        style={{
-                          left: `${progress}%`,
-                          transform: "translate(-50%, -50%)", // Centrage précis
-                          marginLeft: progress === 100 ? "-8px" : "0", // Correction du débordement à 100%
-                        }}
-                      ></div>
-                      <img
-                        src="icon/red-flag.png"
-                        alt="finish"
-                        className="absolute bottom-full right-0 mr-[1.125rem] z-10 translate-x-full"
-                        style={{
-                          height: "50px", // Ajustez la hauteur
-                          width: "auto", // Garde les proportions
-                        }}
-                      />
-                    </div>
-                    <div className="flex justify-start items-center w-1/4 ">
-                      <p className="italic">
-                        {currentQuestionIndex} / {data.length}
-                      </p>
-                    </div>
-                  </div>
 
-                  <div className="flex flex-end items-center gap-4">
+                <div className="flex items-end gap-4 w-full h-full px-6">
+                  <div className="flex justify-between w-full">
                     {questionIndex > 0 && (
                       <Button
-                        className={"bg-green-100 hover:bg-green-200"}
+                        className={
+                          "bg-white border-black hover:bg-[#CC2229] hover:text-white transition-colors duration-300 ease-in-out"
+                        }
                         onClick={() => {
-                          console.log(
-                            "currentQuestionIndex",
-                            currentQuestionIndex
-                          );
                           setCurrentQuestionIndex(currentQuestionIndex - 1);
                           setProgress(
                             ((currentQuestionIndex - 1) / data.length) * 100
@@ -198,18 +174,26 @@ const Quiz = ({ data }) => {
                           scrollToSection(`quiz${questionIndex - 1}`);
                         }}
                       >
-                        <Icon src={"icon/arrow_left.svg"} />
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="m7.825 13l4.9 4.9q.3.3.288.7t-.313.7q-.3.275-.7.288t-.7-.288l-6.6-6.6q-.15-.15-.213-.325T4.426 12t.063-.375t.212-.325l6.6-6.6q.275-.275.688-.275t.712.275q.3.3.3.713t-.3.712L7.825 11H19q.425 0 .713.288T20 12t-.288.713T19 13z"
+                          />
+                        </svg>
                       </Button>
                     )}
 
-                    {questionIndex < data.length - 1 && (
+                    {questionIndex === 0 && (
                       <Button
-                        className={"bg-green-100 hover:bg-green-200"}
+                        className={
+                          "bg-white border-black hover:bg-[#CC2229] hover:text-white transition-colors duration-300 ease-in-out pointer-events-none opacity-0"
+                        }
                         onClick={() => {
-                          console.log(
-                            "currentQuestionIndex",
-                            currentQuestionIndex
-                          );
                           setCurrentQuestionIndex(currentQuestionIndex + 1);
                           setProgress(
                             ((currentQuestionIndex + 1) / data.length) * 100
@@ -217,18 +201,104 @@ const Quiz = ({ data }) => {
                           scrollToSection(`quiz${questionIndex + 1}`);
                         }}
                       >
-                        <Icon src={"icon/arrow_right.svg"} />
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="m7.825 13l4.9 4.9q.3.3.288.7t-.313.7q-.3.275-.7.288t-.7-.288l-6.6-6.6q-.15-.15-.213-.325T4.426 12t.063-.375t.212-.325l6.6-6.6q.275-.275.688-.275t.712.275q.3.3.3.713t-.3.712L7.825 11H19q.425 0 .713.288T20 12t-.288.713T19 13z"
+                          />
+                        </svg>
+                      </Button>
+                    )}
+
+                    <div className="relative">
+                      <div className="relative w-full">
+                        <Button
+                          className={
+                            "bg-white border-black hover:bg-[#CC2229] hover:text-white transition-colors duration-300 ease-in-out"
+                          }
+                          onClick={() =>
+                            scrollToSection(`article${questionIndex}`)
+                          }
+                        >
+                          {question.articleBtn}
+                        </Button>
+                      </div>
+                    </div>
+
+                    {questionIndex < data.length - 1 && (
+                      <Button
+                        className={
+                          "bg-white border-black hover:bg-[#CC2229] hover:text-white transition-colors duration-300 ease-in-out"
+                        }
+                        onClick={() => {
+                          setCurrentQuestionIndex(currentQuestionIndex + 1);
+                          setProgress(
+                            ((currentQuestionIndex + 1) / data.length) * 100
+                          );
+                          scrollToSection(`quiz${questionIndex + 1}`);
+                        }}
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M16.175 13H5q-.425 0-.712-.288T4 12t.288-.712T5 11h11.175l-4.9-4.9q-.3-.3-.288-.7t.313-.7q.3-.275.7-.288t.7.288l6.6 6.6q.15.15.213.325t.062.375t-.062.375t-.213.325l-6.6 6.6q-.275.275-.687.275T11.3 19.3q-.3-.3-.3-.712t.3-.713z"
+                          />
+                        </svg>
                       </Button>
                     )}
 
                     {questionIndex === data.length - 1 && (
                       <Button
-                        className={"bg-green-100 hover:bg-green-200"}
+                        className={
+                          "bg-white border-black hover:bg-[#CC2229] hover:text-white transition-colors duration-300 ease-in-out"
+                        }
                         onClick={() => scrollToSection(`quizResults`)}
                       >
-                        Voir les résultats
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M16.175 13H5q-.425 0-.712-.288T4 12t.288-.712T5 11h11.175l-4.9-4.9q-.3-.3-.288-.7t.313-.7q.3-.275.7-.288t.7.288l6.6 6.6q.15.15.213.325t.062.375t-.062.375t-.213.325l-6.6 6.6q-.275.275-.687.275T11.3 19.3q-.3-.3-.3-.712t.3-.713z"
+                          />
+                        </svg>
                       </Button>
                     )}
+                  </div>
+                </div>
+
+                <div className="flex flex-start items-center flex-row gap-4 p-6 w-full">
+                  <div className="flex justify-start items-cente w-[3rem] ">
+                    <p className="italic text-black">
+                      {currentQuestionIndex} / {data.length}
+                    </p>
+                  </div>
+                  <div className="relative w-full h-2 bg-gray-200">
+                    <div
+                      className="h-full bg-[#CC2229] transition-all duration-300"
+                      style={{ width: `${progress}%` }}
+                    ></div>
+                    <div
+                      className="absolute top-1/2 w-4 h-4 bg-white border-2 border-grey-200 rounded-full transition-all duration-300 shadow-lg"
+                      style={{
+                        left: `${progress}%`,
+                        transform: "translate(-50%, -50%)", // Centrage précis
+                        marginLeft: progress === 100 ? "-8px" : "0", // Correction du débordement à 100%
+                      }}
+                    ></div>
                   </div>
                 </div>
               </div>
@@ -239,19 +309,7 @@ const Quiz = ({ data }) => {
           className="h-screen w-screen flex-shrink-0 snap-start flex items-center justify-center flex-col"
           id="quizResults"
         >
-          <h1 className="text-4xl font-bold">Résultats</h1>
-          <p className="text-2xl">
-            Votre score est de {score}/{data.length}
-          </p>
-          <button
-            onClick={() => {
-              setCurrentQuestionIndex(1);
-              setProgress((1 / data.length) * 100);
-              scrollToSection("quiz0");
-            }}
-          >
-            Retour au Quiz
-          </button>
+          <QuizResults ranking={score} quizLength={data.length} choosenPlayer={player} onSelectPlayer={onSelectPlayer} />          
         </section>
       </div>
     </div>

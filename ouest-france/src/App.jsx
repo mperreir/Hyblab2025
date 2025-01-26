@@ -15,10 +15,12 @@ const App = () => {
 
   const [quizData, setQuizData] = useState(null);
   const [articleData, setArticleData] = useState(null)
+  const [choosenPlayer, setChoosenPlayer] = useState("")
 
   // Gestion du clic sur un bouton dans ChoosePlayer
   const handleQuizSelection = async (quizKey) => {
 
+    setChoosenPlayer(quizKey)
     //fetch l'api
     const quizFetch = await fetch(`${baseUrl}/${quizKey}/quiz`)
     const quizJson = await quizFetch.json()
@@ -42,7 +44,7 @@ const App = () => {
       <ChoosePlayer onSelectPlayer={handleQuizSelection} />
       {quizData && (
         <>
-          <Quiz data={quizData} />
+          <Quiz data={quizData} player={choosenPlayer} onSelectPlayer={handleQuizSelection} />
           <Article data={articleData[0]}/>
           <Article data={articleData[1]}/>
         </>
