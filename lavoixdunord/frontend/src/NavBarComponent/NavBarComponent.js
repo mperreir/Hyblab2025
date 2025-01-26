@@ -11,8 +11,7 @@ const NavBarComponent = () => {
     const location = useLocation();
 
     React.useEffect(() => {
-        if (location.pathname === '/'
-            || location.pathname === '/credit') {
+        if (location.pathname === '/') {
             setShow(false);
         } else {
             setShow(true);
@@ -46,9 +45,9 @@ const NavBarComponent = () => {
             case '/difficulty':
                 return '';
             case '/credit':
-                return 'Crédits';
+                return '';
             case '/final':
-                return 'Fin';
+                return '';
             default:
                 return '';
         }
