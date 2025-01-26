@@ -1,0 +1,55 @@
+/* Style global du conteneur expanding */
+.expanding {
+    background-color: #d6d6d6; /* Fond bleu */
+    color: #000000; /* Texte noir */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrer les éléments horizontalement */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Style du titre (h1) */
+.expanding h1 {
+    text-align: center;
+    font-size: 2rem; /* Taille adaptée */
+    margin-bottom: 20px; /* Espacement sous le titre */
+}
+
+/* Conteneur pour les images */
+.expanding .image-container {
+    display: flex;
+    flex-wrap: wrap; /* Permet de passer sur plusieurs lignes si nécessaire */
+    justify-content: center; /* Centrer les images */
+    gap: 10px; /* Espacement entre les images */
+    width: 100%;
+}
+
+/* Style des images */
+.expanding img {
+    max-width: 100%; /* Empêche le débordement */
+    height: auto;
+    width: calc(33.33% - 10px); /* 3 images par ligne avec un espacement */
+    border-radius: 5px; /* Coins arrondis pour un effet plus esthétique */
+}
+
+/* Ajustement pour les petits écrans */
+@media (max-width: 768px) {
+    .expanding img {
+        width: calc(50% - 10px); /* 2 images par ligne sur écran moyen */
+    }
+}
+
+@media (max-width: 480px) {
+    .expanding img {
+        width: 100%; /* Une seule image par ligne sur les petits écrans */
+    }
+}
+
+/* Texte sous les images */
+.expanding p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    text-align: center;
+    margin-top: 20px; /* Espacement entre les images et le texte */
+}
