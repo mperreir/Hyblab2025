@@ -165,7 +165,7 @@ const QuestionPage = () => {
 
           {validated && (
             <button type="button" onClick={() => { setShowMap(true) }}
-              class="btn btn-sm btn-outline-warning me-2 p-2 text-uppercase fw-bold fs-6">Voir sur la carte</button>
+              className="btn btn-sm btn-outline-warning me-2 p-2 text-uppercase fw-bold fs-6">Voir sur la carte</button>
           )}
           <button
             className="next-btn"
