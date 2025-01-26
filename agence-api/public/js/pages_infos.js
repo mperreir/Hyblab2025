@@ -24,6 +24,7 @@ function enableClickForExpansion(text, data) {
 
 // Fonction pour agrandir le message et afficher l'image
 function expandMessage(messageElement, data) {
+    expandingElement.innerHTML = '';
     toggleTapIconDisplay(true);
 
     const rect = messageElement.getBoundingClientRect();
@@ -44,7 +45,7 @@ function expandMessage(messageElement, data) {
     expandingElement.appendChild(title);
 
     images.forEach(image => {
-        const img = document.createElement('p');
+        const img = document.createElement('img');
         img.src = image;
         expandingElement.appendChild(img);
     });
