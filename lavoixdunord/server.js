@@ -17,6 +17,11 @@ app.use('/api', api);
 app.use(express.static(path.join(__dirname, 'frontend/build')));
 app.use(express.static(path.join(__dirname, '../__common-logos__')));
 
+// Catch-all route pour les routes React (SPA)
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "build", "index.html"));
+});
+
 // You can then add whatever routing code you need
 
 // This module is exported and served by the main server.js located
