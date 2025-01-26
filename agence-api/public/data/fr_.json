@@ -416,9 +416,13 @@
                     }
                 }]
             },
-            [
-                "La French Tech, c’est un écosystème national qui soutient les startups françaises et leur croissance. Dans l’Ouest, elle se décline en 3 Capitales (Nantes, Rennes Saint-Malo, Angers) et 7 Communautés, fédérant des centaines d’acteurs de l’innovation. Avec des programmes comme French Tech Next 120 et French Tech 2030, les entreprises locales accèdent à des opportunités de croissance et de financement stratégiques."
-            ]
+            {
+                "titre": "Le réseau French Tech",
+                "images": [],
+                "paragraphes": [
+                    "La French Tech, c’est un écosystème national qui soutient les startups françaises et leur croissance. Dans l’Ouest, elle se décline en 3 Capitales (Nantes, Rennes Saint-Malo, Angers) et 7 Communautés, fédérant des centaines d’acteurs de l’innovation. Avec des programmes comme French Tech Next 120 et French Tech 2030, les entreprises locales accèdent à des opportunités de croissance et de financement stratégiques."
+                    ]
+            }
         ],
         "cartes_fin_arriere": [
             "Localisation",
