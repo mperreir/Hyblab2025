@@ -149,7 +149,7 @@ async function selectSecteur(presentationSecteurs) {
 
     toggleTapIconDisplay(false);
 
-    return await addAnswer(presentationSecteurs.reponses);
+    return await addAnswer(presentationSecteurs.reponses, "secteur");
   }
 
 async function displayMessages(message, signal, skipInteraction = false) {
@@ -233,7 +233,14 @@ async function histoire(texts, userName, signal){
 
         toggleTapIconDisplay(true);
 
-        let answer = await addAnswer(texts.reponses[i], multipleChoices);
+        let answer;
+
+        if (multipleChoices){
+            answer = await addAnswer(texts.reponses[i], "mutliple");
+        } else {
+            answer = await addAnswer(texts.reponses[i]);
+        }
+
         choices = [...choices, ...answer];
 
         toggleTapIconDisplay(false);

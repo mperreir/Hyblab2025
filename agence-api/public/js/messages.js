@@ -85,7 +85,7 @@ function addMessage(message, type) {
     scrollToBottom();
 };
 
-async function addAnswer(answers, multipleChoices=false) {
+async function addAnswer(answers, type) {
     const answersContainer = document.createElement('div');
     answersContainer.id = 'answers-container';
 
@@ -119,30 +119,49 @@ async function addAnswer(answers, multipleChoices=false) {
 
     let selectedAnswer = [];
 
-    if (multipleChoices) {
-        answersContainer.addEventListener('click', (e) => {
-            if (e.target.classList.contains('answer')) {
-                e.target.classList.toggle('selected');
-                selectedAnswer = Array.from(answersContainer.querySelectorAll('.selected')).map((div) => div.dataset.answer);
-                confirmButton.disabled = selectedAnswer.length === 0;
-            }
-        });
-    } else {
-        answersContainer.addEventListener('click', (e) => {
-            if (e.target.classList.contains('answer')) {
-            // Remove 'selected' class from all answers
-            document.querySelectorAll('.answer').forEach((div) => div.classList.remove('selected'));
-        
-            // Add 'selected' class to the clicked answer
-            e.target.classList.add('selected');
-        
-            // Update selectedAnswer
-            selectedAnswer = [e.target.dataset.answer];
-        
-            // Enable the confirm button
-            confirmButton.disabled = false;
-            }
-        });
+    switch(type){
+        case 'multiple':
+            answersContainer.addEventListener('click', (e) => {
+                if (e.target.classList.contains('answer')) {
+                    e.target.classList.toggle('selected');
+                    selectedAnswer = Array.from(answersContainer.querySelectorAll('.selected')).map((div) => div.dataset.answer);
+                    confirmButton.disabled = selectedAnswer.length === 0;
+                }
+            });
+            break;
+        case 'secteur':
+            const answers = answersContainer.querySelectorAll('.answer');
+            answers[0].addEventListener('click', () => {
+                switchTheme("theme-agro");
+                changeApiName("Api-Agro");
+            });
+            answers[1].addEventListener('click', () => {
+                switchTheme("theme-tech");
+                changeApiName("Api-Tech");
+            });
+            answers[2].addEventListener('click', () => {
+                switchTheme("theme-arti");
+                changeApiName("Api-Arti");
+            });
+            //I dont add the break on purpose
+        default:
+            answersContainer.addEventListener('click', (e) => {
+                if (e.target.classList.contains('answer')) {
+                // Remove 'selected' class from all answers
+                document.querySelectorAll('.answer').forEach((div) => div.classList.remove('selected'));
+            
+                // Add 'selected' class to the clicked answer
+                e.target.classList.add('selected');
+            
+                // Update selectedAnswer
+                selectedAnswer = [e.target.dataset.answer];
+            
+                // Enable the confirm button
+                confirmButton.disabled = false;
+                }
+            });
+            break;
+
     }
 
       scrollToBottom();

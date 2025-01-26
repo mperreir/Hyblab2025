@@ -20,18 +20,19 @@
 .chat-container {
     width: 100%;
     height: 100%;
-    background: white;
+    background: var(--bg-color);
     border: 3px solid rgb(131, 130, 130);
     border-radius: 0px; /*arrondir angles*/
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .chat-header {
-    background: #adadad;
-    color: black;
+    background: var(--primary-color);
+    color: var(--primary-text-color);
     text-align: center;
     padding: 10px;
     font-size: 20px;
@@ -42,6 +43,7 @@
     border-bottom: 1px solid #ccc; /*ligne séparatrice*/
     position: relative;
     flex-direction: column;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .chat-header-bulle{
@@ -176,6 +178,7 @@
     flex-direction: column;
     align-items: center;
     transition: transform 0.3s ease; /* Smooth effect */
+    transition: background-color 0.3s, color 0.3s;
 }
 
 /* Add the animation for the info class */
@@ -224,18 +227,17 @@
 
 /* Messages envoyés */
 .sent {
-    background: #139fe5;
-    color: #fff;
+    background: var(--secondary-color);
+    color: var(--secondary-text-color);
     align-self: flex-end;
     margin: 20px 0;
 }
 
 /* Messages reçus */
 .received {
-    background: #d6d6d6;
-    color: #fff;
+    background: var(--primary-color);
     align-self: flex-start;
-    color: black;
+    color: var(--primary-text-color);
 }
 
 

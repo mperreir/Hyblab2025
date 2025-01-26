@@ -39,6 +39,9 @@ function initMenu(){
         goCharactersLink.addEventListener("click", (e) => {
             e.preventDefault();              // 阻止 href 跳转
             menuPopups[index].classList.add("hidden");  // 先关菜单
+            menuBtns[index].checked = false;
+            switchTheme("theme-default");
+            changeApiName("Api");
             initSlide2(true);
         });
     });
@@ -57,5 +60,11 @@ function initMenu(){
             menuPopups[index].classList.add("hidden");  // 先关菜单
             swiper.slideNext();
         });
+    });
+}
+
+function changeApiName(name){
+    document.querySelectorAll(`#ApiName`).forEach((ApiName) => {
+        ApiName.textContent = name;
     });
 }
