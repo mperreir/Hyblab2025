@@ -12,20 +12,24 @@ function AnimalInfo({ animal }) {
     };
 
     return (
-        <div 
-            className={`animal-info-container ${animal ? 'visible' : ''} animal_presentation`} 
-        >
-            <div className='top_section'>
-                <div className='image_container'>
-                    <img/>
-                </div>
-                <div className='text_container'>
-                    <h3>{displayedAnimal.fullname}</h3>
-                    <p>T'as cliqué sur mon profil ? Laisse moi t'en dire un peu plus.</p>
-                </div>
+        <div className={`animal-info-parent-container ${animal ? 'visible' : ''}`}>
+            <div className='image_container'>
+                {animal && <img src={animal.svg}></img>}
             </div>
-            <div className='bottom_section'>
-                <a onClick={goToMap}>Découvrir</a>
+            <div 
+                className={`animal-info-container ${animal ? 'visible' : ''} animal_presentation`} 
+            >
+                <div className='top_section'>
+                    <div className='image_offset'>
+                    </div>
+                    <div className='text_container'>
+                        <h3>{displayedAnimal.fullname}</h3>
+                        <p>T'as cliqué sur mon profil ? Laisse moi t'en dire un peu plus.</p>
+                    </div>
+                </div>
+                <div className='bottom_section'>
+                    <a onClick={goToMap}>Découvrir</a>
+                </div>
             </div>
         </div>
         
