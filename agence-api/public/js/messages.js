@@ -57,6 +57,8 @@ function addMessage(message, type) {
         messageElement.classList.add(message.class);
     }
 
+
+
     switch(type){
         case 'first':
             message.classList.add('first');
@@ -67,6 +69,9 @@ function addMessage(message, type) {
         case 'last':
             message.classList.add('last');
             break;
+        // case 'info':
+        //     message.classList.add('info');
+        //     break;
     }
     
     messageList.appendChild(messageElement);

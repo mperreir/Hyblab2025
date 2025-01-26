@@ -175,6 +175,31 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: transform 0.3s ease; /* Smooth effect */
+}
+
+/* Add the animation for the info class */
+.message.info {
+    animation: pulse 1.5s infinite ease-in-out;
+    margin-top: 10px;
+}
+
+/* Define the pulse animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    50% {
+        transform: scale(1.05); /* Slightly enlarge */
+        box-shadow: 
+            0 4px 10px rgba(0, 0, 0, 0.2), /* Original shadow */
+            0 0 15px 5px rgba(255, 223, 0, 0.6); /* Yellow glow */
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
 }
 
 .message.first{
@@ -202,7 +227,7 @@
     background: #139fe5;
     color: #fff;
     align-self: flex-end;
-    margin-top: 20px;
+    margin: 20px 0;
 }
 
 /* Messages reçus */
