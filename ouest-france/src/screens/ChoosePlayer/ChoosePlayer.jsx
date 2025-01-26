@@ -11,7 +11,10 @@ const ChoosePlayer = ({onSelectPlayer}) => {
           id="choose-player"
       >
           <div
-              onMouseEnter={() => setHovered('hv-left')}
+              onMouseEnter={() => {
+                  setHovered('hv-left');
+                  onSelectPlayer("player1", false);
+              }}
               onMouseLeave={() => setHovered(null)}
               className='choice left'>
               <img src={"./pavon.jpg"} alt={"Pavon"} />
@@ -30,7 +33,10 @@ const ChoosePlayer = ({onSelectPlayer}) => {
               </div>
           </div>
           <div
-              onMouseEnter={() => setHovered('hv-right')}
+              onMouseEnter={() => {
+                  setHovered('hv-right');
+                  onSelectPlayer("player2", false);
+              }}
               onMouseLeave={() => setHovered(null)}
               className='choice right'>
               <img src={"./boutier.jpg"} alt={"boutier"}/>

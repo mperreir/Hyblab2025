@@ -18,25 +18,29 @@ const App = () => {
   const [choosenPlayer, setChoosenPlayer] = useState("")
 
   // Gestion du clic sur un bouton dans ChoosePlayer
-  const handleQuizSelection = async (quizKey) => {
+  const handleQuizSelection = async (quizKey, autoScroll = true) => {
+    if(choosenPlayer !== quizKey) {
+      //fetch l'api
+      const quizFetch = await fetch(`${baseUrl}/${quizKey}/quiz`)
+      const quizJson = await quizFetch.json()
 
-    setChoosenPlayer(quizKey)
-    //fetch l'api
-    const quizFetch = await fetch(`${baseUrl}/${quizKey}/quiz`)
-    const quizJson = await quizFetch.json()
+      const articleFetch = await fetch(`${baseUrl}/${quizKey}/article`)
+      const articleJson = await articleFetch.json()
 
-    const articleFetch = await fetch(`${baseUrl}/${quizKey}/article`)
-    const articleJson = await articleFetch.json()
-
-    setQuizData(quizJson);
-    setArticleData(articleJson)
-  };
-
-  useEffect(() => {
-    if (quizData && articleData) {
+      setQuizData(quizJson);
+      setArticleData(articleJson);
+      setChoosenPlayer(quizKey);
+    }
+    if(autoScroll){
       scrollToSection('quiz0');
     }
-  }, [quizData, articleData]);
+  };
+
+  /*useEffect(() => {
+    if (quizData && articleData) {
+
+    }
+  }, [quizData, articleData]);*/
 
   return (
     <div className='h-screen w-full overflow-y-scroll snap-y snap-mandatory [scroll-behavior:smooth]'>
