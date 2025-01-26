@@ -30,7 +30,7 @@ const output = Mustache.render(layout, dataHome, contentFixe);
 // 7. Écriture du résultat dans un fichier HTML (ou utilisation en serveur)
 fs.writeFileSync(path.join(__dirname,"..", "index.html"), output, "utf8");
 
-console.log("La page index_bis.html a été générée avec succès !");
+console.log("La page index.html a été générée avec succès !");
 
 
 /*---------------------------------------------------------------------------------------------*/
