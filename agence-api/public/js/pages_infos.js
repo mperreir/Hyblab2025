@@ -24,6 +24,7 @@ function enableClickForExpansion(text, data) {
 
 // Fonction pour agrandir le message et afficher l'image
 function expandMessage(messageElement, data) {
+    expandingElement.innerHTML = '';
     toggleTapIconDisplay(true);
 
     const rect = messageElement.getBoundingClientRect();
@@ -43,16 +44,30 @@ function expandMessage(messageElement, data) {
     title.textContent = titre;
     expandingElement.appendChild(title);
 
+    let image_container = document.createElement('div');
+    image_container.classList.add('image-container');
+    let imgexist = false;
     images.forEach(image => {
-        const img = document.createElement('p');
+        const img = document.createElement('img');
         img.src = image;
-        expandingElement.appendChild(img);
+        image_container.appendChild(img);
+        if (!imgexist){
+            expandingElement.appendChild(image_container);
+            imgexist = true;
+        }
     });
 
+    let paragraphes_container = document.createElement('div');
+    paragraphes_container.classList.add('paragraphes-container');
+    let paragraphes_exist = false;
     paragraphes.forEach(paragraphe => {
         const text = document.createElement('p');
         text.textContent = paragraphe;
-        expandingElement.appendChild(text);
+        paragraphes_container.appendChild(text);
+        if (!paragraphes_exist){
+            expandingElement.appendChild(paragraphes_container);
+            paragraphes_exist = true;
+        }
     });
 
     expandingElement.querySelectorAll('*').forEach(element => element.style.display = 'none');
