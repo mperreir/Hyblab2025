@@ -93,8 +93,6 @@ const QuestionsComponent = () => {
       alignItems="center"
       overflow="hidden"
     >
-     
-
       <AnimatePresence initial={false} custom={direction}>
         <motion.div
           key={currentQuestion.question_id}
@@ -117,15 +115,13 @@ const QuestionsComponent = () => {
             alignItems: "center",
           }}
         >
-           <Box>
-        <Typography
-          variant="h5"
-          sx={{ textAlign: "center", fontWeight: "bold" }}
-        >
-          Graphique interactif
-        </Typography>
-        <DonutJaugeGroup />
-      </Box>
+          <Typography
+            variant="h5"
+            sx={{ textAlign: "center", fontWeight: "bold" }}
+          >
+            Graphique interactif
+          </Typography>
+          <DonutJaugeGroup />
           <Box
             width="100%"
             padding={2}

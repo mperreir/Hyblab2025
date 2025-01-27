@@ -1,7 +1,7 @@
 import React from "react";
 import { Box } from "@mui/material";
 import DonutChart from "./DonutComponent"; // Votre composant DonutChart
-import JaugeContainer from "./Jauge"; // Votre composant JaugeContainer
+import JaugeContainer from "./JaugeContainer"; // Votre composant JaugeContainer
 
 const DonutJaugeGroup = () => {
   return (
@@ -12,10 +12,11 @@ const DonutJaugeGroup = () => {
       alignItems="center"
       gap={2}
       sx={{
-        backgroundColor: "#f5f5f5", // Couleur de fond pour un visuel propre
+        width: "100%",
+        backgroundColor: "#F5E8F0", // Couleur de fond pour un visuel propre
         padding: 2,
         borderRadius: 2,
-        boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)", // Ombre douce
+        marginBottom: 2,
       }}
     >
       {/* Donut Chart */}
@@ -25,10 +26,10 @@ const DonutJaugeGroup = () => {
         justifyContent="center"
         alignItems="center"
       >
-        <DonutChart size={200} />
+        <DonutChart size={140} />
       </Box>
 
-      {/* Jauges */}
+      {/* JaugeContainer (à droite) */}
       <Box
         flex={1}
         display="flex"

@@ -14,7 +14,7 @@ const JaugeContainer = ({ money , happyness , ges , wth }) => {
             flexDirection="column" 
             gap={1.5} 
             alignItems="center" 
-            sx={{ width: `${wth}%`, }} 
+            sx={{ width: "19px", padding: 2,}} 
             position="relative"
         >
             <Jauge value={money} thickness={15} color="#00ff00" icon={moneyIcon} />

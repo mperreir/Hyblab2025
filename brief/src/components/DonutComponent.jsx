@@ -91,7 +91,7 @@ function DonutChart({ size = 300 }) {
 
   return (
     <div
-      style={{ position: 'relative', width: '100%', height: '100vh' }}
+      style={{ position: 'relative', width: '100%', height: 'inherit' }}
       onClick={handleHideGreySquare} // Gestionnaire global pour masquer le carré
     >
       {/* Donut Chart */}
