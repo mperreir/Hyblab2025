@@ -53,7 +53,7 @@ const QuizResults = ({
       </div>
 
       {choosenPlayer === "player1" && (
-        <div className="choice right">
+        <div className="choice right endquiz">
           <img src={"./boutier.jpg"} alt={"boutier"} />
           <h1 className="divider">La Machine</h1>
           <div className="content">

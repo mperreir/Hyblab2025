@@ -15,11 +15,11 @@ const App = () => {
 
   const [quizData, setQuizData] = useState(null);
   const [articleData, setArticleData] = useState(null)
-  const [choosenPlayer, setChoosenPlayer] = useState("")
+  const [choosenPlayer, setChoosenPlayer] = useState(null)
 
   // Gestion du clic sur un bouton dans ChoosePlayer
   const handleQuizSelection = async (quizKey, autoScroll = true) => {
-    if(choosenPlayer !== quizKey) {
+    if(choosenPlayer == null || (choosenPlayer !== quizKey && autoScroll)) {
       //fetch l'api
       const quizFetch = await fetch(`${baseUrl}/${quizKey}/quiz`)
       const quizJson = await quizFetch.json()
