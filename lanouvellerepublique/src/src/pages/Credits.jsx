@@ -30,7 +30,7 @@ function Credits() {
                     </div>
                     <div className="devs">
                         <h3>Développeurs</h3>
-                        <p>Baptiste Josso, Christian Sow, Evan Josso, Julien Chatry, Ulysse Lopez</p>
+                        <p>Baptiste Josso, Christian Soh, Evan Josso, Julien Chatry, Ulysse Lopez</p>
                     </div>
                 </div>
                 <div className="sponsors">
