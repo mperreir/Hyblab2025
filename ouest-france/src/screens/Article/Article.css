@@ -1,0 +1,79 @@
+.article p, .article h1, .article h2{
+    color: black;
+}
+
+.article h1{
+    font-family: Arial;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 43.7px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+.article .text_content{
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 23px;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+.article .title{
+    font-weight: 700;
+}
+
+
+.article button.contained{
+    background-color: white;
+    color: black;
+    border-radius: 8px;
+    text-transform: uppercase;
+    transition: all ease .3s;
+    font-family: Arial,sans-serif;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 44px;
+    padding: 0px 20px;
+    margin-top: 20px;
+}
+
+.article button.contained:hover{
+    background-color: #CC2229;
+    color: white;
+}
+
+
+.article button.text {
+    color: #CC2229;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-underline-offset: 25%;
+    text-decoration-thickness: 6%;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: auto;
+    line-height: 44px;
+    border-radius: 8px;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px 20px;
+    margin-top: 20px;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+    text-align: center; /* Aligne le texte du bouton */
+}
+
+.article button.text:hover {
+    background-color: #CC2229;
+    color: white;
+    text-transform: uppercase;
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 16px;
+
+}

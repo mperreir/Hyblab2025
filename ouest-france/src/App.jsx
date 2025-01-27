@@ -5,7 +5,7 @@ import { scrollToSection } from './utils';
 
 import Home from './screens/Home/Home';
 import ChoosePlayer from './screens/ChoosePlayer/ChoosePlayer';
-import Article from './screens/Article';
+import Article from './screens/Article/Article';
 import Quiz from './screens/Quiz';
 import EndPage from './screens/EndPage';
 
@@ -36,21 +36,14 @@ const App = () => {
     }
   };
 
-  /*useEffect(() => {
-    if (quizData && articleData) {
-
-    }
-  }, [quizData, articleData]);*/
-
   return (
-    <div className='h-screen w-full overflow-y-scroll snap-y snap-mandatory [scroll-behavior:smooth]'>
+    <div className='app-container h-screen w-full overflow-y-scroll snap-y snap-mandatory [scroll-behavior:smooth]'>
       <Home />
       <ChoosePlayer onSelectPlayer={handleQuizSelection} />
       {quizData && (
         <>
           <Quiz data={quizData} player={choosenPlayer} onSelectPlayer={handleQuizSelection} />
-          <Article data={articleData[0]}/>
-          <Article data={articleData[1]}/>
+            <Article data={articleData}/>
         </>
         )}
       <EndPage />
