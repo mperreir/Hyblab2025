@@ -20,13 +20,12 @@ function initMenu(){
     closeMenuBtns.forEach((closeMenuBtn, index) => {
         closeMenuBtn.addEventListener("click", () => {
             menuPopups[index].classList.add("hidden");
-            menuBtns[index] = false;
+            menuBtns[index].checked = false;
         });
     });
 
     // 点击背景(除 .menu-content 以外的区域)也关闭
     menuPopups.forEach((menuPopup, index) => {
-        // 点击背景(除 .menu-content 以外的区域)也关闭
         menuPopup.addEventListener("click", (event) => {
             if (event.target === menuPopup) {
             menuPopup.classList.add("hidden");
@@ -39,9 +38,12 @@ function initMenu(){
         goCharactersLink.addEventListener("click", (e) => {
             e.preventDefault();              // 阻止 href 跳转
             menuPopups[index].classList.add("hidden");  // 先关菜单
-            menuBtns[index].checked = false;
+            menuBtns.forEach((menuBtn) => { 
+                menuBtn.checked = false; 
+            });
             switchTheme("theme-default");
             changeApiName("Api");
+            document.getElementById('cardsContainer').innerHTML='';
             currentQuestion = 1;
             updateProgress();
             swiper.slideTo(1);
