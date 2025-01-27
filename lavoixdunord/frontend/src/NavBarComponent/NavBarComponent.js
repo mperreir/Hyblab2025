@@ -71,17 +71,17 @@ const NavBarComponent = () => {
             <Navbar className="custom-navbar" expand="lg" style={{ position: 'absolute' }}>
                 <Container fluid className="p-0 px-1">
                     <div className="d-flex justify-content-between align-items-center w-100">
-                        <Navbar.Brand href={`${basename}`}>
+                        <Navbar.Brand href={`${basename}`}  style={{ marginLeft: '10px' }}>
                             <img
                                 src={`${basename}images/logo_white.png`}
-                                height="30"
+                                height="35"
                                 className="d-inline-block align-top"
                                 alt="Logo"
                             />
                         </Navbar.Brand>
 
                         {shouldShowBreadcrumb() ? (
-                            <Breadcrumb className="mb-0">
+                            <Breadcrumb className="mb-0" style={{ marginRight: '20px' }}>
                                 {getBreadcrumbItems().map((item) => (
                                     <Breadcrumb.Item
                                         key={item.id}
