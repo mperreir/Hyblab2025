@@ -155,8 +155,10 @@ async function displayMessages(message, signal, skipInteraction = false) {
         if (signal.aborted) {
             console.log('Aborted');
             throw new DOMException("Aborted", "AbortError"); // Standard way to handle abort;
-        }
-        if(message[key].includes("{nom}")){
+        } else if(typeof message[key] !== "string"){
+            addMessage({ text: message[key].question, type: "received", class: "middle"});
+            await addAnswer(message[key].reponses);
+        } else if(message[key].includes("{nom}")){
             if(i === 0){
                 addMessage({ text: message[key].replace("{nom}", userName), type: "received", class: "first"});
             } else if(i === message.length-1){

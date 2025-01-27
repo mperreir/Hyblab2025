@@ -15,7 +15,7 @@
                 "Et puis, on a tout ici : des cadres, des agriculteurs, des artisans... C’est ça, la force économique de l’Ouest !", 
                 {
                     "question":"Tu es prêt à commencer ton aventure ?",
-                    "réponses": ["Oui, j'ai hâte !", "C'est parti !"]
+                    "reponses": ["Oui, j'ai hâte !", "C'est parti !"]
                 },
                 "Il te suffit de choisir ton futur secteur d'activité :"
             ],
