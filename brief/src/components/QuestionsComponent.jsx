@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import DonutJaugeGroup from "./GraphicsComponent";
 
 const QuestionsComponent = () => {
   const [questions, setQuestions] = useState([]);
@@ -123,6 +124,7 @@ const QuestionsComponent = () => {
         >
           Graphique interactif
         </Typography>
+        <DonutJaugeGroup />
       </Box>
           <Box
             width="100%"
