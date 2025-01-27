@@ -3,12 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style1.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js" defer></script>
+    <title>Choix du Festival</title>
   </head>
   <body>
     <div id="app-container">
       <header>
-        <!-- Logo SVG minimaliste -->
         <div class="logo-only">
           <svg width="60" height="60" viewBox="0 0 100 100">
             <circle cx="50" cy="50" r="40" fill="#0066cc" />
@@ -16,7 +17,7 @@
           </svg>
         </div>
       </header>
-      
+
       <main>
         <section class="content">
           <h2>À vous de faire des choix pour créer un festival idéal !</h2>
@@ -25,19 +26,17 @@
         <!-- Festival Sizes -->
         <section class="content">
           <div class="choice-header">
-            <img src="img/picto1.jpg" alt="Festival Size Icon" class="choice-icon">
+            <img src="img/picto1.jpg" alt="Festival Size Icon">
             <p class="content-title">Quelle taille pour mon festival ?</p>
           </div>
           <div class="choice-options">
             {{#festivalSizes}}
             <div class="option-item">
-              <button class="btn-choice {{#isSelected}}selected{{/isSelected}}">
-                <img src="{{image}}" alt="{{name}}">
-                <div class="option-details">
-                  <p class="option-name">{{name}}</p>
-                  <p class="option-description">{{description}}</p>
-                  <img src="{{icon}}" alt="Info Icon" class="info-icon">
-                </div>
+              <button class="btn-choice {{#isSelected}}selected{{/isSelected}}"
+                onclick="selectOption('festivalSizes', '{{id}}', this)">
+                <img src="./{{image}}" alt="{{name}}">
+                <p class="option-name">{{name}}</p>
+                <p class="option-description">{{description}}</p>
               </button>
             </div>
             {{/festivalSizes}}
@@ -47,19 +46,17 @@
         <!-- Ecological Actions -->
         <section class="content">
           <div class="choice-header">
-            <img src="img/picto2.jpg" alt="Ecological Actions Icon" class="choice-icon">
+            <img src="img/picto2.jpg" alt="Ecological Actions Icon">
             <p class="content-title">Quelles actions pour la transition écologique ?</p>
           </div>
           <div class="choice-options">
             {{#ecologicalActions}}
             <div class="option-item">
-              <button class="btn-choice {{#isSelected}}selected{{/isSelected}}">
-                <img src="{{image}}" alt="{{name}}">
-                <div class="option-details">
-                  <p class="option-name">{{name}}</p>
-                  <p class="option-description">{{description}}</p>
-                  <img src="{{icon}}" alt="Info Icon" class="info-icon">
-                </div>
+              <button class="btn-choice {{#isSelected}}selected{{/isSelected}}"
+              onclick="selectOption('ecologicalActions', '{{id}}', this)">
+                <img src="./{{image}}" alt="{{name}}">
+                <p class="option-name">{{name}}</p>
+                <p class="option-description">{{description}}</p>
               </button>
             </div>
             {{/ecologicalActions}}
@@ -69,19 +66,17 @@
         <!-- Cultural Mediation Actions -->
         <section class="content">
           <div class="choice-header">
-            <img src="img/picto3.jpg" alt="Cultural Mediation Icon" class="choice-icon">
+            <img src="img/picto3.jpg" alt="Cultural Mediation Icon">
             <p class="content-title">Quelles actions pour la médiation culturelle ?</p>
           </div>
           <div class="choice-options">
             {{#culturalMediationActions}}
             <div class="option-item">
-              <button class="btn-choice {{#isSelected}}selected{{/isSelected}}">
-                <img src="{{image}}" alt="{{name}}">
-                <div class="option-details">
-                  <p class="option-name">{{name}}</p>
-                  <p class="option-description">{{description}}</p>
-                  <img src="{{icon}}" alt="Info Icon" class="info-icon">
-                </div>
+              <button class="btn-choice {{#isSelected}}selected{{/isSelected}}"
+              onclick="selectOption('culturalMediationActions', '{{id}}', this)">
+                <img src="./{{image}}" alt="{{name}}">
+                <p class="option-name">{{name}}</p>
+                <p class="option-description">{{description}}</p>
               </button>
             </div>
             {{/culturalMediationActions}}
@@ -91,19 +86,17 @@
         <!-- Risk Prevention Actions -->
         <section class="content">
           <div class="choice-header">
-            <img src="img/picto4.jpg" alt="Risk Prevention Icon" class="choice-icon">
+            <img src="img/picto4.jpg" alt="Risk Prevention Icon">
             <p class="content-title">Quelles actions pour la prévention des risques ?</p>
           </div>
           <div class="choice-options">
             {{#riskPreventionActions}}
             <div class="option-item">
-              <button class="btn-choice {{#isSelected}}selected{{/isSelected}}">
-                <img src="{{image}}" alt="{{name}}">
-                <div class="option-details">
-                  <p class="option-name">{{name}}</p>
-                  <p class="option-description">{{description}}</p>
-                  <img src="{{icon}}" alt="Info Icon" class="info-icon">
-                </div>
+              <button class="btn-choice {{#isSelected}}selected{{/isSelected}}"
+              onclick="selectOption('riskPreventionActions', '{{id}}', this)">
+                <img src="./{{image}}" alt="{{name}}">
+                <p class="option-name">{{name}}</p>
+                <p class="option-description">{{description}}</p>
               </button>
             </div>
             {{/riskPreventionActions}}

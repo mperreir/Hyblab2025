@@ -17,6 +17,10 @@ const loadData = () => JSON.parse(fs.readFileSync(dataPath, 'utf8'));
 const choicesDataPath = path.join(__dirname, '../public/data/PAGE3.json'); // Path to choices.json
 const loadChoicesData = () => JSON.parse(fs.readFileSync(choicesDataPath, 'utf8'));
 
+// Load budget infos from JSON file
+const budgetDataPath = path.join(__dirname, '../public/data/etape2.json');
+const loadBudgetData = () => JSON.parse(fs.readFileSync(budgetDataPath, 'utf8'));
+
 /************************************************************* */
 
 // Middleware to parse JSON
@@ -33,6 +37,29 @@ app.get('/choices', (req, res) => {
     const data = loadChoicesData(); // Load data from the JSON file
     res.json(data); // Respond with JSON data
   });
+
+
+// Submit user choices
+app.post('/submit-choices', (req, res) => {
+const userChoices = req.body;
+
+console.log('Received user choices:', userChoices);
+
+// Process or save the choices (e.g., save to a database or file)
+// For now, just send a success response
+res.json({ message: 'Choices submitted successfully!', choices: userChoices });
+});
+
+
+// Return JSON data for budget page
+app.get('/budget', (req, res) => {
+  const data = loadBudgetData(); // Load data from the JSON file
+  res.json(data); // Respond with JSON data
+});
+
+
+
+  
 
 // Export the app
 module.exports = app;

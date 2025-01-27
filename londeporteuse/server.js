@@ -50,6 +50,22 @@ app.get('/choices', async (req, res) => {
       res.status(500).send('Error loading the choices page');
     }
   });
+
+
+// Route for the budget page
+app.get('/budget', async (req, res) => {
+  try {
+    // Fetch data from the API endpoint
+    const response = await fetch('http://localhost:8080/londeporteuse/api/budget');
+    const data = await response.json();
+
+    // Render the Mustache template with the fetched data
+    res.render('budget.mustache', data);
+  } catch (error) {
+    console.error('Error fetching budget data:', error);
+    res.status(500).send('Error loading the budget page');
+  }
+});
   
 
 // Export the app

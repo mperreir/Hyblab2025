@@ -1,0 +1,127 @@
+/* General Layout */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+#app-container {
+    width: 390px;
+    max-width: 100%;
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    background-color: #0066cc;
+    padding: 10px 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-only svg {
+    height: 50px;
+    width: 50px;
+}
+
+main {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.content {
+    padding: 20px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.content:last-child {
+    border-bottom: none;
+}
+
+.content-title {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.choice-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.choice-header img {
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+}
+
+.choice-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.option-item {
+    flex: 1 1 calc(33.333% - 10px);
+    text-align: center;
+}
+
+.btn-choice {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    transition: box-shadow 0.3s, transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.btn-choice img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.btn-choice.selected {
+    border: 2px solid #00EB1E;
+    box-shadow: 0px 4px 10px rgba(0, 235, 30, 0.3);
+}
+
+.option-name {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px;
+}
+
+.option-description {
+    font-size: 0.8rem;
+    color: #666;
+    text-align: center;
+}
+
+footer {
+    background-color: #0066cc;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9rem;
+}
