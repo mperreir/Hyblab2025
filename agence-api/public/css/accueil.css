@@ -1,13 +1,17 @@
 /*---------------- Partie accueil ---------------*/
 
-/*pour le contraste du logo: filter: contrast(1);*/
+/* Pour le contraste du logo: filter: contrast(1); */
 
 .accueilbody {
     display: flex;
     flex-direction: column;
     align-items: center; /* Centre les éléments horizontalement */
-    justify-content: center; /* Centre les éléments verticalement */
+    justify-content: flex-start; /* Aligne les éléments en haut pour éviter le chevauchement */
     min-height: 100vh; /* Assure que le contenu prend au moins toute la hauteur de la fenêtre */
+    position: relative; /* Nécessaire pour le pseudo-élément ::before */
+    padding: 20px; /* Ajout de padding pour éviter que le contenu touche les bords */
+    padding-bottom: 140px; /* Augmente le padding en bas pour éviter le chevauchement avec le footer */
+    box-sizing: border-box; /* Inclut le padding dans les dimensions de l'élément */
 }
 
 .accueilbody::before {
@@ -18,34 +22,33 @@
     width: 100%;
     height: 100%;
     background-image: url('../img/fondAcc.jpg'); /* Chemin vers votre image de fond */
-    background-size: cover;           /* L'image couvre toute la surface sans déformation */
-    background-position: center center;/* Centre l'image horizontalement et verticalement */
+    background-size: cover; /* L'image couvre toute la surface sans déformation */
+    background-position: center center; /* Centre l'image horizontalement et verticalement */
     background-attachment: fixed;
-    opacity: 0.55;                      /* Ajustez cette valeur selon l'opacité désirée (0 à 1) */
-    z-index: -1;                      /* Place le pseudo-élément derrière le contenu */
+    opacity: 0.55; /* Ajustez cette valeur selon l'opacité désirée (0 à 1) */
+    z-index: -1; /* Place le pseudo-élément derrière le contenu */
 }
 
-/* Footer of last slide is at the bottom and content is centered */
-#first-slide footer{
-    bottom: 5%;
+/* Footer of first slide is at the bottom and content is centered */
+#first-slide footer {
     position: absolute;
-   /* box-sizing: border-box; /* So that padding is not added to width (and width: 100% works) */
-    width: 100%; /* could also use  width: calc(100% - 2em) if not using box-sizing */
-    text-align: center;
+    bottom: 5%;
+    width: 100%; /* Prend toute la largeur disponible */
+    text-align: center; /* Centre le contenu du footer */
     padding: 10px 20px;
+    box-sizing: border-box;
 }
 
-/* conteneur parent de #bloc-centre */
+/* Conteneur parent de #bloc-centre */
 .parent-container {
     display: flex;
     flex-direction: column; /* Aligne les éléments verticalement */
+    align-items: center;    /* Centre horizontalement */
     justify-content: center; /* Centre verticalement */
-    justify-content: center; /* Centre horizontalement */
-    align-items: center;    /* Centre verticalement */
-    height: 100vh;          /* Occupe toute la hauteur de la fenêtre */
-    width: 100%;            /* Occupe toute la largeur disponible */
+    width: 100%;            /* Prend toute la largeur disponible */
     box-sizing: border-box; /* Inclut le padding et les bordures dans les dimensions */
     padding: 20px;          /* Ajoute un peu de padding autour */
+    margin: 100px 0 100px 0;   /* Ajoute des marges en haut et en bas pour espacer du footer */
 }
 
 /*----- Définition de l'animation clignotante ----------*/
@@ -63,25 +66,26 @@
 
 /* Style pour #bloc-centre */
 .bloc-centre {
-    padding: 15px;
+    padding: 20px; /* Augmenté pour plus d'espacement interne */
     background-color: #ffffff;
     border-radius: 10px;
     /*filter: contrast(1); ajout de contraste*/
     
     /* Centrage et ajustement de la taille */
-    max-width: 250px; 
-    height: auto;     /* Adapté en hauteur en fonction du contenu */
+    max-width: 80%; /* Augmenté de 250px à 80% pour plus de flexibilité */
+    width: 100%;    /* Assure que le bloc prend toute la largeur disponible jusqu'à la largeur maximale */
+    height: auto;   /* Adapté en hauteur en fonction du contenu */
 
     /* Utilisation de Flexbox pour le contenu interne */
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; /* Ajouté pour centrer horizontalement */
+    align-items: center; /* Centré horizontalement */
 
     /* Réactivité */
-    font-size: 2vw; /* Ajuste la taille du texte en fonction de la largeur de la fenêtre */
+    font-size: 2rem; /* Utilisation d'unités relatives pour une meilleure responsivité */
     box-sizing: border-box;
-    margin:50px;
+    margin: 20px 0; /* Ajuste les marges pour une meilleure responsivité */
     
     /* Animation */
     animation: blinkBackground 2s infinite; /* Applique l'animation */
@@ -96,17 +100,18 @@
     box-shadow: 0 4px 6px #1D1D1D; /* Ajoute une ombre portée */
 }
 
+/* Texte de bienvenue */
 .texte {
-    font-size: 36px;          /* Augmenté pour meilleure visibilité */
+    font-size: 2rem;          /* Utilisation d'unités relatives pour la responsivité */
     font-weight: bold;        /* Rend le texte en gras */
     color: #1D1D1D;           /* Couleur du texte */
-    font-family: 'Helvetica'; /* Police du texte */    
+    font-family: 'Helvetica', sans-serif; /* Police du texte */    
     /* Centrage du texte */
     text-align: center;
-    background-color:#e7d378;
+    background-color: #e7d378;
     border-radius: 20px;
     padding: 10px;
-
+    margin-bottom: 20px; /* Espacement entre le texte et le bloc-centre */
 }
 
 /* Style pour le GIF arrow */
@@ -117,9 +122,8 @@
     margin: 0 auto; /* Centre horizontalement */
 }
 
-
 /* Responsive Styles */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     /* Ajustements pour tablettes */
     
     .arrow {
@@ -129,6 +133,23 @@
     #first-slide footer {
         bottom: 10%;
         padding: 8px 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Ajustements supplémentaires pour des tablettes plus petites */
+    
+    .texte {
+        font-size: 1.8rem;
+    }
+
+    .parent-container {
+        padding: 15px;
+        margin: 80px 0; /* Réduit les marges pour les petits écrans */
+    }
+
+    .bloc-centre {
+        max-width: 70%; /* Augmenté pour plus de taille sur les petites tablettes */
     }
 }
 
@@ -151,5 +172,15 @@
     /* Ajustements supplémentaires */
     .accueilbody {
         padding: 10px;
+    }
+
+    .texte {
+        font-size: 1.5rem;
+        padding: 5px;
+    }
+    
+    .bloc-centre {
+        padding: 10px;
+        max-width: 90%; /* Augmenté à 90% pour maximiser l'espace sur mobile */
     }
 }

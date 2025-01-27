@@ -8,8 +8,10 @@ let currentQuestion = 1;
 
 // Fonction pour mettre à jour la barre de progression
 function updateProgress() {
-    const progressSteps = document.querySelectorAll('.progress-step');
-    progressSteps.forEach((step, index) => {
+    const steps = document.querySelectorAll('.progress-step');
+    const lines = document.querySelectorAll('.progress-line');
+
+    steps.forEach((step, index) => {
         if (index < currentQuestion - 1) {
             step.classList.add('completed');
             step.classList.remove('active');
@@ -17,7 +19,19 @@ function updateProgress() {
             step.classList.add('active');
             step.classList.remove('completed');
         } else {
-            step.classList.remove('active', 'completed');
+            step.classList.remove('completed', 'active');
+        }
+    });
+
+    lines.forEach((line, index) => {
+        if (index < currentQuestion - 2) {
+            line.classList.add('completed');
+            line.classList.remove('active');
+        } else if (index === currentQuestion - 2) {
+            line.classList.add('active');
+            line.classList.remove('completed');
+        } else {
+            line.classList.remove('completed', 'active');
         }
     });
 }
@@ -40,9 +54,16 @@ function sendMessage() {
 // Fonction pour ajouter un message dans la liste
 async function addMessage(message, type) {
     const messageElement = document.createElement('li');
+    const div = document.createElement('div');
+    div.classList.add('message', message.type);
+
+    if(message.title){
+        const title = document.createElement('h2');
+        title.textContent = message.title;
+        div.appendChild(title);
+    }
+
     if (message.img) {
-        const div = document.createElement('div');
-        div.classList.add('message', message.type);
         div.appendChild(document.createElement('img')).src = message.img;
         div.appendChild(document.createElement('p')).textContent = message.text;
         div.id = message.id;
@@ -205,14 +226,14 @@ async function addAnswer(answers, type) {
                     Object.keys(answers).find(key => answers[key] === value)
                 );
 
-                // Incrémenter la question actuelle et mettre à jour la progression
-                if (currentQuestion < totalQuestions) {
-                    currentQuestion++;
-                    updateProgress();
-                }
-                resolve(answerKeys);
-            }
-        });
+          // Incrémenter la question actuelle et mettre à jour la progression
+          if (currentQuestion < totalQuestions && type != "useless") {
+            currentQuestion++;
+            updateProgress();
+          }
+          resolve(answerKeys);
+        }
+      });
     });
 
 }

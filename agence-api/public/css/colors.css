@@ -11,7 +11,7 @@
   /* Tech Theme - Blue */
   .theme-tech {
     --bg-color: #f0f8ff;
-    --primary-text-color: #000080;
+    --primary-text-color: #1D1D1D;
     --secondary-text-color: #ffffff;
     --primary-color: #4554DC;
     --secondary-color: #4682b4;
@@ -21,7 +21,7 @@
   /* Agro Theme - Green */
   .theme-agro {
     --bg-color: #f5fff5;
-    --primary-text-color: #2d572c;
+    --primary-text-color: #1D1D1D;
     --secondary-text-color: #ffffff;
     --primary-color: #81c784;
     --secondary-color: #388e3c;
@@ -31,7 +31,7 @@
   /* Arti Theme - Yellow */
   .theme-arti {
     --bg-color: #fffdf5;
-    --primary-text-color: #8b6f00;
+    --primary-text-color: #1D1D1D;
     --secondary-text-color: #ffffff;
     --primary-color: #ffdd4a;
     --secondary-color: #f4c430;
