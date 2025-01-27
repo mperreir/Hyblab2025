@@ -29,7 +29,7 @@ function Guide1() {
                 </div>
                 <div
                     className="continue-button"
-                    onClick={() => navigate("/nextpage")} // Remplacez par votre route réelle
+                    onClick={() => navigate("/guide2")} 
                 >
                     <span className="continue-button-text">Continuer</span>
                 </div>
