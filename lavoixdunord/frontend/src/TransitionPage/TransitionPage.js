@@ -11,7 +11,7 @@ const TransitionPage = () => {
     const [showModal, setShowModal] = React.useState(false);
 
     // Récupérer les valeurs passées via navigate
-    const finalScore = location.state?.finalScore || 0;
+    const finalScore = parseInt(localStorage.getItem("score")) || 0;
     // const difficulty = location.state?.difficulty || 1;
 
     let { level_id, difficulty } = useParams();
@@ -30,7 +30,7 @@ const TransitionPage = () => {
         },
         {
             id: 2,
-            card_image: `${basename}images/Etapes 3/map_etape3.png`,
+            card_image: `${basename}images/Etape 3/map_etape3.png`,
             maillot_image: `${basename}images/illustrations/maillot_vert.png`,
             paragraph1: "Félicitations, vous avez terminé la première étape de la 112e édition du Tour de France. Votre performance vous vaut le premier maillot, bravo !",
             paragraph2: "Mais l’aventure ne s’arrête pas là !",
