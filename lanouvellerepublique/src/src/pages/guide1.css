@@ -1,0 +1,90 @@
+/* Global container */
+.guide1-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    padding: 20px;
+    background-color: #fff;
+    position: relative; /* Pour positionner les éléments comme le chemin */
+    overflow: hidden; /* Empêche tout débordement */
+}
+
+/* Pathway */
+.pathway {
+    position: relative;
+    width: 100%;
+    height: 170px; /* Augmente légèrement la hauteur */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: -50px; /* Remonte davantage le chemin */
+}
+
+.line-design {
+    width: 110%; /* Élargit légèrement le chemin */
+    height: auto;
+}
+
+/* Animal section */
+.animal-section {
+    text-align: center;
+    margin-top: -30px; /* Remonte davantage la section de l'animal et la bulle */
+}
+
+/* Bubble container */
+.bubble-container {
+    position: relative;
+    display: inline-block;
+    margin-bottom: -15px; /* Réduit davantage l'espace entre la bulle et l'image */
+    text-align: center;
+}
+
+.bubble-image {
+    width: 250px; /* Légèrement élargie */
+    height: auto;
+}
+
+.bubble-text {
+    position: absolute;
+    top: 50%; /* Centre verticalement */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16px; /* Augmente légèrement la taille */
+    color: black;
+    text-align: center;
+    width: 80%; /* Prend toute la largeur disponible dans la bulle */
+    word-wrap: break-word; /* S'assure que le texte s'adapte */
+}
+
+/* Animal image */
+.animal-image {
+    width: 140px; /* Augmente légèrement la taille */
+    height: auto;
+    margin-top: -10px; /* Remonte légèrement l'image */
+}
+
+/* Continue button */
+.continue-button {
+    margin-top: -30px; /* Ajuste pour ne pas trop éloigner du bas */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: transform 150ms ease;
+}
+
+.continue-button .continue-button-text {
+    padding: 6px 22px;
+    color: black;
+    background: linear-gradient(to bottom, #FCE4C3 10%, #EFD8B8 10% 90%, #CEB89A 90%);
+    font-size: 1.2rem;
+
+    clip-path: polygon(10% 0, 98% 10%, 100% 100%, 0 100%);
+}
+
+.continue-button:hover {
+    cursor: pointer;
+    filter: drop-shadow(0px 6px 6px rgba(0, 0, 0, 0.1));
+}
