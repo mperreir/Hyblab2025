@@ -7,9 +7,9 @@ import CircleIcon from '@mui/icons-material/Circle';
 
 const Jauge = ({ value, thickness, color , icon}) => {
   return (
-    <Box display="flex" alignItems="center" width="100%" position="relative">
+    <Box display="flex" alignItems="flex-start" width="100%" position="relative">
       {/* Barre de progression */}
-      <Box width="100%">
+      <Box width="100%" >
         <LinearProgress
           variant="determinate"
           value={value}

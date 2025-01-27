@@ -33,7 +33,7 @@ const DonutJaugeGroup = () => {
       <Box
         flex={1}
         display="flex"
-        justifyContent="center"
+        justifyContent="flex-start"
         alignItems="center"
       >
         <JaugeContainer
