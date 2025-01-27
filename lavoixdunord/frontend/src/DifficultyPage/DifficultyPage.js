@@ -26,7 +26,7 @@ const DifficultyPage = () => {
         <div className="bg-white text-dark border border-41 border-light rounded-3 mx-5 mt-5 p-4">
           <h6 className="py-4">CHOISISSEZ UN NIVEAU DE DIFFICULTÉ</h6>
 
-          <div className="d-flex flex-column gap-5 pb-5">
+          <div className="d-flex flex-column gap-5 pb-5 px-2">
             <button
               className={`btn fw-bold ${selectedDifficulty === 1 ? "btn-dark" : "btn-outline-dark"}`}
               onClick={() => handleDifficultySelect(1)}
