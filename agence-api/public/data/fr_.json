@@ -10,12 +10,20 @@
             "apres_nom": [
                 "Enchanté de faire ta connaissance, {nom} !",
                 "Je vais te présenter rapidement notre tissu économique. La Bretagne et les Pays de la Loire sont des régions qui bougent beaucoup. Ici, les taux de chômage sont parmi les plus bas en France : 5,8 % en Bretagne et 5,9 % dans les Pays de la Loire, contre 7,1 % au niveau national en 2023.",
-                "Et il y a une super dynamique : 37 % des créateurs d’entreprise ont moins de 30 ans. Pas mal non ?",
-                "En termes de qualité de vie, la situation est favorable  : le taux de pauvreté est de 10,5 % en Pays de la Loire et 11,2 % en Bretagne, contre 14,4 % au niveau national.",
-                "Et puis, on a tout ici : des cadres, des agriculteurs, des artisans... C’est ça, la force économique de l’Ouest !", 
                 {
-                    "question":"Tu es prêt à commencer ton aventure ?",
-                    "réponses": ["Oui, j'ai hâte !", "C'est parti !"]
+                    "question":"Et il y a une super dynamique : 37 % des créateurs d’entreprise ont moins de 30 ans. Pas mal non ?",
+                    "réponses":[
+                        "C'est impressionnant !"
+                    ]
+                },
+                "En termes de qualité de vie, la situation est favorable  : le taux de pauvreté est de 10,5 % en Pays de la Loire et 11,2 % en Bretagne, contre 14,4 % au niveau national.",
+                "Et puis, on a tout ici : des cadres, des agriculteurs, des artisans... C’est ça, la force économique de l’Ouest !",
+                {
+                    "question": "Tu es prêt à commencer ton aventure ?",
+                    "réponses": [
+                        "Oui, j'ai hâte !",
+                        "C'est parti !"
+                    ]
                 },
                 "Il te suffit de choisir ton futur secteur d'activité :"
             ],
@@ -24,12 +32,14 @@
                 "Il ne remplace pas les conseils d'un professionnel pour créer ton entreprise.",
                 {
                     "question": "Les informations que tu trouveras ici sont basées sur des données générales et peuvent ne pas refléter les situations que tu rencontrerais.",
-                    "reponses": ["C'est bien compris."]
+                    "reponses": [
+                        "C'est bien compris."
+                    ]
                 }
             ]
         },
         "secteurs": {
-            "texts":{
+            "texts": {
                 "agro": "Lance-toi dans l’agroalimentaire et rejoins un pôle d’excellence en Bretagne et Pays de la Loire, nourrissant la France !",
                 "tech": "Réalise tes ambitions d’innovation dans l’Ouest, où un quart des technopôles français se rassemblent pour changer le monde !",
                 "arti": "Laisse ta créativité s’épanouir dans l’Ouest, où savoir-faire et traditions se mêlent à une forte demande locale !"
@@ -53,7 +63,7 @@
             "Va vite voir tes résultats !"
         ],
         "title1": "Résultats de ton aventure",
-        "paragraphe1": "Et voila {nom} tu as finis ton aventure ! Découvre en cliquant sur les cases tes résultats selon les catégories.",
+        "paragraphe1": "Et voilà {nom} tu as finis ton aventure ! Découvre en cliquant sur les cases tes résultats selon les catégories.",
         "title2": "Des profils qui te ressemblent",
         "paragraphe2": "Découvre des profils et articles qui te ressemblent provenant du site de l'agence API !"
     },
@@ -118,16 +128,16 @@
                 ],
                 "apres": [
                     {
-                    "1_lait": "Félicitations pour ton choix de te lancer dans la production laitière en Mayenne ! Ce département est un acteur majeur dans le secteur, abritant notamment des entreprises de renom telles que Lactalis, leader mondial des produits laitiers.",
-                    "1_porc": "Bravo pour ton ambition dans la filière porcine dans le Finistère ! Ce département abrite notamment l’entreprise Bigard, un leader français de la transformation de viande, spécialisé dans la production porcine.",
-                    "1_volaille": "Bravo pour ton projet dans le secteur avicole en Vendée ! Le département accueille des entreprises de renom comme Groupe LDC, leader français de la volaille."
+                        "1_lait": "Félicitations pour ton choix de te lancer dans la production laitière en Mayenne ! Ce département est un acteur majeur dans le secteur, abritant notamment des entreprises de renom telles que Lactalis, leader mondial des produits laitiers.",
+                        "1_porc": "Bravo pour ton ambition dans la filière porcine dans le Finistère ! Ce département abrite notamment l’entreprise Bigard, un leader français de la transformation de viande, spécialisé dans la production porcine.",
+                        "1_volaille": "Bravo pour ton projet dans le secteur avicole en Vendée ! Le département accueille des entreprises de renom comme Groupe LDC, leader français de la volaille."
                     }
                 ]
             },
             {
                 "avant": [
                     "Il est maintenant temps de parler financement. Les sources de ce financement peuvent être multiples.",
-                    " Je vais te présenter quelques aides publiques dont les entreprises de l’Ouest ont pu bénéficier au cours des dernières années."
+                    "Je vais te présenter quelques aides publiques dont les entreprises de l’Ouest ont pu bénéficier au cours des dernières années."
                 ],
                 "apres": [
                     "Tu as trouvé le financement nécessaire pour démarrer ton activité. Félicitations !"
@@ -145,7 +155,12 @@
             {
                 "avant": [
                     "Avec ton équipe en place, il est temps de penser à une autre étape clé : où vont partir tes produits ?",
-                    "À ton avis, à quoi ressemble l'export de marchandises provenant de l'Ouest ?",
+                    {
+                        "question": "À ton avis, à quoi ressemble l'export de marchandises provenant de l'Ouest ?",
+                        "reponses": [
+                            "Je ne sais pas..."
+                        ]
+                    },
                     "Allons voir ça ensemble !"
                 ],
                 "apres": [
@@ -240,12 +255,23 @@
             "Avant chaque question, je te fournirai quelques informations sur le contexte régional en lien avec le thème abordé. Cela te permettra de mieux comprendre les enjeux de ton choix.",
             "Ces données proviennent toutes de l'Atlas économique de l'Ouest 2024 écrit par l'agence API.",
             "Il est plein de données intéressantes sur l'économie de nos régions, je te le recommande !",
-            "On peut continuer ?"
+            {
+                "question": "On peut continuer ?",
+                "reponses": [
+                    "Oui.",
+                    "Allons-y !"
+                ]
+            }
         ],
         "questions": [
             [
                 "Il est temps de choisir dans quelle technopole tu souhaites établir ton activité.",
-                "Je te propose trois villes de taille différentes, tu peux choisir celle qui te correspond le mieux.",
+                {
+                    "question": "Je te propose trois villes de taille différentes, tu peux choisir celle qui te correspond le mieux.",
+                    "reponses": [
+                        "D'accord."
+                    ]
+                },
                 "On commence par Nantes, l’endroit où science et technologie se croisent. Ici, on révolutionne la santé, on innove dans les biotechs, et on fait avancer le numérique.",
                 "À Lorient, on repense les déplacements et on mise sur la mer ! Mobilité verte, technologies maritimes… c’est la ville des projets qui avancent à grande vitesse.",
                 "Enfin, Lannion, c’est le cœur des télécoms en France ! Fibre, réseaux et innovation dans l’optique-photonique, on y prépare le futur des communications.",
@@ -329,9 +355,21 @@
             },
             {
                 "avant": [
-                    "Tu connais le terme RSE ?",
+                    {
+                        "question": "Tu connais le terme RSE ?",
+                        "reponses": [
+                            "Non.",
+                            "Dis-m'en plus."
+                        ]
+                    },
                     "La RSE, c’est la Responsabilité Sociétale des Entreprises. C’est un engagement volontaire des entreprises à intégrer les préoccupations sociales, environnementales et économiques dans leurs activités et leurs interactions avec leurs parties prenantes.",
-                    "On découvre les initiatives RSE des entreprises de l'Ouest ensemble ?",
+                    {
+                        "question": "On découvre les initiatives RSE des entreprises de l'Ouest ensemble ?",
+                        "reponses": [
+                            "Pourquoi pas.",
+                            "Avec plaisir."
+                        ]
+                    },
                     "Je vais te présenter les labels RSE de la région. Pour en apprendre plus sur les entreprises à mission, je te laisserai découvrir les autres parcours !",
                     "C'est parti !"
                 ],
@@ -357,7 +395,9 @@
         "informations": [
             {
                 "titre": "Les technopoles de l'Ouest",
-                "images": ["img/queen-anne-196435_1280.jpg"],
+                "images": [
+                    "img/queen-anne-196435_1280.jpg"
+                ],
                 "paragraphes": [
                     "Dans l’Ouest, les technopoles se répartissent en fonction de la taille des villes qui les accueillent. On retrouve d’abord celles situées dans des villes de plus de 100 000 habitants, comme Rennes, Nantes, Brest, Le Mans et Angers ; celles des villes de plus de 40 000 habitants, telles que Lorient, Laval, Vannes, Saint-Brieuc et Quimper ; et enfin, les plus petites, dans des villes de plus de 20 000 habitants, avec Lannion."
                 ]
@@ -435,7 +475,7 @@
                 "images": [],
                 "paragraphes": [
                     "La French Tech, c’est un écosystème national qui soutient les startups françaises et leur croissance. Dans l’Ouest, elle se décline en 3 Capitales (Nantes, Rennes Saint-Malo, Angers) et 7 Communautés, fédérant des centaines d’acteurs de l’innovation. Avec des programmes comme French Tech Next 120 et French Tech 2030, les entreprises locales accèdent à des opportunités de croissance et de financement stratégiques."
-                    ]
+                ]
             }
         ],
         "cartes_fin_arriere": [
@@ -478,7 +518,13 @@
             "Avant chaque question, je te fournirai quelques informations sur le contexte régional en lien avec le thème abordé. Cela te permettra de mieux comprendre les enjeux de ton choix.",
             "Ces données proviennent toutes de l'Atlas économique de l'Ouest 2024 écrit par l'agence API.",
             "Il est plein de données intéressantes sur l'économie de nos régions, je te le recommande !",
-            "On peut continuer ?"
+            {
+                "question": "On peut continuer ?",
+                "reponses": [
+                    "Oui.",
+                    "Allons-y !"
+                ]
+            }
         ],
         "questions": [
             [
@@ -557,15 +603,23 @@
             },
             {
                 "avant": [
-                    "La RSE, ça te dit quelque chose ?",
+                    {
+                        "question": "La RSE, ça te dit quelque chose ?",
+                        "reponses": [
+                            "Non.",
+                            "Dis-m'en plus."
+                        ]
+                    },
                     "Il s'agit de la Responsabilité Sociétale des Entreprises. C'est un engagement volontaire des entreprises à intégrer les préoccupations sociales, environnementales et économiques dans leurs activités et leurs interactions avec leurs parties prenantes.",
                     "Attends, je vais te parler des entreprises à mission et de leur place dans l'Ouest."
                 ],
-                "apres": [{
-                    "4_non": "Tu as choisi de ne pas t'engager dans une démarche RSE. C'est ton choix !",
-                    "4_label": "Tu as choisi de tenter d'obtenir un label RSE. C'est un engagement fort qui peut te démarquer de la concurrence !",
-                    "4_mission": "Tu as choisi de devenir une entreprise à mission. C'est un engagement fort qui peut te démarquer de la concurrence !"
-                }]
+                "apres": [
+                    {
+                        "4_non": "Tu as choisi de ne pas t'engager dans une démarche RSE. C'est ton choix !",
+                        "4_label": "Tu as choisi de tenter d'obtenir un label RSE. C'est un engagement fort qui peut te démarquer de la concurrence !",
+                        "4_mission": "Tu as choisi de devenir une entreprise à mission. C'est un engagement fort qui peut te démarquer de la concurrence !"
+                    }
+                ]
             },
             {
                 "avant": [
