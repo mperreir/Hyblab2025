@@ -35,3 +35,13 @@ function colorizeImage(imageElement) {
     });
 }
 
+function leaveImage(event){
+    console.log("MAGASIN !!");
+    zoomOutScene();
+}
+
+function loadSceneScript(event, id)
+{
+    loadImageScene("image_holder.json", id);
+}
+  

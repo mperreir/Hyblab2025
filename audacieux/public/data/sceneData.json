@@ -1,10 +1,15 @@
 {
   "triggers":[
-      {
-        "id": "MARCHÉ-2",
-        "onload": {"func":"colorScript", "args":[]},
-        "script": {"func":"loadSceneScript", "args":["scene1"]}
-      }
+    {
+      "id": "MARCHÉ-2",
+      "onload": {"func":"colorScript", "args":[]},
+      "script": {"func":"loadSceneScript", "args":["scene1"]}
+    },
+    {
+      "id": "PÉNICHE",
+      "onload": {"func":"colorScript", "args":[]},
+      "script": {"func":"loadSceneScript", "args":["start_peniche"]}
+    }
   ],
 
   "elements": [
@@ -78,7 +83,7 @@
             },
             {
               "time": 100,
-              "x": -9500,
+              "x": -9000,
               "y": 0,
               "rotation": 0,
               "scale": 85
@@ -117,14 +122,14 @@
             {
               "time": 0,
               "x": 9000,
-              "y": 500,
+              "y": 0,
               "rotation": 0,
               "scale": 65
             },
             {
               "time": 100,
               "x": 9000,
-              "y": 500,
+              "y": 0,
               "rotation": 0,
               "scale": 65
             }
@@ -135,7 +140,7 @@
         {
           "time": 0,
           "x": 300,
-          "y": -200,
+          "y": 400,
           "rotation": 0,
           "scale": 1
         }

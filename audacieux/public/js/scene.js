@@ -130,17 +130,6 @@ function updateKeyframes(value, time, f) {
   }
 }
 
-
-function test(event, text){
-  console.log("MAGASIN !!");
-  zoomOutScene();
-}
-
-function loadSceneScript(event, id)
-{
-  loadImageScene("image_holder.json", id);
-}
-
 function loadImageScene(file_name, id) {
   const imageScene = document.getElementById("image-scene");
   const container = document.getElementById("box-container");

@@ -28,16 +28,14 @@ setTimeout(() => {
         }
     });
 
-    const drones = document.querySelectorAll('g[id^="DRONE_"]');
+    const drones = document.querySelectorAll('#DRONE-3 , #DRONE-4, #DRONE-2 , #DRONE_FARINE , #DRONE , #DRONE_CEREALE-2 , #DRONE_FARINE-7 , #DRONE_CEREALE , #DRONE-5');
 
     drones.forEach(group => {
         const number = parseInt(group.id.split('-')[1], 10);
         const randomDuration = (Math.random() * 8) + 3; // Random between 1s and 5s
         group.style.animationDuration = `${randomDuration}s`
-        if (number % 2 === 0) {
-            group.classList.add('drone');
-
-        }
+        group.classList.add('drone');
+        
     });
 
     const arbres = document.querySelectorAll('g[id^="ARBRE-"]');

@@ -4,7 +4,21 @@
             "id": "scene1",
             "url": "assets/graphic/trebe.png",
             "box":[
-                { "left": "20%", "top": "30%", "width": "15%", "height": "20%", "script":{"func":"test", "args":["caca"]} }
+                { "left": "20%", "top": "30%", "width": "15%", "height": "20%", "script":{"func":"leaveImage", "args":[]} }
+            ]
+        },
+        {
+            "id": "start_peniche",
+            "url": "assets/graphic/peniche_start.png",
+            "box":[
+                { "left": "62%", "top": "48%", "width": "10%", "height": "30%", "script": {"func":"loadSceneScript", "args":["abdonia"]} }
+            ]
+        },
+        {
+            "id": "abdonia",
+            "url": "assets/graphic/Abdonia.png",
+            "box":[
+                { "left": "3%", "top": "24%", "width": "40%", "height": "70%", "script": {"func":"leaveImage", "args":[]} }
             ]
         }
 
