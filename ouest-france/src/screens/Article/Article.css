@@ -72,7 +72,6 @@ button.text:hover {
     cursor: pointer;
     font-weight: 700;
     font-size: 16px;
-
 }
 
 .content {
@@ -93,4 +92,3 @@ button.text:hover {
     z-index: 2; /* SVG au-dessus de la section */
     pointer-events: none; /* Permet de cliquer à travers le SVG */
 }
-

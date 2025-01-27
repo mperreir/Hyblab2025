@@ -9,7 +9,6 @@ import './Article.css';
 gsap.registerPlugin(MotionPathPlugin, ScrollTrigger);
 
 const Article = ({ data }) => {
-  console.log("data : ", data)
   const ballRef = useRef(); 
   const sectionRef = useRef(); 
 
@@ -18,23 +17,27 @@ const Article = ({ data }) => {
     const timeline = gsap.timeline({
       scrollTrigger: {
         trigger: sectionRef.current,
-        scroller: ".app-container",  // 监听整个页面的滚动容器
+        scroller: ".app-container",
         scrub: true,
         start: "top top",
         end: "bottom bottom",
         markers: true, 
       }
-    }).to(ballRef.current, {
+    }).set(ballRef.current, {opacity: 1})
+    .to(ballRef.current, {
       motionPath:{
         path:".theLine",
         align:".theLine",
         alignOrigin: [0.5, 0.5],
-      }});
+      }, 
+      duration:1,
+      ease: "none"    
+    });
   }, []);
 
 
   return (
-    <section ref={sectionRef} className="relative">
+    <section  ref={sectionRef} className="relative">
       
       
 
@@ -48,7 +51,7 @@ const Article = ({ data }) => {
 
           <h1 className="article_title text-center max-w-3xl mb-8">{data[0].title}</h1>
 
-          <div className="content mt-10  flex alig-center justify-center w-full max-w-7xl mx-auto gap-60">
+          <div className="content mt-10  flex alig-center justify-center w-full max-w-7xl mx-auto gap-[20rem]" >
             <div className="flex flex-col flex-shrink-0 w-1/3">
 
               <h2 className="title text-xl max-w-lg font-medium mb-4">{data[1].sections[0].title}</h2>
@@ -202,10 +205,11 @@ const Article = ({ data }) => {
             </section>
             
             {/* Animation au scroll */}
-            <svg className="svg-overlay" width="320" height="3663" viewBox="0 0 320 3663" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path class="theLine" d="M118 0.5C118 266.5 -185 455 190.5 672.5C284.5 731.5 416.1 918.4 190.5 1194C-35.1001 1469.6 99.3332 1759.67 235 1853.5C317.5 1910.56 395 2164.1 165 2354.5C-65.0001 2544.9 15.4998 2817.17 84.4998 2929.5C157.333 3029 275.4 3271.7 165 3446.5C140.667 3470.67 106.6 3547.4 165 3661" stroke="#CC2229" stroke-width="5" stroke-dasharray="20 20"/>
-              <image href="golf-ball.png" alt="golf-ball" ref={ballRef} className="ball w-20 h-auto" x="50" y="50" />
+            <svg className="svg-overlay" width="238" height="3663" viewBox="0 0 238 3663" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path class="theLine" d="M73.0003 0.5C73.0003 266.5 -126 429.5 145.5 672.5C239.5 731.5 229.5 881 145.5 1194C53.1837 1537.99 97.5902 1716.86 190 1853.5C248.5 1940 273.262 2105.51 120 2354.5C-34.5 2605.5 7.0001 2828 39.5001 2929.5C100.5 3032 230.4 3271.7 120 3446.5C95.6668 3470.67 61.6001 3547.4 120 3661" stroke="#CC2229" stroke-width="5" stroke-dasharray="20 20"/>
+              <image href="golf-ball.png" alt="golf-ball" ref={ballRef} className="ball w-12 h-auto" style={{opacity: 0}} />
             </svg>
+
       
   </section>
     
