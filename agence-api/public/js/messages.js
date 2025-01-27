@@ -40,9 +40,16 @@ function sendMessage() {
 // Fonction pour ajouter un message dans la liste
 function addMessage(message, type) {
     const messageElement = document.createElement('li');
+    const div = document.createElement('div');
+    div.classList.add('message', message.type);
+
+    if(message.title){
+        const title = document.createElement('h2');
+        title.textContent = message.title;
+        div.appendChild(title);
+    }
+
     if (message.img){
-        const div = document.createElement('div');
-        div.classList.add('message', message.type);
         div.appendChild(document.createElement('img')).src = message.img;
         div.appendChild(document.createElement('p')).textContent = message.text;
         div.id = message.id;
