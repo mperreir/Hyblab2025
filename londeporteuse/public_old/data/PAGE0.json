@@ -1,0 +1,18 @@
+{
+  "titles": [
+    {
+      "id": "mainTitle",
+      "content": "Sans sub ajoutées"
+    }
+  ],
+  "descriptions": [
+    {
+      "id": "paragraph1",
+      "content": "Christelle Morancais, présidente des Pays de la Loire, a annoncé un plan d’économies de 100 millions d’euros, concernant majoritairement le secteur culturel."
+    },
+    {
+      "id": "paragraph2",
+      "content": "Pour comprendre les conséquences de cette coupe budgétaire sur l’avenir de la culture, on vous propose de créer votre propre festival."
+    }
+  ]
+}
