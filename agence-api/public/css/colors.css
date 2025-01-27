@@ -1,10 +1,10 @@
 /* Default Theme */
 :root {
     --bg-color: white;
-    --primary-text-color: black;
+    --primary-text-color: #1D1D1D;
     --secondary-text-color: white;
-    --primary-color: #d6d6d6;
-    --secondary-color: #139fe5;
+    --primary-color: #E8E8E8;
+    --secondary-color: #EEB501;
     --accent-color: rgba(255, 223, 0, 0.6);
   }
   
@@ -13,7 +13,7 @@
     --bg-color: #f0f8ff;
     --primary-text-color: #000080;
     --secondary-text-color: #ffffff;
-    --primary-color: #1e90ff;
+    --primary-color: #4554DC;
     --secondary-color: #4682b4;
     --accent-color: rgba(255, 223, 0, 0.6);
   }
