@@ -1,4 +1,3 @@
-
 /*------------------------ Partie messages ------------------*/
 
 /* Styles pour la deuxième diapositive (chat.html) */
@@ -13,7 +12,7 @@
 #content-chat {
     flex: 1;
     width: 100%;
-    height:100%;
+    height: 100%;
     display: flex;
 }
 
@@ -22,7 +21,8 @@
     height: 100%;
     background: var(--bg-color);
     border: 3px solid rgb(131, 130, 130);
-    border-radius: 0px; /*arrondir angles*/
+    border-radius: 0px;
+    /*arrondir angles*/
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
@@ -39,19 +39,26 @@
     font-weight: bold;
     border-bottom: 2px solid rgb(163, 161, 161);
     display: flex;
-    align-items: center; /* Centre verticalement les éléments */
-    border-bottom: 1px solid #ccc; /*ligne séparatrice*/
+    align-items: center;
+    /* Centre verticalement les éléments */
+    border-bottom: 1px solid #ccc;
+    /*ligne séparatrice*/
     position: relative;
     flex-direction: column;
     transition: background-color 0.3s, color 0.3s;
 }
 
-.chat-header-bulle{
-    width: 50px; /* Largeur de la bulle */
-    height: 50px; /* Hauteur de la bulle */
-    border-radius: 50%; /* Rend la bulle ronde */
-    overflow: hidden; /* Cache les parties de l'image qui dépassent */
-    flex-shrink: 0; /* Empêche la bulle de rétrécir */
+.chat-header-bulle {
+    width: 50px;
+    /* Largeur de la bulle */
+    height: 50px;
+    /* Hauteur de la bulle */
+    border-radius: 50%;
+    /* Rend la bulle ronde */
+    overflow: hidden;
+    /* Cache les parties de l'image qui dépassent */
+    flex-shrink: 0;
+    /* Empêche la bulle de rétrécir */
     display: flex;
     justify-self: center;
     align-self: center;
@@ -70,7 +77,8 @@
     width: 100%;
     height: auto;
     border-radius: 50%;
-    object-fit: cover; /* Ajuste l'image pour couvrir entièrement la bulle */
+    object-fit: cover;
+    /* Ajuste l'image pour couvrir entièrement la bulle */
 }
 
 /* ================== Styles de la barre de progression ================== */
@@ -90,7 +98,21 @@
     display: flex;
     justify-content: space-between;
     width: 80%;
-    position: relative;
+    /*espacement des lignes entre les ronds*/
+    position: absolute;
+}
+
+/* Ligne de progression */
+.progress-bar::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background-color: #ccc;
+    transform: translateY(-50%);
+    z-index: 1;
 }
 
 /* Étapes de progression */
@@ -174,7 +196,8 @@
 .message {
     max-width: 75%;
     padding: 12px 18px;
-    margin: 2px 0; /*espacement entre les messages*/
+    margin: 2px 0;
+    /*espacement entre les messages*/
     border-radius: 20px;
     font-size: 16px;
     line-height: 1.4;
@@ -183,7 +206,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: transform 0.3s ease; /* Smooth effect */
+    transition: transform 0.3s ease;
+    /* Smooth effect */
     transition: background-color 0.3s, color 0.3s;
 }
 
@@ -191,6 +215,27 @@
 .message.info {
     animation: pulse 1.5s infinite ease-in-out;
     margin-top: 10px;
+    display: inline-block;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+@keyframes tapBounce {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0.95);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.message.info:active {
+    animation: tapBounce 0.2s ease-in-out;
 }
 
 /* Define the pulse animation */
@@ -199,28 +244,48 @@
         transform: scale(1);
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
+
     50% {
-        transform: scale(1.02); /* Slightly enlarge */
-        box-shadow: 
-            0 4px 10px rgba(0, 0, 0, 0.2), /* Original shadow */
-            0 0 15px 2px var(--accent-color); /* glow */
+        transform: scale(1.02);
+        /* Slightly enlarge */
+        box-shadow:
+            0 4px 10px rgba(0, 0, 0, 0.2),
+            /* Original shadow */
+            0 0 15px 2px var(--accent-color);
+        /* glow */
     }
+
     100% {
         transform: scale(1);
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 }
 
-.message.first{
+.message.info svg {
+    /* background-color: var(--bg-color); */
+    position: absolute;
+    right: -5px;
+    top: 10%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    margin-bottom: 10px;
+}
+
+#svg-container svg {
+    background: radial-gradient(circle at center, var(--bg-color) 60%, transparent 40%);
+  }
+
+.message.first {
     margin-top: 20px;
     border-radius: 20px 20px 20px 5px;
 }
 
-.message.middle{
+.message.middle {
     border-radius: 20px;
 }
 
-.message.last{
+.message.last {
     margin-bottom: 20px;
     border-radius: 5px 20px 20px 20px;
 }
@@ -253,9 +318,9 @@
     gap: 10px;
     margin: 20px 0px;
     font-size: medium;
-  }
-  
-  .answer {
+}
+
+.answer {
     padding: 10px 20px;
     margin-left: 30px;
     border: 2px solid gray;
@@ -263,11 +328,11 @@
     cursor: pointer;
     user-select: none;
     text-align: center;
-  }
+}
 
-  .answer.first {
+.answer.first {
     border-radius: 20px 20px 0px 20px;
-  }
+}
 
 .answer.middle {
     border-radius: 0px;
@@ -276,31 +341,31 @@
 .answer.last {
     border-radius: 0px 20px 20px 20px;
 }
-  
-  .answer.selected {
+
+.answer.selected {
     border-color: blue;
     background-color: lightblue;
-  }
-  
-  #confirm-button {
+}
+
+#confirm-button {
     padding: 10px 20px;
     cursor: not-allowed;
     width: auto;
     margin-left: 30px;
-  }
-  
-  #confirm-button:enabled {
+}
+
+#confirm-button:enabled {
     cursor: pointer;
     /* background-color: blue; */
     /* color: white; */
-  }
+}
 
-  #confirm-button:disabled {
+#confirm-button:disabled {
     cursor: pointer;
     background-color: white;
     color: rgb(76, 76, 76);
     border: 2px solid gray;
-  }
+}
 
 .chat-input {
     display: flex;
@@ -339,25 +404,31 @@
 
 /* Tap icon */
 #tapIcon {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  width: 70px;
-  height: 70px;
-  background: url('../img/tap.png') no-repeat center center; /* Replace with your icon */
-  background-size: contain;
-  animation: click-effect 1s infinite ease-in-out;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 70px;
+    height: 70px;
+    background: url('../img/tap.png') no-repeat center center;
+    /* Replace with your icon */
+    background-size: contain;
+    animation: click-effect 1s infinite ease-in-out;
 }
 
 @keyframes click-effect {
-  0%, 100% {
-      transform: scale(1); /* Normal size */
-  }
-  50% {
-      transform: scale(0.9); /* Shrink slightly */
-  }
+
+    0%,
+    100% {
+        transform: scale(1);
+        /* Normal size */
+    }
+
+    50% {
+        transform: scale(0.9);
+        /* Shrink slightly */
+    }
 }
 
-#seeResultsButton{
+#seeResultsButton {
     width: 100%;
 }
