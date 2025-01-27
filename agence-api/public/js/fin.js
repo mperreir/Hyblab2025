@@ -33,6 +33,9 @@ const initSlide3 = async function(){
     window.open(article.url, '_blank');
   });
 
+  //Afffichage des noms de l'équipe
+  document.getElementById("titleFin3").textContent = texts.fin.title3;
+  document.getElementById("teamNamesText").textContent = texts.fin.paragraphe3;
 };
 
 
