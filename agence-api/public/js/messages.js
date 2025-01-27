@@ -8,8 +8,12 @@ let currentQuestion = 1;
 
 // Fonction pour mettre à jour la barre de progression
 function updateProgress() {
-    const progressSteps = document.querySelectorAll('.progress-step');
-    progressSteps.forEach((step, index) => {
+    const steps = document.querySelectorAll('.progress-step');
+    const lines = document.querySelectorAll('.progress-line');
+
+    console.log(lines);
+
+    steps.forEach((step, index) => {
         if (index < currentQuestion - 1) {
             step.classList.add('completed');
             step.classList.remove('active');
@@ -17,7 +21,19 @@ function updateProgress() {
             step.classList.add('active');
             step.classList.remove('completed');
         } else {
-            step.classList.remove('active', 'completed');
+            step.classList.remove('completed', 'active');
+        }
+    });
+
+    lines.forEach((line, index) => {
+        if (index < currentQuestion - 2) {
+            line.classList.add('completed');
+            line.classList.remove('active');
+        } else if (index === currentQuestion - 2) {
+            line.classList.add('active');
+            line.classList.remove('completed');
+        } else {
+            line.classList.remove('completed', 'active');
         }
     });
 }
@@ -189,7 +205,7 @@ async function addAnswer(answers, type) {
           );
 
           // Incrémenter la question actuelle et mettre à jour la progression
-          if (currentQuestion < totalQuestions) {
+          if (currentQuestion < totalQuestions && type != "useless") {
             currentQuestion++;
             updateProgress();
           }

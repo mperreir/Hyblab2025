@@ -158,7 +158,7 @@ async function displayMessages(message, signal, skipInteraction = false) {
         } else if(typeof message[key] !== "string"){
             addMessage({ text: message[key].question, type: "received", class: "middle"});
             if (!skipInteraction) {
-                await addAnswer(message[key].reponses);
+                await addAnswer(message[key].reponses,"useless");
             }
         } else if(message[key].includes("{nom}")){
             if(i === 0){
