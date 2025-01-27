@@ -1,45 +1,73 @@
 "use strict";
 
 function initMenu(){
-    const menuBtn = document.getElementById("menu-btn");
-    const menuPopup = document.getElementById("menu-popup");
-    const closeMenuBtn = document.getElementById("close-menu");
-  
+    const menuBtns = document.querySelectorAll(`#menu-btn`);
+    const menuPopups = document.querySelectorAll(`#menu-popup`);
+    const closeMenuBtns = document.querySelectorAll(`#close-menu`);
+    const goCharactersLinks = document.querySelectorAll(`#go-secteurs`);
+    const quitGameLinks = document.querySelectorAll(`#quit-game`);
+    const goResultsLinks = document.querySelectorAll(`#go-results`);
+
     // 点击「Menu」打开弹窗
-    menuBtn.addEventListener("click", () => {
-        menuPopup.classList.remove("hidden");
+    menuBtns.forEach((menuBtn, index) => {
+        menuBtn.addEventListener("click", () => {
+            menuPopups[index].classList.remove("hidden");
+        });
     });
+  
 
     // 点击「×」关闭弹窗
-    closeMenuBtn.addEventListener("click", () => {
-        menuPopup.classList.add("hidden");
-        menuBtn.checked = false;
+    closeMenuBtns.forEach((closeMenuBtn, index) => {
+        closeMenuBtn.addEventListener("click", () => {
+            menuPopups[index].classList.add("hidden");
+            menuBtns[index] = false;
+        });
     });
 
     // 点击背景(除 .menu-content 以外的区域)也关闭
-    menuPopup.addEventListener("click", (event) => {
-        if (event.target === menuPopup) {
-        menuPopup.classList.add("hidden");
-        menuBtn.checked = false;
-        }
-    });
-    const goCharactersLink = document.getElementById("go-secteurs"); // 选择角色按钮
-    goCharactersLink.addEventListener("click", (e) => {
-        e.preventDefault();              // 阻止 href 跳转
-        menuPopup.classList.add("hidden");  // 先关菜单
-        initSlide2(true);
-    });
-    // 点击“结束游戏”跳转到首页
-    const quitGameLink = document.getElementById("quit-game"); // 结束游戏按钮
-    quitGameLink.addEventListener("click", () => {
-    choices = []; // reset choices
-    window.location.href = "../agence-api/"; // 跳转到首页
+    menuPopups.forEach((menuPopup, index) => {
+        // 点击背景(除 .menu-content 以外的区域)也关闭
+        menuPopup.addEventListener("click", (event) => {
+            if (event.target === menuPopup) {
+            menuPopup.classList.add("hidden");
+            menuBtns[index].checked = false;
+            }
+        });
     });
 
-    const goResultsLink = document.getElementById("go-results");
-    goResultsLink.addEventListener("click", (e) => {
-        e.preventDefault();              // 阻止 href 跳转
-        menuPopup.classList.add("hidden");  // 先关菜单
-        swiper.slideNext();
+    goCharactersLinks.forEach((goCharactersLink, index) => {
+        goCharactersLink.addEventListener("click", (e) => {
+            e.preventDefault();              // 阻止 href 跳转
+            menuPopups[index].classList.add("hidden");  // 先关菜单
+            menuBtns[index].checked = false;
+            switchTheme("theme-default");
+            changeApiName("Api");
+            currentQuestion = 1;
+            updateProgress();
+            swiper.slideTo(1);
+            initSlide2(true);
+        });
+    });
+
+
+    quitGameLinks.forEach((quitGameLink, index) => {
+        quitGameLink.addEventListener("click", () => {
+            choices = []; // reset choices
+            window.location.href = "../agence-api/"; // 跳转到首页
+        });
+    });
+
+    goResultsLinks.forEach((goResultsLink, index) => {
+        goResultsLink.addEventListener("click", (e) => {
+            e.preventDefault();              // 阻止 href 跳转
+            menuPopups[index].classList.add("hidden");  // 先关菜单
+            swiper.slideNext();
+        });
+    });
+}
+
+function changeApiName(name){
+    document.querySelectorAll(`#ApiName`).forEach((ApiName) => {
+        ApiName.textContent = name;
     });
 }

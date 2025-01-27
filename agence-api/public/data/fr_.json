@@ -12,14 +12,20 @@
                 "Je vais te présenter rapidement notre tissu économique. La Bretagne et les Pays de la Loire sont des régions qui bougent beaucoup. Ici, les taux de chômage sont parmi les plus bas en France : 5,8 % en Bretagne et 5,9 % dans les Pays de la Loire, contre 7,1 % au niveau national en 2023.",
                 "Et il y a une super dynamique : 37 % des créateurs d’entreprise ont moins de 30 ans. Pas mal non ?",
                 "En termes de qualité de vie, la situation est favorable  : le taux de pauvreté est de 10,5 % en Pays de la Loire et 11,2 % en Bretagne, contre 14,4 % au niveau national.",
-                "Et puis, on a tout ici : des cadres, des agriculteurs, des artisans... C’est ça, la force économique de l’Ouest !",
-                "Tu es prêt à commencer ton aventure ?",
-                "Si oui, il te suffit de choisir ton futur secteur d'activité :"
+                "Et puis, on a tout ici : des cadres, des agriculteurs, des artisans... C’est ça, la force économique de l’Ouest !", 
+                {
+                    "question":"Tu es prêt à commencer ton aventure ?",
+                    "réponses": ["Oui, j'ai hâte !", "C'est parti !"]
+                },
+                "Il te suffit de choisir ton futur secteur d'activité :"
             ],
             "avertissement": [
                 "Juste un petit mot avant de commencer : ce jeu est là pour t'amuser et t'informer.",
                 "Il ne remplace pas les conseils d'un professionnel pour créer ton entreprise.",
-                "Les informations que tu trouveras ici sont basées sur des données générales et peuvent ne pas refléter les situations que tu rencontrerais."
+                {
+                    "question": "Les informations que tu trouveras ici sont basées sur des données générales et peuvent ne pas refléter les situations que tu rencontrerais.",
+                    "reponses": ["C'est bien compris."]
+                }
             ]
         },
         "secteurs": {
@@ -33,14 +39,14 @@
                 "tech": "img/tech.jpeg",
                 "arti": "img/arti.jpg"
             },
-            "reponses":{
+            "reponses": {
                 "agro": "Agroalimentaire",
                 "tech": "Tech",
                 "arti": "Artisanat"
             }
         }
     },
-    "fin":{
+    "fin": {
         "avant": [
             "Félicitations, {nom} ! Tu as terminé ton aventure.",
             "Tu as pris des décisions importantes pour ton entreprise, et tu as découvert les opportunités qui t'attendent en Bretagne et dans les Pays de la Loire.",
@@ -57,7 +63,13 @@
             "Avant chaque question, je te fournirai quelques informations sur le contexte régional en lien avec le thème abordé. Cela te permettra de mieux comprendre les enjeux de ton choix.",
             "Ces données proviennent toutes de l'Atlas économique de l'Ouest 2024 écrit par l'agence API.",
             "Il est plein de données intéressantes sur l'économie de nos régions, je te le recommande !",
-            "On peut continuer ?"
+            {
+                "question": "On peut continuer ?",
+                "reponses": [
+                    "Oui.",
+                    "Allons-y !"
+                ]
+            }
         ],
         "questions": [
             [
@@ -345,7 +357,7 @@
         "informations": [
             {
                 "titre": "Les technopoles de l'Ouest",
-                "images": [],
+                "images": ["img/queen-anne-196435_1280.jpg"],
                 "paragraphes": [
                     "Dans l’Ouest, les technopoles se répartissent en fonction de la taille des villes qui les accueillent. On retrouve d’abord celles situées dans des villes de plus de 100 000 habitants, comme Rennes, Nantes, Brest, Le Mans et Angers ; celles des villes de plus de 40 000 habitants, telles que Lorient, Laval, Vannes, Saint-Brieuc et Quimper ; et enfin, les plus petites, dans des villes de plus de 20 000 habitants, avec Lannion."
                 ]
@@ -379,46 +391,52 @@
             {
                 "titre": "Les labels RSE des entreprises de l'Ouest",
                 "images": [],
-                "paragraphes": [{
-                    "1": {
-                        "nom_label": "AFNOR RSEi",
-                        "bouton":"",
-                        "nb_entreprises": "6",
-                        "description": [
-                            "Délivré par l’AFNOR, le label RSEi s’adresse aux entreprises inclusives, qui agissent pour l’inclusion de personnes vulnérables (personnes vivant en situation de pauvreté-précarité) sur le marché de l’emploi, en mettant leur activité économique au service de cet objectif social."
-                        ]
-                    },
-                    "2": {
-                        "nom_label": "AFNOR ENGAGÉES RSE",
-                        "bouton":"",
-                        "nb_entreprises": "55",
-                        "description": [
-                            "Délivré par l’AFNOR, le label Engagé RSE évalue la maturité des démarches RSE des organisations sur la base de l’ISO 26000. Ce label s’adresse à tous les types d’organisations (entreprises, associations ou territoires) quelle que soit la taille de l’entité ou son secteur d’activité."
-                        ]
-                    },
-                    "3": {
-                        "nom_label": "B-CORP",
-                        "bouton":"",
-                        "nb_entreprises": "16",
-                        "description": [
-                            "Lancé en 2006 aux États-Unis, le Label B-Corp certifie que les entreprises intègrent bien à leur business model des objectifs sociaux, sociétaux et environnementaux.",
-                            "L’évaluation mesure l’impact positif de l’entreprise sur sa gouvernance, ses relations employeurs-employés, sur l’environnement et sur les produits et services qu’elle fournit."
-                        ]
-                    },
-                    "4": {
-                        "nom_label": "CERTIFIÉES LUCIE 26000",
-                        "bouton":"",
-                        "nb_entreprises": "70",
-                        "description": [
-                            "Premier label RSE français, LUCIE accompagne depuis 2007 les entreprises, les associations et les collectivités qui souhaitent intégrer les enjeux sociaux et environnementaux à leurs activités et contribuer aux objectifs de développement durable.",
-                            "Cette certification s’aligne sur la norme internationale ISO 26000."
-                        ]
+                "paragraphes": [
+                    {
+                        "1": {
+                            "nom_label": "AFNOR RSEi",
+                            "bouton": "",
+                            "nb_entreprises": "6",
+                            "description": [
+                                "Délivré par l’AFNOR, le label RSEi s’adresse aux entreprises inclusives, qui agissent pour l’inclusion de personnes vulnérables (personnes vivant en situation de pauvreté-précarité) sur le marché de l’emploi, en mettant leur activité économique au service de cet objectif social."
+                            ]
+                        },
+                        "2": {
+                            "nom_label": "AFNOR ENGAGÉES RSE",
+                            "bouton": "",
+                            "nb_entreprises": "55",
+                            "description": [
+                                "Délivré par l’AFNOR, le label Engagé RSE évalue la maturité des démarches RSE des organisations sur la base de l’ISO 26000. Ce label s’adresse à tous les types d’organisations (entreprises, associations ou territoires) quelle que soit la taille de l’entité ou son secteur d’activité."
+                            ]
+                        },
+                        "3": {
+                            "nom_label": "B-CORP",
+                            "bouton": "",
+                            "nb_entreprises": "16",
+                            "description": [
+                                "Lancé en 2006 aux États-Unis, le Label B-Corp certifie que les entreprises intègrent bien à leur business model des objectifs sociaux, sociétaux et environnementaux.",
+                                "L’évaluation mesure l’impact positif de l’entreprise sur sa gouvernance, ses relations employeurs-employés, sur l’environnement et sur les produits et services qu’elle fournit."
+                            ]
+                        },
+                        "4": {
+                            "nom_label": "CERTIFIÉES LUCIE 26000",
+                            "bouton": "",
+                            "nb_entreprises": "70",
+                            "description": [
+                                "Premier label RSE français, LUCIE accompagne depuis 2007 les entreprises, les associations et les collectivités qui souhaitent intégrer les enjeux sociaux et environnementaux à leurs activités et contribuer aux objectifs de développement durable.",
+                                "Cette certification s’aligne sur la norme internationale ISO 26000."
+                            ]
+                        }
                     }
-                }]
+                ]
             },
-            [
-                "La French Tech, c’est un écosystème national qui soutient les startups françaises et leur croissance. Dans l’Ouest, elle se décline en 3 Capitales (Nantes, Rennes Saint-Malo, Angers) et 7 Communautés, fédérant des centaines d’acteurs de l’innovation. Avec des programmes comme French Tech Next 120 et French Tech 2030, les entreprises locales accèdent à des opportunités de croissance et de financement stratégiques."
-            ]
+            {
+                "titre": "Le réseau French Tech",
+                "images": [],
+                "paragraphes": [
+                    "La French Tech, c’est un écosystème national qui soutient les startups françaises et leur croissance. Dans l’Ouest, elle se décline en 3 Capitales (Nantes, Rennes Saint-Malo, Angers) et 7 Communautés, fédérant des centaines d’acteurs de l’innovation. Avec des programmes comme French Tech Next 120 et French Tech 2030, les entreprises locales accèdent à des opportunités de croissance et de financement stratégiques."
+                    ]
+            }
         ],
         "cartes_fin_arriere": [
             "Localisation",
@@ -429,32 +447,30 @@
         ],
         "cartes_fin_avant": [
             {
-                "1_nantes":"Nantes",
-                "1_lorient":"Lorient",
-                "1_lannion":"Lannion"
+                "1_nantes": "Nantes",
+                "1_lorient": "Lorient",
+                "1_lannion": "Lannion"
             },
             {
-                "2_banque":"Prêt bancaire",
-                "2_aide":"Subvention",
-                "2_crowdfunding":"Financement participatif"
+                "2_banque": "Prêt bancaire",
+                "2_aide": "Subvention",
+                "2_crowdfunding": "Financement participatif"
             },
             {
-                "3_embauchejeunes":"Équipe jeune et innovante",
-                "3_embaucheexperimentes":"Équipe expérimentée et solide"
+                "3_embauchejeunes": "Équipe jeune et innovante",
+                "3_embaucheexperimentes": "Équipe expérimentée et solide"
             },
             {
-                "4_non":"Pas de démarche RSE",
-                "4_label":"Entreprise labellisée RSE",
-                "4_mission":"Entreprise à mission"
+                "4_non": "Pas de démarche RSE",
+                "4_label": "Entreprise labellisée RSE",
+                "4_mission": "Entreprise à mission"
             },
             {
-                "5_ouifrenchtech":"Réseau French Tech",
-                "5_nonfrenchtech":"Activité indépendante"
+                "5_ouifrenchtech": "Réseau French Tech",
+                "5_nonfrenchtech": "Activité indépendante"
             }
         ]
     },
-
-
     "arti": {
         "introduction": [
             "Tu as décidé de te lancer dans l’artisanat ? C’est une excellente décision !",
@@ -517,7 +533,7 @@
                 "apres": [
                     {
                         "1_menuisier": "Super ! Tu as choisi de devenir menuisier. Tu vas pouvoir laisser libre cours à ta créativité et façonner le bois à ta guise. Si cela te convient, je te propose d'installer ton entreprise dans la Sarthe.",
-                        "1_ceramiste":"Bon choix ! J'en suis sûr, tu vas faire des merveilles dans en tant que céramiste. Pourquoi ne pas t'installer en Ille-et-Vilaine ?",
+                        "1_ceramiste": "Bon choix ! J'en suis sûr, tu vas faire des merveilles dans en tant que céramiste. Pourquoi ne pas t'installer en Ille-et-Vilaine ?",
                         "1_boucher": "Bravo pour ton choix de devenir boucher. Je suis sûr que tu te feras une place de choix dans le secteur de l'artisanat. Que dirais-tu de t'installer dans le Maine-et-Loire ?"
                     }
                 ]
@@ -596,7 +612,7 @@
             {
                 "titre": "Les entreprises à mission dans l'Ouest",
                 "images": [],
-                "paragraphes":[
+                "paragraphes": [
                     "La Bretagne et les Pays de la Loire comptaient 26 sociétés à missions en 2020. Ce nombre a été multiplié par 6 entre 2020 et 2023, atteignant 151 sociétés à missions en 2023.",
                     "Une entreprise dite \"à mission\" est une entreprise qui se fixe des objectifs sociaux et environnementaux dans ses statuts juridiques.",
                     "Peu importe son secteur d'activité et sa taille, une société peut devenir une entreprise à mission. Dans nos régions, de nombreux secteurs sont représentés, comme le conseil, l'industrie ou les services.",
@@ -606,14 +622,13 @@
             {
                 "titre": "L'importation de marchandises dans l'Ouest",
                 "images": [],
-                "paragraphes":[
+                "paragraphes": [
                     "En 2023, les régions Bretagne et Pays de la Loire ont représenté 7,1 % des importations totales de la France, avec un coût s’élevant à 37 409 millions d’euros pour les Pays de la Loire et 15 538 millions d’euros pour la Bretagne.",
                     {
-                        "1_menuisier":"Les Pays de la Loire ont importé 577 millions de kilos de bois, répondant aux besoins de l'industrie locale de la transformation et de la construction.",
-                        "1_céramiste":"La Bretagne a importé 2 077 millions de kilos de produits chimiques de base. Ces matières premières sont essentielles pour l'industrie chimique régionale, et peuvent t'être utiles en tant que céramiste pour tes émaux.",
-                        "1_boucher":"Dans les Pays de la Loire, les importations en produits de la culture et de l’élevage ont atteint 1 431 millions de kilos, tandis que les huiles et graisses végétales et animales ont représenté 6 596 millions de kilos, illustrant l'importance de ces matières premières pour l’agroalimentaire régional."
+                        "1_menuisier": "Les Pays de la Loire ont importé 577 millions de kilos de bois, répondant aux besoins de l'industrie locale de la transformation et de la construction.",
+                        "1_céramiste": "La Bretagne a importé 2 077 millions de kilos de produits chimiques de base. Ces matières premières sont essentielles pour l'industrie chimique régionale, et peuvent t'être utiles en tant que céramiste pour tes émaux.",
+                        "1_boucher": "Dans les Pays de la Loire, les importations en produits de la culture et de l’élevage ont atteint 1 431 millions de kilos, tandis que les huiles et graisses végétales et animales ont représenté 6 596 millions de kilos, illustrant l'importance de ces matières premières pour l’agroalimentaire régional."
                     }
-
                 ]
             }
         ],
@@ -626,27 +641,27 @@
         ],
         "cartes_fin_avant": [
             {
-                "1_menuisier":"Menuisier",
-                "1_ceramiste":"Céramiste",
-                "1_boucher":"Boucher"
+                "1_menuisier": "Menuisier",
+                "1_ceramiste": "Céramiste",
+                "1_boucher": "Boucher"
             },
             {
-                "2_banque":"Prêt bancaire",
-                "2_aide":"Subvention",
-                "2_crowdfunding":"Financement participatif"
+                "2_banque": "Prêt bancaire",
+                "2_aide": "Subvention",
+                "2_crowdfunding": "Financement participatif"
             },
             {
-                "3_embauchecfa":"Formation d'artisans",
-                "3_embauchepro":"Recrutement de professionnels"
+                "3_embauchecfa": "Formation d'artisans",
+                "3_embauchepro": "Recrutement de professionnels"
             },
             {
-                "4_non":"Pas de démarche RSE",
-                "4_label":"Entreprise labellisée RSE",
-                "4_mission":"Entreprise à mission"
+                "4_non": "Pas de démarche RSE",
+                "4_label": "Entreprise labellisée RSE",
+                "4_mission": "Entreprise à mission"
             },
             {
-                "5_local":"Approvisionnement local",
-                "5_import":"Importation de matières premières"
+                "5_local": "Approvisionnement local",
+                "5_import": "Importation de matières premières"
             }
         ]
     }

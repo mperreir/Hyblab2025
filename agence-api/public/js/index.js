@@ -36,11 +36,12 @@ document.addEventListener('DOMContentLoaded', async function() {
       direction: "vertical",
       mousewheel: true,
       pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
+        clickable: false,
+        pagination: false,
       },
     });
 
+    switchTheme("theme-default");
     initMenu();
 
 
@@ -150,3 +151,13 @@ function toggleTapIconDisplay(shouldPrevent) {
   }
 }
 
+
+function switchTheme(theme) {
+  const root = document.documentElement;
+
+  // Remove any existing theme classes
+  root.classList.remove('theme-tech', 'theme-agro', 'theme-arti', 'theme-default');
+
+  // Add the selected theme class
+  root.classList.add(`${theme}`);
+}

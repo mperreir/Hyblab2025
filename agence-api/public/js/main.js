@@ -10,7 +10,6 @@ const initSlide2 = async function (afterIntro = false) {
 
     if (abortController) {
         abortController.abort(); // Abort the previous call
-        console.log('aborting previous call');
     }
     
     abortController = new AbortController();
@@ -53,9 +52,7 @@ const initSlide2 = async function (afterIntro = false) {
 
         await addButtonGoToResults(signal);
     } catch (error) {
-        if (error.name === 'AbortError') {
-            console.log("Changement of sector detected, aborting old path");
-        } else {
+        if (!error.name === 'AbortError') {
             console.error('Error:', error);
         }
     }
@@ -92,11 +89,9 @@ async function waitForUserTouch(){
     return new Promise((resolve) => {
         const messageInput = document.getElementById('chatBox');
         messageInput.addEventListener('click', (event) => {
-            if(!event.target.classList.contains("info")){
+            if(!event.target.classList.contains("info") && !event.target.classList.contains("expanding")){
                 resolve(true);
-            } else {
-                resolve(false);
-            }
+            } 
         });
     });
 }
@@ -151,7 +146,7 @@ async function selectSecteur(presentationSecteurs) {
 
     toggleTapIconDisplay(false);
 
-    return await addAnswer(presentationSecteurs.reponses);
+    return await addAnswer(presentationSecteurs.reponses, "secteur");
   }
 
 async function displayMessages(message, signal, skipInteraction = false) {
@@ -235,7 +230,14 @@ async function histoire(texts, userName, signal){
 
         toggleTapIconDisplay(true);
 
-        let answer = await addAnswer(texts.reponses[i], multipleChoices);
+        let answer;
+
+        if (multipleChoices){
+            answer = await addAnswer(texts.reponses[i], "mutliple");
+        } else {
+            answer = await addAnswer(texts.reponses[i]);
+        }
+
         choices = [...choices, ...answer];
 
         toggleTapIconDisplay(false);
