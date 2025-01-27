@@ -104,6 +104,7 @@
     font-size: 22vh;
     opacity: 0;
     white-space: nowrap;
+    transform: skew(-20deg);
     top: -56%;
 }
 .choice.right h1.divider{
