@@ -28,14 +28,9 @@ function App() {
             <Route path="/start/:difficulty" element={<StartPage />} />
             <Route path="/start/:difficulty/:id" element={<QuestionPage />} />
             <Route path="/final" element={<FinalPage />} />
-            {/* Page de transition */}
             <Route path="/transition/:difficulty/:level_id" element={<TransitionPage />} />
-            {/* Page de credits */}
             <Route path="/credit" element={<Credit />} />
-            {/* Page final */}
             <Route path="/final" element={<FinalPage />} />
-
-
           </Routes>
         </div>
       </LayoutWithMusic>

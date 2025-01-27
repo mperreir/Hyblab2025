@@ -1,4 +1,16 @@
 .background_final {
     background: url('finalPage.png');
     background-size: 100% 100%;
+    position: relative;
+}
+
+
+.arbre {
+    background: url('arbre2.gif') no-repeat center center; 
+    position: absolute;
+    bottom: -2rem;
+    left: 2rem;
+    height: 13rem;
+    width: 9rem;
+    zoom: 0.4;
 }

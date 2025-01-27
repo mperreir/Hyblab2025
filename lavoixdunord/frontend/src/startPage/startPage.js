@@ -18,6 +18,7 @@ const StartPage = () => {
 
     return (
         <div className="start_page_bg w-100 position-relative">
+            <div class="arbre"></div>
             <div className="mt-84 text-center">
                 <h1 className="text-white">DÉPART !</h1>
 

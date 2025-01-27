@@ -7,6 +7,7 @@ const FinalPage = () => {
 
     return (
         <div className="background_final">
+            <div class="arbre"></div>
             <div className="text-center p-4 mt-84">
                 <h1 className="text-white mb-5">MERCI</h1>
                 <div className='my-5'>&nbsp;</div>

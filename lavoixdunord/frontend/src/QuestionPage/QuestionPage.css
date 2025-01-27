@@ -67,6 +67,7 @@ body {
   font-size: 16px;
 }
 
+
 .answer-btn.selected {
   background-color: #bed5e7; /* Couleur de surbrillance pour le choix sélectionné */
   color: #1A3347; /* Couleur du texte contrastante */
@@ -324,5 +325,9 @@ body.modal-open {
   max-height: 80%;
   border-radius: 10px; /* Bords arrondis */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Ombre légère */
+}
+
+.btn{
+  margin-top: 45px;
 }
 /*jusqua ici*/
