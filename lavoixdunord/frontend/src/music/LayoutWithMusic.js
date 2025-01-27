@@ -28,10 +28,9 @@ const LayoutWithMusic = ({ children }) => {
     };
 
     const containerStyle = {
-        position: 'fixed',
-        top: '95%', 
-        left: '56.5%',
-        transform: 'translate(50px, -50%)',
+        position: 'absolute',
+        bottom: '20px', 
+        right: '20px',
         zIndex: 1000
     }
 
