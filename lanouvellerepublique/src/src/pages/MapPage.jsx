@@ -15,18 +15,18 @@ function MapPage() {
   const mapRef = useRef(null);
   const queryAnimal = searchParams.get("animal"); // Get 'region' query parameter
   const chosenAnimal = queryAnimal in data ? queryAnimal : 'Loutre'; // Charger la Loutre par défaut
-
+/*
   async function fetchPOIs() {
     const res = await fetch('http://localhost:8080/lanouvellerepublique/api/animals/Loutre') // TEST (route à modifier)
       .then(response => response.json())
       .then(response => setPoints(response));
   }
-  
+*/
 
   useEffect(() => {
     const pts = data[chosenAnimal];
-    //setPoints(data[chosenAnimal]);
-    fetchPOIs();
+    setPoints(data[chosenAnimal]);
+    //fetchPOIs();
   });
 
   return (
