@@ -12,15 +12,15 @@
                 "Je vais te présenter rapidement notre tissu économique. La Bretagne et les Pays de la Loire sont des régions qui bougent beaucoup. Ici, les taux de chômage sont parmi les plus bas en France : 5,8 % en Bretagne et 5,9 % dans les Pays de la Loire, contre 7,1 % au niveau national en 2023.",
                 {
                     "question":"Et il y a une super dynamique : 37 % des créateurs d’entreprise ont moins de 30 ans. Pas mal non ?",
-                    "réponses":[
-                        "C'est impressionnant !"
+                    "reponses":[
+                        "C'est Français !"
                     ]
                 },
                 "En termes de qualité de vie, la situation est favorable  : le taux de pauvreté est de 10,5 % en Pays de la Loire et 11,2 % en Bretagne, contre 14,4 % au niveau national.",
                 "Et puis, on a tout ici : des cadres, des agriculteurs, des artisans... C’est ça, la force économique de l’Ouest !",
                 {
                     "question": "Tu es prêt à commencer ton aventure ?",
-                    "réponses": [
+                    "reponses": [
                         "Oui, j'ai hâte !",
                         "C'est parti !"
                     ]
@@ -123,8 +123,7 @@
         "contexte": [
             {
                 "avant": [
-                    "On passe sur ta première page d'information ? Tu vas découvrir la place de l'agroalimentaire en Bretagne et dans les Pays de la Loire.",
-                    "Allez, c'est parti !"
+                    "On passe sur ta première page d'information ? Tu vas découvrir la place de l'agroalimentaire en Bretagne et dans les Pays de la Loire.\nAllez, c'est parti !"
                 ],
                 "apres": [
                     {

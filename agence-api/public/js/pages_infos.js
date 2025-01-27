@@ -70,7 +70,10 @@ function expandMessage(messageElement, data) {
         }
     });
 
-    expandingElement.querySelectorAll('*').forEach(element => element.style.display = 'none');
+    expandingElement.querySelectorAll('*').forEach(element => {
+        element.style.display = 'none';
+        element.classList.add('expanding-element');
+    });
     expandingElement.style.display = 'flex';
     expandingElement.style.top = rect.top + 'px';
     expandingElement.style.left = rect.left + 'px';
