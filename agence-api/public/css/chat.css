@@ -194,10 +194,10 @@
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
     50% {
-        transform: scale(1.05); /* Slightly enlarge */
+        transform: scale(1.02); /* Slightly enlarge */
         box-shadow: 
             0 4px 10px rgba(0, 0, 0, 0.2), /* Original shadow */
-            0 0 15px 5px rgba(255, 223, 0, 0.6); /* Yellow glow */
+            0 0 15px 2px var(--accent-color); /* glow */
     }
     100% {
         transform: scale(1);
