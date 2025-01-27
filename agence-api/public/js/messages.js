@@ -11,8 +11,6 @@ function updateProgress() {
     const steps = document.querySelectorAll('.progress-step');
     const lines = document.querySelectorAll('.progress-line');
 
-    console.log(lines);
-
     steps.forEach((step, index) => {
         if (index < currentQuestion - 1) {
             step.classList.add('completed');
