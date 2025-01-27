@@ -1,8 +1,16 @@
 // /src/components/QuestionsComponent.jsx
 import React from "react";
-import { Box, Typography, Button, Card, CardContent, CircularProgress } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Button,
+  Card,
+  CardContent,
+  CircularProgress,
+} from "@mui/material";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import DonutJaugeGroup from "./GraphicsComponent";
 
 const QuestionsComponent = () => {
   const [questions, setQuestions] = useState([]);
@@ -75,20 +83,18 @@ const QuestionsComponent = () => {
   }
   return (
     <Box
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          height: "100vh",
-          position: "relative",
-        }}
-        justifyContent="center"
-        alignItems="center"
-        overflow="hidden"
-    
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        height: "100vh",
+        position: "relative",
+      }}
+      justifyContent="center"
+      alignItems="center"
+      overflow="hidden"
     >
-      <Typography variant="h5" sx={{ textAlign: "center", fontWeight: "bold" }}>
-        Graphique interactif
-      </Typography>
+     
+
       <AnimatePresence initial={false} custom={direction}>
         <motion.div
           key={currentQuestion.question_id}
@@ -106,49 +112,64 @@ const QuestionsComponent = () => {
             margin: "auto",
             height: "100%", // Respecte le cadre fixe défini par IntroductionLayout
             display: "flex",
+            flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
           }}
         >
-          <Box width="100%"
+           <Box>
+        <Typography
+          variant="h5"
+          sx={{ textAlign: "center", fontWeight: "bold" }}
+        >
+          Graphique interactif
+        </Typography>
+        <DonutJaugeGroup />
+      </Box>
+          <Box
+            width="100%"
             padding={2}
             bgcolor="white"
-            borderRadius={2} // Coins arrondis
             boxShadow={0} // Pas d'ombre portée
             display="flex"
+            backgroundColor="#F5E8EE"
             flexDirection="column"
-            gap={1}>
-              {/* Afficher la question */}
-              <Typography variant="h6" align="center" sx={{ marginBottom: 2 }}>
-                {currentQuestion.question_text}
-              </Typography>
+            sx={{ borderRadius: "16px" }}
+            gap={1}
+          >
+            {/* Afficher la question */}
+            <Typography variant="h7" align="center" gutterBottom>
+              {currentQuestion.question_text}
+            </Typography>
 
-              {/* Afficher les choix de réponse */}
-              {currentQuestion.responses.map((response,index) => (
-                <Button
-                  key={response.response_id}
-                  variant="outlined"
-                  color="primary"
-                  onClick={() => handleAnswer(response)}
-                  startIcon={
-                    <Typography
-                      variant="body1"
-                      fontWeight="bold"
-                      fontSize="1.2rem"
-                    >
-                      {String.fromCharCode(65 + index)}.
-                    </Typography>
-                  }
-                  sx={{
-                    textTransform: "none", // Conserver la casse du texte
-                    justifyContent: "flex-start", // Aligner à gauche
-                  }}
-                >
-                  <Typography variant="body1">
-                  {response.response_text}
+            {/* Afficher les choix de réponse */}
+            {currentQuestion.responses.map((response, index) => (
+              <Button
+                key={response.response_id}
+                variant="outlined"
+                color="primary"
+                onClick={() => handleAnswer(response)}
+                sx={{
+                  borderRadius: "26px",
+                  backgroundColor: "#fff",
+                  textAlign: "left",
+                  justifyContent: "flex-start", // Aligner à gauche
+                }}
+                startIcon={
+                  <Typography
+                    variant="body1"
+                    fontWeight="bold"
+                    fontSize="1.2rem"
+                  >
+                    {String.fromCharCode(65 + index)}.
                   </Typography>
-                </Button>
-              ))}
+                }
+              >
+                <Typography variant="body1">
+                  {response.response_text}
+                </Typography>
+              </Button>
+            ))}
           </Box>
         </motion.div>
       </AnimatePresence>
