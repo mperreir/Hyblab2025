@@ -318,7 +318,74 @@ footer {
     margin-top: auto;
     flex-shrink: 0;
 }
+/* Arrière-plan de la fenêtre modale (modal) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7); /* Fond sombre semi-transparent */
+}
+  
+/* Contenu de la fenêtre modale */
+.modal-content {
+    background: linear-gradient(135deg, #444, #222); /* Fond en dégradé */
+    color: #fff; /* Texte en blanc */
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 15px; /* Coins arrondis */
+    text-align: center;
+    width: 80%;
+    max-width: 400px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6); /* Effet d'ombre */
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    position: relative;
+    animation: fadeIn 0.3s ease-in-out; /* Animation d'apparition */
+}
+  
+/* Style du bouton de fermeture */
+.close {
+    color: #fff; /* Bouton de fermeture en blanc */
+    font-size: 24px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.2s ease; /* Transition fluide */
+}
+  
+.close:hover,
+.close:focus {
+    color: #ff6666; /* Passe au rouge au survol */
+    transform: scale(1.2); /* Effet d'agrandissement */
+}
+  
+/* Style du texte de la fenêtre modale */
+#modal-description {
+    margin: 20px 0;
+    font-weight: 300;
+}
+  
+/* Animation d'apparition */
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
 
+  
 /* Responsive Design */
 @media (max-width: 768px) {
     #app-container {
