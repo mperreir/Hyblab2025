@@ -123,8 +123,6 @@ class InteractiveBook {
         for(let i = 0; i < this.page_data.pages_time.length; i += 1)
         {
             const page = this.page_data.pages_time[i];
-            console.log(page);
-            console.log(this.loaded_page);
             if(page.step <= timeStep && !this.loaded_page.includes(page.id)){
                 this.loaded_page.push(page.id);
 

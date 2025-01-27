@@ -6,7 +6,6 @@ let books;
 let InteractiveBookObject;
 
 setTimeout(() => {
-  console.log("After 2 seconds"); 
   sceneManager.loadTriggers()
   
   const svg = document.getElementById('PÉNICHE');
@@ -40,7 +39,7 @@ document.addEventListener(
     event.preventDefault();
     const timeDelta = event.deltaY / 100;
     const maxTime = 100;
-
+    console.log(sceneManager.time)
     sceneManager.time = Math.max(0, Math.min(sceneManager.time + timeDelta, maxTime));
     InteractiveBookObject.updatePageTime(sceneManager.time)
     syncSliderWithScene();

@@ -3,20 +3,38 @@
         {
             "step": 0,
             "id": "start",
-            "title": "Le début de l'aventure",
+            "title": "Arrivée sur le quai",
             "content": "Votre histoire commence..."
         },
         {
-            "step": 25,
-            "id" : "caca",
-            "title": "Première étape",
-            "content": "Vous progressez..."
+            "step": 0,
+            "id" : "hybarge",
+            "title": "les \"Hybarge\"",
+            "content": "C’est une Hybarge, une barge propulsée à l’hydrogène. La première générationa été lmise à l’eau dans les années 2020, alors que le frêt redémarrait doucement sur le Canal."
         },
         {
-            "step": 25,
-            "id" : "bite",
-            "title": "Première étape",
-            "content": "Vous progressez..."
+            "step": 0,
+            "id" : "monnaie",
+            "title": "Les monaies du canal",
+            "content": "J’ai l’habitude de payer en Bulle, la monnaie Charentaise, lancée en 2019. Il y a déjà presque 50 ans ! Depuis le début du XXIe siècle, les monnaies locales citoyennes se sont développées partout en France et dans le monde, permettant aux habitants de chaque territoire d’avoir un impact sur leurs échanges. Les monnaies nationales ou continentales, comme l’euro, ont disparu parce qu’elles n’avaient plus d’utilité dans une économie sans spéculation financière. "
+        },
+        {
+            "step": 16,
+            "id": "drone",
+            "title": "Les Drones",
+            "content": "Les drones de portage facilitent la logistique le long du canal. Ils sont précieux, on leur fait réaliser les tâches les plus difficiles"
+        },
+        {
+            "step": 16,
+            "id": "ecluse",
+            "title": "L'ecluse'",
+            "content": " Les écluses fonctionnent comme au lancement du canal au XVIIe siècle, le principe n’a pas changé ! Mais maintenant, elles sont automatisées et une IA gère les apports d’eau pour ne pas la gaspiller."
+        },
+        {
+            "step": 38,
+            "id": "veloroute",
+            "title": "La Véloroute",
+            "content": "l’un de nos atout principaux, c’est la voie cyclable. Elle permet de rejoindre la véloroute européenne sur la , et donc d’aller jusqu’à Cadix ou Athènes ! Sans prétention, c’est sans doute une des voies cyclables le mieux entretenues d’Occitanie ! Pour qu’elle soit vraiment lisse, on utilise du bio-asphalte végétal. Ça nous a coûté cher, mais il est important pour nous que la voie reste gratuite. Ça maintient une vie et une activité économique sur les berges. Il y a des vendeurs de vélos, des loueurs et des réparateurs sur tout le parcours."
         }
     ],
     "pages_callback":[

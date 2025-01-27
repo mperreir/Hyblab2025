@@ -10,7 +10,6 @@ class Scene {
     .then(response => response.json())
     .then(data => {
       data.elements.forEach(element => {
-        console.log(this.f)
         this.objects.push(addData(element, this.scene_container, this.f))
       }); 
 
@@ -23,9 +22,7 @@ class Scene {
 
   set_frame(time){
     this.sceneAudio.updateAudio(time);
-    console.log(this.f);
     for (const value of this.objects) {
-      console.log(this.f)
       updateKeyframes(value, time, this.f); // Appel de la fonction récursive
     }
   }
@@ -34,7 +31,6 @@ class Scene {
   {
     this.triggers.forEach(triggers => {
       const html_object = document.getElementById(triggers.id);
-      console.log(html_object)
       // Ajouter un gestionnaire d'événements si nécessaire
       if (triggers.script) {
         if (html_object && typeof window[triggers.script.func] === "function") {
@@ -47,16 +43,13 @@ class Scene {
 
     // Exécuter la fonction onload si elle est définie
     if (triggers.onload) {
-        console.log(triggers.onload.func)
         window[triggers.onload.func](html_object, ...triggers.onload.args);
-        console.log("test")
     }
     }); 
   }
 
   resizeScene(){
     let height = window.innerHeight;
-    console.log(height)
     this.f = interpolate(height, 678, 1300, 0.6, 1.2)
     this.set_frame(this.time)
   }
@@ -71,7 +64,6 @@ function interpolate(x, start_time, end_time, start_pos, end_pos)
 
 function addData(element, container, f){
 
-  console.log(f);
   let new_element = new SceneObject(
     element.type,
     element.src,
@@ -104,7 +96,6 @@ function addData(element, container, f){
 }
 
 function updateKeyframes(value, time, f) {
-  console.log(f);
   for (let i = 0; i < value.keyframes.length - 1; i++) {
     if (time >= value.keyframes[i].time && time < value.keyframes[i + 1].time) {
       const init_o = value.keyframes[i];
