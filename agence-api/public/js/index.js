@@ -36,8 +36,8 @@ document.addEventListener('DOMContentLoaded', async function() {
       direction: "vertical",
       mousewheel: true,
       pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
+        clickable: false,
+        pagination: false,
       },
     });
 
