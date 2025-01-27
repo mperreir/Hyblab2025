@@ -78,7 +78,7 @@ document.addEventListener('mousemove', (event) => {
   popup.style.top = `${event.clientY + 10}px`;
 
   // Mettre à jour le contenu
-  popup.textContent = `X: ${xPercent}% | Y: ${yPercent}%`;
+  popup.textContent = `X: ${xPercent}% | Y: ${yPercent}% | time: ${sceneManager.time}`;
 
   // Afficher le popup
   popup.style.display = 'block';
