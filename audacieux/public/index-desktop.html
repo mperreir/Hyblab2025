@@ -5,14 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SVG + Lottie + GSAP</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/livre.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/svg-injector/1.1.3/svg-injector.min.js"></script>
 
 </head>
 <body>
   <div id="time-slider-container">
     <input type="range" id="time-slider" min="0" max="100" value="0" step="0.1">
 </div>
+
 
   <div id="box-container">
     <img id="image-scene">
@@ -27,7 +28,7 @@
       <!-- Barre latérale gauche -->
       <div class="sidebar left">
         <img id="inventaire" src="img/inventaire.png" alt="Inventaire">
-        <img src="img/livre.png" alt="Livre">
+        <img id="livre_open" src="img/livre.png" alt="Livre">
       </div>
     
       <!-- Barre latérale droite -->
@@ -37,13 +38,25 @@
     </div>
   </main>
   
+
+  <div id="book1" class="book">
+    <div class="content">
+        <div class="page left-page">
+            <h2>Page 1</h2>
+            <p>Contenu de la première page</p>
+        </div>
+    </div>
+  </div>
+  
   <script src="js/utile.js"></script>
   <script src="js/utils.js"></script>
   <script src="js/scene.js"></script>
   <script src="js/sceneObject.js"></script>
   <script src="js/audioScene.js"></script>
-  <script src="js/slider.js"></script>
   <script src="js/UI.js"></script>
+  <script src="js/livre.js"></script>
+  <script src="js/loadAnimations.js"></script>
+  <script src="js/main.js"></script>
   
 </body>
 </html>

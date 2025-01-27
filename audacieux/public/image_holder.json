@@ -4,7 +4,7 @@
             "id": "scene1",
             "url": "assets/graphic/trebe.png",
             "box":[
-                { "left": "20%", "top": "30%", "width": "15%", "height": "20%", "script": {"func":"test", "args": "caca"} }
+                { "left": "20%", "top": "30%", "width": "15%", "height": "20%", "script":{"func":"test", "args":["caca"]} }
             ]
         }
 

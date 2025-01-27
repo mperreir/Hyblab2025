@@ -1,0 +1,30 @@
+{
+    "pages_time": [
+        {
+            "step": 0,
+            "id": "start",
+            "title": "Le début de l'aventure",
+            "content": "Votre histoire commence..."
+        },
+        {
+            "step": 25,
+            "id" : "caca",
+            "title": "Première étape",
+            "content": "Vous progressez..."
+        },
+        {
+            "step": 25,
+            "id" : "bite",
+            "title": "Première étape",
+            "content": "Vous progressez..."
+        }
+    ],
+    "pages_callback":[
+        {
+            "type": "callback",
+            "id": "demi",
+            "title": "Mi-parcours",
+            "content": "Un événement important..."
+        }
+    ]
+}

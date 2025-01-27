@@ -108,6 +108,34 @@ body{
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+.notification-img {
+  animation: pulse 1s infinite;
+}
+
+/* Animation to draw attention */
+@keyframes pulse {
+  0% {
+      transform: rotate(0deg) scale(1.0);
+  }
+  25% { 
+      transform: rotate(45deg) scale(1.5);
+  }
+  50%{
+    transform: scale(1.0);
+  }
+  75%{
+      transform: rotate(-45deg) scale(1.5);
+  }
+  100% {
+      transform: rotate(0deg) scale(1.0);
+  }
+}
+
+.notification-img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(255, 71, 71, 1);
+}
+
 /* Inventaire et Livre en haut à gauche */
 .sidebar.left {
   top: 10px;
@@ -142,28 +170,110 @@ main > section {
 /* Animation pour wiggle */
 @keyframes wiggle {
   0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-1px) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(-2px) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-1px) rotate(2deg);
+  }
+  100% {
+    transform: translateY(-0px) rotate(0deg);
+  }
+}
+/* Keyframes pour simuler le mouvement d'un drone */
+@keyframes slideWiggle {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  25% {
+    transform: translate(5px, 0px) rotate( 20deg);
+  }
+  50% {
+    transform: translate(10px, 0px);
+  }
+  75% {
+    transform: translate(5px, 0px) rotate(-20deg);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+
+@keyframes fullRotation {
+  0% {
     transform: rotate(0deg);
   }
   25% {
-    transform: rotate(-1deg);
+    transform: rotate(90deg);
   }
   50% {
-    transform: rotate(0deg);
+    transform: rotate(180deg);
   }
   75% {
-    transform: rotate(1deg);
+    transform: rotate(270deg);
   }
   100% {
-    transform: rotate(0deg);
+    transform: rotate(360deg);
+  }
+}
+
+
+@keyframes TreeAnimation {
+  0% {
+    transform: scale(1.0, 1.0);
+  }
+
+  50% {
+    transform:  scale(1.2, 1.0);
+  }
+
+  100% {
+    transform: scale(1.0, 1.0);
   }
 }
 
 
 #wiggle-group{
-  animation: wiggle 3s infinite linear;
+  animation: wiggle 1.6s infinite linear;
+  transform-box: fill-box;
+  transform-origin: center;
 }
 
-#HÉLICES-38{
-  animation: wiggle 3s infinite linear;
-  transform-origin: center center center;
+
+#wiggle-group{
+  animation: wiggle 1.6s infinite linear;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.eolienne{
+  animation: fullRotation 5s infinite linear;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.svgElement2-cls-2{
+  animation: slideWiggle 10s infinite linear;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.drone {
+  /* Style par défaut */
+  animation: slideWiggle 3s infinite linear;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+g[id^="ARBRE-"]{
+  animation: TreeAnimation 1s infinite linear;
+  
+  transform-box: fill-box;
+  transform-origin: center;
 }

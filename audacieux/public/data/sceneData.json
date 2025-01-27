@@ -26,19 +26,20 @@
             {
               "time": 0,
               "x": 12000,
-              "y": 200,
+              "y": 0,
               "rotation": 0,
               "scale": 85
             },
             {
               "time": 100,
               "x": -7500,
-              "y": 200,
+              "y": 0,
               "rotation": 0,
               "scale": 85
             }
           ]
         },
+
         {
           "id": "svgElement1",
           "type": "svg",
@@ -49,23 +50,19 @@
             {
               "time": 0,
               "x": 12000,
-              "y": 200,
+              "y": 0,
               "rotation": 0,
               "scale": 85
             },
             {
               "time": 100,
               "x": -18000,
-              "y": 200,
+              "y": 0,
               "rotation": 0,
               "scale": 85
             }
           ]
-        }
-        ,
-        
-       
-       
+        },
         {
           "id": "svgElement3",
           "type": "svg",
@@ -75,19 +72,20 @@
             {
               "time": 0,
               "x": 12000,
-              "y": 200,
+              "y": 0,
               "rotation": 0,
               "scale": 85
             },
             {
               "time": 100,
               "x": -9500,
-              "y": 200,
+              "y": 0,
               "rotation": 0,
               "scale": 85
             }
           ]
         },
+        
         {
           "id": "svgElement4",
           "type": "svg",
@@ -97,14 +95,14 @@
             {
               "time": 0,
               "x": 14000,
-              "y": 300,
+              "y": 0,
               "rotation": 0,
               "scale": 100
             },
             {
               "time": 100,
               "x": -4500,
-              "y": 300,
+              "y": 0,
               "rotation": 0,
               "scale": 100
             }
@@ -118,17 +116,17 @@
           "keyframes": [
             {
               "time": 0,
-              "x": 12000,
-              "y": 0,
+              "x": 9000,
+              "y": 500,
               "rotation": 0,
-              "scale": 85
+              "scale": 65
             },
             {
               "time": 100,
-              "x": 12000,
-              "y": 0,
+              "x": 9000,
+              "y": 500,
               "rotation": 0,
-              "scale": 85
+              "scale": 65
             }
           ]
         } 
@@ -137,7 +135,7 @@
         {
           "time": 0,
           "x": 300,
-          "y": 300,
+          "y": -200,
           "rotation": 0,
           "scale": 1
         }

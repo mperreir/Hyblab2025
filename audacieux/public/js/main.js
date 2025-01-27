@@ -1,31 +1,25 @@
 
-const sceneAudio = new audioScene('audio_scene.json')
-
-const sceneManager = new Scene("sceneData.json", "scene-container", sceneAudio);
-
+const sceneAudio = new audioScene('data/audio_scene.json')
+const sceneManager = new Scene("data/sceneData.json", "scene-container", sceneAudio);
 const slider = document.getElementById("time-slider");
+let books;
+let InteractiveBookObject;
 
 setTimeout(() => {
-  console.log("After 2 seconds");
+  console.log("After 2 seconds"); 
   sceneManager.loadTriggers()
   
-  // Récupère l'élément SVG
   const svg = document.getElementById('PÉNICHE');
 
-  // Crée un nouvel élément <g>
   const group = document.createElementNS('http://www.w3.org/2000/svg', 'g');
 
-  // Déplace tous les enfants existants de l'élément SVG dans le groupe
   while (svg.firstChild) {
     group.appendChild(svg.firstChild);
   }
 
   // Ajoute le groupe dans le SVG
   svg.appendChild(group);
-
-  // Ajoute un ID ou une classe au groupe pour appliquer l'animation
   group.setAttribute('id', 'wiggle-group');
-
 }, 2000);
 
 
@@ -38,11 +32,9 @@ document.querySelectorAll("svg").forEach(svg => {
       });
   }
 });
-
-const sceneContainer = document;
 let isAnimating = false;
 
-sceneContainer.addEventListener(
+document.addEventListener(
   "wheel",
   function (event) {
     event.preventDefault();
@@ -50,7 +42,7 @@ sceneContainer.addEventListener(
     const maxTime = 100;
 
     sceneManager.time = Math.max(0, Math.min(sceneManager.time + timeDelta, maxTime));
-    console.log(sceneManager.time);
+    InteractiveBookObject.updatePageTime(sceneManager.time)
     syncSliderWithScene();
     if (!isAnimating) {
       isAnimating = true;
@@ -63,15 +55,6 @@ sceneContainer.addEventListener(
   { passive: false }
 );
 
-const mouseBox = document.getElementById("mouse-box");
-
-document.addEventListener("mousemove", (event) => {
-  mouseBox.style.left = `${event.pageX + 10}px`;
-  mouseBox.style.top = `${event.pageY + 10}px`;
-  mouseBox.textContent = `X: ${event.pageX}, Y: ${event.pageY}`;
-});
-
-
 // Update slider value based on sceneManager.time
 function syncSliderWithScene() {
   slider.value = sceneManager.time;
@@ -82,6 +65,7 @@ slider.addEventListener("input", () => {
   const newTime = parseFloat(slider.value);
   sceneManager.set_frame(newTime);
   sceneManager.time = newTime
+  InteractiveBookObject.updatePageTime(newTime)
   syncSliderWithScene(); // Keep the display in sync
 });
 
@@ -102,4 +86,11 @@ document.addEventListener('mousemove', (event) => {
 });
 
 
+
+// Initialize books
+document.addEventListener('DOMContentLoaded', () => {
+  books = document.querySelectorAll('.book');
+  const activation = document.getElementById('livre_open');
+  InteractiveBookObject = new InteractiveBook(books[0],activation)
+});
 
