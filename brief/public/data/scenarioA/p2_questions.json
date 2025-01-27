@@ -1,0 +1,203 @@
+{
+    "questions": [
+    {
+        "question_id": 4,
+        "question_text": " Comment minimiser les besoins en métaux critiques (lithium, cobalt, cuivre, etc.), essentiels pour les panneaux solaires, éoliennes et batteries ?",
+        "transition": [],
+        "responses": [
+        {
+            "response_id": 1,
+            "response_text": " Développer une filière de recyclage nationale pour réutiliser les matériaux issus des équipements usagés.",
+            "advantages":"",
+            "inconvenient":"",
+            "Budget":{
+                "plus": 0,
+                "moins": 0
+              },
+            "GES":{
+                "plus": 0,
+                "moins": 0
+              },
+            "Satisfaction": {
+                "plus": 0,
+                "moins": 0
+              },
+            "next_question_id": 5
+        },
+        {
+            "response_id": 2,
+            "response_text": "Diversifier les technologies renouvelables utilisées pour réduire la pression sur certains métaux.",
+            "advantages":"",
+            "inconvenient":"",
+            "Budget":{
+                "plus": 0,
+                "moins": 0
+              },
+            "GES":{
+                "plus": 0,
+                "moins": 0
+              },
+            "Satisfaction": {
+                "plus": 0,
+                "moins": 0
+              },
+            "next_question_id": 5
+        },
+        {
+            "response_id": 3,
+            "response_text": "Importer des métaux critiques depuis des partenaires étrangers, malgré les risques géopolitiques.",
+            "advantages": "",
+            "inconvenient": "",
+            "Budget":{
+                "plus": 0,
+                "moins": 0
+              },
+            "GES":{
+                "plus": 0,
+                "moins": 0
+              },
+            "Satisfaction": {
+                "plus": 0,
+                "moins": 0
+              },
+            "next_question_id": 5
+        }
+        ]
+    },
+    {
+        "question_id": 5,
+        "question_text": " Comment renforcer les infrastructures de réseau électrique pour un mix 100 % renouvelable ?",
+        "transition":[
+            {
+                "id":3,
+                "text": "Les renouvelables nécessitent des infrastructures robustes pour transporter et gérer une production décentralisée."
+            }
+        ],
+        "responses": [
+        {
+            "response_id": 1,
+            "response_text": "Moderniser les réseaux de distribution pour s’adapter à des productions intermittentes et locales.",
+            "advantages":"",
+            "inconvenient": "",
+            "Budget":{
+                "plus": 0,
+                "moins": 10
+              },
+            "GES":{
+                "plus": 5,
+                "moins": 0
+              },
+            "Satisfaction": {
+                "plus": 0,
+                "moins": 0
+              },
+            "next_question_id": 6
+            
+        },
+        {
+            "response_id": 2,
+            "response_text": "Investir dans des réseaux électriques intelligents pour anticiper et gérer les pics et creux de production.",
+            "advantages": "",
+            "inconvenient":"",
+            "Budget":{
+                "plus": 0,
+                "moins": 5
+              },
+            "GES":{
+                "plus": 5,
+                "moins": 0
+              },
+            "Satisfaction": {
+                "plus": 10,
+                "moins": 0
+              },
+            "next_question_id": 6
+        },
+        {
+            "response_id": 3,
+            "response_text": "Construire de nouveaux réseaux de transport pour relier les zones de production éloignées des zones de consommation.",
+            "advantages": "",
+            "inconvenient":"",
+            "Budget":{
+                "plus": 0,
+                "moins": 5
+              },
+            "GES":{
+                "plus": 0,
+                "moins": 0
+              },
+            "Satisfaction": {
+                "plus": 0,
+                "moins": 0
+              },
+            "next_question_id": 6
+            
+        }
+        ]
+    },
+    {
+        "question_id": 6,
+        "question_text": "Quelle stratégie adopter pour limiter l’impact environnemental des grandes infrastructures renouvelables ?",
+        "transition":[
+            {
+                "id":6,
+                "text": "Les projets éoliens et solaires peuvent provoquer des conflits locaux et des impacts écologiques importants."
+            }
+        ],
+        "responses": [
+        {
+            "response_id": 1,
+            "response_text": "Favoriser les projets sur des espaces déjà artificialisés (toits, friches industrielles).",
+            "Budget":{
+                "plus": 0,
+                "moins": 5
+              },
+            "GES":{
+                "plus": 5,
+                "moins": 0
+              },
+            "Satisfaction": {
+                "plus": 5,
+                "moins": 0
+              },
+            "next_question_id": 7
+        },
+        {
+            "response_id": 2,
+            "response_text": "Limiter la taille des installations et privilégier des projets à petite échelle, même si cela augmente les coûts.",
+            "Budget":{
+                "plus": 0,
+                "moins": 10
+              },
+            "GES":{
+                "plus": 5,
+                "moins": 0
+              },
+            "Satisfaction": {
+                "plus": 0,
+                "moins": 0
+              },
+            "next_question_id": 7
+        },
+        {
+            "response_id": 3,
+            "response_text": "Imposer des critères environnementaux stricts pour minimiser l’impact sur la biodiversité.",
+            "Budget":{
+                "plus": 0,
+                "moins": 0
+              },
+            "GES":{
+                "plus": 0,
+                "moins": 0
+              },
+            "Satisfaction": {
+                "plus": 0,
+                "moins": 0
+              },
+            "next_question_id": 7
+        }
+        ]
+    }
+    ]
+  }
+  
