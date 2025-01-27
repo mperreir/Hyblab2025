@@ -4,15 +4,15 @@ const app = require( 'express' )();
 const path = require('path');
 const cors = require('cors');
 
-/*
+
 app.use(cors({
-    origin: ['https://hyblab.polytech.univ-nantes.fr/lanouvellerepublique/map?animal=Loutre', 'http://localhost:5173', 'http://localhost:4173'],
+    origin: ['https://hyblab.polytech.univ-nantes.fr/lanouvellerepublique/map?animal=Loutre','https://hyblab.polytech.univ-nantes.fr/lanouvellerepublique/map','https://hyblab.polytech.univ-nantes.fr/lanouvellerepublique/','https://hyblab.polytech.univ-nantes.fr', 'http://localhost:5173', 'http://localhost:4173'],
 }));
-*/
+
 
 // Sample endpoint that sends the partner's name
 app.get('/animals/*', function ( req, res ) {
-    res.setHeader('Access-Control-Allow-Origin', 'https://hyblab.polytech.univ-nantes.fr');
+    
     let POIs;
     // Get partner's topic from folder name
     let json = require(path.join(__dirname, '../src/src/data/db.json'));
