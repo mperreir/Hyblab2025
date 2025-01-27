@@ -6,8 +6,11 @@ import {
   Container,
   CssBaseline,
   Toolbar,
+  Button,
   Typography,
 } from "@mui/material";
+import MenuIcon from '@mui/icons-material/Menu';
+import IconButton from '@mui/material/IconButton';
 
 // Le composant Layout de base
 const IntroductionLayout = ({ children }) => {
@@ -24,6 +27,22 @@ const IntroductionLayout = ({ children }) => {
             <span style={{ color: 'black', fontWeight: "bold" }}>Brief</span>
             <span style={{ color: '#991756', fontWeight: "bold" }}>.science</span>
           </Typography>
+
+          <Button
+            variant="contained"
+            color="primary"
+            sx={{
+              textTransform: 'none', // Keep button text in normal case
+              borderRadius: '5px',
+              fontWeight: 'bold',
+            }}
+          >
+            OFFRIR
+          </Button>
+           {/* Menu icon on the far left */}
+           <IconButton aria-label="menu" sx={{ marginRight: 1 }}>
+            <MenuIcon />
+          </IconButton>
         </Toolbar>
       </AppBar>
       <Container

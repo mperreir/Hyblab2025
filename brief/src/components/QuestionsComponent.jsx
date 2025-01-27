@@ -11,8 +11,10 @@ import {
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import DonutJaugeGroup from "./GraphicsComponent";
+import { useAppContext } from "../context/AppContextProvider";
 
 const QuestionsComponent = () => {
+  const { globalState, setGlobalState } = useAppContext(); // Accès au contexte
   const [questions, setQuestions] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState(null);
   const [subQuestions, setSubQuestions] = useState([]); // Pile de sous-questions
@@ -21,7 +23,7 @@ const QuestionsComponent = () => {
 
   useEffect(() => {
     // Charger les questions depuis le fichier JSON
-    fetch("/brief/public/data/questions/p1_questions.json")
+    fetch("/brief/public/data/scenarioA/p1_questions.json")
       .then((response) => response.json())
       .then((data) => {
         setQuestions(data.questions);
@@ -34,6 +36,22 @@ const QuestionsComponent = () => {
   }, []);
 
   const handleAnswer = (response) => {
+     // Mettre à jour les scores dans le contexte
+     setGlobalState((prevState) => ({
+      ...prevState,
+      Budget: prevState.Budget + response.Budget.plus - response.Budget.moins,
+      GES: prevState.GES + response.GES.plus - response.GES.moins,
+      Satisfaction:
+        prevState.Satisfaction + response.Satisfaction.plus - response.Satisfaction.moins,
+      history: [
+        ...prevState.history,
+        { question_id: currentQuestion.question_id, response_id: response.response_id },
+      ], // Ajout à l'historique
+    }));
+     // Simuler une transition vers la prochaine question (à améliorer)
+     alert(
+      `Scores mis à jour : Budget=${globalState.Budget}, GES=${globalState.GES}, Satisfaction=${globalState.Satisfaction}`
+    );
     // Gestion des sous-questions (si elles existent)
     if (response.subquestion && response.subquestion.length > 0) {
       setSubQuestions(response.subquestion); // Ajoute les sous-questions dans la pile
