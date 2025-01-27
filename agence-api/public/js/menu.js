@@ -20,13 +20,12 @@ function initMenu(){
     closeMenuBtns.forEach((closeMenuBtn, index) => {
         closeMenuBtn.addEventListener("click", () => {
             menuPopups[index].classList.add("hidden");
-            menuBtns[index] = false;
+            menuBtns[index].checked = false;
         });
     });
 
     // 点击背景(除 .menu-content 以外的区域)也关闭
     menuPopups.forEach((menuPopup, index) => {
-        // 点击背景(除 .menu-content 以外的区域)也关闭
         menuPopup.addEventListener("click", (event) => {
             if (event.target === menuPopup) {
             menuPopup.classList.add("hidden");
