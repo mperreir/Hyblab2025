@@ -183,7 +183,7 @@ const QuestionPage = () => {
             <div className="hint-item">
               <button
                 className="toggle-btn"
-                onClick={() => setShowHintText(!showHintText)}
+                onClick={handleHint1Click}
               >
                 {showHintText ? "−" : "+"}
               </button>
@@ -194,7 +194,7 @@ const QuestionPage = () => {
             <div className="hint-item">
               <button
                 className={`toggle-btn ${!showHintText ? "disabled" : ""}`}
-                onClick={() => setShowHintImage(!showHintImage)}
+                onClick={handleHint2Click}
                 disabled={!showHintText}
               >
                 {showHintImage ? "−" : "+"}
