@@ -1,24 +1,31 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useSearchParams  } from "react-router-dom";
 import ScrollableMap from "../components/ScrollableMap";
 import DialogueBox from "../components/DialogueBox";
 import Header from "../components/Header";
 import MapCarousel from "../components/MapCarousel";
-import backgroundImage from '../../public/background.jpg';
-import { useLocation } from "react-router-dom";
+import backgroundImage from '../assets/background.jpg';
+import data from '../data/db.json';
+
 
 function MapPage() {
   const [selectedText, setSelectedText] = useState(""); // Manage text globally
   const [points, setPoints] = useState([]);
-  const location = useLocation();
+  const [searchParams] = useSearchParams();
+  const mapRef = useRef(null);
+  const queryAnimal = searchParams.get("animal"); // Get 'region' query parameter
+  const chosenAnimal = queryAnimal in data ? queryAnimal : 'Loutre'; // Charger la Loutre par défaut
 
   async function fetchPOIs() {
-    const searchParams = new URLSearchParams(location.search);
-    const res = await fetch('http://hyblab.polytech.univ-nantes.fr:80/lanouvellerepublique/api/animals/' + searchParams.get("animal"))
+    const res = await fetch('http://localhost:8080/lanouvellerepublique/api/animals/Loutre') // TEST (route à modifier)
       .then(response => response.json())
       .then(response => setPoints(response));
   }
+  
 
   useEffect(() => {
+    const pts = data[chosenAnimal];
+    //setPoints(data[chosenAnimal]);
     fetchPOIs();
   });
 
@@ -27,13 +34,15 @@ function MapPage() {
     <Header titre={"Dans leur peau"} textColor={"white"}/>
     <div className="game_container">
       <ScrollableMap
+        mapRef={mapRef}
         width={4000}
         height={4000}
         background={`url(${backgroundImage})`} 
         setSelectedText={setSelectedText}
+        points={points}
       />
       {selectedText && <DialogueBox text={selectedText} setSelectedText={setSelectedText} />}
-      <MapCarousel points={points} />
+      <MapCarousel mapRef={mapRef} points={points} />
     </div>
     </>
   );

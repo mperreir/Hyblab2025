@@ -1,0 +1,36 @@
+{
+    "Loutre":[
+        {
+            "id": 1,
+            "pos": [175,175],
+            "title" : "POI 1",
+            "subtitle": "1",
+            "text": "Vous remarquerez vite que je suis une vraie championne de la nage ! Mon corps long et fuselé, mes petites pattes palmées et ma queue musclée sont conçus pour filer sous l’eau. Mon pelage marron chocolat est super pratique: 98% de poils de bourre pour me garder au sec, et des poils de jarre pour être totalement imperméable. Sous l’eau, je suis équipée pour tout gérer : nager, plonger, chasser. Par contre, sur terre, je suis un peu moins agile… Mais avec tous mes atouts aquatiques, j’ai encore besoin de votre aide pour protéger mes habitats. Vous êtes prêts à me soutenir ?",
+            "linked": "anguille"
+        },
+        {
+            "id": 2,
+            "pos": [546, 695],
+            "text": "POI 2. Here is some placeholder text.",
+            "title" : "POI 2",
+            "subtitle": "2",
+            "linked": "None"
+        },
+        {
+            "id": 1,
+            "pos": [2000, 2000],
+            "text": "POI 3. Here is more placeholder text.",
+            "title" : "POI 3.",
+            "subtitle": "3",
+            "linked": "anguille"
+        }
+    ],
+    "Anguille":[
+        {
+            "id": 1,
+            "pos": [435, 675],
+            "text": "L'anguille' c'est super",
+            "linked": "None"
+        }
+    ]
+}

@@ -74,10 +74,11 @@
 
 .green-circle {
   position: absolute;
-  width: 580px;
-  height: 580px;
+  width: 180%;
+  aspect-ratio: 1/1;
   background-color: #228B22;
   border-radius: 50%;
+  transform: translateY(15%);
 }
 
 .gray-rectangle {

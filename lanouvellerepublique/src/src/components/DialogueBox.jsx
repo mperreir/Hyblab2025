@@ -1,55 +1,85 @@
 import { useEffect, useRef, useState } from "react";
 import anime from "animejs";
 import "./DialogueBox.css";
+import loutre from '../assets/loutre.svg';
+
+const CardTitle = ({ number, title }) => {
+    return (
+        <div className="card_title">
+            <div className="number_square">
+                <span className="number">
+                    {number.toString().padStart(2,"0")}
+                </span>
+            </div>
+            <h2 className="title">{title}</h2>
+        </div>
+    )
+}
+
+const SpeechBubble = ({ text }) => {
+    return (
+        <div className="speech_bubble">
+            <p>{text}</p>
+            <div className="tail"></div>
+        </div>
+    )
+}
+
+const AnimalIllustration = () => {
+    return (
+        <div className="illustration">
+            <img src={loutre} alt="Loutre"/>
+        </div>
+    )
+}
 
 const DialogueBox = ({ text, setSelectedText}) => {
     const dialogueRef = useRef(null);
-    const textRef = useRef(null);
+    const speechHolderRef = useRef(null);
     const [pages, setPages] = useState([]);
-    const [currentPage, setCurrentPage] = useState(0);
+    const [scrollPercentage, setScrollPercentage] = useState(0);
+    const maxCharsPerBubble = 250;
 
-    const splitTextByHeight = () => {
-        if (!text || text.trim() === "" || !dialogueRef.current || !textRef.current) return [];
-    
-        const words = text.split(" ");
-        const pages = [];
-        let currentPageText = "";
+    const splitText = () => {
+        const sentences = text.match(/[^.!?…]+[.!?…]/g) || []; // Extract sentences
+        const tempPages = [];
+        let currentBubble = "";
         
-        // Use getBoundingClientRect() for more consistent measurements
-        const boxHeight = dialogueRef.current.getBoundingClientRect().height;
-        const computedStyle = getComputedStyle(dialogueRef.current);
-        const paddingTop = parseFloat(computedStyle.paddingTop);
-        const paddingBottom = parseFloat(computedStyle.paddingBottom);
-        const boxHeightAdjusted = boxHeight - paddingTop - paddingBottom;
-    
-        // Fallback line height calculation
-        const lineHeight = parseFloat(getComputedStyle(textRef.current).lineHeight) || 20; // Provide a default
-    
-        words.forEach((word) => {
-            const testText = currentPageText + word + " ";
-            textRef.current.innerText = testText;
-            
-            // Use offsetHeight instead of scrollHeight
-            const testHeight = textRef.current.offsetHeight;
-    
-            if (testHeight > boxHeightAdjusted) {
-                pages.push(currentPageText.trim());
-                currentPageText = word + " ";
+        for (const sentence of sentences) {
+            if ((currentBubble + sentence).length <= maxCharsPerBubble) {
+                currentBubble += sentence + " ";
             } else {
-                currentPageText = testText;
+                tempPages.push(currentBubble.trim()); // Store the current bubble
+                currentBubble = sentence + " "; // Start a new bubble
             }
-        });
+        }
     
-        if (currentPageText) pages.push(currentPageText.trim());
-        return pages;
+        // Push the last bubble if not empty
+        if (currentBubble.trim().length > 0) {
+            tempPages.push(currentBubble.trim());
+        }
+
+        console.log(tempPages);
+        setPages(tempPages); // Update state
+    };
+
+    const handleScroll = () => {
+        const holder = speechHolderRef.current;
+        if (holder) {
+            // Calculate the percentage of how far the user has scrolled
+            const scrollPosition = holder.scrollTop;
+            const scrollHeight = holder.scrollHeight - holder.clientHeight;
+            const scrolledPercentage = (scrollPosition / scrollHeight) * 100;
+
+            // Set the scroll percentage
+            setScrollPercentage(scrolledPercentage);
+        }
     };
 
     // Reset pages when text changes
     useEffect(() => {
-        if (dialogueRef.current && textRef.current) {
-            setPages(splitTextByHeight());
-            setCurrentPage(0);
-        }
+        console.log(text);
+        splitText();
     }, [text]);
 
     useEffect(() => {
@@ -63,6 +93,33 @@ const DialogueBox = ({ text, setSelectedText}) => {
         });
         }
     }, [text]); // Re-run animation whenever text changes
+
+    useEffect(() => {
+        const holder = speechHolderRef.current;
+        if (holder) {
+            holder.addEventListener("scroll", handleScroll);
+        }
+        return () => {
+            if (holder) {
+                holder.removeEventListener("scroll", handleScroll);
+            }
+        };
+    }, []);
+
+    const shadowIntensity = Math.max(0.2 - (scrollPercentage / 500), 0.05); // Decrease shadow as we scroll down
+    const shadowStyle = {
+        content: '""',
+        position: "fixed",
+        bottom: "calc(20% - 10px)",
+        left: "0",
+        width: "100%",
+        height: "50px", // Adjust this based on how much shadow you want
+        background: `linear-gradient(to top, rgba(255, 255, 255, ${shadowIntensity*8}), rgba(255, 255, 255, 0))`,
+        pointerEvents: "none",
+        zIndex: 1,
+        opacity: 1, // Initially visible
+        transition: "box-shadow 0.3s, opacity 0.3s",
+    };
 
     const handleClose = () => {
         if (dialogueRef.current) {
@@ -81,9 +138,16 @@ const DialogueBox = ({ text, setSelectedText}) => {
         <div 
             ref={dialogueRef} 
             className="dialogue-box"
-            onClick={() => {currentPage < pages.length - 1 ? setCurrentPage(currentPage + 1) : handleClose()}}
+            onClick={() => {handleClose()}}
         >
-            <p ref={textRef}>{pages[currentPage]}</p>
+            <CardTitle number={1} title={"La carte d'identité"}/>
+            <div className="speech_holder" ref={speechHolderRef}>
+                {pages.map((page, index) => {
+                    return (<SpeechBubble key={index} text={page}/>);
+                })}
+                <div className="shadow" style={shadowStyle}></div>
+            </div>
+            <AnimalIllustration/>
         </div>
     );
 };

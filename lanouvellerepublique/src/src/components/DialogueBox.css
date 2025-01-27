@@ -4,22 +4,118 @@
     width: 100%;
     background-color: white;
     color: black;
-    padding: 15px 20px;
-    border-radius: 10px;
-    border: solid 2px black;
     box-sizing: border-box;
     font-size: 120%;
     white-space: nowrap;
     transition: opacity 0.3s ease-in-out;
-    height: 60dvh;
-    max-height: 60dvh;
+    height: calc(100% - var(--header-height));
     display: flex;
     align-items: center;
-    z-index: 10;
+    flex-direction: column;
+    justify-content: flex-end;
+    z-index: 1;
+}
+
+.card_title {
+    width: 100%;
+    background-color: #127039;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    clip-path: polygon(0 0, 100% 0, 100% 83%, 0% 100%);
+    margin-bottom: auto;
+}
+
+.card_title .title {
+    display: inline;
+}
+
+.card_title .number_square {
+    width: 40px;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    background-color: #EFD8B8;
+    color: black;
+    clip-path: polygon(25% 0, 100% 25%, 75% 100%, 0 75%);
+}
+
+.card_title .number {
+    font-size: 120%;
+    font-family: 'Sharpie-bold';
+}
+
+.speech_holder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: 65%;
+    overflow-y: auto;
+    -webkit-box-shadow: inset 0px -9px 13px -5px #FFFFFF; 
+    box-shadow: inset 0px -9px 13px -5px #FFFFFF;
+    position: relative;
+}
+
+/* Customize the scrollbar */
+.speech_holder::-webkit-scrollbar {
+    width: 8px; /* Width of the vertical scrollbar */
+    height: 8px; /* Height of the horizontal scrollbar */
+}
+
+/* Customize the scrollbar track (background) */
+.speech_holder::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Light background color for the track */
+    border-radius: 10px; /* Rounded corners */
+}
+
+/* Customize the scrollbar thumb (the draggable part) */
+.speech_holder::-webkit-scrollbar-thumb {
+    background-color: #888; /* Thumb color */
+    border-radius: 10px; /* Rounded corners */
+    border: 2px solid #f1f1f1; /* Border around the thumb for better visibility */
+}
+
+/* Customize the scrollbar thumb when hovering */
+.speech_holder::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Darker color when hovered */
+}
+
+.speech_bubble {
+    width: 80%;
+    background:  #E1CBAD;
+    margin-bottom: 30px;
+    font-family: 'Poppins-Regular';
+    font-size: 70%;
+    padding: 15px;
+    text-align: center;
+    text-wrap: wrap;
+    position: relative;
+}
+
+.speech_bubble .tail {
+    position: absolute;
+    right: 10%;
+    bottom: 0;
+    width: 15px;
+    height: 15px;
+    background-color: #E1CBAD;
+    transform: translateY(50%) rotateZ(45deg) skew(10deg, 10deg);
 }
 
 .dialogue-box > p {
     text-wrap: auto;
     margin: 0;
     user-select: none;
+}
+
+.illustration {
+    height: 20%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    z-index: 2;
 }

@@ -11,17 +11,37 @@ function Credits() {
         <>
         <Header titre={"Dans leur peau"} textColor={"black"} isHome={true} />
         <div className="credits-menu">
-            <div className="authors">
-                <h2>Les auteurs</h2>
-            </div>
-            <div className="sponsors">
-                <h2>Les sponsors</h2>
-            </div>
-            <div className="ai">
-                <h2>Utilisation de l'IA</h2>
-                <p className="ai-text">
-                    Ce site a été conçu et pensé à l'aide de l'intelligence artificielle, dans le cadre d'un projet étudiant. Les images ont été générées par IA puis retouchées, les données sources ont été résumées par IA et les textes écrits à la main, et le codage du site a été assisté par IA.
-                </p>
+            <div className="texts">
+                <div className="authors">
+                    <h2>Les auteurs</h2>
+                    <div className="row">
+                        <div className="porteurs">
+                            <h3>Porteurs du projet</h3>
+                            <p>Delphine Noyon, Laurent Gaudens</p>
+                        </div>
+                        <div className="journalists">
+                            <h3>Journalistes</h3>
+                            <p>Juliette Rigaud, Zoé Diraison</p>
+                        </div>
+                        <div className="graphist">
+                            <h3>Graphiste</h3>
+                            <p>Antoine Clavier</p>
+                        </div>
+                    </div>
+                    <div className="devs">
+                        <h3>Développeurs</h3>
+                        <p>Baptiste Josso, Christian Sow, Evan Josso, Julien Chatry, Ulysse Lopez</p>
+                    </div>
+                </div>
+                <div className="sponsors">
+                    <h2>Les partenaires</h2>
+                </div>
+                <div className="ai">
+                    <h2>Utilisation de l'IA</h2>
+                    <p className="ai-text">
+                        Ce site a été conçu et pensé à l'aide de l'intelligence artificielle, dans le cadre d'un projet étudiant. Les textes ont été écrits à la main, les données sources ont été résumées par IA, les images ont été générées par IA puis retouchées, et le codage du site assisté par IA.
+                    </p>
+                </div>
             </div>
             <div className='big-back-button' onClick={goBigBack}>
                 <svg width="87" height="27" viewBox="0 0 87 27" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -1,13 +1,13 @@
 import './CarouselBox.css'
 
-function CarouselBox({ title, description, pointPosition }) {
+function CarouselBox({ mapRef, title, description, pointPosition, boxRef }) {
     const targetElement = (event) => {
+        // Scroll to selected carousel box
         event.target.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-        console.log(`Moving to point: (${pointPosition[0]},${pointPosition[1]})`);
     }
 
     return (
-        <div className='carousel-box' onClick={targetElement}>
+        <div className='carousel-box' ref={boxRef} style={{minWidth: `${0.65* mapRef.current.offsetWidth}px`}} onClick={targetElement}>
             <div className='box-background'></div>
             <div className='box-main-container'>
                 <h3 className='box-title'>{title}</h3>
