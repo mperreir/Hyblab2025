@@ -1,9 +1,7 @@
-.choice.right.endquiz img {
-    right: 30%;
+.choice.right.pavon img {
+    transform: skew(20deg) scaleX(-1.5) scaleY(1.5);
+    right: 15vw;
 }
-.choice.right.endquiz:hover img{
-    right: 10%;
-}
-#choose-player.hv-left .choice.right.endquiz img{
-    right: 40%;
+.choice.right.pavon:hover img{
+    right: 0vw;
 }

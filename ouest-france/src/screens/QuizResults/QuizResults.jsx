@@ -67,62 +67,66 @@ const QuizResults = ({
       </div>
 
       {choosenPlayer === "player1" && (
-        <div className="choice right endquiz">
-          <img src={"./boutier.jpg"} alt={"boutier"} />
-          <h1 className="divider">La Machine</h1>
-          <div className="content">
-            <h1>Celine BOUTIER</h1>
-            <p>
-              Golfeuse française de renom et multiple championne sur le circuit
-              LPGA Celine est une figure emblématique du golf féminin. Elle est
-              reconnue pour sa précision, sa constance et son rôle de modèle
-              dans le sport.
-            </p>
-            <button
-              onClick={() => {
-                onSelectPlayer(
-                  choosenPlayer === "player1" ? "player2" : "player1"
-                );
-                scrollToSection("quiz0");
-              }}
-              className="contained"
-            >
-              Quiz
-            </button>
+          <div className="choice right">
+            <div className='img-container'>
+              <img src={"./boutier.jpg"} alt={"boutier"}/>
+              <h1 className="divider">La Machine</h1>
+            </div>
+            <div className="content">
+              <h1>Celine BOUTIER</h1>
+              <p>
+                Golfeuse française de renom et multiple championne sur le circuit
+                LPGA Celine est une figure emblématique du golf féminin. Elle est
+                reconnue pour sa précision, sa constance et son rôle de modèle
+                dans le sport.
+              </p>
+              <button
+                  onClick={() => {
+                    onSelectPlayer(
+                        choosenPlayer === "player1" ? "player2" : "player1"
+                    );
+                    scrollToSection("quiz0");
+                  }}
+                  className="contained"
+              >
+                Quiz
+              </button>
+            </div>
           </div>
-        </div>
       )}
 
       {choosenPlayer === "player2" && (
-        <div className="choice right">
-          <img src={"./pavon.jpg"} alt={"Pavon"} />
-          <h1 className="divider">La Fusée</h1>
-          <div className="content">
-            <h1>Matthieu PAVON</h1>
-            <p>
-              Matthieu Pavon est un golfeur professionnel français évoluant sur
-              le circuit européen, connu pour sa puissance au drive et ses
-              performances prometteuses dans les grands tournois. Il incarne
-              l'avenir du golf masculin en France.
-            </p>
-            <button
-              onClick={() => {
-                onSelectPlayer(
-                  choosenPlayer === "player1" ? "player2" : "player1"
-                );
-                scrollToSection("quiz0");
-              }}
-              className="contained"
-            >
-              Quiz
-            </button>
+          <div className="choice right pavon">
+            <div className='img-container'>
+              <img src={"./pavon.jpg"} alt={"Pavon"}/>
+              <h1 className="divider">Le Phoenix</h1>
+            </div>
+            <div className="content">
+              <h1>Matthieu PAVON</h1>
+              <p>
+                Matthieu Pavon est un golfeur professionnel français évoluant sur
+                le circuit européen, connu pour sa puissance au drive et ses
+                performances prometteuses dans les grands tournois. Il incarne
+                l'avenir du golf masculin en France.
+              </p>
+              <button
+                  onClick={() => {
+                    onSelectPlayer(
+                        choosenPlayer === "player1" ? "player2" : "player1"
+                    );
+                    scrollToSection("quiz0");
+                  }}
+                  className="contained"
+              >
+                Quiz
+              </button>
+            </div>
           </div>
-        </div>
       )}
       <div className="absolute bottom-0 left-2">
         <Button
-          className={
-            "bg-white border-black hover:bg-[#CC2229] hover:text-white transition-colors duration-300 ease-in-out"
+            className={
+              "bg-white border-black hover:bg-[#CC2229] hover:text-white transition-colors duration-300 ease-in-out"
           }
           onClick={() => {
             scrollToSection(`quiz${quizLength - 1}`);
