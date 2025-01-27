@@ -17,23 +17,22 @@ const basename = process.env.REACT_APP_BASENAME || "/";
 function App() {
   return (
     <Router basename={basename}>
-      <LayoutWithMusic>
-        <div className="mobile-container">
-          <NavBarComponent />
-          <Routes>
-            <Route path="/" element={<Page0 />} />
-            <Route path="/home" element={<HomePage />} />
-            <Route path="/regles" element={<RulesPage />} />
-            <Route path="/difficulty" element={<DifficultyPage />} />
-            <Route path="/start/:difficulty" element={<StartPage />} />
-            <Route path="/start/:difficulty/:id" element={<QuestionPage />} />
-            <Route path="/final" element={<FinalPage />} />
-            <Route path="/transition/:difficulty/:level_id" element={<TransitionPage />} />
-            <Route path="/credit" element={<Credit />} />
-            <Route path="/final" element={<FinalPage />} />
-          </Routes>
-        </div>
-      </LayoutWithMusic>
+      <LayoutWithMusic />
+      <div className="mobile-container">
+        <NavBarComponent />
+        <Routes>
+          <Route path="/" element={<Page0 />} />
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/regles" element={<RulesPage />} />
+          <Route path="/difficulty" element={<DifficultyPage />} />
+          <Route path="/start/:difficulty" element={<StartPage />} />
+          <Route path="/start/:difficulty/:id" element={<QuestionPage />} />
+          <Route path="/final" element={<FinalPage />} />
+          <Route path="/transition/:difficulty/:level_id" element={<TransitionPage />} />
+          <Route path="/credit" element={<Credit />} />
+          <Route path="/final" element={<FinalPage />} />
+        </Routes>
+      </div>
     </Router>
   );
 }

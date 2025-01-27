@@ -10,7 +10,8 @@ const LayoutWithMusic = ({ children }) => {
     const togglePlay = () => {
         if (audioRef.current) {
             if (audioRef.current.paused) {
-                audioRef.current.play();
+                // audioRef.current.play();
+                // TODO: Uncomment the line above to enable music
             } else {
                 audioRef.current.pause();
             }
@@ -29,20 +30,22 @@ const LayoutWithMusic = ({ children }) => {
 
     const containerStyle = {
         position: 'absolute',
-        bottom: '20px', 
+        bottom: '20px',
         right: '20px',
         zIndex: 1000
     }
 
     return (
         <div>
-            <audio ref={audioRef} autoPlay loop style={{ display: 'none' }}>
+            <audio ref={audioRef}
+                // autoPlay
+                loop style={{ display: 'none' }}>
                 <source src={backgroundMusic} type="audio/mpeg" />
                 Your browser does not support the audio element.
             </audio>
             <div style={containerStyle}>
                 <button onClick={togglePlay} style={buttonStyle}>
-                    {isPlaying ? <MdMusicNote />: <MdMusicOff /> }
+                    {isPlaying ? <MdMusicNote /> : <MdMusicOff />}
                 </button>
             </div>
             {children}

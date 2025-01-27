@@ -1,19 +1,22 @@
 import React from 'react';
 import './pageRegles.css';
 import { useNavigate } from "react-router-dom";
+import useBasename from '../hooks/useBasenameHook';
 
 
 const RulesPage = () => {
     const navigate = useNavigate(); // Initialisation de navigate
+    const basename = useBasename(); // Initialisation de basename
 
 
     return (
         
-        <div className="background_rules">
-            <div class="arbre"></div>
-            <div className="text-center p-4 mt-4">
+        <div className="background_rules z-0">
+            <div className="arbre"></div>
+            <img src={`${basename}images/illustrations/bgreglevelo.png`} alt="velo" className="regle_velo" />
+            <div className="text-center p-4 mt-5">
                 <h1 className="text-white mb-4">LES RÈGLES</h1>
-                <div className="fs-7">
+                <div className="">
                     <p><i><b>Dans le Défi des 3 maillots, chaque étape est jalonnée de questions sur les lieux marquants traversés par le parcours du Tour de France. </b></i></p>
 
                     <p>Votre objectif est simple : récolter les trois maillots en répondant aux questions sur l’histoire et le patrimoine de la région.
