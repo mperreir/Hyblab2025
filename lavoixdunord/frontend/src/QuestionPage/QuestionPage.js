@@ -191,7 +191,12 @@ const QuestionPage = () => {
             <div className="hint-item">
               <button
                 className="toggle-btn"
-                onClick={() => setShowHintText(!showHintText)}
+                onClick={() => {
+                  setShowHintText(!showHintText)
+                  if (showHintText) {
+                    setShowHintImage(false); // This will automatically close "Indice 2" when "Indice 1" is closed
+                  }
+                }}
               >
                 {showHintText ? "−" : "+"}
               </button>
