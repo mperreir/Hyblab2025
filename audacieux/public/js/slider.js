@@ -8,6 +8,24 @@ const slider = document.getElementById("time-slider");
 setTimeout(() => {
   console.log("After 2 seconds");
   sceneManager.loadTriggers()
+  
+  // Récupère l'élément SVG
+  const svg = document.getElementById('PÉNICHE');
+
+  // Crée un nouvel élément <g>
+  const group = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+
+  // Déplace tous les enfants existants de l'élément SVG dans le groupe
+  while (svg.firstChild) {
+    group.appendChild(svg.firstChild);
+  }
+
+  // Ajoute le groupe dans le SVG
+  svg.appendChild(group);
+
+  // Ajoute un ID ou une classe au groupe pour appliquer l'animation
+  group.setAttribute('id', 'wiggle-group');
+
 }, 2000);
 
 
@@ -63,6 +81,7 @@ function syncSliderWithScene() {
 slider.addEventListener("input", () => {
   const newTime = parseFloat(slider.value);
   sceneManager.set_frame(newTime);
+  sceneManager.time = newTime
   syncSliderWithScene(); // Keep the display in sync
 });
 
@@ -81,3 +100,6 @@ document.addEventListener('mousemove', (event) => {
   // Afficher le popup
   popup.style.display = 'block';
 });
+
+
+

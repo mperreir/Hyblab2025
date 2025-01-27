@@ -111,7 +111,7 @@ function updateKeyframes(value, time, f) {
       const end_o = value.keyframes[i + 1];
       value.set_position(
         f*interpolate(time, init_o.time, end_o.time, init_o.x, end_o.x),
-        f*interpolate(time, init_o.time, end_o.time, init_o.y, end_o.y)+interpolate(f, 0.4, 2, -200, 400 )
+        f*interpolate(time, init_o.time, end_o.time, init_o.y, end_o.y)+interpolate(f, 0.4, 2, -200, 600 )
       );
       value.set_rotation(
         interpolate(time, init_o.time, end_o.time, init_o.rotation, end_o.rotation)
