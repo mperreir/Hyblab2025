@@ -12,20 +12,30 @@
 </head>
 <body>
     <nav class="sticky-top">
-        <div class="navigation-header btn-group btn-group-justified" role="group"> 
-            <!-- On pourrait essayer du relative avec left:-10 px -->
-            <button onclick="location.href='https://google.com' " class="btn btn-outline-secondary" type="button" disabled> ACTION SOCIALE ET SANTÉ</button>
-            <button onclick="location.href='https://google.com' " class="btn btn-outline-secondary" type="button" disabled> CITOYENNETÉ</button>
-            <button onclick="location.href='https://google.com' " class="btn btn-outline-secondary" type="button" disabled> CULTURE ET TOURISME</button>
-            <button onclick="redirect('education')"  class="btn btn-outline-secondary" type="button"> ÉDUCATION</button>
-            <button onclick="redirect('environnement')"  class="btn btn-outline-secondary" type="button"> ENVIRONNEMENT</button> <!-- TODO illuminer bouton-->
-            <button onclick="location.href='https://google.com' " class="btn btn-outline-secondary" type="button" disabled> MOBILITÉS</button>
-            <button onclick="location.href='https://google.com' " class="btn btn-outline-secondary" type="button" disabled> SÉCURITÉ</button>
-            <button onclick="location.href='https://google.com' " class="btn btn-outline-secondary" type="button" disabled> URBANISME ET LOGEMENT</a>
-        </div>
+      <div class="navigation-header btn-group btn-group-justified" role="group"> 
+        <button onclick="location.href='home.html'" class="btn btn-outline-secondary" type="button" style="border-radius: 4vh 4vh 4vh 4vh; margin-right: 10px; font-style: normal;">
+            🏠
+        </button>
+        <!-- Certains boutons pas implémentés en raison de la limite de temps -->
+        <!-- TODO : illuminer le bouton qui correspond à la catégorie dans laquelel on est -->
+        <button class="btn btn-outline-secondary" type="button" style="border-radius: 4vh 0vh 0vh 4vh;"> ACTION SOCIALE ET SANTÉ</button> <!-- onclick="redirect('nom_de_la_categorie')" --> 
+        <button class="btn btn-outline-secondary" type="button" > CITOYENNETÉ</button> <!-- onclick="redirect('nom_de_la_categorie')" --> 
+        <button class="btn btn-outline-secondary" type="button" > CULTURE ET TOURISME</button> <!-- onclick="redirect('nom_de_la_categorie')" --> 
+        <button onclick="redirect('education')" class="btn btn-outline-secondary" type="button"> ÉDUCATION</button>
+        <button onclick="redirect('environnement') " class="btn btn-outline-secondary" type="button"> ENVIRONNEMENT</button>
+        <button class="btn btn-outline-secondary" type="button"> MOBILITÉS</button> <!-- onclick="redirect('nom_de_la_categorie')" --> 
+        <button class="btn btn-outline-secondary" type="button" > SÉCURITÉ</button> <!-- onclick="redirect('nom_de_la_categorie')" --> 
+        <button class="btn btn-outline-secondary" type="button" > URBANISME ET LOGEMENT</button> <!-- onclick="redirect('nom_de_la_categorie')" --> 
+      </div>
     </nav>
     <div>
-      <h1 style="font-size: 4vw; margin: 20px; color:#ff0000; font-style: italic;"><strong>TITRE TO DO</strong></h1>
+      <h1 style="font-size: 4vw; font-style: italic; margin: 20px; margin-bottom: 0;">
+          <span style="color: #FF0023; font-family: 'IBM Plex Mono'; margin-right: -20px;"><strong>SIMPLI'</strong></span>
+          <span style="color: #808080; font-family: 'IBM Plex Mono'; margin-left: -20px;"><strong>CITÉS</strong></span>
+      </h1>
+    </div>
+    <div>
+      <h1 style="font-size: 3vw; margin-left: 15vw; color:#3370E7; font-style: italic;">TITRE TO DO</h1>
     </div>
 
     <div class="container-fluid" style="padding-left: 5vh;">
@@ -64,21 +74,21 @@
             <div class="col-8 right-container overflow-auto">
                 <!-- résumé -->
                 <div class="row" style="padding-right: 3vh;">
-                    <div class="col" style="width: 100%; background-color: red; height: fit-content; border: 1vh solid white; border-radius: 4vh 4vh 4vh 4vh;">
-                        <h3 id="titreResume" style="font-size: 4vw; color: white; text-align: right;" >Résumé</h3>
+                    <div class="col" style="width: 100%; background-color: #3370E7; height: fit-content; border: 1vh solid white; border-radius: 4vh 4vh 4vh 4vh;">
+                        <h3 id="titreResume" style="font-size: 4vw; color: white; text-align: right; font-style: italic;">Résumé</h3>
                         <p id="resumeGeneral" style="color: white;"><!-- TODO changer dynamiquement-->Texte résumé catégorie 1</p>
                     </div>
                 </div>
 
                 <!-- KPIs -->
                 <div class="row" style="padding-right: 3vh; display:flex;">
-                    <div class="col" style="width: 100%; background-color: red; height: auto; border: 1vh solid white; border-radius: 4vh 4vh 4vh 4vh;">
+                    <div class="col" style="width: 100%; background-color: #FF0023; height: auto; border: 1vh solid white; border-radius: 4vh 4vh 4vh 4vh;">
                         <h3 id="kpi1" style="font-size: 4vw; color: white; text-align: right;" >KPI 1</h3>
                         <p id="textkpi1" style="color: white;"><!-- TODO changer dynamiquement-->Texte résumé catégorie 1
 
                         </p>
                     </div>
-                    <div class="col" style="width: 100%; background-color: red; height: auto; border: 1vh solid white; border-radius: 4vh 4vh 4vh 4vh;">
+                    <div class="col" style="width: 100%; background-color: #565656; height: auto; border: 1vh solid white; border-radius: 4vh 4vh 4vh 4vh;">
                         <h3 id="kpi2" style="font-size: 4vw; color: white; text-align: right;" >KPI 2</h3>
                         <p id="textkpi2" style="color: white;"><!-- TODO changer dynamiquement-->Texte résumé catégorie 1</p>
                     </div>
@@ -86,17 +96,17 @@
               
                 <!-- Pour en savoir plus -->
                 <div class="row" style="padding-right: 3vh;">
-                    <div class="col" style="width: 100%; background-color: red; height: fit-content; border: 1vh solid white; border-radius: 4vh 4vh 4vh 4vh;">
-                        <h3 id="titreArticle" style="font-size: 4vw; color: white;" >Pour en savoir plus</h3>
+                    <div class="col" style="width: 100%; background-color: #3370E7; height: fit-content; border: 1vh solid white; border-radius: 4vh 4vh 4vh 4vh;">
+                        <h3 id="titreArticle" style="font-size: 4vw; color: white; font-style: italic;">Pour en savoir plus</h3>
                         <p id="texteArticle" style="color: white;"><!-- TODO changer dynamiquement-->Texte résumé catégorie 1</p>
                     </div>
                 </div>
                 <!-- Liens -->
                 <div class="row" style="padding-right: 3vh;">
-                    <div class="col col-to-sort-inside-of" style="width: 100%; background-color: red; height: fit-content; border: 1vh solid white; border-radius: 4vh 4vh 4vh 4vh;">
+                    <div class="col col-to-sort-inside-of" style="width: 100%; background-color: #565656; height: fit-content; border: 1vh solid white; border-radius: 4vh 4vh 4vh 4vh;">
                         <div class="row">
                             <div class="col-8">
-                                <h3 class="d-flex" style="font-size: 4vw; color: white; text-align:left;" >Liens</h3>
+                                <h3 class="d-flex" style="font-size: 4vw; color: white; text-align:left; font-style: italic;" >Liens</h3>
                             </div>
                             <div class="col-4 d-flex justify-content-end align-items-center">
                                 

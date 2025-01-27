@@ -15,8 +15,8 @@
     height: 100%;
     background-color: white;
     button {
-        border-color: red;
-        color: red;
+        border-color: #FF0023;
+        color: #FF0023;
         height: 100%;
         width: auto;
         border-radius: 4vh 4vh 4vh 4vh; 
@@ -24,8 +24,8 @@
         
     }
     button:hover {
-        border-color: red !important;
-        background-color: red !important;
+        border-color: #FF0023 !important;
+        background-color: #FF0023 !important;
         color: white !important;
     }
     button:disabled {
@@ -37,8 +37,8 @@
         color: white !important;
     }
 
-   button:nth-child(3) { border-right:red; }
-   button:nth-child(6) { border-left:red; }
+   button:nth-child(3) { border-right:#FF0023; }
+   button:nth-child(6) { border-left:#FF0023; }
 }
 
 
@@ -78,7 +78,7 @@
   }
   
   .description {
-    background-color: #ff0000;
+    background-color: #FF0023;
     color: #ffffff;
     font-size: 1rem;
     padding: 15px;
@@ -90,9 +90,9 @@
   .custom-button {
     margin-top: 20px;
     font-size: 1.5rem;
-    color: #ff0000;
+    color: #FF0023;
     background: none;
-    border: 2px solid #ff0000;
+    border: 2px solid #FF0023;
     border-radius: 50px;
     padding: 10px 20px;
     cursor: pointer;
@@ -103,7 +103,7 @@
   }
   
   .custom-button:hover {
-    background-color: #ff0000;
+    background-color: #FF0023;
     color: #ffffff;
   }
   
