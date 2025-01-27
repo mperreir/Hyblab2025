@@ -50,9 +50,11 @@ const QuestionPage = () => {
     if (!validated) {
       const isCorrect = questions[currentQuestionIndex].options[selectedOptionIndex].correct;
       if (isCorrect) {
-        correctSound.play();
+        // correctSound.play();
+        // TODO: Ajouter un son pour la bonne réponse
       } else {
-        wrongSound.play();
+        // wrongSound.play();
+        // TODO: Ajouter un son pour la mauvaise réponse
       }
       const pointsToAdd = !isCorrect ? 35 : 20; // 35 points si incorrect (15 + 20), 20 si correct
       addScore(pointsToAdd);
