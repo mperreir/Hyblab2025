@@ -1,12 +1,11 @@
 import './RegionMap.css';
 import { useState, useEffect } from 'react';
+import regionMapSVG from '../assets/regionsMap.svg';
 
 function RegionMap({ selectedAnimal, setSelectedAnimal, animals }) {
     const [animateBackground, setAnimateBackground] = useState(false);
 
-    // Trigger the animation when the component mounts
     useEffect(() => {
-        // This ensures that the state updates after the component is mounted
         const timer = setTimeout(() => {
             setAnimateBackground(true);
         }, 100); // Add a small delay before triggering the animation
@@ -25,18 +24,18 @@ function RegionMap({ selectedAnimal, setSelectedAnimal, animals }) {
         <div className='map_container'>
             <div className={['background_square', 'dark', 'tilted', animateBackground ? 'animate' : ''].join(' ')}></div>
             <div className={['background_square', 'bright', animateBackground ? 'animate' : ''].join(' ')}>
-            <div className='animals_list'>
-                {animals.map((animal) => {
-                    return <div 
-                        className='animal'
-                        key={animal.id}
-                        onClick={() => handleAnimalClick(animal.id)}
-                    >
-                        <img src={animal.svg} alt={animal.name} />
-                        <h3>{animal.fullname}</h3>
-                    </div>
-                })}
-            </div>
+                <img src={regionMapSVG} alt='Carte des régions' className='regions_map'></img>
+                <div className='animals_list'>
+                    {animals.map((animal) => {
+                        return <div 
+                            className={['animal', animal.name, selectedAnimal === animal.id ? 'selected' : ''].join(' ')}
+                            key={animal.id}
+                            onClick={(evt) => handleAnimalClick(animal.id)}
+                        >
+                            <img src={animal.svg} alt={animal.name} />
+                        </div>
+                    })}
+                </div>
             </div>
         </div>
     )
