@@ -14,16 +14,16 @@
 /* Pathway */
 .pathway {
     position: relative;
-    width: 100%;
+    width: 110%;
     height: 170px; /* Augmente légèrement la hauteur */
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: -50px; /* Remonte davantage le chemin */
+    margin-bottom: -10px; /* Remonte davantage le chemin */
 }
 
 .line-design {
-    width: 110%; /* Élargit légèrement le chemin */
+    width: 120%; /* Élargit légèrement le chemin */
     height: auto;
 }
 
@@ -48,7 +48,7 @@
 
 .bubble-text {
     position: absolute;
-    top: 50%; /* Centre verticalement */
+    top: 40%; /* Centre verticalement */
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 16px; /* Augmente légèrement la taille */
