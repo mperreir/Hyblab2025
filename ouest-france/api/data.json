@@ -1,27 +1,41 @@
 {
   "player1": {
     "quiz": [
-      {
-        "question": "À quel âge Matthieu Pavon a-t-il commencé le golf ?",
-        "answers": ["5 ans", "8 ans", "12 ans", "15 ans"],
-        "correct_answer": "12 ans",
-        "explanation": "Matthieu Pavon commence le golf à l’âge de 12 ans, ce qui est très tard pour un joueur de golf professionnel comme lui. Les joueurs de golfs professionnels commencent généralement à jouer très jeunes, souvent entre 3 et 10 ans. Certains champions comme Tiger Woods ou Rory Mcllroy (des champions américains et irlandais) ont touché un club dès l’âge de 2-3 ans. Beaucoup de joueurs, notamment ceux issus de familles de golfeurs, commencent entre 6 et 10 ans. Quelques professionnels, comme Matthieu Pavon, n’ont commencé qu’à l’adolescence, mais c’est plus rare. La majorité des golfeurs professionnels étaient déjà des compétiteurs sérieux avant 15 ans, participant à des tournois juniors.",
-        "articleBtn" : "En savoir plus sur son parcours"
-      },
-      {
-        "question": "Quel est le prénom de Matthieu PAVON ?",
-        "answers": ["Matthieu", "Thomas", "Pierre", "Jean"],
-        "correct_answer": "Matthieu",
-        "explanation": "Matthieu PAVON s'appelle Matthieu",
-        "articleBtn" : "En savoir plus sur son prénom"
-      },
-      {
-        "question": "Quel est le prénom de Matthieu PAVON ?",
-        "answers": ["Matthieu", "Thomas", "Pierre", "Jean"],
-        "correct_answer": "Matthieu",
-        "explanation": "Matthieu PAVON s'appelle Matthieu.",
-        "articleBtn" : "En savoir plus sur son prénom"
-      }
+        {
+            "question": "Pourquoi Matthieu Pavon a-t-il obtenu une invitation pour le Masters d’Augusta 2024 ?",
+            "answers": ["Grâce à une wild-card spéciale", "En remportant un tournoi du PGA Tour", "En terminant dans le top 50 mondial en 2023", "Grâce à son palmarès sur le DP World Tour"],
+            "correct_answer": "En remportant un tournoi du PGA Tour",
+            "explanation": "Grâce à sa victoire au Farmers Insurance Open en janvier 2024, Matthieu Pavon gagne son ticket pour ce tournoi mythique. Son parcours illustre parfaitement la difficulté d’accéder à Augusta, un événement réservé à l’élite mondiale.",
+            "articleBtn": "En savoir plus sur le Masters d’Augusta"
+        },
+        {
+            "question": "Quel tournoi Matthieu Pavon a-t-il remporté en janvier 2024, devenant ainsi le premier Français vainqueur sur le PGA Tour depuis 1907 ?",
+            "answers": ["The Open Championship", "Le Masters d'Augusta", "Le Farmers Insurance Open", "Le Players Championship"],
+            "correct_answer": "Le Farmers Insurance Open",
+            "explanation": "Le 27 janvier 2024, Matthieu Pavon marque l’histoire en remportant le Farmers Insurance Open à Torrey Pines. Ce succès est d’autant plus impressionnant qu’aucun Français n’avait gagné sur le PGA Tour depuis Arnaud Massy en 1907.",
+            "articleBtn": "En savoir plus sur sa victoire historique"
+        },
+        {
+            "question": "À quel âge Matthieu Pavon a-t-il commencé le golf ?",
+            "answers": ["5 ans", "8 ans", "12 ans", "15 ans"],
+            "correct_answer": "12 ans",
+            "explanation": "Matthieu Pavon commence le golf à l’âge de 12 ans, ce qui est très tard pour un joueur de golf professionnel comme lui. Cela montre son travail acharné et sa persévérance.",
+            "articleBtn": "En savoir plus sur son parcours atypique"
+        },
+        {
+            "question": "Pourquoi la mère de Matthieu Pavon a-t-elle enterré une pièce au Masters d’Augusta en 2009 ?",
+            "answers": ["Pour porter chance à son fils", "Pour commémorer un voyage familial", "Pour rendre hommage à un joueur décédé", "Par simple superstition"],
+            "correct_answer": "Pour porter chance à son fils",
+            "explanation": "En 2009, Béatrice Pavon-Deler a enterré une pièce sous un arbre du practice, espérant qu’un jour son fils participerait au Masters. Quinze ans plus tard, ce rêve devient réalité.",
+            "articleBtn": "En savoir plus sur Augusta : un rêve qui se réalise"
+        },
+        {
+            "question": "Quel est l’objectif majeur que Matthieu Pavon s’est fixé après sa saison 2024 ?",
+            "answers": ["Gagner les Jeux Olympiques de 2028", "Se qualifier pour la Ryder Cup", "Remporter les quatre tournois du Grand Chelem la même année", "Participer aux Jeux d’hiver en curling"],
+            "correct_answer": "Se qualifier pour la Ryder Cup",
+            "explanation": "Après une saison 2024 où il a brillé sur le PGA Tour et participé aux Jeux Olympiques, Matthieu Pavon vise désormais à intégrer l’équipe européenne de la Ryder Cup, un immense honneur pour tout golfeur.",
+            "articleBtn": "En savoir plus sur son ambition pour la Ryder Cup"
+        }
     ],
     "articles": [
       {
@@ -88,25 +102,39 @@
   "player2": {
     "quiz": [
       {
-        "question": "En quelle année est née Celine BOUTIER ?",
-        "answers": ["2002", "2000", "1998", "1995"],
-        "correct_answer": "1998",
-        "explanation": "Celine BOUTIER s'appelle Celine",
-        "articleBtn" : "En savoir plus sur son prénom"
+        "question": "Quel exploit Céline Boutier a-t-elle réalisé le 30 juillet 2023 ?",
+        "answers": ["Elle a remporté les Jeux Olympiques de Paris 2024", "Elle est devenue la première Française à gagner un Majeur depuis 2003", "Elle a remporté la Solheim Cup en équipe", "Elle a atteint la première place mondiale"],
+        "correct_answer": "Elle est devenue la première Française à gagner un Majeur depuis 2003",
+        "explanation": "Céline Boutier a marqué l'histoire en remportant l’Amundi Evian Championship, devenant la première Française à s’imposer dans un tournoi Majeur depuis Patricia Meunier-Lebouc en 2003",
+        "articleBtn" : "En savoir plus sur cette victoire"
       },
       {
-        "question": "Quel est le prénom de Celine BOUTIER ?",
-        "answers": ["Celine", "Thomas", "Pierre", "Jean"],
-        "correct_answer": "Celine",
-        "explanation": "Celine BOUTIER s'appelle Celine",
-        "articleBtn" : "En savoir plus sur son prénom"
+        "question": "Où Céline Boutier a-t-elle commencé à pratiquer le golf ?",
+        "answers": ["Sur le Golf National de Saint-Quentin-en-Yvelines", "Sur les greens de Duke University", "En accompagnant son père sur les greens d’Île-de-France", "Lors de ses compétitions par équipe en amateur"],
+        "correct_answer": "En accompagnant son père sur les greens d’Île-de-France",
+        "explanation": "Céline Boutier a découvert le golf à 7 ans en accompagnant son père, un amateur passionné, sur les greens d’Île-de-France. ",
+        "articleBtn" : "En savoir plus"
       },
       {
-        "question": "Quel est le prénom de Celine BOUTIER ?",
-        "answers": ["Celine", "Thomas", "Pierre", "Jean"],
-        "correct_answer": "Celine",
-        "explanation": "Celine BOUTIER s'appelle Celine",
-        "articleBtn" : "En savoir plus sur son prénom"
+        "question": "ourquoi Céline Boutier accorde-t-elle une importance particulière aux compétitions par équipe ?",
+        "answers": ["Elles lui permettent de remporter plus de titres individuels", "Elle les considère comme les moments les plus marquants de sa carrière", "Elles lui offrent plus de visibilité médiatique", "Elle préfère les compétitions en équipe aux compétitions individuelles"],
+        "correct_answer": "Elle les considère comme les moments les plus marquants de sa carrière",
+        "explanation": "Céline Boutier a toujours apprécié les compétitions par équipe, les décrivant comme les moments les plus marquants de sa carrière, notamment avec la France et lors de la Solheim Cup.",
+        "articleBtn" : "En savoir plus"
+      },
+      {
+        "question": "Quel défi majeur Céline Boutier a-t-elle relevé lors des Jeux Olympiques de Paris 2024 ?",
+        "answers": ["Une victoire en terminant à la 1ère place.", "Une performance solide avec une 18ᵉ place", "Une qualification pour la Ryder Cup", "Une performance médiocre hors du top 50"],
+        "correct_answer": "Une performance solide avec une 18ᵉ place",
+        "explanation": "Aux Jeux Olympiques de Paris 2024, Céline Boutier a terminé à la 18ᵉ place face à une concurrence relevée, une performance solide malgré des attentes élevées.",
+        "articleBtn" : "En savoir plus sur sa performance"
+      },
+      {
+        "question": "Quelles compétitions majeures Céline Boutier vise-t-elle à l’avenir ?",
+        "answers": ["Les championnats universitaires","La Ryder Cup et le Masters", "Les prochains tournois Majeurs du circuit LPGA", "Les championnats européens amateurs"],
+        "correct_answer": "Les prochains tournois Majeurs du circuit LPGA",
+        "explanation" : "Céline Boutier prépare activement les prochains tournois Majeurs du circuit LPGA, comme le Chevron Championship, l’US Women’s Open, et le Women’s British Open.",
+        "articleBtn" : "En savoir plus sur ses objectifs"
       }
     ],
     "articles": [
