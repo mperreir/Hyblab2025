@@ -54,33 +54,16 @@ const NavBarComponent = () => {
     };
 
     const getBreadcrumbItems = () => {
+        const totalLevels = 3; 
         return [
             {
-                id: 1,
-                label: "Parcours 1",
-                active: !!difficulty
-            },
-            {
-                id: 2,
-                label: "Parcours 2",
-                active: !!difficulty && (
-                    ((level_id && parseInt(level_id) >= 1) &&
-                        isTransition)
-                    || ((level_id && parseInt(level_id) >= 2) && !isTransition)
-                )
-            },
-            {
-                id: 3,
-                label: "Parcours 3",
-                active: !!difficulty && (
-                    ((level_id && parseInt(level_id) >= 2) &&
-                        (isTransition && (parseInt(level_id) >= 2)))
-                    || ((level_id && parseInt(level_id) >= 3) && !isTransition)
-                )
+                id: parseInt(level_id), 
+                label: `ÉTAPE ${level_id}/${totalLevels}`,
+                active: true
             }
         ];
     };
-
+    
     const progress = getBreadcrumbItems().filter(item => item.active).length * 33.33;
 
     return (
@@ -90,7 +73,7 @@ const NavBarComponent = () => {
                     <div className="d-flex justify-content-between align-items-center w-100">
                         <Navbar.Brand href={`${basename}`}>
                             <img
-                                src={`${basename}images/logo_jeu.png`}
+                                src={`${basename}images/logo_white.png`}
                                 height="30"
                                 className="d-inline-block align-top"
                                 alt="Logo"
@@ -103,14 +86,19 @@ const NavBarComponent = () => {
                                     <Breadcrumb.Item
                                         key={item.id}
                                         active={item.active}
+                                        style={{ 
+                                            color: 'white', 
+                                            fontSize: '1rem',
+                                            fontFamily: 'Work Sans, sans-serif', 
+                                            fontWeight: 550 
+                                        }}
                                     >
                                         {item.label}
                                     </Breadcrumb.Item>
                                 ))}
                             </Breadcrumb>
                         ) : (
-                            <CyclistAnimation />
-                            // <h6 className="mb-0">{getPageTitle()}</h6>
+                            <h6 className="mb-0">{getPageTitle()}</h6>
                         )}
                     </div>
 
