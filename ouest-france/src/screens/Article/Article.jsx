@@ -72,27 +72,27 @@ const Article = ({ data }) => {
       <section
         className="h-screen w-full snap-start flex flex-col items-center justify-between px-8 py-12 relative"
         style={{ fontFamily: 'Arial, sans-serif' }}
-        id={"article" + data[1].sections[0].id}
+        id={"article" + data.sections[0].id}
       >
         <div className="flex flex-col items-center justify-center">
 
-          <h1 className="text-center max-w-3xl mb-8">{data[0].title}</h1>
+          <h1 className="text-center max-w-3xl mb-8">{data.title}</h1>
 
           <div className="mt-10  flex alig-center justify-center w-full max-w-7xl mx-auto gap-60">
             <div className="flex flex-col flex-shrink-0 w-1/3">
 
-              <h2 className="title text-xl max-w-lg font-medium mb-4">{data[1].sections[0].title}</h2>
+              <h2 className="title text-xl max-w-lg font-medium mb-4">{data.sections[0].title}</h2>
 
-              <p className="text_content text-3xl max-w-lg mb-6">{data[1].sections[0].content}</p>
+              <p className="text_content text-3xl max-w-lg mb-6">{data.sections[0].content}</p>
 
-              <button class='text' onClick={() => scrollToSection(`quiz${data[1].sections[0].id}`)}>Reprendre le quizz</button>
+              <button class='text' onClick={() => scrollToSection(`quiz${data.sections[0].id}`)}>Reprendre le quizz</button>
 
             </div>
 
             <div className="w-1/3">
               <img
-                src={data[1].sections[0].image}
-                alt={data[1].sections[0].title}
+                src={data.sections[0].image}
+                alt={data.sections[0].title}
                 className="w-full h-auto shadow-lg"
               />
             </div>
@@ -105,7 +105,7 @@ const Article = ({ data }) => {
       <section
         className="h-screen w-full snap-start flex flex-col items-center justify-between px-8 py-12 relative"
         style={{ fontFamily: 'Arial, sans-serif' }}
-        id={"article" + data[1].sections[1].id}
+        id={"article" + data.sections[1].id}
       >
         <div className="flex flex-col items-center justify-center">
 
@@ -113,18 +113,18 @@ const Article = ({ data }) => {
 
           <div className="w-1/3">
               <img
-                src={data[1].sections[1].image}
-                alt={data[1].sections[1].title}
+                src={data.sections[1].image}
+                alt={data.sections[1].title}
                 className="w-full h-auto shadow-lg"
               />
             </div>
 
             <div className="flex flex-col flex-shrink-0 w-1/3">
 
-              <h2 className="title text-xl max-w-lg font-medium mb-4">{data[1].sections[1].title}</h2>
-              <p className="text_content text-3xl max-w-2xl mb-6">{data[1].sections[1].content}</p>
+              <h2 className="title text-xl max-w-lg font-medium mb-4">{data.sections[1].title}</h2>
+              <p className="text_content text-3xl max-w-2xl mb-6">{data.sections[1].content}</p>
 
-              <button class='text' onClick={() => scrollToSection(`quiz${data[1].sections[1].id}`)}>Reprendre le quizz</button>
+              <button class='text' onClick={() => scrollToSection(`quiz${data.sections[1].id}`)}>Reprendre le quizz</button>
 
             </div>
 
@@ -138,7 +138,7 @@ const Article = ({ data }) => {
       <section
         className="h-screen w-full snap-start flex flex-col items-center justify-between px-8 py-12 relative"
         style={{ fontFamily: 'Arial, sans-serif' }}
-        id={"article" + data[1].sections[2].id}
+        id={"article" + data.sections[2].id}
       >
         <div className="flex flex-col items-center justify-center">
 
@@ -146,18 +146,18 @@ const Article = ({ data }) => {
           <div className="mt-10  flex alig-center justify-center w-full max-w-7xl mx-auto gap-60">
             <div className="flex flex-col flex-shrink-0 w-1/3">
 
-              <h2 className="title text-3xl max-w-lg font-medium mb-4">{data[1].sections[2].title}</h2>
+              <h2 className="title text-3xl max-w-lg font-medium mb-4">{data.sections[2].title}</h2>
 
-              <p className="text_content text-3xl max-w-lg mb-6">{data[1].sections[2].content}</p>
+              <p className="text_content text-3xl max-w-lg mb-6">{data.sections[2].content}</p>
 
-              <button class='text' onClick={() => scrollToSection(`quiz${data[1].sections[2].id}`)}>Reprendre le quizz</button>
+              <button class='text' onClick={() => scrollToSection(`quiz${data.sections[2].id}`)}>Reprendre le quizz</button>
 
             </div>
 
             <div className="w-1/3">
               <img
-                src={data[1].sections[2].image}
-                alt={data[1].sections[2].title}
+                src={data.sections[2].image}
+                alt={data.sections[2].title}
                 className="w-full h-auto shadow-lg"
               />
             </div>
@@ -170,7 +170,7 @@ const Article = ({ data }) => {
       <section
               className="h-screen w-full snap-start flex flex-col items-center justify-between px-8 py-12 relative"
               style={{ fontFamily: 'Arial, sans-serif' }}
-              id={"article" + data[1].sections[3].id}
+              id={"article" + data.sections[3].id}
             >
               <div className="flex flex-col items-center justify-center">
 
@@ -178,18 +178,18 @@ const Article = ({ data }) => {
                 <div className="mt-10  flex alig-center justify-center w-full max-w-7xl mx-auto gap-60">
                   <div className="w-1/3">
                     <img
-                      src={data[1].sections[3].image}
-                      alt={data[1].sections[3].title}
+                      src={data.sections[3].image}
+                      alt={data.sections[3].title}
                       className="w-full h-auto shadow-lg"
                     />
                   </div>
                   <div className="flex flex-col flex-shrink-0 w-1/3">
 
-                    <h2 className="title text-xl max-w-lg font-medium mb-4">{data[1].sections[3].title}</h2>
+                    <h2 className="title text-xl max-w-lg font-medium mb-4">{data.sections[3].title}</h2>
 
-                    <p className="text_content text-3xl max-w-lg mb-6">{data[1].sections[3].content}</p>
+                    <p className="text_content text-3xl max-w-lg mb-6">{data.sections[3].content}</p>
 
-                    <button class='text' onClick={() => scrollToSection(`quiz${data[1].sections[3].id}`)}>Reprendre le quizz</button>
+                    <button class='text' onClick={() => scrollToSection(`quiz${data.sections[3].id}`)}>Reprendre le quizz</button>
 
                   </div>
 
@@ -203,7 +203,7 @@ const Article = ({ data }) => {
       <section
               className="h-screen w-full snap-start flex flex-col items-center justify-between px-8 py-12 relative"
               style={{ fontFamily: 'Arial, sans-serif' }}
-              id={"article" + data[1].sections[4].id}
+              id={"article" + data.sections[4].id}
             >
               <div className="flex flex-col items-center justify-center">
 
@@ -211,18 +211,18 @@ const Article = ({ data }) => {
                 <div className="mt-10  flex alig-center justify-center w-full max-w-7xl mx-auto gap-60">
                   <div className="flex flex-col flex-shrink-0 w-1/3">
 
-                    <h2 className="title text-xl max-w-lg font-medium mb-4">{data[1].sections[4].title}</h2>
+                    <h2 className="title text-xl max-w-lg font-medium mb-4">{data.sections[4].title}</h2>
 
-                    <p className="text_content text-3xl max-w-lg mb-6">{data[1].sections[4].content}</p>
+                    <p className="text_content text-3xl max-w-lg mb-6">{data.sections[4].content}</p>
 
-                    <button class='text' onClick={() => scrollToSection(`quiz${data[1].sections[4].id}`)}>Reprendre le quizz</button>
+                    <button class='text' onClick={() => scrollToSection(`quiz${data.sections[4].id}`)}>Reprendre le quizz</button>
 
                   </div>
 
                   <div className="w-1/3">
                     <img
-                      src={data[1].sections[4].image}
-                      alt={data[1].sections[4].title}
+                      src={data.sections[4].image}
+                      alt={data.sections[4].title}
                       className="w-full h-auto shadow-lg"
                     />
                   </div>
