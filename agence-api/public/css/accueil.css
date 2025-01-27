@@ -7,10 +7,10 @@
     flex-direction: column;
     align-items: center; /* Centre les éléments horizontalement */
     justify-content: flex-start; /* Aligne les éléments en haut pour éviter le chevauchement */
-   
     min-height: 100vh; /* Assure que le contenu prend au moins toute la hauteur de la fenêtre */
+    position: relative; /* Nécessaire pour le pseudo-élément ::before */
     padding: 20px; /* Ajout de padding pour éviter que le contenu touche les bords */
-    padding-bottom: 120px;
+    padding-bottom: 140px; /* Augmente le padding en bas pour éviter le chevauchement avec le footer */
     box-sizing: border-box; /* Inclut le padding dans les dimensions de l'élément */
 }
 
@@ -48,7 +48,7 @@
     width: 100%;            /* Prend toute la largeur disponible */
     box-sizing: border-box; /* Inclut le padding et les bordures dans les dimensions */
     padding: 20px;          /* Ajoute un peu de padding autour */
-    margin: 100px 0 100px 0;   /* Ajoute une marge inférieure pour éviter le chevauchement avec le footer */
+    margin: 100px 0 100px 0;   /* Ajoute des marges en haut et en bas pour espacer du footer */
 }
 
 /*----- Définition de l'animation clignotante ----------*/
@@ -66,24 +66,24 @@
 
 /* Style pour #bloc-centre */
 .bloc-centre {
-    padding: 15px;
+    padding: 20px; /* Augmenté pour plus d'espacement interne */
     background-color: #ffffff;
     border-radius: 10px;
     /*filter: contrast(1); ajout de contraste*/
     
     /* Centrage et ajustement de la taille */
-    max-width: 250px; 
-    width: 100%;        /* Assure que le bloc prend toute la largeur disponible jusqu'à la largeur maximale */
-    height: auto;       /* Adapté en hauteur en fonction du contenu */
+    max-width: 80%; /* Augmenté de 250px à 80% pour plus de flexibilité */
+    width: 100%;    /* Assure que le bloc prend toute la largeur disponible jusqu'à la largeur maximale */
+    height: auto;   /* Adapté en hauteur en fonction du contenu */
 
     /* Utilisation de Flexbox pour le contenu interne */
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; /* Ajouté pour centrer horizontalement */
+    align-items: center; /* Centré horizontalement */
 
     /* Réactivité */
-    font-size: 2rem; /* Ajuste la taille du texte en fonction de la largeur de la fenêtre */
+    font-size: 2rem; /* Utilisation d'unités relatives pour une meilleure responsivité */
     box-sizing: border-box;
     margin: 20px 0; /* Ajuste les marges pour une meilleure responsivité */
     
@@ -145,11 +145,11 @@
 
     .parent-container {
         padding: 15px;
-        margin-bottom: 80px; /* Réduit la marge pour les petits écrans */
+        margin: 80px 0; /* Réduit les marges pour les petits écrans */
     }
 
     .bloc-centre {
-        max-width: 200px;
+        max-width: 70%; /* Augmenté pour plus de taille sur les petites tablettes */
     }
 }
 
@@ -171,7 +171,7 @@
     
     /* Ajustements supplémentaires */
     .accueilbody {
-        padding-bottom: 140px;
+        padding: 10px;
     }
 
     .texte {
@@ -181,6 +181,6 @@
     
     .bloc-centre {
         padding: 10px;
-        max-width: 180px;
+        max-width: 90%; /* Augmenté à 90% pour maximiser l'espace sur mobile */
     }
 }
