@@ -32,6 +32,10 @@ router.get('/:player/article/:id', (req, res) => {
     res.json(article);
 });
 
+router.get('/teapot', (req, res) => {
+    res.status(418).send("I'm a teapot! ☕️");
+});
+
 module.exports = (app) => {
     app.use('/api', router); // Préfixe toutes les routes avec /api
 };

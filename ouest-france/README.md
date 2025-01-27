@@ -1,8 +1,23 @@
-# React + Vite
+# Descriptif du projet
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Porteur de projet : Renaud PELARD, Chef de service sport, Ouest-France
 
-Currently, two official plugins are available:
+Sujet: Suivre les trois joueurs de golf français présents sur le circuit américain, à l’occasion du master d’Augusta : leurs chances et leurs atouts.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Nom d'équipe : Birdie
+
+Participants :
+- AGR : GAUDINEAU Eliott
+- Polytech : GAUTIER Titouan, BOUSSAOUI Elias, VITOUR Benoit, BLOT Victor, Qian Chengzhi
+- SciencesPo : WINDY Zara
+
+## Instructions de déploiement
+
+### Installation des dépendances
+```bash
+npm install
+```
+### Compilation du projet
+```bash
+npm run build
+```
