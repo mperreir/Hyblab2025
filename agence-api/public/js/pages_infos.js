@@ -70,10 +70,13 @@ function expandMessage(messageElement, data) {
         }
     });
 
-    expandingElement.querySelectorAll('*').forEach(element => element.style.display = 'none');
+    expandingElement.querySelectorAll('*').forEach(element => {
+        element.style.display = 'none';
+        element.classList.add('expanding-element');
+    });
     expandingElement.style.display = 'flex';
-    // expandingElement.style.top = rect.top + 'px';
-    // expandingElement.style.left = rect.left + 'px';
+    expandingElement.style.top = rect.top + 'px';
+    expandingElement.style.left = rect.left + 'px';
     expandingElement.style.width = messageElement.offsetWidth + 'px';
     expandingElement.style.height = messageElement.offsetHeight + 'px';
 
@@ -86,10 +89,10 @@ function expandMessage(messageElement, data) {
     document.getElementById('chatBox').appendChild(expandingElement);
 
     setTimeout(() => {
-        expandingElement.style.bottom = '0';
+        expandingElement.style.top = '0';
         expandingElement.style.left = '0';
         expandingElement.style.width = '100vw';
-        expandingElement.style.height = '86%';
+        expandingElement.style.height = '100vh';
 
     }, 100);
 };

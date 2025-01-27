@@ -89,9 +89,11 @@ async function waitForUserTouch(){
     return new Promise((resolve) => {
         const messageInput = document.getElementById('chatBox');
         messageInput.addEventListener('click', (event) => {
-            if(!event.target.classList.contains("info") && !event.target.classList.contains("expanding")){
+            if(!event.target.classList.contains("info") && !event.target.classList.contains("expanding") && !event.target.classList.contains("expanding-element")){
                 resolve(true);
-            } 
+            } else {
+                console.log("ca avance pas");
+            }
         });
     });
 }

@@ -3,7 +3,11 @@
 /*pour le contraste du logo: filter: contrast(1);*/
 
 .accueilbody {
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centre les éléments horizontalement */
+    justify-content: center; /* Centre les éléments verticalement */
+    min-height: 100vh; /* Assure que le contenu prend au moins toute la hauteur de la fenêtre */
 }
 
 .accueilbody::before {
@@ -25,11 +29,10 @@
 #first-slide footer{
     bottom: 5%;
     position: absolute;
-    box-sizing: border-box; /* So that padding is not added to width (and width: 100% works) */
+   /* box-sizing: border-box; /* So that padding is not added to width (and width: 100% works) */
     width: 100%; /* could also use  width: calc(100% - 2em) if not using box-sizing */
-    font-size: 20%;
     text-align: center;
-    padding: 1em;
+    padding: 10px 20px;
 }
 
 /* conteneur parent de #bloc-centre */
@@ -108,9 +111,45 @@
 
 /* Style pour le GIF arrow */
 .arrow {
-    max-width: 60px;    /* Ajustez la largeur selon vos besoins */
-    align-items: center; /* Ajouté pour centrer horizontalement */
+    width: 100px; /* Taille par défaut */
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Centre horizontalement */
 }
 
 
+/* Responsive Styles */
+@media (max-width: 768px) {
+    /* Ajustements pour tablettes */
+    
+    .arrow {
+        width: 80px;
+    }
+    
+    #first-slide footer {
+        bottom: 10%;
+        padding: 8px 16px;
+    }
+}
 
+@media (max-width: 480px) {
+    /* Ajustements pour mobiles */
+    
+    .arrow {
+        width: 60px;
+    }
+    
+    #first-slide footer {
+        bottom: 15%;
+        padding: 6px 12px;
+    }
+    
+    .accueilbody::before {
+        opacity: 0.7; /* Augmente l'opacité pour améliorer la lisibilité si nécessaire */
+    }
+    
+    /* Ajustements supplémentaires */
+    .accueilbody {
+        padding: 10px;
+    }
+}
