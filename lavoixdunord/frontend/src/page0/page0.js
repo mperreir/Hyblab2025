@@ -17,19 +17,13 @@ const Page0 = () => {
 
   return (
     <div className="background_page0">
-        <img
-            src={`${basename}images/logo_jeu.png`}
-            alt="Logo du jeu"
-            className="logo_page0"
-        />
-        {/*
-        <img
-            src={`${basename}images/logo_lavoidunord.png`}
-            alt="Logo La Voix du Nord"
-            className="logo_lavoixdunord"
-        />*/ }
+      <img
+        src={`${basename}images/logo_jeu.png`}
+        alt="Logo du jeu"
+        className="logo_page0 position-absolute top-50 start-50 translate-middle"
+      />
     </div>
-);
+  );
 
 };
 
