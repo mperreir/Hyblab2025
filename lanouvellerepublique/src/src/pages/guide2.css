@@ -1,0 +1,101 @@
+/* Global container */
+.guide2-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    padding: 20px;
+    background-color: #fff;
+    position: relative; /* Pour positionner les éléments comme le chemin */
+    overflow: hidden; /* Empêche tout débordement */
+}
+
+/* Pathway */
+.pathway2 {
+    position: absolute; /* Change de relative à absolute pour positionnement libre */
+    top: 50%; /* Place la ligne au milieu de l'écran */
+    transform: translateY(-50%); /* Centre précisément verticalement */
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.line-design2 {
+    width: 130%; /* Assurez que la ligne touche les bords de l'écran */
+    height: auto;
+    position: relative;
+    left: -10%; /* Étend légèrement pour couvrir les côtés */
+}
+
+/* Animal section */
+.animal-section2 {
+    text-align: center;
+    margin-top: -20px; /* Ajuste l'espacement */
+    z-index: 2;
+}
+
+/* Bubble container */
+.bubble-container2 {
+    position: relative;
+    display: inline-block;
+    margin-bottom: -10px; /* Réduit l'espace entre la bulle et l'image */
+    text-align: center;
+    width: 250px; /* Adapte à la largeur de la bulle */
+    height: 220px; /* Adapte à la hauteur de la bulle */
+}
+
+.bubble-image2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Place l'image derrière le texte */
+}
+
+.bubble-text2 {
+    position: absolute;
+    text-align: justify;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16px;
+    color: black;
+    width: 90%;
+    line-height: 1.4; /* Meilleure lisibilité */
+    z-index: 2; /* Place le texte devant */
+}
+
+/* Animal image */
+.animal-image2 {
+    width: 140px;
+    height: auto;
+    margin-top: -10px;
+}
+
+/* Continue button */
+.continue-button {
+    margin-top: -20px; /* Ajuste pour rapprocher du bas */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: transform 150ms ease;
+}
+
+.continue-button .continue-button-text {
+    padding: 6px 22px;
+    color: black;
+    background: linear-gradient(to bottom, #FCE4C3 10%, #EFD8B8 10% 90%, #CEB89A 90%);
+    font-size: 1.2rem;
+    clip-path: polygon(10% 0, 98% 10%, 100% 100%, 0 100%);
+}
+
+.continue-button:hover {
+    cursor: pointer;
+    filter: drop-shadow(0px 6px 6px rgba(0, 0, 0, 0.1));
+}
