@@ -76,9 +76,9 @@
   "player2": {
     "quiz": [
       {
-        "question": "En quelle année est née Celine BOUTIER ?",
-        "answers": ["2002", "2000", "1998", "1995"],
-        "correct_answer": "1998",
+        "question": "Quel exploit Céline Boutier a-t-elle réalisé le 30 juillet 2023 ?",
+        "answers": ["Elle a remporté les Jeux Olympiques de Paris 2024", "Elle est devenue la première Française à gagner un Majeur depuis 2003", "1998", "1995"],
+        "correct_answer": "Elle est devenue la première Française à gagner un Majeur depuis 2003",
         "explanation": "Celine BOUTIER s'appelle Celine",
         "articleBtn" : "En savoir plus sur son prénom"
       },
