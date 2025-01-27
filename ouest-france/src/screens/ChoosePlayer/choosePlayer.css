@@ -96,7 +96,7 @@
 
 /*** divider ***/
 .choice h1.divider{
-    position: absolute;
+    position: relative;
     rotate: -90deg;
     text-align: center;
     line-height: 150px;
@@ -104,14 +104,13 @@
     font-size: 22vh;
     opacity: 0;
     white-space: nowrap;
-    transform: skew(-20deg);
-    top: 44%;
+    top: -56%;
 }
 .choice.right h1.divider{
-    left: -25%;
+    left: -46%;
 }
 .choice.left h1.divider{
-    right: -16%;
+    right: -46%;
 }
 .choice:hover h1.divider{
     opacity: 1;

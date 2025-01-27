@@ -19,8 +19,8 @@ const ChoosePlayer = ({onSelectPlayer}) => {
               className='choice left'>
               <div className='img-container'>
                   <img src={"./pavon.jpg"} alt={"Pavon"}/>
+                  <h1 className="divider">Le Phoenix</h1>
               </div>
-              <h1 className="divider">Le Phoenix</h1>
               <div className="content">
                   <h1>Matthieu PAVON</h1>
                   <p>Matthieu Pavon est un golfeur professionnel français évoluant
@@ -43,8 +43,9 @@ const ChoosePlayer = ({onSelectPlayer}) => {
               className='choice right'>
               <div className='img-container'>
                   <img src={"./boutier.jpg"} alt={"Boutier"}/>
+                  <h1 className="divider">La Machine</h1>
               </div>
-              <h1 className="divider">La Machine</h1>
+
               <div className="content">
                   <h1>Celine BOUTIER</h1>
                   <p>Golfeuse française de renom et multiple championne
