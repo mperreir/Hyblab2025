@@ -45,6 +45,14 @@ const EndPage = () => {
               <a href="https://www.nantesmetropole.fr" target="_blank" rel="noopener noreferrer">
                   <img src="./logos/logo_nantesmetropole.png" alt="Nantes Métropole" className="h-16"/>
               </a>
+              <div className="flex flex-col gap-2 justify-center items-center">
+                  <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener noreferrer">
+                      <img src="./logos/logo_cc.png" alt="CC BY 3.0 License" className="h-7"/>
+                  </a>
+                  <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener noreferrer">
+                      <img src="./logos/logo_opensource.png" alt="MIT License" className="h-7"/>
+                  </a>
+              </div>
           </div>
       </section>
   );
