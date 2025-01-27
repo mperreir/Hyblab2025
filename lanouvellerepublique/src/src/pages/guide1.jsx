@@ -1,9 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import "./guide1.css"; // Import the CSS file
 import Header from "../components/Header";
-import loutreImage from "../assets/loutre2.png"; // Assurez-vous de placer l'image dans le dossier "assets"
-import ligneDesign from "../assets/lignedesign1.svg"; // Assurez-vous de placer le SVG dans le dossier "assets"
-import textBubble from "../assets/Vector.png"; // Assurez-vous de placer la bulle de texte dans le dossier "assets"
+import loutreImage from "../assets/loutre2.png"; 
+import ligneDesign from "../assets/lignedesign1.svg"; 
+import textBubble from "../assets/Vector.png";
 
 function Guide1() {
     const navigate = useNavigate();
