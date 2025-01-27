@@ -12,10 +12,10 @@ function updateProgress() {
     const lines = document.querySelectorAll('.progress-line');
 
     steps.forEach((step, index) => {
-        if (index < currentQuestion - 1) {
+        if (index%totalQuestions < currentQuestion - 1) {
             step.classList.add('completed');
             step.classList.remove('active');
-        } else if (index === currentQuestion - 1) {
+        } else if (index%totalQuestions === currentQuestion - 1) {
             step.classList.add('active');
             step.classList.remove('completed');
         } else {
@@ -24,10 +24,10 @@ function updateProgress() {
     });
 
     lines.forEach((line, index) => {
-        if (index < currentQuestion - 2) {
+        if (index%totalQuestions < currentQuestion - 2) {
             line.classList.add('completed');
             line.classList.remove('active');
-        } else if (index === currentQuestion - 2) {
+        } else if (index%totalQuestions === currentQuestion - 2) {
             line.classList.add('active');
             line.classList.remove('completed');
         } else {
@@ -43,7 +43,7 @@ function sendMessage() {
     const messageText = messageInput.value.trim();
     if (messageText === '') return;
 
-    const newMessage = { text: messageText, type: 'sent'};
+    const newMessage = { text: messageText, type: 'sent' };
 
     addMessage(newMessage);
     scrollToBottom();
@@ -52,7 +52,7 @@ function sendMessage() {
 };
 
 // Fonction pour ajouter un message dans la liste
-function addMessage(message, type) {
+async function addMessage(message, type) {
     const messageElement = document.createElement('li');
     const div = document.createElement('div');
     div.classList.add('message', message.type);
@@ -63,7 +63,7 @@ function addMessage(message, type) {
         div.appendChild(title);
     }
 
-    if (message.img){
+    if (message.img) {
         div.appendChild(document.createElement('img')).src = message.img;
         div.appendChild(document.createElement('p')).textContent = message.text;
         div.id = message.id;
@@ -74,13 +74,13 @@ function addMessage(message, type) {
         messageElement.id = message.id;
     }
 
-    if(message.class){
+    if (message.class) {
         messageElement.classList.add(message.class);
     }
 
 
 
-    switch(type){
+    switch (type) {
         case 'first':
             message.classList.add('first');
             break;
@@ -94,14 +94,38 @@ function addMessage(message, type) {
         //     message.classList.add('info');
         //     break;
     }
-    
+
     messageList.appendChild(messageElement);
 
-    if(message.choix){
+    if (message.choix) {
         for (let i = 0; i < message.choix.length; i++) {
             messageElement.dataset[`choix${i}`] = message.choix[i];
         }
         messageElement.dataset.taillechoix = message.choix.length;
+        let info_icon = document.createElement('svg');
+        info_icon.src = "img/info-circle.svg";
+        info_icon.classList.add('info-icon');
+        info_icon.classList.add('expanding-element');
+        let svg_container = document.createElement('div');
+        svg_container.id = "svg-container";
+        
+        svg_container.appendChild(info_icon);
+        messageElement.appendChild(svg_container);
+
+        
+
+        fetch("img/info-circle.svg")
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Erreur de chargement du SVG: ${response.statusText}`);
+                }
+                return response.text();
+            })
+            .then(svgContent => {
+                svg_container.innerHTML = svgContent;
+                messageElement.appendChild(svg_container);
+            })
+            .catch(error => console.error('Erreur:', error));
     }
     scrollToBottom();
 };
@@ -111,7 +135,7 @@ async function addAnswer(answers, type) {
     answersContainer.id = 'answers-container';
 
     let i = 0;
-    for(let key in answers) {
+    for (let key in answers) {
         const answerElement = document.createElement('div');
         answerElement.classList.add('answer');
         answerElement.dataset.answer = answers[key];
@@ -140,7 +164,7 @@ async function addAnswer(answers, type) {
 
     let selectedAnswer = [];
 
-    switch(type){
+    switch (type) {
         case 'multiple':
             answersContainer.addEventListener('click', (e) => {
                 if (e.target.classList.contains('answer')) {
@@ -164,43 +188,43 @@ async function addAnswer(answers, type) {
                 switchTheme("theme-arti");
                 changeApiName("Api-Arti");
             });
-            //I dont add the break on purpose
+        //I dont add the break on purpose
         default:
             answersContainer.addEventListener('click', (e) => {
                 if (e.target.classList.contains('answer')) {
-                // Remove 'selected' class from all answers
-                document.querySelectorAll('.answer').forEach((div) => div.classList.remove('selected'));
-            
-                // Add 'selected' class to the clicked answer
-                e.target.classList.add('selected');
-            
-                // Update selectedAnswer
-                selectedAnswer = [e.target.dataset.answer];
-            
-                // Enable the confirm button
-                confirmButton.disabled = false;
+                    // Remove 'selected' class from all answers
+                    document.querySelectorAll('.answer').forEach((div) => div.classList.remove('selected'));
+
+                    // Add 'selected' class to the clicked answer
+                    e.target.classList.add('selected');
+
+                    // Update selectedAnswer
+                    selectedAnswer = [e.target.dataset.answer];
+
+                    // Enable the confirm button
+                    confirmButton.disabled = false;
                 }
             });
             break;
 
     }
 
-      scrollToBottom();
-      return new Promise((resolve) => {
+    scrollToBottom();
+    return new Promise((resolve) => {
 
-      // Add click event listener to the confirm button
-      confirmButton.addEventListener('click', () => {
-        if (selectedAnswer.length > 0) {
-          confirmButton.remove();
-          answersContainer.remove();
-          for (const answer of selectedAnswer) {
-            addMessage({ text: answer, type: 'sent'});
-          }
+        // Add click event listener to the confirm button
+        confirmButton.addEventListener('click', () => {
+            if (selectedAnswer.length > 0) {
+                confirmButton.remove();
+                answersContainer.remove();
+                for (const answer of selectedAnswer) {
+                    addMessage({ text: answer, type: 'sent' });
+                }
 
-          // Find keys for all target values
-          const answerKeys = selectedAnswer.map(value => 
-            Object.keys(answers).find(key => answers[key] === value)
-          );
+                // Find keys for all target values
+                const answerKeys = selectedAnswer.map(value =>
+                    Object.keys(answers).find(key => answers[key] === value)
+                );
 
           // Incrémenter la question actuelle et mettre à jour la progression
           if (currentQuestion < totalQuestions && type != "useless") {
