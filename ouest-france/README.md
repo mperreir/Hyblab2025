@@ -1,4 +1,7 @@
 # Descriptif du projet
+[![License: CC BY 3.0](https://img.shields.io/badge/License-CC_BY_3.0-lightgrey.svg)](https://creativecommons.org/licenses/by/3.0/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 
 Porteur de projet : Renaud PELARD, Chef de service sport, Ouest-France
 
