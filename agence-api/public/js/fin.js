@@ -1,6 +1,9 @@
 "use strict";
 
 const initSlide3 = async function(){
+
+  updateProgress();
+
   document.getElementById("titleFin1").textContent = texts.fin.title1;
 
   if(!userName){
