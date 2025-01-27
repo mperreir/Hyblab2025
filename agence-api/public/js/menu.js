@@ -42,6 +42,8 @@ function initMenu(){
             menuBtns[index].checked = false;
             switchTheme("theme-default");
             changeApiName("Api");
+            // toggleSwiper(true);
+            swiper.slideTo(1);
             initSlide2(true);
         });
     });
