@@ -123,8 +123,7 @@
         "contexte": [
             {
                 "avant": [
-                    "On passe sur ta première page d'information ? Tu vas découvrir la place de l'agroalimentaire en Bretagne et dans les Pays de la Loire.",
-                    "Allez, c'est parti !"
+                    "On passe sur ta première page d'information ? Tu vas découvrir la place de l'agroalimentaire en Bretagne et dans les Pays de la Loire.\nAllez, c'est parti !"
                 ],
                 "apres": [
                     {
