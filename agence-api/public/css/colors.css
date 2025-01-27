@@ -5,7 +5,7 @@
     --secondary-text-color: white;
     --primary-color: #d6d6d6;
     --secondary-color: #139fe5;
-    --accent-color: #ffdd4a;
+    --accent-color: rgba(255, 223, 0, 0.6);
   }
   
   /* Tech Theme - Blue */
@@ -15,7 +15,7 @@
     --secondary-text-color: #ffffff;
     --primary-color: #1e90ff;
     --secondary-color: #4682b4;
-    --accent-color: #5adbff;
+    --accent-color: rgba(255, 223, 0, 0.6);
   }
   
   /* Agro Theme - Green */
@@ -25,7 +25,7 @@
     --secondary-text-color: #ffffff;
     --primary-color: #81c784;
     --secondary-color: #388e3c;
-    --accent-color: #a5d6a7;
+    --accent-color: rgba(255, 223, 0, 0.6);
   }
   
   /* Arti Theme - Yellow */
@@ -35,6 +35,6 @@
     --secondary-text-color: #ffffff;
     --primary-color: #ffdd4a;
     --secondary-color: #f4c430;
-    --accent-color: #ffd700;
+    --accent-color: rgba(255, 223, 0, 0.6);
   }
   

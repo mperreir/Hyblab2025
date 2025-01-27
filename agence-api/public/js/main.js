@@ -10,7 +10,6 @@ const initSlide2 = async function (afterIntro = false) {
 
     if (abortController) {
         abortController.abort(); // Abort the previous call
-        console.log('aborting previous call');
     }
     
     abortController = new AbortController();
@@ -53,9 +52,7 @@ const initSlide2 = async function (afterIntro = false) {
 
         await addButtonGoToResults(signal);
     } catch (error) {
-        if (error.name === 'AbortError') {
-            console.log("Changement of sector detected, aborting old path");
-        } else {
+        if (!error.name === 'AbortError') {
             console.error('Error:', error);
         }
     }
