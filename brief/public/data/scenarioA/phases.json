@@ -1,0 +1,27 @@
+{
+    "phases": [
+    {
+        "phase_id":1,
+        "phase_title":" 2025 – Le choix de la transition sans nucléaire",
+        "phase_text": ""
+       
+    },
+    {
+        "phase_id":2,
+        "phase_title":"2035 – Résoudre les défis techniques et environnementaux",
+        "phase_text": "Dix ans après vos premières décisions, le développement des énergies renouvelables s’accélère, mais les défis techniques, économiques et environnementaux se multiplient. Vous devez garantir l’équilibre du mix énergétique tout en anticipant les besoins futurs. "
+       
+    },
+    {
+        "phase_id":3,
+        "phase_title":"2045 – Garantir la résilience d’un système 100 % renouvelable",
+        "phase_text": ""
+       
+    },
+    {
+        "phase_id":4,
+        "phase_title":" 2050 – Maintenir un système 100 % renouvelable",
+        "phase_text": "Après 2050, les équipements solaires et éoliens devront être renouvelés, et leur entretien devient crucial. L’hydrogène devient essentiel pour stocker l’énergie et décarboner les secteurs difficiles à électrifier."
+       
+    }
+    ]}
