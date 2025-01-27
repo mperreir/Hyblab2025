@@ -12,7 +12,7 @@ app.use(cors({
 
 // Sample endpoint that sends the partner's name
 app.get('/animals/*', function ( req, res ) {
-    res.setHeader('Access-Control-Allow-Origin', 'https://hyblab.polytech.univ-nantes.fr/lanouvellerepublique/map?animal=Loutre');
+    res.setHeader('Access-Control-Allow-Origin', 'https://hyblab.polytech.univ-nantes.fr/lanouvellerepublique/');
     let POIs;
     // Get partner's topic from folder name
     let json = require(path.join(__dirname, '../src/src/data/db.json'));
