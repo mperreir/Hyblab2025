@@ -26,7 +26,7 @@ const RulesPage = () => {
                     <p><i><b>L’objectif final est de récolter les trois maillots en réussissant les trois étapes. Vous débloquez un maillot à la fin de chaque étape.</b></i></p>
                 </div>
 
-                <button className="btn btn-outline-dark  mt-4" onClick={() => navigate("/difficulty")}><b>JOUER</b></button>
+                <button className="btn btn-outline-dark  mt-4" onClick={() => navigate("/difficulty")}><b>SUIVANT</b></button>
             </div>
             
         </div>
