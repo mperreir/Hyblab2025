@@ -29,10 +29,10 @@
             ]
         },
         "secteurs": {
-            "texts": {
-                "agro": "Tu veux te lancer dans l’agroalimentaire ? Parfait, l’Ouest est une référence dans ce domaine ! La Bretagne est la première région agricole de France, et les Pays de la Loire sont en troisième position. Produire ou transformer des aliments ici, c’est contribuer activement à nourrir la France !",
-                "tech": "Ton rêve c’est d’être dans l’innovation ? L’Ouest pourrait bien répondre à tes ambitions ! Aujourd’hui, un quart des technopoles françaises y sont réunies. Aujourd’hui, un quart des technopôles français sont réunis ici . Ta prochaine innovation pourrait t’amener à changer le monde depuis nos régions !",
-                "arti": "Créer de tes mains te passionne ? L’Ouest est fait pour toi ! Ici, on cultive le savoir-faire entre traditions bien ancrées et forte demande locale. Ta créativité pourra s’épanouir et marquer les esprits."
+            "texts":{
+                "agro": "Lance-toi dans l’agroalimentaire et rejoins un pôle d’excellence en Bretagne et Pays de la Loire, nourrissant la France !",
+                "tech": "Réalise tes ambitions d’innovation dans l’Ouest, où un quart des technopôles français se rassemblent pour changer le monde !",
+                "arti": "Laisse ta créativité s’épanouir dans l’Ouest, où savoir-faire et traditions se mêlent à une forte demande locale !"
             },
             "images": {
                 "agro": "img/agro.jpg",
@@ -51,7 +51,11 @@
             "Félicitations, {nom} ! Tu as terminé ton aventure.",
             "Tu as pris des décisions importantes pour ton entreprise, et tu as découvert les opportunités qui t'attendent en Bretagne et dans les Pays de la Loire.",
             "Va vite voir tes résultats !"
-        ]
+        ],
+        "title1": "Résultats de ton aventure",
+        "paragraphe1": "Et voila {nom} tu as finis ton aventure ! Découvre en cliquant sur les cases tes résultats selon les catégories.",
+        "title2": "Des profils qui te ressemblent",
+        "paragraphe2": "Découvre des profils et articles qui te ressemblent provenant du site de l'agence API !"
     },
     "agro": {
         "introduction": [
@@ -112,11 +116,13 @@
                     "On passe sur ta première page d'information ? Tu vas découvrir la place de l'agroalimentaire en Bretagne et dans les Pays de la Loire.",
                     "Allez, c'est parti !"
                 ],
-                "apres": {
+                "apres": [
+                    {
                     "1_lait": "Félicitations pour ton choix de te lancer dans la production laitière en Mayenne ! Ce département est un acteur majeur dans le secteur, abritant notamment des entreprises de renom telles que Lactalis, leader mondial des produits laitiers.",
                     "1_porc": "Bravo pour ton ambition dans la filière porcine dans le Finistère ! Ce département abrite notamment l’entreprise Bigard, un leader français de la transformation de viande, spécialisé dans la production porcine.",
                     "1_volaille": "Bravo pour ton projet dans le secteur avicole en Vendée ! Le département accueille des entreprises de renom comme Groupe LDC, leader français de la volaille."
-                }
+                    }
+                ]
             },
             {
                 "avant": [
@@ -144,9 +150,9 @@
                 ],
                 "apres": [
                     {
-                        "4_local": "Tu as choisi de rester sur le marché local. J'espère que tu trouveras ton public !",
-                        "4_national": "Tu as choisi de viser le marché national. Bonne chance pour la suite !",
-                        "4_international": "Tu as choisi de viser le marché international. C'est un pari risqué, mais qui peut s'avérer très payant !"
+                        "4_marchelocal": "Tu as choisi de rester sur le marché local. J'espère que tu trouveras ton public !",
+                        "4_marchenational": "Tu as choisi de viser le marché national. Bonne chance pour la suite !",
+                        "4_marcheeuro": "Tu as choisi de viser le marché international. C'est un pari risqué, mais qui peut s'avérer très payant !"
                     }
                 ]
             }
@@ -200,7 +206,7 @@
             }
         ],
         "cartes_fin_arriere": [
-            "Localisation",
+            "Production",
             "Financement",
             "Recrutement",
             "Politique d'export"
@@ -221,9 +227,9 @@
                 "3_embauchetalents": "Talents d'autres régions"
             },
             {
-                "4_local": "Marché local",
-                "4_national": "Marché national",
-                "4_international": "Marché international"
+                "4_marchelocal": "Marché local",
+                "4_marchenational": "Marché national",
+                "4_marcheinternational": "Marché international"
             }
         ]
     },
@@ -351,7 +357,7 @@
         "informations": [
             {
                 "titre": "Les technopoles de l'Ouest",
-                "images": [],
+                "images": ["img/queen-anne-196435_1280.jpg"],
                 "paragraphes": [
                     "Dans l’Ouest, les technopoles se répartissent en fonction de la taille des villes qui les accueillent. On retrouve d’abord celles situées dans des villes de plus de 100 000 habitants, comme Rennes, Nantes, Brest, Le Mans et Angers ; celles des villes de plus de 40 000 habitants, telles que Lorient, Laval, Vannes, Saint-Brieuc et Quimper ; et enfin, les plus petites, dans des villes de plus de 20 000 habitants, avec Lannion."
                 ]
@@ -424,9 +430,13 @@
                     }
                 ]
             },
-            [
-                "La French Tech, c’est un écosystème national qui soutient les startups françaises et leur croissance. Dans l’Ouest, elle se décline en 3 Capitales (Nantes, Rennes Saint-Malo, Angers) et 7 Communautés, fédérant des centaines d’acteurs de l’innovation. Avec des programmes comme French Tech Next 120 et French Tech 2030, les entreprises locales accèdent à des opportunités de croissance et de financement stratégiques."
-            ]
+            {
+                "titre": "Le réseau French Tech",
+                "images": [],
+                "paragraphes": [
+                    "La French Tech, c’est un écosystème national qui soutient les startups françaises et leur croissance. Dans l’Ouest, elle se décline en 3 Capitales (Nantes, Rennes Saint-Malo, Angers) et 7 Communautés, fédérant des centaines d’acteurs de l’innovation. Avec des programmes comme French Tech Next 120 et French Tech 2030, les entreprises locales accèdent à des opportunités de croissance et de financement stratégiques."
+                    ]
+            }
         ],
         "cartes_fin_arriere": [
             "Localisation",
@@ -490,31 +500,29 @@
             ]
         ],
         "reponses": [
-            [
-                {
-                    "1_menuisier": "Je choisis la menuiserie. Je veux façonner le bois pour créer des meubles uniques.",
-                    "1_ceramiste": "Je souhaite devenir céramiste. Je veux créer des objets en terre cuite, reflètant le style et l'élegance de nos régions.",
-                    "1_boucher": "Je me lance en tant que boucher. Je veux proposer des produits de qualité, issus de l'élevage local."
-                },
-                {
-                    "2_banque": "Je vais demander un prêt bancaire.",
-                    "2_aide": "Je vais demander une subvention.",
-                    "2_crowdfunding": "Je vais demander un financement participatif."
-                },
-                {
-                    "3_embauchecfa": "Je veux participer à la formation d'artisans qualifiés dans ma région, grâce à des contrats d'apprentissage.",
-                    "3_embauchepro": "Je veux diversifier mon équipe en attirant des professionnels expérimentés."
-                },
-                {
-                    "4_non": "Non, ce n'est pas la priorité pour moi.",
-                    "4_label": "Oui, je veux tenter d'obtenir un label.",
-                    "4_mission": "Oui, je souhaite devenir une entreprise à mission."
-                },
-                {
-                    "5_local": "Je vais privilégier les matières premières locales pour mes créations.",
-                    "5_import": "Je vais importer des matières premières de qualité pour mes créations."
-                }
-            ]
+            {
+                "1_menuisier": "Je choisis la menuiserie. Je veux façonner le bois pour créer des meubles uniques.",
+                "1_ceramiste": "Je souhaite devenir céramiste. Je veux créer des objets en terre cuite, reflètant le style et l'élegance de nos régions.",
+                "1_boucher": "Je me lance en tant que boucher. Je veux proposer des produits de qualité, issus de l'élevage local."
+            },
+            {
+                "2_banque": "Je vais demander un prêt bancaire.",
+                "2_aide": "Je vais demander une subvention.",
+                "2_crowdfunding": "Je vais demander un financement participatif."
+            },
+            {
+                "3_embauchecfa": "Je veux participer à la formation d'artisans qualifiés dans ma région, grâce à des contrats d'apprentissage.",
+                "3_embauchepro": "Je veux diversifier mon équipe en attirant des professionnels expérimentés."
+            },
+            {
+                "4_non": "Non, ce n'est pas la priorité pour moi.",
+                "4_label": "Oui, je veux tenter d'obtenir un label.",
+                "4_mission": "Oui, je souhaite devenir une entreprise à mission."
+            },
+            {
+                "5_local": "Je vais privilégier les matières premières locales pour mes créations.",
+                "5_import": "Je vais importer des matières premières de qualité pour mes créations."
+            }
         ],
         "contexte": [
             {
@@ -553,11 +561,11 @@
                     "Il s'agit de la Responsabilité Sociétale des Entreprises. C'est un engagement volontaire des entreprises à intégrer les préoccupations sociales, environnementales et économiques dans leurs activités et leurs interactions avec leurs parties prenantes.",
                     "Attends, je vais te parler des entreprises à mission et de leur place dans l'Ouest."
                 ],
-                "apres": {
+                "apres": [{
                     "4_non": "Tu as choisi de ne pas t'engager dans une démarche RSE. C'est ton choix !",
                     "4_label": "Tu as choisi de tenter d'obtenir un label RSE. C'est un engagement fort qui peut te démarquer de la concurrence !",
                     "4_mission": "Tu as choisi de devenir une entreprise à mission. C'est un engagement fort qui peut te démarquer de la concurrence !"
-                }
+                }]
             },
             {
                 "avant": [

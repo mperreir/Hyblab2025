@@ -1,5 +1,28 @@
 "use strict";
 
+//----------------- bar de progression ---------------
+
+// Variables pour la barre de progression
+const totalQuestions = 6;
+let currentQuestion = 1;
+
+// Fonction pour mettre à jour la barre de progression
+function updateProgress() {
+    const progressSteps = document.querySelectorAll('.progress-step');
+    progressSteps.forEach((step, index) => {
+        if (index < currentQuestion - 1) {
+            step.classList.add('completed');
+            step.classList.remove('active');
+        } else if (index === currentQuestion - 1) {
+            step.classList.add('active');
+            step.classList.remove('completed');
+        } else {
+            step.classList.remove('active', 'completed');
+        }
+    });
+}
+
+//----------------------------------------
 
 // Fonction pour envoyer un message
 function sendMessage() {
@@ -15,7 +38,7 @@ function sendMessage() {
 };
 
 // Fonction pour ajouter un message dans la liste
-function addMessage(message) {
+function addMessage(message, type) {
     const messageElement = document.createElement('li');
     if (message.img){
         const div = document.createElement('div');
@@ -29,6 +52,28 @@ function addMessage(message) {
         messageElement.textContent = message.text;
         messageElement.id = message.id;
     }
+
+    if(message.class){
+        messageElement.classList.add(message.class);
+    }
+
+
+
+    switch(type){
+        case 'first':
+            message.classList.add('first');
+            break;
+        case 'middle':
+            message.classList.add('middle');
+            break;
+        case 'last':
+            message.classList.add('last');
+            break;
+        // case 'info':
+        //     message.classList.add('info');
+        //     break;
+    }
+    
     messageList.appendChild(messageElement);
 
     if(message.choix){
@@ -40,17 +85,27 @@ function addMessage(message) {
     scrollToBottom();
 };
 
-
-async function addAnswer(answers, multipleChoices=false) {
+async function addAnswer(answers, type) {
     const answersContainer = document.createElement('div');
     answersContainer.id = 'answers-container';
 
+    let i = 0;
     for(let key in answers) {
         const answerElement = document.createElement('div');
         answerElement.classList.add('answer');
         answerElement.dataset.answer = answers[key];
         answerElement.textContent = answers[key];
+
+        if (i === 0) {
+            answerElement.classList.add('first');
+        } else if (i === Object.keys(answers).length - 1) {
+            answerElement.classList.add('last');
+        } else {
+            answerElement.classList.add('middle');
+        }
+
         answersContainer.appendChild(answerElement);
+        i++;
     }
 
 
@@ -64,41 +119,57 @@ async function addAnswer(answers, multipleChoices=false) {
 
     let selectedAnswer = [];
 
-    if (multipleChoices) {
-        answersContainer.addEventListener('click', (e) => {
-            if (e.target.classList.contains('answer')) {
-                e.target.classList.toggle('selected');
-                selectedAnswer = Array.from(answersContainer.querySelectorAll('.selected')).map((div) => div.dataset.answer);
-                confirmButton.disabled = selectedAnswer.length === 0;
-            }
-        }
-        );
-    } else {
-        answersContainer.addEventListener('click', (e) => {
-            if (e.target.classList.contains('answer')) {
-            // Remove 'selected' class from all answers
-            document.querySelectorAll('.answer').forEach((div) => div.classList.remove('selected'));
-        
-            // Add 'selected' class to the clicked answer
-            e.target.classList.add('selected');
-        
-            // Update selectedAnswer
-            selectedAnswer = [e.target.dataset.answer];
-        
-            // Enable the confirm button
-            confirmButton.disabled = false;
-            }
-        });
-    }
+    switch(type){
+        case 'multiple':
+            answersContainer.addEventListener('click', (e) => {
+                if (e.target.classList.contains('answer')) {
+                    e.target.classList.toggle('selected');
+                    selectedAnswer = Array.from(answersContainer.querySelectorAll('.selected')).map((div) => div.dataset.answer);
+                    confirmButton.disabled = selectedAnswer.length === 0;
+                }
+            });
+            break;
+        case 'secteur':
+            const answers = answersContainer.querySelectorAll('.answer');
+            answers[0].addEventListener('click', () => {
+                switchTheme("theme-agro");
+                changeApiName("Api-Agro");
+            });
+            answers[1].addEventListener('click', () => {
+                switchTheme("theme-tech");
+                changeApiName("Api-Tech");
+            });
+            answers[2].addEventListener('click', () => {
+                switchTheme("theme-arti");
+                changeApiName("Api-Arti");
+            });
+            //I dont add the break on purpose
+        default:
+            answersContainer.addEventListener('click', (e) => {
+                if (e.target.classList.contains('answer')) {
+                // Remove 'selected' class from all answers
+                document.querySelectorAll('.answer').forEach((div) => div.classList.remove('selected'));
+            
+                // Add 'selected' class to the clicked answer
+                e.target.classList.add('selected');
+            
+                // Update selectedAnswer
+                selectedAnswer = [e.target.dataset.answer];
+            
+                // Enable the confirm button
+                confirmButton.disabled = false;
+                }
+            });
+            break;
 
-    
+    }
 
       scrollToBottom();
       return new Promise((resolve) => {
 
       // Add click event listener to the confirm button
       confirmButton.addEventListener('click', () => {
-        if (selectedAnswer) {
+        if (selectedAnswer.length > 0) {
           confirmButton.remove();
           answersContainer.remove();
           for (const answer of selectedAnswer) {
@@ -110,6 +181,11 @@ async function addAnswer(answers, multipleChoices=false) {
             Object.keys(answers).find(key => answers[key] === value)
           );
 
+          // Incrémenter la question actuelle et mettre à jour la progression
+          if (currentQuestion < totalQuestions) {
+            currentQuestion++;
+            updateProgress();
+          }
           resolve(answerKeys);
         }
       });
@@ -124,5 +200,3 @@ function scrollToBottom() {
         chatBox.scrollTop = chatBox.scrollHeight;
     }, 100);  // Délai pour s'assurer que le DOM est mis à jour
 };
-
-

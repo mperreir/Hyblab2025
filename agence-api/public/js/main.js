@@ -1,104 +1,67 @@
 "use strict";
 
-const initSlide2 = async function () {
+let userName;
+let secteur;
+let choices;
 
+let abortController = null;
+
+const initSlide2 = async function (afterIntro = false) {
+
+    if (abortController) {
+        abortController.abort(); // Abort the previous call
+        console.log('aborting previous call');
+    }
     
+    abortController = new AbortController();
+    const signal = abortController.signal;
 
-    const chatBox = document.getElementById('chatBox');
-    const messageList = document.getElementById('messageList');
-    const messageInput = document.getElementById('messageInput');
+    try {
+        const chatBox = document.getElementById('chatBox');
+        const messageList = document.getElementById('messageList');
+        const messageInput = document.getElementById('messageInput');
 
+        if(!afterIntro){
+            scrollToBottom();
 
-    scrollToBottom();
+            // Initialiser la barre de progression
+            updateProgress();
 
-    // Retrieve the intro's messages from our API
-    let response = await fetch('data/fr_.json');
-    const texts = await response.json();
-    
-    initMenu(texts);
-    //displayExplanation(texts.agro.informations["3"],["1_porc", "2_trucmuche"] , "Message d'explications");
-    // await histoire(texts.tech);
+            // Load the intro story
+            userName = await loadIntroStory(texts.introduction.general, signal);
+        } else {
+            document.getElementById('messageList').innerHTML = '';
+            await loadIntroStory(texts.introduction.general, signal, true);
+        }
 
+        // Select the sector
+        secteur = (await selectSecteur(texts.introduction.secteurs, signal))[0];
 
-    // Load the intro story
-    const userName = await loadIntroStory(texts.introduction.general);
+        switch (secteur) {
+            case "agro":
+                await histoire(texts.agro, userName, signal);
+                break;
+            case "tech":
+                await histoire(texts.tech, userName, signal);
+                break;
+            case "arti":
+                await histoire(texts.arti, userName, signal);
+                break;
+        };
 
-    // Select the character
-    // const character = await selectCharacter(texts.introduction.secteurs);
-    // Select the character
-    const secteur = (await selectSecteur(texts.introduction.secteurs))[0];
-    console.log(secteur);
+        await displayMessages(texts.fin.avant, userName, signal);
 
-    switch (secteur) {
-        case "agro":
-            await histoire(texts.agro, userName);
-            break;
-        case "tech":
-            await histoire(texts.tech, userName);
-            break;
-        case "arti":
-            await histoire(texts.arti, userName);
-            break;
-    };
-
-    await displayMessages(texts.fin.avant, userName)
-
-    await addButtonGoToResults();
+        await addButtonGoToResults(signal);
+    } catch (error) {
+        if (error.name === 'AbortError') {
+            console.log("Changement of sector detected, aborting old path");
+        } else {
+            console.error('Error:', error);
+        }
+    }
 
 
 };
-
-function initMenu(texts){
-    const menuBtn = document.getElementById("menu-btn");
-    const menuPopup = document.getElementById("menu-popup");
-    const closeMenuBtn = document.getElementById("close-menu");
-    const goPauseLink = document.getElementById("go-pause"); // 暂停按钮
-    const pausePopup = document.getElementById("pause-popup"); // 暂停弹窗
-    const resumeGameBtn = document.getElementById("resume-game"); // 继续游戏按钮
-    const quitGameBtn = document.getElementById("quit-game"); // 结束游戏按钮
-  
-    // 点击「Menu」打开弹窗
-    menuBtn.addEventListener("click", () => {
-        menuPopup.classList.remove("hidden");
-    });
-
-    // 点击「×」关闭弹窗
-    closeMenuBtn.addEventListener("click", () => {
-        menuPopup.classList.add("hidden");
-    });
-
-    // 点击背景(除 .menu-content 以外的区域)也关闭
-    menuPopup.addEventListener("click", (event) => {
-        if (event.target === menuPopup) {
-        menuPopup.classList.add("hidden");
-        }
-    });
-    const goCharactersLink = document.getElementById("go-characters");
-    goCharactersLink.addEventListener("click", (e) => {
-        e.preventDefault();              // 阻止 href 跳转
-        menuPopup.classList.add("hidden");  // 先关菜单
-        selectSecteur(texts.introduction.secteurs);
-    });
-    goPauseLink.addEventListener("click", (e) => {
-        e.preventDefault(); // 阻止默认行为
-        menuPopup.classList.add("hidden"); // 关闭菜单
-        pausePopup.classList.remove("hidden"); // 打开暂停弹窗
-      });
-    
-      // 点击“继续游戏”关闭暂停弹窗
-      resumeGameBtn.addEventListener("click", () => {
-        pausePopup.classList.add("hidden"); // 关闭暂停弹窗
-      });
-    
-      // 点击“结束游戏”跳转到首页
-      quitGameBtn.addEventListener("click", () => {
-        window.location.href = "../agence-api/"; // 跳转到首页
-      });
-}
-  
-function wait(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
 
 function waitForNameInput() {
     return new Promise((resolve) => {
@@ -125,22 +88,24 @@ function waitForNameInput() {
     });
   }
 
-function waitForUserTouch(){
+async function waitForUserTouch(){
     return new Promise((resolve) => {
         const messageInput = document.getElementById('chatBox');
-        messageInput.addEventListener('click', () => {
-            resolve();
+        messageInput.addEventListener('click', (event) => {
+            if(!event.target.classList.contains("info") && !event.target.classList.contains("expanding")){
+                resolve(true);
+            } 
         });
     });
 }
 
-
 async function addButtonGoToResults() {
     const confirmButton = document.createElement('button');
-    confirmButton.id = 'confirmButton';
+    confirmButton.id = 'seeResultsButton';
     confirmButton.textContent = 'Voir les résultats';
     confirmButton.classList.add('button');
     document.getElementById('chatBox').appendChild(confirmButton);
+    scrollToBottom();
     confirmButton.addEventListener('click', () => {
         swiper.slideNext();
     });
@@ -153,13 +118,13 @@ async function getUserName() {
     const messageInput = document.getElementById('messageInput');
     const chatInput = document.getElementById('chat-input');
 
-    chatInput.style.visibility='visible';
+    chatInput.style.display='flex';
     messageInput.focus();
 
-    let userName = await waitForNameInput();
+    userName = await waitForNameInput();
 
     messageInput.blur();
-    chatInput.style.visibility='hidden';
+    chatInput.style.display='none';
 
     toggleTapIconDisplay(false);
 
@@ -184,56 +149,78 @@ async function selectSecteur(presentationSecteurs) {
 
     toggleTapIconDisplay(false);
 
-    return await addAnswer(presentationSecteurs.reponses);
+    return await addAnswer(presentationSecteurs.reponses, "secteur");
   }
 
-async function displayMessages(message, userName) {
+async function displayMessages(message, signal, skipInteraction = false) {
+    let i=0;
     for (const key in message) {
+        if (signal.aborted) {
+            console.log('Aborted');
+            throw new DOMException("Aborted", "AbortError"); // Standard way to handle abort;
+        }
         if(message[key].includes("{nom}")){
-        addMessage({ text: message[key].replace("{nom}", userName), type: "received"});
+            if(i === 0){
+                addMessage({ text: message[key].replace("{nom}", userName), type: "received", class: "first"});
+            } else if(i === message.length-1){
+                addMessage({ text: message[key].replace("{nom}", userName), type: "received", class: "last"});
+            } else {
+                addMessage({ text: message[key].replace("{nom}", userName), type: "received", class: "middle"});
+            }
         } else {
-        addMessage({ text: message[key], type: "received"});
+            if(i === 0){
+                addMessage({ text: message[key], type: "received", class: "first"});
+            } else if(i === message.length-1){
+                addMessage({ text: message[key], type: "received", class: "last"});
+            }
+            else {
+                addMessage({ text: message[key], type: "received", class: "middle"});
+            }
         }
         scrollToBottom();
-        await waitForUserTouch();
+        if (!skipInteraction) {
+            let next = false;
+            while (!next) {
+                next = await waitForUserTouch();
+            }
+        }
+        i++;
     }
-}
-
-async function displayResponses(message) {
-    console.log(message);
-    for (const key in message) {
-        addMessage({ text: message[key], type: "answer"});
-        scrollToBottom();
-    }
-    await waitForUserTouch();
 }
   
-async function loadIntroStory(introStory) {
-  document.getElementById('chat-input').style.visibility = 'hidden';
+async function loadIntroStory(introStory, signal, skipInteraction = false) {
+  document.getElementById('chat-input').style.display = 'none';
 
-    await displayMessages(introStory.avant_nom);
+    await displayMessages(introStory.avant_nom, signal, skipInteraction);
 
-    const userName = await getUserName();
+    if (!skipInteraction){
+        userName = await getUserName();
+    }
     addMessage({ text: userName, type: "sent"});
 
-    await displayMessages(introStory.apres_nom, userName);
+    await displayMessages(introStory.apres_nom, signal, skipInteraction);
 
     return userName;
 }
 
-async function histoire(texts, userName){
+async function histoire(texts, userName, signal){
 
-    let choices = [];
+    choices = [];
 
-    await displayMessages(texts.introduction,userName);
+    await displayMessages(texts.introduction, signal);
 
     for (let i = 0; i < texts.questions.length; i++) {
 
-        await displayMessages(texts.contexte[i].avant.slice(0,-1));
+        if (signal.aborted) {
+            console.log('Aborted');
+            throw new DOMException("Aborted", "AbortError"); // Standard way to handle abort;
+        }
+
+        await displayMessages(texts.contexte[i].avant.slice(0,-1), signal);
         await displayExplanation(texts.informations[i], choices, texts.contexte[i].avant[texts.contexte[i].avant.length-1]);
         
 
-        await displayMessages(texts.questions[i],userName);
+        await displayMessages(texts.questions[i], signal);
 
         /* Ouais bon la solution est dégeu, mais ça fonctionne */
         let multipleChoices = false;
@@ -246,9 +233,15 @@ async function histoire(texts, userName){
 
         toggleTapIconDisplay(true);
 
-        let answer = await addAnswer(texts.reponses[i], multipleChoices);
+        let answer;
+
+        if (multipleChoices){
+            answer = await addAnswer(texts.reponses[i], "mutliple");
+        } else {
+            answer = await addAnswer(texts.reponses[i]);
+        }
+
         choices = [...choices, ...answer];
-        console.log(choices);
 
         toggleTapIconDisplay(false);
 

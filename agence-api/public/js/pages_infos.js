@@ -1,20 +1,13 @@
 //première idée d'affichage de la page d'explication --> Contexte d'ouverture à adapter
 async function displayExplanation(data, liste_choix, contenu_message) {
-    return new Promise((resolve) => {
-        const num_question = liste_choix.length + 1;
-        setTimeout(() => {
-            const reply = { text: contenu_message, type: 'received', id: `info_${num_question}`, choix: liste_choix }; // id à adapter selon le parametrage du JSON
-            addMessage(reply);
-            enableClickForExpansion(reply.text, data);
+    const num_question = liste_choix.length + 1;
+    const reply = { text: contenu_message, type: 'received', id: `info_${num_question}`, class: 'info', choix: liste_choix }; // id à adapter selon le parametrage du JSON
+    addMessage(reply, 'info');
+    enableClickForExpansion(reply.text, data);
 
-            // Agrandissement automatique 1 seconde après apparition
-            setTimeout(() => {
-                const lastMessage = document.querySelector(`#${reply.id}`);
-                expandMessage(lastMessage, data);
-                resolve(); // Resolve the promise after expandMessage
-            }, 3000);
-        }, 10);
-    });
+    await waitForUserTouch();
+    const lastMessage = document.querySelector(`#${reply.id}`);
+    expandMessage(lastMessage, data);
 }
 
 // Fonction pour permettre l'agrandissement manuel
@@ -31,9 +24,11 @@ function enableClickForExpansion(text, data) {
 
 // Fonction pour agrandir le message et afficher l'image
 function expandMessage(messageElement, data) {
+    expandingElement.innerHTML = '';
     toggleTapIconDisplay(true);
 
     const rect = messageElement.getBoundingClientRect();
+    expandingElement.dataset.id_message = messageElement.id;
 
     // Récupération de la liste des choix sur la balise HTML
     let liste_choix = [];
@@ -49,22 +44,36 @@ function expandMessage(messageElement, data) {
     title.textContent = titre;
     expandingElement.appendChild(title);
 
+    let image_container = document.createElement('div');
+    image_container.classList.add('image-container');
+    let imgexist = false;
     images.forEach(image => {
-        const img = document.createElement('p');
+        const img = document.createElement('img');
         img.src = image;
-        expandingElement.appendChild(img);
+        image_container.appendChild(img);
+        if (!imgexist){
+            expandingElement.appendChild(image_container);
+            imgexist = true;
+        }
     });
 
+    let paragraphes_container = document.createElement('div');
+    paragraphes_container.classList.add('paragraphes-container');
+    let paragraphes_exist = false;
     paragraphes.forEach(paragraphe => {
         const text = document.createElement('p');
         text.textContent = paragraphe;
-        expandingElement.appendChild(text);
+        paragraphes_container.appendChild(text);
+        if (!paragraphes_exist){
+            expandingElement.appendChild(paragraphes_container);
+            paragraphes_exist = true;
+        }
     });
 
     expandingElement.querySelectorAll('*').forEach(element => element.style.display = 'none');
     expandingElement.style.display = 'flex';
-    expandingElement.style.top = rect.top + 'px';
-    expandingElement.style.left = rect.left + 'px';
+    // expandingElement.style.top = rect.top + 'px';
+    // expandingElement.style.left = rect.left + 'px';
     expandingElement.style.width = messageElement.offsetWidth + 'px';
     expandingElement.style.height = messageElement.offsetHeight + 'px';
 
@@ -74,45 +83,49 @@ function expandMessage(messageElement, data) {
         expandingElement.removeEventListener('transitionend', onTransitionEnd);  // Nettoyer l'événement
     });
 
+    document.getElementById('chatBox').appendChild(expandingElement);
+
     setTimeout(() => {
-        expandingElement.style.top = '0';
+        expandingElement.style.bottom = '0';
         expandingElement.style.left = '0';
         expandingElement.style.width = '100vw';
-        expandingElement.style.height = '100vh';
+        expandingElement.style.height = '86%';
 
     }, 100);
 };
 
 // Fonction pour fermer l'overlay et réduire vers le message
 function closeOverlay() {
+    const id_message = expandingElement.dataset.id_message;
     toggleTapIconDisplay(false);
-    const lastMessage = document.querySelectorAll('.message.received');
-    // --> La séléection du message sur lequel fermer est à adapter selon tag des balises HTML ?
-    // Pour l'instant la fermeture est définie statiquement dans le HTML
-    // Faire un inner.html clear
+    const lastMessage = document.getElementById(id_message);
 
     //expandingElement.querySelectorAll('*').forEach(element => element.style.display = 'none');
     expandingElement.innerHTML = '';
-    if (lastMessage.length > 0) {
-        const rect = lastMessage[lastMessage.length - 1].getBoundingClientRect();
+    if (lastMessage) {
+        const rect = lastMessage.getBoundingClientRect();
 
         expandingElement.style.top = rect.top + 'px';
         expandingElement.style.left = rect.left + 'px';
-        expandingElement.style.width = lastMessage[lastMessage.length - 1].offsetWidth + 'px';
-        expandingElement.style.height = lastMessage[lastMessage.length - 1].offsetHeight + 'px';
+        expandingElement.style.width = lastMessage.offsetWidth + 'px';
+        expandingElement.style.height = lastMessage.offsetHeight + 'px';
     }
 
     setTimeout(() => {
         expandingElement.style.display = 'none';
+        // Réinitialiser les styles après la fermeture
+        expandingElement.style.top = '';
+        expandingElement.style.left = '';
+        expandingElement.style.width = '';
+        expandingElement.style.height = '';
     }, 500);
 };
 
 // Fonction pour répartir les champs du JSON dans des listes respectives
 function repartitionChamps(fields, data, liste_choix){
-    console.log(liste_choix);
     let result = {titre: "", images: [], paragraphes: []};
     fields.forEach(field => {
-        switch (detectType(data[field])){
+        switch (detectType(data[field])) {
             case "array":
                 result[field] = data[field];
                 break;
@@ -128,16 +141,15 @@ function repartitionChamps(fields, data, liste_choix){
                 break;
         }
     });
-    return result  
+    return result;
 };
 
 // Fonction pour trouver le bon paramètre dans le JSON
 function match(data, liste_choix) {
-    if (data.length == 0){
+    if (data.length == 0) {
         return [];
     }
     const num_question = parseInt(Object.keys(data)[0].split('_')[0], 10);
-    console.log(liste_choix);
     return data[String(liste_choix[num_question - 1])];
 };
 
@@ -147,9 +159,9 @@ function detectType(element) {
         return "array";
     } else if (typeof element === 'string') {
         return "string";
-    } else if (typeof element === 'object' && element !== null && !Array.isArray(element)){
+    } else if (typeof element === 'object' && element !== null && !Array.isArray(element)) {
         return "dico";
-    } else{
+    } else {
         return "other";
     }
 }

@@ -1,0 +1,40 @@
+/* Default Theme */
+:root {
+    --bg-color: white;
+    --primary-text-color: black;
+    --secondary-text-color: white;
+    --primary-color: #d6d6d6;
+    --secondary-color: #139fe5;
+    --accent-color: #ffdd4a;
+  }
+  
+  /* Tech Theme - Blue */
+  .theme-tech {
+    --bg-color: #f0f8ff;
+    --primary-text-color: #000080;
+    --secondary-text-color: #ffffff;
+    --primary-color: #1e90ff;
+    --secondary-color: #4682b4;
+    --accent-color: #5adbff;
+  }
+  
+  /* Agro Theme - Green */
+  .theme-agro {
+    --bg-color: #f5fff5;
+    --primary-text-color: #2d572c;
+    --secondary-text-color: #ffffff;
+    --primary-color: #81c784;
+    --secondary-color: #388e3c;
+    --accent-color: #a5d6a7;
+  }
+  
+  /* Arti Theme - Yellow */
+  .theme-arti {
+    --bg-color: #fffdf5;
+    --primary-text-color: #8b6f00;
+    --secondary-text-color: #ffffff;
+    --primary-color: #ffdd4a;
+    --secondary-color: #f4c430;
+    --accent-color: #ffd700;
+  }
+  

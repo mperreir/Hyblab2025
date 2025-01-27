@@ -1,19 +1,11 @@
 /* ========== 菜单整体只在 .menu-wrapper 下生效 ========== */
-.menu-wrapper {
-  /* 如果要自身宽高之类，在这里写。一般不需要 */
-}
 
 /* 按钮样式，只在 .menu-wrapper 下的 #menu-btn 才生效 */
 .menu-wrapper #menu-btn {
   position: fixed; /* 或 absolute, 看你想怎么定位 */
-  top: 20px;
+  top: 35px;
   right: 20px;
-  background: none;  /* 如果你想要无底色 */
-  border: none;
-  color: #333;
-  font-size: 1rem;
-  cursor: pointer;
-  z-index: 9999; 
+  z-index: 2; 
 }
 /* hover效果 */
 .menu-wrapper #menu-btn:hover {
@@ -43,10 +35,8 @@
 
 /* 弹窗内部 */
 .menu-wrapper .menu-content {
-  width: 393px; /* 设计师给的尺寸 */
-  max-width: 90%;
-  height: 614px; 
-  max-height: 90%;
+  width: 90%;
+  max-height: 70%;
   background: #d9d9d9;
   border-radius: 50px 50px 0 0;
   padding: 20px;
@@ -65,9 +55,8 @@
 /* 关闭按钮 */
 .menu-wrapper .close-btn {
   position: absolute;
-  top: 15px;
-  right: 15px;
-  background: none;
+  top: 25px;
+  right: 25px;
   border: none;
   font-size: 1.4rem;
   cursor: pointer;
@@ -75,7 +64,7 @@
 
 /* 文字等内部细节 (只影响 .menu-content 里的元素) */
 .menu-wrapper .menu-content h1 {
-  font-size: 1.8rem;
+  font-size: 36px;
   margin-top: 40px;
   text-align: center;
 }
@@ -83,7 +72,7 @@
   margin: 20px auto;
   max-width: 80%;
   line-height: 1.6;
-  text-align: center;
+  text-align: left;
   font-size: 1rem;
 }
 .menu-wrapper .menu-content ul {
@@ -106,69 +95,78 @@
   color: #0056b3;
 }
 .menu-wrapper .menu-content footer {
-  margin-top: 20px;
   font-size: 0.8rem;
   color: #666;
   text-align: center;
 }
-/* Pause 弹窗 */
-#pause-popup {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* 半透明背景 */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 2000;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-}
 
-#pause-popup:not(.hidden) {
-  opacity: 1;
-  pointer-events: auto;
-}
 
-.pause-content {
-  background: #f7f7f7; /* 浅灰色背景 */
-  color: #333; /* 深灰色文字 */
-  padding: 25px;
-  width: 320px;
-  border-radius: 15px;
-  text-align: center;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* 柔和阴影 */
-}
-
-.pause-content h2 {
-  font-size: 1.5em;
-  margin-bottom: 20px;
-  color: #4a90e2; /* 浅蓝色标题 */
-}
-
-.pause-btn {
-  display: block;
-  margin: 15px auto;
-  padding: 12px 25px;
-  background: #d9eafc; /* 浅蓝色按钮背景 */
-  color: #333; /* 深灰色文字 */
+.menu {
+  --s: 30px; /* control the size */
+  --c: black; /* the color */
+  
+  height: var(--s);
+  aspect-ratio: 1;
   border: none;
-  border-radius: 25px;
-  font-size: 1em;
+  padding: 0;
+  border-inline: calc(var(--s)/2) solid #0000; 
+  box-sizing: content-box;
+  --_g1: linear-gradient(var(--c) 20%,#0000 0 80%,var(--c) 0) 
+         no-repeat content-box border-box;
+  --_g2: radial-gradient(circle closest-side at 50% 12.5%,var(--c) 95%,#0000) 
+         repeat-y content-box border-box;
+  background: 
+    var(--_g2) left  var(--_p,0px) top,
+    var(--_g1) left  calc(var(--s)/10 + var(--_p,0px)) top,
+    var(--_g2) right var(--_p,0px) top,
+    var(--_g1) right calc(var(--s)/10 + var(--_p,0px)) top;
+  background-size: 
+    20% 80%,
+    40% 100%;
+  position: relative;
+  clip-path: inset(0 25%);
+  -webkit-mask: linear-gradient(90deg,#0000,#000 25% 75%,#0000);
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  transition: 
+    background-position .3s var(--_s,.3s), 
+    clip-path 0s var(--_s,.6s);
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  appearance:none;
 }
 
-.pause-btn:hover {
-  background: #c0dcf9; /* 鼠标悬停更深的浅蓝色 */
-  color: #222; /* 更深的灰色文字 */
-  transform: scale(1.05); /* 悬停时按钮稍微放大 */
+.menu:before,
+.menu:after {
+  content: "";
+  position: absolute;
+  border-radius: var(--s);
+  inset: 40% 0;
+  background: var(--c);
+  transition: opacity .3s calc(.3s - var(--_s,.3s));
 }
 
-.pause-btn:active {
-  transform: scale(0.95); /* 点击时按钮缩小 */
+.menu:checked {
+  clip-path: inset(0);
+  --_p: calc(-1*var(--s));
+  --_s: 0s;
 }
 
+.menu:checked:before,
+.menu:checked:after {
+  opacity: 0; /* Hide the pseudo-elements */
+}
+
+.menu:focus-visible {
+  clip-path: none;
+  -webkit-mask: none;
+  border: none;
+  outline: 2px solid var(--c);
+  outline-offset: 5px;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+}
