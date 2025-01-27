@@ -6,7 +6,7 @@ const cors = require('cors');
 
 
 app.use(cors({
-    origin: ['http://localhost:5173', 'http://localhost:4173', 'https://hyblab.polytech.univ-nantes.fr/lanouvellerepublique/map?animal=Loutre'],
+    origin: ['https://hyblab.polytech.univ-nantes.fr/lanouvellerepublique/map?animal=Loutre', 'http://localhost:5173', 'http://localhost:4173'],
 }));
 
 
