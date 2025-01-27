@@ -54,33 +54,16 @@ const NavBarComponent = () => {
     };
 
     const getBreadcrumbItems = () => {
+        const totalLevels = 3; 
         return [
             {
-                id: 1,
-                label: "Parcours 1",
-                active: !!difficulty
-            },
-            {
-                id: 2,
-                label: "Parcours 2",
-                active: !!difficulty && (
-                    ((level_id && parseInt(level_id) >= 1) &&
-                        isTransition)
-                    || ((level_id && parseInt(level_id) >= 2) && !isTransition)
-                )
-            },
-            {
-                id: 3,
-                label: "Parcours 3",
-                active: !!difficulty && (
-                    ((level_id && parseInt(level_id) >= 2) &&
-                        (isTransition && (parseInt(level_id) >= 2)))
-                    || ((level_id && parseInt(level_id) >= 3) && !isTransition)
-                )
+                id: parseInt(level_id), 
+                label: `ÉTAPE ${level_id}/${totalLevels}`,
+                active: true
             }
         ];
     };
-
+    
     const progress = getBreadcrumbItems().filter(item => item.active).length * 33.33;
 
     return (
@@ -88,29 +71,34 @@ const NavBarComponent = () => {
             <Navbar className="custom-navbar" expand="lg" style={{ position: 'absolute' }}>
                 <Container fluid className="p-0 px-1">
                     <div className="d-flex justify-content-between align-items-center w-100">
-                        <Navbar.Brand href={`${basename}`}>
+                        <Navbar.Brand href={`${basename}`}  style={{ marginLeft: '10px' }}>
                             <img
-                                src={`${basename}images/logo_jeu.png`}
-                                height="30"
+                                src={`${basename}images/logo_white.png`}
+                                height="35"
                                 className="d-inline-block align-top"
                                 alt="Logo"
                             />
                         </Navbar.Brand>
 
                         {shouldShowBreadcrumb() ? (
-                            <Breadcrumb className="mb-0">
+                            <Breadcrumb className="mb-0" style={{ marginRight: '20px' }}>
                                 {getBreadcrumbItems().map((item) => (
                                     <Breadcrumb.Item
                                         key={item.id}
                                         active={item.active}
+                                        style={{ 
+                                            color: 'white', 
+                                            fontSize: '1rem',
+                                            fontFamily: 'Work Sans, sans-serif', 
+                                            fontWeight: 550 
+                                        }}
                                     >
                                         {item.label}
                                     </Breadcrumb.Item>
                                 ))}
                             </Breadcrumb>
                         ) : (
-                            <CyclistAnimation />
-                            // <h6 className="mb-0">{getPageTitle()}</h6>
+                            <h6 className="mb-0">{getPageTitle()}</h6>
                         )}
                     </div>
 
