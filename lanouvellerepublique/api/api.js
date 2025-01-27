@@ -15,7 +15,7 @@ app.get('/animals/*', function ( req, res ) {
     
     let POIs;
     // Get partner's topic from folder name
-    let json = require(path.join(__dirname, '../src/src/db.json'));
+    let json = require(path.join(__dirname, '../src/src/data/db.json'));
     let key = req.params[0];
     POIs = json[key];
     // Send it as a JSON object
