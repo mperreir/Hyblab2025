@@ -17,8 +17,10 @@ const ChoosePlayer = ({onSelectPlayer}) => {
               }}
               onMouseLeave={() => setHovered(null)}
               className='choice left'>
-              <img src={"./pavon.jpg"} alt={"Pavon"} />
-              <h1 className="divider">La Fusée</h1>
+              <div className='img-container'>
+                  <img src={"./pavon.jpg"} alt={"Pavon"}/>
+              </div>
+              <h1 className="divider">Le Phoenix</h1>
               <div className="content">
                   <h1>Matthieu PAVON</h1>
                   <p>Matthieu Pavon est un golfeur professionnel français évoluant
@@ -39,18 +41,21 @@ const ChoosePlayer = ({onSelectPlayer}) => {
               }}
               onMouseLeave={() => setHovered(null)}
               className='choice right'>
-              <img src={"./boutier.jpg"} alt={"boutier"}/>
+              <div className='img-container'>
+                  <img src={"./boutier.jpg"} alt={"Boutier"}/>
+              </div>
               <h1 className="divider">La Machine</h1>
               <div className="content">
                   <h1>Celine BOUTIER</h1>
                   <p>Golfeuse française de renom et multiple championne
-                      sur le circuit LPGA Celine est une figure emblématique
+                      sur le circuit LPGA, Celine est une figure emblématique
                       du golf féminin. Elle est reconnue pour sa précision,
                       sa constance et son rôle de modèle dans le sport.</p>
                   <button onClick={() => {
                       onSelectPlayer("player2")
                   }}
-                          className="contained">Quiz</button>
+                          className="contained">Quiz
+                  </button>
 
               </div>
           </div>
