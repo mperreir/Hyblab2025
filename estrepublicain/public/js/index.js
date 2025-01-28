@@ -18,6 +18,7 @@ let scrollCoor = [0, 0]
 function displayPodcastModal (index) {
     if (activeModal > -1) {
         document.getElementById("podcastModal" +activeModal ).style.display = "none"
+        pauseResume(activeModal)
     }
     else {
         scrollCoor = [window.scrollY, window.scrollX]
@@ -30,9 +31,14 @@ function displayPodcastModal (index) {
         top: 0,
         behavior: "instant",
     });
+
+    pauseResume(index)
+
 }
 
 function hidePodcastModal (index) {
+    pauseResume(index)
+
     activeModal = -1
     document.getElementById("podcastModal" +index ).style.display = "none"
     document.getElementById("main").style.display = "block"
@@ -67,14 +73,17 @@ function displayRecommended(type) {
 
 function pauseResume (id) {
     var iframe = document.getElementById('video' + id.toString());
-    var player = new Vimeo.Player(iframe);
-    player.getPaused().then(function (paused) {
-        if (paused) {
-            player.play()
-        } else {
-            player.pause()
-        }
-    });
+    if (iframe) {
+        var player = new Vimeo.Player(iframe);
+        player.getPaused().then(function (paused) {
+            if (paused) {
+                iframe.src = iframe.src
+                player.play()
+            } else {
+                player.pause()
+            }
+        });
+    }
 }
 
 let swiperContainer = document.getElementById("swiper-wrapper")
@@ -151,7 +160,7 @@ fetch('api/videos')
                     videoIframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share"
                     videoIframe.classList.add("w-100")
                     videoIframe.style = "height: calc(100% - 46px)"
-                    videoIframe.src = "https://player.vimeo.com/video/" + e.VideoLink + "?amp;title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&autoplay=1&loop=1&controls=0";
+                    videoIframe.src = "https://player.vimeo.com/video/" + e.VideoLink + "?t=0&amp;title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&autoplay=1&loop=1&controls=0";
 
 
 
@@ -159,7 +168,7 @@ fetch('api/videos')
 
                     let overlay = document.createElement("div")
                     overlay.classList.add("overlay")
-                    overlay.classList.add("z-3")
+                    overlay.classList.add("z-2")
 
                     overlay.addEventListener("click", function () {
                         console.log("clicked")
