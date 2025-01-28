@@ -11,6 +11,7 @@ class InteractiveBook {
         .then(response => response.json())
         .then(data => {
             this.page_data = data;
+            this.updatePageTime(0);
         });
 
         this.initializeEvents();

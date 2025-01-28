@@ -18,7 +18,7 @@
             "id": "abdonia",
             "url": "assets/graphic/Abdonia.png",
             "box":[
-                { "left": "3%", "top": "24%", "width": "40%", "height": "70%", "script": {"func":"leaveImage", "args":[]} }
+                { "left": "3%", "top": "24%", "width": "40%", "height": "70%", "script": {"func":"leaveImage", "args":[]}, "onload": {"func":"setMaxTime", "args":[20]} }
             ]
         }
 

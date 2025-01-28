@@ -243,12 +243,22 @@ function createPopupTuto(closeDiv,options) {
     // Ajouter les classes pour le style
     popupOverlay.className = "popup-overlay";
     popupContainer.className = "popup-container";
+    popupTitle.className = "popup-title";
+    popupMessage.className = "popup-title";
 
     // Ajouter le contenu
     popupTitle.textContent = title;
     popupMessage.innerHTML = message;
 
     // Appliquer les styles de base
+    Object.assign(popupMessage.style,{
+        ...customStyles.message,
+    });
+    Object.assign(popupTitle.style,{
+        marginTop: "0px",
+        ...customStyles.title,
+    });
+
     Object.assign(popupOverlay.style, {
         position: "fixed",
         top: 0,
@@ -268,7 +278,7 @@ function createPopupTuto(closeDiv,options) {
         width: width, // Taille ajustable
         height: height, // Taille ajustable
         textAlign: "center",
-        backgroundColor: "#ffffff",
+        //backgroundColor: "#ffffff",
         backgroundImage: `url('${backgroundImage}')`,
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",

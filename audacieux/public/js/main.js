@@ -4,6 +4,7 @@ const sceneManager = new Scene("data/sceneData.json", "scene-container", sceneAu
 const slider = document.getElementById("time-slider");
 let books;
 let InteractiveBookObject;
+let maxTime = 0;
 
 setTimeout(() => {
   sceneManager.loadTriggers()
@@ -38,7 +39,7 @@ document.addEventListener(
   function (event) {
     event.preventDefault();
     const timeDelta = event.deltaY / 100;
-    const maxTime = 100;
+    
     console.log(sceneManager.time)
     sceneManager.time = Math.max(0, Math.min(sceneManager.time + timeDelta, maxTime));
     InteractiveBookObject.updatePageTime(sceneManager.time)
@@ -93,3 +94,6 @@ document.addEventListener('DOMContentLoaded', () => {
   InteractiveBookObject = new InteractiveBook(books[0],activation)
 });
 
+function setMaxTime(event, time){
+  maxTime = time;
+}

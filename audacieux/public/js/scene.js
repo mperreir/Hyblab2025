@@ -164,6 +164,14 @@ function loadImageScene(file_name, id) {
                   console.error("Fonction non définie :", div.script.func);
                 }
               }
+
+              if(div.onload){
+                if (typeof window[div.onload.func] === "function") {
+                    window[div.onload.func](clickableDiv, ...div.onload.args);
+                } else {
+                  console.error("Fonction non définie :", div.onload.func);
+                }
+              }
         
               container.appendChild(clickableDiv);
             });
