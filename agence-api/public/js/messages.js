@@ -113,16 +113,35 @@ async function addAnswer(answers, type) {
         i++;
     }
 
+    messageList.appendChild(answersContainer);
+    scrollToBottom();
+
+    let selectedAnswer = [];
+
+    // if the type is useless, send a promise with the answer directly without needingn a confirm button
+    if (type === 'useless') {
+        return new Promise((resolve) => {
+            answersContainer.addEventListener('click', (e) => {
+                if (e.target.classList.contains('answer')) {
+                    document.querySelectorAll('.answer').forEach((div) => div.classList.remove('selected'));
+                    e.target.classList.add('selected');
+                    selectedAnswer = [e.target.dataset.answer];
+                    answersContainer.remove();
+                    for (const answer of selectedAnswer) {
+                        addMessage({ text: answer, type: 'sent' });
+                    }
+                    resolve(selectedAnswer);
+                }
+            });
+        });  
+    }
 
     const confirmButton = document.createElement('button');
     confirmButton.id = 'confirm-button';
     confirmButton.disabled = true;
     confirmButton.textContent = 'Confirmer';
 
-    messageList.appendChild(answersContainer);
     messageList.appendChild(confirmButton);
-
-    let selectedAnswer = [];
 
     switch (type) {
         case 'multiple':
