@@ -1,16 +1,54 @@
 'use strict';
 
 const express = require('express');
-const app = express();
 const path = require('path');
+const fs = require('fs');
 
-const ip = `http://localhost:8080/mediacites`
+// Create a router instance
+const router = express.Router();
 
-app.get(`/articles/:category_name/:keyword`, function (req, res) {
-    // Récuperer le nom, le texte, les kpis, les catégories liées ou bien les liens vers les délégations d'un article
+// Path to the JSON file
+const articlesPath = path.join(__dirname, '../public/data/articles.json');
+
+// Route to fetch article data based on category_name and keyword
+router.get('/articles/:category_name/:keyword', (req, res) => {
     const { category_name, keyword } = req.params;
 
-    const article = articles.find(article => article.id === category_name);
+    // Read the JSON file
+    fs.readFile(articlesPath, 'utf8', (err, data) => {
+        if (err) {
+            console.error('Error reading JSON file:', err);
+            return res.status(500).send({ error: 'Failed to load articles data.' });
+        }
+
+        try {
+            const articles = JSON.parse(data);
+            const article = articles.find(article => article.id === category_name);
+
+            if (!article) {
+                return res.status(404).send({ error: 'Article not found.' });
+            }
+
+            if (!article[keyword]) {
+                return res.status(404).send({ error: `Keyword "${keyword}" not found in article.` });
+            }
+
+            res.json(article[keyword]);
+        } catch (parseError) {
+            console.error('Error parsing JSON file:', parseError);
+            res.status(500).send({ error: 'Failed to parse articles data.' });
+        }
+    });
+});
+
+// Export the API
+module.exports = router;
+
+/*
+
+app.get(`/mediacites/articles/:category_name/:keyword`, function (req, res) {
+    // Récuperer le nom, le texte, les kpis, les catégories liées ou bien les liens vers les délégations d'un article
+    const { category_name, keyword } = req.params;
 
     fetch(`${ip}/data/articles.json`)
         .then(response => response.json())
@@ -25,38 +63,5 @@ app.get(`/articles/:category_name/:keyword`, function (req, res) {
         .catch(error => console.error('Error fetching JSON:', error));
 });
 
-// Export our API
-module.exports = app;
-
-
-
-
-/*
-
-app.get('/articles/:category_name/:keyword', async (req, res) => {
-    console.log('Received request:', req.params);  // Log the category and keyword
-    try {
-        const { category_name, keyword } = req.params;
-        const response = await fetch(`${ip}/data/articles.json`);
-        const articles = await response.json();
-
-        const article = articles.find(article => article.id === category_name);
-
-        if (!article) {
-            console.log('Article not found');
-            return res.status(404).json({ error: 'Article not found' });
-        }
-
-        if (!(keyword in article)) {
-            console.log(`Keyword "${keyword}" not found`);
-            return res.status(404).json({ error: `Keyword "${keyword}" not found` });
-        }
-
-        res.json(article[keyword]);
-    } catch (error) {
-        console.error('Error fetching or processing data:', error);
-        res.status(500).json({ error: 'Internal server error' });
-    }
-});
 
 */
