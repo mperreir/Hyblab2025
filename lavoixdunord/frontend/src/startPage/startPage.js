@@ -21,12 +21,13 @@ const StartPage = () => {
             <div className="mt-84 text-center">
                 <h1 className="text-white">DÉPART !</h1>
 
-                <ImageModal
+                {/* <ImageModal
                     imageSrc={`${basename}images/Etape 1/map_etape1.png`}
                     altText="Carte étape 1"
                     showModal={showModal}
                     onClose={setShowModal}
-                />
+                /> */}
+                <div className='my-3'>&nbsp;</div>
 
                 <div className="mx-3 p-3">
                     <p><i><b>Bienvenue à Lille, point de départ du Tour de France et de votre aventure.</b></i></p>
