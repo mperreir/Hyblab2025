@@ -3,20 +3,22 @@
 /* Conteneur de la barre de progression */
 .progress-container {
     width: 100%;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    bottom: -12px;
+    position: absolute;
+    top : 88px;
+    left: 0;
+    right: 0;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
 /* Barre de progression */
 .progress-bar {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
     width: 100%;
     /*espacement des lignes entre les ronds*/
-    position: absolute;
+    
+    
 }
 
 /* Ligne de progression */
@@ -84,21 +86,21 @@
 
 .chat-header {
     background: var(--bg-color);
-    color: var(--color-text-API);
-    text-align: center;
-    padding: 10px 0;
+    color: #FFFF;
+    text-align: left;
+    padding: 0px 5px; /* Ajustez les marges si nécessaire */
     font-size: 20px;
     font-weight: bold;
-    border-bottom: 2px solid rgb(163, 161, 161);
-    display: flex;
-    align-items: center;
-    /* Centre verticalement les éléments */
     border-bottom: 1px solid #ccc;
-    /*ligne séparatrice*/
-    position: relative;
-    flex-direction: column;
-    transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    align-items: center; /* Aligne les éléments verticalement */
+    flex-direction: row; /* Positionne les éléments horizontalement */
+    position: relative; /* Nécessaire pour placer la barre de progression en bas */
+    gap: 20px; /* Espace entre la bulle et le texte */
+    height: 100px; /* Fixe la hauteur totale du header */
+    box-sizing: border-box; /* Inclut padding et bordure dans la hauteur */
 }
+
 
 .chat-header-bulle {
     width: 50px;
@@ -112,15 +114,12 @@
     flex-shrink: 0;
     /* Empêche la bulle de rétrécir */
     display: flex;
-    justify-self: center;
-    align-self: center;
 }
 
 /* Style pour l'image à l'intérieur de la bulle */
 .chat-header-img {
     width: 100%;
-    height: auto;
-    border-radius: 50%;
+    height: 100%;
     object-fit: cover;
     /* Ajuste l'image pour couvrir entièrement la bulle */
 }
