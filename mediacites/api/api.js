@@ -10,6 +10,23 @@ const router = express.Router();
 // Path to the JSON file
 const articlesPath = path.join(__dirname, '../public/data/articles.json');
 
+router.get('/articles', (req, res) => {
+    // Get all articles
+    fs.readFile(articlesPath, 'utf8', (err, data) => {
+        if (err) {
+            console.error('Error reading JSON file:', err);
+            return res.status(500).send({ error: 'Failed to load articles data.' });
+        }
+        try {
+            const articles = JSON.parse(data);
+            res.send(articles);
+        } catch (parseError) {
+            console.error('Error parsing JSON file:', parseError);
+            res.status(500).send({ error: 'Failed to parse articles data.' });
+        }
+    });
+});
+
 // Route to fetch article data based on category_name and keyword
 router.get('/articles/:category_name/:keyword', (req, res) => {
     const { category_name, keyword } = req.params;

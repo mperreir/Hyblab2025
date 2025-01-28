@@ -31,19 +31,19 @@
     },
     {
         "id": "environnement",
-        "name": "Santé EXEMPLE FICTIF",
+        "name": "Environnement",
         "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt, nunc eget tincidunt venenatis, magna ipsum ultricies arcu, vel interdum magna orci at libero. Integer hendrerit justo et ipsum varius, non vulputate ligula gravida. Nulla facilisi. Sed nec malesuada nulla. Donec vitae arcu sapien. Curabitur tristique lectus neque, ac ullamcorper leo congue a. Proin varius orci a interdum eleifend. Curabitur at est ut velit convallis lobortis sit amet ac tortor. Quisque eleifend, est non tincidunt cursus, enim mi sodales sapien, ac feugiat purus sapien vel tortor. Phasellus vitae convallis nunc. Nullam condimentum metus vitae tortor dapibus, eu vestibulum ante posuere. Fusce dictum felis nec dui efficitur, at aliquam metus ullamcorper. Aliquam sit amet gravida tortor, non auctor eros. Pellentesque id tortor ac purus tempor malesuada. Sed hendrerit tortor ac tortor vestibulum tincidunt. Vivamus aliquet, nulla nec dignissim volutpat, leo lorem ultricies elit, in tempus tortor velit a nunc. Nunc quis rhoncus felis. Vivamus aliquet massa quis erat posuere, vel tincidunt felis tristique. Morbi sit amet malesuada sapien. Ut vel est nunc. Integer volutpat dui nec efficitur volutpat. Integer condimentum justo nec augue placerat, et vestibulum lectus scelerisque. Morbi euismod pharetra ligula at vehicula. Etiam suscipit sem ac orci cursus, vel auctor lorem convallis. Etiam facilisis orci quis enim sollicitudin, ac euismod felis pretium. Nam at nisi et ipsum fringilla tincidunt at ac nisi. Aenean sit amet magna enim. Nam consectetur ante sit amet sollicitudin fringilla. Integer at turpis risus. Fusce imperdiet nunc ac urna feugiat, non volutpat tortor tincidunt. In hac habitasse platea dictumst. Nam mollis bibendum est, ac tristique risus elementum sed. Aenean eleifend urna non ligula facilisis, at malesuada nunc maximus. Donec facilisis lectus et turpis sodales, ac maximus orci congue. Integer fermentum vitae mi vitae vulputate. Nulla vitae rhoncus risus. Sed et risus auctor, dictum lorem at, iaculis ipsum. Sed suscipit nisi at ante tincidunt pretium. Nulla malesuada arcu ut bibendum tristique. Nulla id nunc et nunc rutrum fermentum a ac lorem. In nec mi dui. Integer lacinia lobortis ex, et pretium metus dictum ut. Mauris et neque mollis, vestibulum arcu non, euismod eros. Integer in sapien eget nisl placerat tincidunt. Sed pharetra, risus ut malesuada varius, ipsum urna viverra felis, vitae tincidunt ligula purus eget nisi. Integer viverra augue vitae ex tincidunt, ac auctor felis interdum. Nulla euismod nunc et sem ullamcorper, sit amet suscipit sem cursus. Fusce at leo viverra, fermentum velit vel, volutpat sapien. Vestibulum venenatis suscipit neque, ut gravida neque egestas sed. Donec interdum sapien nec bibendum laoreet. Aliquam ut mi eu mi suscipit dictum in in ante. Curabitur maximus, lorem eget vehicula consequat, ante lorem scelerisque justo, sed eleifend metus turpis in elit. Fusce aliquam est nec lorem condimentum, non sollicitudin felis rhoncus. Ut tristique nisi ac ante malesuada, eu pretium magna cursus. Nam vel ultricies augue. Ut tristique, lectus et volutpat malesuada, sapien mi sollicitudin felis, id eleifend nunc arcu id odio. Vivamus pretium bibendum lorem, vel venenatis odio dignissim eget. Ut ultricies bibendum turpis, et maximus mi scelerisque ac. Aliquam lobortis libero vitae nisi feugiat, nec feugiat ligula tempor. Mauris dictum augue sit amet quam elementum, a rhoncus ante dictum. Integer non arcu id risus tincidunt condimentum et a nisi. Donec pretium tincidunt sapien, a porttitor ligula feugiat in. Integer sollicitudin posuere neque sit amet faucibus. Proin ut ante nec mauris placerat lacinia. Phasellus ut ipsum risus. Nulla at malesuada velit. Cras fermentum ante a interdum suscipit. Nulla gravida orci non dui tincidunt, a tincidunt felis dignissim. Ut dictum sollicitudin orci, id malesuada lacus dignissim non. Mauris ut nulla magna. Donec et magna urna.",
         "resume": "Cet article aborde les récentes avancées dans le domaine de la santé.",
         "kpis": [
             {
                 "id": 0,
                 "number": "90%",
-                "text": "Taux de vaccination"
+                "text": "Quantité de déchets triés dans les écoles"
             },
             {
                 "id": 1,
-                "number": "5%",
-                "text": "Taux de mortalité infantile"
+                "number": "0.5%",
+                "text": "Taux de mortalité infantile dû à la pollution"
             }
         ],
         "links": [
