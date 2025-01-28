@@ -89,6 +89,7 @@ body {
 .choice-info p {
   font-size: 1rem;
   margin: 0;
+  color: #000;
 }
 
 .btn-info {

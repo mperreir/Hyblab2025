@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style1.css">
+    <title>Résultats</title>
+  </head>
+  <body>
+    <div id="app-container">
+      <header>
+        <nav class="navbar">
+          <div class="logo-container">
+            <img src="./img/logo.svg" alt="Logo du site" />
+          </div>
+        </nav>
+      </header>
+
+      <main>
+        <section class="content">
+          <h2>Bravo, ton festival est prêt !</h2>
+          <h3>Budget final : {{adjustedBudget}} €</h3>
+          <h3>Prix du billet : {{ticketPrice}} €</h3>
+        </section>
+
+        <section class="content">
+          <h2>Vos priorités :</h2>
+          <ul>
+            {{#priorities}}
+            <li>
+              <strong>{{criterion}} :</strong> {{cost}} € ({{percentage}}%)
+              
+            </li>
+            {{/priorities}}
+          </ul>
+        </section>
+
+        <section class="content">
+        <p>{{priorities.0.message}}</p>
+        </section>
+
+        <section class="content">
+          <h2>Résumé de tes choix :</h2>
+          <ul>
+            <li>Taille du festival : {{choices.festivalSizes}}</li>
+            <li>Actions écologiques : {{choices.ecologicalActions}}</li>
+            <li>Médiation culturelle : {{choices.culturalMediationActions}}</li>
+            <li>Prévention des risques : {{choices.riskPreventionActions}}</li>
+          </ul>
+        </section>
+      </main>
+
+      <footer>
+        <p>En partenariat avec <strong>L’Onde Porteuse</strong> &amp; <strong>Le Pôle</strong></p>
+      </footer>
+    </div>
+  </body>
+</html>

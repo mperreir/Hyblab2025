@@ -1,0 +1,731 @@
+[
+    {
+        "id": "Scénario 1",
+        "Médiation culturelle": "Petit",
+        "Transition écologique": "Petit",
+        "Programmation et taille de l'événement": "Petit",
+        "Prévention": " Petit",
+        "Coût": 84936,
+        "Prix du billet": 20
+    },
+    {
+        "id": "Scénario 2",
+        "Médiation culturelle": "Petit",
+        "Transition écologique": "Petit",
+        "Programmation et taille de l'événement": "Petit",
+        "Prévention": " Moyen",
+        "Coût": 96936,
+        "Prix du billet": 21
+    },
+    {
+        "id": "Scénario 3",
+        "Médiation culturelle": "Petit",
+        "Transition écologique": "Petit",
+        "Programmation et taille de l'événement": "Petit",
+        "Prévention": " Grand",
+        "Coût": 109936,
+        "Prix du billet": 21.9
+    },
+    {
+        "id": "Scénario 4",
+        "Médiation culturelle": "Petit",
+        "Transition écologique": "Petit",
+        "Programmation et taille de l'événement": "Moyen",
+        "Prévention": " Petit",
+        "Coût": 225136,
+        "Prix du billet": 30.6
+    },
+    {
+        "id": "Scénario 5",
+        "Médiation culturelle": "Petit",
+        "Transition écologique": "Petit",
+        "Programmation et taille de l'événement": "Moyen",
+        "Prévention": " Moyen",
+        "Coût": 237136,
+        "Prix du billet": 33.5
+    },
+    {
+        "id": "Scénario 6",
+        "Médiation culturelle": "Petit",
+        "Transition écologique": "Petit",
+        "Programmation et taille de l'événement": "Moyen",
+        "Prévention": " Grand",
+        "Coût": 250136,
+        "Prix du billet": 35.5
+    },
+    {
+        "id": "Scénario 7",
+        "Médiation culturelle": "Petit",
+        "Transition écologique": "Petit",
+        "Programmation et taille de l'événement": "Grand",
+        "Prévention": " Petit",
+        "Coût": 2494636,
+        "Prix du billet": 96.9
+    },
+    {
+        "id": "Scénario 8",
+        "Médiation culturelle": "Petit",
+        "Transition écologique": "Petit",
+        "Programmation et taille de l'événement": "Grand",
+        "Prévention": " Moyen",
+        "Coût": 2506636,
+        "Prix du billet": 99
+    },
+    {
+        "id": "Scénario 9",
+        "Médiation culturelle": "Petit",
+        "Transition écologique": "Petit",
+        "Programmation et taille de l'événement": "Grand",
+        "Prévention": " Grand",
+        "Coût": 2519636,
+        "Prix du billet": 101
+    },
+    {
+        "id": "Scénario 10",
+        "Médiation culturelle": "Petit",
+        "Transition écologique": "Moyen",
+        "Programmation et taille de l'événement": "Petit",
+        "Prévention": " Petit",
+        "Coût": 166529,
+        "Prix du billet": 24.8
+    },
+    {
+        "id": "Scénario 11",
+        "Médiation culturelle": "Petit",
+        "Transition écologique": "Moyen",
+        "Programmation et taille de l'événement": "Petit",
+        "Prévention": " Moyen",
+        "Coût": 178529,
+        "Prix du billet": 26.8
+    },
+    {
+        "id": "Scénario 12",
+        "Médiation culturelle": "Petit",
+        "Transition écologique": "Moyen",
+        "Programmation et taille de l'événement": "Petit",
+        "Prévention": " Grand",
+        "Coût": 191529,
+        "Prix du billet": 27.7
+    },
+    {
+        "id": "Scénario 13",
+        "Médiation culturelle": "Petit",
+        "Transition écologique": "Moyen",
+        "Programmation et taille de l'événement": "Moyen",
+        "Prévention": " Petit",
+        "Coût": 306729,
+        "Prix du billet": 41.3
+    },
+    {
+        "id": "Scénario 14",
+        "Médiation culturelle": "Petit",
+        "Transition écologique": "Moyen",
+        "Programmation et taille de l'événement": "Moyen",
+        "Prévention": " Moyen",
+        "Coût": 318729,
+        "Prix du billet": 44.2
+    },
+    {
+        "id": "Scénario 15",
+        "Médiation culturelle": "Petit",
+        "Transition écologique": "Moyen",
+        "Programmation et taille de l'événement": "Moyen",
+        "Prévention": " Grand",
+        "Coût": 331729,
+        "Prix du billet": 45.2
+    },
+    {
+        "id": "Scénario 16",
+        "Médiation culturelle": "Petit",
+        "Transition écologique": "Moyen",
+        "Programmation et taille de l'événement": "Grand",
+        "Prévention": " Petit",
+        "Coût": 2576229,
+        "Prix du billet": 107.1
+    },
+    {
+        "id": "Scénario 17",
+        "Médiation culturelle": "Petit",
+        "Transition écologique": "Moyen",
+        "Programmation et taille de l'événement": "Grand",
+        "Prévention": " Moyen",
+        "Coût": 2588229,
+        "Prix du billet": 111.2
+    },
+    {
+        "id": "Scénario 18",
+        "Médiation culturelle": "Petit",
+        "Transition écologique": "Moyen",
+        "Programmation et taille de l'événement": "Grand",
+        "Prévention": " Grand",
+        "Coût": 2601229,
+        "Prix du billet": 113.3
+    },
+    {
+        "id": "Scénario 19",
+        "Médiation culturelle": "Petit",
+        "Transition écologique": "Grand",
+        "Programmation et taille de l'événement": "Petit",
+        "Prévention": " Petit",
+        "Coût": 738449,
+        "Prix du billet": 60.2
+    },
+    {
+        "id": "Scénario 20",
+        "Médiation culturelle": "Petit",
+        "Transition écologique": "Grand",
+        "Programmation et taille de l'événement": "Petit",
+        "Prévention": " Moyen",
+        "Coût": 750449,
+        "Prix du billet": 62.2
+    },
+    {
+        "id": "Scénario 21",
+        "Médiation culturelle": "Petit",
+        "Transition écologique": "Grand",
+        "Programmation et taille de l'événement": "Petit",
+        "Prévention": " Grand",
+        "Coût": 763449,
+        "Prix du billet": 64.3
+    },
+    {
+        "id": "Scénario 22",
+        "Médiation culturelle": "Petit",
+        "Transition écologique": "Grand",
+        "Programmation et taille de l'événement": "Moyen",
+        "Prévention": " Petit",
+        "Coût": 878649,
+        "Prix du billet": 76.5
+    },
+    {
+        "id": "Scénario 23",
+        "Médiation culturelle": "Petit",
+        "Transition écologique": "Grand",
+        "Programmation et taille de l'événement": "Moyen",
+        "Prévention": " Moyen",
+        "Coût": 890649,
+        "Prix du billet": 80.6
+    },
+    {
+        "id": "Scénario 24",
+        "Médiation culturelle": "Petit",
+        "Transition écologique": "Grand",
+        "Programmation et taille de l'événement": "Moyen",
+        "Prévention": " Grand",
+        "Coût": 903649,
+        "Prix du billet": 82.6
+    },
+    {
+        "id": "Scénario 25",
+        "Médiation culturelle": "Petit",
+        "Transition écologique": "Grand",
+        "Programmation et taille de l'événement": "Grand",
+        "Prévention": " Petit",
+        "Coût": 3148149,
+        "Prix du billet": 133.7
+    },
+    {
+        "id": "Scénario 26",
+        "Médiation culturelle": "Petit",
+        "Transition écologique": "Grand",
+        "Programmation et taille de l'événement": "Grand",
+        "Prévention": " Moyen",
+        "Coût": 3160149,
+        "Prix du billet": 135.7
+    },
+    {
+        "id": "Scénario 27",
+        "Médiation culturelle": "Petit",
+        "Transition écologique": "Grand",
+        "Programmation et taille de l'événement": "Grand",
+        "Prévention": " Grand",
+        "Coût": 3173149,
+        "Prix du billet": 137.7
+    },
+    {
+        "id": "Scénario 28",
+        "Médiation culturelle": "Moyen",
+        "Transition écologique": "Petit",
+        "Programmation et taille de l'événement": "Petit",
+        "Prévention": " Petit",
+        "Coût": 150216,
+        "Prix du billet": 22.9
+    },
+    {
+        "id": "Scénario 29",
+        "Médiation culturelle": "Moyen",
+        "Transition écologique": "Petit",
+        "Programmation et taille de l'événement": "Petit",
+        "Prévention": " Moyen",
+        "Coût": 162216,
+        "Prix du billet": 23.9
+    },
+    {
+        "id": "Scénario 30",
+        "Médiation culturelle": "Moyen",
+        "Transition écologique": "Petit",
+        "Programmation et taille de l'événement": "Petit",
+        "Prévention": " Grand",
+        "Coût": 175216,
+        "Prix du billet": 25.8
+    },
+    {
+        "id": "Scénario 31",
+        "Médiation culturelle": "Moyen",
+        "Transition écologique": "Petit",
+        "Programmation et taille de l'événement": "Moyen",
+        "Prévention": " Petit",
+        "Coût": 290416,
+        "Prix du billet": 37.4
+    },
+    {
+        "id": "Scénario 32",
+        "Médiation culturelle": "Moyen",
+        "Transition écologique": "Petit",
+        "Programmation et taille de l'événement": "Moyen",
+        "Prévention": " Moyen",
+        "Coût": 302416,
+        "Prix du billet": 39.4
+    },
+    {
+        "id": "Scénario 33",
+        "Médiation culturelle": "Moyen",
+        "Transition écologique": "Petit",
+        "Programmation et taille de l'événement": "Moyen",
+        "Prévention": " Grand",
+        "Coût": 315416,
+        "Prix du billet": 42.3
+    },
+    {
+        "id": "Scénario 34",
+        "Médiation culturelle": "Moyen",
+        "Transition écologique": "Petit",
+        "Programmation et taille de l'événement": "Grand",
+        "Prévention": " Petit",
+        "Coût": 2559916,
+        "Prix du billet": 103.1
+    },
+    {
+        "id": "Scénario 35",
+        "Médiation culturelle": "Moyen",
+        "Transition écologique": "Petit",
+        "Programmation et taille de l'événement": "Grand",
+        "Prévention": " Moyen",
+        "Coût": 2571916,
+        "Prix du billet": 105.1
+    },
+    {
+        "id": "Scénario 36",
+        "Médiation culturelle": "Moyen",
+        "Transition écologique": "Petit",
+        "Programmation et taille de l'événement": "Grand",
+        "Prévention": " Grand",
+        "Coût": 2584916,
+        "Prix du billet": 109.2
+    },
+    {
+        "id": "Scénario 37",
+        "Médiation culturelle": "Moyen",
+        "Transition écologique": "Moyen",
+        "Programmation et taille de l'événement": "Petit",
+        "Prévention": " Petit",
+        "Coût": 231809,
+        "Prix du billet": 31.6
+    },
+    {
+        "id": "Scénario 38",
+        "Médiation culturelle": "Moyen",
+        "Transition écologique": "Moyen",
+        "Programmation et taille de l'événement": "Petit",
+        "Prévention": " Moyen",
+        "Coût": 243809,
+        "Prix du billet": 34.5
+    },
+    {
+        "id": "Scénario 39",
+        "Médiation culturelle": "Moyen",
+        "Transition écologique": "Moyen",
+        "Programmation et taille de l'événement": "Petit",
+        "Prévention": " Grand",
+        "Coût": 256809,
+        "Prix du billet": 36.5
+    },
+    {
+        "id": "Scénario 40",
+        "Médiation culturelle": "Moyen",
+        "Transition écologique": "Moyen",
+        "Programmation et taille de l'événement": "Moyen",
+        "Prévention": " Petit",
+        "Coût": 372009,
+        "Prix du billet": 48.1
+    },
+    {
+        "id": "Scénario 41",
+        "Médiation culturelle": "Moyen",
+        "Transition écologique": "Moyen",
+        "Programmation et taille de l'événement": "Moyen",
+        "Prévention": " Moyen",
+        "Coût": 384009,
+        "Prix du billet": 50
+    },
+    {
+        "id": "Scénario 42",
+        "Médiation culturelle": "Moyen",
+        "Transition écologique": "Moyen",
+        "Programmation et taille de l'événement": "Moyen",
+        "Prévention": " Grand",
+        "Coût": 397009,
+        "Prix du billet": 52
+    },
+    {
+        "id": "Scénario 43",
+        "Médiation culturelle": "Moyen",
+        "Transition écologique": "Moyen",
+        "Programmation et taille de l'événement": "Grand",
+        "Prévention": " Petit",
+        "Coût": 2641509,
+        "Prix du billet": 119.4
+    },
+    {
+        "id": "Scénario 44",
+        "Médiation culturelle": "Moyen",
+        "Transition écologique": "Moyen",
+        "Programmation et taille de l'événement": "Grand",
+        "Prévention": " Moyen",
+        "Coût": 2653509,
+        "Prix du billet": 123.5
+    },
+    {
+        "id": "Scénario 45",
+        "Médiation culturelle": "Moyen",
+        "Transition écologique": "Moyen",
+        "Programmation et taille de l'événement": "Grand",
+        "Prévention": " Grand",
+        "Coût": 2666509,
+        "Prix du billet": 125.5
+    },
+    {
+        "id": "Scénario 46",
+        "Médiation culturelle": "Moyen",
+        "Transition écologique": "Grand",
+        "Programmation et taille de l'événement": "Petit",
+        "Prévention": " Petit",
+        "Coût": 803729,
+        "Prix du billet": 66.3
+    },
+    {
+        "id": "Scénario 47",
+        "Médiation culturelle": "Moyen",
+        "Transition écologique": "Grand",
+        "Programmation et taille de l'événement": "Petit",
+        "Prévention": " Moyen",
+        "Coût": 815729,
+        "Prix du billet": 68.4
+    },
+    {
+        "id": "Scénario 48",
+        "Médiation culturelle": "Moyen",
+        "Transition écologique": "Grand",
+        "Programmation et taille de l'événement": "Petit",
+        "Prévention": " Grand",
+        "Coût": 828729,
+        "Prix du billet": 70.4
+    },
+    {
+        "id": "Scénario 49",
+        "Médiation culturelle": "Moyen",
+        "Transition écologique": "Grand",
+        "Programmation et taille de l'événement": "Moyen",
+        "Prévention": " Petit",
+        "Coût": 943929,
+        "Prix du billet": 84.7
+    },
+    {
+        "id": "Scénario 50",
+        "Médiation culturelle": "Moyen",
+        "Transition écologique": "Grand",
+        "Programmation et taille de l'événement": "Moyen",
+        "Prévention": " Moyen",
+        "Coût": 955929,
+        "Prix du billet": 86.7
+    },
+    {
+        "id": "Scénario 51",
+        "Médiation culturelle": "Moyen",
+        "Transition écologique": "Grand",
+        "Programmation et taille de l'événement": "Moyen",
+        "Prévention": " Grand",
+        "Coût": 968929,
+        "Prix du billet": 88.8
+    },
+    {
+        "id": "Scénario 52",
+        "Médiation culturelle": "Moyen",
+        "Transition écologique": "Grand",
+        "Programmation et taille de l'événement": "Grand",
+        "Prévention": " Petit",
+        "Coût": 3213429,
+        "Prix du billet": 139.8
+    },
+    {
+        "id": "Scénario 53",
+        "Médiation culturelle": "Moyen",
+        "Transition écologique": "Grand",
+        "Programmation et taille de l'événement": "Grand",
+        "Prévention": " Moyen",
+        "Coût": 3225429,
+        "Prix du billet": 141.8
+    },
+    {
+        "id": "Scénario 54",
+        "Médiation culturelle": "Moyen",
+        "Transition écologique": "Grand",
+        "Programmation et taille de l'événement": "Grand",
+        "Prévention": " Grand",
+        "Coût": 3238429,
+        "Prix du billet": 143.9
+    },
+    {
+        "id": "Scénario 55",
+        "Médiation culturelle": "Grand",
+        "Transition écologique": "Petit",
+        "Programmation et taille de l'événement": "Petit",
+        "Prévention": " Petit",
+        "Coût": 211027,
+        "Prix du billet": 28.7
+    },
+    {
+        "id": "Scénario 56",
+        "Médiation culturelle": "Grand",
+        "Transition écologique": "Petit",
+        "Programmation et taille de l'événement": "Petit",
+        "Prévention": " Moyen",
+        "Coût": 223027,
+        "Prix du billet": 29.7
+    },
+    {
+        "id": "Scénario 57",
+        "Médiation culturelle": "Grand",
+        "Transition écologique": "Petit",
+        "Programmation et taille de l'événement": "Petit",
+        "Prévention": " Grand",
+        "Coût": 236027,
+        "Prix du billet": 32.6
+    },
+    {
+        "id": "Scénario 58",
+        "Médiation culturelle": "Grand",
+        "Transition écologique": "Petit",
+        "Programmation et taille de l'événement": "Moyen",
+        "Prévention": " Petit",
+        "Coût": 351227,
+        "Prix du billet": 46.1
+    },
+    {
+        "id": "Scénario 59",
+        "Médiation culturelle": "Grand",
+        "Transition écologique": "Petit",
+        "Programmation et taille de l'événement": "Moyen",
+        "Prévention": " Moyen",
+        "Coût": 363227,
+        "Prix du billet": 47.1
+    },
+    {
+        "id": "Scénario 60",
+        "Médiation culturelle": "Grand",
+        "Transition écologique": "Petit",
+        "Programmation et taille de l'événement": "Moyen",
+        "Prévention": " Grand",
+        "Coût": 376227,
+        "Prix du billet": 49
+    },
+    {
+        "id": "Scénario 61",
+        "Médiation culturelle": "Grand",
+        "Transition écologique": "Petit",
+        "Programmation et taille de l'événement": "Grand",
+        "Prévention": " Petit",
+        "Coût": 2620727,
+        "Prix du billet": 115.3
+    },
+    {
+        "id": "Scénario 62",
+        "Médiation culturelle": "Grand",
+        "Transition écologique": "Petit",
+        "Programmation et taille de l'événement": "Grand",
+        "Prévention": " Moyen",
+        "Coût": 2632727,
+        "Prix du billet": 117.3
+    },
+    {
+        "id": "Scénario 63",
+        "Médiation culturelle": "Grand",
+        "Transition écologique": "Petit",
+        "Programmation et taille de l'événement": "Grand",
+        "Prévention": " Grand",
+        "Coût": 2645727,
+        "Prix du billet": 121.4
+    },
+    {
+        "id": "Scénario 64",
+        "Médiation culturelle": "Grand",
+        "Transition écologique": "Moyen",
+        "Programmation et taille de l'événement": "Petit",
+        "Prévention": " Petit",
+        "Coût": 292620,
+        "Prix du billet": 38.4
+    },
+    {
+        "id": "Scénario 65",
+        "Médiation culturelle": "Grand",
+        "Transition écologique": "Moyen",
+        "Programmation et taille de l'événement": "Petit",
+        "Prévention": " Moyen",
+        "Coût": 304620,
+        "Prix du billet": 40.3
+    },
+    {
+        "id": "Scénario 66",
+        "Médiation culturelle": "Grand",
+        "Transition écologique": "Moyen",
+        "Programmation et taille de l'événement": "Petit",
+        "Prévention": " Grand",
+        "Coût": 317620,
+        "Prix du billet": 43.2
+    },
+    {
+        "id": "Scénario 67",
+        "Médiation culturelle": "Grand",
+        "Transition écologique": "Moyen",
+        "Programmation et taille de l'événement": "Moyen",
+        "Prévention": " Petit",
+        "Coût": 432820,
+        "Prix du billet": 54.1
+    },
+    {
+        "id": "Scénario 68",
+        "Médiation culturelle": "Grand",
+        "Transition écologique": "Moyen",
+        "Programmation et taille de l'événement": "Moyen",
+        "Prévention": " Moyen",
+        "Coût": 444820,
+        "Prix du billet": 56.1
+    },
+    {
+        "id": "Scénario 69",
+        "Médiation culturelle": "Grand",
+        "Transition écologique": "Moyen",
+        "Programmation et taille de l'événement": "Moyen",
+        "Prévention": " Grand",
+        "Coût": 457820,
+        "Prix du billet": 58.2
+    },
+    {
+        "id": "Scénario 70",
+        "Médiation culturelle": "Grand",
+        "Transition écologique": "Moyen",
+        "Programmation et taille de l'événement": "Grand",
+        "Prévention": " Petit",
+        "Coût": 2702320,
+        "Prix du billet": 127.5
+    },
+    {
+        "id": "Scénario 71",
+        "Médiation culturelle": "Grand",
+        "Transition écologique": "Moyen",
+        "Programmation et taille de l'événement": "Grand",
+        "Prévention": " Moyen",
+        "Coût": 2714320,
+        "Prix du billet": 129.6
+    },
+    {
+        "id": "Scénario 72",
+        "Médiation culturelle": "Grand",
+        "Transition écologique": "Moyen",
+        "Programmation et taille de l'événement": "Grand",
+        "Prévention": " Grand",
+        "Coût": 2727320,
+        "Prix du billet": 131.6
+    },
+    {
+        "id": "Scénario 73",
+        "Médiation culturelle": "Grand",
+        "Transition écologique": "Grand",
+        "Programmation et taille de l'événement": "Petit",
+        "Prévention": " Petit",
+        "Coût": 864540,
+        "Prix du billet": 72.4
+    },
+    {
+        "id": "Scénario 74",
+        "Médiation culturelle": "Grand",
+        "Transition écologique": "Grand",
+        "Programmation et taille de l'événement": "Petit",
+        "Prévention": " Moyen",
+        "Coût": 876540,
+        "Prix du billet": 74.5
+    },
+    {
+        "id": "Scénario 75",
+        "Médiation culturelle": "Grand",
+        "Transition écologique": "Grand",
+        "Programmation et taille de l'événement": "Petit",
+        "Prévention": " Grand",
+        "Coût": 889540,
+        "Prix du billet": 78.6
+    },
+    {
+        "id": "Scénario 76",
+        "Médiation culturelle": "Grand",
+        "Transition écologique": "Grand",
+        "Programmation et taille de l'événement": "Moyen",
+        "Prévention": " Petit",
+        "Coût": 1004740,
+        "Prix du billet": 90.8
+    },
+    {
+        "id": "Scénario 77",
+        "Médiation culturelle": "Grand",
+        "Transition écologique": "Grand",
+        "Programmation et taille de l'événement": "Moyen",
+        "Prévention": " Moyen",
+        "Coût": 1016740,
+        "Prix du billet": 92.9
+    },
+    {
+        "id": "Scénario 78",
+        "Médiation culturelle": "Grand",
+        "Transition écologique": "Grand",
+        "Programmation et taille de l'événement": "Moyen",
+        "Prévention": " Grand",
+        "Coût": 1029740,
+        "Prix du billet": 94.9
+    },
+    {
+        "id": "Scénario 79",
+        "Médiation culturelle": "Grand",
+        "Transition écologique": "Grand",
+        "Programmation et taille de l'événement": "Grand",
+        "Prévention": " Petit",
+        "Coût": 3274240,
+        "Prix du billet": 145.9
+    },
+    {
+        "id": "Scénario 80",
+        "Médiation culturelle": "Grand",
+        "Transition écologique": "Grand",
+        "Programmation et taille de l'événement": "Grand",
+        "Prévention": "Moyen",
+        "Coût": 3286240,
+        "Prix du billet": 148
+    },
+    {
+        "id": "Scénario 81",
+        "Médiation culturelle": "Grand",
+        "Transition écologique": "Grand",
+        "Programmation et taille de l'événement": "Grand",
+        "Prévention": "Grand",
+        "Coût": 3299240,
+        "Prix du billet": 150
+    }
+]
