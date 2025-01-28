@@ -38,7 +38,7 @@
     scrollbar-color: #bbb #e0e0e0;
 }
 
-/*-------------------------------*/
+/*------color-text-API-------------------------*/
 
 
 
@@ -165,17 +165,17 @@
 
 /* Messages envoyés */
 .sent {
-    background: var(--secondary-color);
-    color: var(--secondary-text-color);
+    background: var(--user-color);
+    color: var(--user-text-color);
     align-self: flex-end;
     margin: 20px 0;
 }
 
 /* Messages reçus */
 .received {
-    background: var(--primary-color);
+    background: var(--API-color);
     align-self: flex-start;
-    color: var(--primary-text-color);
+    color: var(--API-text-color);
 }
 
 
@@ -195,6 +195,8 @@
     cursor: pointer;
     user-select: none;
     text-align: center;
+    background-color: gray;
+    color: #1D1D1D;
 }
 
 .answer.first {
@@ -210,8 +212,9 @@
 }
 
 .answer.selected {
-    border-color: blue;
-    background-color: lightblue;
+    border-color: var(--accent-color);
+    background-color: var(--user-color);
+    color: var(--user-text-color);
 }
 
 #confirm-button {
@@ -229,15 +232,15 @@
 
 #confirm-button:disabled {
     cursor: pointer;
-    background-color: white;
-    color: rgb(76, 76, 76);
+    background-color: #1D1D1D;
+    color: white;
     border: 2px solid gray;
 }
 
 .chat-input {
     display: flex;
     padding: 15px;
-    background: #f9f9f9;
+    background: var(--bg-color);
     border-top: 2px solid #ddd;
 }
 
@@ -266,7 +269,7 @@
 }
 
 .chat-input button:hover {
-    background: #0056b3;
+    background: #FFFF;
 }
 
 /* Tap icon */
