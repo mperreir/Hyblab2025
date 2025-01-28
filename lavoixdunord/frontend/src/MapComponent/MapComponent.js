@@ -12,6 +12,7 @@ const MapComponent = ({ difficulty, level_id, currentQuestionIndex, onClose, isV
     const [questionData, setQuestionData] = useState(null);
     const [geoJsonData, setGeoJsonData] = useState(null);
     const basename = process.env.REACT_APP_BASENAME || "/";
+    const previousIsVisible = useRef(isVisible);
 
     // Effet pour initialiser la carte une seule fois
     useEffect(() => {
@@ -51,79 +52,104 @@ const MapComponent = ({ difficulty, level_id, currentQuestionIndex, onClose, isV
         });
     }, [basename, difficulty, level_id, currentQuestionIndex]);
 
-    // Effet pour mettre à jour la carte quand les données changent
+    // Effet pour animer la carte quand isVisible passe à true
     useEffect(() => {
         if (!map.current || !questionData || !geoJsonData) return;
-
-        const updateMap = () => {
-            // Nettoyer les anciens éléments
-            if (popup.current) popup.current.remove();
-            if (marker.current) marker.current.remove();
-            if (map.current.getSource('route')) {
-                map.current.removeLayer('route');
-                map.current.removeSource('route');
-            }
-
-            // Mettre à jour la position de la carte
-            map.current.setCenter([questionData.map.longitude, questionData.map.latitude]);
-
-            // Ajouter le GeoJSON
-            map.current.addSource('route', {
-                type: 'geojson',
-                data: geoJsonData
-            });
-            
-            map.current.addLayer({
-                id: 'route',
-                type: 'line',
-                source: 'route',
-                paint: {
-                    'line-color': '#4B9CBA',
-                    'line-width': 5,
-                    'line-opacity': 0.7
+        
+        // Déclencher l'animation uniquement lors du passage de false à true
+        if (isVisible && !previousIsVisible.current) {
+            const animateMap = async () => {
+                // Nettoyer les anciens éléments
+                if (popup.current) popup.current.remove();
+                if (marker.current) marker.current.remove();
+                if (map.current.getSource('route')) {
+                    map.current.removeLayer('route');
+                    map.current.removeSource('route');
                 }
-            });
 
-            // Ajouter le marqueur et la popup
-            popup.current = new maptilersdk.Popup()
-                .setHTML(`
-                    <div class="custom-popup">
-                        <h3>${questionData.map.label}</h3>
-                        <img
-                            src="${basename}${questionData.map.image}"
-                            alt="${questionData.map.label}"
-                            class="popup-image"
-                        />
-                    </div>
-                `);
+                // Ajouter le GeoJSON
+                map.current.addSource('route', {
+                    type: 'geojson',
+                    data: geoJsonData
+                });
+                
+                map.current.addLayer({
+                    id: 'route',
+                    type: 'line',
+                    source: 'route',
+                    paint: {
+                        'line-color': '#4B9CBA',
+                        'line-width': 5,
+                        'line-opacity': 0.7
+                    }
+                });
 
-            marker.current = new maptilersdk.Marker()
-                .setLngLat([questionData.map.longitude, questionData.map.latitude])
-                .setPopup(popup.current)
-                .addTo(map.current);
-            
-            // Ouvrir le popup immédiatement
-            popup.current.addTo(map.current)
-                .setLngLat([questionData.map.longitude, questionData.map.latitude])
-                .addTo(map.current);
-        };
+                // Séquence d'animation
+                if (currentQuestionIndex === 0) {
+                    // Vue initiale large de la région
+                    map.current.flyTo({
+                        center: [3.0573, 50.6292],
+                        zoom: 8,
+                        duration: 1500
+                    });
+                    await new Promise(resolve => setTimeout(resolve, 1500));
 
-        // Vérifier si la carte est chargée
-        if (map.current.isStyleLoaded()) {
-            updateMap();
-        } else {
-            // Attendre que le style soit chargé
-            map.current.on('load', updateMap);
+                    // Zoom sur le tracé GeoJSON
+                    const bounds = new maptilersdk.LngLatBounds();
+                    geoJsonData.features[0].geometry.coordinates.forEach(coord => {
+                        bounds.extend(coord);
+                    });
+                    
+                    map.current.fitBounds(bounds, {
+                        padding: 50,
+                        duration: 2000
+                    });
+                    await new Promise(resolve => setTimeout(resolve, 2000));
+                }
+
+                // Animation vers le point de la question
+                map.current.flyTo({
+                    center: [questionData.map.longitude, questionData.map.latitude],
+                    zoom: 13,
+                    duration: currentQuestionIndex === 0 ? 1500 : 3500
+                });
+                await new Promise(resolve => setTimeout(resolve, 3500));
+
+                // Ajouter le marqueur et le popup
+                popup.current = new maptilersdk.Popup()
+                    .setHTML(`
+                        <div class="custom-popup">
+                            <h3>${questionData.map.label}</h3>
+                            <img
+                                src="${basename}${questionData.map.image}"
+                                alt="${questionData.map.label}"
+                                class="popup-image"
+                            />
+                        </div>
+                    `);
+
+                marker.current = new maptilersdk.Marker()
+                    .setLngLat([questionData.map.longitude, questionData.map.latitude])
+                    .setPopup(popup.current)
+                    .addTo(map.current);
+                
+                popup.current.addTo(map.current)
+                    .setLngLat([questionData.map.longitude, questionData.map.latitude])
+                    .addTo(map.current);
+            };
+
+            // Exécuter l'animation quand la carte est prête
+            if (map.current.isStyleLoaded()) {
+                animateMap();
+            } else {
+                map.current.on('load', animateMap);
+            }
         }
 
-        // Cleanup
-        return () => {
-            if (map.current) {
-                map.current.off('load', updateMap);
-            }
-        };
+        // Mettre à jour la référence
+        previousIsVisible.current = isVisible;
 
-    }, [questionData, geoJsonData, basename]);
+    }, [isVisible, questionData, geoJsonData, currentQuestionIndex, basename]);
 
     return (
         <div className={`mobile-container map-overlay ${!isVisible ? 'hidden' : ''}`}>
