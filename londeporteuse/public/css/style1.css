@@ -360,7 +360,21 @@ footer {
     cursor: pointer;
     transition: transform 0.2s ease, color 0.2s ease; /* Transition fluide */
 }
-  
+.choice-item {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease; /* 添加过渡效果 */
+}
+
+.choice-item:hover {
+    transform: scale(1.1); /* 鼠标悬停时放大 */
+    z-index: 2; /* 确保放大的图片在最前面 */
+}
+.choice-item.selected {
+    border: 2px solid #32D2C3; /* 选中时添加边框 */
+    box-shadow: 0 0 10px rgba(50, 210, 195, 0.5); /* 添加阴影效果 */
+}
+
 .close:hover,
 .close:focus {
     color: #ff6666; /* Passe au rouge au survol */
