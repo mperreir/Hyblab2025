@@ -25,7 +25,7 @@ const OutroPage = () => {
 
                 {/* Logo Hyblab */}
                 <Grid container justifyContent="center" sx={{ marginBottom: 4 }}>
-                    <img src={Hyblab} alt="Hyblab" style={{ width: '200px' }} />
+                    {Hyblab && <img src={Hyblab} alt="Hyblab" style={{ width: '200px' }} />}
                 </Grid>
 
                 {/* Porteur du projet */}
