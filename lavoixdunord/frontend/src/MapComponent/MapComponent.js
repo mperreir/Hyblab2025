@@ -85,10 +85,6 @@ const MapComponent = ({ difficulty, level_id, currentQuestionIndex, onClose, isV
             });
 
             // Ajouter le marqueur et la popup
-            marker.current = new maptilersdk.Marker()
-                .setLngLat([questionData.map.longitude, questionData.map.latitude])
-                .addTo(map.current);
-
             popup.current = new maptilersdk.Popup()
                 .setHTML(`
                     <div class="custom-popup">
@@ -100,9 +96,16 @@ const MapComponent = ({ difficulty, level_id, currentQuestionIndex, onClose, isV
                         />
                     </div>
                 `);
+
+            marker.current = new maptilersdk.Marker()
+                .setLngLat([questionData.map.longitude, questionData.map.latitude])
+                .setPopup(popup.current)
+                .addTo(map.current);
             
-            marker.current.setPopup(popup.current);
-            popup.current.addTo(map.current);
+            // Ouvrir le popup immédiatement
+            popup.current.addTo(map.current)
+                .setLngLat([questionData.map.longitude, questionData.map.latitude])
+                .addTo(map.current);
         };
 
         // Vérifier si la carte est chargée
