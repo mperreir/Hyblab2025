@@ -47,8 +47,7 @@ function initMenu(){
             if (document.getElementById("seeResultsButton")) {
                 document.getElementById("seeResultsButton").remove();
             }
-            currentQuestion = 1;
-            updateProgress();
+            resetProgress();
             swiper.slideTo(1);
             initSlide2(true);
         });
