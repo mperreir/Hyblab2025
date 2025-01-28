@@ -15,11 +15,12 @@ import IconButton from '@mui/material/IconButton';
 // Le composant Layout de base
 const IntroductionLayout = ({ children }) => {
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', backgroundColor: 'white' }}>
+    <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', backgroundColor: 'white' ,justifyContent: 'center',
+      alignItems: 'center',}}>
       <CssBaseline /> {/* Assure une base de style cohérente pour MUI */}
 
-      <AppBar position="static"
-        sx={{ backgroundColor: 'white', boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)', padding: '5px 0' }}
+      <AppBar position="sticky"
+        sx={{ backgroundColor: 'white', boxShadow: 'none', padding: '5px 0',  borderBottom: '1px solid grey', marginBottom: '16px' }}
       >
         <Toolbar>
           {/* Titre avec 'Brief' en blanc et 'sciences' en couleur #991756 */}
@@ -55,14 +56,14 @@ const IntroductionLayout = ({ children }) => {
           paddingBottom: 2,
           overflowY: "auto", // Ajoute un défilement vertical si nécessaire
           backgroundColor: "#fff", // Fond blanc pour le contenu principal
-          boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)", // Légère ombre pour l'effet mobile
-          borderRadius: "5px", // Coins arrondis
+          boxShadow: "none", // Légère ombre pour l'effet mobile
+          margin: '0 auto', // Centrer le contenu
         }}
       >
         {children} {/* Les composants enfants seront ici */}
       </Container>
       {/* Footer */}
-      <Box component="footer" sx={{ backgroundColor: '#c1c1c1', color: 'black', padding: '10px', textAlign: 'center' }}>
+      <Box component="footer" sx={{ backgroundColor: '#c1c1c1', color: 'black', padding: '5px', textAlign: 'center' }}>
         <Typography variant="body2">Tous les contenus ont été réalisés sous une licence ouverte, leur diffusion est libre.</Typography>
       </Box>
     </Box>

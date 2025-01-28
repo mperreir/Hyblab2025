@@ -15,14 +15,22 @@ const LandingComponent = () => {
 
   return (
     <Box sx={{ textAlign: "center", padding: 3 }}>
+        <style>
+        {`
+          // @keyframes typing {
+          //   from { width: 0; }
+          //   to { width: 100%; }
+          // }
+          .typing-animation {
+            animation: typing 3s steps(40, end);
+          }
+        `}
+      </style>
       <Typography variant="h4" sx={{ marginBottom: 2 }}>
-        <Typical
-          steps={[
-            "Transition 2050 : Prenez les commandes de l’énergie !",
-            1500, // Temps d'affichage
-          ]}
-          loop={1} // Ne pas répéter
-        />
+         {/* Apply the animation */}
+      <div className="typing-animation">
+        Transition 2050 : Prenez les commandes de l’énergie !
+      </div>
       </Typography>
       <Typography variant="body1" sx={{ marginBottom: 4 }}>
         Découvrez comment gérer un pays face aux défis énergétiques et
@@ -39,7 +47,7 @@ const LandingComponent = () => {
       <Button
         variant="contained"
         color="primary"
-        onClick={handleClick} // Ajoute le gestionnaire de clic pour la navigation
+        onClick={handleClick}
       >
         Commencer
       </Button>
