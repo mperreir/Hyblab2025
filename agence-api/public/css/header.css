@@ -1,7 +1,6 @@
 /* ================== Styles de la barre de progression ================== */
 
 /* Conteneur de la barre de progression */
-/* Conteneur de la barre de progression */
 .progress-container {
     width: 100%;
     position: relative;
@@ -28,7 +27,7 @@
     left: 0;
     right: 0;
     height: 4px;
-    background-color: #ccc;
+    background-color: var(--API-color);
     transform: translateY(-50%);
     z-index: 1;
 }
@@ -37,7 +36,7 @@
 .progress-step {
     width: 24px;
     height: 24px;
-    background-color: #ccc;
+    background-color: var(--API-color);
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -53,7 +52,7 @@
     flex: 1; /* Adjust to fill space between dots */
     height: 4px;
     border: none;
-    background-color: #ccc; /* Default line color */
+    background-color: var(--API-color); /* Default line color */
     margin: auto; /* Center vertically */
     z-index: 1;
 }

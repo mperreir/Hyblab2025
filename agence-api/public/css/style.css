@@ -45,11 +45,6 @@ body{
     position: absolute;
 }
 
-/* white navigation bullets */
-.swiper-pagination-bullet-active {
-    background-color: white !important;
-}
-
 /* the slides and the loader should fill the whole 9:16 zone */
 .swiper-wrapper section, #loader{
     background-color: white;

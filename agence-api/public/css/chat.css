@@ -33,23 +33,16 @@
 .chat-box {
     flex: 1;
     padding: 15px;
-    overflow-y: scroll;
-    scrollbar-width: thin;
-    scrollbar-color: #bbb #e0e0e0;
+    overflow-y: scroll; /* Ensure the content can be scrolled */
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+}
+
+.chat-box::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Opera */
 }
 
 /*------color-text-API-------------------------*/
-
-
-
-.chat-box::-webkit-scrollbar {
-    width: 6px;
-}
-
-.chat-box::-webkit-scrollbar-thumb {
-    background-color: #bbb;
-    border-radius: 10px;
-}
 
 #messageList {
     list-style: none;
