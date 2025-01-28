@@ -73,8 +73,8 @@ const NavBarComponent = () => {
                     <div className="d-flex justify-content-between align-items-center w-100">
                         <Navbar.Brand href={`${basename}`}  style={{ marginLeft: '10px' }}>
                             <img
-                                src={`${basename}images/logo_jeu.png`}
-                                height="35"
+                                src={`${basename}images/logo_jeu2.png`}
+                                height="30"
                                 className="d-inline-block align-top"
                                 alt="Logo"
                             />
