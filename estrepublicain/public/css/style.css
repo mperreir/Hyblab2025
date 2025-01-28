@@ -101,6 +101,7 @@ p {
     padding: 5px;
     border-radius: 5px;
     background-image: url("../img/FOND_BLANC.jpg");
+    border: none;
 }
 
 #logo-ler img {
@@ -431,6 +432,21 @@ p {
     width: 100vw;
     height: 100vh;
     background-image: url("../img/FOND_BLANC.jpg");
+}
+
+.links_list a {
+    border-radius: 100px;
+    text-decoration: none;
+    color: #CB010A;
+    border: solid 2px #CB010A;
+    padding: 10px 20px;
+    display: block;
+    transition: background-color 500ms ease;
+    text-align: center;
+}
+
+.links_list a:hover {
+    background-color: rgba(203, 1, 10, 0.2);
 }
 
 #links h1 {
