@@ -1,186 +1,61 @@
 /*---------------- Partie accueil ---------------*/
 
-/* Pour le contraste du logo: filter: contrast(1); */
-
+/* Style général pour le corps */
 .accueilbody {
+    margin: 0;
+    padding: 0;
+    background-color: #f8b100; /* Couleur jaune pour le fond */
+    color: #333;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centre les éléments horizontalement */
-    justify-content: flex-start; /* Aligne les éléments en haut pour éviter le chevauchement */
-    min-height: 100vh; /* Assure que le contenu prend au moins toute la hauteur de la fenêtre */
-    position: relative; /* Nécessaire pour le pseudo-élément ::before */
-    padding: 20px; /* Ajout de padding pour éviter que le contenu touche les bords */
-    padding-bottom: 140px; /* Augmente le padding en bas pour éviter le chevauchement avec le footer */
-    box-sizing: border-box; /* Inclut le padding dans les dimensions de l'élément */
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
 
-.accueilbody::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('../img/fondAcc.jpg'); /* Chemin vers votre image de fond */
-    background-size: cover; /* L'image couvre toute la surface sans déformation */
-    background-position: center center; /* Centre l'image horizontalement et verticalement */
-    background-attachment: fixed;
-    opacity: 0.55; /* Ajustez cette valeur selon l'opacité désirée (0 à 1) */
-    z-index: -1; /* Place le pseudo-élément derrière le contenu */
+
+/* Bloc central contenant le logo */
+.bloc-centre {
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    margin-top: 150px;
 }
 
-/* Footer of first slide is at the bottom and content is centered */
-#first-slide footer {
-    position: absolute;
-    bottom: 5%;
-    width: 100%; /* Prend toute la largeur disponible */
-    text-align: center; /* Centre le contenu du footer */
-    padding: 10px 20px;
-    box-sizing: border-box;
+
+.logo-appli {
+    width: 350px;
+    height: auto;
+    /* animation: float 3s infinite ease-in-out; */
 }
 
-/* Conteneur parent de #bloc-centre */
-.parent-container {
-    display: flex;
-    flex-direction: column; /* Aligne les éléments verticalement */
-    align-items: center;    /* Centre horizontalement */
-    justify-content: center; /* Centre verticalement */
-    width: 100%;            /* Prend toute la largeur disponible */
-    box-sizing: border-box; /* Inclut le padding et les bordures dans les dimensions */
-    padding: 20px;          /* Ajoute un peu de padding autour */
-    margin: 100px 0 100px 0;   /* Ajoute des marges en haut et en bas pour espacer du footer */
-}
-
-/*----- Définition de l'animation clignotante ----------*/
-@keyframes blinkBackground {
-    0% {
-        background-color: #ffffff; /* Couleur initiale */
+/* Animation pour le logo (optionnel) */
+/* @keyframes float {
+    0%, 100% {
+        transform: translateY(0);
     }
     50% {
-        background-color: #dec244; /* Couleur intermédiaire */
+        transform: translateY(-10px);
     }
-    100% {
-        background-color: #ffffff; /* Retour à la couleur initiale */
-    }
-}
+} */
 
-/* Style pour #bloc-centre */
-.bloc-centre {
-    padding: 20px; /* Augmenté pour plus d'espacement interne */
-    background-color: #ffffff;
-    border-radius: 10px;
-    /*filter: contrast(1); ajout de contraste*/
-    
-    /* Centrage et ajustement de la taille */
-    max-width: 80%; /* Augmenté de 250px à 80% pour plus de flexibilité */
-    width: 100%;    /* Assure que le bloc prend toute la largeur disponible jusqu'à la largeur maximale */
-    height: auto;   /* Adapté en hauteur en fonction du contenu */
-
-    /* Utilisation de Flexbox pour le contenu interne */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; /* Centré horizontalement */
-
-    /* Réactivité */
-    font-size: 2rem; /* Utilisation d'unités relatives pour une meilleure responsivité */
-    box-sizing: border-box;
-    margin: 20px 0; /* Ajuste les marges pour une meilleure responsivité */
-    
-    /* Animation */
-    animation: blinkBackground 2s infinite; /* Applique l'animation */
-}
-
-/* Style pour l'image .logo-appli */
-.logo-appli {
-    max-width: 100%;    /* Limite la largeur de l'image à 100% du conteneur parent */
-    height: auto;       /* Maintient les proportions de l'image */
-    display: block;     /* Permet d'utiliser les marges automatiques */
-    margin: 0 auto;     /* Centre horizontalement l'image */
-    box-shadow: 0 4px 6px #1D1D1D; /* Ajoute une ombre portée */
-}
-
-/* Texte de bienvenue */
-.texte {
-    font-size: 2rem;          /* Utilisation d'unités relatives pour la responsivité */
-    font-weight: bold;        /* Rend le texte en gras */
-    color: #1D1D1D;           /* Couleur du texte */
-    font-family: 'Helvetica', sans-serif; /* Police du texte */    
-    /* Centrage du texte */
+/* Pied de page */
+footer {
     text-align: center;
-    background-color: #e7d378;
-    border-radius: 20px;
-    padding: 10px;
-    margin-bottom: 20px; /* Espacement entre le texte et le bloc-centre */
+    padding: 20px;
 }
 
-/* Style pour le GIF arrow */
+.texte {
+    font-size: 16px;
+    margin: 10px 0;
+    font-weight: bold;
+    color: #444;
+    font-family: 'Arial', sans-serif;
+}
+
 .arrow {
-    width: 100px; /* Taille par défaut */
+    width: 30px;
     height: auto;
-    display: block;
-    margin: 0 auto; /* Centre horizontalement */
 }
 
-/* Responsive Styles */
-@media (max-width: 1024px) {
-    /* Ajustements pour tablettes */
-    
-    .arrow {
-        width: 80px;
-    }
-    
-    #first-slide footer {
-        bottom: 10%;
-        padding: 8px 16px;
-    }
-}
-
-@media (max-width: 768px) {
-    /* Ajustements supplémentaires pour des tablettes plus petites */
-    
-    .texte {
-        font-size: 1.8rem;
-    }
-
-    .parent-container {
-        padding: 15px;
-        margin: 80px 0; /* Réduit les marges pour les petits écrans */
-    }
-
-    .bloc-centre {
-        max-width: 70%; /* Augmenté pour plus de taille sur les petites tablettes */
-    }
-}
-
-@media (max-width: 480px) {
-    /* Ajustements pour mobiles */
-    
-    .arrow {
-        width: 60px;
-    }
-    
-    #first-slide footer {
-        bottom: 15%;
-        padding: 6px 12px;
-    }
-    
-    .accueilbody::before {
-        opacity: 0.7; /* Augmente l'opacité pour améliorer la lisibilité si nécessaire */
-    }
-    
-    /* Ajustements supplémentaires */
-    .accueilbody {
-        padding: 10px;
-    }
-
-    .texte {
-        font-size: 1.5rem;
-        padding: 5px;
-    }
-    
-    .bloc-centre {
-        padding: 10px;
-        max-width: 90%; /* Augmenté à 90% pour maximiser l'espace sur mobile */
-    }
-}
