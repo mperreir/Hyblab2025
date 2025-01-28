@@ -27,7 +27,7 @@ const TransitionPage = () => {
             card_image: `${basename}images/Etape 2/map_etape2.png`,
             maillot_image_bg: `${basename}images/illustrations/bg_transition_blanc.png`,
             maillot_image_icon: `${basename}images/illustrations/bg_transition_blanc_horloge.png`,
-            maillot_image: `${basename}images/illustrations/maillot_blanc.png`,
+            maillot_image: `${basename}images/illustrations/maillot_blanc2.png`,
             paragraph1: `Félicitations, vous avez terminé la première étape de la 112e édition du Tour de France en ${minutes} minute${minutes !== 1 ? 's' : ''} et ${seconds} seconde${seconds !== 1 ? 's' : ''}. Votre performance vous vaut le premier maillot, bravo !`,
             paragraph2: "Mais l’aventure ne s’arrête pas là !",
             paragraph3: "Place désormais à la deuxième étape qui vous mènera de Lauwin-Planque à Boulogne-sur-mer.",
