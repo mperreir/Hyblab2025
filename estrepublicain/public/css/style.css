@@ -1,22 +1,86 @@
-/* ==============================
-   Import des polices
-============================== */
+/* =========================================================================
+   1. IMPORT DES POLICES
+   ========================================================================== */
+/* Exemple :
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+*/
 
-/* ==============================
-   Réinitialisation des marges et paddings
-============================== */
+
+/* =========================================================================
+   2. RÉINITIALISATION (RESET)
+   ========================================================================== */
 * {
-    padding: 0;
     margin: 0;
+    padding: 0;
 }
 
-/* ==============================
-   Style général
-============================== */
+
+/* =========================================================================
+   3. STYLE GÉNÉRAL (TYPO, COULEURS, ETC.)
+   ========================================================================== */
+
+/* --- Base du document --- */
 html {
     overflow-x: hidden;
 }
 
+body {
+    font-family: "Arial", sans-serif !important;
+    background-color: #000 !important;
+    color: #CB010A !important;
+    overflow-x: clip;
+}
+
+/* --- Liens --- */
+a {
+    margin-top: 10px;
+    transition: background-color 100ms ease;
+    text-decoration: none;
+    color: #CB010A;
+    border: solid 2px #CB010A;
+    padding: 10px 20px;
+    border-radius: 25px;
+}
+
+a:hover {
+    background-color: rgba(203, 1, 10, 0.2);
+}
+
+/* --- Titres et textes --- */
+h1 {
+    font-family: "Arial Black", sans-serif !important;
+    font-size: 1.3em !important;
+    font-weight: bolder;
+    text-transform: uppercase;
+    max-width: 70%;
+}
+
+h6 {
+    font-family: "Arial Black", sans-serif !important;
+    margin-bottom: 0;
+    font-size: 0.9em !important;
+    text-transform: uppercase;
+}
+
+p {
+    text-align: justify;
+    max-width: 70%;
+    font-size: 16px !important;
+    line-height: 1.4;
+}
+
+.test-case {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}
+
+
+/* =========================================================================
+   4. MISE EN PAGE / SECTIONS PRINCIPALES
+   ========================================================================== */
+
+/* --- Fond d'écran --- */
 #background {
     background-image: url("../img/FOND_NOIR_20_.jpg");
     opacity: 0.2;
@@ -28,13 +92,7 @@ html {
     background-size: contain;
 }
 
-body {
-    font-family: "Arial", sans-serif !important;
-    background-color: #000 !important;
-    color: #CB010A !important;
-    overflow-x: clip;
-}
-
+/* --- Logo --- */
 #logo-ler {
     position: fixed;
     top: 20px;
@@ -49,33 +107,13 @@ body {
     width: 50px;
 }
 
+/* --- Section intro --- */
 #intro {
     background-image: url("../img/FOND_BLANC.jpg");
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
     padding: 12vh 10vw 20vh 10vw;
     position: relative;
-}
-
-p {
-    text-align: justify;
-    max-width: 70%;
-    font-size: 16px !important;
-}
-
-h1 {
-    font-family: "Arial Black", sans-serif !important;
-    font-size: 1.3em !important;
-    font-weight: bolder;
-    text-transform: uppercase;
-    max-width: 70%;
-}
-
-h6 {
-    font-family: "Arial Black", sans-serif !important;
-    margin-bottom: 0;
-    font-size: 0.9em !important;
-    text-transform: uppercase;
 }
 
 #intro img {
@@ -92,163 +130,24 @@ h6 {
     top: 16.5%;
 }
 
+/* --- Section "UNE" --- */
 #une {
     padding: 9vh 10vw 50px 10vw;
     color: white;
-}
-
-.test-case {
-    width: 100px;
-    height: 100px;
-    background-color: red;
-}
-
-svg {
-    overflow: visible;
-}
-
-#content{
-    position:relative;
-}
-
-@media screen and (min-width: 768px) {
-    #content {
-        margin: 0 20vw;
-        padding-bottom: 150px;
-    }
-
-    .cases {
-        margin-bottom: 100px;
-    }
-
-    #retrouvez-nous {
-        padding-top: 300px !important;
-    }
-
-    .title {
-        padding-bottom: 100px !important;
-    }
-
-    .links_list div {
-        margin-top: -30vh;
-    }
-}
-
-#desc-case-1 {
-    position: absolute;
-    width: 60%;
-    left: 0;
-    padding-right: 20px;
-    padding-top: 10px;
-}
-
-#desc-case-2 {
-    position: absolute;
-    width: 60%;
-    right: 0;
-    padding-top: 10px;
-    padding-left: 20px;
-}
-
-#desc-case-3 {
-    position: absolute;
-    width: 60%;
-    left: 0;
-    padding-top: 10px;
-    padding-right: 20px;
-}
-
-#desc-case-4 {
-    position: absolute;
-    width: 60%;
-    right: 0;
-    padding-top: 10px;
-    padding-left: 20px;
-}
-
-#desc-case-5 {
-    position: absolute;
-    width: 60%;
-    left: 0;
-    padding-top: 10px;
-    padding-right: 20px;
-}
-
-#desc-case-6 {
-    position: absolute;
-    width: 60%;
-    right: 0;
-    padding-top: 10px;
-    padding-left: 20px;
-}
-
-.videos {
-    border:1px solid #CB010A;
-    background-color: #CB010A;
-    position:absolute;
-    width: 40%;
-    max-width: 200px;
-    aspect-ratio: 9/16;
-    border-radius: 25px;
-}
-.videos:after{
-    content:no-close-quote;
-    top:50%;
-    left:50%;
-    background-color:black;
-    width:4px;
-    height:4px;
-    border-radius:50%;
-    margin-left:-2px;
-    margin-top:-2px;
-}
-#div1{
-    right:0px;
-    background-image: url("../img/bonnot.gif");
-    background-size: cover;
-}
-#div2{
-    left:0px;
-    background-image: url("../img/bonnot.gif");
-    background-size: cover;
-}
-#div3{
-    right:0px;
-    background-image: url("../img/bonnot.gif");
-    background-size: cover;
-}
-#div4{
-    left:0px;
-    background-image: url("../img/bonnot.gif");
-    background-size: cover;
-}
-#div5{
-    right:0px;
-    background-image: url("../img/peiper.gif");
-    background-size: cover;
-}
-#div6{
-    left:0px;
-    background-image: url("../img/bonnot.gif");
-    background-size: cover;
-}
-.line{
-    position:absolute;
-    width:2px;
-    margin-top:-1px;
-    background-color: #CB010A;
 }
 
 #une h1 {
     color: #CB010A !important;
 }
 
+/* --- Section "nos-podcast" --- */
 #nos-podcast {
     background-image: url("../img/FOND_BLANC.jpg");
     padding: 0 10vw;
     position: relative;
 }
 
+/* --- Section "retrouvez-nous" --- */
 #retrouvez-nous {
     color: white !important;
     background-color: #303030;
@@ -260,6 +159,7 @@ svg {
     color: #CB010A !important;
 }
 
+/* --- Section footer --- */
 #footer {
     background-image: url("../img/FOND_BLANC.jpg");
     padding: 50px 10vw;
@@ -267,6 +167,7 @@ svg {
     border-top-right-radius: 25px;
 }
 
+/* --- Élément "folder" dans le footer --- */
 #folder {
     background-image: url("../img/FOND_BLANC.jpg");
     position: absolute;
@@ -277,6 +178,7 @@ svg {
     height: 70px;
 }
 
+/* --- Décorations/Transitions haut et bas --- */
 .dech-transition-haut {
     width: 100vw;
     transform: translate(-10vw, -50%);
@@ -287,61 +189,9 @@ svg {
     transform: translate(-10vw, 65%);
 }
 
-a {
-    margin-top: 10px;
-    transition: background-color 100ms ease;
-}
-
-/* Swiper slider. Need to fill the container */
-#mySwiper{
-    width: 80vw;
-    margin-top: 50px;
-}
-
-/* white navigation bullets */
-.swiper-pagination-bullet-active {
-    background-color: #CB010A !important;
-}
-
-#swiper-wrapper {
-    padding-bottom: 40px;
-}
-
-.podcast {
-    cursor: pointer;
-    margin-bottom: 10px;
-}
-
-.vignette {
-    width: 100%;
-    aspect-ratio: 1/1.5;
-    border-radius: 25px;
-    background-color: black;
-}
-
-.podcast h6 {
-    margin-top: 5px;
-    font-family: "Arial Black", "sans-serif";
-    font-weight: bolder;
-}
-
-.podcast p {
-    font-size: 1em;
-    margin: 0;
-}
-
-.cases {
-    height: 30vh;
-    width: 100%;
+/* --- Contenu global (#content) --- */
+#content {
     position: relative;
-    display: flex;
-    cursor: pointer;
-    text-shadow: #000000 1px 0 10px;
-}
-
-.cases button {
-    color: #CB010A;
-    border: solid #CB010A 2px;
 }
 
 #line-bg {
@@ -355,11 +205,165 @@ a {
     height: 100%;
 }
 
+
+/* =========================================================================
+   5. ÉLÉMENTS / BLOCS SPÉCIFIQUES
+   ========================================================================== */
+
+/* --- Descriptions des "cases" (#desc-case-x) --- */
+#desc-case-1,
+#desc-case-2,
+#desc-case-3,
+#desc-case-4,
+#desc-case-5,
+#desc-case-6 {
+    position: absolute;
+    width: 60%;
+    padding-top: 10px;
+}
+
+#desc-case-1,
+#desc-case-3,
+#desc-case-5 {
+    left: 0;
+    padding-right: 20px;
+}
+
+#desc-case-2,
+#desc-case-4,
+#desc-case-6 {
+    right: 0;
+    padding-left: 20px;
+}
+
+/* --- Cases (30vh de hauteur) --- */
+.cases {
+    height: 30vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    cursor: pointer;
+    text-shadow: #000000 1px 0 10px;
+    margin-bottom: 50px; /* Sera précisé dans media query pour ajuster */
+}
+
+.cases button {
+    color: #CB010A;
+    border: solid #CB010A 2px;
+}
+
+/* --- Vidéos (blocs rouges, etc.) --- */
+.videos {
+    border: 1px solid #CB010A;
+    background-color: #CB010A;
+    position: absolute;
+    width: 40%;
+    max-width: 200px;
+    aspect-ratio: 9/16;
+    border-radius: 25px;
+}
+
+/* Pseudo-élément vide (s'il devait contenir quelque chose) */
+.videos:after {
+    content: no-close-quote;
+    top: 50%;
+    left: 50%;
+    background-color: black;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    margin-left: -2px;
+    margin-top: -2px;
+}
+
+/* --- Divs spécifiques (gif en background) --- */
+#div1,
+#div3,
+#div5 {
+    right: 0px;
+    background-size: cover;
+}
+
+#div2,
+#div4,
+#div6 {
+    left: 0px;
+    background-size: cover;
+}
+
+#div1 {
+    background-image: url("../img/bonnot.gif");
+}
+#div2 {
+    background-image: url("../img/bonnot.gif");
+}
+#div3 {
+    background-image: url("../img/bonnot.gif");
+}
+#div4 {
+    background-image: url("../img/bonnot.gif");
+}
+#div5 {
+    background-image: url("../img/peiper.gif");
+}
+#div6 {
+    background-image: url("../img/bonnot.gif");
+}
+
+/* --- Ligne rouge ("line") --- */
+.line {
+    position: absolute;
+    width: 2px;
+    margin-top: -1px;
+    background-color: #CB010A;
+}
+
+/* --- Swiper (carrousel) --- */
+#mySwiper {
+    width: 80vw;
+    margin-top: 50px;
+}
+
+/* Points de pagination Swiper en blanc/rouge */
+.swiper-pagination-bullet-active {
+    background-color: #CB010A !important;
+}
+
+#swiper-wrapper {
+    padding-bottom: 40px;
+}
+
+/* --- Podcasts (vignettes, textes) --- */
+.podcast {
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.vignette {
+    width: 100%;
+    aspect-ratio: 1/1.5;
+    border-radius: 25px;
+    background-color: black;
+    background-size: contain;
+}
+
+.podcast h6 {
+    margin-top: 5px;
+    font-family: "Arial Black", sans-serif;
+    font-weight: bolder;
+}
+
+.podcast p {
+    font-size: 1em;
+    margin: 0;
+}
+
+/* --- Modale "podcatsModal" --- */
 .podcatsModal {
     width: 100vw !important;
     min-height: 100vh !important;
     top: 0 !important;
-    left: 0!important;
+    left: 0 !important;
     background-image: url("../img/FOND_BLANC.jpg");
     display: none;
     overflow-y: scroll;
@@ -367,9 +371,7 @@ a {
 
 .modalInfo {
     background-image: url("../img/FOND_BLANC.jpg");
-    padding-right: 10vw;
-    padding-left: 10vw;
-    padding-top: 100px;
+    padding: 100px 10vw 0 10vw;
     position: relative;
     min-height: 100vh;
 }
@@ -412,6 +414,7 @@ a {
     line-height: 1.1;
 }
 
+/* --- Vidéo en plein écran --- */
 .video-container {
     width: 100vw;
     height: 100vh;
@@ -420,10 +423,14 @@ a {
     background: black;
 }
 
+/* --- Section "links" (liens) --- */
 #links {
-    background-image: url("../img/FOND_BLANC.jpg");
+    display: none;
+    position: fixed;
+    top: 0;
     width: 100vw;
     height: 100vh;
+    background-image: url("../img/FOND_BLANC.jpg");
 }
 
 #links h1 {
@@ -437,8 +444,8 @@ a {
 }
 
 #links > div.links_list {
-    background-image: url("../img/FOND_BLANC.jpg");
     width: 100vw;
+    background-image: url("../img/FOND_BLANC.jpg");
 }
 
 #links .dech-transition-haut {
@@ -446,6 +453,12 @@ a {
     transform: translate(0vw, -50%);
 }
 
+.links_list > div {
+    padding: 0 10vw;
+    position: relative;
+}
+
+/* --- Filtres / Tags --- */
 .tags {
     width: 100%;
     overflow-x: scroll;
@@ -481,47 +494,47 @@ a {
 
 .filterBtn:nth-child(2) {
     margin-left: 5px;
-
 }
 
-.links_list > div{
-    padding: 0 10vw;
-    position: relative;
-}
-
-.links_list a {
-    border-radius: 100px;
-    text-decoration: none;
-    color: #CB010A;
-    border: solid 2px #CB010A;
-    padding: 10px 20px;
-    display: block;
-    transition: background-color 500ms ease;
-    text-align: center;
-}
-
-.links_list a:hover {
-    background-color: rgba(203, 1, 10, 0.2);
-}
-
-#links {
-    display: none;
-    position: fixed;
-    top: 0;
-}
-
-.vignette {
-    background-size: contain;
-}
-
-#logos img{
+/* --- Logos --- */
+#logos img {
     width: 100%;
 }
 
+/* --- Overlay (si besoin) --- */
 .overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
+}
+
+
+/* =========================================================================
+   6. MEDIA QUERIES
+   ========================================================================== */
+@media screen and (min-width: 768px) {
+
+    /* --- Contenu centré sur grands écrans --- */
+    #content {
+        margin: 0 20vw;
+        padding-bottom: 150px;
+    }
+
+    .cases {
+        margin-bottom: 100px;
+    }
+
+    #retrouvez-nous {
+        padding-top: 300px !important;
+    }
+
+    .title {
+        padding-bottom: 100px !important;
+    }
+
+    .links_list div {
+        margin-top: -30vh;
+    }
 }
