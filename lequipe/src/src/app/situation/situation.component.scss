@@ -1,9 +1,13 @@
 p {
-    margin: 35px 20px;
+    padding: 30px 5% 0 2%;
     font-size: 25%;
+    font-weight: 400;
+    text-align: justify;
+
     &.question {
-        font-weight: bold;
+        font-weight: 700;
         font-style: italic;
+        font-size: 22%;
     }
 }
 
@@ -12,20 +16,25 @@ p {
     position: relative;
     width: 96%;
     aspect-ratio: 357 / 109;
-    border: 1px solid white;
-    color: white;
     margin: 2%;
-    display: flex;
+    border: 1px solid white;
     border-radius: 5px;
+
+    color: white;
+    text-shadow: 1px 1px 2px black;
+
+    display: flex;
+    flex-direction: column;
     align-content: center;
     justify-content: center;
+
     cursor: pointer;
     transition: all 0.3s ease;
-    background-color: lighten(black, 10%);
+
     background: no-repeat center center;
+    background-color: lighten(black, 10%);
     background-size: 100% auto;
-    flex-direction: column;
-    text-shadow: 1px 1px 2px black;
+
     #choisir {
         position: absolute;
         border-radius: 5px;
@@ -34,6 +43,7 @@ p {
         align-items: flex-end;
         justify-content: center;
         display: flex;
+
         p{
             text-align: center;
             padding: 1%;
@@ -44,6 +54,7 @@ p {
             font-weight: bold;
         }
     }
+
     #gris {
         position: absolute;
         border-radius: 5px;
@@ -52,12 +63,12 @@ p {
         padding: 5%;
         align-content: center;
         justify-content: center;
+
         p{
             text-align: center;
             margin: 0px 0px;
         }
     }
-    
 
     &:hover {
         background-color: lighten(#D61E00, 5%);

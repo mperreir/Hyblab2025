@@ -8,8 +8,8 @@ import { Router } from '@angular/router';
     imports: [
         CommonModule
     ],
-    templateUrl: './index.component.html',
-    styleUrl: './index.component.scss'
+    templateUrl: './home.component.html',
+    styleUrl: './home.component.scss'
 })
 export class HomeComponent {
     constructor(public router: Router) {}
