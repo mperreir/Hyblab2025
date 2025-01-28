@@ -96,15 +96,29 @@ const MapComponent = ({ difficulty, level_id, currentQuestionIndex, onClose, isV
                 });
 
                 map.current.addLayer({
+                    id: 'route-glow',
+                    type: 'line',
+                    source: 'route',
+                    paint: {
+                        'line-color': '#C1121F', // Couleur de surbrillance
+                        'line-width': 7, // Largeur de la surbrillance
+                        'line-opacity': 0.5, // Légère transparence
+                        'line-blur': 3 // Ajout d’un effet flou pour l’éclat
+                    }
+                });
+
+                map.current.addLayer({
                     id: 'route',
                     type: 'line',
                     source: 'route',
                     paint: {
-                        'line-color': '#4B9CBA',
-                        'line-width': 5,
+                        'line-color': '#4B9CBA', // Couleur principale
+                        'line-width': 5, // Largeur de la ligne principale
                         'line-opacity': 0.7
                     }
                 });
+
+
 
                 // Séquence d'animation
                 if (currentQuestionIndex === 0) {

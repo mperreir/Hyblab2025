@@ -9,7 +9,6 @@ const StartPage = () => {
     const { difficulty } = useParams(); // Récupérer la difficulté depuis l'URL
 
     const basename = useBasename(); // Utilisation du hook useBasename
-    const [showModal, setShowModal] = useState(false);
 
     const handleEtapeClick = (etape) => {
         navigate(`/start/${difficulty}/${etape}`); // Redirige vers la page des questions avec la difficulté et l'étape
