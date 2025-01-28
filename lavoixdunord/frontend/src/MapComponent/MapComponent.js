@@ -188,7 +188,7 @@ const MapComponent = ({ difficulty, level_id, currentQuestionIndex, onClose, isV
                         <div class="custom-popup">
                             <h3>${questionData.map.label}</h3>
                             <img
-                                src="${questionData.map.image}"
+                                src="/${questionData.map.image}"
                                 alt="${questionData.map.label}"
                                 class="popup-image"
                             />
