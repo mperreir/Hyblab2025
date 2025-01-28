@@ -13,7 +13,7 @@ import nantesUnivLogo from '../assets/NantesUniv_Logo.png';
 import nantesMetroLogo from '../assets/NantesMetro_Logo.jpg';
 import OpenSource from '../assets/openSource.png';
 import CC from '../assets/CCLogo.png';
-import Hyblab from '../assets/Hyblab.png';
+import Hyblab from '../assets/HYBLAB.png';
 
 const OutroPage = () => {
     return (

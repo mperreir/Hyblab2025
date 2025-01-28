@@ -1,54 +1,46 @@
-// /src/components/InformationMixComponent.jsx
 import React, { useState } from "react";
 import { Doughnut } from "react-chartjs-2";
 import SwipeableViews from "react-swipeable-views";
-import { Box, Typography, Container, useTheme, styled, Button } from "@mui/material";
+import { Box, Typography, Container, styled, Button } from "@mui/material";
 import { Chart, ArcElement, Tooltip, Legend } from "chart.js";
 import { useNavigate } from 'react-router-dom';
 import energyData from "../../public/data/debut/sources_energie.json";
 
-Chart.register(ArcElement, Tooltip);
+Chart.register(ArcElement, Tooltip, Legend);
 
-const colors = ["#991756", "#8670CF" , "#5A88FF" , "#14A473" , "#F86A1B"];
-
+const colors = ["#991756", "#8670CF", "#5A88FF", "#14A473", "#F86A1B"];
 
 const IndicatorContainer = styled(Box)(({ theme }) => ({
-    display: "flex",
-    justifyContent: "center",
-    gap: "8px",
-    position: "absolute",
-    bottom: "10px",
-    left: "50%",
-    transform: "translateX(-50%)",
-    backgroundColor: theme.palette.secondary.main,
-
+  display: "flex",
+  justifyContent: "center",
+  gap: "8px",
+  position: "absolute",
+  bottom: "10px",
+  left: "50%",
+  transform: "translateX(-50%)",
+  backgroundColor: theme.palette.secondary.main,
 }));
-  
-  const IndicatorDot = styled(Box)(({ theme, active }) => ({
-    width: "12px",
-    height: "12px",
-    borderRadius: "50%",
-    backgroundColor: active ? theme.palette.primary.main : theme.palette.secondary.main,
-    border: `2px solid ${theme.palette.primary.main}`,
-  }));
 
+const IndicatorDot = styled(Box)(({ theme, active }) => ({
+  width: "12px",
+  height: "12px",
+  borderRadius: "50%",
+  backgroundColor: active ? theme.palette.primary.main : theme.palette.secondary.main,
+  border: 2px solid ${theme.palette.primary.main},
+}));
 
 const InformationMixComponent = () => {
-
-const navigate = useNavigate(); // Hook pour la navigation
-const handleClick = () => {
+  const navigate = useNavigate(); // Hook pour la navigation
+  const handleClick = () => {
     navigate('/brief/questions'); // Redirige vers la page /landing (ou une autre page de ton choix)
-};
+  };
 
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [hoveredIndex, setHoveredIndex] = useState(null);
 
-const [activeIndex, setActiveIndex] = useState(0);
-const [hoveredIndex, setHoveredIndex] = useState(null);
+  const sources = energyData.sources;
 
-const sources = energyData.sources;
-
-
-
-const chartData = {
+  const chartData = {
     labels: sources.map((e) => e.name),
     datasets: [
       {
@@ -61,6 +53,34 @@ const chartData = {
     ],
   };
 
+  // Plugin personnalisé pour ajouter du texte au centre du donut
+  const centerTextPlugin = {
+    id: 'centerText',
+    afterDatasetsDraw(chart) {
+      const ctx = chart.ctx;
+      const width = chart.width;
+      const height = chart.height;
+      const fontSize = 24;
+      const text = "1496 TWh"; // Le texte à afficher
+      const lines = text.split(" "); // Si nécessaire, diviser en lignes
+
+      ctx.save();
+      ctx.font = ${fontSize}px Arial;
+      ctx.fillStyle = "red"; // Couleur rouge
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+
+      const lineHeight = fontSize * 1.5;
+      ctx.fillText(lines[0], width / 2, height / 2 - lineHeight / 2); // Première ligne
+      ctx.fillText(lines[1], width / 2, height / 2 + lineHeight / 2); // Deuxième ligne
+
+      ctx.restore();
+    }
+  };
+
+  // Enregistrer le plugin personnalisé
+  Chart.register(centerTextPlugin);
+
   return (
     <Container sx={{ textAlign: "center", marginTop: 5 }}>
       <Typography variant="h4">Mix Énergétique</Typography>
@@ -70,7 +90,13 @@ const chartData = {
         <Doughnut
           data={chartData}
           options={{
-            plugins: { legend: { display: false } },
+            plugins: {
+              legend: { display: false },
+              tooltip: {
+                enabled: false, // Désactive les tooltips
+              },
+            },
+            cutout: "60%", // Réduit le trou central pour un anneau plus large
             animation: {
               animateScale: true,
             },
@@ -113,9 +139,9 @@ const chartData = {
               <Typography variant="body2" sx={{ marginTop: 1 }}>
                 <strong>Émissions de CO₂ :</strong>{" "}
                 {item.carbon_emissions.value
-                  ? `${item.carbon_emissions.value} ${item.carbon_emissions.unit}`
+                  ? ${item.carbon_emissions.value} ${item.carbon_emissions.unit}
                   : item.carbon_emissions.range
-                  ? `${item.carbon_emissions.range.min} - ${item.carbon_emissions.range.max} ${item.carbon_emissions.unit}`
+                  ? ${item.carbon_emissions.range.min} - ${item.carbon_emissions.range.max} ${item.carbon_emissions.unit}
                   : "Données non disponibles"}
               </Typography>
             )}
@@ -135,16 +161,15 @@ const chartData = {
           </Box>
         ))}
       </SwipeableViews>
+
       <Button
         variant="contained"
         color="primary"
-        onClick={handleClick} // Ajoute le gestionnaire de clic pour la navigation
+        onClick={handleClick}
       >
         Suivant
       </Button>
     </Container>
-
-    
   );
 };
 
