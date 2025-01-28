@@ -22,7 +22,7 @@ const MapComponent = ({ difficulty, level_id, currentQuestionIndex, onClose, isV
         if (!mapContainer.current) return;
 
         maptilersdk.config.apiKey = MAPTILER_KEY;
-        
+
         const initMap = async () => {
             try {
                 map.current = new maptilersdk.Map({
@@ -30,8 +30,8 @@ const MapComponent = ({ difficulty, level_id, currentQuestionIndex, onClose, isV
                     style: `https://api.maptiler.com/maps/${STYLE_ID}/style.json?key=${MAPTILER_KEY}`,
                     // style: STYLE_ID,
                     zoom: 13,
-                    interactive: false,
-                    navigationControl: false,
+                    interactive: true,
+                    navigationControl: true,
                     geolocateControl: false
                 });
 
@@ -77,7 +77,7 @@ const MapComponent = ({ difficulty, level_id, currentQuestionIndex, onClose, isV
     // Effet pour animer la carte quand isVisible passe à true
     useEffect(() => {
         if (!map.current || !questionData || !geoJsonData) return;
-        
+
         // Déclencher l'animation uniquement lors du passage de false à true
         if (isVisible && !previousIsVisible.current) {
             const animateMap = async () => {
@@ -94,7 +94,7 @@ const MapComponent = ({ difficulty, level_id, currentQuestionIndex, onClose, isV
                     type: 'geojson',
                     data: geoJsonData
                 });
-                
+
                 map.current.addLayer({
                     id: 'route',
                     type: 'line',
@@ -121,7 +121,7 @@ const MapComponent = ({ difficulty, level_id, currentQuestionIndex, onClose, isV
                     geoJsonData.features[0].geometry.coordinates.forEach(coord => {
                         bounds.extend(coord);
                     });
-                    
+
                     map.current.fitBounds(bounds, {
                         padding: 50,
                         duration: 2000
@@ -154,7 +154,7 @@ const MapComponent = ({ difficulty, level_id, currentQuestionIndex, onClose, isV
                     .setLngLat([questionData.map.longitude, questionData.map.latitude])
                     .setPopup(popup.current)
                     .addTo(map.current);
-                
+
                 popup.current.addTo(map.current)
                     .setLngLat([questionData.map.longitude, questionData.map.latitude])
                     .addTo(map.current);
@@ -174,10 +174,11 @@ const MapComponent = ({ difficulty, level_id, currentQuestionIndex, onClose, isV
     }, [isVisible, questionData, geoJsonData, currentQuestionIndex, basename]);
 
     return (
-        <div className={`mobile-container map-overlay ${!isVisible ? 'hidden' : ''}`}>
+        <div className={`map-overlay ${!isVisible ? 'hidden' : ''}`}
+        >
             <div ref={mapContainer} style={{ width: '100%', height: '100%' }} />
-            <button 
-                className="btn btn-light close-map-btn my-1 text-uppercase fw-bold" 
+            <button
+                className="btn btn-light close-map-btn my-1 text-uppercase fw-bold"
                 onClick={onClose}
                 style={{ display: isVisible ? 'block' : 'none' }}
             >

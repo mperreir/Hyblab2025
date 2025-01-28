@@ -15,18 +15,27 @@ import NavBarComponent from "./NavBarComponent/NavBarComponent";
 const basename = process.env.REACT_APP_BASENAME || "/";
 
 function App() {
+  const [showMap, setShowMap] = React.useState({btn: false, map: false});
+
   return (
     <Router basename={basename}>
       <LayoutWithMusic />
       <div className="mobile-container">
-        <NavBarComponent />
+        <NavBarComponent
+          showMap={showMap}
+          setShowMap={setShowMap}
+        />
         <Routes>
           <Route path="/" element={<Page0 />} />
           <Route path="/home" element={<HomePage />} />
           <Route path="/regles" element={<RulesPage />} />
           <Route path="/difficulty" element={<DifficultyPage />} />
           <Route path="/start/:difficulty" element={<StartPage />} />
-          <Route path="/start/:difficulty/:id" element={<QuestionPage />} />
+          <Route path="/start/:difficulty/:id" element={
+            <QuestionPage
+              showMap={showMap}
+              setShowMap={setShowMap} />
+          } />
           <Route path="/final" element={<FinalPage />} />
           <Route path="/transition/:difficulty/:level_id" element={<TransitionPage />} />
           <Route path="/credit" element={<Credit />} />

@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 import './NavBarComponent.scss';
 import useBasename from '../hooks/useBasenameHook';
 
-const NavBarComponent = () => {
+const NavBarComponent = ({ showMap, setShowMap }) => {
 
     const [show, setShow] = React.useState(true);
     const basename = useBasename();
@@ -55,16 +55,16 @@ const NavBarComponent = () => {
 
     const getBreadcrumbItems = () => {
         const totalLevels = 3;
-        
+
         return [
             {
-                id: parseInt(level_id), 
+                id: parseInt(level_id),
                 label: `ÉTAPE ${level_id || 1}/${totalLevels}`,
                 active: true
             }
         ];
     };
-    
+
     const progress = getBreadcrumbItems().filter(item => item.active).length * 33.33;
 
     return (
@@ -72,7 +72,7 @@ const NavBarComponent = () => {
             <Navbar className="custom-navbar" expand="lg" style={{ position: 'absolute' }}>
                 <Container fluid className="p-0 px-1">
                     <div className="d-flex justify-content-between align-items-center w-100">
-                        <Navbar.Brand href={`${basename}`}  style={{ marginLeft: '10px' }}>
+                        <Navbar.Brand href={`${basename}`} style={{ marginLeft: '10px' }}>
                             <img
                                 src={`${basename}images/logo_jeu2.png`}
                                 height="30"
@@ -81,17 +81,22 @@ const NavBarComponent = () => {
                             />
                         </Navbar.Brand>
 
+                        {showMap.btn ?
+                            <button className='btn btn-sm btn-outline-light border-2 fw-medium'
+                                onClick={() => { setShowMap({btn: true, map: !showMap.map}) }}
+                            >Voir la carte</button> : ""}
+
                         {shouldShowBreadcrumb() ? (
                             <Breadcrumb className="mb-0" style={{ marginRight: '20px' }}>
                                 {getBreadcrumbItems().map((item) => (
                                     <Breadcrumb.Item
                                         key={item.id}
                                         active={item.active}
-                                        style={{ 
-                                            color: 'white', 
+                                        style={{
+                                            color: 'white',
                                             fontSize: '1rem',
-                                            fontFamily: 'Work Sans, sans-serif', 
-                                            fontWeight: 550 
+                                            fontFamily: 'Work Sans, sans-serif',
+                                            fontWeight: 550
                                         }}
                                     >
                                         {item.label}
@@ -102,15 +107,6 @@ const NavBarComponent = () => {
                             <h6 className="mb-0">{getPageTitle()}</h6>
                         )}
                     </div>
-
-                    {/* <ProgressBar
-                    now={progress}
-                    className="navbar-progress"
-                    variant='warning'
-                    animated
-                    style={{ height: '5px' }}
-                /> */}
-
                 </Container>
             </Navbar>)
     );

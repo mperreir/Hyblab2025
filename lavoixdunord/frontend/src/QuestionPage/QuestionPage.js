@@ -7,7 +7,7 @@ import MapComponent from "../MapComponent/MapComponent";
 import correctSoundFile from './sounds/rightanswer.mp3';
 import wrongSoundFile from './sounds/wronganswer.mp3';
 
-const QuestionPage = () => {
+const QuestionPage = ({ showMap, setShowMap }) => {
   const [questions, setQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedOptionIndex, setSelectedOptionIndex] = useState(null);
@@ -20,7 +20,6 @@ const QuestionPage = () => {
   const basename = process.env.REACT_APP_BASENAME || "/";
   const navigate = useNavigate(); // Initialisation de useNavigate
   const { difficulty, id } = useParams(); // Récupère les paramètres de l'URL
-  const [showMap, setShowMap] = useState(false);
   const [isEnlarged, setIsEnlarged] = useState(false); // État pour agrandir l'image
 
   const correctSound = new Audio(correctSoundFile);
@@ -59,9 +58,10 @@ const QuestionPage = () => {
       const pointsToAdd = !isCorrect ? 35 : 20; // 35 points si incorrect (15 + 20), 20 si correct
       addScore(pointsToAdd);
       setValidated(true);
+      setShowMap({ btn: true, map: false });
 
     } else {
-      setShowMap(false);
+      setShowMap({ btn: false, map: false });
       if (currentQuestionIndex < questions.length - 1) {
         setCurrentQuestionIndex(currentQuestionIndex + 1);
         setSelectedOptionIndex(null);
@@ -113,7 +113,7 @@ const QuestionPage = () => {
 
   const onCloseMap = () => {
     handleNext();
-    setShowMap(false);
+    setShowMap({ btn: false, map: false });
   }
 
   return (
@@ -160,10 +160,6 @@ const QuestionPage = () => {
             ))}
           </div>
 
-          {validated && (
-            <button type="button" onClick={() => { setShowMap(true) }}
-              className="btn btn-sm btn-outline-warning me-2 p-2 text-uppercase fw-bold fs-6">Voir sur la carte</button>
-          )}
           <button
             className="next-btn"
             onClick={handleNext}
@@ -232,7 +228,7 @@ const QuestionPage = () => {
           level_id={id}
           currentQuestionIndex={currentQuestionIndex}
           onClose={() => onCloseMap()}
-          isVisible={showMap}
+          isVisible={showMap.map}
         />
 
       </div>

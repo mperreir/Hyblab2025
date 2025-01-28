@@ -1,11 +1,18 @@
 .map-overlay {
     position: fixed;
+    width: 100%;
+    max-width: none;
+    height: 100vh;
     top: 61px;
     height: calc(100vh - 61px) !important;
     z-index: 1000;
     opacity: 1;
     visibility: visible;
     transition: opacity 0.3s ease, visibility 0.3s ease;
+
+    @media (min-width: 768px) {
+        max-width: 375px;
+    }
 }
 
 .map-overlay.hidden {
@@ -23,15 +30,12 @@
 
 .close-map-btn {
     position: absolute;
-    bottom: 24px;
+    bottom: 48px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1001;
 }
 
-.map-tiles-blue {
-    /* filter: hue-rotate(180deg) saturate(50%); */
-}
 
 .custom-popup {
     text-align: center;
