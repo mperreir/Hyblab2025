@@ -226,7 +226,7 @@ async function histoire(texts, userName, signal){
         /* Ouais bon la solution est dégeu, mais ça fonctionne */
         let multipleChoices = false;
         for(let key in texts.questions[i]){
-           if(texts.questions[i][key].includes("financement")){
+           if(typeof texts.questions[i][key] === "string" && texts.questions[i][key].includes("financement")){
                 multipleChoices = true;
                 break;
            }
