@@ -26,25 +26,41 @@ const DifficultyPage = () => {
         <div className="bg-white text-dark border border-41 border-light rounded-3 mx-5 mt-5 p-4">
           <h6 className="py-4">CHOISISSEZ UN NIVEAU DE DIFFICULTÉ</h6>
 
-          <div className="d-flex flex-column gap-5 pb-5 px-2">
-            <button
-              className={`btn fw-bold ${selectedDifficulty === 1 ? "btn-dark" : "btn-outline-dark"}`}
-              onClick={() => handleDifficultySelect(1)}
-            >
-              FACILE
-            </button>
-            <button
-              className={`btn fw-bold ${selectedDifficulty === 2 ? "btn-dark" : "btn-outline-dark"}`}
-              onClick={() => handleDifficultySelect(2)}
-            >
-              DIFFICILE
-            </button>
+          <div className="d-flex flex-column gap-5 pb-4"> 
+          {/* d-flex flex-column  */}
+            {/* gap-5 pb-5 px-2 */}
+            <div className="form-check border rounded-5 border-secondary py-3 px-4">
+              <input
+                className={`form-check-input ms-2 ${selectedDifficulty === 1 ? "bg-dark" : ""}`}
+                type="radio"
+                name="difficultyRadio"
+                id="difficultyEasy"
+                checked={selectedDifficulty === 1}
+                onChange={() => handleDifficultySelect(1)}
+              />
+              <label className="form-check-label fw-bold" htmlFor="difficultyEasy">
+                FACILE
+              </label>
+            </div>
+            <div className="form-check border rounded-5 border-secondary py-3 px-4">
+              <input
+                className={`form-check-input ms-2 ${selectedDifficulty === 2 ? "bg-dark" : ""}`}
+                type="radio"
+                name="difficultyRadio"
+                id="difficultyHard"
+                checked={selectedDifficulty === 2}
+                onChange={() => handleDifficultySelect(2)}
+              />
+              <label className="form-check-label fw-bold" htmlFor="difficultyHard">
+                DIFFICILE
+              </label>
+            </div>
           </div>
         </div>
 
         <div className="d-flex flex-column mx-5 mt-5">
           <button
-            className="btn btn-light fw-bold mx-5"
+            className="btn btn-lg btn-dark fw-bold mx-4"
             onClick={handlePlayClick}
             disabled={!selectedDifficulty} // Désactiver tant qu'aucune difficulté n'est sélectionnée
           >
@@ -53,9 +69,6 @@ const DifficultyPage = () => {
 
         </div>
       </div>
-
-      <img src={`${basename}images/illustrations/illustration_arbre_jaune_orange.png`} alt="illustration_arbre_jaune_orange" className="illustration_arbre_jaune_orange" />
-
     </div>
   );
 };
