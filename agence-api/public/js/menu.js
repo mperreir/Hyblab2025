@@ -44,8 +44,10 @@ function initMenu(){
             switchTheme("theme-default");
             changeApiName("Api");
             document.getElementById('cardsContainer').innerHTML='';
-            currentQuestion = 1;
-            updateProgress();
+            if (document.getElementById("seeResultsButton")) {
+                document.getElementById("seeResultsButton").remove();
+            }
+            resetProgress();
             swiper.slideTo(1);
             initSlide2(true);
         });
