@@ -43,7 +43,7 @@
     align-items: center;
     z-index: 2;
     font-size: 12px;
-    color: #fff;
+    color: var(--user-text-color);
     position: relative;
 }
 
@@ -57,22 +57,17 @@
     z-index: 1;
 }
 
-/* Étapes complétées */
-.progress-step.completed {
-    background-color: #39a276; /* Green for completed steps */
-}
-
-.progress-line.completed {
-    background-color: #39a276; /* Green line for completed steps */
-}
-
 /* Étape active */
 .progress-step.active {
-    background-color: #9e4c4c; /* Red for the current step */
+    background-color: var(--user-color); /* Red for the current step */
 }
 
 .progress-line.active {
-    background-color: #9e4c4c; /* Red line for the current step */
+    background-color: var(--user-color); /* Red line for the current step */
+}
+
+.progress-step.hidden {
+    display: none;
 }
 
 /* Numéro de l'étape */
