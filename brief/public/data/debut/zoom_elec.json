@@ -1,12 +1,11 @@
 {
     "electricity_mix": {
-      "description": "L'électricité n'existe pas à l'état naturel sous une forme directement utilisable. Elle doit être produite à partir d'autres sources d'énergie, ce qui constitue le mix électrique.",
+      "text": "L'électricité n'existe pas à l'état naturel sous une forme directement utilisable. Elle doit être produite à partir d'autres sources d'énergie, ce qui constitue le mix électrique.",
       "sources": [
         {
           "name": "Nucléaire",
           "percentage": 65,
-          "description": "Source clé du mix énergétique, utilisant 56 réacteurs pour une production stable et décarbonée. Elle repose sur des métaux lourds comme l'uranium, mais la gestion des déchets radioactifs reste un défi.",
-          "text":"Tu fais partie des pays les plus nucléarisés au monde ! Avec 56 réacteurs, l’énergie nucléaire alimente tes réseaux électriques en continu et constitue une source clé de ton mix énergétique. Décarbonée et sans émission de GES, elle repose sur des métaux lourds comme l’uranium. Mais attention : la gestion des déchets radioactifs reste un défi écologique et politique de taille pour l’avenir !",
+          "text": "Faiblement émetteur de CO₂, le nucléaire est une pierre angulaire du mix électrique français, mais il pose des défis liés aux déchets radioactifs et à la sécurité. Il fonctionne avec de l'uranium importé principalement du Niger, du Kazakhstan et du Canada.",
           "carbon_emissions": {
             "value": 0,
             "unit": "kg CO2/kWh"
@@ -28,7 +27,7 @@
         {
           "name": "Hydraulique",
           "percentage": 12,
-          "description": "Utilise la force ou le débit de l'eau pour produire de l'électricité via des barrages. Offre une production stable avec peu d'émissions, mais peut perturber les écosystèmes aquatiques.",
+          "text": "L'énergie des rivières permet de produire de l'électricité via des barrages et des centrales hydroélectriques. Elle est renouvelable et stable, mais son développement est limité par les contraintes géographiques et climatiques.",
           "carbon_emissions": {
             "value": 0,
             "unit": "kg CO2/kWh"
@@ -38,7 +37,7 @@
         {
           "name": "Éolien",
           "percentage": 10,
-          "description": "Capte la force du vent avec des éoliennes pour produire de l'électricité. Énergie renouvelable et propre, mais sa production dépend des conditions météorologiques.",
+          "text": "L’éolien est un pilier de la transition énergétique, car il n'émet pas de CO2. Cependant, sa production est intermittente (elle dépend de la présence ou non de vent), ce qui nécessite des solutions de flexibilité pour garantir un approvisionnement constant en électricité.",
           "carbon_emissions": {
             "value": 0,
             "unit": "kg CO2/kWh"
@@ -48,7 +47,7 @@
         {
           "name": "Solaire",
           "percentage": 4.4,
-          "description": "Utilise la lumière et la chaleur du soleil captées par des panneaux photovoltaïques pour produire de l'électricité. Énergie renouvelable et propre.",
+          "text": "Le solaire est une énergie renouvelable qui n'émet pas de CO2, mais elle est intermittente (il n'y a pas toujours de soleil). Elle nécessite un stockage ou un complément avec d’autres sources d'énergie.",
           "carbon_emissions": {
             "value": 0,
             "unit": "kg CO2/kWh"
@@ -58,7 +57,7 @@
         {
           "name": "Thermique fossile",
           "percentage": 0.5,
-          "description": "Utilise des combustibles fossiles pour produire de l'électricité ou chauffer des bâtiments. Fiable, mais très polluante et de plus en plus coûteuse.",
+          "text": "Production électrique à partir de centrales thermiques alimentées par des combustibles fossiles (gaz naturel, fioul et charbon). Le gaz naturel est le plus utilisé (6 %), tandis que le charbon est extrêmement faible (moins de 0,2 %). Ces énergies sont utilisées pour pallier les pics de demande ou comme source d’appoint.",
           "carbon_emissions": {
             "range": {
               "min": 0.8,
@@ -71,7 +70,7 @@
         {
           "name": "Gaz",
           "percentage": 6,
-          "description": "Utilisé pour la production d'électricité via la combustion du gaz naturel. Énergie fossile, mais relativement propre par rapport au charbon ou au pétrole.",
+          "text": "Les bioénergies regroupent les centrales thermiques fonctionnant avec des combustibles renouvelables ou de récupération. Elle inclut les installations produisant de l’électricité à partir de biomasse solide (bois, paille, etc.), de biogaz (produit à partir de déchets agricoles) ou encore de déchets ménagers. Elle représente une solution locale et bas-carbone, mais elle dépend de la disponibilité des ressources et de leur gestion durable.",
           "carbon_emissions": {
             "range": {
               "min": 0.2,
@@ -80,14 +79,6 @@
             "unit": "kg CO2/kWh"
           },
           "notes": "Émissions moindres comparées à d'autres fossiles, mais toujours non renouvelable."
-        },
-        {
-          "name": "Thermique renouvelable et déchets",
-          "description": "Utilise des sources renouvelables comme la biomasse ou la combustion de déchets pour produire de l'électricité. Peu ou pas de gaz à effet de serre.",
-          "notes": "Même définition que pour le mix énergétique global.",
-          "carbon_emissions": {
-            "notes": "Variable selon les sources. Par exemple, la combustion de biomasse émet du CO2 compensé par la replantation."
-          }
         }
       ]
     }
