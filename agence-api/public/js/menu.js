@@ -44,6 +44,9 @@ function initMenu(){
             switchTheme("theme-default");
             changeApiName("Api");
             document.getElementById('cardsContainer').innerHTML='';
+            if (document.getElementById("seeResultsButton")) {
+                document.getElementById("seeResultsButton").remove();
+            }
             currentQuestion = 1;
             updateProgress();
             swiper.slideTo(1);

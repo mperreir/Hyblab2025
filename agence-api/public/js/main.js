@@ -38,17 +38,18 @@ const initSlide2 = async function (afterIntro = false) {
 
         switch (secteur) {
             case "agro":
-                await histoire(texts.agro, userName, signal);
+                await histoire(texts.agro, signal);
                 break;
             case "tech":
-                await histoire(texts.tech, userName, signal);
+                await histoire(texts.tech, signal);
                 break;
             case "arti":
-                await histoire(texts.arti, userName, signal);
+                await histoire(texts.arti, signal);
                 break;
         };
 
-        await displayMessages(texts.fin.avant, userName, signal);
+        await displayMessages(texts.fin.avant, signal);
+        
 
         await addButtonGoToResults(signal);
     } catch (error) {
@@ -204,7 +205,7 @@ async function loadIntroStory(introStory, signal, skipInteraction = false) {
     return userName;
 }
 
-async function histoire(texts, userName, signal){
+async function histoire(texts, signal){
 
     choices = [];
 
