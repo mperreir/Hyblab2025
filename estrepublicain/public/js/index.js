@@ -33,9 +33,7 @@ function displayPodcastModal (index) {
         top: 0,
         behavior: "instant",
     });
-
     resume(index, true)
-
 }
 
 function hidePodcastModal (index) {
@@ -86,7 +84,7 @@ function resume (id, reset = false) {
     if (iframe) {
         var player = new Vimeo.Player(iframe);
         if (reset) {
-            iframe.src = iframe.src
+            iframe.src = iframe.src + "&autoplay=1"
         }
         player.play()
     }
@@ -246,7 +244,7 @@ function createPodcastModal(podcast, id) {
         videoIframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share"
         videoIframe.classList.add("w-100")
         videoIframe.style = "height: calc(100% - 46px)"
-        videoIframe.src = "https://player.vimeo.com/video/" + podcast.VideoLink + "?t=0&amp;title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&autoplay=1&loop=1&controls=0";
+        videoIframe.src = "https://player.vimeo.com/video/" + podcast.VideoLink + "?t=0&amp;title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&loop=1&controls=0";
 
         video.appendChild(videoIframe)
 
