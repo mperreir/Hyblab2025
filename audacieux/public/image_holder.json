@@ -5,14 +5,15 @@
             "url": "assets/graphic/trebe.png",
             "audio": "marche",
             "box":[
-                { "left": "56%", "top": "17%", "width": "20%", "height": "80%", "script":{"func":"leaveImage", "args":[]}, "onload": {"func":"setMaxTime", "args":[75] }}
+                { "left": "89%", "top": "6%", "width": "10%", "height": "5%", "script":{"func":"leaveImage", "args":[]}, "onload": {"func":"setMaxTime", "args":[75] }},
+                { "left": "56%", "top": "17%", "width": "20%", "height": "80%", "script":{"func":"dialogueMarchant", "args":[]}}
             ]
         },
         {
             "id": "start_peniche",
             "url": "assets/graphic/peniche_start.png",
             "box":[
-                { "left": "0%", "top": "20%", "width": "38%", "height": "80%", "script": {"func":"loadSceneScript", "args":["abdonia"]} },
+                { "left": "0%", "top": "20%", "width": "38%", "height": "80%", "script": {"func":"dialogueChauffeur", "args":[]} },
                 { "left": "62%", "top": "48%", "width": "10%", "height": "30%", "script": {"func":"loadSceneScript", "args":["abdonia"]} }
             ]
         },
@@ -21,7 +22,8 @@
             "url": "assets/graphic/Abdonia.png",
             "audio": "abdonia",
             "box":[
-                { "left": "3%", "top": "24%", "width": "40%", "height": "70%", "script": {"func":"leaveImage", "args":[]}, "onload": {"func":"setMaxTime", "args":[42]} }
+                { "left": "70%", "top": "50%", "width": "20%", "height": "30%", "script": {"func":"leaveImage", "args":[]}, "onload": {"func":"setMaxTime", "args":[42]} },
+                {"left": "3", "top": "24%", "width": "40%", "height": "70%", "script": {"func":"dialogueAbdonia", "args":[]}}
             ]
         },
         
@@ -30,8 +32,8 @@
             "url": "assets/graphic/Librairie.png",
             "audio": "Librairie",
             "box":[
-                { "left": "10%", "top": "10%", "width": "16%", "height": "90%", "script": {"func":"leaveImage", "args":[]}, "onload": {"func":"setMaxTime", "args":[100]} },
-                { "left": "30%", "top": "16%", "width": "16%", "height": "90%", "script": {"func":"leaveImage", "args":[]}}
+                { "left": "10%", "top": "10%", "width": "16%", "height": "90%", "script": {"func":"dialogueLivre", "args":[]}},
+                { "left": "89%", "top": "6%", "width": "10%", "height": "5%", "script": {"func":"leaveImage", "args":[]}, "onload": {"func":"setMaxTime", "args":[100]} }
             ]
         }
 

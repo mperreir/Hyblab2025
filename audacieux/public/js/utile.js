@@ -199,11 +199,9 @@ function createPopup(idTarget, options) {
         if (state === 0) {
             popupOverlay.style.display = "flex"; // Affiche le popup
             state = 1; // Passe l'état à actif
-            playAudioTrigger('data/audio_scene.json', 'coffreOuverture'); // Jouer le son à l'ouverture
         } else {
             popupOverlay.style.display = "none"; // Cache le popup
             state = 0; // Réinitialise l'état
-            playAudioTrigger('data/audio_scene.json', 'coffreFermeture'); // Jouer le son à l'ouverture
         }
     });
 
@@ -258,6 +256,7 @@ function createPopupTuto(closeDiv,options) {
     });
     Object.assign(popupTitle.style,{
         marginTop: "0px",
+        color:"white",
         ...customStyles.title,
     });
 
@@ -319,8 +318,12 @@ function createPopupTuto(closeDiv,options) {
     if (closeOnClick){
         window.addEventListener("click", () => {
             if (document.body.contains(popupOverlay)) {
+                setTimeout(() => {
+                    setIsOpen(true);
+                  }, 100);
                 document.body.removeChild(popupOverlay);
                 onClose();
+                console.log("ahjahahah");
             }
         });
     }
@@ -347,8 +350,400 @@ function waitForClick(targetElement) {
     });
 }
 
+function createPopupTuto2(closeDiv, options) {
+    const {
+        title = "Popup Title",
+        message = "This is a message",
+        width = "300px",
+        height = "200px",
+        backgroundImage = "",
+        customStyles = {},
+        onClose = () => {},
+        closeOnScroll = false,
+        closeOnClick = false,
+    } = options;
+
+    // Créer les éléments du popup
+    const popupOverlay = document.createElement("div");
+    popupOverlay.id = "all";
+    const popupContainer = document.createElement("div");
+    const popupTitle = document.createElement("h2");
+    const popupMessage = document.createElement("p");
+    const closeButton = document.createElement("button");
+    const popupTriangle = document.createElement("div"); // Pointe triangulaire
+
+    // Ajouter les classes pour le style
+    popupOverlay.className = "popup-overlay";
+    popupContainer.className = "popup-container";
+    popupTitle.className = "popup-title";
+    popupMessage.className = "popup-message";
+    closeButton.className = "popup-close-button";
+
+    // Ajouter le contenu
+    popupTitle.textContent = title;
+    popupMessage.innerHTML = message;
+    closeButton.textContent = "X"; // Texte du bouton de fermeture
+
+    // Appliquer les styles de base
+    Object.assign(popupMessage.style, {
+        ...customStyles.message,
+    });
+    Object.assign(popupTitle.style, {
+        marginTop: "0px",
+        color: "white",
+        ...customStyles.title,
+    });
+
+    Object.assign(closeButton.style, {
+        position: "absolute",
+        top: "15%",
+        right: "10%",
+        background: "transparent",
+        border: "none",
+        fontSize: "16px",
+        cursor: "pointer",
+        color: "white",
+    });
+
+    Object.assign(popupOverlay.style, {
+        position: "fixed",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "100%",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        zIndex: 1000,
+        ...customStyles.Overlay,
+    });
+
+    Object.assign(popupContainer.style, {
+        position: "relative",
+        width: width,
+        height: height,
+        textAlign: "center",
+        backgroundImage: `url('${backgroundImage}')`,
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        color: "black",
+        padding: "20px",
+        borderRadius: "10px",
+        ...customStyles.container,
+    });
+
+    // Ajouter les événements
+
+    // Fermeture via le bouton de fermeture
+    closeButton.addEventListener("click", () => {
+        if (document.body.contains(popupOverlay)) {
+            document.body.removeChild(popupOverlay);
+            onClose();
+        }
+    });
+
+    if (closeDiv) {
+        document.getElementById(closeDiv).addEventListener("click", () => {
+            if (document.body.contains(popupOverlay)) {
+                document.body.removeChild(popupOverlay);
+                onClose();
+            }
+        });
+    }
+
+    if (closeOnScroll) {
+        window.addEventListener("wheel", () => {
+            if (document.body.contains(popupOverlay)) {
+                document.body.removeChild(popupOverlay);
+                onClose();
+            }
+        });
+    }
+
+    if (closeOnClick) {
+        window.addEventListener("click", () => {
+            if (document.body.contains(popupOverlay)) {
+                document.body.removeChild(popupOverlay);
+                onClose();
+                console.log("ahjahahah");
+            }
+        });
+    }
+
+    // Assembler les éléments
+    popupContainer.appendChild(popupTitle);
+    popupContainer.appendChild(popupMessage);
+    popupContainer.appendChild(closeButton); // Ajouter le bouton de fermeture
+    popupOverlay.appendChild(popupContainer);
+
+    // Ajouter le popup au DOM
+    document.body.appendChild(popupOverlay);
+
+    return popupMessage;
+}
+
+function bulle(options) {
+    const {
+        title = "Popup Title",
+        messages = ["Message 1", "Message 2", "Message 3"], // Tableau de messages
+        width = "300px",
+        height = "200px",
+        backgroundImage = "",
+        customStyles = {},
+        onClose = () => {},
+        closeOnScroll = false,
+        closeOnClick = false,
+    } = options;
+
+    // Créer les éléments du popup
+    const popupOverlay = document.createElement("div");
+    popupOverlay.id = "popup";
+    const popupContainer = document.createElement("div");
+    const popupTitle = document.createElement("h2");
+    const popupMessage = document.createElement("p");
+    const closeButton = document.createElement("button");
+    const prevButton = document.createElement("button"); // Bouton précédent
+    const nextButton = document.createElement("button"); // Bouton suivant
+
+    // Ajouter les classes pour le style
+    popupOverlay.className = "popup-overlay";
+    popupContainer.className = "popup-container";
+    popupTitle.className = "popup-title";
+    popupMessage.className = "popup-message";
+    closeButton.className = "popup-close-button";
+    prevButton.className = "popup-nav-button";
+    nextButton.className = "popup-nav-button";
+
+    // Ajouter le contenu
+    popupTitle.textContent = title;
+    popupMessage.innerHTML = messages[0]; // Afficher le premier message
+    closeButton.textContent = "X"; // Texte du bouton de fermeture
+    prevButton.textContent = "←"; // Flèche précédente
+    nextButton.textContent = "→"; // Flèche suivante
+
+    // Appliquer les styles de base
+    Object.assign(popupMessage.style, {
+        ...customStyles.message,
+    });
+    Object.assign(popupTitle.style, {
+        marginTop: "0px",
+        color: "black",
+        ...customStyles.title,
+    });
+
+    Object.assign(closeButton.style, {
+        position: "absolute",
+        top: "15%",
+        right: "10%",
+        backgroundColor: "white",
+        border: "none",
+        fontSize: "16px",
+        cursor: "pointer",
+        color: "black",
+        ...customStyles.close,
+    });
+
+    Object.assign(prevButton.style, {
+        position: "absolute",
+        left: "10px",
+        bottom: "10px",
+        backgroundColor: "white",
+        border: "none",
+        fontSize: "24px",
+        cursor: "pointer",
+        color: "color",
+        ...customStyles.prev,
+    });
+
+    Object.assign(nextButton.style, {
+        position: "absolute",
+        right: "10px",
+        bottom: "10px",
+        backgroundColor: "white",
+        border: "none",
+        fontSize: "24px",
+        cursor: "pointer",
+        color: "color",
+        ...customStyles.next,
+    });
+
+    Object.assign(popupOverlay.style, {
+        position: "fixed",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "100%",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        zIndex: 1000,
+        ...customStyles.Overlay,
+    });
+
+    Object.assign(popupContainer.style, {
+        position: "relative",
+        width: width,
+        height: height,
+        textAlign: "center",
+        backgroundColor: " white",
+        color: "black",
+        padding: "20px",
+        borderRadius: "10px",
+        ...customStyles.container,
+    });
+
+    // Gestion de l'état des messages
+    let currentMessageIndex = 0;
+
+    const updateMessage = () => {
+        popupMessage.innerHTML = messages[currentMessageIndex];
+        prevButton.style.display = currentMessageIndex === 0 ? "none" : "block";
+        nextButton.style.display = currentMessageIndex === messages.length - 1 ? "none" : "block";
+    };
+
+    // Événements de navigation
+    prevButton.addEventListener("click", () => {
+        if (currentMessageIndex > 0) {
+            currentMessageIndex--;
+            updateMessage();
+        }
+    });
+
+    nextButton.addEventListener("click", () => {
+        if (currentMessageIndex < messages.length - 1) {
+            currentMessageIndex++;
+            updateMessage();
+        }
+    });
+
+    // Fermeture via le bouton de fermeture
+    closeButton.addEventListener("click", () => {
+        if (document.body.contains(popupOverlay)) {
+            document.body.removeChild(popupOverlay);
+            onClose();
+        }
+    });
 
 
+    if (closeOnScroll) {
+        window.addEventListener("wheel", () => {
+            if (document.body.contains(popupOverlay)) {
+                document.body.removeChild(popupOverlay);
+                onClose();
+            }
+        });
+    }
+
+    if (closeOnClick) {
+        window.addEventListener("click", () => {
+            if (document.body.contains(popupOverlay)) {
+                document.body.removeChild(popupOverlay);
+                onClose();
+                console.log("ahjahahah");
+            }
+        });
+    }
+
+    // Assembler les éléments
+    popupContainer.appendChild(popupTitle);
+    popupContainer.appendChild(popupMessage);
+    popupContainer.appendChild(closeButton);
+    popupContainer.appendChild(prevButton);
+    popupContainer.appendChild(nextButton);
+    popupOverlay.appendChild(popupContainer);
+
+    // Ajouter le popup au DOM
+    document.body.appendChild(popupOverlay);
+
+    // Masquer la flèche précédente au départ
+    prevButton.style.display = "none";
+
+
+    return popupMessage;
+}
+
+function bulle2(options) {
+    const {
+        title = "Popup Title",
+        messages = ["Message 1", "Message 2", "Message 3"], // Tableau de messages
+        width = "300px",
+        height = "200px",
+        backgroundImage = "",
+        customStyles = {},
+        onClose = () => {},
+        closeOnScroll = false,
+        closeOnClick = false,
+    } = options;
+
+    // Créer les éléments du popup
+    const popupOverlay = document.createElement("div");
+    popupOverlay.id = "popup";
+    const popupContainer = document.createElement("div");
+    const popupTitle = document.createElement("h2");
+    const popupMessage = document.createElement("p");
+    
+
+    // Ajouter les classes pour le style
+    popupOverlay.className = "popup-overlay";
+    popupContainer.className = "popup-container";
+    popupTitle.className = "popup-title";
+    popupMessage.className = "popup-message";
+
+    // Ajouter le contenu
+    popupTitle.textContent = title;// Afficher le premier message
+
+    // Appliquer les styles de base
+    Object.assign(popupMessage.style, {
+        ...customStyles.message,
+    });
+    Object.assign(popupTitle.style, {
+        marginTop: "0px",
+        color: "black",
+        ...customStyles.title,
+    });
+
+
+    Object.assign(popupOverlay.style, {
+        position: "fixed",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "100%",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        zIndex: 1000,
+        ...customStyles.Overlay,
+    });
+
+    Object.assign(popupContainer.style, {
+        position: "relative",
+        width: width,
+        height: height,
+        textAlign: "center",
+        backgroundColor: " white",
+        color: "black",
+        padding: "20px",
+        borderRadius: "10px",
+        ...customStyles.container,
+    });
+
+    // Gestion de l'état des messages
+
+
+
+    // Assembler les éléments
+    popupContainer.appendChild(popupTitle);
+    popupContainer.appendChild(popupMessage);
+    popupOverlay.appendChild(popupContainer);
+
+    // Ajouter le popup au DOM
+    document.body.appendChild(popupOverlay);
+
+    // Masquer la flèche précédente au départ
+
+    return popupMessage;
+}
 
 // Exemple d'utilisation
 /*document.getElementById("popup").addEventListener("click", () => {

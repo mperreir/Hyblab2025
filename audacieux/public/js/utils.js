@@ -54,3 +54,64 @@ function playAudio(event, id)
 {
     playAudioTrigger("data/audio_scene.json", id);
 }
+function dialogueChauffeur(){
+    const dialogue = bulle("",{
+        title: "Test",
+        messages: ["achete billet", "monnaie", "merci!"],
+        width: "550px",
+        height: "auto",
+        backgroundImage: "public/img/bulle.png",
+        customStyles:{
+            container: {
+                backgroundColor: "#ffffff",
+            }
+        }
+    });
+}
+
+function dialogueAbdonia(){
+    const dialogue = bulle("",{
+        title: "OUAI L'histoire",
+        messages: ["Ca va?", "c'est joli", "Au revoir"],
+        width: "550px",
+        height: "auto",
+        backgroundImage: "public/img/bulle.png",
+        customStyles:{
+            container: {
+                backgroundColor: "#ffffff",
+            }
+        }
+    });
+}
+
+function dialogueMarchant(){
+    const dialogue = bulle("",{
+        title: "OUAI L'histoire",
+        messages: ["j'ai des legumes", "argent", "Tiens!"],
+        width: "550px",
+        height: "auto",
+        backgroundImage: "public/img/bulle.png",
+        customStyles:{
+            container: {
+                backgroundColor: "#ffffff",
+            }
+        }
+    });
+}
+
+function dialogueLivre(){
+    const dialogue = bulle("",{
+        title: "LIVRE",
+        messages: ["LIVRE1", "LIVRE2", "ACHETER"],
+        width: "550px",
+        height: "auto",
+        backgroundImage: "public/img/bulle.png",
+        customStyles:{
+            container: {
+                backgroundColor: "#ffffff",
+            }
+        }
+    });
+}
+
+  
