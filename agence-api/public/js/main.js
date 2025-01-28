@@ -133,15 +133,15 @@ async function selectSecteur(presentationSecteurs) {
 
     toggleTapIconDisplay(true);
 
-    addMessage({text: presentationSecteurs.texts.agro, type: "received",img: presentationSecteurs.images.agro, title: presentationSecteurs.reponses.agro, class: "theme-agro"});
+    addMessage({text: presentationSecteurs.texts.agro, type: "received",img: presentationSecteurs.images.agro, class: "theme-agro"});
     scrollToBottom();
     await waitForUserTouch();
 
-    addMessage({text: presentationSecteurs.texts.tech, type: "received",img: presentationSecteurs.images.tech, title: presentationSecteurs.reponses.tech, class: "theme-tech"});
+    addMessage({text: presentationSecteurs.texts.tech, type: "received",img: presentationSecteurs.images.tech, class: "theme-tech"});
     scrollToBottom();
     await waitForUserTouch();
 
-    addMessage({text: presentationSecteurs.texts.arti, type: "received",img: presentationSecteurs.images.arti, title: presentationSecteurs.reponses.arti, class: "theme-arti"});
+    addMessage({text: presentationSecteurs.texts.arti, type: "received",img: presentationSecteurs.images.arti, class: "theme-arti"});
     scrollToBottom();
     await waitForUserTouch();
 
