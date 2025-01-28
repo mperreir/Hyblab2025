@@ -4,16 +4,16 @@
       "id": "grand",
       "name": "Grand festival",
       "description": "Festival avec une grande capacité d'accueil.",
-      "image": "img/grand_festival.jpg",
+      "image": "img/fete.jpg",
       "cost": 3,
-      "icon": "img/info_icon.png",
+      "icon": "img/fete.jpg",
       "isSelected": false
     },
     {
       "id": "moyen",
       "name": "Festival Moyen",
       "description": "Festival de taille moyenne avec ambiance conviviale.",
-      "image": "img/festival_moyen.jpg",
+      "image": "img/fete.jpg",
       "cost": 2,
       "icon": "img/info_icon.png",
       "isSelected": true
@@ -22,19 +22,20 @@
       "id": "intimiste",
       "name": "Festival Intimiste",
       "description": "Petit festival pour un public restreint.",
-      "image": "img/festival_intimiste.jpg",
-      "cost":1,
+      "image": "img/fete.jpg",
+      "cost": 1,
       "icon": "img/info_icon.png",
       "isSelected": false
     }
   ],
+
   "ecologicalActions": [
     {
       "id": "high",
       "name": "Beaucoup d’actions écologiques",
       "description": "Engagement élevé pour la transition écologique.",
-      "image": "img/actions_ecologiques_high.jpg",
-      "cost":3,
+      "image": "img/fete.jpg",
+      "cost": 3,
       "icon": "img/info_icon.png",
       "isSelected": false
     },
@@ -42,8 +43,8 @@
       "id": "low",
       "name": "Peu d’actions écologiques",
       "description": "Engagement modéré pour la transition écologique.",
-      "image": "img/actions_ecologiques_low.jpg",
-      "cost":2,
+      "image": "img/fete.jpg",
+      "cost": 2,
       "icon": "img/info_icon.png",
       "isSelected": true
     },
@@ -51,8 +52,8 @@
       "id": "minimum",
       "name": "Minimum légal d’actions écologiques",
       "description": "Respect du minimum légal pour les actions écologiques.",
-      "image": "img/actions_ecologiques_minimum.jpg",
-      "cost":1,
+      "image": "img/fete.jpg",
+      "cost": 1,
       "icon": "img/info_icon.png",
       "isSelected": false
     }
@@ -62,8 +63,8 @@
       "id": "atelier",
       "name": "Monter un atelier de pratique musicale sur le festival",
       "description": "Favoriser l'accès à la musique pour tous.",
-      "image": "img/atelier_pratique.jpg",
-      "cost":3,
+      "image": "img/fete.jpg",
+      "cost": 3,
       "icon": "img/info_icon.png",
       "isSelected": false
     },
@@ -71,8 +72,8 @@
       "id": "rencontre",
       "name": "Organiser des rencontres avec les artistes",
       "description": "Créer des opportunités d'échange avec les artistes.",
-      "image": "img/rencontre_artistes.jpg",
-      "cost":2,
+      "image": "img/fete.jpg",
+      "cost": 2,
       "icon": "img/info_icon.png",
       "isSelected": true
     },
@@ -80,8 +81,8 @@
       "id": "ecoles",
       "name": "Intervention dans les écoles",
       "description": "Éduquer et sensibiliser les jeunes à la culture.",
-      "image": "img/intervention_ecoles.jpg",
-      "cost":1,
+      "image": "img/fete.jpg",
+      "cost": 1,
       "icon": "img/info_icon.png",
       "isSelected": false
     },
@@ -89,7 +90,7 @@
       "id": "aucune",
       "name": "Ne pas mettre en place d’action de médiation culturelle",
       "description": "Aucune action de médiation culturelle prévue.",
-      "image": "img/aucune_action.jpg",
+      "image": "img/fete.jpg",
       "cost": 0,
       "icon": "img/info_icon.png",
       "isSelected": false
@@ -100,7 +101,7 @@
       "id": "actif",
       "name": "Mener activement des actions de prévention",
       "description": "Engagement fort pour la sécurité.",
-      "image": "img/prevention_actif.jpg",
+      "image": "img/fete.jpg",
       "cost": 3,
       "icon": "img/info_icon.png",
       "isSelected": true
@@ -109,8 +110,8 @@
       "id": "reduction",
       "name": "Réduire le nombre d’actions de prévention",
       "description": "Prévention modérée.",
-      "image": "img/prevention_reduction.jpg",
-      "cost":2,
+      "image": "img/fete.jpg",
+      "cost": 2,
       "icon": "img/info_icon.png",
       "isSelected": false
     },
@@ -118,7 +119,7 @@
       "id": "minimum",
       "name": "Minimum légal d’actions de prévention",
       "description": "Respect du minimum légal pour la prévention.",
-      "image": "img/prevention_minimum.jpg",
+      "image": "img/fete.jpg",
       "cost": 1,
       "icon": "img/info_icon.png",
       "isSelected": false

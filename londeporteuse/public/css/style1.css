@@ -18,7 +18,6 @@ body {
     background-color: white;
     border-radius: 15px;
     overflow: hidden; /* Cache les débordements de contenu */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* Effet d'ombre autour du conteneur */
     display: flex; /* Flexbox pour organiser le contenu verticalement */
     flex-direction: column; /* Les éléments sont empilés verticalement */
 }
@@ -34,6 +33,7 @@ body {
     display: flex;
     flex-direction: column;
     background-color: white;
+    padding-bottom: 10%; /* Ajoute un espace suffisant pour le bouton */
 }
 
 #page_scrollable_container::-webkit-scrollbar {
@@ -42,16 +42,25 @@ body {
 
 /* Sections */
 .choice-section {
-  padding: 20px;
-  margin-bottom: 15px;
+  padding: 15px;
   background-color: white;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  border-block-start: solid 0.5px #ddd;
+}
+
+.question-info {
+  color: black;
+  font-size: 0.7rem;
+  text-align: justify;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .choice-section h2 {
   font-size: 1.2rem;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   display: flex;
   align-items: center;
 }
@@ -65,65 +74,75 @@ body {
 .choice-group {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 10px;
 }
 
 .choice-item {
   display: flex;
   background-color: #f9f9f9;
   border: 1px solid #ddd;
-  border-radius: 10px;
   overflow: hidden;
 }
 
 .choice-item img {
   width: 150px;
   height: auto;
+  object-fit: cover;
 }
 
 .choice-info {
-  padding: 10px;
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .choice-info p {
-  font-size: 1rem;
-  margin: 0;
-  color: #000;
+  font-size: 0.6rem;
+  font-weight: bold;
+  color: black;
 }
 
 .btn-info {
-  background-color: #32D2C3;
-  color: white;
-  padding: 8px 12px;
-  font-size: 0.9rem;
-  border: none;
-  border-radius: 5px;
+  color: black;
+  font-size: 0.6rem;
+  border:rgb(168, 167, 167) solid 1px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 10px;
+  margin-left: 48%;
+  margin-bottom: 5%;
+  width: 80px;
+  height: 20px;
 }
 
 .btn-info span {
-  font-size: 1.2rem;
+  font-size: 1.0rem;
   margin-left: 5px;
+  color: #32D2C3;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    padding: 25px 0;
+    background-color: white;
+    border-block-start: solid 1px #ddd;
 }
 
 .btn-validate {
     display: block;
     text-align: center;
-    width: 100%;
+    width: 50%;
     background-color: #32D2C3;
     color: white;
-    font-size: 1.2rem;
+    font-size: 0.8rem;
     font-weight: bold;
-    padding: 15px;
-    border-radius: 25px;
+    padding: 10px 10px;
     text-decoration: none;
     margin-top: auto;
-    margin-bottom: 20px;
+    margin-bottom: 25%;
     box-shadow: 0px 4px 10px rgba(0, 235, 30, 0.3);
     transition: all 0.3s ease;
     cursor: pointer;
@@ -131,7 +150,7 @@ body {
 
 .btn-validate:hover {
     background-color: #32D2C3;
-    box-shadow: 0px 6px 12px rgba(0, 235, 30, 0.5);
+    box-shadow: 0px 6px 12px rgba(50, 210, 195, 0.5);
 }
 
 .btn-next {
@@ -200,7 +219,6 @@ header .logo-container img {
     width: 70%;
     left: 50%;
     transform: translateX(-50%); /* Centre horizontalement */
-    background-color: transparent;
 }
 
 .logo-partners {
@@ -210,7 +228,6 @@ header .logo-container img {
     left: 50%;
     transform: translateX(-50%);
     width: 60%;
-    background-color: transparent;
 }
 
 .banner h1 {
@@ -257,18 +274,24 @@ header .logo-container img {
     margin-bottom: 20px;
 }
 
+.create-container {
+    display: flex;
+    justify-content: center;
+}
+
 /* Bouton principal */
 .btn-create-event {
     background-color: #32D2C3;
     color: white;
-    padding: 12px 20px;
-    font-size: 1rem;
+    padding: 10px 10px;
+    font-size: 0.8rem;
     font-weight: bold;
     text-align: center;
     text-decoration: none;
     cursor: pointer;
     transition: transform 0.3s, box-shadow 0.3s;
     box-shadow: 0px 4px 10px rgba(37, 190, 162, 0.3);
+    margin-top: 5%;
 }
 
 .btn-create-event:hover {
@@ -276,18 +299,93 @@ header .logo-container img {
     box-shadow: 0px 6px 12px rgba(37, 190, 162, 0.3);
 }
 
+h2{
+    font-size: 0.8rem;
+    color: black;
+    text-align: center;
+    bottom: 75%;
+    left: 25%;
+}
+
 /* Footer */
 footer {
     background-color: black;
     color: white;
     text-align: center;
-    padding: 15px;
-    font-size: 0.9rem;
+    padding: 10px;
+    font-size: 0.8rem;
     font-weight: bold;
     margin-top: auto;
     flex-shrink: 0;
 }
+/* Arrière-plan de la fenêtre modale (modal) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7); /* Fond sombre semi-transparent */
+}
+  
+/* Contenu de la fenêtre modale */
+.modal-content {
+    background: linear-gradient(135deg, #444, #222); /* Fond en dégradé */
+    color: #fff; /* Texte en blanc */
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 15px; /* Coins arrondis */
+    text-align: center;
+    width: 80%;
+    max-width: 400px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6); /* Effet d'ombre */
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    position: relative;
+    animation: fadeIn 0.3s ease-in-out; /* Animation d'apparition */
+}
+  
+/* Style du bouton de fermeture */
+.close {
+    color: #fff; /* Bouton de fermeture en blanc */
+    font-size: 24px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.2s ease; /* Transition fluide */
+}
+  
+.close:hover,
+.close:focus {
+    color: #ff6666; /* Passe au rouge au survol */
+    transform: scale(1.2); /* Effet d'agrandissement */
+}
+  
+/* Style du texte de la fenêtre modale */
+#modal-description {
+    margin: 20px 0;
+    font-weight: 300;
+}
+  
+/* Animation d'apparition */
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
 
+  
 /* Responsive Design */
 @media (max-width: 768px) {
     #app-container {
