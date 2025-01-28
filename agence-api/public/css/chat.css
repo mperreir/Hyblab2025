@@ -132,6 +132,10 @@
     margin-bottom: 10px;
 }
 
+#svg-container svg {
+    background: radial-gradient(circle at center, var(--bg-color) 60%, transparent 40%);
+  }
+
 .message.theme-tech {
     background: var(--user-color);
     color: var(--user-text-color);

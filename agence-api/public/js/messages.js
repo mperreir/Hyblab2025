@@ -37,6 +37,7 @@ async function addMessage(message, type) {
     }
 
     if (message.class) {
+        messageElement.classList.add(message.class);
         div.classList.add(message.class);
     }
 
