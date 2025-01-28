@@ -1,40 +1,30 @@
 /* Default Theme */
 :root {
-    --bg-color: white;
-    --primary-text-color: #1D1D1D;
-    --secondary-text-color: white;
-    --primary-color: #E8E8E8;
-    --secondary-color: #EEB501;
-    --accent-color: rgba(255, 223, 0, 0.6);
+    --bg-color: #1d1d1d;
+    --color-text-API: #FFFF;
+    --user-text-color: #1d1d1d;
+    --primary-color: #484848;
+    --user-color: #FFFF;
   }
   
   /* Tech Theme - Blue */
   .theme-tech {
-    --bg-color: #fcf3ee;
-    --primary-text-color: #1D1D1D;
-    --secondary-text-color: #ffffff;
-    --primary-color: #8F98EB;
-    --secondary-color: #EEB501;
-    --accent-color: rgba(255, 223, 0, 0.6);
+    --user-text-color: #FFFF;
+    --user-color: #4854d4;
+    --accent-color: rgba(69, 84, 220, 0.8);
   }
   
   /* Agro Theme - Green */
   .theme-agro {
-    --bg-color: #f5fff5;
-    --primary-text-color: #1D1D1D;
-    --secondary-text-color: #ffffff;
-    --primary-color: #81c784;
-    --secondary-color: #388e3c;
-    --accent-color: rgba(255, 223, 0, 0.6);
+    --user-text-color: #FFFF;
+    --user-color: #f8b100;
+    --accent-color: rgba(248, 177, 0, 0.8);
   }
   
   /* Arti Theme - Yellow */
   .theme-arti {
-    --bg-color: #fffdf5;
-    --primary-text-color: #1D1D1D;
-    --secondary-text-color: #ffffff;
-    --primary-color: #ffdd4a;
-    --secondary-color: #f4c430;
-    --accent-color: rgba(255, 223, 0, 0.6);
+    --user-text-color: #FFFF;
+    --user-color: #fba6b8;
+    --accent-color: rgba(255, 161, 184, 0.8);
   }
   
