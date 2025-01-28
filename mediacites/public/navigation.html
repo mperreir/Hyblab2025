@@ -32,6 +32,12 @@
         <button class="btn btn-outline-secondary" type="button" > SÉCURITÉ</button> <!-- onclick="redirect('nom_de_la_categorie')" --> 
         <button class="btn btn-outline-secondary" type="button" > URBANISME ET LOGEMENT</button> <!-- onclick="redirect('nom_de_la_categorie')" --> 
     </div>
+    <script>
+        function redirect(category) {
+            console.log(`Redirecting to article.html?category=${category}`);
+            window.location.href = `article.html?category=${category}`;
+        }
+    </script>
   </nav>
     <div>
         <h1 style="font-size: 4vw; font-style: italic; margin: 20px;">
@@ -114,7 +120,7 @@
             </div>
         </div>
     </div>
-    <script>
+    <!--<script>
     const queryString = window.location.search;
     console.log(queryString);
     const urlParams = new URLSearchParams(queryString);
@@ -136,5 +142,5 @@
         location.href = newUrl;
     }
 
-    </script>
+    </script> -->
 </body>
