@@ -15,7 +15,7 @@
 .progress-bar {
     display: flex;
     justify-content: space-between;
-    width: 80%;
+    width: 100%;
     /*espacement des lignes entre les ronds*/
     position: absolute;
 }
@@ -92,7 +92,7 @@
     background: var(--primary-color);
     color: var(--primary-text-color);
     text-align: center;
-    padding: 10px;
+    padding: 10px 0;
     font-size: 20px;
     font-weight: bold;
     border-bottom: 2px solid rgb(163, 161, 161);
