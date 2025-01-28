@@ -132,6 +132,21 @@
     margin-bottom: 10px;
 }
 
+.message.theme-tech {
+    background: var(--user-color);
+    color: var(--user-text-color);
+}
+
+.message.theme-agro {
+    background: var(--user-color);
+    color: var(--user-text-color);
+}
+
+.message.theme-arti {
+    background: var(--user-color);
+    color: var(--user-text-color);
+}
+
 #svg-container svg {
     background: radial-gradient(circle at center, var(--bg-color) 60%, transparent 40%);
   }
