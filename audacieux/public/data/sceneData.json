@@ -28,24 +28,81 @@
         
         
         {
-          "id": "svgElement2",
-          "type": "svg",
-          "src": "assets/graphic/2PLAN_ILLUSTRATIONS.svg",
-          "z": 8,
-          "keyframes": [
+          "id": "river",
+          "type": "group",
+          "src": "",
+          "z": 9,
+          "subElement":[
+            {
+              "id": "svgElement2",
+              "type": "svg",
+              "src": "assets/graphic/2PLAN_ILLUSTRATIONS.svg",
+              "z": 8,
+              "keyframes": [
+                {
+                  "time": 0,
+                  "x": 0,
+                  "y": 0,
+                  "rotation": 0,
+                  "scale": 85
+                }
+              ]
+            },
+            {
+              "id": "ecluse",
+              "type": "lottie",
+              "src": "assets/graphic/ecluse.json",
+              "z": 9,
+              "keyframes": [
+                {
+                  "time": 0,
+                  "lotti_time":0,
+                  "x": -8550,
+                  "y": -10,
+                  "rotation": 0,
+                  "scale": 13
+                },
+                {
+                  "time": 19,
+                  "lotti_time":18,
+                  "x": -8550,
+                  "y": -10,
+                  "rotation": 0,
+                  "scale": 13
+                },
+                {
+                  "time": 19,
+                  "lotti_time":18,
+                  "x": -8550,
+                  "y": -10,
+                  "rotation": 0,
+                  "scale": 13
+                },
+                {
+                  "time": 20,
+                  "lotti_time":83,
+                  "x": -8550,
+                  "y": -10,
+                  "rotation": 0,
+                  "scale": 13
+                }
+              ]
+            }
+          ],
+          "keyframes":[
             {
               "time": 0,
               "x": 12000,
               "y": 0,
               "rotation": 0,
-              "scale": 85
+              "scale": 1
             },
             {
               "time": 100,
               "x": -7500,
               "y": 0,
               "rotation": 0,
-              "scale": 85
+              "scale": 1
             }
           ]
         },
@@ -132,9 +189,23 @@
               "scale": 65
             },
             {
-              "time": 100,
+              "time": 20,
               "x": 9000,
               "y": 0,
+              "rotation": 0,
+              "scale": 65
+            },
+            {
+              "time": 20.5,
+              "x": 9000,
+              "y": -75,
+              "rotation": 0,
+              "scale": 65
+            },
+            {
+              "time": 100,
+              "x": 9000,
+              "y": -75,
               "rotation": 0,
               "scale": 65
             }

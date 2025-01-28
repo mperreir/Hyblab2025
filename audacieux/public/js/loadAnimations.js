@@ -1,6 +1,10 @@
 
 
 setTimeout(() => {
+
+    const front_tree = document.getElementById("GROUPE_ARBRES-2");
+    front_tree.remove();
+
     const groups = document.querySelectorAll('g[id^="HÉLICES-"]');
     const exception = {
         6:5,

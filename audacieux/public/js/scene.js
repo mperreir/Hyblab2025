@@ -110,6 +110,19 @@ function updateKeyframes(value, time, f) {
       value.set_scale(
         f*interpolate(time, init_o.time, end_o.time, init_o.scale, end_o.scale)
       );
+
+      if(value.lottieAnim){
+        console.log(value);
+        // Assuming this.lottieAnim is already initialized
+        const percentage = interpolate(time, init_o.time, end_o.time, init_o.lotti_time, end_o.lotti_time); // The percentage you want to go to (e.g., 50% for halfway)
+        const totalFrames = value.lottieAnim.totalFrames;
+        const targetFrame = (percentage / 100) * totalFrames;
+        
+        console.log(percentage);
+        // Move to the calculated frame and stop there
+        value.lottieAnim.goToAndStop(targetFrame, true);
+      }
+
     }
   }
 

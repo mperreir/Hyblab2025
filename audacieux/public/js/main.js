@@ -73,13 +73,14 @@ document.addEventListener('mousemove', (event) => {
   const popup = document.getElementById('mouse-popup');
   const xPercent = (event.clientX / window.innerWidth * 100).toFixed(2);
   const yPercent = (event.clientY / window.innerHeight * 100).toFixed(2);
+  
 
   // Mettre à jour la position du popup
   popup.style.left = `${event.clientX + 10}px`;
   popup.style.top = `${event.clientY + 10}px`;
 
   // Mettre à jour le contenu
-  popup.textContent = `X: ${xPercent}% | Y: ${yPercent}% | time: ${sceneManager.time}`;
+  popup.textContent = `X: ${event.x}px | Y: ${event.y}px | time: ${(Math.round(sceneManager.time))}`;
 
   // Afficher le popup
   popup.style.display = 'block';
