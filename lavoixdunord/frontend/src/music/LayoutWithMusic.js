@@ -3,15 +3,14 @@ import backgroundMusic from './test1.mp3';
 import { MdMusicOff, MdMusicNote } from 'react-icons/md';
 
 const LayoutWithMusic = ({ children }) => {
-    const [isPlaying, setIsPlaying] = useState(true);
+    const [isPlaying, setIsPlaying] = useState(false);
     const [isMuted, setIsMuted] = useState(false);
     const audioRef = useRef(null);
 
     const togglePlay = () => {
         if (audioRef.current) {
             if (audioRef.current.paused) {
-                // audioRef.current.play();
-                // TODO: Uncomment the line above to enable music
+                audioRef.current.play();
             } else {
                 audioRef.current.pause();
             }
