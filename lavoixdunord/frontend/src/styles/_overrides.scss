@@ -35,6 +35,8 @@ h1, .h1 {
     background-color: $body-bg;
     /* Couleur de fond pour l'app */
     display: flex;
+    position: relative;
+    z-index: 1;
 }
 
 /* Styles spécifiques pour les écrans plus grands (desktop) */

@@ -12,7 +12,7 @@ const RulesPage = () => {
     return (
         <>
             <div className="arbre"></div>
-            <div className="background_rules z-0">
+            <div className="background_rules">
                 <img src={`${basename}images/illustrations/bgreglevelo.png`} alt="velo" className="regle_velo" />
                 <div className="text-center p-4 mt-5">
                     <h1 className="text-white mb-4">LES RÈGLES</h1>

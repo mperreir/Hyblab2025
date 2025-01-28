@@ -17,8 +17,7 @@ const StartPage = () => {
 
 
     return (
-        <div className="start_page_bg w-100 position-relative">
-            <div className="arbre"></div>
+        <div className="start_page_bg w-100 position-relative z-1">
             <div className="mt-84 text-center">
                 <h1 className="text-white">DÉPART !</h1>
 
@@ -43,6 +42,7 @@ const StartPage = () => {
                 </button>
 
             </div>
+            <div className="arbre"></div>
         </div>
     );
 };
