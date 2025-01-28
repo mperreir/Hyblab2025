@@ -29,8 +29,8 @@ document.addEventListener("DOMContentLoaded", () => {
           button.addEventListener("click", () => {
             const sections = [
               data.festivalSizes,
+              data.mediationActions,
               data.ecologicalActions,
-              data.culturalMediationActions,
               data.riskPreventionActions,
             ];
   
@@ -89,8 +89,8 @@ document.addEventListener("DOMContentLoaded", () => {
           button.addEventListener("click", () => {
             const sections = [
               data.festivalSizes,
+              data.mediationActions,
               data.ecologicalActions,
-              data.culturalMediationActions,
               data.riskPreventionActions,
             ];
   
@@ -130,8 +130,8 @@ document.addEventListener("DOMContentLoaded", () => {
       .then(data => {
         const sections = [
           data.festivalSizes,
+          data.mediationActions,
           data.ecologicalActions,
-          data.culturalMediationActions,
           data.riskPreventionActions,
         ];
   
