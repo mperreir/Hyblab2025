@@ -237,7 +237,7 @@ async function histoire(texts, userName, signal){
         let answer;
 
         if (multipleChoices){
-            answer = await addAnswer(texts.reponses[i], "mutliple");
+            answer = await addAnswer(texts.reponses[i], "multiple");
         } else {
             answer = await addAnswer(texts.reponses[i]);
         }
