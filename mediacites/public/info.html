@@ -44,19 +44,19 @@
     </div>
 
     <div class="container-fluid" style="padding-left: 5vh;">
-      <div class="row">
-        <!-- Left Container (1/3 of the page) -->
-        <div class="col-4 left-container" style="width: 100%; height: 77vh; border: 1vh; border-radius: 4vh; position: sticky; top: 60px; display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start;">
-            <div class="logo">
-                <img src="img/logo_mediacites.png" alt="Logo">
+        <div class="row">
+            <!-- Left Container (1/3 of the page) -->
+            <div class="col-4 left-container" style="width: 100%; height: 77vh; border: 1vh; border-radius: 4vh; position: sticky; top: 60px; display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start;">
+                <div class="logo">
+                    <img src="img/logo_mediacites.png" alt="Logo">
+                </div>
+                <div class="description" style="border-radius: 4vh 4vh 4vh 4vh; width: 30vw; text-align: left;">
+                Découvrez la synthèse des décisions du conseil municipal en navigant à travers les différentes catégories.
+                </div>
+                <div class="actions">
+                    <button class="custom-button" onclick="location.href='navigation.html'">  ←  </button>
+                </div>
             </div>
-            <div class="description" style="border-radius: 4vh 4vh 4vh 4vh; width: 30vw; text-align: left;">
-              Découvrez la synthèse des décisions du conseil municipal en navigant à travers les différentes catégories.
-            </div>
-            <div class="actions">
-                <button class="custom-button" onclick="location.href='navigation.html'">  ←  </button>
-            </div>
-          </div>
             <!-- Right Container (2/3 of the page) -->
             <div class="col-8 right-container overflow-auto">
                 <!-- résumé -->
@@ -78,7 +78,7 @@
                         <p id="textkpi2" style="color: white;"><!-- TODO changer dynamiquement-->Texte résumé catégorie 1</p>
                     </div>
                 </div>
-              
+                
                 <!-- Pour en savoir plus -->
                 <div class="row" style="padding-right: 3vh;">
                     <div class="col" style="width: 100%; background-color: #3370E7; height: fit-content; border: 1vh solid white; border-radius: 4vh 4vh 4vh 4vh;">
@@ -88,60 +88,44 @@
                 </div>
                 <!-- Liens -->
                 <div class="row" style="padding-right: 3vh;">
-                    <div class="col col-to-sort-inside-of" style="width: 100%; background-color: #565656; height: fit-content; border: 1vh solid white; border-radius: 4vh 4vh 4vh 4vh;">
+                    <div class="col" style="width: 100%; background-color: #565656; height: fit-content; border: 1vh solid white; border-radius: 4vh 4vh 4vh 4vh;">
                         <div class="row">
                             <div class="col-8">
                                 <h3 class="d-flex" style="font-size: 4vw; color: white; text-align:left; font-style: italic;" >Crédits</h3>
                             </div>
                         </div>
-                        <div class="row row-to-sort">
-                            <!--TODO pouvoir trier-->
+                        <div class="row">
                             <div class="col-8">
                                 <p style="color: white;"> Ver sind the délibération?</p>
                             </div>
-                        </div>
-                        <script>
-                        function sortRows(criteria) {
-                            const rows = Array.from(document.querySelectorAll('.row-to-sort'));
-                            const container = document.querySelector('.col-to-sort-inside-of');
-
-                            rows.sort((a, b) => {
-                                const nameA = a.querySelector('.col-name-to-sort').innerText.toUpperCase();
-                                const nameB = b.querySelector('.col-name-to-sort').innerText.toUpperCase();
-                                const dateA = parseDate(a.querySelector('.col-date-to-sort').innerText);
-                                const dateB = parseDate(b.querySelector('.col-date-to-sort').innerText);
-
-                                function parseDate(dateStr) {
-                                    const [day, month, year] = dateStr.split('/').map(Number);
-                                    return new Date(year, month - 1, day);
-                                }
-
-                                if (criteria === 'alphabetical_asc') {
-                                    return nameA.localeCompare(nameB);
-                                } else if (criteria === 'alphabetical_desc') {
-                                    return nameB.localeCompare(nameA);
-                                } else if (criteria === 'chronological_asc') {
-                                    return dateA - dateB;
-                                } else if (criteria === 'chronological_desc') {
-                                    return dateB - dateA;
-                                }
-                            });
-
-                            rows.forEach(row => container.appendChild(row));
-                            const dropdownButton = document.querySelector('.dropdown-toggle');
-                            const selectedItem = document.querySelector(`#${criteria}`).innerText;
-                            dropdownButton.innerText = selectedItem;
-                        }
-
-                        document.querySelectorAll('.dropdown-item').forEach(item => {
-                            item.addEventListener('click', () => {
-                                sortRows(item.id);
-                            });
-                        });
-                        </script>
-                        
+                        </div>                       
                     </div>
                 </div>
+                <!-- Logos -->
+                <div class="row" style="padding-right: 3vh;">
+                    <div class="col-8" style="margin-left:1vh; margin-top:0.5vh; background-color: white; min-width: calc(100% - 1.5vh) !important; height: fit-content; border: 1vh solid black; border-radius: 4vh 4vh 4vh 4vh;">
+                        <div class="row align-items-center">
+                            <div class="col-1" style="width: max-content;"></div>
+                            <div class="col-2 text-center"><a href="http://www.polytech.univ-nantes.fr/"><img src="ecoles/logo_polytech.png" alt="Polytech Nantes" class="img-fluid"></a></div>
+                            <div class="col-2 text-center"><a href="http://www.agrnantes.fr"><img src="ecoles/logo_agr.png" alt="AGR école de l'image" class="img-fluid"></a></div>
+                            <div class="col-2 text-center"><a href="https://www.sciencespo-rennes.fr/"><img src="ecoles/logo_sciencespo.svg" alt="SciencesPo" class="img-fluid"></a></div>
+                            <div class="col-2 text-center"><img id="opensource" src="logo_opensource.png" alt="Open source" class="img-fluid"></div>    
+                            <div class="col-2 text-center"><img id="cc" src="logo_cc.png" alt="Creative commons" class="img-fluid"></div>
+                            <div class="col-1" style="width: max-content;"></div>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-1" style="width: max-content;"></div>
+                            <div class="col-2 text-center"><a href="http://www.ouestmedialab.fr/"><img src="logo_oml.png" alt="Ouest Médialab" class="img-fluid"></a></div>
+                            
+                            <div class="col-2 text-center"><img src="img/logo_hyblab.png" id="logo-hyblab" alt="logo hyblab" class="img-fluid"></div>
+                            <div class="col-2 text-center"><a href="http://www.nantesmetropole.fr/"><img class="img-fluid" src="institutionnels/logo_nantesmetropole.png" alt="Nantes Métropole"></a></div>
+                            <div class="col-2 text-center"><img src="institutionnels/logo_pdl.png" alt="Pays de la Loire" class="img-fluid"></div>
+                            <div class="col-2 text-center"><img src="img/logo-mediacites-full.svg" alt="Médiacités" class="img-fluid"></div>
+                            <div class="col-1" style="width: max-content;"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Bouton remonter-->
                 <div class="row" style="padding-right: 3vh;">
                     <div class="col" style="width: 100%; text-align: right;">
                         <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="btn btn-outline-secondary" style="font-size: 2vw; border-radius: 4vh 4vh 4vh 4vh;">
