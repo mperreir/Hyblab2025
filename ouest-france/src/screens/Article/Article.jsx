@@ -21,7 +21,7 @@ const Article = ({data}) => {
                 scrub: true,
                 start: "top top",
                 end: "bottom bottom",
-                markers: true,
+                markers: false,
             }
         }).set(ballRef.current, {opacity: 1})
             .to(ballRef.current, {
