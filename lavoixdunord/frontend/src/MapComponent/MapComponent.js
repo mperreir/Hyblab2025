@@ -119,7 +119,6 @@ const MapComponent = ({ difficulty, level_id, currentQuestionIndex, onClose, isV
                 });
 
 
-
                 // Séquence d'animation
                 if (currentQuestionIndex === 0) {
                     // Vue initiale large de la région
