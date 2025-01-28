@@ -84,12 +84,22 @@ const MapComponent = ({ difficulty, level_id, currentQuestionIndex, onClose, isV
                 // Nettoyer les anciens éléments
                 if (popup.current) popup.current.remove();
                 if (marker.current) marker.current.remove();
-                if (map.current.getSource('route')) {
+
+                // Remove existing layers and source if they exist
+                if (map.current.getLayer('route-glow')) {
+                    console.log("remove layer " + 'route-glow')
+                    map.current.removeLayer('route-glow');
+                }
+                if (map.current.getLayer('route')) {
+                    console.log("remove layer " + 'route')
                     map.current.removeLayer('route');
+                }
+                if (map.current.getSource('route')) {
+                    console.log("remove layer " + 'route')
                     map.current.removeSource('route');
                 }
 
-                // Ajouter le GeoJSON
+                // Add the new source and layers
                 map.current.addSource('route', {
                     type: 'geojson',
                     data: geoJsonData
