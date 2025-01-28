@@ -274,7 +274,7 @@
     /* border-radius: 20px; */
     cursor: pointer;
     font-size: 16px;
-    background-image: url('../img/send.png');
+    background-image: url('../img/icons/send.png');
     background-size: 20px;
     background-repeat: no-repeat;
     background-position: center;
@@ -291,7 +291,7 @@
     right: 20px;
     width: 70px;
     height: 70px;
-    background: url('../img/tap.png') no-repeat center center;
+    background: url('../img/icons/tap.png') no-repeat center center;
     /* Replace with your icon */
     background-size: contain;
     animation: click-effect 1s infinite ease-in-out;
