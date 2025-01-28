@@ -26,10 +26,15 @@ const DifficultyPage = () => {
         <div className="bg-white text-dark border border-41 border-light rounded-3 mx-5 mt-5 p-4">
           <h6 className="py-4">CHOISISSEZ UN NIVEAU DE DIFFICULTÉ</h6>
 
-          <div className="d-flex flex-column gap-5 pb-4"> 
+          <div className="d-flex flex-column gap-4 pb-4"> 
           {/* d-flex flex-column  */}
             {/* gap-5 pb-5 px-2 */}
-            <div className="form-check border rounded-5 border-secondary py-3 px-4">
+            <div className="form-check border rounded-5 border-secondary py-3 px-4"
+              style={{
+                minHeight: '48px',
+                alignContent: 'center'
+              }}
+            >
               <input
                 className={`form-check-input ms-2 ${selectedDifficulty === 1 ? "bg-dark" : ""}`}
                 type="radio"
@@ -42,7 +47,12 @@ const DifficultyPage = () => {
                 FACILE
               </label>
             </div>
-            <div className="form-check border rounded-5 border-secondary py-3 px-4">
+            <div className="form-check border rounded-5 border-secondary py-3 px-4"
+              style={{
+                minHeight: '48px',
+                alignContent: 'center'
+              }}
+            >
               <input
                 className={`form-check-input ms-2 ${selectedDifficulty === 2 ? "bg-dark" : ""}`}
                 type="radio"
@@ -58,9 +68,9 @@ const DifficultyPage = () => {
           </div>
         </div>
 
-        <div className="d-flex flex-column mx-5 mt-5">
+        <div className="d-flex flex-column m-5">
           <button
-            className="btn btn-lg btn-dark fw-bold mx-4"
+            className="btn btn-lg btn-dark fw-bold m-4 mt-1"
             onClick={handlePlayClick}
             disabled={!selectedDifficulty} // Désactiver tant qu'aucune difficulté n'est sélectionnée
           >
