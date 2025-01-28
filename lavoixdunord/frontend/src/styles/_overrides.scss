@@ -17,6 +17,10 @@
     font-size: 0.7rem;
 }
 
+h1, .h1 {
+    font-size: calc(2.5rem + 1.5vw);
+}
+
 /* Mobile-first styles (par défaut, pour les mobiles) */
 .mobile-container {
     width: 100%;
