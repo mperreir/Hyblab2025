@@ -5,7 +5,7 @@ import '@maptiler/sdk/dist/maptiler-sdk.css';
 import './MapComponent.css';
 
 const MAPTILER_KEY = 'JyM6ywnS0MKSWylOVlCe';
-const STYLE_ID = '0fba3e67-41a7-41ef-9765-2ff7b085fbaf';
+const STYLE_ID = "0fba3e67-41a7-41ef-9765-2ff7b085fbaf";
 
 const MapComponent = ({ difficulty, level_id, currentQuestionIndex, onClose, isVisible = true }) => {
     const mapContainer = useRef(null);
@@ -27,7 +27,8 @@ const MapComponent = ({ difficulty, level_id, currentQuestionIndex, onClose, isV
             try {
                 map.current = new maptilersdk.Map({
                     container: mapContainer.current,
-                    style: `https://api.maptiler.com/maps/${STYLE_ID}/style.json`,
+                    style: `https://api.maptiler.com/maps/${STYLE_ID}/style.json?key=${MAPTILER_KEY}`,
+                    // style: STYLE_ID,
                     zoom: 13,
                     interactive: false,
                     navigationControl: false,
