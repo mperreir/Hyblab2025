@@ -4,6 +4,9 @@ import * as maptilersdk from '@maptiler/sdk';
 import '@maptiler/sdk/dist/maptiler-sdk.css';
 import './MapComponent.css';
 
+const MAPTILER_KEY = 'JyM6ywnS0MKSWylOVlCe';
+const STYLE_ID = '0fba3e67-41a7-41ef-9765-2ff7b085fbaf';
+
 const MapComponent = ({ difficulty, level_id, currentQuestionIndex, onClose, isVisible = true }) => {
     const mapContainer = useRef(null);
     const map = useRef(null);
@@ -18,17 +21,35 @@ const MapComponent = ({ difficulty, level_id, currentQuestionIndex, onClose, isV
     useEffect(() => {
         if (!mapContainer.current) return;
 
-        maptilersdk.config.apiKey = 'JyM6ywnS0MKSWylOVlCe';
+        maptilersdk.config.apiKey = MAPTILER_KEY;
         
-        map.current = new maptilersdk.Map({
-            container: mapContainer.current,
-            // style: maptilersdk.MapStyle.STREETS,
-            style: "0fba3e67-41a7-41ef-9765-2ff7b085fbaf",
-            zoom: 13,
-            interactive: false,
-            navigationControl: false,
-            geolocateControl: false
-        });
+        const initMap = async () => {
+            try {
+                map.current = new maptilersdk.Map({
+                    container: mapContainer.current,
+                    style: `https://api.maptiler.com/maps/${STYLE_ID}/style.json`,
+                    zoom: 13,
+                    interactive: false,
+                    navigationControl: false,
+                    geolocateControl: false
+                });
+
+                // Attendre que la carte soit chargée
+                await new Promise((resolve, reject) => {
+                    map.current.on('load', resolve);
+                    map.current.on('error', reject);
+                });
+
+            } catch (error) {
+                console.error('Map initialization error:', error);
+                // Fallback au style par défaut si nécessaire
+                if (map.current) {
+                    map.current.setStyle(maptilersdk.MapStyle.STREETS);
+                }
+            }
+        };
+
+        initMap();
 
         return () => {
             if (popup.current) popup.current.remove();
