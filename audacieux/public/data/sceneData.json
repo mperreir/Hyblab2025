@@ -3,12 +3,17 @@
     {
       "id": "MARCHÉ-2",
       "onload": {"func":"colorScript", "args":[]},
-      "script": {"func":"loadSceneScript", "args":["scene1"]}
+      "script": {"func":"loadSceneScript", "args":["marche"]}
     },
     {
       "id": "PÉNICHE",
       "onload": {"func":"colorScript", "args":[]},
       "script": {"func":"loadSceneScript", "args":["start_peniche"]}
+    },
+    {
+      "id":"LIBRAIRIE",
+      "onload": {"func":"colorScript", "args":[]},
+      "script": {"func":"loadSceneScript", "args":["Librairie"]}
     }
   ],
 

@@ -1,10 +1,10 @@
 {
     "scenes":[
         {
-            "id": "scene1",
+            "id": "marche",
             "url": "assets/graphic/trebe.png",
             "box":[
-                { "left": "20%", "top": "30%", "width": "15%", "height": "20%", "script":{"func":"leaveImage", "args":[]} }
+                { "left": "20%", "top": "30%", "width": "15%", "height": "20%", "script":{"func":"leaveImage", "args":[]}, "onload": {"func":"setMaxTime", "args":[75] }}
             ]
         },
         {
@@ -18,10 +18,17 @@
             "id": "abdonia",
             "url": "assets/graphic/Abdonia.png",
             "box":[
-                { "left": "3%", "top": "24%", "width": "40%", "height": "70%", "script": {"func":"leaveImage", "args":[]}, "onload": {"func":"setMaxTime", "args":[20]} }
+                { "left": "3%", "top": "24%", "width": "40%", "height": "70%", "script": {"func":"leaveImage", "args":[]}, "onload": {"func":"setMaxTime", "args":[42]} }
+            ]
+        },
+        
+        {
+            "id": "Librairie",
+            "url": "assets/graphic/Abdonia.png",
+            "box":[
+                { "left": "35%", "top": "44%", "width": "40%", "height": "70%", "script": {"func":"leaveImage", "args":[]}, "onload": {"func":"setMaxTime", "args":[100]} }
             ]
         }
-
 
     ]
 }
