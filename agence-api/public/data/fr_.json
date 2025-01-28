@@ -65,7 +65,9 @@
         "title1": "Résultats de ton aventure",
         "paragraphe1": "Et voilà {nom} tu as finis ton aventure ! Découvre en cliquant sur les cases tes résultats selon les catégories.",
         "title2": "Des profils qui te ressemblent",
-        "paragraphe2": "Découvre des profils et articles qui te ressemblent provenant du site de l'agence API !"
+        "paragraphe2": "Découvre des profils et articles qui te ressemblent provenant du site de l'agence API !",
+        "title3": "Ce projet a été réalisé par l'équipe Bobers :",
+        "paragraphe3": "Fanny Bezançon, Amélie Jaunet, Naëlle Klein, Mengyi Lai, Eliot Leguy, Chloé Mallet, Alan Petit, Nicolas Thomas, Dorian Vidal"
     },
     "agro": {
         "introduction": [

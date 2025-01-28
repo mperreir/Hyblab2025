@@ -38,9 +38,12 @@ function initMenu(){
         goCharactersLink.addEventListener("click", (e) => {
             e.preventDefault();              // 阻止 href 跳转
             menuPopups[index].classList.add("hidden");  // 先关菜单
-            menuBtns[index].checked = false;
+            menuBtns.forEach((menuBtn) => { 
+                menuBtn.checked = false; 
+            });
             switchTheme("theme-default");
             changeApiName("Api");
+            document.getElementById('cardsContainer').innerHTML='';
             currentQuestion = 1;
             updateProgress();
             swiper.slideTo(1);
