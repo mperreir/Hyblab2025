@@ -69,7 +69,7 @@
               <img src="img/clue-1.png">
             </div>
             <div class="col-12">
-              Le premier bandit en auto était franc-comtois
+              Le premier bandit en auto était franc-comtois...
             </div>
             
           </div>
@@ -88,7 +88,7 @@
               <img src="img/clue-2.png">
             </div>
             <div class="col-12">
-              L’inquiétant concierge de l’hôtel Continental de Strasbourg
+              L’inquiétant concierge de l’hôtel Continental de Strasbourg...
             </div>
             
           </div>
@@ -105,7 +105,7 @@
               <img src="img/clue-3.png">
             </div>
             <div class="col-12">
-              Il met enceinte et tue une de ses paroissienne
+              Il met enceinte et tue une de ses paroissienne...
             </div>
             
           </div>
@@ -123,7 +123,7 @@
               <img src="img/clue-4.png">
             </div>
             <div class="col-12">
-              L’enlèvement d’Eric Peugeot : héritier du Lion disparaît
+              L’enlèvement d’Eric Peugeot : l'héritier du Lion disparaît...
             </div>
             
           </div>
@@ -143,7 +143,7 @@
               <img src="img/clue-5.png">
             </div>
             <div class="col-12">
-              Peiper, l’ancien SS réfugié dans une forêt
+              Peiper, l’ancien SS réfugié dans une forêt...
             </div>
             
           </div>
@@ -163,7 +163,7 @@
               <img src="img/clue-6.png">
             </div>
             <div class="col-12">
-              L'itinéraire du "routard du crime"
+              L'itinéraire du "routard du crime"...
             </div>
             
           </div>
@@ -214,24 +214,58 @@
     <p class="mb-3">
       Découvrez aussi Nancy, Besançon et Metz comme vous ne l’imaginiez pas avec notre podcast quotidien « Le savez-vous ? » sur notre site ou les applications dédiée comme Apple podcast en vous abonnant gratuitement.
     </p>
-    <a class="mt-3 btn btn-outline-light" href="">Nos podcasts</a>
+    <a class="mt-3 btn btn-outline-light" onclick="displayPlateformModal()">Nos podcasts</a>
   </div>
   <div id="footer" class="z-0">
     <div id="folder"></div>
     <h1>Footer</h1>
+    <div id="logos">
+      <div class="row">
+        <div class="col-12">
+          <img id="hyblab-Logo" src="img/footer/logo_hyblab.png" alt="">
+        </div>
+        <div class="col-6 align-items-center d-flex">
+          <img id="agr-Logo" src="img/footer/logo_agr.png" alt="">
+        </div>
+        <div class="col-6 align-items-center d-flex">
+          <img id="poly-Logo" src="img/footer/logo_polytech.png" alt="">
+        </div>
+        <div class="col-4 align-items-center d-flex mt-3">
+          <img id="oml-logo" src="img/footer/logo_oml.png" alt="">
+        </div>
+        <div class="col-2 align-items-center d-flex mt-3">
+          <img id="cc-logo" src="img/footer/logo_cc.png" alt="">
+          <img id="opensource-logo" src="img/footer/logo_opensource.png" alt="">
+        </div>
+        <div class="col-3 align-items-center d-flex mt-3">
+          <img id="est-logo" src="img/ler.png" alt="">
+        </div>
+        <div class="col-3 align-items-center d-flex mt-3">
+          <img id="nantes-logo" src="img/footer/logo_nantesmetropole.png" alt="">
+        </div>
+      </div>
+    </div>
   </div>
 
 
 </main>
 <a href="" id="logo-ler" class="z-3"><img src="img/ler.png" alt=""></a>
 <div class="z-3" id="modals"></div>
-<div id="links">
+<div id="links" class="z-2">
+  <img src="img/close.png" class="cross" onclick="hidePlateformModal()">
   <div class="title">
     <h1>Retrouvez tout nos podcasts</h1>
   </div>
   <div class="links_list">
     <img src="img/dech_blanc.png" alt="" class="dech-transition-haut z-n1">
-  </div>
+    <div>
+    <a target="_blank" href="https://podcasts.apple.com/fr/podcast/les-grands-crimes-de-lest/id1539045554">Apple Podcast</a>
+    <a target="_blank" href="https://www.deezer.com/fr/show/1939822">Deezer</a>
+    <a target="_blank" href="https://open.spotify.com/show/0Dpus13Jw1K1xi7jJL7MyZ">Spotify</a>
+    <a target="_blank" href="https://www.youtube.com/@Lesgrandscrimesdelest">YouTube</a>
+    <a target="_blank" href="https://www.estrepublicain.fr/faits-divers-justice/2021/01/31/decouvrez-les-grands-crimes-de-l-est-notre-podcast-sur-les-crimes-et-faits-divers-qui-ont-marque-la-lorraine-et-la-franche-comte">L'Est Républicain</a>
+  </div></div>
 </div>
+<script src="https://player.vimeo.com/api/player.js"></script>
 </body>
 </html>

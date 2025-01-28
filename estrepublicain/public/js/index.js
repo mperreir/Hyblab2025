@@ -11,44 +11,6 @@ const swiper = new Swiper("#mySwiper", {
 
 let activeModal = -1;
 
-const initSlide1 = async function(){
-    // Get logo element
-    const logo = document.querySelector('#logo-hyblab');
-
-    // (Re)set initial scale of logo
-    logo.setAttribute('style', 'transform :scale(1);');
-
-    // Animate hyblab logo and make shrink on click
-    anime({
-        targets: '#logo-hyblab',
-        scale: 1.2,
-        easing: 'easeInOutQuad',
-        direction: 'alternate',
-        loop: true
-    });
-
-    // Add click listener
-    logo.addEventListener('click', () => {
-        anime({
-            targets: '#logo-hyblab',
-            scale: 0
-        });
-        swiper.slideNext()
-    });
-
-    // Retrieve the partner's topic from our API
-    let response = await fetch('api/topic');
-    const data1 = await response.json();
-
-    // Get some dummy data
-    response = await fetch('data/dummy.json');
-    const data2 = await response.json();
-
-    // Update the DOM to insert topic and data
-    const footer = document.querySelector('footer p');
-    footer.textContent = `Our partner is "${data1.topic}" and here is "${data2.message}" retrieved on the server.`;
-};
-
 let podcastsDataset = [];
 
 let scrollCoor = [0, 0]
@@ -103,6 +65,18 @@ function displayRecommended(type) {
     }
 }
 
+function pauseResume (id) {
+    var iframe = document.getElementById('video' + id.toString());
+    var player = new Vimeo.Player(iframe);
+    player.getPaused().then(function (paused) {
+        if (paused) {
+            player.play()
+        } else {
+            player.pause()
+        }
+    });
+}
+
 let swiperContainer = document.getElementById("swiper-wrapper")
 let section;
 let div;
@@ -132,6 +106,9 @@ fetch('api/videos')
                 podcast.classList.add("col-md-3")
                 let vignette = document.createElement("div")
                 vignette.classList.add("vignette")
+                if (idx + 1 < 34) {
+                    vignette.style.backgroundImage = "url('" + "img/thumbnails/" + (idx + 1) + ".png')"
+                }
                 podcast.appendChild(vignette)
                 let h6 = document.createElement("h6")
                 h6.textContent = e.ShortTitle
@@ -167,7 +144,30 @@ fetch('api/videos')
                     let video = document.createElement("div")
                     video.classList.add("video-container")
                     video.classList.add("z-1")
+
+                    let videoIframe = document.createElement("iframe")
+
+                    videoIframe.id = "video" + idx
+                    videoIframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share"
+                    videoIframe.classList.add("w-100")
+                    videoIframe.style = "height: calc(100% - 46px)"
+                    videoIframe.src = "https://player.vimeo.com/video/" + e.VideoLink + "?amp;title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&autoplay=1&loop=1&controls=0";
+
+
+
+                    video.appendChild(videoIframe)
+
+                    let overlay = document.createElement("div")
+                    overlay.classList.add("overlay")
+                    overlay.classList.add("z-3")
+
+                    overlay.addEventListener("click", function () {
+                        console.log("clicked")
+                        pauseResume(idx)
+                    })
+
                     modal.appendChild(video)
+                    modal.appendChild(overlay)
                 }
 
                 let info = document.createElement("div")
@@ -263,6 +263,7 @@ fetch('api/videos')
                 svg1.appendChild(defs);
 
                 svg1.classList.add("svg1")
+                svg1.classList.add("z-0")
 
 
                 info.appendChild(svg1)
@@ -368,6 +369,11 @@ fetch('api/videos')
                         // Conversion des données JSON en objet (avec une promesse)
                         response.json().then(data => {
                             let relatedPodcasts = data.relatedPodcasts
+                            if (relatedPodcasts.length === 0) {
+                                let p = document.createElement("p")
+                                p.innerText = "Pas de vidéos."
+                                relatedByTagsDiv.appendChild(p)
+                            }
                             relatedPodcasts.forEach((p) => {
                                 let relatedP = document.createElement("div")
                                 relatedP.classList.add("podcast")
@@ -381,6 +387,9 @@ fetch('api/videos')
 
                                 let relatedVignette = document.createElement("div")
                                 relatedVignette.classList.add("vignette")
+                                if (p.podcast.id < 34) {
+                                    relatedVignette.style.backgroundImage = "url('" + "img/thumbnails/" + (p.podcast.id) + ".png')"
+                                }
                                 relatedP.appendChild(relatedVignette)
 
                                 let relatedH6 = document.createElement("h6")
@@ -421,6 +430,11 @@ fetch('api/videos')
                         // Conversion des données JSON en objet (avec une promesse)
                         response.json().then(data => {
                             let relatedPodcasts = data.videos
+                            if (relatedPodcasts.length === 0) {
+                                let p = document.createElement("p")
+                                p.innerText = "Pas de vidéos."
+                                relatedByDateDiv.appendChild(p)
+                            }
                             relatedPodcasts.forEach((p) => {
                                 let relatedP = document.createElement("div")
                                 relatedP.classList.add("podcast")
@@ -434,6 +448,9 @@ fetch('api/videos')
 
                                 let relatedVignette = document.createElement("div")
                                 relatedVignette.classList.add("vignette")
+                                if (p.id < 34) {
+                                    relatedVignette.style.backgroundImage = "url('" + "img/thumbnails/" + (p.id) + ".png')"
+                                }
                                 relatedP.appendChild(relatedVignette)
 
                                 let relatedH6 = document.createElement("h6")
@@ -467,6 +484,11 @@ fetch('api/videos')
                         // Conversion des données JSON en objet (avec une promesse)
                         response.json().then(data => {
                             let relatedPodcasts = Array.from(data.videos)
+                            if (relatedPodcasts.length === 0) {
+                                let p = document.createElement("p")
+                                p.innerText = "Pas de vidéos."
+                                relatedByDepDiv.appendChild(p)
+                            }
                             relatedPodcasts.forEach((p) => {
                                 let relatedP = document.createElement("div")
                                 relatedP.classList.add("podcast")
@@ -517,3 +539,11 @@ fetch('api/videos')
             })
         })
     })
+
+function displayPlateformModal () {
+    document.getElementById("links").style.display = "block"
+}
+
+function hidePlateformModal () {
+    document.getElementById("links").style.display = "none"
+}
