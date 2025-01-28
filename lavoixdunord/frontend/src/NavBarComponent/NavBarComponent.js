@@ -84,7 +84,7 @@ const NavBarComponent = ({ showMap, setShowMap }) => {
                         {showMap.btn ?
                             <button className='btn btn-sm btn-outline-light border-2 fw-medium'
                                 onClick={() => { setShowMap({btn: true, map: !showMap.map}) }}
-                            >Voir la carte</button> : ""}
+                            >VOIR LA CARTE</button> : ""}
 
                         {shouldShowBreadcrumb() ? (
                             <Breadcrumb className="mb-0" style={{ marginRight: '20px' }}>
