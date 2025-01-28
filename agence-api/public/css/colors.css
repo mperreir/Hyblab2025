@@ -16,8 +16,8 @@
   
   /* Agro Theme - Green */
   .theme-agro {
-    --user-text-color: #1d1d1d;
-    --user-color: #f8b100;
+    --user-text-color: #FFFF;
+    --user-color: #edb401;
     --accent-color: rgba(248, 177, 0, 0.8);
   }
   
