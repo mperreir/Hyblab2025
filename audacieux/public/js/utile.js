@@ -52,6 +52,45 @@ class Player {
 
 
 
+function colorizeAllImages(selector) {
+    const images = document.querySelectorAll(selector);
+
+    if (images.length === 0) {
+        console.error("Aucune image correspondante trouvée pour le sélecteur :", selector);
+        return;
+    }
+
+    images.forEach(image => {
+        colorizeImage(image);
+    });
+}
+
+function colorizeImage(imageElement) {
+    if (!imageElement) {
+        console.error("Aucun élément d'image fourni.");
+        return;
+    }
+
+    let isClicked = false;
+
+    imageElement.addEventListener("click", () => {
+        imageElement.style.filter = "none";
+        isClicked = true;
+    });
+
+    imageElement.addEventListener("mouseover", () => {
+        if (!isClicked) {
+            imageElement.style.filter = "none";
+        }
+    });
+
+    imageElement.addEventListener("mouseout", () => {
+        if (!isClicked) {
+            imageElement.style.filter = "grayscale(100%)";
+        }
+    });
+}
+
 /*
  * Crée un popup personnalisé avec une pointe triangulaire.
  * @param {Object} options - Options pour personnaliser le popup.
@@ -63,7 +102,8 @@ class Player {
  * @param {Object} options.customStyles - Styles CSS supplémentaires pour personnaliser le popup.
  * @param {function} options.onClose - Fonction appelée lorsque le popup est fermé.
  */
-function createPopup(options) {
+function createPopup(idTarget, options) {
+    let state = 0;
     const {
         title = "Popup Title",
         message = "This is a message",
@@ -81,6 +121,7 @@ function createPopup(options) {
     const popupTitle = document.createElement("h2");
     const popupMessage = document.createElement("p");
     const closeButton = document.createElement("button");
+    closeButton.id = "closeButton";
     const popupTriangle = document.createElement("div"); // Pointe triangulaire
 
     // Ajouter les classes pour le style
@@ -101,8 +142,8 @@ function createPopup(options) {
         left: 0,
         width: "100%",
         height: "100%",
-        //backgroundColor: "rgba(0, 0, 0, 0.5)",
-        display: "flex",
+        //backgroundColor: "rgba(0, 0, 0, 0.5)", // Couleur de fond semi-transparente
+        display: "none", // Commence caché
         justifyContent: "center",
         alignItems: "center",
         zIndex: 1000,
@@ -114,11 +155,11 @@ function createPopup(options) {
         width: width, // Taille ajustable
         height: height, // Taille ajustable
         textAlign: "center",
-        //backgroundColor: "#007BFF",
+        //backgroundColor: "#ffffff",
         backgroundImage: `url('${backgroundImage}')`,
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
-        color: "white",
+        color: "White",
         padding: "20px",
         borderRadius: "10px",
         //boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
@@ -154,15 +195,13 @@ function createPopup(options) {
     });
 
     // Ajouter les événements
-    closeButton.addEventListener("click", () => {
-        document.body.removeChild(popupOverlay);
-        onClose();
-    });
-    popupOverlay.addEventListener("click", (e) => {
-        // Si on clique à l'extérieur du popupContainer (c'est-à-dire sur l'overlay)
-        if (e.target === popupOverlay) {
-            document.body.removeChild(popupOverlay);
-            onClose(); // Appeler la fonction onClose si définie
+    document.getElementById(idTarget).addEventListener("click", () => {
+        if (state === 0) {
+            popupOverlay.style.display = "flex"; // Affiche le popup
+            state = 1; // Passe l'état à actif
+        } else {
+            popupOverlay.style.display = "none"; // Cache le popup
+            state = 0; // Réinitialise l'état
         }
     });
 
@@ -178,3 +217,222 @@ function createPopup(options) {
 
     return popupMessage;
 }
+
+function createPopupTuto(closeDiv,options) {
+    const {
+        title = "Popup Title",
+        message = "This is a message",
+        width = "300px",
+        height = "200px",
+        backgroundImage = "",
+        customStyles = {},
+        onClose = () => {},
+        closeOnScroll = false,
+        closeOnClick = false,
+    } = options;
+
+    // Créer les éléments du popup
+    const popupOverlay = document.createElement("div");
+    popupOverlay.id= "all";
+    const popupContainer = document.createElement("div");
+    const popupTitle = document.createElement("h2");
+    const popupMessage = document.createElement("p");
+    const closeButton = document.createElement("button");
+    const popupTriangle = document.createElement("div"); // Pointe triangulaire
+
+    // Ajouter les classes pour le style
+    popupOverlay.className = "popup-overlay";
+    popupContainer.className = "popup-container";
+
+    // Ajouter le contenu
+    popupTitle.textContent = title;
+    popupMessage.innerHTML = message;
+
+    // Appliquer les styles de base
+    Object.assign(popupOverlay.style, {
+        position: "fixed",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "100%",
+        //backgroundColor: "rgba(0, 0, 0, 0.5)",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        zIndex: 1000,
+        ...customStyles.Overlay,
+    });
+
+    Object.assign(popupContainer.style, {
+        position: "relative",
+        width: width, // Taille ajustable
+        height: height, // Taille ajustable
+        textAlign: "center",
+        backgroundColor: "#ffffff",
+        backgroundImage: `url('${backgroundImage}')`,
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        color: "black",
+        padding: "20px",
+        borderRadius: "10px",
+        //boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+        width: width,
+        height: height,
+        textAlign: "center",
+        position: "relative",
+        ...customStyles.container,
+    });
+
+    // Ajouter les événements
+
+
+    if (closeDiv) {
+        document.getElementById(closeDiv).addEventListener("click", () => {
+            if (document.body.contains(popupOverlay)) {
+                document.body.removeChild(popupOverlay);
+                onClose();
+            }
+        });
+    }
+
+    if (closeOnScroll){
+        window.addEventListener("wheel", () => {
+        if (document.body.contains(popupOverlay)) {
+            document.body.removeChild(popupOverlay);
+            onClose();
+        }
+    });
+    }
+
+    if (closeOnClick){
+        window.addEventListener("click", () => {
+            if (document.body.contains(popupOverlay)) {
+                document.body.removeChild(popupOverlay);
+                onClose();
+            }
+        });
+    }
+    
+
+
+    // Assembler les éléments
+    popupContainer.appendChild(popupTitle);
+    popupContainer.appendChild(popupMessage); 
+    popupOverlay.appendChild(popupContainer);
+
+    // Ajouter le popup au DOM
+    document.body.appendChild(popupOverlay);
+
+    return popupMessage;
+}
+
+function waitForClick(targetElement) {
+    return new Promise((resolve) => {
+        document.getElementById(targetElement).addEventListener("click", () => {
+            console.log("Clic détecté !");
+            resolve(); // Le clic a été détecté
+        }, { once: true }); // L'événement est écouté une seule fois
+    });
+}
+
+
+
+
+// Exemple d'utilisation
+/*document.getElementById("popup").addEventListener("click", () => {
+    createPopup({
+        title: "Bienvenue",
+        message: "Ceci est une jolie bulle de texte créée en CSS !",
+        buttonText: "Fermer",
+        width: "300px",
+        height: "auto",
+        customStyles: {
+            container: {
+                backgroundColor: "#ffffff",
+                borderRadius: "30px",
+                color: "black",
+                transform: "scale(2)",  //Augmente la taille de 1.5x, ajustez cette valeur selon vos besoins 
+                transformOrigin: "center center",
+                
+            },
+            triangle: {
+                left: "10%", // Pointe centrée horizontalement
+                //transform: "translateX(-50%)", // Ajustement du centrage
+            },
+
+            closeButtonWrapper: {
+                // Appliquez un wrapper autour du bouton pour éviter qu'il soit transformé 
+                position: "relative",  // Assurez-vous que le wrapper soit positionné correctement
+                zIndex: "100"
+            },
+
+            closeButton: {
+                visibility: "hidden",
+            },
+        },
+    });
+});
+
+document.getElementById("liste de course").addEventListener("click", () => {
+    const player = new Player(2000, [
+        new Item("Éponges", 500),
+        new Item("Gants en latex", 300),
+        new Item("Boite de Pringles", 200)
+    ]);
+
+    const popupMessage = createPopup({
+        title: "Liste de course",
+        message: player.generateShoppingListHTML(),
+        buttonText: "Fermer",
+        width: "300px", // Augmente la taille de l'image
+        height: "auto", // Augmente la taille de l'image
+        backgroundImage : "img/postit.webp",
+        
+        customStyles: {
+            container :{
+                position: "relative",
+                width: "300px", // Taille ajustable
+                height: "auto", // Taille ajustable
+                textAlign: "center",
+                backgroundImage: "url('img/postit.webp')",
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+                padding: "20px",
+                boxSizing: "border-box",
+                borderRadius: "8px",
+                color: "black"
+            },
+            triangle: {
+                visibility: "hidden",
+            },
+            closeButton: {
+                visibility: "hidden",
+            },
+
+        },
+
+    });
+
+    // Simule un achat
+    setTimeout(() => {
+        player.buyObject(player.shopping_list[0]);
+        popupMessage.innerHTML = player.generateShoppingListHTML();
+    }, 2000);
+
+    setTimeout(() => {
+        player.buyObject(player.shopping_list[1]);
+        popupMessage.innerHTML = player.generateShoppingListHTML();
+    }, 6000);
+});
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    colorizeAllImages(".interactive-image");
+});
+
+*/
