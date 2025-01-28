@@ -16,6 +16,9 @@ try {
             if (question.hints && question.hints.image) {
                 question.hints.image = `${basename}${question.hints.image}`;
             }
+            if (question.map && question.map.image) {
+                question.map.image = `${basename}${question.map.image}`;
+            }
             return question;
         });
     };
