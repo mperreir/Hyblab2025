@@ -1,9 +1,9 @@
 /* Default Theme */
 :root {
     --bg-color: #1d1d1d;
-    --color-text-API: #FFFF;
+    --API-text-color: #FFFF;
     --user-text-color: #1d1d1d;
-    --primary-color: #484848;
+    --API-color: #484848;
     --user-color: #FFFF;
   }
   
@@ -23,7 +23,7 @@
   
   /* Arti Theme - Yellow */
   .theme-arti {
-    --user-text-color: #FFFF;
+    --user-text-color: #1d1d1d;
     --user-color: #fba6b8;
     --accent-color: rgba(255, 161, 184, 0.8);
   }

@@ -89,8 +89,8 @@
 }
 
 .chat-header {
-    background: var(--primary-color);
-    color: var(--primary-text-color);
+    background: var(--bg-color);
+    color: var(--color-text-API);
     text-align: center;
     padding: 10px 0;
     font-size: 20px;
