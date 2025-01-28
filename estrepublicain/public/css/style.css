@@ -82,7 +82,8 @@ h6 {
     position: absolute;
     bottom: -12vh;
     right: 0;
-    max-width: 70vw;
+    width: 70vw;
+    max-width: 400px;
 }
 
 #intro svg {
@@ -108,6 +109,29 @@ svg {
 
 #content{
     position:relative;
+}
+
+@media screen and (min-width: 768px) {
+    #content {
+        margin: 0 20vw;
+        padding-bottom: 150px;
+    }
+
+    .cases {
+        margin-bottom: 100px;
+    }
+
+    #retrouvez-nous {
+        padding-top: 300px !important;
+    }
+
+    .title {
+        padding-bottom: 100px !important;
+    }
+
+    .links_list div {
+        margin-top: -30vh;
+    }
 }
 
 #desc-case-1 {
@@ -159,10 +183,11 @@ svg {
 }
 
 .videos {
-    border:1px solid #368ABB;
-    background-color:#43A4DC;
+    border:1px solid #CB010A;
+    background-color: #CB010A;
     position:absolute;
     width: 40%;
+    max-width: 200px;
     aspect-ratio: 9/16;
     border-radius: 25px;
 }
@@ -179,21 +204,33 @@ svg {
 }
 #div1{
     right:0px;
+    background-image: url("../img/bonnot.gif");
+    background-size: cover;
 }
 #div2{
     left:0px;
+    background-image: url("../img/bonnot.gif");
+    background-size: cover;
 }
 #div3{
     right:0px;
+    background-image: url("../img/bonnot.gif");
+    background-size: cover;
 }
 #div4{
     left:0px;
+    background-image: url("../img/bonnot.gif");
+    background-size: cover;
 }
 #div5{
     right:0px;
+    background-image: url("../img/peiper.gif");
+    background-size: cover;
 }
 #div6{
     left:0px;
+    background-image: url("../img/bonnot.gif");
+    background-size: cover;
 }
 .line{
     position:absolute;
@@ -449,6 +486,7 @@ a {
 
 .links_list > div{
     padding: 0 10vw;
+    position: relative;
 }
 
 .links_list a {

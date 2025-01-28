@@ -18,7 +18,7 @@ let scrollCoor = [0, 0]
 function displayPodcastModal (index) {
     if (activeModal > -1) {
         document.getElementById("podcastModal" +activeModal ).style.display = "none"
-        pauseResume(activeModal)
+        pause(activeModal)
     }
     else {
         scrollCoor = [window.scrollY, window.scrollX]
@@ -32,12 +32,12 @@ function displayPodcastModal (index) {
         behavior: "instant",
     });
 
-    pauseResume(index)
+    resume(index, true)
 
 }
 
 function hidePodcastModal (index) {
-    pauseResume(index)
+    pause(index)
 
     activeModal = -1
     document.getElementById("podcastModal" +index ).style.display = "none"
@@ -71,16 +71,34 @@ function displayRecommended(type) {
     }
 }
 
-function pauseResume (id) {
+function pause (id) {
+    var iframe = document.getElementById('video' + id.toString());
+    if (iframe) {
+        var player = new Vimeo.Player(iframe);
+        player.pause()
+    }
+}
+
+function resume (id, reset = false) {
+    var iframe = document.getElementById('video' + id.toString());
+    if (iframe) {
+        var player = new Vimeo.Player(iframe);
+        if (reset) {
+            iframe.src = iframe.src
+        }
+        player.play()
+    }
+}
+
+function pauseResume (id, reset = false) {
     var iframe = document.getElementById('video' + id.toString());
     if (iframe) {
         var player = new Vimeo.Player(iframe);
         player.getPaused().then(function (paused) {
             if (paused) {
-                iframe.src = iframe.src
-                player.play()
+                resume(id, reset)
             } else {
-                player.pause()
+                pause(id)
             }
         });
     }
@@ -171,7 +189,6 @@ fetch('api/videos')
                     overlay.classList.add("z-2")
 
                     overlay.addEventListener("click", function () {
-                        console.log("clicked")
                         pauseResume(idx)
                     })
 
