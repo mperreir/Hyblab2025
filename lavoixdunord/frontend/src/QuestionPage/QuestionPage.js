@@ -227,15 +227,14 @@ const QuestionPage = () => {
           </div>
         </div>
 
-        {showMap && (
-          <MapComponent
-            questions={questions}
-            difficulty={difficulty}
-            level_id={id}
-            currentQuestionIndex={currentQuestionIndex}
-            onClose={() => onCloseMap()}
-          />
-        )}
+        <MapComponent
+          difficulty={difficulty}
+          level_id={id}
+          currentQuestionIndex={currentQuestionIndex}
+          onClose={() => onCloseMap()}
+          isVisible={showMap}
+        />
+
       </div>
     </>
   );
