@@ -18,9 +18,8 @@ export class SliderComponent implements OnChanges {
     }
 
     scroll_detected(): void {
-        let element = document.elementFromPoint(window.innerWidth/2, window.innerHeight*3/10)?.parentElement
+        let element = document.elementFromPoint(window.innerWidth/2, window.innerHeight/2)?.parentElement
         if (element && element.classList.contains('item') && !element.classList.contains('selected')) {
-            console.log(element);
             element.click();
         }
     }

@@ -1,6 +1,7 @@
 [
     {
         "title": "En roue libre",
+        "preview": "midjourney/velo0.png",
         "image": "midjourney/velo0.png",
         "situation": {
             "content": [
@@ -11,141 +12,142 @@
                 },
                 {
                     "type": "question",
-                    "text":"Et si Armstrong n’avait jamais été testé positif au dopage ?",
-                    "template": "full_page" 
+                    "text": "Et si Armstrong n’avait jamais été testé positif au dopage ?",
+                    "template": "full_page"
                 },
                 {
                     "type": "text",
-                    "text":"Direction 1999, pour changer le cours des événements.",
-                    "template": "full_page" 
+                    "text": "Direction 1999, pour changer le cours des événements.",
+                    "template": "full_page"
                 }
             ],
             "choices": [
+                {
+                    "text": "Il gagne le Tour, shooté aux corticoïdes et personne ne le sait.",
+                    "image": "midjourney/velo1.png",
+                    "position": "45%",
+                    "result": {
+                        "content": [
                             {
-                                "text": "Il gagne le Tour, shooté aux corticoïdes et personne ne le sait.",
-                                "image": "midjourney/velo1.png",
-                                "position": "45%",
+                                "type": "text",
+                                "text": "Lance Armstrong reste celui que l’on appelle «Robocop». Pas de scandale, pas de déchéance de ses titres : l’UCI n’a jamais pu prouver quoi que ce soit. La légende s’impose et inspire tout le peloton. Sa flamme n’éclaire pas seulement le chemin de la performance sportive... mais aussi celui du dopage.",
+                                "template": "full_page"
+                            },
+                            {
+                                "type": "text",
+                                "text": "Une nouvelle génération de fous de la pédale voit le jour. Jan Ullrich, Alberto Contador, Óscar Pereiro, Carlos Sastre… tous montent au créneau pour détrôner Lance. Une véritable lutte des titans.",
+                                "template": "full_page"
+                            },
+                            {
+                                "type": "text",
+                                "text": "Mais derrière les podiums, l’UCI et les organisateurs des grands tours et des classiques pataugent dans un marécage de seringues et de pilules. Les coureurs sont chargés comme des mules, et les scientifiques rivalisent d’ingéniosité pour développer des substances encore plus efficaces : cétones, nouveaux cocktails chimiques... La frontière entre l’humain et la machine devient floue.",
+                                "template": "full_page"
+                            },
+                            {
+                                "type": "question",
+                                "text": "Quelle est la réaction de l’UCI ?",
+                                "template": "full_page"
+                            }
+                        ],
+                        "choices": [
+                            {
+                                "text": "L’UCI déroule le tapis rouge aux dopés",
+                                "image": "midjourney/velo2.png",
+                                "position": "55%",
                                 "result": {
                                     "content": [
                                         {
                                             "type": "text",
-                                            "text": "Lance Armstrong reste celui que l’on appelle «Robocop». Pas de scandale, pas de déchéance de ses titres : l’UCI n’a jamais pu prouver quoi que ce soit. La légende s’impose et inspire tout le peloton. Sa flamme n’éclaire pas seulement le chemin de la performance sportive... mais aussi celui du dopage.",
+                                            "text": "Face à cette surenchère, l’UCI décide d’innover. Deux championnats distincts voient le jour : l’UCI Express et l’UCI World Tour.",
                                             "template": "full_page"
                                         },
                                         {
                                             "type": "text",
-                                            "text": "Une nouvelle génération de fous de la pédale voit le jour. Jan Ullrich, Alberto Contador, Óscar Pereiro, Carlos Sastre… tous montent au créneau pour détrôner Lance. Une véritable lutte des titans.",
+                                            "text": "D’un côté, la grande boucle améliorée devient le « Tour des dopés », où tout est permis. Sept jours suffisent pour atteindre l’arrivée. Les spectateurs retiennent leur souffle. Les plus impatients y trouvent leur compte. De l’autre, un « Tour classique», pour les puristes, où on roule au jus d’orange et à la sueur.",
                                             "template": "full_page"
                                         },
                                         {
                                             "type": "text",
-                                            "text": "Mais derrière les podiums, l’UCI et les organisateurs des grands tours et des classiques pataugent dans un marécage de seringues et de pilules. Les coureurs sont chargés comme des mules, et les scientifiques rivalisent d’ingéniosité pour développer des substances encore plus efficaces : cétones, nouveaux cocktails chimiques... La frontière entre l’humain et la machine devient floue.",
+                                            "text": "Et pendant ce temps, les siestes de papy devant la télé passent à la trappe : sur le Tour Express, chaque virage est une accélération. La Grande Boucle n’a jamais été aussi rapide et les coureurs rejoindront tous Le club des 27.",
                                             "template": "full_page"
-                                        },
-                                        {
-                                            "type": "question",
-                                            "text": "Quelle est la réaction de l’UCI ?",
-                                            "template": "full_page"
-                                        }
-                                    ],
-                                    "choices": [
-                                        {
-                                            "text": "L’UCI déroule le tapis rouge aux dopés",
-                                            "image": "midjourney/velo2.png",
-                                            "position": "55%",
-                                            "result": {
-                                                "content": [
-                                                    {
-                                                        "type": "text",
-                                                        "text": "Face à cette surenchère, l’UCI décide d’innover. Deux championnats distincts voient le jour : l’UCI Express et l’UCI World Tour.",
-                                                        "template": "full_page"
-                                                    },
-                                                    {
-                                                        "type": "text",
-                                                        "text": "D’un côté, la grande boucle améliorée devient le « Tour des dopés », où tout est permis. Sept jours suffisent pour atteindre l’arrivée. Les spectateurs retiennent leur souffle. Les plus impatients y trouvent leur compte. De l’autre, un « Tour classique», pour les puristes, où on roule au jus d’orange et à la sueur.",
-                                                        "template": "full_page"
-                                                    },
-                                                    {
-                                                        "type": "text",
-                                                        "text": "Et pendant ce temps, les siestes de papy devant la télé passent à la trappe : sur le Tour Express, chaque virage est une accélération. La Grande Boucle n’a jamais été aussi rapide et les coureurs rejoindront tous Le club des 27.",
-                                                        "template": "full_page"
-                                                    }
-                                                ]
-                                            }
-                                        },
-                                        {
-                                            "text": "L’UCI passe à l’action : le dopage c’est non !",
-                                            "image": "midjourney/velo3.png",
-                                            "position": "30%",
-                                            "result": {
-                                                "content": [
-                                                    {
-                                                        "type": "text",
-                                                        "text": "Face à ce manque de considération, l’UCI reprend la main. Les contrôles antidopage deviennent implacables. Les tricheurs sont traqués sans relâche, et une vague d’interdictions s’abat sur les coureurs pris la main dans le sac à vitamines.",
-                                                        "template": "full_page"
-                                                    },
-                                                    {
-                                                        "type": "text",
-                                                        "text": "Résultat : les cyclistes dopés sont bannis des compétitions internationales et du World Cycling Tour. Les organisateurs des grands circuits, en quête de crédibilité, adoptent une ligne dure.",
-                                                        "template": "full_page"
-                                                    },
-                                                    {
-                                                        "type": "text",
-                                                        "text": "Le Tour de France, autrefois sommet absolu du cyclisme, perd peu à peu de sa superbe. Sans ses têtes d’affiche éclaboussées par les scandales, l’épreuve peine à attirer l’attention. Les champions « clean » peinent à égaler l’aura de leurs prédécesseurs dopés. Le peloton devient plus homogène, mais aussi moins spectaculaire.",
-                                                        "template": "full_page"
-                                                    }
-                                                ]
-                                            }
                                         }
                                     ]
                                 }
                             },
                             {
-                                "text": "Il gagne le Tour, sans EPO dans le sang, juste des jambes en feu.",
-                                "image": "midjourney/velo4.png",
-                                "position": "25%",
+                                "text": "L’UCI passe à l’action : le dopage c’est non !",
+                                "image": "midjourney/velo3.png",
+                                "position": "30%",
                                 "result": {
                                     "content": [
                                         {
                                             "type": "text",
-                                            "text": "Victoire ! Lance Armstrong brandit son maillot jaune et succède à Marco Pantani sur le podium. Le champion américain s’impose sans tomber dans le panneau du dopage contrairement à certains de ses rivaux. L’EPO ? A la poubelle. Armstrong préfère « Rouler sans tricher », son nouveau mantra. Sa fondation Livestrong, créée en 1997, pour soutenir les malades du cancer devient un véritable QG de la lutte anti-dopage. Celui que l’on prénomme « Le Boss » ne se contente pas de gagner des courses : il sauve le cyclisme d’une overdose collective.",
+                                            "text": "Face à ce manque de considération, l’UCI reprend la main. Les contrôles antidopage deviennent implacables. Les tricheurs sont traqués sans relâche, et une vague d’interdictions s’abat sur les coureurs pris la main dans le sac à vitamines.",
                                             "template": "full_page"
                                         },
                                         {
                                             "type": "text",
-                                            "text": "La vie de Marco Pantani aussi prendra un tournant inattendu. Inspiré par le discours anti-dopage de Lance, « Le Pirate” décide de se reprendre en main. Fini les fréquentations douteuses et les excès qui l’entraînaient vers le fond. Au lieu de sombrer après ses déboires, Pantani trouve un nouveau souffle, encouragé par un cyclisme qui, grâce à Armstrong, commence à redorer son image.",
+                                            "text": "Résultat : les cyclistes dopés sont bannis des compétitions internationales et du World Cycling Tour. Les organisateurs des grands circuits, en quête de crédibilité, adoptent une ligne dure.",
                                             "template": "full_page"
-                                        }
-                                    ],
-                                    "choices": [
+                                        },
                                         {
-                                            "type": "question",
-                                            "text": "Et si Marco Pantani avait eu une seconde chance pour pédaler droit ?",
-                                            "image": "midjourney/velo5.png",
-                                            "position": "55%",
-                                            "result": {
-                                                "content": [
-                                                    {
-                                                        "type": "text",
-                                                        "text": "Pas de tragique chambre d’hôtel en 2004, pas d’overdose. À la place, Pantani revient au sommet. Armstrong et Lui deviennent les visages d’une nouvelle ère, mais surtout, d’une rivalité mythique. Dès l’an 2000, les deux se disputent les maillots jaunes sur les routes du Tour de France. Lance, méthodique et calculateur, contre Marco, tout feu tout flamme dans les montagnes. Les médias se régalent : c’est la version cycliste d’un blockbuster d’été.",
-                                                        "template": "full_page"
-                                                    },
-                                                    {
-                                                        "type": "text",
-                                                        "text": "Les deux hommes se rendent coup pour coup : un contre-la-montre pour Lance, une échappée légendaire pour Marco. Le coureur impulsif vs le grimpeur romantique. Chaque Tour devient une scène d’anthologie. Le public est en délire devant un cyclisme qui renaît de ses cendres.",
-                                                        "template": "full_page"
-                                                    }
-                                                ]
-                                            }
+                                            "type": "text",
+                                            "text": "Le Tour de France, autrefois sommet absolu du cyclisme, perd peu à peu de sa superbe. Sans ses têtes d’affiche éclaboussées par les scandales, l’épreuve peine à attirer l’attention. Les champions « clean » peinent à égaler l’aura de leurs prédécesseurs dopés. Le peloton devient plus homogène, mais aussi moins spectaculaire.",
+                                            "template": "full_page"
                                         }
                                     ]
                                 }
                             }
                         ]
+                    }
+                },
+                {
+                    "text": "Il gagne le Tour, sans EPO dans le sang, juste des jambes en feu.",
+                    "image": "midjourney/velo4.png",
+                    "position": "25%",
+                    "result": {
+                        "content": [
+                            {
+                                "type": "text",
+                                "text": "Victoire ! Lance Armstrong brandit son maillot jaune et succède à Marco Pantani sur le podium. Le champion américain s’impose sans tomber dans le panneau du dopage contrairement à certains de ses rivaux. L’EPO ? A la poubelle. Armstrong préfère « Rouler sans tricher », son nouveau mantra. Sa fondation Livestrong, créée en 1997, pour soutenir les malades du cancer devient un véritable QG de la lutte anti-dopage. Celui que l’on prénomme « Le Boss » ne se contente pas de gagner des courses : il sauve le cyclisme d’une overdose collective.",
+                                "template": "full_page"
+                            },
+                            {
+                                "type": "text",
+                                "text": "La vie de Marco Pantani aussi prendra un tournant inattendu. Inspiré par le discours anti-dopage de Lance, « Le Pirate” décide de se reprendre en main. Fini les fréquentations douteuses et les excès qui l’entraînaient vers le fond. Au lieu de sombrer après ses déboires, Pantani trouve un nouveau souffle, encouragé par un cyclisme qui, grâce à Armstrong, commence à redorer son image.",
+                                "template": "full_page"
+                            }
+                        ],
+                        "choices": [
+                            {
+                                "type": "question",
+                                "text": "Et si Marco Pantani avait eu une seconde chance pour pédaler droit ?",
+                                "image": "midjourney/velo5.png",
+                                "position": "55%",
+                                "result": {
+                                    "content": [
+                                        {
+                                            "type": "text",
+                                            "text": "Pas de tragique chambre d’hôtel en 2004, pas d’overdose. À la place, Pantani revient au sommet. Armstrong et Lui deviennent les visages d’une nouvelle ère, mais surtout, d’une rivalité mythique. Dès l’an 2000, les deux se disputent les maillots jaunes sur les routes du Tour de France. Lance, méthodique et calculateur, contre Marco, tout feu tout flamme dans les montagnes. Les médias se régalent : c’est la version cycliste d’un blockbuster d’été.",
+                                            "template": "full_page"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "Les deux hommes se rendent coup pour coup : un contre-la-montre pour Lance, une échappée légendaire pour Marco. Le coureur impulsif vs le grimpeur romantique. Chaque Tour devient une scène d’anthologie. Le public est en délire devant un cyclisme qui renaît de ses cendres.",
+                                            "template": "full_page"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
         }
     },
     {
         "title": "Haut les mains",
+        "preview": "midjourney/foot0.png",
         "image": "midjourney/foot0.png",
         "situation": {
             "content": [
@@ -178,8 +180,8 @@
             "choices": [
                 {
                     "text": "L’arbitre ne siffle pas, le but des anglais est validé",
-                                "image": "midjourney/foot1.png",
-                                "position": "55%",
+                    "image": "midjourney/foot1.png",
+                    "position": "55%",
                     "result": {
                         "content": [
                             {
@@ -269,7 +271,8 @@
                                                     }
                                                 ]
                                             }
-                                        },{
+                                        },
+                                        {
                                             "text": "Thierry Henry devient la risée du football français",
                                             "result": {
                                                 "content": [
@@ -294,8 +297,8 @@
                 },
                 {
                     "text": "L’arbitre siffle la main et invalide le but anglais.",
-                                "image": "midjourney/foot2.png",
-                                "position": "55%",
+                    "image": "midjourney/foot2.png",
+                    "position": "55%",
                     "result": {
                         "content": [
                             {
@@ -336,7 +339,8 @@
                                         }
                                     ]
                                 }
-                            },{
+                            },
+                            {
                                 "text": "Thierry Henry devient la risée du football français",
                                 "result": {
                                     "content": [
@@ -361,6 +365,7 @@
     },
     {
         "title": "Pas de halo, pas de miracle",
+        "preview": "midjourney/u1638294475_httpss.mj.runY3_FZChKYZM_hyper_realistic_image_of_3f350699-e49e-4132-bd2d-52b046164d86_0.png",
         "image": "midjourney/u1638294475_httpss.mj.runY3_FZChKYZM_hyper_realistic_image_of_3f350699-e49e-4132-bd2d-52b046164d86_0.png",
         "situation": {
             "content": [
@@ -381,223 +386,84 @@
                 }
             ],
             "choices": [
-                            {
-                                "text": "Le développement lent du halo de sécurité",
-                                "image": "midjourney/u1638294475_httpss.mj.runY3_FZChKYZM_hyper_realistic_image_of_3f350699-e49e-4132-bd2d-52b046164d86_0.png",
-                                "position": "45%",
-                                "result": {
-                                    "content": [
-                                        {
-                                            "type": "text",
-                                            "text": "Dès 2010, l'accident de Felipe Massa en Hongrie en 2009 accélère la réflexion sur la sécurité. La FIA initie des discussions avec les écuries, testant des concepts de protection, dont le halo et d'autres dispositifs comme les cockpits fermés. Cependant, les réticences des puristes et les contraintes techniques retardent son adoption.",
-                                            "template": "full_page"
-                                        },
-                                        {
-                                            "type": "text",
-                                            "text": "En 2012, le halo est testé pour la première fois en Formule 2, où son efficacité est démontrée lors de plusieurs incidents mineurs. Les résultats sont encourageants mais les critiques persistent : certains le jugent inesthétique, d'autres craignent son impact sur la visibilité des pilotes. En 2014, la FIA décide de le rendre obligatoire en Formule 2 et de l’introduire progressivement en Formule 1, avec une date d'entrée en vigueur prévue pour 2015.",
-                                            "template": "full_page"
-                                        }
-                                    ],
-                                    "choices": [
-                                        {
-                                            "text": "Une Formule 1 plus safe mais long à la détente",
-                                            "image": "midjourney/u1638294475_httpss.mj.runY3_FZChKYZM_hyper_realistic_image_of_3f350699-e49e-4132-bd2d-52b046164d86_0.png",
-                                            "position": "55%",
-                                            "result": {
-                                                "content": [
-                                                    {
-                                                        "type": "text",
-                                                        "text": "Le halo est introduit à titre expérimental en Formule 1 dès 2014, après des tests réussis dans les catégories inférieures. Bien que toutes les voitures n’en soient pas encore équipées, la Marussia de Jules Bianchi en fait partie.",
-                                                        "template": "full_page"
-                                                    },
-                                                    {
-                                                        "type": "text",
-                                                        "text": "Lors du Grand Prix du Japon, dans des conditions de piste détrempées, Bianchi perd le contrôle de sa voiture. Mais cette fois, le halo joue un rôle déterminant. Le dispositif dévie l’impact, réduisant considérablement les forces exercées sur son casque. Grâce au dispositif, la dépanneuse est décoiffée (c’est toujours ça de pris), mais Jules s’en sort. Une commotion, quelques mois de rééducation, et il est prêt à renfiler sa combinaison.",
-                                                        "template": "full_page"
-                                                    },
-                                                    {
-                                                        "type": "text",
-                                                        "text": "Avec le halo dès 2010, ils évitent jusqu’à 10 à 15 accidents mortels ou graves à travers les différentes catégories du sport auto. Alors oui, ça fait peut-être une F1 un peu moins spectaculaire pour les amateurs de frissons, mais franchement : mieux vaut un podium en pleine santé qu’un hommage sur la ligne de départ.",
-                                                        "template": "full_page"
-                                                    },
-                                                    {
-                                                        "type": "text",
-                                                        "text": "Le halo, c’est moche ? Peut-être. Mais en imaginant le nombre de pilotes toujours là grâce à lui, ça donne envie d’en coller un sur toutes les voitures. Parce que bon, un sport, c’est plus sympa quand ses héros restent vivants.",
-                                                        "template": "full_page"
-                                                    }
-                                                ]
-                                            }
-                                        },
-                                        {
-                                            "text": "Il meurt et la Formule 1 perd un futur champion",
-                                            "image": "midjourney/u1638294475_httpss.mj.runY3_FZChKYZM_hyper_realistic_image_of_3f350699-e49e-4132-bd2d-52b046164d86_0.png",
-                                            "position": "30%",
-                                            "result": {
-                                                "content": [
-                                                    {
-                                                        "type": "text",
-                                                        "text": "L’accident de Bianchi provoque une onde de choc dans le monde de la Formule 1. Le jeune pilote, vu comme un potentiel futur champion, devient un symbole des risques persistants du sport. Les pilotes, les équipes et les fans réclament des mesures drastiques pour éviter que cela ne se reproduise.",
-                                                        "template": "full_page"
-                                                    },
-                                                    {
-                                                        "type": "text",
-                                                        "text": "Les critiques pleuvent. Les pilotes eux-mêmes commencent à hausser le ton. \"On n’est pas des gladiateurs ! Vous voulez qu’on pilote ou qu’on joue à pile ou face avec nos vies ?\" Sebastian Vettel, Fernando Alonso, et même Lewis Hamilton montent au créneau. Le paddock devient un ring, mais cette fois, ce n’est pas pour des batailles de piste : la FIA est sommée de s’expliquer. Pourquoi tant de lenteur ?",
-                                                        "template": "full_page"
-                                                    }
-                                                ],
-                                                "choices": [
-                                                    {
-                                                        "text": "La F1 devient un sport de seconde zone",
-                                                        "image": "midjourney/u1638294475_httpss.mj.runY3_FZChKYZM_hyper_realistic_image_of_3f350699-e49e-4132-bd2d-52b046164d86_0.png",
-                                                        "position": "55%",
-                                                        "result": {
-                                                        "content": [
-                                                            {
-                                                                "type": "text",
-                                                                "text": "Le public perd l’envie de regarder : pourquoi s’intéresser à une course de F1 sans savoir si le héros du jour reviendra entier ? La montée de la conscience sécuritaire (merci Netflix et les réseaux sociaux) pousse le public à boycotter les sports trop dangereux. Dans les années 2010, la F1 aurait pu devenir l'équivalent d’un cirque romain, avec des spectateurs gênés devant leur écran. Résultat : moins de téléspectateurs, moins d’argent, et des paddocks qui ressemblent à des terrains de foot du dimanche.",
-                                                                "template": "full_page" 
-                                                            }
-
-                                                            ]
-
-                                                        }
-                                                    }
-                                                ]                                            
-                                            }
-                                        }
-                                    ]
-                                }
-                            },
-                            {
-                                "text": "Le développement rapide du halo de sécurité",
-                                "image": "midjourney/u1638294475_httpss.mj.runY3_FZChKYZM_hyper_realistic_image_of_3f350699-e49e-4132-bd2d-52b046164d86_0.png",
-                                "position": "25%",
-                                "result": {
-                                    "content": [
-                                        {
-                                            "type": "text",
-                                            "text": "En 2010, la FIA décide de lancer le halo, ce dispositif conçu pour protéger la tête des pilotes. Intégré aux monoplaces, c’est rapidement un tollé :  les ingénieurs, déjà en guerre contre chaque gramme superflu, fulminent devant ce \"cerceau en métal\" qui alourdit la voiture et perturbe l’aérodynamisme. Les pilotes, eux, critiquent son design de \"cintre de luxe\" et craignent un manque de visibilité. En résumé, personne n’en veut, mais la FIA, inflexible, le rend obligatoire.",
-                                            "template": "full_page"
-                                        },
-                                        {
-                                            "type": "text",
-                                            "text": "Quatre ans plus tard, Suzuka 2014 : Jules Bianchi perd le contrôle de sa voiture au 7ème virage. Sous une pluie battante, il percute une grue. Mais le halo fait le boulot et dévie l’impact fatal. L’émotion est immense. Dans les tribunes tout le monde retient son souffle. L’équipe médicale se presse autour du jeune pilote blessé. Bonne nouvelle au CHU de Nice : après 3 semaines d’hospitalisation, Jules Bianchi en sort indemne. Le halo est une sacré révolution. Ingénieurs, pilotes et public comprennent que même si cette barrière de sécurité n’est pas des plus élégantes, elle sauve des vies.",
-                                            "template": "full_page"
-                                        }
-                                    ],
-                                    "choices": [
-                                        {
-                                            "text": " La FIA serre la ceinture de sécurité et créé le cockpit fermé",
-                                            "image": "midjourney/u1638294475_httpss.mj.runY3_FZChKYZM_hyper_realistic_image_of_3f350699-e49e-4132-bd2d-52b046164d86_0.png",
-                                            "position": "55%",
-                                            "result": {
-                                                "content": [
-                                                    {
-                                                        "type": "text",
-                                                        "text": "Secouée par l’accident spectaculaire de Jules Bianchi, la FIA décide de ne pas faire dans la dentelle et se lance dans une mission de protection maximale pour les pilotes. Le halo, c’est bien, mais on veut plus. Bien plus. Et hop, voilà que le cockpit fermé débarque sur les circuits. Inspiré des avions de chasse, ce pare-brise ultra-résistant enferme littéralement la tête du pilote, comme dans un bocal géant. Résultat : les monoplaces ressemblent à des vaisseaux spatiaux tout droit sortis d’un film de science-fiction. Trop lourd, trop étouffant, ce sauna automobile ne fait pas l’unanimité.",
-                                                        "template": "full_page"
-                                                    },
-                                                    {
-                                                        "type": "text",
-                                                        "text": " Quelques puristes, nostalgiques du pilotage à ciel ouvert se battent pour garder une catégorie \"à l’ancienne\". Deux championnats naissent. D’un côté, la Formula Shield, imaginée par l’intrépide rescapé Jules Bianchi, où le spectacle fait fureur. Les pilotes, à l’abri sous leur bulle de plexiglas, se sentent presque invincibles et prennent des risques insensés. De l’autre, la Formula 1 classique, où le pilote et son bolide fusionnent dans une danse où l'air est encore une question de survie.",
-                                                        "template": "full_page"
-                                                    }
-                                                ]
-                                            }
-                                        },
-                                        {
-                                            "text": "Jules Bianchi, “le survivant”, de retour sur le circuit.",
-                                            "image": "midjourney/u1638294475_httpss.mj.runY3_FZChKYZM_hyper_realistic_image_of_3f350699-e49e-4132-bd2d-52b046164d86_0.png",
-                                            "position": "55%",
-                                            "result": {
-                                                "content": [
-                                                    {
-                                                        "type": "text",
-                                                        "text": "Après des mois de rééducation, de soins et de travail mental intensif pour surmonter le traumatisme de l’accident, Jules Bianchi reprend peu à peu le contrôle de son corps et de ses réflexes. Le monde entier se met à le suivre, comme si c’était le retour d’une star du rock – sponsors, médias et fans sont tous à ses pieds. Il représente l’espoir d’un sport automobile plus sûr. En 2016, Bianchi annonce qu’il est prêt à reprendre la compétition. Son équipe, la Marussia, lui file une place de titulaire, et c’est l’explosion : on le surnomme \"le survivant\".",
-                                                        "template": "full_page"
-                                                    },
-                                                    {
-                                                        "type": "text",
-                                                        "text": "Son retour en compétition n’est pas une promenade de santé, mais il a bien l’intention de mettre tout le monde d’accord. En 2020, lors du Grand Prix de Monaco, Bianchi fait un coup de maître : il grimpe sur le podium après une performance époustouflante, tandis que Hamilton, Vettel et Rosberg, eux, restent sur le carreau.",
-                                                        "template": "full_page"
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                }
-                            }
-                        ]
-        }
-    },
-    {
-        "title": "Le Château Maudit",
-        "image": "square2.png",
-        "situation": {
-            "content": [
                 {
-                    "type": "text",
-                    "text": "Une pluie battante vous pousse à chercher refuge dans un vieux château en ruine.",
-                    "template": "full_page"
-                },
-                {
-                    "type": "image",
-                    "link": "castle_hall.png",
-                    "template": "center"
-                }
-            ],
-            "choices": [
-                {
-                    "text": "Explorer l'étage supérieur.",
+                    "text": "Le développement lent du halo de sécurité",
+                    "image": "midjourney/u1638294475_httpss.mj.runY3_FZChKYZM_hyper_realistic_image_of_3f350699-e49e-4132-bd2d-52b046164d86_0.png",
+                    "position": "45%",
                     "result": {
                         "content": [
                             {
                                 "type": "text",
-                                "text": "Vous montez les escaliers, qui grincent sous vos pas.",
+                                "text": "Dès 2010, l'accident de Felipe Massa en Hongrie en 2009 accélère la réflexion sur la sécurité. La FIA initie des discussions avec les écuries, testant des concepts de protection, dont le halo et d'autres dispositifs comme les cockpits fermés. Cependant, les réticences des puristes et les contraintes techniques retardent son adoption.",
                                 "template": "full_page"
                             },
                             {
                                 "type": "text",
-                                "text": "Au sommet, une porte entrouverte laisse échapper une lumière vacillante.",
-                                "template": "quote"
-                            },
-                            {
-                                "type": "image",
-                                "link": "castle_door.png",
-                                "template": "right"
+                                "text": "En 2012, le halo est testé pour la première fois en Formule 2, où son efficacité est démontrée lors de plusieurs incidents mineurs. Les résultats sont encourageants mais les critiques persistent : certains le jugent inesthétique, d'autres craignent son impact sur la visibilité des pilotes. En 2014, la FIA décide de le rendre obligatoire en Formule 2 et de l’introduire progressivement en Formule 1, avec une date d'entrée en vigueur prévue pour 2015.",
+                                "template": "full_page"
                             }
                         ],
                         "choices": [
                             {
-                                "text": "Entrer dans la pièce.",
+                                "text": "Une Formule 1 plus safe mais long à la détente",
+                                "image": "midjourney/u1638294475_httpss.mj.runY3_FZChKYZM_hyper_realistic_image_of_3f350699-e49e-4132-bd2d-52b046164d86_0.png",
+                                "position": "55%",
                                 "result": {
                                     "content": [
                                         {
                                             "type": "text",
-                                            "text": "Un spectre vous attend à l'intérieur. Il semble garder un précieux artefact.",
+                                            "text": "Le halo est introduit à titre expérimental en Formule 1 dès 2014, après des tests réussis dans les catégories inférieures. Bien que toutes les voitures n’en soient pas encore équipées, la Marussia de Jules Bianchi en fait partie.",
                                             "template": "full_page"
                                         },
                                         {
-                                            "type": "image",
-                                            "link": "specter.png",
-                                            "template": "center"
+                                            "type": "text",
+                                            "text": "Lors du Grand Prix du Japon, dans des conditions de piste détrempées, Bianchi perd le contrôle de sa voiture. Mais cette fois, le halo joue un rôle déterminant. Le dispositif dévie l’impact, réduisant considérablement les forces exercées sur son casque. Grâce au dispositif, la dépanneuse est décoiffée (c’est toujours ça de pris), mais Jules s’en sort. Une commotion, quelques mois de rééducation, et il est prêt à renfiler sa combinaison.",
+                                            "template": "full_page"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "Avec le halo dès 2010, ils évitent jusqu’à 10 à 15 accidents mortels ou graves à travers les différentes catégories du sport auto. Alors oui, ça fait peut-être une F1 un peu moins spectaculaire pour les amateurs de frissons, mais franchement : mieux vaut un podium en pleine santé qu’un hommage sur la ligne de départ.",
+                                            "template": "full_page"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "Le halo, c’est moche ? Peut-être. Mais en imaginant le nombre de pilotes toujours là grâce à lui, ça donne envie d’en coller un sur toutes les voitures. Parce que bon, un sport, c’est plus sympa quand ses héros restent vivants.",
+                                            "template": "full_page"
                                         }
                                     ]
                                 }
                             },
                             {
-                                "text": "Ignorer la pièce et continuer à explorer l'étage.",
+                                "text": "Il meurt et la Formule 1 perd un futur champion",
+                                "image": "midjourney/u1638294475_httpss.mj.runY3_FZChKYZM_hyper_realistic_image_of_3f350699-e49e-4132-bd2d-52b046164d86_0.png",
+                                "position": "30%",
                                 "result": {
                                     "content": [
                                         {
                                             "type": "text",
-                                            "text": "Vous trouvez une bibliothèque remplie de livres anciens.",
-                                            "template": "quote"
+                                            "text": "L’accident de Bianchi provoque une onde de choc dans le monde de la Formule 1. Le jeune pilote, vu comme un potentiel futur champion, devient un symbole des risques persistants du sport. Les pilotes, les équipes et les fans réclament des mesures drastiques pour éviter que cela ne se reproduise.",
+                                            "template": "full_page"
                                         },
                                         {
-                                            "type": "image",
-                                            "link": "library.png",
-                                            "template": "left"
+                                            "type": "text",
+                                            "text": "Les critiques pleuvent. Les pilotes eux-mêmes commencent à hausser le ton. \"On n’est pas des gladiateurs ! Vous voulez qu’on pilote ou qu’on joue à pile ou face avec nos vies ?\" Sebastian Vettel, Fernando Alonso, et même Lewis Hamilton montent au créneau. Le paddock devient un ring, mais cette fois, ce n’est pas pour des batailles de piste : la FIA est sommée de s’expliquer. Pourquoi tant de lenteur ?",
+                                            "template": "full_page"
+                                        }
+                                    ],
+                                    "choices": [
+                                        {
+                                            "text": "La F1 devient un sport de seconde zone",
+                                            "image": "midjourney/u1638294475_httpss.mj.runY3_FZChKYZM_hyper_realistic_image_of_3f350699-e49e-4132-bd2d-52b046164d86_0.png",
+                                            "position": "55%",
+                                            "result": {
+                                                "content": [
+                                                    {
+                                                        "type": "text",
+                                                        "text": "Le public perd l’envie de regarder : pourquoi s’intéresser à une course de F1 sans savoir si le héros du jour reviendra entier ? La montée de la conscience sécuritaire (merci Netflix et les réseaux sociaux) pousse le public à boycotter les sports trop dangereux. Dans les années 2010, la F1 aurait pu devenir l'équivalent d’un cirque romain, avec des spectateurs gênés devant leur écran. Résultat : moins de téléspectateurs, moins d’argent, et des paddocks qui ressemblent à des terrains de foot du dimanche.",
+                                                        "template": "full_page"
+                                                    }
+                                                ]
+                                            }
                                         }
                                     ]
                                 }
@@ -606,56 +472,57 @@
                     }
                 },
                 {
-                    "text": "Explorer le rez-de-chaussée.",
+                    "text": "Le développement rapide du halo de sécurité",
+                    "image": "midjourney/u1638294475_httpss.mj.runY3_FZChKYZM_hyper_realistic_image_of_3f350699-e49e-4132-bd2d-52b046164d86_0.png",
+                    "position": "25%",
                     "result": {
                         "content": [
                             {
                                 "type": "text",
-                                "text": "Vous explorez les salles sombres du rez-de-chaussée.",
+                                "text": "En 2010, la FIA décide de lancer le halo, ce dispositif conçu pour protéger la tête des pilotes. Intégré aux monoplaces, c’est rapidement un tollé :  les ingénieurs, déjà en guerre contre chaque gramme superflu, fulminent devant ce \"cerceau en métal\" qui alourdit la voiture et perturbe l’aérodynamisme. Les pilotes, eux, critiquent son design de \"cintre de luxe\" et craignent un manque de visibilité. En résumé, personne n’en veut, mais la FIA, inflexible, le rend obligatoire.",
                                 "template": "full_page"
                             },
                             {
                                 "type": "text",
-                                "text": "Un coffre verrouillé attire votre attention.",
-                                "template": "quote"
-                            },
-                            {
-                                "type": "image",
-                                "link": "locked_chest.png",
-                                "template": "center"
+                                "text": "Quatre ans plus tard, Suzuka 2014 : Jules Bianchi perd le contrôle de sa voiture au 7ème virage. Sous une pluie battante, il percute une grue. Mais le halo fait le boulot et dévie l’impact fatal. L’émotion est immense. Dans les tribunes tout le monde retient son souffle. L’équipe médicale se presse autour du jeune pilote blessé. Bonne nouvelle au CHU de Nice : après 3 semaines d’hospitalisation, Jules Bianchi en sort indemne. Le halo est une sacré révolution. Ingénieurs, pilotes et public comprennent que même si cette barrière de sécurité n’est pas des plus élégantes, elle sauve des vies.",
+                                "template": "full_page"
                             }
                         ],
                         "choices": [
                             {
-                                "text": "Essayer d'ouvrir le coffre.",
+                                "text": " La FIA serre la ceinture de sécurité et créé le cockpit fermé",
+                                "image": "midjourney/u1638294475_httpss.mj.runY3_FZChKYZM_hyper_realistic_image_of_3f350699-e49e-4132-bd2d-52b046164d86_0.png",
+                                "position": "55%",
                                 "result": {
                                     "content": [
                                         {
                                             "type": "text",
-                                            "text": "Le coffre contient une clé dorée.",
+                                            "text": "Secouée par l’accident spectaculaire de Jules Bianchi, la FIA décide de ne pas faire dans la dentelle et se lance dans une mission de protection maximale pour les pilotes. Le halo, c’est bien, mais on veut plus. Bien plus. Et hop, voilà que le cockpit fermé débarque sur les circuits. Inspiré des avions de chasse, ce pare-brise ultra-résistant enferme littéralement la tête du pilote, comme dans un bocal géant. Résultat : les monoplaces ressemblent à des vaisseaux spatiaux tout droit sortis d’un film de science-fiction. Trop lourd, trop étouffant, ce sauna automobile ne fait pas l’unanimité.",
                                             "template": "full_page"
                                         },
                                         {
-                                            "type": "image",
-                                            "link": "golden_key.png",
-                                            "template": "right"
+                                            "type": "text",
+                                            "text": " Quelques puristes, nostalgiques du pilotage à ciel ouvert se battent pour garder une catégorie \"à l’ancienne\". Deux championnats naissent. D’un côté, la Formula Shield, imaginée par l’intrépide rescapé Jules Bianchi, où le spectacle fait fureur. Les pilotes, à l’abri sous leur bulle de plexiglas, se sentent presque invincibles et prennent des risques insensés. De l’autre, la Formula 1 classique, où le pilote et son bolide fusionnent dans une danse où l'air est encore une question de survie.",
+                                            "template": "full_page"
                                         }
                                     ]
                                 }
                             },
                             {
-                                "text": "Ignorer le coffre et chercher ailleurs.",
+                                "text": "Jules Bianchi, “le survivant”, de retour sur le circuit.",
+                                "image": "midjourney/u1638294475_httpss.mj.runY3_FZChKYZM_hyper_realistic_image_of_3f350699-e49e-4132-bd2d-52b046164d86_0.png",
+                                "position": "55%",
                                 "result": {
                                     "content": [
                                         {
                                             "type": "text",
-                                            "text": "Vous tombez sur une trappe secrète menant à un sous-sol.",
-                                            "template": "quote"
+                                            "text": "Après des mois de rééducation, de soins et de travail mental intensif pour surmonter le traumatisme de l’accident, Jules Bianchi reprend peu à peu le contrôle de son corps et de ses réflexes. Le monde entier se met à le suivre, comme si c’était le retour d’une star du rock – sponsors, médias et fans sont tous à ses pieds. Il représente l’espoir d’un sport automobile plus sûr. En 2016, Bianchi annonce qu’il est prêt à reprendre la compétition. Son équipe, la Marussia, lui file une place de titulaire, et c’est l’explosion : on le surnomme \"le survivant\".",
+                                            "template": "full_page"
                                         },
                                         {
-                                            "type": "image",
-                                            "link": "trapdoor.png",
-                                            "template": "center"
+                                            "type": "text",
+                                            "text": "Son retour en compétition n’est pas une promenade de santé, mais il a bien l’intention de mettre tout le monde d’accord. En 2020, lors du Grand Prix de Monaco, Bianchi fait un coup de maître : il grimpe sur le podium après une performance époustouflante, tandis que Hamilton, Vettel et Rosberg, eux, restent sur le carreau.",
+                                            "template": "full_page"
                                         }
                                     ]
                                 }

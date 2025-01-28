@@ -1,12 +1,14 @@
 export type ContentData = {
     title: string; // Titre principal du jeu ou de la section
-    image: string; // Image principale ou de couverture
+    preview: string; // Image de couverture
+    image: string; // Image principale
     situation: Situation; // Situation initiale et ses choix
 };
 
 export type Situation = {
     content: ContentBlock[]; // Liste de pavés de texte et d'images pour la situation initiale
     choices?: Choice[]; // Liste des choix disponibles depuis cette situation
+    ending?: Ending;
 };
 
 export type ContentBlock = TextBlock | ImageBlock | QuestionBlock;
@@ -36,6 +38,10 @@ export type Choice = {
     position?: string; // %de position de l'image pour bien la cadrer dans le bouton
     result: Situation; // Résultat du choix, menant à une nouvelle situation
 };
+
+export type Ending = {
+    image: string;
+}
 
 export class Item {
     constructor(public title: string,

@@ -3,7 +3,7 @@
     <div class="placeholder"></div>
     @for (item of items; track $index) {
         <div class="item" (click)="selectItem(item, $event.target)" [class.selected]="selected == item">
-            <img [src]=item.image [alt]="item.title">
+            <img [src]=item.preview [alt]="item.title">
             @if (selected == item) {
                 <div class="start_button" (click)="start(item)">COMMENCER</div>
             }

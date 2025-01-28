@@ -39,7 +39,7 @@
 
         &.selected {
             margin-top: 0%;
-            width: 50%; /* Agrandit l'élément sélectionné */
+            width: 58%; /* Agrandit l'élément sélectionné */
             z-index: 1; /* Assure que l'élément agrandi reste au-dessus des autres */
             background-color: darken(rgb(255, 255, 255), 5%);
 
@@ -50,7 +50,7 @@
                 align-self: center;
                 background-color: darken(red, 5%);
                 margin-top: 5%;
-                padding: 3% 5%;
+                padding: 4% 5%;
                 //font
                 font-size: 20%;
                 font-weight: 250;
