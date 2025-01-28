@@ -2,5 +2,9 @@
     background: url('finalPage.png');
     background-size: 100% 100%;
     position: relative;
+
+    p {
+        margin-bottom: 4px;
+    }
 }
 
