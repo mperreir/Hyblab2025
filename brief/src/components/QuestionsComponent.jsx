@@ -15,6 +15,8 @@ import { useAppContext } from "../context/AppContextProvider";
 
 const QuestionsComponent = () => {
   const { globalState, setGlobalState } = useAppContext(); // Accès au contexte
+  const [currentPhase, setCurrentPhase] = useState(null);
+  const [phaseText, setPhaseText] = useState("");
   const [questions, setQuestions] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState(null);
   const [subQuestions, setSubQuestions] = useState([]); // Pile de sous-questions
@@ -22,18 +24,33 @@ const QuestionsComponent = () => {
   const [isLoading, setIsLoading] = useState(true); // Indique si les données sont en cours de chargement
 
   useEffect(() => {
-    // Charger les questions depuis le fichier JSON
-    fetch("/brief/public/data/scenarioA/p1_questions.json")
+    // Charger la phase actuelle
+    fetch("/brief/public/data/scenarioA/phases.json")
       .then((response) => response.json())
       .then((data) => {
-        setQuestions(data.questions);
-        setCurrentQuestion(data.questions[0]); // Commence par la première question
+        setCurrentPhase(data.phases[0]); // Phase 1 au début
+        setPhaseText(data.phases[0].phase_text); // Texte de la phase
       })
       .catch((error) =>
-        console.error("Erreur lors du chargement des questions :", error)
-      )
-      .finally(() => setIsLoading(false));
+        console.error("Erreur lors du chargement des phases :", error)
+      );
   }, []);
+
+   useEffect(() => {
+    if (currentPhase) {
+      // Charger les questions de la phase actuelle
+      fetch(`/brief/public/data/scenarioA/p${currentPhase.phase_id}_questions.json`)
+        .then((response) => response.json())
+        .then((data) => {
+          setQuestions(data.questions);
+          setCurrentQuestion(data.questions[0]);
+        })
+        .catch((error) =>
+          console.error("Erreur lors du chargement des questions :", error)
+        )
+        .finally(() => setIsLoading(false));
+    }
+  }, [currentPhase]);
 
   const handleAnswer = (response) => {
      // Mettre à jour les scores dans le contexte
@@ -48,10 +65,7 @@ const QuestionsComponent = () => {
         { question_id: currentQuestion.question_id, response_id: response.response_id },
       ], // Ajout à l'historique
     }));
-     // Simuler une transition vers la prochaine question (à améliorer)
-     alert(
-      `Scores mis à jour : Budget=${globalState.Budget}, GES=${globalState.GES}, Satisfaction=${globalState.Satisfaction}`
-    );
+     
     // Gestion des sous-questions (si elles existent)
     if (response.subquestion && response.subquestion.length > 0) {
       setSubQuestions(response.subquestion); // Ajoute les sous-questions dans la pile
@@ -71,8 +85,31 @@ const QuestionsComponent = () => {
           setCurrentQuestion(nextQuestion);
         }, 300);
       } else {
-        console.log("Fin des questions !");
-        setCurrentQuestion(null); // Fin des questions
+        // Si la prochaine question n'est pas trouvée, passer à la phase suivante
+        const nextPhase = currentPhase.phase_id + 1;
+
+        if (nextPhase <= 3) { // Ajuster ce nombre en fonction du nombre total de phases
+          // Charger la phase suivante
+          fetch("/brief/public/data/scenarioA/phases.json")
+            .then((response) => response.json())
+            .then((data) => {
+              const newPhase = data.phases.find(phase => phase.phase_id === nextPhase);
+              setCurrentPhase(newPhase);
+              setPhaseText(newPhase.phase_text);
+
+              // Charger les questions de la phase suivante
+              fetch(`/brief/public/data/scenarioA/p${nextPhase}_questions.json`)
+                .then((response) => response.json())
+                .then((data) => {
+                  setQuestions(data.questions);
+                  setCurrentQuestion(data.questions[0]);
+                })
+                .catch((error) => console.error("Erreur lors du chargement des questions de la phase suivante:", error));
+            });
+        } else {
+          // Si toutes les phases sont terminées, afficher la page de fin
+          setCurrentQuestion(null);
+        }
       }
     }
   };
