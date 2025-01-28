@@ -5,14 +5,14 @@ const EndPage = () => {
 
   return (
       <section
-          className="h-full w-full flex flex-col snap-start items-center min-h-screen bg-white"
+          className="h-full w-full flex flex-col snap-start justify-center items-center min-h-screen bg-white gap-20"
           id="endpage"
       >
           <a href="https://hyblab.polytech.univ-nantes.fr/" target="_blank" rel="noopener noreferrer">
-              <img src="./logos/logo_hyblab.png" alt="HYBLAB" className="w-[50rem] mt-24"/>
+              <img src="./logos/logo_hyblab.png" alt="HYBLAB" className="max-h-48"/>
           </a>
 
-          <div className="grid grid-cols-2 gap-8 text-left mt-20">
+          <div className="grid grid-cols-2 gap-8 text-left">
               <div className="space-y-4">
                   <p className="text-3xl font-bold text-gray-800">GAUTIER Titouan</p>
                   <p className="text-3xl font-bold text-gray-800">BOUSSAOUI Elias</p>
@@ -26,31 +26,31 @@ const EndPage = () => {
               </div>
           </div>
 
-          <div className="flex flex-wrap gap-8 items-center justify-center mt-24 max-w-[800px] w-full mx-auto">
+          <div className="flex flex-wrap gap-8 items-center justify-center max-w-[800px] w-full mx-auto">
               <a href="https://www.agr.fr/" target="_blank" rel="noopener noreferrer">
-                  <img src="./logos/logo_agr.png" alt="AGR" className="h-16"/>
+                  <img src="./logos/logo_agr.png" alt="AGR" className="max-h-16"/>
               </a>
               <a href="https://www.ouestmedialab.fr/" target="_blank" rel="noopener noreferrer">
-                  <img src="./logos/logo_oml.png" alt="Ouest Medialab" className="h-16"/>
+                  <img src="./logos/logo_oml.png" alt="Ouest Medialab" className="max-h-16"/>
               </a>
               <a href="https://polytech.univ-nantes.fr/" target="_blank" rel="noopener noreferrer">
-                  <img src="./logos/logo_polytech.png" alt="Polytech Nantes" className="h-16"/>
+                  <img src="./logos/logo_polytech.png" alt="Polytech Nantes" className="max-h-16"/>
               </a>
               <a href="https://www.sciencespo-rennes.fr/" target="_blank" rel="noopener noreferrer">
-                  <img src="./logos/logo_sciencespo.svg" alt="SciencesPo Rennes" className="h-16"/>
+                  <img src="./logos/logo_sciencespo.svg" alt="SciencesPo Rennes" className="max-h-16"/>
               </a>
               <a href="https://www.univ-nantes.fr" target="_blank" rel="noopener noreferrer">
-                  <img src="./logos/logo_nantesuniversite.png" alt="Nantes Université" className="h-16"/>
+                  <img src="./logos/logo_nantesuniversite.png" alt="Nantes Université" className="max-h-16"/>
               </a>
               <a href="https://www.nantesmetropole.fr" target="_blank" rel="noopener noreferrer">
-                  <img src="./logos/logo_nantesmetropole.png" alt="Nantes Métropole" className="h-16"/>
+                  <img src="./logos/logo_nantesmetropole.png" alt="Nantes Métropole" className="max-h-16"/>
               </a>
               <div className="flex flex-col gap-2 justify-center items-center">
                   <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener noreferrer">
-                      <img src="./logos/logo_cc.png" alt="CC BY 3.0 License" className="h-7"/>
+                      <img src="./logos/logo_cc.png" alt="CC BY 3.0 License" className="max-h-7"/>
                   </a>
                   <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener noreferrer">
-                      <img src="./logos/logo_opensource.png" alt="MIT License" className="h-7"/>
+                      <img src="./logos/logo_opensource.png" alt="MIT License" className="max-h-7"/>
                   </a>
               </div>
           </div>
