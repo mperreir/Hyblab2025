@@ -45,9 +45,9 @@
                 "arti": "Laisse ta créativité s’épanouir dans l’Ouest, où savoir-faire et traditions se mêlent à une forte demande locale !"
             },
             "images": {
-                "agro": "img/agro.jpg",
-                "tech": "img/tech.jpeg",
-                "arti": "img/arti.jpg"
+                "agro": "img/agro/Agro.png",
+                "tech": "img/tech/Tech.png",
+                "arti": "img/arti/Artisanat.png"
             },
             "reponses": {
                 "agro": "Agroalimentaire",
