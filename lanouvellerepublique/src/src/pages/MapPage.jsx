@@ -4,7 +4,7 @@ import ScrollableMap from "../components/ScrollableMap";
 import DialogueBox from "../components/DialogueBox";
 import Header from "../components/Header";
 import MapCarousel from "../components/MapCarousel";
-import backgroundImage from '../assets/background.jpg';
+import backgroundImage from '../assets/Map-loutreeurope.jpg';
 import data from '../data/db.json';
 
 

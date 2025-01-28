@@ -38,30 +38,6 @@ const DialogueBox = ({ text, setSelectedText}) => {
     const speechHolderRef = useRef(null);
     const [pages, setPages] = useState([]);
     const [scrollPercentage, setScrollPercentage] = useState(0);
-    const maxCharsPerBubble = 250;
-
-    const splitText = () => {
-        const sentences = text.match(/[^.!?…]+[.!?…]/g) || []; // Extract sentences
-        const tempPages = [];
-        let currentBubble = "";
-        
-        for (const sentence of sentences) {
-            if ((currentBubble + sentence).length <= maxCharsPerBubble) {
-                currentBubble += sentence + " ";
-            } else {
-                tempPages.push(currentBubble.trim()); // Store the current bubble
-                currentBubble = sentence + " "; // Start a new bubble
-            }
-        }
-    
-        // Push the last bubble if not empty
-        if (currentBubble.trim().length > 0) {
-            tempPages.push(currentBubble.trim());
-        }
-
-        console.log(tempPages);
-        setPages(tempPages); // Update state
-    };
 
     const handleScroll = () => {
         const holder = speechHolderRef.current;
@@ -78,8 +54,7 @@ const DialogueBox = ({ text, setSelectedText}) => {
 
     // Reset pages when text changes
     useEffect(() => {
-        console.log(text);
-        splitText();
+        setPages(text);
     }, [text]);
 
     useEffect(() => {
