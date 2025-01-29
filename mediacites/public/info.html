@@ -63,7 +63,13 @@
                 <div class="row" style="padding-right: 3vh;">
                     <div class="col" style="width: 100%; background-color: #3370E7; height: fit-content; border: 1vh solid white; border-radius: 4vh 4vh 4vh 4vh;">
                         <h3 id="titreResume" style="font-size: 4vw; color: white; text-align: right; font-style: italic;">Résumé</h3>
-                        <p id="resumeGeneral" style="color: white;"><!-- TODO changer dynamiquement-->Texte contenant la majorité des infos condensées</p>
+                        <p id="resumeGeneral" style="color: white;">Soucieux de la transparence en démocratie, MédiacitéS a lancé, en 2020, Radar, un outil qui permet de suivre
+                            l’action des élus locaux et vérifier s’ils ont tenu leurs promesses de campagne. Dans la poursuite de ce
+                            même objectif, Médiacités présente “Simpli'Cités”, un nouvel outil qui passe en revue les décisions prises par
+                            le conseil municipal de la ville de Nantes. Qu’on réellement fait les élus pour vous ? SimpliCité vous
+                            permet de naviguer dans toutes les décisions du conseil municipal, en toute... simplicité. Médiacité a analysé
+                            plus de 850 décisions de la municipalité, prises entre 2020 et 2024 et les a organisées par thèmes pour
+                            résumer l’action de vos élus.</p>
                     </div>
                 </div>
 
@@ -86,7 +92,7 @@
                         <p id="texteArticle" style="color: white;"><!-- TODO changer dynamiquement-->Texte détaillé</p>
                     </div>
                 </div>
-                <!-- Liens -->
+                <!-- Crédits -->
                 <div class="row" style="padding-right: 3vh;">
                     <div class="col" style="width: 100%; background-color: #565656; height: fit-content; border: 1vh solid white; border-radius: 4vh 4vh 4vh 4vh;">
                         <div class="row">
@@ -95,10 +101,46 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-8">
-                                <p style="color: white;"> Ver sind the délibération?</p>
-                            </div>
-                        </div>                       
+                            <h6 class="d-flex" style="font-size: 2vw; color: white; text-align: left; padding-left:2vh;"> Les données</h6>
+                        </div>
+                        <div class="row">
+                            <p style="padding-left:2vh; color: white;">Toutes les délibérations proviennent du site data.nantesmetropole.fr, qui sont accessibles librement.
+                            Simpli'Cités se fonde sur les délibérations des conseils municipaux du 15 juillet 2020 au 2 février 2024.</p>
+                        </div>
+                        <div class="row">
+                            <h6 class="d-flex" style="font-size: 2vw; color: white; text-align: left; padding-left:2vh;"> Les partenaires</h6>
+                        </div>
+                        <div class="row">
+                            <p style="padding-left:2vh; color: white;">Simpli'Cités a été développé pendant le Hyblab 2025, avec les étudiants de Polytech Nantes, de l’AGR, de Nantes
+                            et de Sciences Po Rennes.</p>
+                        </div>
+                        <div class="row">
+                            <h6 class="d-flex" style="font-size: 2vw; color: white; text-align: left; padding-left:2vh;"> Développement </h6>
+                        </div>
+                        <div class="row">
+                            <p style="padding-left:2vh; color: white;">Nolann Boyere, Pierre Pellerin, Samuel Bally, Ayman Gouhmid, et Saad Ait Bendra </p>
+                        </div>
+                        <div class="row">
+                            <p style="padding-left:2vh; color: white; font-style: italic;">Polytech Nantes</p>
+                        </div>
+                        <div class="row">
+                            <h6 class="d-flex" style="font-size: 2vw; color: white; text-align: left; padding-left:2vh;"> Design </h6>
+                        </div>
+                        <div class="row">
+                            <p style="padding-left:2vh; color: white;">Anaïs Rinaudo et Lilou Lucas</p>
+                        </div>
+                        <div class="row">
+                            <p style="padding-left:2vh; color: white; font-style: italic;">AGR, l’école de l’image de Nantes</p>
+                        </div>
+                        <div class="row">
+                            <h6 class="d-flex" style="font-size: 2vw; color: white; text-align: left; padding-left:2vh;"> Informations et rédaction </h6>
+                        </div>
+                        <div class="row">
+                            <p style="padding-left:2vh; color: white;">Robin Peter</p>
+                        </div>
+                        <div class="row">
+                            <p style="padding-left:2vh; color: white; font-style: italic;">Sciences Po Rennes</p>
+                        </div>
                     </div>
                 </div>
                 <!-- Logos -->
@@ -138,66 +180,6 @@
     </div>  
 
       <script>
-    const queryString = window.location.search;
-    console.log(queryString);
-    const urlParams = new URLSearchParams(queryString);
-    const name = urlParams.get('name')
-    console.log(name);
-
-    const kpi1 = document.getElementById("kpi1");
-    const kpi2 = document.getElementById("kpi2");
-    const textkpi1 = document.getElementById("textkpi1");
-    const textkpi2 = document.getElementById("textkpi2");
-    const resumeGeneral = document.getElementById("resumeGeneral");
-    const titreResume = document.getElementById("titreResume");
-    const titreArticle = document.getElementById("titreArticle");
-    const texteArticle = document.getElementById("texteArticle");
-
-    // Récupération des kpi et leur texte associé
-    fetch(`/mediacites/api/articles/${name}/kpis`)
-        .then(response => response.json())
-        .then(kpis => {
-            console.log(kpis);
-            kpi1.innerHTML = kpis[0].number;
-            textkpi1.innerText = kpis[0].text;
-
-            kpi2.innerHTML = kpis[1].number;
-            textkpi2.innerText = kpis[0].text;
-
-        })
-        .catch(error => console.error('Error fetching JSON:', error));
-
-
-    // Récupération du résumé de l'article
-    fetch(`/mediacites/api/articles/${name}/resume`)
-        .then(response => response.json())
-        .then(text => {
-            resumeGeneral.innerText = text;
-
-        })
-        .catch(error => console.error('Error fetching JSON:', error));
-
-
-    // Récupération du nom de l'article
-    fetch(`/mediacites/api/articles/${name}/name`)
-        .then(response => response.json())
-        .then(name => {
-            titreResume.innerText = name;
-            titreArticle.innerText = name;
-
-        })
-        .catch(error => console.error('Error fetching JSON:', error));
-
-
-    // Récupération du nom de l'article
-    fetch(`/mediacites/api/articles/${name}/text`)
-        .then(response => response.json())
-        .then(text => {
-            texteArticle.innerText = text;
-
-        })
-        .catch(error => console.error('Error fetching JSON:', error));
-
      // pour les boutons en haut de page
      function redirect(name) {
         newUrl = window.location.href.split("?")[0]+"?name="+name;
