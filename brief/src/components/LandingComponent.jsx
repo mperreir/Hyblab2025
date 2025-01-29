@@ -4,13 +4,14 @@ import { Box, Button, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import Typical from "react-typical";
 import { ParallaxProvider, Parallax } from "react-scroll-parallax";
-import isoVille from "../assets/Transition2050.png";
+import Logo from "../assets/LOGO-V1 1.png";
+
 
 const LandingComponent = () => {
-  const navigate = useNavigate(); // Hook pour la navigation
+  const navigate = useNavigate(); 
 
   const handleClick = () => {
-    navigate("/brief/Introduction"); // Redirige vers la page /landing (ou une autre page de ton choix)
+    navigate("/brief/Contexte"); 
   };
 
   return (
@@ -39,7 +40,7 @@ const LandingComponent = () => {
       <Box display="flex" justifyContent="center" marginBottom={2}>
         <ParallaxProvider>
           <Parallax y={[-20, 20]}>
-            <img src={isoVille} style={{ width: "80%" }} alt="image de ville" />
+            <img src={Logo} style={{ width: "80%" }} alt="image de ville" />
           </Parallax>
         </ParallaxProvider>
       </Box>
