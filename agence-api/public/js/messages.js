@@ -55,7 +55,10 @@ async function addMessage(message, type) {
     }
 
     if (message.img) {
-        div.appendChild(document.createElement('img')).src = message.img;
+        const img = document.createElement('img');
+        img.src = message.img;
+        img.classList.add('expanding-element')
+        div.appendChild(img);
         div.appendChild(document.createElement('p')).textContent = message.text;
         div.id = message.id;
         messageElement.appendChild(div);
