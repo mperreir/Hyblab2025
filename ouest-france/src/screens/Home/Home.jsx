@@ -24,13 +24,13 @@ const Home = () => {
                             <button className="text">Accueil</button>
                         </li>
                         <li>
-                            <button className="text">Quiz</button>
+                            <button className="text" onClick={() => scrollToSection("choose-player")}>Quiz</button>
                         </li>
                         <li>
-                            <button className="text">M. Pavon</button>
+                            <button className="text" onClick={() => scrollToSection("choose-player")}>M. Pavon</button>
                         </li>
                         <li>
-                            <button className="text">C. Boutier</button>
+                            <button className="text" onClick={() => scrollToSection("choose-player")}>C. Boutier</button>
                         </li>
                     </ul>
                 </nav>
