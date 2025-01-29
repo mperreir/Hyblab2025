@@ -86,7 +86,7 @@
 .speech_bubble {
     width: 80%;
     background:  #E1CBAD;
-    margin-bottom: 30px;
+    margin: 15px 0;
     font-family: 'Poppins-Regular';
     font-size: 70%;
     padding: 15px;
@@ -97,12 +97,19 @@
 
 .speech_bubble .tail {
     position: absolute;
-    right: 10%;
-    bottom: 0;
     width: 15px;
     height: 15px;
     background-color: #E1CBAD;
+}
+
+.speech_bubble .tail.bot {
+    bottom: 0;
     transform: translateY(50%) rotateZ(45deg) skew(10deg, 10deg);
+}
+
+.speech_bubble .tail.top {
+    top: 0;
+    transform: translateY(-50%) rotateZ(45deg) skew(10deg, 10deg);;
 }
 
 .dialogue-box > p {

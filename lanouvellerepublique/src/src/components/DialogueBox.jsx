@@ -15,11 +15,12 @@ const CardTitle = ({ number, title }) => {
     )
 }
 
-const SpeechBubble = ({ text }) => {
+const SpeechBubble = ({ text, side, position }) => {
+
     return (
         <div className="speech_bubble">
             <p>{text}</p>
-            <div className="tail"></div>
+            <div className={side == "top" ? "tail top" : "tail bot"} style={{left: position}}></div>
         </div>
     )
 }
@@ -118,7 +119,7 @@ const DialogueBox = ({ text, setSelectedText, POI, setSelectedPOI, chosenAnimal}
             <CardTitle number={POI[0]} title={"La carte d'identité"}/>
             <div className="speech_holder" ref={speechHolderRef}>
                 {pages.map((page, index) => {
-                    return (<SpeechBubble key={index} text={page}/>);
+                    return (<SpeechBubble key={index} text={page} side="bot" position="40%"/>);
                 })}
                 <div className="shadow" style={shadowStyle}></div>
             </div>
