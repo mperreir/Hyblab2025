@@ -7,6 +7,7 @@ import loutre3 from "../assets/LoutrePOI3.svg"
 import loutre4 from "../assets/LoutrePOI4.svg"
 import loutre5 from "../assets/LoutrePOI5.svg"
 import loutre6 from "../assets/LoutrePOI6.svg"
+import SpeechBubble from "./SpeechBubble";
 
 const CardTitle = ({ number, title }) => {
     return (

@@ -3,62 +3,51 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     height: 100vh;
-    padding: 20px;
     background-color: #fff;
     position: relative; /* Pour positionner les éléments comme le chemin */
     overflow: hidden; /* Empêche tout débordement */
 }
 
-/* Pathway */
-.pathway {
-    position: relative;
-    width: 110%;
-    height: 170px; /* Augmente légèrement la hauteur */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: -10px; /* Remonte davantage le chemin */
-}
 
 .line-design {
-    width: 120%; /* Élargit légèrement le chemin */
-    height: auto;
+    position: absolute;
+    top: 49%;
+    width: 100%;
+    transform: translateX(-2%);
 }
 
 /* Animal section */
 .animal-section {
     text-align: center;
-    margin-top: -30px; /* Remonte davantage la section de l'animal et la bulle */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: flex-end;
+    height: 40%;
+    width: 100%;
 }
 
 /* Bubble container */
 .bubble-container {
     position: relative;
-    display: inline-block;
-    margin-bottom: -15px; /* Réduit davantage l'espace entre la bulle et l'image */
+    display: flex;
     text-align: center;
-}
-
-.bubble-image {
-    width: 250px; /* Légèrement élargie */
-    height: auto;
-}
-
-.bubble-text {
-    position: absolute;
-    top: 40%; /* Centre verticalement */
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 16px; /* Augmente légèrement la taille */
+    justify-content: center;
     color: black;
-    text-align: center;
-    width: 80%; /* Prend toute la largeur disponible dans la bulle */
-    word-wrap: break-word; /* S'assure que le texte s'adapte */
+    font-size: 130%;
+    width: 100%;
 }
+
 
 /* Animal image */
+.image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .animal-image {
     width: 140px; /* Augmente légèrement la taille */
     height: auto;
@@ -67,12 +56,13 @@
 
 /* Continue button */
 .continue-button {
-    margin-top: -30px; /* Ajuste pour ne pas trop éloigner du bas */
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     transition: transform 150ms ease;
+    margin-bottom: 20px;
+    margin-top: 30%;
 }
 
 .continue-button .continue-button-text {
