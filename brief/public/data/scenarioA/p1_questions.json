@@ -3,12 +3,6 @@
       {
           "question_id": 1,
           "question_text": "Quel rythme donnez-vous à la fermeture des réacteurs nucléaires ?",
-          "transition": [
-              {
-                  "id": 1,
-                  "text": "À toi de jouer ! Tu as maintenant tous les leviers pour diriger ton pays. L’objectif final : réduire les émissions de CO₂ et respecter l’Accord de Paris d'ici 2050."
-              }
-          ],
           "responses": [
               {
                   "response_id": 1,
@@ -72,20 +66,6 @@
       {
           "question_id": 2,
           "question_text": "Quelle priorité donnez-vous au développement des énergies renouvelables ?",
-          "transition": [
-              {
-                  "id": 3,
-                  "text": "Bravo ! Tu as brillamment relevé ton premier défi."
-              },
-              {
-                  "id": 4,
-                  "text": "Mais pas de répit pour toi. Un nouvel enjeu se présente sur ton bureau."
-              },
-              {
-                  "id": 5,
-                  "text": "Le parc nucléaire de ton pays vieillit, et des décisions importantes s'imposent pour assurer l'avenir."
-              }
-          ],
           "responses": [
               {
                   "response_id": 1,
@@ -149,20 +129,6 @@
       {
           "question_id": 3,
           "question_text": "Comment intégrez-vous la sobriété dans les secteurs de consommation ?",
-          "transition": [
-              {
-                  "id": 6,
-                  "text": "Après ta décision sur le nucléaire, les choses s’accélèrent."
-              },
-              {
-                  "id": 7,
-                  "text": "Plusieurs entreprises viennent de déposer sur ton bureau des propositions innovantes."
-              },
-              {
-                  "id": 8,
-                  "text": "Ces solutions pourraient transformer le mix énergétique de ton pays et l’adapter aux enjeux de demain."
-              }
-          ],
           "responses": [
               {
                   "response_id": 1,
@@ -226,20 +192,6 @@
       {
           "question_id": 4,
           "question_text": "Comment financer ce basculement vers un mix 100 % renouvelable ?",
-          "transition": [
-              {
-                  "id": 9,
-                  "text": "Après ta décision sur l’énergie, les projets commencent à se concrétiser."
-              },
-              {
-                  "id": 10,
-                  "text": "La transition énergétique a besoin de financement rapide pour accélérer le processus."
-              },
-              {
-                  "id": 11,
-                  "text": "Des solutions doivent être trouvées rapidement pour mobiliser les ressources nécessaires."
-              }
-          ],
           "responses": [
               {
                   "response_id": 1,
