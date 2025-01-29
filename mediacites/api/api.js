@@ -3,15 +3,12 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
-const cors = require('cors');
 
 // Create a router instance
 const router = express.Router();
 
 // Path to the JSON file
 const articlesPath = path.join(__dirname, '../public/data/articles.json');
-
-router.use(cors());
 
 router.get('/articles', (req, res) => {
     // Get all articles
