@@ -24,9 +24,9 @@ app_names.forEach(function (element, index, array) {
 });
 
 // redirect catch all url to hyblab website (disabled for dev)
-// app.use(/\/$/, function (req, res, next) {
-// 	res.redirect("http://www.hyblab.fr/");
-// });
+app.use(/\/$/, function (req, res, next) {
+	res.redirect("http://www.hyblab.fr/");
+});
 
 
 // launch main server app
