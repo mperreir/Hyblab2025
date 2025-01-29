@@ -5,6 +5,7 @@ const express = require('express');
 const path = require('path');
 const fs = require('fs');
 const mustacheExpress = require('mustache-express'); // Import mustache-express
+require('dotenv').config();
 
 // Create our application
 const app = express();
@@ -22,7 +23,7 @@ app.use('/api', api);
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, '../__common-logos__')));
 
-const BASE_URL = process.env.BASE_URL;
+const BASE_URL = process.env.BASE_URL || 'http://localhost:8080';
 
 // Route for the home page
 app.get('/start', async (req, res) => {
