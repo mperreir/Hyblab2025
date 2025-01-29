@@ -30,15 +30,9 @@ function expandMessage(messageElement, data) {
     const rect = messageElement.getBoundingClientRect();
     expandingElement.dataset.id_message = messageElement.id;
 
-    // Récupération de la liste des choix sur la balise HTML
-    let liste_choix = [];
-    for (let i = 0; i < messageElement.dataset.taillechoix; i++) {
-        liste_choix.push(messageElement.dataset[`choix${i}`]);
-    }
     //Ajout des données du JSON dans des listes respectives
     const fields = ['titre', 'images', 'paragraphes'];
-
-    const { titre, images, paragraphes } = repartitionChamps(fields, data, liste_choix);
+    const { titre, images, paragraphes } = repartitionChamps(fields, data);
 
     const title = document.createElement('h1');
     title.textContent = titre;
@@ -190,7 +184,7 @@ function closeOverlay() {
 };
 
 // Fonction pour répartir les champs du JSON dans des listes respectives
-function repartitionChamps(fields, data, liste_choix) {
+function repartitionChamps(fields, data) {
     let result = { titre: "", images: [], paragraphes: [] };
     fields.forEach(field => {
         switch (detectType(data[field])) {
@@ -205,7 +199,7 @@ function repartitionChamps(fields, data, liste_choix) {
                 result[field] = data[field];
                 break;
             case "dico":
-                result[field] = match(data[field], liste_choix);
+                result[field] = match(data[field]);
                 break;
         }
     });
@@ -213,12 +207,12 @@ function repartitionChamps(fields, data, liste_choix) {
 };
 
 // Fonction pour trouver le bon paramètre dans le JSON
-function match(data, liste_choix) {
+function match(data) {
     if (data.length == 0) {
         return [];
     }
     const num_question = parseInt(Object.keys(data)[0].split('_')[0], 10);
-    return data[String(liste_choix[num_question - 1])];
+    return data[String(choices[num_question - 1])];
 };
 
 // Fonction pour détecter le type de l'élément
