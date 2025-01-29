@@ -21,12 +21,13 @@ const IndicatorContainer = styled(Box)(({ theme }) => ({
   backgroundColor: theme.palette.secondary.main,
 }));
 
+
 const IndicatorDot = styled(Box)(({ theme, active }) => ({
   width: "12px",
   height: "12px",
   borderRadius: "50%",
   backgroundColor: active ? theme.palette.primary.main : theme.palette.secondary.main,
-  border: 2px solid ${theme.palette.primary.main},
+  border:` 2px solid ${theme.palette.primary.main}`,
 }));
 
 const InformationMixComponent = () => {
@@ -65,7 +66,7 @@ const InformationMixComponent = () => {
       const lines = text.split(" "); // Si nécessaire, diviser en lignes
 
       ctx.save();
-      ctx.font = ${fontSize}px Arial;
+      ctx.font = `${fontSize}px Arial`;
       ctx.fillStyle = "red"; // Couleur rouge
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
@@ -139,9 +140,9 @@ const InformationMixComponent = () => {
               <Typography variant="body2" sx={{ marginTop: 1 }}>
                 <strong>Émissions de CO₂ :</strong>{" "}
                 {item.carbon_emissions.value
-                  ? ${item.carbon_emissions.value} ${item.carbon_emissions.unit}
+                  ? `${item.carbon_emissions.value} ${item.carbon_emissions.unit}`
                   : item.carbon_emissions.range
-                  ? ${item.carbon_emissions.range.min} - ${item.carbon_emissions.range.max} ${item.carbon_emissions.unit}
+                  ? `${item.carbon_emissions.range.min} - ${item.carbon_emissions.range.max} ${item.carbon_emissions.unit}`
                   : "Données non disponibles"}
               </Typography>
             )}
