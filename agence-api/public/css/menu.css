@@ -76,11 +76,12 @@
   line-height: 1.6;
   text-align: left;
   font-size: 16px;
-  background-color: white;
-  color: #1D1D1D;
+  background-color: #1D1D1D;
+  color: white;
   padding: 15px;
   border-radius: 10px;
 }
+
 .menu-wrapper .menu-content ul {
   list-style: none;
   padding: 0;
@@ -97,6 +98,11 @@
   color: #1D1D1D;
   padding: 15px;
   border-radius: 10px;
+}
+
+.menu-wrapper .menu-content li:hover {
+  background-color: var(--user-color);
+  color: var(--user-text-color);
 }
 
 .menu-wrapper .menu-content footer p{
