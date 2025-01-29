@@ -20,7 +20,7 @@
 
         try {
             // Build the correct API URL (with /api prefix)
-            const apiUrl = `/mediacites/api/articles/${category}/name`;  // Correct API URL
+            const apiUrl = `/api/articles/${category}/name`;  // Correct API URL
 
             // Fetch data from the API
             const response = await fetch(apiUrl);
@@ -109,7 +109,7 @@
               Découvrez la synthèse des décisions du conseil municipal en navigant à travers les différentes catégories.
             </div>
             <div class="actions">
-              <button class="custom-button" onclick="location.href='navigation.html'">  ←  </button>
+              <button class="custom-button" onclick="location.href='index.html'">  ←  </button>
               <button class="custom-button" onclick="location.href='info.html' " style="font-family: 'IBM Plex Mono' ">INFORMATIONS</button>
             </div>
           </div>
