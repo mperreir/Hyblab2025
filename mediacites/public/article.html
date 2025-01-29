@@ -52,25 +52,6 @@
             videoElement.appendChild(sourceElement);
             logoContainer.parentNode.replaceChild(videoElement, logoContainer);
 
-            // Replace the logo class with a video tag if available, otherwise keep the logo
-            const logoContainer = document.querySelector('.logo');
-            const videoElement = document.createElement('video');
-            videoElement.setAttribute('width', '200vw');
-            videoElement.setAttribute('height', 'auto');
-            videoElement.setAttribute('id', 'animation');
-            videoElement.setAttribute('autoplay', '');
-            videoElement.setAttribute('playsinline', '');
-            videoElement.setAttribute('muted', '');
-            videoElement.setAttribute('disablePictureInPicture', '');
-            videoElement.setAttribute('controlsList', 'nodownload nofullscreen');
-
-            const sourceElement = document.createElement('source');
-            sourceElement.setAttribute('src', `img/${category}-animation.mp4`);
-            sourceElement.setAttribute('type', 'video/mp4');
-
-            videoElement.appendChild(sourceElement);
-            logoContainer.parentNode.replaceChild(videoElement, logoContainer);
-
             if (articleData.kpis && articleData.kpis.length > 0) {
                 document.getElementById('kpi1').textContent = articleData.kpis[0].number;
                 document.getElementById('textkpi1').textContent = articleData.kpis[0].text;
