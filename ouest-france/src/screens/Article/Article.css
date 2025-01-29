@@ -1,7 +1,3 @@
-.article p, .article h1, .article h2{
-    color: black;
-}
-
 .article h1{
     font-family: Arial;
     font-size: 38px;
@@ -75,5 +71,23 @@
     cursor: pointer;
     font-weight: 700;
     font-size: 16px;
+}
 
+.content {
+    z-index: 1; /* Couche inférieure par rapport au SVG */
+}
+
+.article_title{
+    background-color: white;
+    z-index: 3;
+}
+
+.svg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2; /* SVG au-dessus de la section */
+    pointer-events: none; /* Permet de cliquer à travers le SVG */
 }
