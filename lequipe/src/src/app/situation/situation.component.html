@@ -3,7 +3,7 @@
         @for (item of situation.content; track $index) {
             @switch (item.type) {
                 @case ("text")  {
-                    <p [innerHTML]="isTextVisible ? item.text : ((item.text ? item.text : '') | textAnimation)" data-text-visible="false"></p>
+                    <p [innerHTML]="isTextVisible ? item.text : ((item.text ? item.text : '') | textAnimation)" data-text-visible="false" [class]="item.className"></p>
                 }
                 @case ("question") {
                     <div class="question_block">

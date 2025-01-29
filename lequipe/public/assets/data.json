@@ -7,7 +7,13 @@
             "content": [
                 {
                     "type": "text",
-                    "text": "Le vainqueur du Tour de France 2024, Tadej Pogacar, fait taire les rumeurs de dopage sur ses performances. Comme un air de déjà vu, non ? La plaie ouverte par Lance Armstrong est loin d’être cicatrisée. L’histoire est-elle en train de se répéter ? Dans ton rôle de président de l’Union Cycliste Internationale, tu ne peux t’empêcher de te replonger dans ce scandale qui a secoué le cyclisme mondial. Une idée te taraude : ",
+                    "text": "Description :",
+                    "template": "full_page",
+                    "className": "italicRedText"
+                },
+                {
+                    "type": "text",
+                    "text": "Le vainqueur du Tour de France 2024, <span class='redText'>Tadej Pogacar</span>, fait taire les rumeurs de dopage sur ses performances. Comme un air de déjà vu, non ? La plaie ouverte par Lance Armstrong est loin d’être cicatrisée. L’histoire est-elle en train de se répéter ? Dans ton rôle de président de l’Union Cycliste Internationale, tu ne peux t’empêcher de te replonger dans ce scandale qui a secoué le cyclisme mondial. Une idée te taraude : ",
                     "template": "full_page"
                 },
                 {
@@ -154,6 +160,12 @@
         "image": "midjourney/foot0.png",
         "situation": {
             "content": [
+                {
+                    "type": "text",
+                    "text": "Description :",
+                    "template": "full_page",
+                    "className": "italicRedText"
+                },
                 {
                     "type": "text",
                     "text": "Tu es un jeune arbitre en formation à la FIFA. Passionné par les règles du jeu et les scandales du foot, tu plonges dans l'histoire de la \"Main de Dieu\", ce but légendaire mais pas très réglo marqué de la main par Diego Maradona contre l’Angleterre en 1986.",
@@ -386,6 +398,12 @@
         "image": "midjourney/halo0.png",
         "situation": {
             "content": [
+                {
+                    "type": "text",
+                    "text": "Description :",
+                    "template": "full_page",
+                    "className": "italicRedText"
+                },
                 {
                     "type": "text",
                     "text": "Tu es un jeune rookie de l'Académie Ferrari, plein d’ambition mais terrifié par les récits des accidents tragiques qui jalonnent l’histoire de la Formule 1. Chaque course semble être une prise de risque insensée. Alors que tu t’entraînes dans l’ombre des légendes du paddock, une question t’obsèdes :",
