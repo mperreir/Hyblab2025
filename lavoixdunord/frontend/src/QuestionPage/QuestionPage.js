@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom"; 
+import { useNavigate } from "react-router-dom";
 import yaml from "js-yaml";
 import "./QuestionPage.css";
 import { useParams } from "react-router-dom";
@@ -44,6 +44,13 @@ const QuestionPage = ({ showMap, setShowMap }) => {
         const data = yaml.load(text);
         setQuestions(data.game.levels[parseInt(difficulty) - 1].stages[parseInt(id) - 1].questions);
       })
+      .then(
+        () => {
+          setTimeout(() => {
+            setShowMap({ btn: false, map: true });
+          }, 1000);
+        }
+      )
       .catch((error) => console.error("Erreur de chargement YAML :", error));
   }, [difficulty, id]);
 
@@ -57,13 +64,14 @@ const QuestionPage = ({ showMap, setShowMap }) => {
       if (!isMuted) { // Only play sound if not muted
         isCorrect ? correctSound.play() : wrongSound.play();
       }
-      const pointsToAdd = !isCorrect ? 35 : 20; 
+      const pointsToAdd = !isCorrect ? 35 : 20;
       addScore(pointsToAdd);
       setValidated(true);
-      setShowMap({ btn: true, map: false });
 
+      // maintenant la carte s'affiche avant la question
+      // setShowMap({ btn: false, map: false });
     } else {
-      setShowMap({ btn: false, map: false });
+
       if (currentQuestionIndex < questions.length - 1) {
         setCurrentQuestionIndex(currentQuestionIndex + 1);
         setSelectedOptionIndex(null);
@@ -83,6 +91,9 @@ const QuestionPage = ({ showMap, setShowMap }) => {
         setShowHintImage(false);
         setIsEnlarged(false);
       }
+
+      // maintenant la carte s'affiche avant la question
+      setShowMap({ btn: false, map: true });
     }
   };
 
@@ -114,7 +125,8 @@ const QuestionPage = ({ showMap, setShowMap }) => {
   const currentQuestion = questions[currentQuestionIndex];
 
   const onCloseMap = () => {
-    handleNext();
+    // maintenant la carte s'affiche avant la question
+    // handleNext();
     setShowMap({ btn: false, map: false });
   }
 
@@ -126,7 +138,7 @@ const QuestionPage = ({ showMap, setShowMap }) => {
     position: 'absolute',
     bottom: 62,
     right: 50
-};
+  };
   return (
     <>
       {/* Gestion de l'image agrandie avec flou */}
@@ -140,7 +152,7 @@ const QuestionPage = ({ showMap, setShowMap }) => {
         </div>
       )}
 
-      <div style={ buttonStyle}>
+      <div style={buttonStyle}>
         <button onClick={toggleSound} style={{ background: 'none', border: 'none', cursor: 'pointer' }}>
           {isMuted ? <MdVolumeOff size="24px" /> : <MdVolumeUp size="24px" />}
         </button>
@@ -248,6 +260,7 @@ const QuestionPage = ({ showMap, setShowMap }) => {
           isVisible={showMap.map}
         />
 
+        <div className="my-4">&nbsp;</div>
       </div>
     </>
   );
