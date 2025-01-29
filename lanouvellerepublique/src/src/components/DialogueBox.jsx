@@ -1,6 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import anime from "animejs";
 import "./DialogueBox.css";
+import loutre1 from "../assets/LoutrePOI1.svg"
+import loutre2 from "../assets/LoutrePOI2.svg"
+import loutre3 from "../assets/LoutrePOI3.svg"
+import loutre4 from "../assets/LoutrePOI4.svg"
+import loutre5 from "../assets/LoutrePOI5.svg"
+import loutre6 from "../assets/LoutrePOI6.svg"
 
 const CardTitle = ({ number, title }) => {
     return (
@@ -26,9 +32,10 @@ const SpeechBubble = ({ text, side, position }) => {
 }
 
 const AnimalIllustration = (imageName) => {
+    //pour tester en local, changer "https://hyblab.polytech.univ-nantes.fr/lanouvellerepublique/assets/" par "/src/assets/"
     return (
         <div className="illustration">
-            <img src={`https://hyblab.polytech.univ-nantes.fr/lanouvellerepublique/assets/${imageName.imageName}`} alt="POI" />
+            <img src={`https://hyblab.polytech.univ-nantes.fr/lanouvellerepublique/assets/${imageName.imageName}`} alt="POI" /> 
         </div>
     )
 }
