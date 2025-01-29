@@ -26,7 +26,7 @@ function CarouselBox({ mapRef, boxRef, point, setSelectedText, setSelectedPOI })
             </div>
             <AnimalIllustration imageName={point.img_name} />
             <div className='box-main-container'>
-                <h3 className='box-title'>{point.title}</h3>
+                <h3 className='box-title'>{point.id.toString().padStart(2,"0") + ". " + point.title}</h3>
                 <p className='box-description'>{point.description}</p>
                 <div className='box-button'>
                     <span className='box-button-text' onClick={showDialogue}>Lire</span>
