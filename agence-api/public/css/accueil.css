@@ -21,7 +21,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../img/fondAcc.jpg'); /* Chemin vers votre image de fond */
+    background-color: #edb401;
     background-size: cover; /* L'image couvre toute la surface sans déformation */
     background-position: center center; /* Centre l'image horizontalement et verticalement */
     background-attachment: fixed;
