@@ -10,9 +10,6 @@ const QuizResults = ({
   choosenPlayer,
   onSelectPlayer,
 }) => {
-  useEffect(() => {
-    console.log(ranking);
-  }, [ranking]);
 
   return (
     <section

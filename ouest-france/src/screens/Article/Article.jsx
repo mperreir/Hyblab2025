@@ -45,9 +45,9 @@ const Article = ({data}) => {
                     id={"article" + section.id}
                 >
                     <div className="w-1/3">
-                        <h2 className="title text-xl text-black max-w-lg font-medium mb-4">{section.title}</h2>
-                        <p className="text_content text-3xl text-black max-w-lg mb-6">{section.content}</p>
-                        <button className='text' onClick={() => scrollToSection(`quiz${section.id}`)}>
+                        <h2 className="title text-3xl text-black max-w-lg font-medium mb-4">{section.title}</h2>
+                        <p className="text_content text-black max-w-lg mb-6">{section.content}</p>
+                        <button className='text border border-black' onClick={() => scrollToSection(`quiz${section.id}`)}>
                             Reprendre le quizz
                         </button>
                     </div>

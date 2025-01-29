@@ -10,7 +10,7 @@
 
 .article .text_content{
     font-family: Arial;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 400;
     line-height: 23px;
     text-underline-position: from-font;
@@ -45,12 +45,6 @@
 
 .article button.text {
     color: #CC2229;
-    text-decoration-line: underline;
-    text-decoration-style: solid;
-    text-underline-offset: 25%;
-    text-decoration-thickness: 6%;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: auto;
     line-height: 44px;
     border-radius: 8px;
     width: 60%;
@@ -64,6 +58,7 @@
 }
 
 .article button.text:hover {
+    text-decoration: none;
     background-color: #CC2229;
     color: white;
     text-transform: uppercase;
