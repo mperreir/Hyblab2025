@@ -62,3 +62,40 @@ class audioScene {
         });
     }
 }
+
+// Fonction pour jouer un audio à partir d'un événement
+function playAudioTrigger(file_name, id, loop = false) {
+    fetch(file_name)
+        .then(response => response.json())
+        .then(data => {
+            const audioData = data.audios.find(audio => audio.id === id);
+            if (audioData) {
+                const audioElement = new Audio(audioData.src);
+                audioElement.volume = audioData.volume;
+                audioElement.loop = audioData.type;
+                ambianceAudio = audioElement;
+                console.log(`Playing audio: ${id}`); // Log audio ID
+
+                // Utiliser une structure switch pour gérer différents types de lecture audio
+                switch (audioData.type) {
+                    case "play_once":
+                        audioElement.play();
+                        break;
+                    case "loop":
+                        audioElement.loop = true;
+                        audioElement.play();
+                        break;
+                    case "pause":
+                        audioElement.pause();
+                        break;
+                    default:
+                        console.warn(`Unknown audio type: ${audioData.type}`);
+                        audioElement.play();
+                        break;
+                }
+            } else {
+                console.error(`Audio with id ${id} not found in ${file_name}.`);
+            }
+        })
+        .catch(err => console.error("Error loading audio configuration:", err));
+}

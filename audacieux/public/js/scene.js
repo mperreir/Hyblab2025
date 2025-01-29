@@ -29,21 +29,30 @@ class Scene {
 
   loadTriggers()
   {
-    this.triggers.forEach(triggers => {
-      const html_object = document.getElementById(triggers.id);
+    this.triggers.forEach(trigger => {
+      const html_object = document.getElementById(trigger.id);
       // Ajouter un gestionnaire d'événements si nécessaire
-      if (triggers.script) {
-        if (html_object && typeof window[triggers.script.func] === "function") {
+      if (trigger.script) {
+        if (html_object && typeof window[trigger.script.func] === "function") {
           html_object.addEventListener("click", (event) => {
                 // Appeler la fonction spécifiée avec les arguments
-                window[triggers.script.func](event, ...triggers.script.args);
+                window[trigger.script.func](event, ...trigger.script.args);
             });
         } 
     }
+    
+    if (trigger.audio) {
+      if (html_object && typeof window[trigger.audio.func] === "function") {
+        html_object.addEventListener("click", (event) => {
+              // Appeler la fonction spécifiée avec les arguments
+              window[trigger.audio.func](event, ...trigger.audio.args);
+          });
+      } 
+    }
 
     // Exécuter la fonction onload si elle est définie
-    if (triggers.onload) {
-        window[triggers.onload.func](html_object, ...triggers.onload.args);
+    if (trigger.onload) {
+        window[trigger.onload.func](html_object, ...trigger.onload.args);
     }
     }); 
   }

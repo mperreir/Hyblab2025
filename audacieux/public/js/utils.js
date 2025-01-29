@@ -44,4 +44,8 @@ function loadSceneScript(event, id)
 {
     loadImageScene("image_holder.json", id);
 }
-  
+
+function playAudio(event, id)
+{
+    playAudioTrigger("data/audio_scene.json", id);
+}
