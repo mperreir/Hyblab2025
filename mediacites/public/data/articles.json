@@ -2,18 +2,20 @@
     {
         "id": "education",
         "name": "Education",
-        "text" : "Des écoles flambant neuves, des cours de récré plus vertes et une alimentation plus saine : bilan positif pour l’éducation à Nantes. S’il y a des promesses dont la maire de Nantes peut se targuer d’avoir tenues, c’est bien celles portant sur l’éducation. Elles figuraient en haut de la liste des priorités et ont, pour la majorité, été tenues. Tour d’horizon des effets de six années de mandat sur les écoles nantaises. La municipalité a bien lotis les petites et petits nantais. Côté primaire, elle peut se targuer d’avoir construit pas moins de six écoles et une septième doit voir le jour d’ici 2026 : l’école Leloup-Bouhier, dans le quartier Dervallières-Zola, en 2021, l’école Alice-Guy, à Malakoff-Saint-Donatien, en 2022, l’école Germaine-Tillion, à Nantes Erdre, en 2022, l’école Claire-Bretécher, à Doulon-Bottière, en 2023, l’école Freinet Ange-Guépin, à Malakoff-Saint-Donatien, en 2023, et l’école Alice Milliat, à Nantes Sud, en 2024. L’école Joséphine-Baker, sur l’île de Nantes, dont les travaux sont toujours en cours, devrait ouvrir à la rentrée 2026. Accueillir davantage d’écoliers et dans des conditions optimales s’accompagne de l’extension et de la rénovation de 23 établissements répartis sur toute la ville. La création d’un meilleur cadre de vie pour les élèves est aussi passée par la débitumisation des cours de recré. En 2022, la ville de Nantes a adopté le plan “Pleine terre”, qui a pour ambition de transformer sept hectares de sol artificiel en sol naturel (voir le thème Environnement). Les efforts de ce plan se sont concentrés “dans les cours d’écoles et des crèches où les enfants sont plus exposés aux effets de la chaleur, au bruit et à la pollution” d’après la mairie. En 2023, 12 écoles ont vu leur cours se verdir et 18 autres étaient en travaux ou en cours d’étude. Le chemin est encore long puisque la ville compte, au total… 113 établissements. Pour les plus petits, 438 places en crèche ont été ouvertes entre 2020 et 2023 et la municipalité vise les 750 d’ici la fin du mandat.",
+        "text" : "Des écoles flambant neuves, des cours de récré plus vertes et une alimentation plus saine : bilan positif pour l’éducation à Nantes. S’il y a des promesses dont la maire de Nantes peut se targuer d’avoir tenues, c’est bien celles portant sur l’éducation. Elles figuraient en haut de la liste des priorités et ont, pour la majorité, été tenues. Tour d’horizon des effets de six années de mandat sur les écoles nantaises. La municipalité a bien lotis les petites et petits nantais. Côté primaire, elle peut se targuer d’avoir construit pas moins de six écoles et une septième doit voir le jour d’ici 2026 : l’école Leloup-Bouhier, dans le quartier Dervallières-Zola, en 2021, l’école Alice-Guy, à Malakoff-Saint-Donatien, en 2022, l’école Germaine-Tillion, à Nantes Erdre, en 2022, l’école Claire-Bretécher, à Doulon-Bottière, en 2023, l’école Freinet Ange-Guépin, à Malakoff-Saint-Donatien, en 2023, et l’école Alice Milliat, à Nantes Sud, en 2024. L’école Joséphine-Baker, sur l’île de Nantes, dont les travaux sont toujours en cours, devrait ouvrir à la rentrée 2026. Accueillir davantage d’écoliers et dans des conditions optimales s’accompagne de l’extension et de la rénovation de 23 établissements répartis sur toute la ville. La création d’un meilleur cadre de vie pour les élèves est aussi passée par la débitumisation des cours de récré. En 2022, la ville de Nantes a adopté le plan “Pleine terre”, qui a pour ambition de transformer sept hectares de sol artificiel en sol naturel (voir le thème Environnement). Les efforts de ce plan se sont concentrés “dans les cours d’écoles et des crèches où les enfants sont plus exposés aux effets de la chaleur, au bruit et à la pollution” d’après la mairie. En 2023, 12 écoles ont vu leur cours se verdir et 18 autres étaient en travaux ou en cours d’étude. Le chemin est encore long puisque la ville compte, au total… 113 établissements. Pour les plus petits, 438 places en crèche ont été ouvertes entre 2020 et 2023 et la municipalité vise les 750 d’ici la fin du mandat.",
         "resume": "Premier poste de dépense dans le budget de la municipalité, l’éducation était l’un des piliers du programme de Johanna Rolland. La barre était placée haute avec l’ambition de faire étudier les enfants nantais dans des conditions optimales, dans des bâtiments neufs ou renovés, et qu’ils puissent s’amuser dans des cours de récré plus vertes. L’objectif était aussi de proposer des repas plus sains, bio et préparés dans la métropole, le tout sans plastique. Près d’un tiers de ces promesses ont été tenues et 41% restaient encore partiellement appliquées fin 2024, d’après notre outil Radar.",
         "kpis": [
             {
                 "id": 0,
                 "number": "100 millions",
-                "text": "C’est le budget alloué à l’éducation par la municipalité de Nantes. Il s’agit du premier poste de dépenses dans un budget à 600 millions. Chaque année, la moitié de ce budget est consacré aux investissements et donc à la construction de nouveaux établissements et à la rénovation de ceux existants."
+                "text": "C’est le budget alloué à l’éducation par la municipalité de Nantes. Il s’agit du premier poste de dépenses dans un budget de 600 millions d'euros. Chaque année, la moitié de ce budget est consacrée aux investissements et donc à la construction de nouveaux établissements et à la rénovation de ceux existants.",
+                "long": true
             },
             {
                 "id": 1,
                 "number": "7",
-                "text": "C’est le nombre d’écoles qui ont été construites durant le mandat 2020-2026. 27 autres établissements ont été rénovés ou agrandis."
+                "text": "C’est le nombre d’écoles qui ont été construites durant le mandat 2020-2026. 27 autres établissements ont été rénovés ou agrandis.",
+                "long": false
             }
         ],
         "links": [
@@ -40,12 +42,14 @@
             {
                 "id": 0,
                 "number": "90%",
-                "text": "Quantité de déchets triés dans les écoles"
+                "text": "Quantité de déchets triés dans les écoles",
+                "long": false
             },
             {
                 "id": 1,
                 "number": "6500",
-                "text": "C’est le nombre d’arbres plantés par la municipalité entre 2020 et début 2025. L’objectif de fin de mandat, en 2026, est fixé à 50 000."
+                "text": "C’est le nombre d’arbres plantés par la municipalité entre 2020 et début 2025. L’objectif de fin de mandat, en 2026, est fixé à 50 000.",
+                "long": false
             }
         ],
         "links": [
