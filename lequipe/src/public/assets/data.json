@@ -184,7 +184,7 @@
                 {
                     "text": "L’arbitre ne siffle pas, le but des anglais est validé",
                     "image": "midjourney/foot1.png",
-                    "position": "55%",
+                    "position": "25%",
                     "result": {
                         "content": [
                             {
@@ -201,6 +201,8 @@
                         "choices": [
                             {
                                 "text": "Création de la VAR en 2001",
+                                "image": "midjourney/foot2.png",
+                                "position": "15%",
                                 "result": {
                                     "content": [
                                         {
@@ -217,6 +219,8 @@
                                     "choices": [
                                         {
                                             "text": "Sanction ultime pour la FFF.",
+                                            "image": "midjourney/foot3.png",
+                                            "position": "35%",
                                             "result": {
                                                 "content": [
                                                     {
@@ -229,6 +233,8 @@
                                         },
                                         {
                                             "text": "Fin du football masculin en France.",
+                                            "image": "midjourney/foot4.png",
+                                            "position": "45%",
                                             "result": {
                                                 "content": [
                                                     {
@@ -260,6 +266,8 @@
                                     "choices": [
                                         {
                                             "text": "L'Ère du football honnête",
+                                            "image": "midjourney/foot6.png",
+                                            "position": "20%",
                                             "result": {
                                                 "content": [
                                                     {
@@ -277,6 +285,8 @@
                                         },
                                         {
                                             "text": "Thierry Henry devient la risée du football français",
+                                            "image": "midjourney/foot7.png",
+                                            "position": "40%",
                                             "result": {
                                                 "content": [
                                                     {
@@ -300,7 +310,7 @@
                 },
                 {
                     "text": "L’arbitre siffle la main et invalide le but anglais.",
-                    "image": "midjourney/foot2.png",
+                    "image": "midjourney/foot5.png",
                     "position": "55%",
                     "result": {
                         "content": [
@@ -328,6 +338,8 @@
                         "choices": [
                             {
                                 "text": "L'Ère du football honnête",
+                                "image": "midjourney/foot6.png",
+                                "position": "20%",
                                 "result": {
                                     "content": [
                                         {
@@ -345,6 +357,8 @@
                             },
                             {
                                 "text": "Thierry Henry devient la risée du football français",
+                                "image": "midjourney/foot7.png",
+                                "position": "40%",
                                 "result": {
                                     "content": [
                                         {
@@ -368,8 +382,8 @@
     },
     {
         "title": "Pas de halo, pas de miracle",
-        "preview": "midjourney/u1638294475_httpss.mj.runY3_FZChKYZM_hyper_realistic_image_of_3f350699-e49e-4132-bd2d-52b046164d86_0.png",
-        "image": "midjourney/u1638294475_httpss.mj.runY3_FZChKYZM_hyper_realistic_image_of_3f350699-e49e-4132-bd2d-52b046164d86_0.png",
+        "preview": "midjourney/halo0.png",
+        "image": "midjourney/halo0.png",
         "situation": {
             "content": [
                 {
@@ -391,8 +405,8 @@
             "choices": [
                 {
                     "text": "Le développement lent du halo de sécurité",
-                    "image": "midjourney/u1638294475_httpss.mj.runY3_FZChKYZM_hyper_realistic_image_of_3f350699-e49e-4132-bd2d-52b046164d86_0.png",
-                    "position": "45%",
+                    "image": "midjourney/halo1.png",
+                    "position": "50%",
                     "result": {
                         "content": [
                             {
@@ -409,8 +423,8 @@
                         "choices": [
                             {
                                 "text": "Une Formule 1 plus safe mais long à la détente",
-                                "image": "midjourney/u1638294475_httpss.mj.runY3_FZChKYZM_hyper_realistic_image_of_3f350699-e49e-4132-bd2d-52b046164d86_0.png",
-                                "position": "55%",
+                                "image": "midjourney/halo2.png",
+                                "position": "70%",
                                 "result": {
                                     "content": [
                                         {
@@ -438,8 +452,8 @@
                             },
                             {
                                 "text": "Il meurt et la Formule 1 perd un futur champion",
-                                "image": "midjourney/u1638294475_httpss.mj.runY3_FZChKYZM_hyper_realistic_image_of_3f350699-e49e-4132-bd2d-52b046164d86_0.png",
-                                "position": "30%",
+                                "image": "midjourney/halo3.png",
+                                "position": "50%",
                                 "result": {
                                     "content": [
                                         {
@@ -456,8 +470,8 @@
                                     "choices": [
                                         {
                                             "text": "La F1 devient un sport de seconde zone",
-                                            "image": "midjourney/u1638294475_httpss.mj.runY3_FZChKYZM_hyper_realistic_image_of_3f350699-e49e-4132-bd2d-52b046164d86_0.png",
-                                            "position": "55%",
+                                            "image": "midjourney/halo4.png",
+                                            "position": "50%",
                                             "result": {
                                                 "content": [
                                                     {
@@ -476,8 +490,8 @@
                 },
                 {
                     "text": "Le développement rapide du halo de sécurité",
-                    "image": "midjourney/u1638294475_httpss.mj.runY3_FZChKYZM_hyper_realistic_image_of_3f350699-e49e-4132-bd2d-52b046164d86_0.png",
-                    "position": "25%",
+                    "image": "midjourney/halo5.png",
+                    "position": "50%",
                     "result": {
                         "content": [
                             {
@@ -494,8 +508,8 @@
                         "choices": [
                             {
                                 "text": " La FIA serre la ceinture de sécurité et créé le cockpit fermé",
-                                "image": "midjourney/u1638294475_httpss.mj.runY3_FZChKYZM_hyper_realistic_image_of_3f350699-e49e-4132-bd2d-52b046164d86_0.png",
-                                "position": "55%",
+                                "image": "midjourney/halo6.png",
+                                "position": "45%",
                                 "result": {
                                     "content": [
                                         {
@@ -513,8 +527,8 @@
                             },
                             {
                                 "text": "Jules Bianchi, “le survivant”, de retour sur le circuit.",
-                                "image": "midjourney/u1638294475_httpss.mj.runY3_FZChKYZM_hyper_realistic_image_of_3f350699-e49e-4132-bd2d-52b046164d86_0.png",
-                                "position": "55%",
+                                "image": "midjourney/halo7.png",
+                                "position": "45%",
                                 "result": {
                                     "content": [
                                         {
