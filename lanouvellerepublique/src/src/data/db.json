@@ -3,26 +3,66 @@
         {
             "id": 1,
             "pos": [175,175],
-            "title" : "POI 1",
+            "title" : "La carte d'identité",
             "subtitle": "1",
-            "text": "Vous remarquerez vite que je suis une vraie championne de la nage ! Mon corps long et fuselé, mes petites pattes palmées et ma queue musclée sont conçus pour filer sous l’eau. Mon pelage marron chocolat est super pratique: 98% de poils de bourre pour me garder au sec, et des poils de jarre pour être totalement imperméable. Sous l’eau, je suis équipée pour tout gérer : nager, plonger, chasser. Par contre, sur terre, je suis un peu moins agile… Mais avec tous mes atouts aquatiques, j’ai encore besoin de votre aide pour protéger mes habitats. Vous êtes prêts à me soutenir ?",
-            "linked": "anguille"
+            "text": [
+                "Vous remarquerez vite que je suis une vraie championne de la nage ! Mon corps long et fuselé, mes petites pattes palmées et ma queue musclée sont conçus pour filer sous l’eau. ",
+                "Mon pelage marron chocolat est super pratique : 98% de poils de bourre pour me garder au sec, et des poils de jarre pour être totalement imperméable. ",
+                "Sous l’eau, je suis équipée pour tout gérer : nager, plonger, chasser. Par contre, sur terre, je suis un peu moins agile… Mais avec tous mes atouts aquatiques, j’ai encore besoin de votre aide pour protéger mes habitats. Vous êtes prêts à me soutenir ?"
+            ]
         },
         {
             "id": 2,
             "pos": [546, 695],
-            "text": "POI 2. Here is some placeholder text.",
-            "title" : "POI 2",
-            "subtitle": "2",
-            "linked": "None"
+            "text": [
+                "Moi, j’adore parcourir les berges et plans d’eau ! Mon chez-moi, c’est une « catiche », un terrier au bord de l’eau, avec une entrée secrète sous-marine. La nuit, c’est mon moment ! Je m’aventure sur mon territoire pour chasser et profiter du calme. ",
+                "Je suis une grande solitaire, mais je peux vivre en couple ou avec ma famille. Mon territoire, je le défends à coups de petits messages olfactifs (merci crottes et urine) – histoire que tout le monde sache qui est la cheffe ici.",
+                "Côté amour, je m'accouple discrètement, sous l’eau, toute l’année. Après 60 jours, je donne naissance à 1 à 3 loutrons que je protège avec soin."
+            ],
+            "title" : "Comportement & Rythme de vie",
+            "subtitle": "2"
         },
         {
-            "id": 1,
+            "id": 3,
             "pos": [2000, 2000],
-            "text": "POI 3. Here is more placeholder text.",
-            "title" : "POI 3.",
+            "text": [
+                "Je mange surtout du poisson, ce qui n’enchante pas vraiment les pêcheurs... Mais quand l’occasion se présente, j’aime aussi varier les plaisirs : des crustacés, des amphibiens, voire même des petits mammifères. Bref, je suis du genre opportuniste ! Je consomme environ 1 kg de nourriture par jour pour maintenir mon énergie et mes talents de nageuse. Une petite faim ? Je plonge et je me régale !"
+            ],
+            "title" : "Alimentation",
             "subtitle": "3",
             "linked": "anguille"
+        },
+        {
+            "id": 4,
+            "pos": [1000, 1000],
+            "text": [
+                "Cap vers un lieu que j’adorais autrefois explorer. Mais depuis quelques décennies, tout s’est compliqué… L’agriculture intensive a chamboulé mon quotidien. Les champs bourrés de produits chimiques polluent mes rivières, les machines détruisent mes berges préférées, et les zones humides se transforment en souvenirs.",
+                "Résultat, mes terrains de chasse disparaissent peu à peu. Et ce n’est pas tout : les transformations de l’agriculture affectent aussi ma nourriture et ma sécurité. Mes bons poissons se font rares et mes refuges tranquilles deviennent introuvables. Pas facile de rester une loutre heureuse dans ce monde en mutation…"
+            ],
+            "title" : "Agriculture intensive",
+            "subtitle": "4",
+            "linked": ["Crapaud", "Papillon", "Tortue"],
+            "link_text": "Eh oh ! Moi aussi l’agriculture intensive menace mon habitat. Viens découvrir pourquoi !"
+        },
+        {
+            "id": 5,
+            "pos": [200, 1100],
+            "text": [
+                "Il faut que je vous parle d’un vrai danger, sûrement le plus gros pour notre espèce : les ponts et les barrages. Rassurez-vous, je ne n’en suis pas phobique mais quand j’explore mon territoire, je préfère marcher le long des berges plutôt que nager sous les ponts. Mais si elles sont trop petites ou inondées je dois traverser la route. Et là, y’a trop souvent collision… Les voitures sont la première cause de décès chez les loutres. Les barrages, c’est pas mieux. Ils me forcent souvent à emprunter des routes pour contourner l’obstacle. Bref, vos constructions sont un vrai parcours du combattant."
+            ],
+            "title" : "Ponts et barrages",
+            "subtitle": "5",
+            "linked": ["Anguille"],
+            "link-text": "Eh oh ! Moi aussi les ponts et les barrages me mettent des batons dans les roues. Viens découvrir pourquoi !"
+        },
+        {
+            "id": 6,
+            "pos": [800, 700],
+            "text": [
+                "Si vous cherchez un endroit où je me sens vraiment chez moi, vous y êtes enfin parvenus. Voici le marais de Taligny. Avec ses 85 hectares de zones humides bien protégées, c’est mon refuge idéal. Ici, l’eau reste propre. Le marais agit comme une éponge qui filtre et régule tout. En plus, grâce à la restauration des cours d’eau, mes coins de repos et mes terrains de chasse sont intacts. On gère aussi les crues et on limite les inondations, tout en offrant un abri à plein d’autres espèces aquatiques. Et ce n’est pas fini : un plan sur-mesure (2022-2033) garantit que cet endroit reste mon havre de paix. Entre nous, c’est un vrai bonheur de savoir qu’on prend soin de mes besoins pour les années à venir."
+            ],
+            "title" : "Réserve naturelle des marais de Taligny",
+            "subtitle": "6"
         }
     ],
     "Anguille":[

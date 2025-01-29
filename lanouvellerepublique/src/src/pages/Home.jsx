@@ -5,8 +5,8 @@ import Header from "../components/Header";
 function Home() {
   const navigate = useNavigate();
 
-  function goCarte() {
-    navigate("/regions");
+  function goGuide1() {
+    navigate("/guide1");
 }
 
   return (
@@ -25,7 +25,7 @@ function Home() {
         </button> */}
 
           <div className='start-button'>
-            <span className='start-button-text'onClick={goCarte}>Explore</span>
+            <span className='start-button-text'onClick={goGuide1}>Commencer</span>
           </div>
         </div>
         <div className="decoration">

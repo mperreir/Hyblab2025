@@ -5,14 +5,22 @@ import Header from "../components/Header";
 import { useState } from "react";
 
 import loutre from '../assets/loutre.svg';
+import tortue from '../assets/tortue.svg';
+import crapaud from '../assets/crapaud.svg';
+import papillon from '../assets/papillon.svg';
+import anguille from '../assets/anguille.svg';
 
 function RegionSelection() {
     const [selectedAnimal, setSelectedAnimal] = useState(null);
 
     const animals = [
         { id: 1, name: 'Loutre', fullname: 'Loutre d\'Europe', svg: loutre},
+        { id: 2, name: 'Tortue', fullname: 'Tortue Cistude', svg: tortue},
+        { id: 3, name: 'Crapaud', fullname: 'Sonneur à ventre jaune', svg: crapaud},
+        { id: 4, name: 'Papillon', fullname: 'Azure de la pulmonaire', svg: papillon},
+        { id: 5, name: 'Anguille', fullname: 'Anguille argentée', svg: anguille},
     ];
-    console.log(loutre);
+
     return (
         <>
         <Header titre={"Dans leur peau"} textColor={"black"}/>

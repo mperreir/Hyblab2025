@@ -30,6 +30,34 @@
 
 }
 
+.animals_list .Tortue {
+    position: absolute;
+    bottom: 52%;
+    left: 39%;
+}
+
+.animals_list .Crapaud {
+    position: absolute;
+    bottom: 35%;
+    left: 13%;
+}
+
+.animals_list .Papillon {
+    position: absolute;
+    left: 59%;
+    bottom: 64%;
+}
+
+.animals_list .Anguille {
+    position: absolute;
+    left: 59%;
+    bottom: 36%;
+}
+
+.animals_list .Anguille.selected::after {
+    transform: scale(1) translateY(-10%); /* Fix the slight offset due to anguilla's shape */
+}
+
 .animal {
     display: flex;
     flex-direction: column;
@@ -41,12 +69,7 @@
 }
 
 .animal:hover {
-    transform: scale(1.1);
     cursor: pointer;
-}
-
-.animal.selected {
-    transform: scale(1.1);
 }
 
 .animal::after {
