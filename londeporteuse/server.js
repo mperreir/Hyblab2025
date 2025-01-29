@@ -22,7 +22,7 @@ app.use('/api', api);
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, '../__common-logos__')));
 
-const BASE_URL = process.env.BASE_URL;
+const BASE_URL = process.env.host;
 
 // Route for the home page
 app.get('/start', async (req, res) => {
