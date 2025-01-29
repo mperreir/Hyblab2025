@@ -58,3 +58,7 @@ button.contained:hover{
 .accent{
     background-color: #CC2229;
 }
+
+.accent-text{
+    color: #CC2229;
+}

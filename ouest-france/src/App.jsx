@@ -8,12 +8,14 @@ import ChoosePlayer from "./screens/ChoosePlayer/ChoosePlayer";
 import Article from "./screens/Article/Article";
 import Quiz from "./screens/Quiz";
 import EndPage from "./screens/EndPage";
+import BentoGrid from "./screens/Stats";
 
 const App = () => {
   const baseUrl = `${window.location.origin}/ouest-france/api`;
 
   const [quizData, setQuizData] = useState(null);
   const [articleData, setArticleData] = useState(null);
+  const [statsData, setStatsData] = useState(null);
   const [choosenPlayer, setChoosenPlayer] = useState(null);
 
   // Gestion du clic sur un bouton dans ChoosePlayer
@@ -26,12 +28,15 @@ const App = () => {
       const articleFetch = await fetch(`${baseUrl}/${quizKey}/article`);
       const articleJson = await articleFetch.json();
 
+      const statsFetch = await fetch(`${baseUrl}/${quizKey}/stats`);
+      const statsJson = await statsFetch.json();
+
       setQuizData(quizJson);
       setArticleData(articleJson);
       setChoosenPlayer(quizKey);
+      setStatsData(statsJson);
     }
     if (autoScroll) {
-      console.log("scrolling to quiz0");
       scrollToSection("quiz0");
     }
   };
@@ -48,7 +53,7 @@ const App = () => {
             onSelectPlayer={handleQuizSelection}
           />
           <Article data={articleData} />
-          {console.log(("Loaded"))}
+          <BentoGrid stats={statsData} />
         </>
       )}
       <EndPage />

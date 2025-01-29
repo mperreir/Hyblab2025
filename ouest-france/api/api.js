@@ -26,6 +26,12 @@ router.get('/:player/article', (req, res) => {
     res.json(articles);
 });
 
+router.get('/:player/stats', (req, res) => {
+    const { player } = req.params;
+    const stats = json[player].stats
+    res.json(stats);
+});
+
 router.get('/:player/article/:id', (req, res) => {
     const { player, id } = req.params;
     const article = json[player].articles.find((article) => article.id === id);
