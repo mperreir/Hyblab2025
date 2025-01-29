@@ -1,11 +1,6 @@
 {
     "objectives": [
-        "Analyser le mix énergétique initial de Gallia pour comprendre la part des énergies fossiles.",
-        "Apprendre à équilibrer les objectifs de neutralité carbone avec un approvisionnement stable, abordable et satisfaisant.",
-        "Réduire les émissions de gaz à effet de serre pour limiter le réchauffement climatique à 2 °C, voire 1,5 °C.",
-        "Identifier les usages principaux des énergies fossiles (pétrole, gaz naturel, charbon) et planifier leur réduction.",
-        "Utiliser les leviers à disposition pour atteindre la neutralité carbone d'ici 2050.",
-        "Suivre l’impact des décisions sur trois indicateurs clés : budget, émissions de gaz à effet de serre et satisfaction de la population.",
-        "Gérer efficacement les défis pour réduire la dépendance des transports aux produits pétroliers."
-    ]
+        "L’impact sur le climat : Les énergies fossiles (pétrole, gaz, charbon) sont responsables de la grande majorité des émissions de dioxyde de carbone (CO₂), qui contribuent au réchauffement climatique. Aujourd’hui, ces énergies couvrent encore 57 % des besoins, surtout pour les transports et le chauffage.",
+        "Objectif climatique : Décarboner le mix énergétique est essentiel pour atteindre les objectifs climatiques de la France. Le pays doit réduire ses émissions de gaz à effet de serre pour atteindre la neutralité carbone en 2050."
+]
 }
