@@ -87,7 +87,7 @@
                         <button class="custom-button" onclick="location.href='index.html'" 
                         style="color: #565656; border-color: #565656; " onmouseover="this.style.backgroundColor='#565656'; this.style.color='white';" 
                         onmouseout="this.style.backgroundColor=''; this.style.color='#565656';"><i class="bi bi-arrow-left"></i></button>
-                        <button class="custom-button" onclick="location.href='info.html' " style=" color: #565656; border-color: #565656; " 
+                        <button class="custom-button" onclick="location.href='info.html' " style="color: #565656; border-color: #565656; " 
                     onmouseover="this.style.backgroundColor='#565656'; this.style.color='white';" onmouseout="this.style.backgroundColor=''; this.style.color='#565656';">INFORMATIONS</button>
                     </div>
                 </div>
@@ -152,11 +152,15 @@
 
                 kpiNumber.innerText = randomKpi.number;
                 kpiText.innerText = randomKpi.text;
-                articleTitle.innerText = randomArticle.name;
+                articleTitle.innerText = randomArticle.name.toUpperCase();
 
                 kpiNumber.style.cursor = 'pointer';
                 kpiNumber.onclick = () => {
-                    window.location.href = `redirect(randomArticle.category)`;
+                    window.location.href = `article.html?category=${randomArticle.name.toLowerCase()}`;
+                };
+                articleTitle.style.cursor = 'pointer';
+                articleTitle.onclick = () => {
+                    window.location.href = `article.html?category=${randomArticle.name.toLowerCase()}`;
                 };
             });
         })
