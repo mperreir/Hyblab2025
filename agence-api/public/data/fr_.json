@@ -421,9 +421,9 @@
                     "1_lannion": "Les actifs dans les Côtes-d'Armor"
                 },
                 "images": {
-                    "1_nantes": ["img/tech/Loire_Atlantique.png"],
-                    "1_lorient": ["img/tech/Morbihan.png"],
-                    "1_lannion": ["img/tech/Cotes_d_Armor.png"]
+                    "1_nantes": [],
+                    "1_lorient": [],
+                    "1_lannion": []
                 },
                 "paragraphes": [
                     "Dans nos régions, le taux d’emploi des jeunes s’élève à 43,6 %, une performance supérieure à la moyenne nationale de 39,5 %, témoignant d’une bonne dynamique du marché du travail pour cette tranche d’âge.",
