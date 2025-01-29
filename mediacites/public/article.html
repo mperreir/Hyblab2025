@@ -33,6 +33,7 @@
             document.getElementById('article-title').textContent = articleData.name; // Title
             document.getElementById('resumeGeneral').textContent = articleData.resume; // Resume
             document.getElementById('texteArticle').textContent = articleData.text;
+            document.getElementById('biduleTexte').textContent = `Voici le bilan 2020-2025 concernant les décisions prises sur le thème "${articleData.name}".`
 
             // Check if KPIs exist and update them dynamically
             if (articleData.kpis && articleData.kpis.length > 0) {
@@ -54,107 +55,108 @@
             document.getElementById('textkpi1').textContent = '';
             document.getElementById('kpi2').textContent = 'KPI 2 indisponible';
             document.getElementById('textkpi2').textContent = '';
+            document.getElementById('biduleTexte').textContent = `Texte indisponible.`
         }
     }
 
     async function loadLinks() {
-                      // Extract the category from the query string
-                      const category = new URLSearchParams(window.location.search).get('category');
-                  
-                      if (!category) {
-                          console.error('Category is missing from the URL.');
-                          return;
-                      }
-                  
-                      try {
-                          const apiUrl = `/mediacites/api/links/${category}`; // New API endpoint
-                          const response = await fetch(apiUrl);
-                  
-                          if (!response.ok) {
-                              throw new Error(`API returned status: ${response.status}`);
-                          }
-                  
-                          const linksData = await response.json();
-                          const linksContainer = document.getElementById('links-container');
-                  
-                          // Clear the container before adding new links
-                          linksContainer.innerHTML = '';
-                  
-                          // Dynamically create and append link rows
-                          linksData.forEach(link => {
-                              const linkRow = document.createElement('div');
-                              linkRow.classList.add('row', 'mb-3', 'row-to-sort'); // Added 'row-to-sort' for sorting
-                  
-                              // Link name
-                              const linkElement = document.createElement('div');
-                              linkElement.classList.add('col-8', 'col-name-to-sort');
-                              linkElement.innerHTML = `<a href="${link.link}" target="_blank" style="color: #3370E7; text-decoration: underline; font-weight: bold;">${link.name}</a>`;
-                  
-                              // Date on the left
-                              const dateElement = document.createElement('div');
-                              dateElement.classList.add('col-4', 'col-date-to-sort');
-                              dateElement.innerHTML = `<p style="color: white; font-style: italic; text-align: left; font-weight: 200;">${link.date}</p>`;
-                  
-                              // Append link and date to the row
-                              linkRow.appendChild(linkElement);
-                              linkRow.appendChild(dateElement);
-                  
-                              // Add the row to the container
-                              linksContainer.appendChild(linkRow);
-                          });
-                  
-                          // After loading the data, set up the sorting
-                          setupSorting();
-                  
-                      } catch (error) {
-                          console.error('Error fetching links:', error);
-                      }
-                  }
-                  
-                  // Sorting logic
-                  function sortRows(criteria) {
-                      const rows = Array.from(document.querySelectorAll('.row-to-sort'));
-                      const container = document.querySelector('#links-container');
-                  
-                      rows.sort((a, b) => {
-                          const nameA = a.querySelector('.col-name-to-sort').innerText.toUpperCase();
-                          const nameB = b.querySelector('.col-name-to-sort').innerText.toUpperCase();
-                          const dateA = parseDate(a.querySelector('.col-date-to-sort').innerText);
-                          const dateB = parseDate(b.querySelector('.col-date-to-sort').innerText);
-                  
-                          function parseDate(dateStr) {
-                              const [day, month, year] = dateStr.split('/').map(Number);
-                              return new Date(year, month - 1, day);
-                          }
-                  
-                          if (criteria === 'alphabetical_asc') {
-                              return nameA.localeCompare(nameB);
-                          } else if (criteria === 'alphabetical_desc') {
-                              return nameB.localeCompare(nameA);
-                          } else if (criteria === 'chronological_asc') {
-                              return dateA - dateB;
-                          } else if (criteria === 'chronological_desc') {
-                              return dateB - dateA;
-                          }
-                      });
-                  
-                      // Append sorted rows back to the container
-                      rows.forEach(row => container.appendChild(row));
-                  
-                      // Update the dropdown button text
-                      const dropdownButton = document.querySelector('.dropdown-toggle');
-                      const selectedItem = document.querySelector(`#${criteria}`).innerText;
-                      dropdownButton.innerText = selectedItem;
-                  }
-                  
-                  // Set up sorting event listeners
-                  function setupSorting() {
-                      document.querySelectorAll('.dropdown-item').forEach(item => {
-                          item.addEventListener('click', () => {
-                              sortRows(item.id);
-                          });
-                      });
-                  }
+        // Extract the category from the query string
+        const category = new URLSearchParams(window.location.search).get('category');
+    
+        if (!category) {
+            console.error('Category is missing from the URL.');
+            return;
+        }
+    
+        try {
+            const apiUrl = `/mediacites/api/links/${category}`; // New API endpoint
+            const response = await fetch(apiUrl);
+    
+            if (!response.ok) {
+                throw new Error(`API returned status: ${response.status}`);
+            }
+    
+            const linksData = await response.json();
+            const linksContainer = document.getElementById('links-container');
+    
+            // Clear the container before adding new links
+            linksContainer.innerHTML = '';
+    
+            // Dynamically create and append link rows
+            linksData.forEach(link => {
+                const linkRow = document.createElement('div');
+                linkRow.classList.add('row', 'mb-3', 'row-to-sort'); // Added 'row-to-sort' for sorting
+    
+                // Link name
+                const linkElement = document.createElement('div');
+                linkElement.classList.add('col-8', 'col-name-to-sort');
+                linkElement.innerHTML = `<a href="${link.link}" target="_blank" style="color: #3370E7; text-decoration: underline; font-weight: bold;">${link.name}</a>`;
+    
+                // Date on the left
+                const dateElement = document.createElement('div');
+                dateElement.classList.add('col-4', 'col-date-to-sort');
+                dateElement.innerHTML = `<p style="color: white; font-style: italic; text-align: left; font-weight: 200;">${link.date}</p>`;
+    
+                // Append link and date to the row
+                linkRow.appendChild(linkElement);
+                linkRow.appendChild(dateElement);
+    
+                // Add the row to the container
+                linksContainer.appendChild(linkRow);
+            });
+    
+            // After loading the data, set up the sorting
+            setupSorting();
+    
+        } catch (error) {
+            console.error('Error fetching links:', error);
+        }
+    }
+    
+    // Sorting logic
+    function sortRows(criteria) {
+        const rows = Array.from(document.querySelectorAll('.row-to-sort'));
+        const container = document.querySelector('#links-container');
+    
+        rows.sort((a, b) => {
+            const nameA = a.querySelector('.col-name-to-sort').innerText.toUpperCase();
+            const nameB = b.querySelector('.col-name-to-sort').innerText.toUpperCase();
+            const dateA = parseDate(a.querySelector('.col-date-to-sort').innerText);
+            const dateB = parseDate(b.querySelector('.col-date-to-sort').innerText);
+    
+            function parseDate(dateStr) {
+                const [day, month, year] = dateStr.split('/').map(Number);
+                return new Date(year, month - 1, day);
+            }
+    
+            if (criteria === 'alphabetical_asc') {
+                return nameA.localeCompare(nameB);
+            } else if (criteria === 'alphabetical_desc') {
+                return nameB.localeCompare(nameA);
+            } else if (criteria === 'chronological_asc') {
+                return dateA - dateB;
+            } else if (criteria === 'chronological_desc') {
+                return dateB - dateA;
+            }
+        });
+    
+        // Append sorted rows back to the container
+        rows.forEach(row => container.appendChild(row));
+    
+        // Update the dropdown button text
+        const dropdownButton = document.querySelector('.dropdown-toggle');
+        const selectedItem = document.querySelector(`#${criteria}`).innerText;
+        dropdownButton.innerText = selectedItem;
+    }
+    
+    // Set up sorting event listeners
+    function setupSorting() {
+        document.querySelectorAll('.dropdown-item').forEach(item => {
+            item.addEventListener('click', () => {
+                sortRows(item.id);
+            });
+        });
+    }
 
     function highlightActiveCategory() {
         // Get the selected category from the URL
@@ -239,8 +241,7 @@
                 <img src="img/logo_mediacites.png" alt="Logo">
               </div>
             </div>
-            <div class="description" style="border-radius: 4vh 4vh 4vh 4vh; width: 30vw; text-align: left;">
-              <!-- TODO changer dynamiquement-->
+            <div id="biduleTexte" class="description" style="border-radius: 4vh 4vh 4vh 4vh; width: 30vw; text-align: left;">
               Découvrez la synthèse des décisions du conseil municipal en navigant à travers les différentes catégories.
             </div>
             <div class="actions">
