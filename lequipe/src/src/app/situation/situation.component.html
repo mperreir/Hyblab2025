@@ -3,21 +3,14 @@
         @for (item of situation.content; track $index) {
             @switch (item.type) {
                 @case ("text")  {
-                    <ng-container *ngIf="!isTextVisible">
-                        <p [innerHTML]="(item.text ? item.text : '') | textAnimation" data-text-visible="false"></p>
-                    </ng-container>
-                    <ng-container *ngIf="isTextVisible">
-                        <p [innerHTML]="(item.text ? item.text : '')" data-text-visible="true"></p>
-                    </ng-container>
+                    <p [innerHTML]="isTextVisible ? item.text : ((item.text ? item.text : '') | textAnimation)" data-text-visible="false"></p>
                 }
                 @case ("question") {
-                    <ng-container *ngIf="!isTextVisible">
-                        <p [innerHTML]="(item.text ? item.text : '') | textAnimation" class="question" data-text-visible="false"></p>
-                    </ng-container>
-                    <ng-container *ngIf="isTextVisible">
-                        <p [innerHTML]="(item.text ? item.text : '')" class="question" data-text-visible="false"></p>
-                    </ng-container>
-                    
+                    <div class="question_block">
+                        <div class="dot"></div>
+                        <img src="chrono.svg" alt="chrono">
+                        <p [innerHTML]="isTextVisible ? item.text : ((item.text ? item.text : '') | textAnimation) " class="question" data-text-visible="false"></p>
+                    </div>
                 }
                 @case ("image") {
                     <!-- <img [src]="item.link" [alt]="item?.altText || ''"> -->
@@ -25,7 +18,7 @@
             }
         }
     </div>
-    @if (choice_visible) {
+    @if (situation.choices && choice_visible) {
         <div id="choice_div">
         @for (item of situation.choices; track $index) {
             <div (click)="selected_choice = item" class="choice" [ngClass]="{'selected' : selected_choice == item, 'not_selected': selected_choice && selected_choice != item}" [ngStyle]="{'background-image': 'url(' + item.image + ')','background-position': 'center ' + item.position + ''}">
@@ -33,6 +26,11 @@
             <div id="gris"><p>{{item.text}}</p></div>
             </div>
         }
+        </div>
+    }
+    @if (situation.ending) {
+        <div class="une">
+            <img [src]="situation.ending.image" alt="la une alternative">
         </div>
     }
 </div>

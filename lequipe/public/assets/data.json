@@ -71,7 +71,10 @@
                                             "text": "Et pendant ce temps, les siestes de papy devant la télé passent à la trappe : sur le Tour Express, chaque virage est une accélération. La Grande Boucle n’a jamais été aussi rapide et les coureurs rejoindront tous Le club des 27.",
                                             "template": "full_page"
                                         }
-                                    ]
+                                    ],
+                                    "ending": {
+                                        "image": "https://cdn.discordapp.com/attachments/515602378775593039/1333923161267376269/image.png?ex=679aa840&is=679956c0&hm=7a68f6287b4f945ce3c2e00f69e7c882319cf33560f40b81efbb9fdcb11a80c6&"
+                                    }
                                 }
                             },
                             {
