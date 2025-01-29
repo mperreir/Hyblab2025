@@ -12,12 +12,13 @@ async function displayExplanation(data, liste_choix, contenu_message) {
 
     //Au clic, afficher l'information
     expandMessage(lastMessage, data);
-    await waitForUserTouch();
+    
     
     //Enfin, ajout de l'event listener pour permettre la réouverture de la page info
     lastMessage.addEventListener('click', () => {
         expandMessage(lastMessage, data);
     });
+    await waitForUserTouch();
 };
 
 // Fonction pour agrandir le message et afficher l'image
