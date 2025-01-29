@@ -126,10 +126,7 @@ function createPodcastCard(podcast, id, commonTags = null) {
 
     let thumbnail = document.createElement("div")
     thumbnail.classList.add("vignette")
-
-    if (id + 1 < 34) {
-        thumbnail.style.backgroundImage = "url('" + "img/thumbnails/" + (id + 1) + ".png')"
-    }
+    thumbnail.style.backgroundImage = "url('" + "img/thumbnails/" + (id + 1) + ".png')"
 
     card.appendChild(thumbnail)
 
