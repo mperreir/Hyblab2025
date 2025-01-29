@@ -22,6 +22,19 @@ const IndicatorDot = styled(Box)(({ theme, active }) => ({
   border: `2px solid ${theme.palette.primary.main}`,
 }));
 
+const StyledButton = styled(Button)(({ theme }) => ({
+  marginTop: "16px",
+  borderRadius: "20px",
+  border: `2px solid ${theme.palette.primary.main}`,
+  backgroundColor: "white",
+  color: theme.palette.primary.main,
+  padding: "8px 20px",
+  fontWeight: "bold",
+  "&:hover": {
+    backgroundColor: theme.palette.primary.light,
+  },
+}));
+
 const ContexteComponent = () => {
   const theme = useTheme();
   const navigate = useNavigate();
@@ -86,23 +99,8 @@ const ContexteComponent = () => {
 
             {/* Bouton "C'est parti !" sur la dernière page */}
             {activeStep === slides.length - 1 && (
-              <Button
-                onClick={handleClick}
-                sx={{
-                  mt: 2,
-                  borderRadius: "20px",
-                  border: `2px solid ${theme.palette.primary.main}`,
-                  backgroundColor: "white",
-                  color: theme.palette.primary.main,
-                  padding: "8px 20px",
-                  fontWeight: "bold",
-                  "&:hover": {
-                    backgroundColor: theme.palette.primary.light,
-                  },
-                }}
-              >
-                C'est parti !
-              </Button>
+      <StyledButton onClick={handleClick}>C'est parti !</StyledButton>
+
             )}
           </Box>
         ))}

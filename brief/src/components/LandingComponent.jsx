@@ -1,37 +1,37 @@
-// /src/components/LandingComponent.jsx
 import React from "react";
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button, Typography, styled } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import Typical from "react-typical";
+import { useTheme } from "@mui/material/styles";
 import { ParallaxProvider, Parallax } from "react-scroll-parallax";
 import Logo from "../assets/LOGO-V1 1.png";
 
+const StyledButton = styled(Button)(({ theme }) => ({
+  marginTop: "16px",
+  borderRadius: "20px",
+  border: `2px solid ${theme.palette.primary.main}`,
+  backgroundColor: "white",
+  color: theme.palette.primary.main,
+  padding: "8px 20px",
+  fontWeight: "bold",
+  "&:hover": {
+    backgroundColor: theme.palette.primary.light,
+  },
+}));
 
 const LandingComponent = () => {
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
+  const theme = useTheme();
 
   const handleClick = () => {
-    navigate("/brief/Contexte"); 
+    navigate("/brief/Contexte");
   };
 
   return (
     <Box sx={{ textAlign: "center", padding: 3 }}>
-        <style>
-        {`
-          // @keyframes typing {
-          //   from { width: 0; }
-          //   to { width: 100%; }
-          // }
-          .typing-animation {
-            animation: typing 3s steps(40, end);
-          }
-        `}
-      </style>
       <Typography variant="h4" sx={{ marginBottom: 2 }}>
-         {/* Apply the animation */}
-      <div className="typing-animation">
-        Transition 2050 : Prenez les commandes de l’énergie !
-      </div>
+        <span className="typing-animation">
+          Transition 2050 : Prenez les commandes de l’énergie !
+        </span>
       </Typography>
       <Typography variant="body1" sx={{ marginBottom: 4 }}>
         Découvrez comment gérer un pays face aux défis énergétiques et
@@ -45,13 +45,7 @@ const LandingComponent = () => {
         </ParallaxProvider>
       </Box>
 
-      <Button
-        variant="contained"
-        color="primary"
-        onClick={handleClick}
-      >
-        Commencer
-      </Button>
+      <StyledButton onClick={handleClick}>Commencer</StyledButton>
     </Box>
   );
 };
