@@ -6,9 +6,8 @@ import { useParams } from "react-router-dom";
 import MapComponent from "../MapComponent/MapComponent";
 import correctSoundFile from './sounds/rightanswer.mp3';
 import wrongSoundFile from './sounds/wronganswer.mp3';
-import { MdVolumeOff, MdVolumeUp } from 'react-icons/md';
 
-const QuestionPage = ({ showMap, setShowMap }) => {
+const QuestionPage = ({ isMuted, setIsMuted, showMap, setShowMap }) => {
   const [questions, setQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedOptionIndex, setSelectedOptionIndex] = useState(null);
@@ -18,7 +17,6 @@ const QuestionPage = ({ showMap, setShowMap }) => {
   const [score, setScore] = useState(parseInt(localStorage.getItem("score")) || 0);
   const [hint1Used, setHint1Used] = useState(false);
   const [hint2Used, setHint2Used] = useState(false);
-  const [isMuted, setIsMuted] = useState(false);
   const basename = process.env.REACT_APP_BASENAME || "/";
   const navigate = useNavigate(); // Initialisation de useNavigate
   const { difficulty, id } = useParams(); // Récupère les paramètres de l'URL
@@ -27,9 +25,6 @@ const QuestionPage = ({ showMap, setShowMap }) => {
   const correctSound = new Audio(correctSoundFile);
   const wrongSound = new Audio(wrongSoundFile);
 
-  const toggleSound = () => {
-    setIsMuted(!isMuted);
-  };
 
   const addScore = (value) => {
     const new_value = parseInt(score + value);
@@ -130,15 +125,6 @@ const QuestionPage = ({ showMap, setShowMap }) => {
     setShowMap({ btn: false, map: false });
   }
 
-  const buttonStyle = {
-    border: 'none',
-    background: 'none',
-    cursor: 'pointer',
-    color: '#4D95AF',
-    position: 'absolute',
-    bottom: 62,
-    right: 50
-  };
   return (
     <>
       {/* Gestion de l'image agrandie avec flou */}
@@ -152,11 +138,6 @@ const QuestionPage = ({ showMap, setShowMap }) => {
         </div>
       )}
 
-      <div style={buttonStyle}>
-        <button onClick={toggleSound} style={{ background: 'none', border: 'none', cursor: 'pointer' }}>
-          {isMuted ? <MdVolumeOff size="24px" /> : <MdVolumeUp size="24px" />}
-        </button>
-      </div>
 
       {/* Ajout dynamique de la classe pour flouter le contenu */}
       <div className={`question-container bg_gradient_fond_vague ${isEnlarged ? "blur-background" : ""}`}>

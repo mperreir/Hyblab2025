@@ -1,10 +1,9 @@
 import React, { useState, useRef } from 'react';
 import backgroundMusic from './test1.mp3';
-import { MdMusicOff, MdMusicNote } from 'react-icons/md';
+import { MdMusicOff, MdMusicNote, MdVolumeOff, MdVolumeUp } from 'react-icons/md';
 
-const LayoutWithMusic = ({ children }) => {
+const LayoutWithMusic = ({ isMuted, setIsMuted, children }) => {
     const [isPlaying, setIsPlaying] = useState(false);
-    const [isMuted, setIsMuted] = useState(false);
     const audioRef = useRef(null);
 
     const togglePlay = () => {
@@ -18,7 +17,19 @@ const LayoutWithMusic = ({ children }) => {
         }
     };
 
-    const buttonStyle = {
+
+    const buttonSoundStyle = {
+        border: 'none',
+        background: 'none',
+        cursor: 'pointer',
+        color: '#4D95AF',
+        position: 'absolute',
+        bottom: '60px',
+        right: '4px',
+        zIndex: 1000
+    };
+
+    const buttonMusicStyle = {
         border: 'none',
         background: 'none',
         cursor: 'pointer',
@@ -43,7 +54,15 @@ const LayoutWithMusic = ({ children }) => {
                 Your browser does not support the audio element.
             </audio>
             <div style={containerStyle}>
-                <button onClick={togglePlay} style={buttonStyle}>
+                <div style={buttonSoundStyle}>
+                    <button onClick={() => {
+                        setIsMuted(!isMuted);
+                    }} style={{ background: 'none', border: 'none', cursor: 'pointer' }}>
+                        {isMuted ? <MdVolumeOff size="24px" /> : <MdVolumeUp size="24px" />}
+                    </button>
+                </div>
+
+                <button onClick={togglePlay} style={buttonMusicStyle}>
                     {isPlaying ? <MdMusicNote /> : <MdMusicOff />}
                 </button>
             </div>
