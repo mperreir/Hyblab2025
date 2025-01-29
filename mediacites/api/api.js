@@ -16,6 +16,7 @@ router.use(cors());
 router.get('/articles', (req, res) => {
     // Get all articles
     fs.readFile(articlesPath, 'utf8', (err, data) => {
+        console.log('Looking for JSON at:', articlesPath);
         if (err) {
             console.error('Error reading JSON file:', err);
             return res.status(500).send({ error: 'Failed to load articles data.' });
@@ -33,6 +34,7 @@ router.get('/articles', (req, res) => {
 // Route to fetch article data based on category_name and keyword
 router.get('/articles/:category_name/:keyword', (req, res) => {
     const { category_name, keyword } = req.params;
+    console.log('Looking for JSON at:', articlesPath);
 
     // Read the JSON file
     fs.readFile(articlesPath, 'utf8', (err, data) => {
