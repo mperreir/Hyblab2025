@@ -54,13 +54,13 @@
                 setTimeout(() => {
                     tspan.style.opacity = "1";
                 }, 200 + index * 200); // Augmentation du délai
-            }, index * 800);
+            }, index * 400);
         });
 
         svgElement.appendChild(bubbleText);
 
         // ✅ Calcul dynamique du temps d'affichage total avant les paragraphes
-        let totalTime = texteNarratif.length * 400 + 1000; 
+        let totalTime = texteNarratif.length * 800 + 1000; 
 
         setTimeout(() => {
             document.querySelector(".content-title").style.opacity = "1";
