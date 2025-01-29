@@ -1,24 +1,38 @@
 .carousel-box {
+    position: relative;
     min-width: 65%;
     max-width: 300px;
     height: 100%;
 
     margin: 0 1rem;
 
-    clip-path: polygon(0 0, 100% 3%, 100% 100%, 0 97%);
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
 
-    overflow: hidden;
+    overflow: visible;
 }
 
 .box-background {
     width: 100%;
-    height: 30%;
-    background-color: cadetblue;
+    height: 23%;
+    background: radial-gradient(37.89% 37.89% at 50% 62.11%, #4B9569 0%, #127039 100%);
+    overflow: visible;
+    clip-path: polygon(0 0, 100% 3%, 100% 100%, 0 100%);
+}
+
+.carousel-box .illustration img {
+    position: absolute;
+    bottom: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    clip-path: none;
 }
 
 .box-main-container {
     width: 100%;
-    height: 70%;
+    height: 60%;
 
     padding: 8px 0;
 
@@ -29,6 +43,7 @@
 
     color: #000;
     background: radial-gradient(182.51% 182.51% at 50% 50%, #EFD8B8 0%, #897C69 100%);
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 97%);
 }
 
 .box-title {
