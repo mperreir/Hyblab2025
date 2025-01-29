@@ -11,6 +11,7 @@
   "dependencies": {
     "@gsap/react": "^2.1.2",
     "express": "^4.21.2",
+    "fullpage.js": "^4.0.33",
     "gsap": "^3.12.7",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -18,7 +19,10 @@
     "react-rating-stars-component": "^2.2.0",
     "react-router-dom": "^7.1.3",
     "react-router-hash-link": "^2.4.3",
-    "react-scroll": "^1.9.0"
+    "react-scroll": "^1.9.0",
+    "react-scroll-snap": "^1.0.0",
+    "react-use-scroll-snap": "^1.0.0",
+    "scroll-snap": "^4.0.5"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",

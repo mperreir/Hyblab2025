@@ -45,7 +45,7 @@ const App = () => {
     <div className="app-container h-screen w-full overflow-y-scroll snap-y snap-mandatory [scroll-behavior:smooth]">
       <Home onSelectPlayer={handleQuizSelection} />
       <ChoosePlayer onSelectPlayer={handleQuizSelection} />
-      {quizData && (
+      {quizData && articleData && statsData && (
         <>
           <Quiz
             data={quizData}
@@ -53,7 +53,7 @@ const App = () => {
             onSelectPlayer={handleQuizSelection}
           />
           <Article data={articleData} />
-          <BentoGrid stats={statsData} />
+          <BentoGrid stats={statsData} player={choosenPlayer} />
         </>
       )}
       <EndPage />

@@ -3,8 +3,25 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .font-variant-position-sub {
+    font-variant-position: sub;
+  }
+  .font-variant-position-super {
+    font-variant-position: super;
+  }
+  .font-variant-position-normal {
+    font-variant-position: normal;
+  }
+}
+
 html {
   font-size: 100%;
+}
+
+#fullpage {
+  width: 100vw;
+  height: 100vh;
 }
 
 @-moz-document url-prefix() {

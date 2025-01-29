@@ -40,7 +40,7 @@ const Article = ({data}) => {
         <section ref={sectionRef} className="relative article">
             {data.sections.map((section, index) => (
                 <section
-                    className={"h-screen w-full snap-start flex items-center justify-between px-32 py-12 relative " + ((index % 2 === 0) ? "flex-row" : "flex-row-reverse")}
+                    className={"h-screen w-full snap-start snap-always flex items-center justify-between px-32 py-12 relative " + ((index % 2 === 0) ? "flex-row" : "flex-row-reverse")}
                     style={{fontFamily: 'Arial, sans-serif'}}
                     id={"article" + section.id}
                 >

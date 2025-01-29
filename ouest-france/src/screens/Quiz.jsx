@@ -86,7 +86,7 @@ const Quiz = ({ data, player, onSelectPlayer }) => {
   });
 
   return (
-    <div className="h-screen w-screen overflow-x-auto snap-start snap-x snap-mandatory">
+    <div className="h-screen w-screen overflow-x-auto snap-start snap-always snap-x snap-mandatory">
       <div className="flex h-full">
         {data.map((question, questionIndex) => (
           <section

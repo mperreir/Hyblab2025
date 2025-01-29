@@ -9,6 +9,11 @@ module.exports = {
       fontFamily: {
         'anton': ['Anton', 'sans-serif'],
       },
+      fontVariantPosition: {
+        sub: 'sub',
+        super: 'super',
+        normal: 'normal',
+      },
     },
   },
   plugins: [],

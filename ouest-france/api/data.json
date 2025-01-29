@@ -100,23 +100,32 @@
     "stats": [
       {
         "label": "Nombre de coups tirés dans toute la carrière pro",
-        "value": 64144
+        "value": "64 144"
       },
       {
         "label": "Gains totaux",
         "value": "10 843 058.02$"
       },
       {
-        "label": "Classement mondial actuel",
+        "label": "8 641 joueurs de répertoriés dans le monde (masculin)",
         "value": 33
       },
       {
         "label": "Victoires majeures",
-        "value": "PGA Tour - Farmers Insurance Open (Janvier 2024)"
+        "value0": "Open International de Rebetz",
+        "value1": "Acciona Open de España",
+        "value2": "Farmers Insurance Open",
+        "date0": "3 MAI 2014",
+        "date1" : "15 OCT. 2024",
+        "date2" : "27 JANVIER 2024",
+        "info2" : "premier vainqueur francais depuis 1907"
       },
       {
         "label": "Gain max",
         "value": "1 492 344$"
+      },
+      {
+        "path": "./pavon_bento.png"
       }
     ]
   },
@@ -228,16 +237,25 @@
         "value": "7 365 139.85$"
       },
       {
-        "label": "Classement mondial actuel",
+        "label": "8 641 joueuses de répertoriées dans le monde (féminin)",
         "value": 9
       },
       {
         "label": "Victoires majeures",
-        "value": "Amundi Evian Championship (2023)"
+        "value0": "ISPS Handa Vic Open",
+        "value1": "ShopRite LPGA Classic",
+        "value2": "Amundi Evian Championship",
+        "date0" : "FEVRIER 2019",
+        "date1" : "JUIN 2021",
+        "date2" : "30 JUILLET 2023",
+        "info2" : "première vainqueur francaise depuis 2003"
       },
       {
         "label": "Gain max",
         "value": "904 540$"
+      },
+      {
+        "path": "./boutier_bento.png"
       }
     ]
   }

@@ -7,7 +7,7 @@ const ChoosePlayer = ({onSelectPlayer}) => {
 
   return (
       <section
-          className={"h-full w-full snap-start flex items-center justify-center " + hovered}
+          className={"h-full w-full snap-start snap-always flex items-center justify-center " + hovered}
           id="choose-player"
       >
           <div

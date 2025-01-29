@@ -5,7 +5,7 @@ const EndPage = () => {
 
   return (
       <section
-          className="h-full w-full flex flex-col snap-start justify-center items-center min-h-screen bg-white gap-20"
+          className="h-full w-full flex flex-col snap-start snap-always justify-center items-center min-h-screen bg-white gap-20"
           id="endpage"
       >
           <a href="https://hyblab.polytech.univ-nantes.fr/" target="_blank" rel="noopener noreferrer">

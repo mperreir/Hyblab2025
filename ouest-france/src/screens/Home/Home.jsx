@@ -8,7 +8,7 @@ import './home.css';
 const Home = () => {
 
     return (<section
-            className="h-full w-full snap-start flex items-center justify-center flex-col"
+            className="h-full w-full flex items-center justify-center flex-col snap-start snap-always"
             id="home"
         >
             <div className="background">
