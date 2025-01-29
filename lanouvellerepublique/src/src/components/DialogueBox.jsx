@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import anime from "animejs";
 import "./DialogueBox.css";
-import loutre from '../assets/loutre.svg';
 
 const CardTitle = ({ number, title }) => {
     return (
@@ -25,19 +24,20 @@ const SpeechBubble = ({ text }) => {
     )
 }
 
-const AnimalIllustration = () => {
+const AnimalIllustration = (imageName) => {
     return (
         <div className="illustration">
-            <img src={loutre} alt="Loutre"/>
+            <img src={`/src/assets/${imageName.imageName}`} alt="POI" />
         </div>
     )
 }
 
-const DialogueBox = ({ text, setSelectedText}) => {
+const DialogueBox = ({ text, setSelectedText, POI, setSelectedPOI, chosenAnimal}) => {
     const dialogueRef = useRef(null);
     const speechHolderRef = useRef(null);
     const [pages, setPages] = useState([]);
     const [scrollPercentage, setScrollPercentage] = useState(0);
+    const imageName = POI[1];
 
     const handleScroll = () => {
         const holder = speechHolderRef.current;
@@ -104,7 +104,7 @@ const DialogueBox = ({ text, setSelectedText}) => {
             opacity: [1, 0], // Fade out
             duration: 400,
             easing: "easeInQuad",
-            complete: () => setSelectedText(""), // Remove text AFTER animation completes
+            complete: () => {setSelectedText(""); setSelectedPOI([0,""])}, // Remove text AFTER animation completes
             });
         }
     };
@@ -115,14 +115,14 @@ const DialogueBox = ({ text, setSelectedText}) => {
             className="dialogue-box"
             onClick={() => {handleClose()}}
         >
-            <CardTitle number={1} title={"La carte d'identité"}/>
+            <CardTitle number={POI[0]} title={"La carte d'identité"}/>
             <div className="speech_holder" ref={speechHolderRef}>
                 {pages.map((page, index) => {
                     return (<SpeechBubble key={index} text={page}/>);
                 })}
                 <div className="shadow" style={shadowStyle}></div>
             </div>
-            <AnimalIllustration/>
+            <AnimalIllustration imageName={imageName} />
         </div>
     );
 };
