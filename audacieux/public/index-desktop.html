@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exploration d'image avec Slider et Zoom</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .image-container {
+            position: relative;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            transition: transform 0.2s ease-out;
+        }
+
+        .image-container img {
+            height: 100%;
+            width: auto;
+            transition: transform 0.1s;
+        }
+
+        #zoomImage {
+            position: relative;
+            transform-origin: 90% 90%;
+            z-index: 1;
+        }
+
+        .background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            z-index: -1;
+        }
+
+        /* Overlay pour le fondu noir */
+        .fade-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            opacity: 0;
+            transition: opacity 0.2s ease-out;
+            pointer-events: none; /* Empêche l’overlay de bloquer les interactions */
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="image-container">
+            <img class="background-image" src="assets/graphic/IMAGE_HOMEPAGE.png" alt="Fond"> 
+            <img id="zoomImage" src="assets/graphic/HOMEPAGE.svg" alt="Image SVG à explorer">
+        </div>
+        <div class="fade-overlay"></div> <!-- Overlay pour fondu noir -->
+    </div>
+
+    <script>
+        window.addEventListener("load", () => {
+            const imageContainer = document.querySelector('.image-container');
+            const image = document.getElementById('zoomImage');
+            const fadeOverlay = document.querySelector('.fade-overlay'); // Sélection de l'overlay
+
+            let isZoomEnabled = false;
+            let scrollPosition = 0;
+            let scale = 1;
+            const minScale = 1;
+            const maxScale = 3;
+            const imageWidth = image.clientWidth;
+            const windowWidth = window.innerWidth;
+
+            window.addEventListener('wheel', (event) => {
+                event.preventDefault();
+
+                if (!isZoomEnabled) {
+                    // Défilement horizontal
+                    scrollPosition += event.deltaY;
+                    scrollPosition = Math.max(0, Math.min(scrollPosition, imageWidth - windowWidth));
+                    imageContainer.style.transform = `translateX(-${scrollPosition}px)`;
+
+                    if (scrollPosition >= imageWidth - windowWidth) {
+                        isZoomEnabled = true;
+                    }
+                } else {
+                    // Zoom
+                    if (event.deltaY < 0) {
+                        scale /= 1.05;
+                    } else {
+                        scale *= 1.05;
+                    }
+
+                    scale = Math.min(Math.max(minScale, scale), maxScale);
+                    image.style.transform = `scale(${scale})`;
+
+                    // Calcul de l'opacité (entre 0 et 1)
+                    let fadeOpacity = (scale - (maxScale - 1)) / (maxScale - (maxScale - 1));
+                    fadeOpacity = Math.min(Math.max(0, fadeOpacity), 1);
+                    fadeOverlay.style.opacity = fadeOpacity;
+
+
+                    // Désactiver le zoom si on revient au minScale
+                    if (scale === minScale) {
+                        isZoomEnabled = false;
+                    }
+                }
+            }, { passive: false });
+        });
+
+    </script>
+</body>
+</html>
