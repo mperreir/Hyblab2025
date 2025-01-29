@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L'audacieux - Canal Beaucoup</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/livre.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
+
+</head>
+<body id="body">
+  <div id="time-slider-container">
+    <input type="range" id="time-slider" min="0" max="100" value="0" step="0.1">
+</div>
+
+
+  <div id="box-container">
+    <img id="image-scene">
+  </div>
+  <div id="mouse-popup" style="position: absolute; z-index: 10001; background-color: rgba(0, 0, 0, 0.7); color: white; padding: 5px; border-radius: 5px; display: none;"></div>
+
+  
+  <div id="scene-container"></div>
+  
+  <main style="position: relative; z-index: 10000;">
+    <div class="game">
+      <!-- Barre latérale gauche -->
+      <div class="sidebar left">
+        <img id="inventaire" src="img/inventaire.png" alt="Inventaire">
+        <img id="livre_open" src="img/livre.png" alt="Livre">
+      </div>
+    
+      <!-- Barre latérale droite -->
+      <div class="sidebar right">
+        <img src="img/action.png" alt="Action">
+      </div>
+    </div>
+  </main>
+  
+
+  <div id="book1" class="book">
+    <div class="content">
+    </div>
+  </div>
+  
+  <script src="js/utile.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/scene.js"></script>
+  <script src="js/sceneObject.js"></script>
+  <script src="js/audioScene.js"></script>
+  <script src="js/UI.js"></script>
+  <script src="js/livre.js"></script>
+  <script src="js/loadAnimations.js"></script>
+  <script src="js/main.js"></script>
+  
+</body>
+</html>
