@@ -1,15 +1,12 @@
 import React from 'react';
-import { useLocation, useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import useBasename from '../hooks/useBasenameHook';
 import './TransitionPage.css';
-import ImageModal from '../components/ImageModal';
 
 const TransitionPage = () => {
 
-    const location = useLocation();
     const navigate = useNavigate();
     const basename = useBasename();
-    const [showModal, setShowModal] = React.useState(false);
 
     // Récupérer les valeurs passées via navigate
     const finalScore = parseInt(localStorage.getItem("score")) || 0;
@@ -20,6 +17,25 @@ const TransitionPage = () => {
     const seconds = finalScore % 60;
 
     let { level_id, difficulty } = useParams();
+
+
+    const [treePosition, setTreePosition] = React.useState(0);
+
+    // Calculer la position de l'arbre par rapport au bord gauche
+    React.useEffect(() => {
+        const calculatePosition = () => {
+            const button = document.querySelector('.btn-outline-light');
+            if (button) {
+                const buttonRect = button.getBoundingClientRect();
+                const leftPosition = buttonRect.left;
+                setTreePosition(-leftPosition);
+            }
+        };
+
+        calculatePosition();
+        window.addEventListener('resize', calculatePosition);
+        return () => window.removeEventListener('resize', calculatePosition);
+    }, []);
 
     const transition_data = [
         {
@@ -74,8 +90,7 @@ const TransitionPage = () => {
             style={{
                 backgroundImage: `url(${currentTransition.maillot_image_bg})`
             }}
-            >
-            <div className="arbre"></div>
+        >
             <div className="mt-76 text-center">
                 <h1 className="text-white">FÉLICITATIONS</h1>
                 <img src={currentTransition.maillot_image_icon}
@@ -114,12 +129,22 @@ const TransitionPage = () => {
 
 
                     <button onClick={() => navigate(currentTransition.navigate_to)}
-                        className="btn btn-outline-light fw-bold mx-2"
+                        className="btn btn-outline-light fw-bold mx-3 position-relative"
                         style={{
                             borderColor: currentTransition.color,
                             color: currentTransition.color
                         }}
                     >
+                        <img src={`${basename}images/illustrations/arbre2.gif`}
+                            alt="arbre_orange"
+                            style={{
+                                position: 'absolute',
+                                left: `${treePosition}px`,
+                                width: `${Math.min(80, -treePosition)}px`,
+                                transform: 'translateY(-50%)',
+                                top: '50%',
+                                objectFit: 'scale-down'
+                            }} />
                         {currentTransition.button_text}
                     </button>
                 </div>
