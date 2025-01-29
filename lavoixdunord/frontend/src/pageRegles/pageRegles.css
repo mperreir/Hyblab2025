@@ -20,7 +20,8 @@
 .regle_velo {
     z-index: 0;
     position: absolute;
-    top: 140px;
-    right: 30px;
+    top: -64px;
+    right: 0;
     width: 100px;
+    object-fit: scale-down;
 }
