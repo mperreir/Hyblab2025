@@ -298,7 +298,7 @@ game:
                   correct: true
                 - text: "Opération Overlord"
                   correct: false
-                - text: "Opération Dunkerk"
+                - text: "Opération Dunkerque"
                   correct: false
               hints:
                 text: "L'opération a été menée pour sauver plus de 338 000 soldats encerclés à Dunkerque, grâce à des rotations de navires entre la France et l'Angleterre." 
