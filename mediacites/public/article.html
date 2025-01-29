@@ -31,7 +31,7 @@
             // Update the DOM with article data
             document.getElementById('article-title').textContent = articleData.name; 
             document.getElementById('resumeGeneral').textContent = articleData.resume;
-            document.getElementById('texteArticle').textContent = articleData.text;
+            document.getElementById('texteArticle').innerHTML = articleData.text;
             document.getElementById('biduleTexte').textContent = `Voici le bilan 2020-2025 concernant les décisions prises sur le thème "${articleData.name}".`
 
             // Replace the logo class with a video tag if available, otherwise keep the logo
