@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 import LinearProgress from '@mui/material/LinearProgress';
 
 import Jauge from './Jauge.jsx'
-import gesIcon from '../assets/ges.png'
-import happyIcon from '../assets/happy.png'
-import moneyIcon from '../assets/money.png' 
+import gesIcon from '../assets/ges.svg'
+import happyIcon from '../assets/happy.svg'
+import moneyIcon from '../assets/money.svg' 
 
 const JaugeContainer = ({ money , happyness , ges , wth }) => {
     return (
@@ -17,9 +17,9 @@ const JaugeContainer = ({ money , happyness , ges , wth }) => {
             sx={{ width: `${wth}%`, }} 
             position="relative"
         >
-            <Jauge value={money} thickness={15} color="#00ff00" icon={moneyIcon} />
-            <Jauge value={happyness} thickness={15} color=" #ffff00" icon={happyIcon} />
-            <Jauge value={ges} thickness={15} color=" #00ffff " icon={gesIcon} />
+            <Jauge value={money} thickness={15} color="#991756" icon={moneyIcon} />
+            <Jauge value={happyness} thickness={15} color=" #991756" icon={happyIcon} />
+            <Jauge value={ges} thickness={15} color=" #991756 " icon={gesIcon} />
         </Box>
     );
 };
@@ -31,7 +31,7 @@ JaugeContainer.propTypes = {
     wth: PropTypes.number, 
 };
 
-Jauge.defaultProps = {
+JaugeContainer.defaultProps = {
     wth: 100,
 };
 
