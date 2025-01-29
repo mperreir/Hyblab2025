@@ -1,224 +1,250 @@
 {
-    "questions": [
-    {
-        "question_id":1,
-        "question_text": "Comment accélérer le développement des énergies renouvelables pour compenser le déclin du nucléaire ?",
-        "transition": [
-            {
-                "id":1,
-                "text": "À toi de jouer ! Tu as maintenant tous les leviers pour diriger ton pays. L’objectif final : réduire les émissions de CO₂ et respecter l’Accord de Paris d'ici 2050."
-            }
-        ],
-        "responses": [
-        {
-            "response_id":1,
-            "response_text": "Multiplier les parcs éoliens terrestres et marins, malgré les résistances locales.",
-            "advantages":"",
-            "inconvenient":"",
-            "Budget":{
-                "plus": 0,
-                "moins": 0
+  "questions": [
+      {
+          "question_id": 1,
+          "question_text": "Quel rythme donnez-vous à la fermeture des réacteurs nucléaires ?",
+          "responses": [
+              {
+                  "response_id": 1,
+                  "response_text": "Fermer les réacteurs les plus anciens dès maintenant pour accélérer la transition.",
+                  "advantages": "",
+                  "inconvenient": "",
+                  "Budget": {
+                      "plus": 0,
+                      "moins": 30
+                  },
+                  "GES": {
+                      "plus": 5,
+                      "moins": 0
+                  },
+                  "Satisfaction": {
+                      "plus": 0,
+                      "moins": 5
+                  },
+                  "next_question_id": 2
               },
-            "GES":{
-                "plus": 0,
-                "moins": 0
+              {
+                  "response_id": 2,
+                  "response_text": "Échelonner les fermetures pour éviter des tensions sur le réseau électrique.",
+                  "advantages": "",
+                  "inconvenient": "",
+                  "Budget": {
+                      "plus": 0,
+                      "moins": 5
+                  },
+                  "GES": {
+                      "plus": 2,
+                      "moins": 0
+                  },
+                  "Satisfaction": {
+                      "plus": 5,
+                      "moins": 0
+                  },
+                  "next_question_id": 2
               },
-            "Satisfaction": {
-                "plus": 0,
-                "moins": 0
+              {
+                  "response_id": 3,
+                  "response_text": "Maintenir une fermeture plus lente pour maximiser l’usage du nucléaire avant 2040.",
+                  "advantages": "",
+                  "inconvenient": "",
+                  "Budget": {
+                      "plus": 5,
+                      "moins": 0
+                  },
+                  "GES": {
+                      "plus": 0,
+                      "moins": 5
+                  },
+                  "Satisfaction": {
+                      "plus": 3,
+                      "moins": 0
+                  },
+                  "next_question_id": 2
+              }
+          ]
+      },
+      {
+          "question_id": 2,
+          "question_text": "Quelle priorité donnez-vous au développement des énergies renouvelables ?",
+          "responses": [
+              {
+                  "response_id": 1,
+                  "response_text": "Multiplier les parcs solaires en commençant par les régions ensoleillées.",
+                  "advantages": "",
+                  "inconvenient": "",
+                  "Budget": {
+                      "plus": 0,
+                      "moins": 12
+                  },
+                  "GES": {
+                      "plus": 3,
+                      "moins": 0
+                  },
+                  "Satisfaction": {
+                      "plus": 2,
+                      "moins": 0
+                  },
+                  "next_question_id": 3
               },
-            "next_question_id": 2
-        },
-        {
-            "response_id": 2,
-            "response_text": "Investir massivement dans des centrales solaires au sol pour une production rapide.",
-            "advantages":"",
-            "inconvenient":"",
-            "Budget":{
-                "plus": 0,
-                "moins": 0
+              {
+                  "response_id": 2,
+                  "response_text": "Accélérer l’éolien terrestre, même en affrontant des oppositions locales.",
+                  "advantages": "",
+                  "inconvenient": "",
+                  "Budget": {
+                      "plus": 0,
+                      "moins": 15
+                  },
+                  "GES": {
+                      "plus": 5,
+                      "moins": 0
+                  },
+                  "Satisfaction": {
+                      "plus": 0,
+                      "moins": 5
+                  },
+                  "next_question_id": 3
               },
-            "GES":{
-                "plus": 0,
-                "moins": 0
+              {
+                  "response_id": 3,
+                  "response_text": "Investir dans l’éolien en mer, même si les coûts initiaux sont élevés.",
+                  "advantages": "",
+                  "inconvenient": "",
+                  "Budget": {
+                      "plus": 0,
+                      "moins": 30
+                  },
+                  "GES": {
+                      "plus": 8,
+                      "moins": 0
+                  },
+                  "Satisfaction": {
+                      "plus": 3,
+                      "moins": 0
+                  },
+                  "next_question_id": 3
+              }
+          ]
+      },
+      {
+          "question_id": 3,
+          "question_text": "Comment intégrez-vous la sobriété dans les secteurs de consommation ?",
+          "responses": [
+              {
+                  "response_id": 1,
+                  "response_text": "Lancer une campagne nationale pour sensibiliser les citoyens à réduire leur consommation.",
+                  "advantages": "",
+                  "inconvenient": "",
+                  "Budget": {
+                      "plus": 0,
+                      "moins": 3
+                  },
+                  "GES": {
+                      "plus": 3,
+                      "moins": 0
+                  },
+                  "Satisfaction": {
+                      "plus": 5,
+                      "moins": 0
+                  },
+                  "next_question_id": 4
               },
-            "Satisfaction": {
-                "plus": 0,
-                "moins": 0
+              {
+                  "response_id": 2,
+                  "response_text": "Imposer des quotas énergétiques pour limiter les consommations excessives.",
+                  "advantages": "",
+                  "inconvenient": "",
+                  "Budget": {
+                      "plus": 10,
+                      "moins": 0
+                  },
+                  "GES": {
+                      "plus": 7,
+                      "moins": 0
+                  },
+                  "Satisfaction": {
+                      "plus": 0,
+                      "moins": 8
+                  },
+                  "next_question_id": 4
               },
-            "next_question_id": 2
-        },
-        {
-            "response_id": 3,
-            "response_text": "Favoriser des projets solaires sur les toitures et espaces déjà urbanisés pour limiter l’artificialisation des sols.",
-            "advantages": "",
-            "inconvenient": "",
-            "Budget":{
-                "plus": 0,
-                "moins": 0
+              {
+                  "response_id": 3,
+                  "response_text": "Encourager l’efficacité énergétique avec des subventions pour des équipements moins gourmands.",
+                  "advantages": "",
+                  "inconvenient": "",
+                  "Budget": {
+                      "plus": 0,
+                      "moins": -8
+                  },
+                  "GES": {
+                      "plus": 5,
+                      "moins": 0
+                  },
+                  "Satisfaction": {
+                      "plus": 7,
+                      "moins": 0
+                  },
+                  "next_question_id": 4
+              }
+          ]
+      },
+      {
+          "question_id": 4,
+          "question_text": "Comment financer ce basculement vers un mix 100 % renouvelable ?",
+          "responses": [
+              {
+                  "response_id": 1,
+                  "response_text": "Instaurer une taxe carbone pour financer les nouveaux projets renouvelables.",
+                  "Budget": {
+                      "plus": 5,
+                      "moins": 0
+                  },
+                  "GES": {
+                      "plus": 5,
+                      "moins": 0
+                  },
+                  "Satisfaction": {
+                      "plus": 0,
+                      "moins": 10
+                  },
+                  "next_question_id": 5
               },
-            "GES":{
-                "plus": 0,
-                "moins": 0
+              {
+                  "response_id": 2,
+                  "response_text": "Emprunter massivement pour accélérer les investissements, malgré une augmentation de la dette publique.",
+                  "Budget": {
+                      "plus": 0,
+                      "moins": 15
+                  },
+                  "GES": {
+                      "plus": 7,
+                      "moins": 0
+                  },
+                  "Satisfaction": {
+                      "plus": 3,
+                      "moins": 0
+                  },
+                  "next_question_id": 5
               },
-            "Satisfaction": {
-                "plus": 0,
-                "moins": 0
-              },
-            "next_question_id": 2
-        }
-        ]
-    },
-    {
-        "question_id": 2,
-        "question_text": "Comment gérer l’intermittence des énergies renouvelables ?",
-        "transition":[
-            {
-                "id":3,
-                "text": "Bravo ! Tu as brillamment relevé ton premier défi."
-            },
-            {
-                "id":4,
-                "text": "Mais pas de répit pour toi. Un nouvel enjeu se présente sur ton bureau."
-            },
-            {
-                "id":5,
-                "text": "Le parc nucléaire de ton pays vieillit, et des décisions importantes s'imposent pour assurer l'avenir."
-            }
-        ],
-        "responses": [
-        {
-            "response_id":1,
-            "response_text": "Développer des capacités de stockage massif via des batteries lithium-ion.",
-            "advantages":"",
-            "inconvenient": "",
-            "Budget":{
-                "plus": 0,
-                "moins": 10
-              },
-            "GES":{
-                "plus": 5,
-                "moins": 0
-              },
-            "Satisfaction": {
-                "plus": 0,
-                "moins": 0
-              },
-            "next_question_id": 3
-            
-        },
-        {
-            "response_id": 2,
-            "response_text": "S’appuyer sur l’hydrogène pour stocker l’électricité et l’utiliser en période de forte demande.",
-            "advantages": "",
-            "inconvenient":"",
-            "Budget":{
-                "plus": 0,
-                "moins": 5
-              },
-            "GES":{
-                "plus": 5,
-                "moins": 0
-              },
-            "Satisfaction": {
-                "plus": 10,
-                "moins": 0
-              },
-            "next_question_id": 3
-        },
-        {
-            "response_id": 3,
-            "response_text": "Créer des interconnexions avec les pays voisins pour importer de l’électricité en cas de déficit.",
-            "advantages": "",
-            "inconvenient":"",
-            "Budget":{
-                "plus": 0,
-                "moins": 5
-              },
-            "GES":{
-                "plus": 0,
-                "moins": 0
-              },
-            "Satisfaction": {
-                "plus": 0,
-                "moins": 0
-              },
-            "next_question_id": 3
-            
-        }
-        ]
-    },
-    {
-        "question_id": 3,
-        "question_text": " Comment financer ce basculement vers un mix 100 % renouvelable ?",
-        "transition":[
-            {
-                "id":6,
-                "text": "Après ta décision sur le nucléaire, les choses s’accélèrent."
-            },
-            {
-                "id":7,
-                "text": "Plusieurs entreprises viennent de déposer sur ton bureau des propositions innovantes."
-            },
-            {
-                "id":8,
-                "text": "Ces solutions pourraient transformer le mix énergétique de ton pays et l’adapter aux enjeux de demain."
-            }
-        ],
-        "responses": [
-        {
-            "response_id":1,
-            "response_text": "Instaurer une taxe carbone pour financer les nouveaux projets renouvelables.",
-            "Budget":{
-                "plus": 0,
-                "moins": 5
-              },
-            "GES":{
-                "plus": 5,
-                "moins": 0
-              },
-            "Satisfaction": {
-                "plus": 5,
-                "moins": 0
-              },
-            "next_question_id": 4
-        },
-        {
-            "response_id": 2,
-            "response_text": "Emprunter massivement pour accélérer les investissements, malgré une augmentation de la dette publique.",
-            "Budget":{
-                "plus": 0,
-                "moins": 10
-              },
-            "GES":{
-                "plus": 5,
-                "moins": 0
-              },
-            "Satisfaction": {
-                "plus": 0,
-                "moins": 0
-              },
-            "next_question_id": 4
-        },
-        {
-            "response_id": 3,
-            "response_text": "Imposer des quotas énergétiques pour limiter la demande et réduire les besoins en infrastructures.",
-            "Budget":{
-                "plus": 0,
-                "moins": 0
-              },
-            "GES":{
-                "plus": 0,
-                "moins": 0
-              },
-            "Satisfaction": {
-                "plus": 0,
-                "moins": 0
-              },
-            "next_question_id": 4
-        }
-        ]
-    }
-    ]
-  }
-  
+              {
+                  "response_id": 3,
+                  "response_text": "Imposer des quotas énergétiques pour limiter la demande et réduire les besoins en infrastructures.",
+                  "Budget": {
+                      "plus": 3,
+                      "moins": 0
+                  },
+                  "GES": {
+                      "plus": 8,
+                      "moins": 0
+                  },
+                  "Satisfaction": {
+                      "plus": 0,
+                      "moins": 12
+                  },
+                  "next_question_id": 5
+              }
+          ]
+      }
+  ]
+}

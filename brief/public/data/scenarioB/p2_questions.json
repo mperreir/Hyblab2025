@@ -1,0 +1,194 @@
+{
+    "questions": [
+        {
+            "question_id": 4,
+            "question_text": "Comment gérez-vous l’intermittence des renouvelables ?",
+            "responses": [
+                {
+                    "response_id": 1,
+                    "response_text": "Investir massivement dans des batteries pour stocker l’énergie excédentaire.",
+                    "advantages": "",
+                    "inconvenient": "",
+                    "Budget": {
+                        "plus": 0,
+                        "moins": 30
+                    },
+                    "GES": {
+                        "plus": 5,
+                        "moins": 0
+                    },
+                    "Satisfaction": {
+                        "plus": 0,
+                        "moins": 5
+                    },
+                    "next_question_id": 2
+                },
+                {
+                    "response_id": 2,
+                    "response_text": "Produire de l’hydrogène vert à partir des surplus d’électricité renouvelable.",
+                    "advantages": "",
+                    "inconvenient": "",
+                    "Budget": {
+                        "plus": 0,
+                        "moins": 5
+                    },
+                    "GES": {
+                        "plus": 2,
+                        "moins": 0
+                    },
+                    "Satisfaction": {
+                        "plus": 5,
+                        "moins": 0
+                    },
+                    "next_question_id": 2
+                },
+                {
+                    "response_id": 3,
+                    "response_text": "Renforcer les interconnexions avec les pays voisins pour échanger de l’électricité.",
+                    "advantages": "",
+                    "inconvenient": "",
+                    "Budget": {
+                        "plus": 5,
+                        "moins": 0
+                    },
+                    "GES": {
+                        "plus": 0,
+                        "moins": 5
+                    },
+                    "Satisfaction": {
+                        "plus": 3,
+                        "moins": 0
+                    },
+                    "next_question_id": 2
+                }
+            ]
+        },
+        {
+            "question_id": 5,
+            "question_text": "Comment intégrer les nouveaux réacteurs nucléaires au système sans générer de surplus inutiles ?",
+            "responses": [
+                {
+                    "response_id": 1,
+                    "response_text": "Ajuster leur production pour couvrir les périodes de faible disponibilité des renouvelables.",
+                    "advantages": "",
+                    "inconvenient": "",
+                    "Budget": {
+                        "plus": 0,
+                        "moins": 12
+                    },
+                    "GES": {
+                        "plus": 3,
+                        "moins": 0
+                    },
+                    "Satisfaction": {
+                        "plus": 2,
+                        "moins": 0
+                    },
+                    "next_question_id": 3
+                },
+                {
+                    "response_id": 2,
+                    "response_text": "Utiliser les surplus pour alimenter des industries énergivores.",
+                    "advantages": "",
+                    "inconvenient": "",
+                    "Budget": {
+                        "plus": 0,
+                        "moins": 15
+                    },
+                    "GES": {
+                        "plus": 5,
+                        "moins": 0
+                    },
+                    "Satisfaction": {
+                        "plus": 0,
+                        "moins": 5
+                    },
+                    "next_question_id": 3
+                },
+                {
+                    "response_id": 3,
+                    "response_text": "Exporter l’électricité produite en excédent vers d’autres pays.",
+                    "advantages": "",
+                    "inconvenient": "",
+                    "Budget": {
+                        "plus": 0,
+                        "moins": 30
+                    },
+                    "GES": {
+                        "plus": 8,
+                        "moins": 0
+                    },
+                    "Satisfaction": {
+                        "plus": 3,
+                        "moins": 0
+                    },
+                    "next_question_id": 3
+                }
+            ]
+        },
+        {
+            "question_id": 6,
+            "question_text": "Comment soutenir le déploiement de technologies de flexibilité pour un système énergétique stable ?",
+            "responses": [
+                {
+                    "response_id": 1,
+                    "response_text": "Encourager les consommateurs à moduler leur demande avec des tarifs dynamiques.",
+                    "advantages": "",
+                    "inconvenient": "",
+                    "Budget": {
+                        "plus": 0,
+                        "moins": 3
+                    },
+                    "GES": {
+                        "plus": 3,
+                        "moins": 0
+                    },
+                    "Satisfaction": {
+                        "plus": 5,
+                        "moins": 0
+                    },
+                    "next_question_id": 4
+                },
+                {
+                    "response_id": 2,
+                    "response_text": "Créer un réseau intelligent pour mieux gérer les pics et creux de consommation.",
+                    "advantages": "",
+                    "inconvenient": "",
+                    "Budget": {
+                        "plus": 10,
+                        "moins": 0
+                    },
+                    "GES": {
+                        "plus": 7,
+                        "moins": 0
+                    },
+                    "Satisfaction": {
+                        "plus": 0,
+                        "moins": 8
+                    },
+                    "next_question_id": 4
+                },
+                {
+                    "response_id": 3,
+                    "response_text": "Construire des centrales hybrides combinant biomasse et renouvelables.",
+                    "advantages": "",
+                    "inconvenient": "",
+                    "Budget": {
+                        "plus": 0,
+                        "moins": -8
+                    },
+                    "GES": {
+                        "plus": 5,
+                        "moins": 0
+                    },
+                    "Satisfaction": {
+                        "plus": 7,
+                        "moins": 0
+                    },
+                    "next_question_id": 7
+                }
+            ]
+        }
+    ]
+  }
+  

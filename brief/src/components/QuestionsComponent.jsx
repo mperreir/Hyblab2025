@@ -36,10 +36,12 @@ const QuestionsComponent = () => {
       );
   }, []);
 
-   useEffect(() => {
+  useEffect(() => {
     if (currentPhase) {
       // Charger les questions de la phase actuelle
-      fetch(`/brief/public/data/scenarioA/p${currentPhase.phase_id}_questions.json`)
+      fetch(
+        `/brief/public/data/scenarioA/p${currentPhase.phase_id}_questions.json`
+      )
         .then((response) => response.json())
         .then((data) => {
           setQuestions(data.questions);
@@ -53,19 +55,24 @@ const QuestionsComponent = () => {
   }, [currentPhase]);
 
   const handleAnswer = (response) => {
-     // Mettre à jour les scores dans le contexte
-     setGlobalState((prevState) => ({
+    // Mettre à jour les scores dans le contexte
+    setGlobalState((prevState) => ({
       ...prevState,
       Budget: prevState.Budget + response.Budget.plus - response.Budget.moins,
       GES: prevState.GES + response.GES.plus - response.GES.moins,
       Satisfaction:
-        prevState.Satisfaction + response.Satisfaction.plus - response.Satisfaction.moins,
+        prevState.Satisfaction +
+        response.Satisfaction.plus -
+        response.Satisfaction.moins,
       history: [
         ...prevState.history,
-        { question_id: currentQuestion.question_id, response_id: response.response_id },
+        {
+          question_id: currentQuestion.question_id,
+          response_id: response.response_id,
+        },
       ], // Ajout à l'historique
     }));
-     
+
     // Gestion des sous-questions (si elles existent)
     if (response.subquestion && response.subquestion.length > 0) {
       setSubQuestions(response.subquestion); // Ajoute les sous-questions dans la pile
@@ -88,12 +95,15 @@ const QuestionsComponent = () => {
         // Si la prochaine question n'est pas trouvée, passer à la phase suivante
         const nextPhase = currentPhase.phase_id + 1;
 
-        if (nextPhase <= 3) { // Ajuster ce nombre en fonction du nombre total de phases
+        if (nextPhase <= 3) {
+          // Ajuster ce nombre en fonction du nombre total de phases
           // Charger la phase suivante
           fetch("/brief/public/data/scenarioA/phases.json")
             .then((response) => response.json())
             .then((data) => {
-              const newPhase = data.phases.find(phase => phase.phase_id === nextPhase);
+              const newPhase = data.phases.find(
+                (phase) => phase.phase_id === nextPhase
+              );
               setCurrentPhase(newPhase);
               setPhaseText(newPhase.phase_text);
 
@@ -104,7 +114,12 @@ const QuestionsComponent = () => {
                   setQuestions(data.questions);
                   setCurrentQuestion(data.questions[0]);
                 })
-                .catch((error) => console.error("Erreur lors du chargement des questions de la phase suivante:", error));
+                .catch((error) =>
+                  console.error(
+                    "Erreur lors du chargement des questions de la phase suivante:",
+                    error
+                  )
+                );
             });
         } else {
           // Si toutes les phases sont terminées, afficher la page de fin

@@ -1,14 +1,8 @@
 { "sources": [
     {
       "name": "Pétrole",
-      "percentage": 39,
-      "color":"#859CA9D9",
-      "description": "Substance fossile extraite par forage, utilisée principalement pour les carburants. Non renouvelable et non produite localement.",
-      "text": "Cette substance noire extraite par forage dans les sols provient de restes d’organismes microscopiques enfouis dans le sol! Il s’agit d’une énergie fossile, qui n’existe pas en quantité illimitée sur notre terre mais c’est la principale matière première des carburants qui alimentent les transports et c’est une source bon marché pour ton pays. Elle est à l’origine d’environ 1/3 des émissions de dioxyde de carbone (CO2) liées à l’énergie et est donc très polluante. Elle n’est pas produite dans ton pays.",
-      "carbon_emissions": {
-        "value": 2.4,
-        "unit": "kg CO2/kWh"
-      },
+      "percentage": 38.5,
+      "text": "Utilisé essentiellement pour les transports (essence, diesel), le pétrole est la principale source d’émissions de gaz à effet de serre en France.",
       "notes": "Responsable d'environ 1/3 des émissions de CO2 liées à l'énergie."
     },
     {
@@ -22,29 +16,9 @@
     },
     {
       "name": "Gaz naturel",
-      "percentage": 18,
-      "color":"#C8C8C8D9",
-      "description": "Énergie fossile composée majoritairement de méthane, utilisée pour le chauffage. Transportée via gazoducs.",
-      "text": "Tout comme le pétrole et le charbon, le gaz naturel est une énergie fossile et non renouvelable. Extrait du sous-sol terrestre ou marin par forage, il est acheminé dans ton pays via un système de canalisations sous-marines appelées gazoducs. Son principal usage est domestique pour le chauffage des bâtiments et de l’eau. Composé essentiellement de méthane, il contribue également au réchauffement climatique.",
-      "carbon_emissions": {
-        "range": {
-          "min": 0.2,
-          "max": 0.6
-        },
-        "unit": "kg CO2/kWh"
-      },
+      "percentage": 17.9,
+      "text": "Composée essentiellement de méthane, cette énergie fossile est la deuxième source d'énergie la plus émettrice de CO2 en France, après le pétrole. Son principal usage est le chauffage résidentiel et industriel et la production d’électricité.",
       "notes": "Fossile le plus propre mais non renouvelable."
-    },
-    {
-      "name": "Énergie renouvelable thermique et déchets",
-      "percentage": 13,
-      "color":"#91BA2DD9",
-      "description": "Sources naturelles inépuisables comme le soleil, la géothermie, ou la biomasse. Utilisée pour le chauffage et les processus industriels.",
-      "text": "L’énergie renouvelable thermique correspond à la chaleur produite en utilisant des sources naturelles renouvelables, comme la chaleur du soleil (panneaux solaires thermiques), la chaleur du sous-sol terrestre (géothermie), la combustion de biomasse (bois, végétaux, déchets agricoles, etc.) ou l'incinération de déchets. Cette énergie est utilisée pour chauffer des bâtiments, produire de l’eau chaude ou alimenter des processus industriels. Ces différentes sources d'énergie émettent peu ou pas de gaz à effet de serre et ne s’épuisent pas. Cependant, leur mise en place peut nécessiter des investissements initiaux importants et dépend parfois des conditions climatiques (comme le soleil) ou géologiques locales",
-      "carbon_emissions": {
-        "notes": "Variable selon la source (ex. biomasse : émissions compensées par la replantation)."
-      },
-      "notes": "Peu ou pas de gaz à effet de serre, mais nécessite des investissements initiaux."
     },
     {
       "name": "Charbon",
@@ -69,32 +43,15 @@
       "text": "La consommation totale d’énergie à Gallia s’élève à environ 1 496 térawattheures (TWh) par an, pour une population (qui ressemble étrangement à celle de la France) d’environ 68 millions d’habitants."
     },
     {
-      "subject": "conversion_TWh",
-      "text": "1TWh = 1 000 000 000 kWh = 1 milliard de kWh"
-    }, 
-    {
-      "subject": "equivalence_0",
-      "text":"Avec 1 kWh, vous pouvez :"
+      "name": "Bioénergies",
+      "percentage": 12.9,
+      "text": "Les bioénergies regroupent les centrales thermiques fonctionnant avec des combustibles renouvelables ou de récupération. Elle inclut les installations produisant de la chaleur à partir de biomasse solide (bois, paille, etc.), de biogaz (produit à partir de déchets agricoles) ou encore de déchets ménagers. Elle représente une solution locale et bas-carbone, mais elle dépend de la disponibilité des ressources et de leur gestion durable.",
+      "notes": "Peu ou pas de gaz à effet de serre, mais nécessite des investissements initiaux."
     },
     {
-      "subject": "equivalence_1",
-      "text":"Faire fonctionner une machine à laver pendant 1h"
-    },
-    {
-      "subject": "equivalence_2",
-      "text":"Alimenter une ampoule LED de 10 W pendant 100 heures."
-    }
-  ],
-  
-  "external_links": [
-    {
-      "type": "Dataset",
-      "url": "https://docs.google.com/spreadsheets/d/1TxIcwbAy57LprAgmdb39urVW96PxXOh3H8grsoNmjzU/edit?usp=sharing"
-    },
-    {
-      "type": "Article",
-      "title": "Le gaz naturel pour faire de l'énergie",
-      "url": "https://app.brief.science/article/2022-09-12-316-le-gaz-naturel-pour-faire-de-lenergie/?search=true"
+      "name": "Chaleur commercialisée",
+      "percentage": 3.2,
+      "text": "La chaleur commercialisée combine différentes sources pour alimenter des réseaux de chauffage collectif urbains : centrale à bois ou granulés, incinération de déchets, récupération de chaleur industrielle, etc. Elle représente un outil clé de la transition énergétique locale."
     }
   ]
 }

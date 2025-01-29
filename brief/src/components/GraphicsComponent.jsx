@@ -15,7 +15,7 @@ const DonutJaugeGroup = () => {
         width: "100%",
         backgroundColor: "#F5E8F0", // Couleur de fond pour un visuel propre
         padding: 2,
-        borderRadius: 2,
+        borderRadius: 5,
         marginBottom: 2,
       }}
     >

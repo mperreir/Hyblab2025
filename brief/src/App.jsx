@@ -79,7 +79,7 @@ const AnimatedRoutes = () => {
       <Route
         path="/brief/questions"
         element={
-          <TransitionsComponent animationType="flamme">
+          <TransitionsComponent animationType="vent">
             <QuestionsPage />
           </TransitionsComponent>
         }
@@ -111,8 +111,10 @@ const AnimatedRoutes = () => {
       <Route
         path="/brief/Information"
         element={
-          
+          <TransitionsComponent animationType="vent">
             <InformationMixPage />
+            </TransitionsComponent>
+
         }
       />
     </Routes>
