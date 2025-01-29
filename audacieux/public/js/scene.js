@@ -18,6 +18,9 @@ class Scene {
 
     window.addEventListener('resize', () => this.resizeScene());
     this.resizeScene();
+
+  // jouer l'audio d'ambiance 
+  playAudioAmbiance(true);
   }
 
   set_frame(time){

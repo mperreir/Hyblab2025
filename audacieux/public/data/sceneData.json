@@ -14,7 +14,7 @@
       "id":"LIBRAIRIE",
       "onload": {"func":"colorScript", "args":[]},
       "script": {"func":"loadSceneScript", "args":["Librairie"]},
-      "audio": {"func":"playAudio", "args":["Bell"]}
+      "audio": {"func":"playAudio", "args":["BateauEntree"]}
     }
   ],
 

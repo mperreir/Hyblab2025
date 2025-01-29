@@ -3,10 +3,8 @@
         {
             "id": "ambiance",
             "src": "assets/audio/ambiance.mp3",
-            "volume": 0.5,
-            "keyframes":[
-                {"time": 1, "type":"loop"}
-            ]
+            "volume": 0.2,
+            "keyframes":[]
         },
         {
             "id": "drone1",
@@ -42,6 +40,13 @@
                 {"time": 35, "type":"play_once"},
                 {"time": 47, "type":"pause"}
             ]
+        },
+        {
+            "id": "BateauEntree",
+            "src": "assets/audio/bell.mp3",
+            "volume": 0.4,
+            "keyframes":[],
+            "type":"play_once"
         }
     ]
 }
