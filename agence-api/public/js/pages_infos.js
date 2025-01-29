@@ -1,24 +1,22 @@
-//première idée d'affichage de la page d'explication --> Contexte d'ouverture à adapter
+//Fonction de création d'un message permettant d'être agrandi pour afficher de l'information
 async function displayExplanation(data, liste_choix, contenu_message) {
     const num_question = liste_choix.length + 1;
     const reply = { text: contenu_message, type: 'received', id: `info_${num_question}`, class: 'info', choix: liste_choix }; // id à adapter selon le parametrage du JSON
+    
+    //Création de l'élément message et récupération de l'élément HTML
     addMessage(reply, 'info');
-    enableClickForExpansion(reply.text, data);
-
-    await waitForUserTouch();
     const lastMessage = document.querySelector(`#${reply.id}`);
-    expandMessage(lastMessage, data);
-}
+    
+    // Capture de l'événement de clic, peu importe l'élément cliqué -> A modifier pour éviter de capurer le clic menu 
+    await waitForUserTouchAnything();
 
-// Fonction pour permettre l'agrandissement manuel
-function enableClickForExpansion(text, data) {
-    const messages = document.querySelectorAll('.message.received');
-    messages.forEach(msg => {
-        if (msg.textContent === text) {
-            msg.addEventListener('click', () => {
-                expandMessage(msg, data);
-            });
-        }
+    //Au clic, afficher l'information
+    expandMessage(lastMessage, data);
+    await waitForUserTouch();
+    
+    //Enfin, ajout de l'event listener pour permettre la réouverture de la page info
+    lastMessage.addEventListener('click', () => {
+        expandMessage(lastMessage, data);
     });
 };
 
@@ -167,4 +165,17 @@ function detectType(element) {
     } else {
         return "other";
     }
+}
+
+// Fonction pour attendre que l'utilisateur touche n'importe quoi
+async function waitForUserTouchAnything() {
+    return new Promise(resolve => {
+        const handleTouch = (event) => {
+            event.preventDefault();
+            event.stopImmediatePropagation();
+            document.removeEventListener('click', handleTouch, true);
+            resolve();
+        };
+        document.addEventListener('click', handleTouch, true);
+    });
 }

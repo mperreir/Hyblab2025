@@ -90,7 +90,7 @@ async function waitForUserTouch(){
         const messageInput = document.getElementById('chatBox');
         messageInput.addEventListener('click', (event) => {
             if(!event.target.classList.contains("info") && !event.target.classList.contains("expanding") && !event.target.classList.contains("expanding-element")){
-                resolve(true);
+                resolve(true), {once: true};
             }
         });
     });
