@@ -10,7 +10,6 @@
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
   <script>
     async function loadArticle() {
-        // Extract the category from the query string
         const category = new URLSearchParams(window.location.search).get('category');
 
         if (!category) {
@@ -19,7 +18,6 @@
         }
 
         try {
-            // Fetch the full article data
             const apiUrl = `/mediacites/api/articles/${category}`;
             const response = await fetch(apiUrl);
 
@@ -30,12 +28,11 @@
             const articleData = await response.json();
 
             // Update the DOM with article data
-            document.getElementById('article-title').textContent = articleData.name; // Title
-            document.getElementById('resumeGeneral').textContent = articleData.resume; // Resume
+            document.getElementById('article-title').textContent = articleData.name; 
+            document.getElementById('resumeGeneral').textContent = articleData.resume;
             document.getElementById('texteArticle').textContent = articleData.text;
             document.getElementById('biduleTexte').textContent = `Voici le bilan 2020-2025 concernant les décisions prises sur le thème "${articleData.name}".`
 
-            // Check if KPIs exist and update them dynamically
             if (articleData.kpis && articleData.kpis.length > 0) {
                 document.getElementById('kpi1').textContent = articleData.kpis[0].number;
                 document.getElementById('textkpi1').textContent = articleData.kpis[0].text;
@@ -69,7 +66,7 @@
         }
     
         try {
-            const apiUrl = `/mediacites/api/links/${category}`; // New API endpoint
+            const apiUrl = `/mediacites/api/links/${category}`;
             const response = await fetch(apiUrl);
     
             if (!response.ok) {
@@ -79,33 +76,25 @@
             const linksData = await response.json();
             const linksContainer = document.getElementById('links-container');
     
-            // Clear the container before adding new links
             linksContainer.innerHTML = '';
-    
-            // Dynamically create and append link rows
             linksData.forEach(link => {
                 const linkRow = document.createElement('div');
-                linkRow.classList.add('row', 'mb-3', 'row-to-sort'); // Added 'row-to-sort' for sorting
-    
-                // Link name
+                linkRow.classList.add('row', 'mb-3', 'row-to-sort');
+
                 const linkElement = document.createElement('div');
                 linkElement.classList.add('col-8', 'col-name-to-sort');
                 linkElement.innerHTML = `<a href="${link.link}" target="_blank" style="color: #3370E7; text-decoration: underline; font-weight: bold;">${link.name}</a>`;
     
-                // Date on the left
                 const dateElement = document.createElement('div');
                 dateElement.classList.add('col-4', 'col-date-to-sort');
                 dateElement.innerHTML = `<p style="color: white; font-style: italic; text-align: left; font-weight: 200;">${link.date}</p>`;
     
-                // Append link and date to the row
                 linkRow.appendChild(linkElement);
                 linkRow.appendChild(dateElement);
     
-                // Add the row to the container
                 linksContainer.appendChild(linkRow);
             });
     
-            // After loading the data, set up the sorting
             setupSorting();
     
         } catch (error) {
@@ -113,7 +102,6 @@
         }
     }
     
-    // Sorting logic
     function sortRows(criteria) {
         const rows = Array.from(document.querySelectorAll('.row-to-sort'));
         const container = document.querySelector('#links-container');
@@ -140,10 +128,8 @@
             }
         });
     
-        // Append sorted rows back to the container
         rows.forEach(row => container.appendChild(row));
     
-        // Update the dropdown button text
         const dropdownButton = document.querySelector('.dropdown-toggle');
         const selectedItem = document.querySelector(`#${criteria}`).innerText;
         dropdownButton.innerText = selectedItem;
@@ -162,17 +148,15 @@
         // Get the selected category from the URL
         const category = new URLSearchParams(window.location.search).get('category');
 
-        if (!category) return; // If no category, do nothing
+        if (!category) return;
 
-        // Find the corresponding button by its ID
         const activeButton = document.getElementById(`btn-${category}`);
 
         if (activeButton) {
-            activeButton.classList.add("btn-secondary");  // Change style to indicate selection
-            activeButton.classList.remove("btn-outline-secondary"); // Remove default style
+            activeButton.classList.add("btn-secondary");
+            activeButton.classList.remove("btn-outline-secondary");
         }
     }
-
     // Run the function when the page loads
     window.onload = function () {
         loadArticle();
@@ -251,7 +235,7 @@
           </div>
             <!-- Right Container (2/3 of the page) -->
             <div class="col-8 right-container overflow-auto" style="height: fit-content;">
-              <!-- résumé -->
+              <!-- Résumé -->
               <div class="row mb-3" style="padding-right: 3vh;">
                   <div class="col-12" style="background-color: #3370E7; height: fit-content; border: 1vh solid white; border-radius: 4vh;">
                       <h3 id="titreResume" style="font-size: 4vw; color: white; text-align: right; font-style: italic;">Résumé</h3>
@@ -282,7 +266,7 @@
               </div>
 
 
-              <!-- Liens Section -->
+              <!-- Liens -->
               <div class="row" style="padding-right: 3vh;">
                   <div class="col col-to-sort-inside-of" style="width: 100%; background-color: #565656; height: fit-content; border: 1vh solid white; border-radius: 4vh 4vh 4vh 4vh;">
                       <div class="row">
@@ -310,76 +294,7 @@
               </div>
           </div>
         </div>
-    </div>  
-    <!--
-    <script>
-    const queryString = window.location.search;
-    console.log(queryString);
-    const urlParams = new URLSearchParams(queryString);
-    const name = urlParams.get('name')
-    console.log(name);
-
-    const kpi1 = document.getElementById("kpi1");
-    const kpi2 = document.getElementById("kpi2");
-    const textkpi1 = document.getElementById("textkpi1");
-    const textkpi2 = document.getElementById("textkpi2");
-    const resumeGeneral = document.getElementById("resumeGeneral");
-    const titreResume = document.getElementById("titreResume");
-    const titreArticle = document.getElementById("titreArticle");
-    const texteArticle = document.getElementById("texteArticle");
-
-    // Récupération des kpi et leur texte associé
-    fetch(`/mediacites/api/articles/${name}/kpis`)
-        .then(response => response.json())
-        .then(kpis => {
-            console.log(kpis);
-            kpi1.innerHTML = kpis[0].number;
-            textkpi1.innerText = kpis[0].text;
-
-            kpi2.innerHTML = kpis[1].number;
-            textkpi2.innerText = kpis[0].text;
-
-        })
-        .catch(error => console.error('Error fetching JSON:', error));
-
-
-    // Récupération du résumé de l'article
-    fetch(`/mediacites/api/articles/${name}/resume`)
-        .then(response => response.json())
-        .then(text => {
-            resumeGeneral.innerText = text;
-
-        })
-        .catch(error => console.error('Error fetching JSON:', error));
-
-
-    // Récupération du nom de l'article
-    fetch(`/mediacites/api/articles/${name}/name`)
-        .then(response => response.json())
-        .then(name => {
-            titreResume.innerText = name;
-            titreArticle.innerText = name;
-
-        })
-        .catch(error => console.error('Error fetching JSON:', error));
-
-
-    // Récupération du nom de l'article
-    fetch(`/mediacites/api/articles/${name}/text`)
-        .then(response => response.json())
-        .then(text => {
-            texteArticle.innerText = text;
-
-        })
-        .catch(error => console.error('Error fetching JSON:', error));
-
-     // pour les boutons en haut de page
-     function redirect(name) {
-        newUrl = window.location.href.split("?")[0]+"?name="+name;
-        location.href = newUrl;
-    }
-    </script>
-    -->
+    </div> 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
 </body>
