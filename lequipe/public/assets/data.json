@@ -13,7 +13,7 @@
                 },
                 {
                     "type": "text",
-                    "text": "Le vainqueur du Tour de France 2024, <span class='redText'>Tadej Pogacar</span>, fait taire les rumeurs de dopage sur ses performances. Comme un air de déjà vu, non ? La plaie ouverte par Lance Armstrong est loin d’être cicatrisée. L’histoire est-elle en train de se répéter ? Dans ton rôle de président de l’Union Cycliste Internationale, tu ne peux t’empêcher de te replonger dans ce scandale qui a secoué le cyclisme mondial. Une idée te taraude : ",
+                    "text": "Le vainqueur du Tour de France 2024, <a href ='https://www.lequipe.fr/Cyclisme-sur-route/Article/Large-vainqueur-du-tour-tadej-pogacar-a-reagi-sur-les-soupcons-de-dopage-ce-serait-stupide/1484174' class='link'>Tadej Pogacar</a>, fait taire les rumeurs de dopage sur ses performances. Comme un air de déjà vu, non ? La plaie ouverte par Lance Armstrong est loin d’être cicatrisée. L’histoire est-elle en train de se répéter ? Dans ton rôle de <span class='redText'>président de l’Union Cycliste Internationale</span>, tu ne peux t’empêcher de te replonger dans ce scandale qui a secoué le cyclisme mondial. Une idée te taraude : ",
                     "template": "full_page"
                 },
                 {
