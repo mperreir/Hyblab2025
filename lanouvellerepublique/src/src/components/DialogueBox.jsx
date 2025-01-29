@@ -22,20 +22,19 @@ const CardTitle = ({ number, title }) => {
 }
 
 const SpeechBubble = ({ text, side, position }) => {
-
+    //console.log(position)
     return (
         <div className="speech_bubble">
             <p>{text}</p>
-            <div className={side == "top" ? "tail top" : "tail bot"} style={{left: position}}></div>
+            <div className={side == "top" ? "tail top" : "tail bot"} style={{left: `${position}%`}}></div>
         </div>
     )
 }
 
-const AnimalIllustration = (imageName) => {
-    //pour tester en local, changer "https://hyblab.polytech.univ-nantes.fr/lanouvellerepublique/assets/" par "/src/assets/"
+const AnimalIllustration = (POI) => {
     return (
-        <div className="illustration">
-            <img src={`https://hyblab.polytech.univ-nantes.fr/lanouvellerepublique/assets/${imageName.imageName}`} alt="POI" /> 
+        <div className="illustration" style={{marginLeft: `${POI.POI[4]}%`}}>
+            <img src={`https://hyblab.polytech.univ-nantes.fr/lanouvellerepublique/assets/${POI.POI[1]}`} /> 
         </div>
     )
 }
@@ -45,7 +44,8 @@ const DialogueBox = ({ text, setSelectedText, POI, setSelectedPOI, chosenAnimal}
     const speechHolderRef = useRef(null);
     const [pages, setPages] = useState([]);
     const [scrollPercentage, setScrollPercentage] = useState(0);
-    const imageName = POI[1];
+    let pos_tail = POI[4]+3;
+    if (POI[3] == 'left'){pos_tail = pos_tail+30;console.log(pos_tail)} //faut changer ca part une nouvelle valeur dans le json
 
     const handleScroll = () => {
         const holder = speechHolderRef.current;
@@ -59,12 +59,12 @@ const DialogueBox = ({ text, setSelectedText, POI, setSelectedPOI, chosenAnimal}
             setScrollPercentage(scrolledPercentage);
         }
     };
-
+    
     // Reset pages when text changes
     useEffect(() => {
         setPages(text);
     }, [text]);
-
+    
     useEffect(() => {
         if (dialogueRef.current) {
         anime({
@@ -93,7 +93,7 @@ const DialogueBox = ({ text, setSelectedText, POI, setSelectedPOI, chosenAnimal}
     const shadowStyle = {
         content: '""',
         position: "fixed",
-        bottom: "calc(20% - 10px)",
+        bottom: "20px",
         left: "0",
         width: "100%",
         height: "50px", // Adjust this based on how much shadow you want
@@ -112,7 +112,7 @@ const DialogueBox = ({ text, setSelectedText, POI, setSelectedPOI, chosenAnimal}
             opacity: [1, 0], // Fade out
             duration: 400,
             easing: "easeInQuad",
-            complete: () => {setSelectedText(""); setSelectedPOI([0,""])}, // Remove text AFTER animation completes
+            complete: () => {setSelectedText(""); setSelectedPOI([0,"","","",0])}, // Remove text AFTER animation completes
             });
         }
     };
@@ -123,14 +123,14 @@ const DialogueBox = ({ text, setSelectedText, POI, setSelectedPOI, chosenAnimal}
             className="dialogue-box"
             onClick={() => {handleClose()}}
         >
-            <CardTitle number={POI[0]} title={"La carte d'identité"}/>
+            <CardTitle number={POI[0]} title={POI[2]}/>
+            <AnimalIllustration POI={POI} />
             <div className="speech_holder" ref={speechHolderRef}>
                 {pages.map((page, index) => {
-                    return (<SpeechBubble key={index} text={page} side="bot" position="40%"/>);
+                    return (<SpeechBubble key={index} text={page} side="top" position={pos_tail}/>);
                 })}
                 <div className="shadow" style={shadowStyle}></div>
             </div>
-            <AnimalIllustration imageName={imageName} />
         </div>
     );
 };

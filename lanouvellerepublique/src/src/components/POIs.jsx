@@ -8,7 +8,10 @@ const POIs = ({ setSelectedText, setSelectedPOI, points }) => {
       y: point.pos[1],
       text: point.text,
       id: point.id,
-      img_name: point.img_name
+      title: point.title,
+      img_name: point.img_name,
+      side: point.pos_img,
+      img_pos: point.icon_pos,
     }
   })
 
@@ -22,7 +25,7 @@ const POIs = ({ setSelectedText, setSelectedPOI, points }) => {
       }}
       onClick={() => {
         setSelectedText(point.text);
-        setSelectedPOI([point.id, point.img_name])}}
+        setSelectedPOI([point.id, point.img_name, point.title, point.side, point.img_pos])}}
     >
       <div
         key={index}
