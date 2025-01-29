@@ -1,38 +1,110 @@
-// /src/components/ContexteComponent.jsx
-import React from 'react';
-import { Box, Button, Typography } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import { Box, Button, Typography, styled } from "@mui/material";
+import SwipeableViews from "react-swipeable-views";
+import { useTheme } from "@mui/material/styles";
+import { useNavigate } from "react-router-dom";
+import EnergyIcon from "./../assets/PictoTransition2050.png";
 
-import isoVille from '../assets/isoVille.png';
-//import objectifs from '../../public/data/objectifs.JSON'
+// Conteneur des indicateurs
+const IndicatorContainer = styled(Box)({
+  display: "flex",
+  justifyContent: "center",
+  gap: "8px",
+  marginTop: "16px",
+});
 
+// Points de pagination
+const IndicatorDot = styled(Box)(({ theme, active }) => ({
+  width: "12px",
+  height: "12px",
+  borderRadius: "50%",
+  backgroundColor: active ? theme.palette.primary.main : "transparent",
+  border: `2px solid ${theme.palette.primary.main}`,
+}));
+
+const StyledButton = styled(Button)(({ theme }) => ({
+  marginTop: "16px",
+  borderRadius: "20px",
+  border: `2px solid ${theme.palette.primary.main}`,
+  backgroundColor: "white",
+  color: theme.palette.primary.main,
+  padding: "8px 20px",
+  fontWeight: "bold",
+  "&:hover": {
+    backgroundColor: theme.palette.primary.light,
+  },
+}));
 
 const ContexteComponent = () => {
+  const theme = useTheme();
+  const navigate = useNavigate();
+  const [activeStep, setActiveStep] = useState(0);
 
-  const navigate = useNavigate(); // Hook pour la navigation
+  const slides = [
+    {
+      text: "Dans Transition 2050, vous prenez les commandes du système énergétique français.\n Votre objectif : comprendre le mix énergétique actuel, explorer les solutions possibles pour décarboner la France et relever les défis pour atteindre la neutralité carbone en 2050.",
+    },
+    {
+      text: "• Apprendre comment les choix énergétiques façonnent notre avenir climatique.\n • Tester différents scénarios pour construire un mix énergétique équilibré et durable.\n • Participer à une expérience ludique pour mieux comprendre les défis de la transition énergétique.",
+    },
+  ];
 
-    const handleClick = () => {
-        navigate('/brief/Information'); // Redirige vers la page /landing (ou une autre page de ton choix)
-    };
+  const handleClick = () => {
+    navigate("/brief/Information");
+  };
+
+  const handleStepChange = (step) => {
+    setActiveStep(step);
+  };
+
   return (
-    <Box sx={{ textAlign: 'center', padding: 0 }}>
-      <Typography variant="h4" sx={{ marginBottom: 2 }}>
-        Un peu de contexte !
-      </Typography>
+    <Box sx={{ maxWidth: 600, mx: "auto", textAlign: "center", p: 3 }}>
+      <SwipeableViews index={activeStep} onChangeIndex={handleStepChange}>
+        {slides.map((slide, index) => (
+          <Box
+            key={index}
+            sx={{
+              backgroundColor: "#F5E8EE",
+              padding: 3,
+              borderRadius: 3,
+              margin: "20px auto",
+              width: "90%",
+              maxWidth: "500px",
+              boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
+              position: "relative",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            {/* Ligne avec logo et titre */}
+            <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
+              <img src={EnergyIcon} style={{ width: "10%", marginRight: "8px" }} alt="Icône transition énergétique" />
+              <Typography variant="h6" sx={{ fontWeight: "bold" }}>
+                Bienvenue dans Transition 2050 !
+              </Typography>
+            </Box>
 
-      <img src={isoVille} style={{ width: '80%', marginRight: '10%' }} sx={{ marginBottom: 2 }} alt='image de ville' />
+            {/* Contenu du slide */}
+            <Typography variant="body1" sx={{ whiteSpace: "pre-line", textAlign: "left" }}>
+              {slide.text}
+            </Typography>
 
-      <Typography variant="body1" sx={{ marginBottom: 2 }}>
-        Vous êtes nommé(e) Ministre de l’Énergie et du Climat de Gallia en 2025. Votre mission est de transformer ces mix pour atteindre la neutralité carbone en 2050 tout en assurant un approvisionnement en énergie stable, abordable et satisfaisant pour la population.
-      </Typography>
+            {/* Pagination */}
+            <IndicatorContainer>
+              {slides.map((_, dotIndex) => (
+                <IndicatorDot key={dotIndex} active={dotIndex === activeStep} />
+              ))}
+            </IndicatorContainer>
 
-      <Button
-        variant="contained"
-        color="primary"
-        onClick={handleClick} // Ajoute le gestionnaire de clic pour la navigation
-      >
-        Suivant
-      </Button>
+            {/* Bouton "C'est parti !" sur la dernière page */}
+            {activeStep === slides.length - 1 && (
+      <StyledButton onClick={handleClick}>C'est parti !</StyledButton>
+
+            )}
+          </Box>
+        ))}
+      </SwipeableViews>
     </Box>
   );
 };
