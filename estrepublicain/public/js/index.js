@@ -294,6 +294,7 @@ function createPodcastModal(podcast, id) {
 
     let a = document.createElement("a")
     a.innerText = "Ecouter le podcast"
+    a.target = "_blank"
     a.href = "https://c.estrepublicain.fr/faits-divers-justice/" + podcast.PodcastLink
     btnA.appendChild(a)
 
@@ -518,3 +519,9 @@ function displayPlateformModal () {
 function hidePlateformModal () {
     document.getElementById("links").style.display = "none"
 }
+
+window.addEventListener('load', function () {
+
+    document.getElementById("loader").style.display = "none"
+    document.getElementById("main").style.display = "block"
+})

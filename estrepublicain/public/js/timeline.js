@@ -63,72 +63,76 @@ function adjustLine(from, to, containerFrom, containerTo, line){
     line.style.left   = left+'px';
     line.style.height = H + 'px';
 }
-adjustLine(
-    document.getElementById('div1'),
-    document.getElementById('div2'),
-    document.getElementById('case-1'),
-    document.getElementById('case-2'),
-    document.getElementById('line1')
-);
-adjustLine(
-    document.getElementById('div2'),
-    document.getElementById('div3'),
-    document.getElementById('case-2'),
-    document.getElementById('case-3'),
-    document.getElementById('line2')
-);
-adjustLine(
-    document.getElementById('div3'),
-    document.getElementById('div4'),
-    document.getElementById('case-3'),
-    document.getElementById('case-4'),
-    document.getElementById('line3')
-);
 
-adjustLine(
-    document.getElementById('div4'),
-    document.getElementById('div5'),
-    document.getElementById('case-4'),
-    document.getElementById('case-5'),
-    document.getElementById('line4')
-);
 
-adjustLine(
-    document.getElementById('div5'),
-    document.getElementById('div6'),
-    document.getElementById('case-5'),
-    document.getElementById('case-6'),
-    document.getElementById('line5')
-);
+window.addEventListener('load', function () {
+    adjustLine(
+        document.getElementById('div1'),
+        document.getElementById('div2'),
+        document.getElementById('case-1'),
+        document.getElementById('case-2'),
+        document.getElementById('line1')
+    );
+    adjustLine(
+        document.getElementById('div2'),
+        document.getElementById('div3'),
+        document.getElementById('case-2'),
+        document.getElementById('case-3'),
+        document.getElementById('line2')
+    );
+    adjustLine(
+        document.getElementById('div3'),
+        document.getElementById('div4'),
+        document.getElementById('case-3'),
+        document.getElementById('case-4'),
+        document.getElementById('line3')
+    );
 
-adjustLine(
-    document.getElementById('div5'),
-    document.getElementById('div6'),
-    document.getElementById('case-5'),
-    document.getElementById('case-6'),
-    document.getElementById('line5')
-);
+    adjustLine(
+        document.getElementById('div4'),
+        document.getElementById('div5'),
+        document.getElementById('case-4'),
+        document.getElementById('case-5'),
+        document.getElementById('line4')
+    );
 
-adjustLine(
-    document.getElementById('div3'),
-    document.getElementById('div6'),
-    document.getElementById('case-3'),
-    document.getElementById('case-6'),
-    document.getElementById('line6')
-);
+    adjustLine(
+        document.getElementById('div5'),
+        document.getElementById('div6'),
+        document.getElementById('case-5'),
+        document.getElementById('case-6'),
+        document.getElementById('line5')
+    );
 
-adjustLine(
-    document.getElementById('div4'),
-    document.getElementById('div1'),
-    document.getElementById('case-4'),
-    document.getElementById('case-1'),
-    document.getElementById('line7')
-);
+    adjustLine(
+        document.getElementById('div5'),
+        document.getElementById('div6'),
+        document.getElementById('case-5'),
+        document.getElementById('case-6'),
+        document.getElementById('line5')
+    );
 
-adjustLine(
-    document.getElementById('div2'),
-    document.getElementById('div5'),
-    document.getElementById('case-2'),
-    document.getElementById('case-5'),
-    document.getElementById('line8')
-);
+    adjustLine(
+        document.getElementById('div3'),
+        document.getElementById('div6'),
+        document.getElementById('case-3'),
+        document.getElementById('case-6'),
+        document.getElementById('line6')
+    );
+
+    adjustLine(
+        document.getElementById('div4'),
+        document.getElementById('div1'),
+        document.getElementById('case-4'),
+        document.getElementById('case-1'),
+        document.getElementById('line7')
+    );
+
+    adjustLine(
+        document.getElementById('div2'),
+        document.getElementById('div5'),
+        document.getElementById('case-2'),
+        document.getElementById('case-5'),
+        document.getElementById('line8')
+    );
+})

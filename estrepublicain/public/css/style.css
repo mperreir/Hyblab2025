@@ -31,6 +31,10 @@ body {
     overflow-x: clip;
 }
 
+#main {
+    display: none;
+}
+
 /* --- Liens --- */
 a {
     margin-top: 10px;
@@ -312,19 +316,19 @@ p {
     background-image: url("../img/bonnot.gif");
 }
 #div2 {
-    background-image: url("../img/bonnot.gif");
+    background-image: url("../img/thumbnails/7.png");
 }
 #div3 {
-    background-image: url("../img/bonnot.gif");
+    background-image: url("../img/thumbnails/27.png");
 }
 #div4 {
-    background-image: url("../img/bonnot.gif");
+    background-image: url("../img/thumbnails/31.png");
 }
 #div5 {
     background-image: url("../img/peiper.gif");
 }
 #div6 {
-    background-image: url("../img/bonnot.gif");
+    background-image: url("../img/thumbnails/51.png");
 }
 
 /* --- Ligne rouge ("line") --- */
@@ -540,6 +544,45 @@ p {
     left: 0;
     width: 100vw;
     height: 100vh;
+}
+
+/* --- Loader -- */
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#loader {
+    opacity: 1;
+    transition: opacity 100ms ease;
+}
+
+.loader-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    padding-left: calc(50vw - 40px);
+    padding-top: calc(50vh - 40px);
+    background-image: url("../img/FOND_BLANC.jpg");
+    background-size: cover;
+    overflow: hidden;
+}
+
+.loader {
+    border: 3px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 3px solid #CB010A;
+    width: 80px;
+    height: 80px;
+    -webkit-animation: spin 1s linear infinite; /* Safari */
+    animation: spin 1s linear infinite;
 }
 
 
