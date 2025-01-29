@@ -22,14 +22,13 @@ app.use('/api', api);
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, '../__common-logos__')));
 
-const BASE_URL = process.env;
 
 // Route for the home page
 app.get('/start', async (req, res) => {
     try {
         // Fetch data from the API endpoint
         console.log(BASE_URL)
-        const response = await fetch(`${BASE_URL}/home`);
+        const response = await fetch('https://hyblab.polytech.univ-nantes.fr/londeporteuse/api/home');
         const data = await response.json();
 
         // Render the Mustache template with the fetched data
@@ -61,7 +60,7 @@ app.get('/choices', async (req, res) => {
 app.get('/budget', async (req, res) => {
   try {
     // Fetch data from the API endpoint
-    const response = await fetch('http://localhost:8080/londeporteuse/api/budget');
+    const response = await fetch('https://hyblab.polytech.univ-nantes.fr/londeporteuse/api/budget');
     const data = await response.json();
 
     const initialBudget = req.query.initialBudget;
@@ -83,7 +82,7 @@ app.get('/budget', async (req, res) => {
 app.get('/ajust', async (req, res) => {
   try {
     // Fetch data from the API endpoint
-    const response = await fetch('http://localhost:8080/londeporteuse/api/ajust');
+    const response = await fetch('https://hyblab.polytech.univ-nantes.fr/londeporteuse/api/ajust');
     const data = await response.json();
 
     // Render the Mustache template with the fetched data
