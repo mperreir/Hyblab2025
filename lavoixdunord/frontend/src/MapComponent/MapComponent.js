@@ -69,7 +69,7 @@ const MapComponent = ({ difficulty, level_id, currentQuestionIndex, onClose, isV
             const data = yaml.load(yamlText);
             const currentQuestion = data.game.levels[parseInt(difficulty) - 1]
                 .stages[parseInt(level_id) - 1]
-                .questions[currentQuestionIndex];
+                .questions[currentQuestionIndex + 1];
             setQuestionData(currentQuestion);
             setGeoJsonData(geoJson);
         });
@@ -254,7 +254,7 @@ const MapComponent = ({ difficulty, level_id, currentQuestionIndex, onClose, isV
                 onClick={onClose}
                 style={{ display: isVisible ? 'block' : 'none' }}
             >
-                Répondre
+                RÉPONDRE
             </button>
         </div>
     );

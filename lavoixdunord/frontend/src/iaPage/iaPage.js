@@ -44,7 +44,7 @@ const IA = () => {
                 <li className="list-item"><strong>Débogage et Gestion de Conflits Git :</strong> Utilisation de GitHub Copilot pour le débogage et la gestion des conflits Git.</li>
             </ul>
 
-            <button onClick={handleFinishClick} className="btn btn-outline-dark fw-bold mx-5 position-relative">
+            <button onClick={handleFinishClick} className="btn btn-outline-dark border-2 fw-bold my-2">
                 FINIR
             </button>
 
