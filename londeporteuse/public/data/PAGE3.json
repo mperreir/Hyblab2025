@@ -4,7 +4,7 @@
       "id": "Petit",
       "name": "Festival Intimiste",
       "description": "Petit festival pour un public restreint.",
-      "image": "img/fete.jpg",
+      "image": "img/intimiste_festival.png",
       "cost": 1,
       "icon": "img/plus.svg",
       "isSelected": false
@@ -13,7 +13,7 @@
       "id": "Moyen",
       "name": "Festival Moyen",
       "description": "Festival de taille moyenne avec ambiance conviviale.",
-      "image": "img/fete.jpg",
+      "image": "img/mf.png",
       "cost": 2,
       "icon": "img/plus.svg",
       "isSelected": true
@@ -22,7 +22,7 @@
       "id": "Grand",
       "name": "Grand festival",
       "description": "Festival avec une grande capacité d'accueil.",
-      "image": "img/fete.jpg",
+      "image": "img/gf.png",
       "cost": 3,
       "icon": "img/plus.svg",
       "isSelected": false
@@ -33,7 +33,7 @@
       "id": "Petit",
       "name": "Minimum légal d’actions écologiques",
       "description": "Respect du minimum légal pour les actions écologiques.",
-      "image": "img/fete.jpg",
+      "image": "img/minimum_eco.png",
       "cost": 1,
       "icon": "img/plus.svg",
       "isSelected": false
@@ -42,7 +42,7 @@
       "id": "Moyen",
       "name": "Peu d’actions écologiques",
       "description": "Engagement modéré pour la transition écologique.",
-      "image": "img/fete.jpg",
+      "image": "img/no_eco.png",
       "cost": 2,
       "icon": "img/plus.svg",
       "isSelected": true
@@ -51,7 +51,7 @@
       "id": "Grand",
       "name": "Beaucoup d’actions écologiques",
       "description": "Engagement élevé pour la transition écologique.",
-      "image": "img/fete.jpg",
+      "image": "img/plus_eco.png",
       "cost": 3,
       "icon": "img/plus.svg",
       "isSelected": false
@@ -62,7 +62,7 @@
       "id": "Petit",
       "name": "Pas d’actions de médiation",
       "description": "Aucune action de médiation culturelle prévue.",
-      "image": "img/fete.jpg",
+      "image": "img/no_mediation.png",
       "cost": 0,
       "icon": "img/plus.svg",
       "isSelected": false
@@ -71,7 +71,7 @@
       "id": "Moyen",
       "name": "Des actions uniquement sur le festival",
       "description": "Éduquer et sensibiliser les jeunes à la culture.",
-      "image": "img/fete.jpg",
+      "image": "img/action_festival.png",
       "cost": 1,
       "icon": "img/plus.svg",
       "isSelected": false
@@ -80,7 +80,7 @@
       "id": "Grand",
       "name": "Des actions tout au long de l’année et pendant le festival",
       "description": "Créer des opportunités d'échange avec les artistes.",
-      "image": "img/fete.jpg",
+      "image": "img/annee_mediation.png",
       "cost": 2,
       "icon": "img/plus.svg",
       "isSelected": true
@@ -91,7 +91,7 @@
       "id": "Petit",
       "name": "Minimum légal d’actions de prévention",
       "description": "Respect du minimum légal pour la prévention.",
-      "image": "img/fete.jpg",
+      "image": "img/minimum_secu.png",
       "cost": 1,
       "icon": "img/plus.svg",
       "isSelected": false
@@ -100,7 +100,7 @@
       "id": "Moyen",
       "name": "Réduire le nombre d’actions de prévention",
       "description": "Prévention modérée.",
-      "image": "img/fete.jpg",
+      "image": "img/peu_secu.png",
       "cost": 2,
       "icon": "img/plus.svg",
       "isSelected": false
@@ -109,7 +109,7 @@
       "id": "Grand",
       "name": "Mener activement des actions de prévention",
       "description": "Engagement fort pour la sécurité.",
-      "image": "img/fete.jpg",
+      "image": "img/action_secu.png",
       "cost": 3,
       "icon": "img/plus.svg",
       "isSelected": true
