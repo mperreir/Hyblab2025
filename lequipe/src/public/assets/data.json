@@ -79,7 +79,7 @@
                                         }
                                     ],
                                     "ending": {
-                                        "image": "https://cdn.discordapp.com/attachments/515602378775593039/1333923161267376269/image.png?ex=679aa840&is=679956c0&hm=7a68f6287 b4f945ce3c2e00f69e7c882319cf33560f40b81efbb9fdcb11a80c6&"
+                                        "image": "unes/VELO_3.png"
                                     }
                                 }
                             },
@@ -104,7 +104,10 @@
                                             "text": "Le Tour de France, autrefois sommet absolu du cyclisme, perd peu à peu de sa superbe. Sans ses têtes d’affiche éclaboussées par les scandales, l’épreuve peine à attirer l’attention. Les champions « clean » peinent à égaler l’aura de leurs prédécesseurs dopés. Le peloton devient plus homogène, mais aussi moins spectaculaire.",
                                             "template": "full_page"
                                         }
-                                    ]
+                                    ],
+                                    "ending": {
+                                        "image": "unes/VELO_2.png"
+                                    }
                                 }
                             }
                         ]
@@ -145,7 +148,10 @@
                                             "text": "Les deux hommes se rendent coup pour coup : un contre-la-montre pour Lance, une échappée légendaire pour Marco. Le coureur impulsif vs le grimpeur romantique. Chaque Tour devient une scène d’anthologie. Le public est en délire devant un cyclisme qui renaît de ses cendres.",
                                             "template": "full_page"
                                         }
-                                    ]
+                                    ],
+                                    "ending": {
+                                        "image": "unes/VELO_1.png"
+                                    }
                                 }
                             }
                         ]
@@ -254,7 +260,10 @@
                                                         "text": "Jugé trop violent, le football masculin disparaît en France. La FFF frappe un grand coup et dissout l’équipe. Exit les tacles rugueux, les polémiques en conférence de presse et les rixes sur le terrain. À leur place, l’équipe féminine est promue en première ligne pour représenter la France sur la scène internationale. Les stades changent d’ambiance. Des familles, des enfants, et un public plus diversifié envahissent les gradins. Les Bleues brillent et créent la surprise en remportant l’Euro 2025 et une première Coupe du Monde en 2027. Eugénie Le Sommer devient une héroïne nationale.",
                                                         "template": "full_page"
                                                     }
-                                                ]
+                                                ],
+                                                "ending": {
+                                                    "image": "unes/MARADONA_1.png"
+                                                }
                                             }
                                         }
                                     ]
@@ -262,6 +271,8 @@
                             },
                             {
                                 "text": "La VAR, une invention superflue.",
+                                "image": "midjourney/foot8.png",
+                                "position": "35%",
                                 "result": {
                                     "content": [
                                         {
@@ -292,7 +303,10 @@
                                                         "text": "Qui l'eût cru ? Révolution morale dans le football. On parle même de remplacer le trophée de la Coupe du Monde par une gigantesque main en or, en hommage à ce moment historique !",
                                                         "template": "full_page"
                                                     }
-                                                ]
+                                                ],
+                                                "ending": {
+                                                    "image": "unes/MARADONA_2.png"
+                                                }
                                             }
                                         },
                                         {
@@ -311,7 +325,10 @@
                                                         "text": "38ème minute : la Croatie égalise. Puis, sur un corner français, le ballon touche la main du croate Ivan Perisic. L’arbitre, les yeux ailleurs, ne bronche pas. Perisic, lui, ne semble pas près de s’inspirer de l’honnêteté d’un Henry. Pas de penalty. Les tribunes sont en feu. Les français insultent l’arbitre, les croates jubilent. La Croatie l’emporte 2-1 et est sacrée championne du monde. Les commentateurs soulignent l’ironie : \"Si seulement les Bleus avaient eu un Henry croate pour avouer !\" Descente aux enfers pour la France. La rancœur du camp français est grande. Les supporters et médias se déchaînent : \"L’honnêteté, c’est bien beau, mais pas quand la Coupe du monde est en jeu.\"",
                                                         "template": "full_page"
                                                     }
-                                                ]
+                                                ],
+                                                "ending": {
+                                                    "image": "unes/MARADONA_3.png"
+                                                }
                                             }
                                         }
                                     ]
@@ -364,7 +381,10 @@
                                             "text": "Qui l'eût cru ? Révolution morale dans le football. On parle même de remplacer le trophée de la Coupe du Monde par une gigantesque main en or, en hommage à ce moment historique !",
                                             "template": "full_page"
                                         }
-                                    ]
+                                    ],
+                                    "ending": {
+                                        "image": "unes/MARADONA_2.png"
+                                    }
                                 }
                             },
                             {
@@ -383,7 +403,10 @@
                                             "text": "38ème minute : la Croatie égalise. Puis, sur un corner français, le ballon touche la main du croate Ivan Perisic. L’arbitre, les yeux ailleurs, ne bronche pas. Perisic, lui, ne semble pas près de s’inspirer de l’honnêteté d’un Henry. Pas de penalty. Les tribunes sont en feu. Les français insultent l’arbitre, les croates jubilent. La Croatie l’emporte 2-1 et est sacrée championne du monde. Les commentateurs soulignent l’ironie : \"Si seulement les Bleus avaient eu un Henry croate pour avouer !\" Descente aux enfers pour la France. La rancœur du camp français est grande. Les supporters et médias se déchaînent : \"L’honnêteté, c’est bien beau, mais pas quand la Coupe du monde est en jeu.\"",
                                             "template": "full_page"
                                         }
-                                    ]
+                                    ],
+                                    "ending": {
+                                        "image": "unes/MARADONA_3.png"
+                                    }
                                 }
                             }
                         ]
@@ -497,7 +520,10 @@
                                                         "text": "Le public perd l’envie de regarder : pourquoi s’intéresser à une course de F1 sans savoir si le héros du jour reviendra entier ? La montée de la conscience sécuritaire (merci Netflix et les réseaux sociaux) pousse le public à boycotter les sports trop dangereux. Dans les années 2010, la F1 aurait pu devenir l'équivalent d’un cirque romain, avec des spectateurs gênés devant leur écran. Résultat : moins de téléspectateurs, moins d’argent, et des paddocks qui ressemblent à des terrains de foot du dimanche.",
                                                         "template": "full_page"
                                                     }
-                                                ]
+                                                ],
+                                                "ending": {
+                                                    "image": "unes/HALO_1.png"
+                                                }
                                             }
                                         }
                                     ]
@@ -540,7 +566,10 @@
                                             "text": " Quelques puristes, nostalgiques du pilotage à ciel ouvert se battent pour garder une catégorie \"à l’ancienne\". Deux championnats naissent. D’un côté, la Formula Shield, imaginée par l’intrépide rescapé Jules Bianchi, où le spectacle fait fureur. Les pilotes, à l’abri sous leur bulle de plexiglas, se sentent presque invincibles et prennent des risques insensés. De l’autre, la Formula 1 classique, où le pilote et son bolide fusionnent dans une danse où l'air est encore une question de survie.",
                                             "template": "full_page"
                                         }
-                                    ]
+                                    ],
+                                    "ending": {
+                                        "image": "unes/HALO_2.png"
+                                    }
                                 }
                             },
                             {
@@ -559,7 +588,10 @@
                                             "text": "Son retour en compétition n’est pas une promenade de santé, mais il a bien l’intention de mettre tout le monde d’accord. En 2020, lors du Grand Prix de Monaco, Bianchi fait un coup de maître : il grimpe sur le podium après une performance époustouflante, tandis que Hamilton, Vettel et Rosberg, eux, restent sur le carreau.",
                                             "template": "full_page"
                                         }
-                                    ]
+                                    ],
+                                    "ending": {
+                                        "image": "unes/HALO_3.png"
+                                    }
                                 }
                             }
                         ]
