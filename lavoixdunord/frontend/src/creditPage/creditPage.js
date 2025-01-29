@@ -8,7 +8,7 @@ const Credit = () => {
     const basename = useBasename();
     useEffect(() => {
         const timer = setTimeout(() => {
-            navigate("/final");
+            navigate("/ia");
         }, 5000);
 
         return () => clearTimeout(timer);

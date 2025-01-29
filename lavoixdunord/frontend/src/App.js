@@ -9,6 +9,7 @@ import RulesPage from "./pageRegles/pageRegles";
 import StartPage from "./startPage/startPage";
 import TransitionPage from "./TransitionPage/TransitionPage";
 import Credit from "./creditPage/creditPage";
+import IA from "./iaPage/iaPage";
 import FinalPage from "./finalPage/finalPage";
 import NavBarComponent from "./NavBarComponent/NavBarComponent";
 
@@ -46,6 +47,7 @@ function App() {
           <Route path="/final" element={<FinalPage />} />
           <Route path="/transition/:difficulty/:level_id" element={<TransitionPage />} />
           <Route path="/credit" element={<Credit />} />
+          <Route path="/ia" element={<IA />} />
           <Route path="/final" element={<FinalPage />} />
         </Routes>
       </div>
