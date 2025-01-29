@@ -5,7 +5,6 @@ const express = require('express');
 const path = require('path');
 const fs = require('fs');
 const mustacheExpress = require('mustache-express'); // Import mustache-express
-require('dotenv').config();
 
 // Create our application
 const app = express();
@@ -23,16 +22,19 @@ app.use('/api', api);
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, '../__common-logos__')));
 
-const BASE_URL = process.env.BASE_URL;
-
+app.use((req, res, next) => {
+  const host = req.get('host'); // Récupère "localhost:8080" ou "myserver.com"
+  req.BASE_URL = process.env || `http://${host}/londeporteuse`;
+  next();
+});
 
 // Route for the home page
 app.get('/start', async (req, res) => {
     try {
         // Fetch data from the API endpoint
-        const response = await fetch(`https://hyblab.polytech.univ-nantes.fr/londeporteuse/api/home`);
+        const response = await fetch('./api/home');
         const data = await response.json();
-        console.log(BASE_URL);
+
         // Render the Mustache template with the fetched data
         res.render('index.mustache', data);
     } catch (error) {
@@ -45,7 +47,7 @@ app.get('/start', async (req, res) => {
 app.get('/choices', async (req, res) => {
     try {
       // Fetch data from the API endpoint
-      const response = await fetch(`/api/choices`);
+      const response = await fetch('http://localhost:8080/londeporteuse/api/choices');
       const data = await response.json();
   
       // Render the Mustache template with the fetched data
@@ -62,7 +64,7 @@ app.get('/choices', async (req, res) => {
 app.get('/budget', async (req, res) => {
   try {
     // Fetch data from the API endpoint
-    const response = await fetch(`/api/budget`);
+    const response = await fetch('http://localhost:8080/londeporteuse/api/budget');
     const data = await response.json();
 
     const initialBudget = req.query.initialBudget;
@@ -84,7 +86,7 @@ app.get('/budget', async (req, res) => {
 app.get('/ajust', async (req, res) => {
   try {
     // Fetch data from the API endpoint
-    const response = await fetch(`/api/ajust`);
+    const response = await fetch('http://localhost:8080/londeporteuse/api/ajust');
     const data = await response.json();
 
     // Render the Mustache template with the fetched data

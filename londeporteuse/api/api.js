@@ -9,6 +9,7 @@ const app = express();
 
 app.use(require('body-parser').urlencoded({ extended: false }));
 
+
 /******************Loading different json files******************* */
 
 // Load data from JSON file
