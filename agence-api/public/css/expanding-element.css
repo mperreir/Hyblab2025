@@ -1,8 +1,8 @@
 /* Style global du conteneur expanding */
 .expanding {
     position: fixed;
-    background-color: #d6d6d6;
-    color: #000000; /* Texte noir */
+    background-color: var(--user-color);
+    color: var(--user-text-color); /* Texte noir */
     display: none;
     flex-direction: column;
     align-items: center; /* Centrer les éléments horizontalement */

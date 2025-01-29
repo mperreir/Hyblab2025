@@ -219,8 +219,12 @@ async function histoire(texts, signal){
         }
 
         await displayMessages(texts.contexte[i].avant.slice(0,-1), signal);
-        await displayExplanation(texts.informations[i], choices, {"text": texts.contexte[i].avant[texts.contexte[i].avant.length-1], "image": texts.contexte[i].images[0]});
-        
+        const images = texts.contexte[i].images;
+        if(typeof images === "list"){
+            await displayExplanation(texts.informations[i], choices, {"text": texts.contexte[i].avant[texts.contexte[i].avant.length-1], "image": images[0]});
+        } else {
+            await displayExplanation(texts.informations[i], choices, {"text": texts.contexte[i].avant[texts.contexte[i].avant.length-1], "image": images[choices[choices[0]]]});
+        }
 
         await displayMessages(texts.questions[i], signal);
 
