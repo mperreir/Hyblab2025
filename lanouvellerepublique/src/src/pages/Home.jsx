@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import "./Home.css"; // Import the CSS file
 import Header from "../components/Header";
+import decoration from "../assets/homepageIllustration.svg";
 
 function Home() {
   const navigate = useNavigate();
@@ -13,26 +14,17 @@ function Home() {
     <>
       <Header titre={"Dans leur peau"} textColor={"black"} isHome="true" />
       <div className='home_page'>
-        <div className='content'>
+        <div className='main-content'>
           <div className='titles'>
-            <h1 className='main-title'>Découvrez des espèces menacées</h1>
-            <p className='subtitle'>
-              Découvrez des espèces animales en voie de disparition ainsi que leurs informations
-            </p>
+            <h1 className='main-title'>Sur les traces de cinq espèces menacées</h1>
           </div>
-          {/* <button className="start-button" onClick={() => navigate("/map")}>
-          Start
-        </button> */}
-
           <div className='start-button'>
             <span className='start-button-text'onClick={goGuide}>Commencer</span>
           </div>
         </div>
-        <div className="decoration">
-          <div className="green-circle"></div>
-          <div className="gray-rectangle"></div>
+        <div className="image-holder">
+          <img src={decoration}></img>
         </div>
-
       </div>
     </>
   );

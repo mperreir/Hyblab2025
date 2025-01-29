@@ -1,22 +1,19 @@
 .home_page {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: calc(100% - var(--header-height));
+  margin-top: var(--header-height);
   width: 100%;
-  background: linear-gradient(to top, #41C3FF 0%, white 50%, white 100%);
+  background-color: white;
 }
 
-.home_page .content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  flex: 1;
+.home_page .main-content {
+  z-index: 1;
+  background-color: rgba(255,255,255,0.7);
+  box-shadow: 0px 9.5px 20px 15px rgba(255, 255, 255, 0.7);
 }
 
 .home_page .start-button {
-  margin-top: -65%;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -41,16 +38,20 @@
 
 
 .home_page .titles {
-  margin-bottom: 80%;
-  margin-top: -50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 10% 0;
 }
 
 .home_page .main-title {
-  font-size: 32px;
-  font-weight: bolder;
+  font-size: 2.5rem;
+  font-family: 'Sharpie-Bold';
   text-align: center;
   color: black;
   background: none;
+  max-width: 70%;
 }
 
 .home_page .subtitle {
@@ -64,27 +65,20 @@
 
 
 
-.decoration {
-  position: relative;
-  margin-top: 40px;
+.home_page .image-holder {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  bottom: 0;
 }
 
-.green-circle {
+.home_page .image-holder img {
+  width: 100%;
   position: absolute;
-  width: 180%;
-  aspect-ratio: 1/1;
-  background-color: #228B22;
-  border-radius: 50%;
-  transform: translateY(15%);
-}
-
-.gray-rectangle {
-  position: absolute;
-  width: 310px;
-  height: 280px;
-  background-color: #D3D3D3;
-  margin-bottom: 320px;
+  bottom: 0;
 }

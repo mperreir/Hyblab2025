@@ -45,7 +45,7 @@ function Guide() {
                     style={{top: lines[step].yOffset}}/>
                 <div className="animal-section">
                     <div className="bubble-container">
-                        <SpeechBubble text={dialogues[step]} position={"30%"}/>
+                        <SpeechBubble text={dialogues[step]} position={"35%"} width={"60%"}/>
                     </div>
                     <div className="image-container">
                         <img src={loutreImage} alt="Loutre" className="animal-image" />
