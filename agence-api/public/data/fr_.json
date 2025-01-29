@@ -397,7 +397,7 @@
             {
                 "titre": "Les technopoles de l'Ouest",
                 "images": [
-                    "img/queen-anne-196435_1280.jpg"
+                    "img/tech/Technopole.png"
                 ],
                 "paragraphes": [
                     "Dans l’Ouest, les technopoles se répartissent en fonction de la taille des villes qui les accueillent. On retrouve d’abord celles situées dans des villes de plus de 100 000 habitants, comme Rennes, Nantes, Brest, Le Mans et Angers ; celles des villes de plus de 40 000 habitants, telles que Lorient, Laval, Vannes, Saint-Brieuc et Quimper ; et enfin, les plus petites, dans des villes de plus de 20 000 habitants, avec Lannion."
@@ -405,7 +405,7 @@
             },
             {
                 "titre": "Financement : Le crownfunding",
-                "images": [],
+                "images": ["img/tech/Crowfunding.png"],
                 "paragraphes": [
                     "Le crowdfunding, ou financement participatif, est un mode de financement qui permet à des porteurs de projets de collecter des fonds auprès d'un large public via des plateformes en ligne.",
                     "Contrairement aux emprunts bancaires ou aux aides publiques, qui impliquent généralement des conditions de remboursement ou des critères d'éligibilité stricts, le crowdfunding repose sur des capitaux propres apportés par des contributeurs individuels. Ces fonds peuvent prendre la forme de dons, de prêts ou de participations au capital, offrant ainsi aux entrepreneurs une plus grande flexibilité financière et une moindre dépendance aux institutions traditionnelles.",
@@ -419,9 +419,9 @@
                     "1_lannion": "Les actifs dans les Côtes-d'Armor"
                 },
                 "images": {
-                    "1_nantes": [],
-                    "1_lorient": [],
-                    "1_lannion": []
+                    "1_nantes": ["img/tech/Loire Atlantique.png"],
+                    "1_lorient": ["img/tech/Morbihan.png"],
+                    "1_lannion": ["img/tech/Côtes d_Armor.png"]
                 },
                 "paragraphes": [
                     "Dans nos régions, le taux d’emploi des jeunes s’élève à 43,6 %, une performance supérieure à la moyenne nationale de 39,5 %, témoignant d’une bonne dynamique du marché du travail pour cette tranche d’âge.",
@@ -431,7 +431,7 @@
             },
             {
                 "titre": "Les labels RSE des entreprises de l'Ouest",
-                "images": [],
+                "images": ["img/tech/RSE.png"],
                 "paragraphes": [
                     {
                         "1": {

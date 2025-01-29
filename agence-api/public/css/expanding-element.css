@@ -58,7 +58,7 @@
 /* Ajustement pour les petits écrans */
 @media (max-width: 768px) {
     .expanding img {
-        width: calc(50% - 10px); /* 2 images par ligne sur écran moyen */
+        width: calc(60%); /* 2 images par ligne sur écran moyen */
     }
 }
 
