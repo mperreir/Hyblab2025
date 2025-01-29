@@ -6,19 +6,7 @@
           "name": "Nucléaire",
           "percentage": 65,
           "text": "Faiblement émetteur de CO₂, le nucléaire est une pierre angulaire du mix électrique français, mais il pose des défis liés aux déchets radioactifs et à la sécurité. Il fonctionne avec de l'uranium importé principalement du Niger, du Kazakhstan et du Canada.",
-          "notes": "Pratiquement aucune émission directe de CO2. Défis écologiques et politiques liés aux déchets.",
-          "external_links": [
-            {
-              "type": "Article",
-              "title": "Les risques liés aux accidents nucléaires",
-              "url": "https://app.brief.science/article/2022-03-14-161-les-risques-lies-aux-accidents-nucleaires/?search=true"
-            },
-            {
-              "type": "Article",
-              "title": "Les solutions pour stocker les déchets radioactifs",
-              "url": "https://app.brief.science/article/2023-11-03-655-les-solutions-pour-stocker-les-dechets-radioactifs/?search=true"
-            }
-          ]
+          "notes": "Pratiquement aucune émission directe de CO2. Défis écologiques et politiques liés aux déchets."
         },
         {
           "name": "Hydraulique",
