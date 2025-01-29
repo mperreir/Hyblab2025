@@ -1,4 +1,13 @@
 .background_home {
     background: url('homePage2.png');
-    background-size: 100% 100%;
+    background-size: 100% auto;
+    background-position: center -20px;
+}
+
+.illustration_in_p_bateau {
+    position: absolute;
+    height: 80px;
+    object-fit: scale-down;
+    top: -80px;
+    right: 0;
 }
