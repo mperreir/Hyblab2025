@@ -33,31 +33,32 @@ router.get('/articles', (req, res) => {
 
 // Route to fetch article data based on category_name and keyword
 router.get('/articles/:category_name/:keyword', (req, res) => {
-    const { category_name, keyword } = req.params;
-    console.log('Looking for JSON at:', articlesPath);
-
-    // Read the JSON file
+    console.log(`API Request received: ${req.params.category_name}/${req.params.keyword}`);
+    
     fs.readFile(articlesPath, 'utf8', (err, data) => {
         if (err) {
-            console.error('Error reading JSON file:', err);
+            console.error('Error reading JSON:', err);
             return res.status(500).send({ error: 'Failed to load articles data.' });
         }
 
         try {
             const articles = JSON.parse(data);
-            const article = articles.find(article => article.id === category_name);
+            const article = articles.find(article => article.id === req.params.category_name);
 
             if (!article) {
+                console.log(`Article "${req.params.category_name}" not found`);
                 return res.status(404).send({ error: 'Article not found.' });
             }
 
-            if (!article[keyword]) {
-                return res.status(404).send({ error: `Keyword "${keyword}" not found in article.` });
+            if (!article[req.params.keyword]) {
+                console.log(`Keyword "${req.params.keyword}" not found in "${req.params.category_name}"`);
+                return res.status(404).send({ error: `Keyword "${req.params.keyword}" not found.` });
             }
 
-            res.json(article[keyword]);
+            console.log(`Returning data for ${req.params.category_name}/${req.params.keyword}`);
+            res.json(article[req.params.keyword]);
         } catch (parseError) {
-            console.error('Error parsing JSON file:', parseError);
+            console.error('Error parsing JSON:', parseError);
             res.status(500).send({ error: 'Failed to parse articles data.' });
         }
     });
