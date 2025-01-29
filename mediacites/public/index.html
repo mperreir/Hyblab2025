@@ -17,28 +17,28 @@
 </head>
 
 <body>
-  <nav class="sticky-top">
-    <div class="navigation-header btn-group btn-group-justified" role="group"> 
-        <button onclick="location.href='index.html'" class="btn btn-outline-secondary" type="button" style="border-radius: 4vh 4vh 4vh 4vh; margin-right: 10px; font-style: normal;">
-            🏠
-        </button>
-        <!-- Certains boutons pas implémentés en raison de la limite de temps -->
-        <button class="btn btn-outline-secondary" type="button" style="border-radius: 4vh 0vh 0vh 4vh;"> ACTION SOCIALE ET SANTÉ</button> <!-- onclick="redirect('nom_de_la_categorie')" --> 
-        <button class="btn btn-outline-secondary" type="button" > CITOYENNETÉ</button> <!-- onclick="redirect('nom_de_la_categorie')" --> 
-        <button class="btn btn-outline-secondary" type="button" > CULTURE ET TOURISME</button> <!-- onclick="redirect('nom_de_la_categorie')" --> 
-        <button onclick="redirect('education')" class="btn btn-outline-secondary" type="button"> ÉDUCATION</button>
-        <button onclick="redirect('environnement') " class="btn btn-outline-secondary" type="button"> ENVIRONNEMENT</button>
-        <button class="btn btn-outline-secondary" type="button"> MOBILITÉS</button> <!-- onclick="redirect('nom_de_la_categorie')" --> 
-        <button class="btn btn-outline-secondary" type="button" > SÉCURITÉ</button> <!-- onclick="redirect('nom_de_la_categorie')" --> 
-        <button class="btn btn-outline-secondary" type="button" > URBANISME ET LOGEMENT</button> <!-- onclick="redirect('nom_de_la_categorie')" --> 
-    </div>
-    <script>
-        function redirect(category) {
-            console.log(`Redirecting to article.html?category=${category}`);
-            window.location.href = `article.html?category=${category}`;
-        }
-    </script>
-  </nav>
+    <nav class="sticky-top">
+        <div class="navigation-header btn-group btn-group-justified" role="group"> 
+            <button onclick="location.href='index.html'" class="btn btn-outline-secondary" type="button" style="border-radius: 4vh 4vh 4vh 4vh; margin-right: 10px; font-style: normal;">
+                🏠
+            </button>
+            <!-- Certains boutons pas implémentés en raison de la limite de temps -->
+            <button class="btn btn-outline-secondary" type="button" style="border-radius: 4vh 0vh 0vh 4vh;"> ACTION SOCIALE ET SANTÉ</button> <!-- onclick="redirect('nom_de_la_categorie')" --> 
+            <button class="btn btn-outline-secondary" type="button" > CITOYENNETÉ</button> <!-- onclick="redirect('nom_de_la_categorie')" --> 
+            <button class="btn btn-outline-secondary" type="button" > CULTURE ET TOURISME</button> <!-- onclick="redirect('nom_de_la_categorie')" --> 
+            <button onclick="redirect('education')" class="btn btn-outline-secondary" type="button"> ÉDUCATION</button>
+            <button onclick="redirect('environnement') " class="btn btn-outline-secondary" type="button"> ENVIRONNEMENT</button>
+            <button class="btn btn-outline-secondary" type="button"> MOBILITÉS</button> <!-- onclick="redirect('nom_de_la_categorie')" --> 
+            <button class="btn btn-outline-secondary" type="button" > SÉCURITÉ</button> <!-- onclick="redirect('nom_de_la_categorie')" --> 
+            <button class="btn btn-outline-secondary" type="button" > URBANISME ET LOGEMENT</button> <!-- onclick="redirect('nom_de_la_categorie')" --> 
+        </div>
+        <script>
+            function redirect(category) {
+                console.log(`Redirecting to article.html?category=${category}`);
+                window.location.href = `article.html?category=${category}`;
+            }
+        </script>
+    </nav>
     <div>
         <h1 style="font-size: 4vw; font-style: italic; margin: 20px;">
             <span style="color: #FF0023; font-family: 'IBM Plex Mono'; margin-right: -20px;"><strong>SIMPLI'</strong></span>
