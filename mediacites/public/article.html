@@ -19,23 +19,41 @@
         }
 
         try {
-            // Build the correct API URL (with /api prefix)
-            const apiUrl = `/mediacites/api/articles/${category}/name`;  // Correct API URL
-
-            // Fetch data from the API
+            // Fetch the full article data
+            const apiUrl = `/mediacites/api/articles/${category}`;
             const response = await fetch(apiUrl);
 
             if (!response.ok) {
                 throw new Error(`API returned status: ${response.status}`);
             }
 
-            const articleName = await response.json();
+            const articleData = await response.json();
 
-            // Update the DOM with the fetched article name
-            document.getElementById('article-title').textContent = articleName;
+            // Update the DOM with article data
+            document.getElementById('article-title').textContent = articleData.name; // Title
+            document.getElementById('resumeGeneral').textContent = articleData.resume; // Resume
+            document.getElementById('texteArticle').textContent = articleData.text;
+
+            // Check if KPIs exist and update them dynamically
+            if (articleData.kpis && articleData.kpis.length > 0) {
+                document.getElementById('kpi1').textContent = articleData.kpis[0].number;
+                document.getElementById('textkpi1').textContent = articleData.kpis[0].text;
+
+                if (articleData.kpis.length > 1) {
+                    document.getElementById('kpi2').textContent = articleData.kpis[1].number;
+                    document.getElementById('textkpi2').textContent = articleData.kpis[1].text;
+                }
+            }
+
         } catch (error) {
             console.error('Error fetching article:', error);
             document.getElementById('article-title').textContent = 'Failed to load article.';
+            document.getElementById('resumeGeneral').textContent = 'Résumé indisponible.';
+            document.getElementById('texteArticle').textContent = 'Texte indisponible.';
+            document.getElementById('kpi1').textContent = 'KPI 1 indisponible';
+            document.getElementById('textkpi1').textContent = '';
+            document.getElementById('kpi2').textContent = 'KPI 2 indisponible';
+            document.getElementById('textkpi2').textContent = '';
         }
     }
 
@@ -56,10 +74,10 @@
 
     // Run the function when the page loads
     window.onload = function () {
-        loadArticle();  // Existing function to load the article
-        highlightActiveCategory(); // New function to highlight the selected category
+        loadArticle();
+        highlightActiveCategory();
     };
-  </script>
+</script>
 </head>
 <body>
     <nav class="sticky-top">
@@ -131,134 +149,170 @@
             </div>
           </div>
             <!-- Right Container (2/3 of the page) -->
-            <div class="col-8 right-container overflow-auto">
-                <!-- résumé -->
-                <div class="row" style="padding-right: 3vh;">
-                    <div class="col" style="width: 100%; background-color: #3370E7; height: fit-content; border: 1vh solid white; border-radius: 4vh 4vh 4vh 4vh;">
-                        <h3 id="titreResume" style="font-size: 4vw; color: white; text-align: right; font-style: italic;">Résumé</h3>
-                        <p id="resumeGeneral" style="color: white;"><!-- TODO changer dynamiquement-->Texte résumé catégorie 1</p>
-                    </div>
+            <div class="col-8 right-container overflow-auto" style="height: fit-content;">
+              <!-- résumé -->
+              <div class="row mb-3" style="padding-right: 3vh;">
+                  <div class="col-12" style="background-color: #3370E7; height: fit-content; border: 1vh solid white; border-radius: 4vh;">
+                      <h3 id="titreResume" style="font-size: 4vw; color: white; text-align: right; font-style: italic;">Résumé</h3>
+                      <p id="resumeGeneral" style="color: white;"></p>
+                  </div>
+              </div>
+          
+              <!-- KPIs -->
+              <div class="container">
+                  <div class="row g-3 justify-content-between" style="padding-right: 2vh;">
+                      <div class="col-md-7" style="background-color: #FF0023; height: auto; border-radius: 4vh;">
+                          <h3 id="kpi1" style="font-size: 4vw; color: white; text-align: right;">KPI 1</h3>
+                          <p id="textkpi1" style="color: white;">Chargement...</p>
+                      </div>
+                      <div class="col-md-5" style="background-color: #565656; height: auto; border-radius: 4vh 4vh 4vh 4vh; border-left: 1vh solid white;">
+                          <h3 id="kpi2" style="font-size: 4vw; color: white; text-align: right;">KPI 2</h3>
+                          <p id="textkpi2" style="color: white;">Chargement...</p>
+                      </div>
+                  </div>
+              </div>
+          
+              <!-- Pour en savoir plus -->
+              <div class="row mt-3" style="padding-right: 3vh;">
+                  <div class="col-12" style="background-color: #3370E7; height: fit-content; border: 1vh solid white; border-radius: 4vh;">
+                      <h3 id="titreArticle" style="font-size: 4vw; color: white; font-style: italic;">Pour en savoir plus</h3>
+                      <p id="texteArticle" style="color: white;"></p>
+                  </div>
+              </div>
+
+
+              <!-- Liens Section -->
+              <div class="row" style="padding-right: 3vh;">
+                  <div class="col col-to-sort-inside-of" style="width: 100%; background-color: #565656; height: fit-content; border: 1vh solid white; border-radius: 4vh 4vh 4vh 4vh;">
+                      <div class="row">
+                          <div class="col-8">
+                              <h3 class="d-flex" style="font-size: 4vw; color: white; text-align:left; font-style: italic;">Liens</h3>
+                          </div>
+                          <div class="col-4 d-flex justify-content-end align-items-center">
+                              <div class="dropdown">
+                                  <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:white;">
+                                      De A à Z
+                                  </button>
+                                  <ul class="dropdown-menu">
+                                      <li><a id="alphabetical_asc" class="dropdown-item">De A à Z</a></li>
+                                      <li><a id="alphabetical_desc" class="dropdown-item">De Z à A</a></li>
+                                      <li><a id="chronological_asc" class="dropdown-item">Du plus récent au plus vieux</a></li>
+                                      <li><a id="chronological_desc" class="dropdown-item">Du plus vieux au plus récent</a></li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                      <!-- Container for dynamically loaded links -->
+                      <div id="links-container"></div>
+                  </div>
                 </div>
-
-                <!-- KPIs -->
-                <div class="row" style="padding-right: 3vh; display:flex;">
-                    <div class="col" style="width: 100%; background-color: #FF0023; height: auto; border: 1vh solid white; border-radius: 4vh 4vh 4vh 4vh;">
-                        <h3 id="kpi1" style="font-size: 4vw; color: white; text-align: right;" >KPI 1</h3>
-                        <p id="textkpi1" style="color: white;"><!-- TODO changer dynamiquement-->Texte résumé catégorie 1
-
-                        </p>
-                    </div>
-                    <div class="col" style="width: 100%; background-color: #565656; height: auto; border: 1vh solid white; border-radius: 4vh 4vh 4vh 4vh;">
-                        <h3 id="kpi2" style="font-size: 4vw; color: white; text-align: right;" >KPI 2</h3>
-                        <p id="textkpi2" style="color: white;"><!-- TODO changer dynamiquement-->Texte résumé catégorie 1</p>
-                    </div>
-                </div>
-              
-                <!-- Pour en savoir plus -->
-                <div class="row" style="padding-right: 3vh;">
-                    <div class="col" style="width: 100%; background-color: #3370E7; height: fit-content; border: 1vh solid white; border-radius: 4vh 4vh 4vh 4vh;">
-                        <h3 id="titreArticle" style="font-size: 4vw; color: white; font-style: italic;">Pour en savoir plus</h3>
-                        <p id="texteArticle" style="color: white;"><!-- TODO changer dynamiquement-->Texte résumé catégorie 1</p>
-                    </div>
-                </div>
-                <!-- Liens -->
-                <div class="row" style="padding-right: 3vh;">
-                    <div class="col col-to-sort-inside-of" style="width: 100%; background-color: #565656; height: fit-content; border: 1vh solid white; border-radius: 4vh 4vh 4vh 4vh;">
-                        <div class="row">
-                            <div class="col-8">
-                                <h3 class="d-flex" style="font-size: 4vw; color: white; text-align:left; font-style: italic;" >Liens</h3>
-                            </div>
-                            <div class="col-4 d-flex justify-content-end align-items-center">
-                                
-                                <div class="dropdown">
-                                    <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:white; ">
-                                        De A à Z 
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                        <li><a id="alphabetical_asc" class="dropdown-item">De A à Z</a></li>
-                                        <li><a id="alphabetical_desc" class="dropdown-item">De Z à A</a></li>
-                                        <li><a id="chronological_asc" class="dropdown-item">Du plus récent au plus vieux</a></li>
-                                        <li><a id="chronological_desc" class="dropdown-item">Du plus vieux au plus récent</a></li>
-                                    </ul>
-                                </div>
-                                <!--
-                                <select class="form-select custom-select-sm ">
-                                    <option value="alphabetical_asc" selected >De A à Z</option>
-                                    <option value="alphabetical_desc">De Z à A</option>
-                                    <option value="chronological_asc">Du plus récent au plus vieux</option>
-                                    <option value="chronological_desc">Du plus vieux au plus récent</option>
-                                </select>
-                                -->
-                            </div>
-                        </div>
-                        <div class="row row-to-sort">
-                            <!--TODO pouvoir trier-->
-                            <div class="col-8 col-name-to-sort">
-                                <p style="color: white;"><!-- TODO changer dynamiquement-->Ver sind the délibération?</p>
-                            </div>
-                            <div class="col-4 col-date-to-sort">
-                                <p style="color: white; font-style: italic; text-align: right; font-weight: 200;"><!-- TODO changer dynamiquement-->15/09/2004</p>
-                            </div>
-                        </div>
-                        <div class="row row-to-sort">
-                            <!--TODO pouvoir trier-->
-                            <div class="col-8 col-name-to-sort">
-                                <p style="color: white;"><!-- TODO changer dynamiquement-->Abc Ver sind the délibération?</p>
-                            </div>
-                            <div class="col-4 col-date-to-sort">
-                                <p style="color: white; font-style: italic; text-align: right; font-weight: 200;"><!-- TODO changer dynamiquement-->16/09/2004</p>
-                            </div>
-                        </div>
-                        <script>
-                        function sortRows(criteria) {
-                            const rows = Array.from(document.querySelectorAll('.row-to-sort'));
-                            const container = document.querySelector('.col-to-sort-inside-of');
-
-                            rows.sort((a, b) => {
-                                const nameA = a.querySelector('.col-name-to-sort').innerText.toUpperCase();
-                                const nameB = b.querySelector('.col-name-to-sort').innerText.toUpperCase();
-                                const dateA = parseDate(a.querySelector('.col-date-to-sort').innerText);
-                                const dateB = parseDate(b.querySelector('.col-date-to-sort').innerText);
-
-                                function parseDate(dateStr) {
-                                    const [day, month, year] = dateStr.split('/').map(Number);
-                                    return new Date(year, month - 1, day);
-                                }
-
-                                if (criteria === 'alphabetical_asc') {
-                                    return nameA.localeCompare(nameB);
-                                } else if (criteria === 'alphabetical_desc') {
-                                    return nameB.localeCompare(nameA);
-                                } else if (criteria === 'chronological_asc') {
-                                    return dateA - dateB;
-                                } else if (criteria === 'chronological_desc') {
-                                    return dateB - dateA;
-                                }
-                            });
-
-                            rows.forEach(row => container.appendChild(row));
-                            const dropdownButton = document.querySelector('.dropdown-toggle');
-                            const selectedItem = document.querySelector(`#${criteria}`).innerText;
-                            dropdownButton.innerText = selectedItem;
-                        }
-
-                        document.querySelectorAll('.dropdown-item').forEach(item => {
-                            item.addEventListener('click', () => {
-                                sortRows(item.id);
-                            });
-                        });
-                        </script>
-                        
-                    </div>
-                </div>
-                <div class="row" style="padding-right: 3vh;">
-                    <div class="col" style="width: 100%; text-align: right;">
-                        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="btn btn-outline-secondary" style="font-size: 2vw; border-radius: 4vh 4vh 4vh 4vh;">
-                            &#8679;
-                        </button>
-                    </div>
-                </div>
-            </div>
+                <script>
+                  async function loadLinks() {
+                      // Extract the category from the query string
+                      const category = new URLSearchParams(window.location.search).get('category');
+                  
+                      if (!category) {
+                          console.error('Category is missing from the URL.');
+                          return;
+                      }
+                  
+                      try {
+                          const apiUrl = `/mediacites/api/links/${category}`; // New API endpoint
+                          const response = await fetch(apiUrl);
+                  
+                          if (!response.ok) {
+                              throw new Error(`API returned status: ${response.status}`);
+                          }
+                  
+                          const linksData = await response.json();
+                          const linksContainer = document.getElementById('links-container');
+                  
+                          // Clear the container before adding new links
+                          linksContainer.innerHTML = '';
+                  
+                          // Dynamically create and append link rows
+                          linksData.forEach(link => {
+                              const linkRow = document.createElement('div');
+                              linkRow.classList.add('row', 'mb-3', 'row-to-sort'); // Added 'row-to-sort' for sorting
+                  
+                              // Link name
+                              const linkElement = document.createElement('div');
+                              linkElement.classList.add('col-8', 'col-name-to-sort');
+                              linkElement.innerHTML = `<a href="${link.link}" target="_blank" style="color: #3370E7; text-decoration: underline; font-weight: bold;">${link.name}</a>`;
+                  
+                              // Date on the left
+                              const dateElement = document.createElement('div');
+                              dateElement.classList.add('col-4', 'col-date-to-sort');
+                              dateElement.innerHTML = `<p style="color: white; font-style: italic; text-align: left; font-weight: 200;">${link.date}</p>`;
+                  
+                              // Append link and date to the row
+                              linkRow.appendChild(linkElement);
+                              linkRow.appendChild(dateElement);
+                  
+                              // Add the row to the container
+                              linksContainer.appendChild(linkRow);
+                          });
+                  
+                          // After loading the data, set up the sorting
+                          setupSorting();
+                  
+                      } catch (error) {
+                          console.error('Error fetching links:', error);
+                      }
+                  }
+                  
+                  // Sorting logic
+                  function sortRows(criteria) {
+                      const rows = Array.from(document.querySelectorAll('.row-to-sort'));
+                      const container = document.querySelector('#links-container');
+                  
+                      rows.sort((a, b) => {
+                          const nameA = a.querySelector('.col-name-to-sort').innerText.toUpperCase();
+                          const nameB = b.querySelector('.col-name-to-sort').innerText.toUpperCase();
+                          const dateA = parseDate(a.querySelector('.col-date-to-sort').innerText);
+                          const dateB = parseDate(b.querySelector('.col-date-to-sort').innerText);
+                  
+                          function parseDate(dateStr) {
+                              const [day, month, year] = dateStr.split('/').map(Number);
+                              return new Date(year, month - 1, day);
+                          }
+                  
+                          if (criteria === 'alphabetical_asc') {
+                              return nameA.localeCompare(nameB);
+                          } else if (criteria === 'alphabetical_desc') {
+                              return nameB.localeCompare(nameA);
+                          } else if (criteria === 'chronological_asc') {
+                              return dateA - dateB;
+                          } else if (criteria === 'chronological_desc') {
+                              return dateB - dateA;
+                          }
+                      });
+                  
+                      // Append sorted rows back to the container
+                      rows.forEach(row => container.appendChild(row));
+                  
+                      // Update the dropdown button text
+                      const dropdownButton = document.querySelector('.dropdown-toggle');
+                      const selectedItem = document.querySelector(`#${criteria}`).innerText;
+                      dropdownButton.innerText = selectedItem;
+                  }
+                  
+                  // Set up sorting event listeners
+                  function setupSorting() {
+                      document.querySelectorAll('.dropdown-item').forEach(item => {
+                          item.addEventListener('click', () => {
+                              sortRows(item.id);
+                          });
+                      });
+                  }
+                  
+                  // Ensure links load on page load
+                  window.onload = function () {
+                      loadLinks();
+                  };
+                </script>
+              </div>
+          </div>
         </div>
     </div>  
     <!--

@@ -28,6 +28,64 @@ router.get('/articles', (req, res) => {
     });
 });
 
+router.get('/articles/:category_name', (req, res) => {
+    console.log(`Fetching full article data for category: ${req.params.category_name}`);
+
+    fs.readFile(articlesPath, 'utf8', (err, data) => {
+        if (err) {
+            console.error('Error reading JSON:', err);
+            return res.status(500).send({ error: 'Failed to load articles data.' });
+        }
+
+        try {
+            const articles = JSON.parse(data);
+            const article = articles.find(article => article.id === req.params.category_name);
+
+            if (!article) {
+                console.log(`Article "${req.params.category_name}" not found`);
+                return res.status(404).send({ error: 'Article not found.' });
+            }
+
+            res.json(article); // Send full article object
+
+        } catch (parseError) {
+            console.error('Error parsing JSON:', parseError);
+            res.status(500).send({ error: 'Failed to parse articles data.' });
+        }
+    });
+});
+
+router.get('/links/:category_name', (req, res) => {
+    console.log(`Fetching links for category: ${req.params.category_name}`);
+
+    fs.readFile(articlesPath, 'utf8', (err, data) => {
+        if (err) {
+            console.error('Error reading JSON:', err);
+            return res.status(500).send({ error: 'Failed to load links data.' });
+        }
+
+        try {
+            const articles = JSON.parse(data);
+            const article = articles.find(article => article.id === req.params.category_name);
+
+            if (!article || !article.links) {
+                console.log(`No links found for category "${req.params.category_name}"`);
+                return res.status(404).send({ error: 'No links found for this category.' });
+            }
+
+            res.json(article.links); // Send only the links array
+
+        } catch (parseError) {
+            console.error('Error parsing JSON:', parseError);
+            res.status(500).send({ error: 'Failed to parse links data.' });
+        }
+    });
+});
+
+// Export the API
+module.exports = router;
+
+/*
 // Route to fetch article data based on category_name and keyword
 router.get('/articles/:category_name/:keyword', (req, res) => {
     console.log(`API Request received: ${req.params.category_name}/${req.params.keyword}`);
@@ -60,9 +118,7 @@ router.get('/articles/:category_name/:keyword', (req, res) => {
         }
     });
 });
-
-// Export the API
-module.exports = router;
+*/
 
 /*
 
