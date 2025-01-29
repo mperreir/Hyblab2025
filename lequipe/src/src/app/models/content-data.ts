@@ -11,7 +11,7 @@ export type Situation = {
     ending?: Ending;
 };
 
-export type ContentBlock = TextBlock | ImageBlock | QuestionBlock;
+export type ContentBlock = TextBlock | ImageBlock | QuestionBlock | ArticleLinkBlock;
 
 export type ImageBlock = {
     type: "image";
@@ -32,6 +32,14 @@ export type QuestionBlock = {
     text: string; // texte du bloc
     template: "full_page" | "quote"; // Format du texte
 };
+
+export type ArticleLinkBlock = {
+    type: "article";
+    text: string;
+    template: "full_page";
+    link: string;
+    className?: string;
+}
 
 export type Choice = {
     text: string; // Texte du choix proposé au joueur

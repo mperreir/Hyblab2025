@@ -17,10 +17,12 @@ body {
 
 .link, .redText {
     color: #D61E00;
-    text-decoration: none;
+    font-style: italic;
 }
 
-.italicRedText {
+.article_link {
     color: #D61E00;
+    font-size: 25%;
     font-style: italic;
+    padding-top: 0%;
 }

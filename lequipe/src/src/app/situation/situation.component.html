@@ -15,6 +15,9 @@
                 @case ("image") {
                     <!-- <img [src]="item.link" [alt]="item?.altText || ''"> -->
                 }
+                @case ("article")  {
+                    <a [innerHTML]="(item.text ? item.text : '')" [href]="item.link" [class]="item.className"></a>
+                }
             }
         }
     </div>

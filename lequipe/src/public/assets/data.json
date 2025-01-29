@@ -9,7 +9,7 @@
                     "type": "text",
                     "text": "Description :",
                     "template": "full_page",
-                    "className": "italicRedText"
+                    "className": "redText"
                 },
                 {
                     "type": "text",
@@ -18,7 +18,7 @@
                 },
                 {
                     "type": "question",
-                    "text": "Et si Armstrong n’avait jamais été testé positif au dopage ?",
+                    "text": "Et si <a href ='https://drive.google.com/file/d/18xXQB65cdpQJB7FKGzI04rJ4WEkuVIvv/view?usp=sharing' class='link'>Armstrong</a> n’avait jamais été testé positif au dopage ?",
                     "template": "full_page"
                 },
                 {
@@ -36,12 +36,12 @@
                         "content": [
                             {
                                 "type": "text",
-                                "text": "Lance Armstrong reste celui que l’on appelle «Robocop». Pas de scandale, pas de déchéance de ses titres : l’UCI n’a jamais pu prouver quoi que ce soit. La légende s’impose et inspire tout le peloton. Sa flamme n’éclaire pas seulement le chemin de la performance sportive... mais aussi celui du dopage.",
+                                "text": "Lance Armstrong reste celui que l’on appelle <span class='redText'>«Robocop»</span>. Pas de scandale, pas de déchéance de ses titres : l’UCI n’a jamais pu prouver quoi que ce soit. La légende s’impose et inspire tout le peloton. Sa flamme n’éclaire pas seulement le chemin de la performance sportive... mais aussi celui du dopage.",
                                 "template": "full_page"
                             },
                             {
                                 "type": "text",
-                                "text": "Une nouvelle génération de fous de la pédale voit le jour. Jan Ullrich, Alberto Contador, Óscar Pereiro, Carlos Sastre… tous montent au créneau pour détrôner Lance. Une véritable lutte des titans.",
+                                "text": "Une nouvelle génération de fous de la pédale voit le jour. <span class='redText'>Jan Ullrich, Alberto Contador, Óscar Pereiro, Carlos Sastre…</span> tous montent au créneau pour détrôner Lance. Une véritable lutte des titans.",
                                 "template": "full_page"
                             },
                             {
@@ -90,6 +90,13 @@
                                 "result": {
                                     "content": [
                                         {
+                                            "type": "article",
+                                            "text": "L'histoire de l'UCI et du dopage juste ici.",
+                                            "template": "full_page",
+                                            "link": "https://lachainelequipe.fromsmash.com/UCI-DOPAGE",
+                                            "className": "article_link"
+                                        },
+                                        {
                                             "type": "text",
                                             "text": "Face à ce manque de considération, l’UCI reprend la main. Les contrôles antidopage deviennent implacables. Les tricheurs sont traqués sans relâche, et une vague d’interdictions s’abat sur les coureurs pris la main dans le sac à vitamines.",
                                             "template": "full_page"
@@ -121,12 +128,12 @@
                         "content": [
                             {
                                 "type": "text",
-                                "text": "Victoire ! Lance Armstrong brandit son maillot jaune et succède à Marco Pantani sur le podium. Le champion américain s’impose sans tomber dans le panneau du dopage contrairement à certains de ses rivaux. L’EPO ? A la poubelle. Armstrong préfère « Rouler sans tricher », son nouveau mantra. Sa fondation Livestrong, créée en 1997, pour soutenir les malades du cancer devient un véritable QG de la lutte anti-dopage. Celui que l’on prénomme « Le Boss » ne se contente pas de gagner des courses : il sauve le cyclisme d’une overdose collective.",
+                                "text": "<span class='redText'>Victoire !</span> Lance Armstrong brandit son maillot jaune et succède à Marco Pantani sur le podium. Le champion américain s’impose sans tomber dans le panneau du dopage contrairement à certains de ses rivaux. L’EPO ? A la poubelle. Armstrong préfère <span class='redText'>« Rouler sans tricher »</span>, son nouveau mantra. Sa fondation Livestrong, créée en 1997, pour soutenir les malades du cancer devient un véritable QG de la lutte anti-dopage. Celui que l’on prénomme <span class='redText'>« Le Boss »</span> ne se contente pas de gagner des courses : il sauve le cyclisme d’une overdose collective.",
                                 "template": "full_page"
                             },
                             {
                                 "type": "text",
-                                "text": "La vie de Marco Pantani aussi prendra un tournant inattendu. Inspiré par le discours anti-dopage de Lance, « Le Pirate” décide de se reprendre en main. Fini les fréquentations douteuses et les excès qui l’entraînaient vers le fond. Au lieu de sombrer après ses déboires, Pantani trouve un nouveau souffle, encouragé par un cyclisme qui, grâce à Armstrong, commence à redorer son image.",
+                                "text": "La vie de Marco Pantani aussi prendra un tournant inattendu. Inspiré par le discours anti-dopage de Lance, « Le Pirate »  décide de se reprendre en main. Fini les fréquentations douteuses et les excès qui l’entraînaient vers le fond. Au lieu de sombrer après ses déboires, Pantani trouve un nouveau souffle, encouragé par un cyclisme qui, grâce à Armstrong, commence à redorer son image.",
                                 "template": "full_page"
                             }
                         ],
@@ -140,7 +147,7 @@
                                     "content": [
                                         {
                                             "type": "text",
-                                            "text": "Pas de tragique chambre d’hôtel en 2004, pas d’overdose. À la place, Pantani revient au sommet. Armstrong et Lui deviennent les visages d’une nouvelle ère, mais surtout, d’une rivalité mythique. Dès l’an 2000, les deux se disputent les maillots jaunes sur les routes du Tour de France. Lance, méthodique et calculateur, contre Marco, tout feu tout flamme dans les montagnes. Les médias se régalent : c’est la version cycliste d’un blockbuster d’été.",
+                                            "text": "Pas de tragique chambre d’hôtel en 2004, pas d’overdose. À la place, <a href ='https://lachainelequipe.fromsmash.com/TDF-1998' class='link'>Pantani</a> revient au sommet. Armstrong et Lui deviennent les visages d’une nouvelle ère, mais surtout, d’une rivalité mythique. Dès l’an 2000, les deux se disputent les maillots jaunes sur les routes du Tour de France. Lance, méthodique et calculateur, contre Marco, tout feu tout flamme dans les montagnes. Les médias se régalent : c’est la version cycliste d’un blockbuster d’été.",
                                             "template": "full_page"
                                         },
                                         {
@@ -170,11 +177,11 @@
                     "type": "text",
                     "text": "Description :",
                     "template": "full_page",
-                    "className": "italicRedText"
+                    "className": "redText"
                 },
                 {
                     "type": "text",
-                    "text": "Tu es un jeune arbitre en formation à la FIFA. Passionné par les règles du jeu et les scandales du foot, tu plonges dans l'histoire de la \"Main de Dieu\", ce but légendaire mais pas très réglo marqué de la main par Diego Maradona contre l’Angleterre en 1986.",
+                    "text": "Tu es un jeune arbitre en formation à la FIFA. Passionné par les règles du jeu et les scandales du foot, tu plonges dans l'histoire de la <span class='redText'>\"Main de Dieu\"</span>, ce but légendaire mais pas très réglo marqué de la main par <span class='redText'>Diego Maradona</span> contre l’Angleterre en 1986.",
                     "template": "full_page"
                 },
                 {
@@ -189,7 +196,7 @@
                 },
                 {
                     "type": "text",
-                    "text": "Quart de finale de la Coupe du Monde 1986 : Argentine - Angleterre. 51ᵉ minute. Sur un ballon mal dégagé par la défense argentine, Gary Lineker, jaillit dans la surface. En pleine extension, il envoie le ballon dans les filets... de la main gauche. Le stade Azteca est en ébullition, mais l’arbitre est aux fraises, il valide le but. Score final : 2-1 pour l’Angleterre. Les Anglais exultent. Les Argentins fulminent. Et l’histoire du football bascule.",
+                    "text": "Quart de finale de la Coupe du Monde 1986 : Argentine - Angleterre. 51ᵉ minute. Sur un ballon mal dégagé par la défense argentine, <span class='redText'>Gary Lineker</span>, jaillit dans la surface. En pleine extension, il envoie le ballon dans les filets... de la main gauche. Le stade Azteca est en ébullition, mais l’arbitre est aux fraises, il valide le but. Score final : <span class='redText'>2-1 pour l’Angleterre.</span> Les Anglais exultent. Les Argentins fulminent. Et l’histoire du football bascule.",
                     "template": "full_page"
                 },
                 {
@@ -207,12 +214,12 @@
                         "content": [
                             {
                                 "type": "text",
-                                "text": "L’Angleterre file en demi-finales, éliminant l’Argentine. Mais les images télévisées révèlent rapidement l’infamie : Lineker a bel et bien utilisé sa main ! La presse argentine hurle au scandale. Le contexte politique tendu post-guerre des Malouines transforme l’affaire en crise diplomatique : des supporters argentins organisent des marches en hurlant « Inglaterra ladrón ! » (Angleterre, voleur !).",
+                                "text": "<span class='redText'>L’Angleterre file en demi-finales, éliminant l’Argentine.</span> Mais les images télévisées révèlent rapidement l’infamie : <span class='redText'>Lineker a bel et bien utilisé sa main !</span> La presse argentine hurle au scandale. Le contexte politique tendu post-guerre des Malouines transforme l’affaire en <span class='redText'>crise diplomatique</span> : des supporters argentins organisent des marches en hurlant « Inglaterra ladrón ! » (Angleterre, voleur !).",
                                 "template": "full_page"
                             },
                             {
                                 "type": "text",
-                                "text": "Sous la pression médiatique, la FIFA, alors dirigée par le Brésilien João Havelange, doit agir. L'Argentine, soutenue par ses alliés sud-américains, exige des réformes immédiates. Havelange, entre deux Caïpirinha, et quelques détournement de fonds tente d’enterrer le scandale, mais cède finalement à la pression. Et promet de nouvelles réformes.",
+                                "text": "Sous la pression médiatique, la FIFA, alors dirigée par le Brésilien João Havelange, doit agir. L'Argentine, soutenue par ses alliés sud-américains, exige des réformes immédiates. Havelange, entre deux Caïpirinha, et quelques détournement de fonds tente d’enterrer le scandale, mais cède finalement à la pression. <span class='redText'>Et promet de nouvelles réformes.</span>",
                                 "template": "full_page"
                             }
                         ],
@@ -226,11 +233,12 @@
                                         {
                                             "type": "text",
                                             "text": "Inspirée par l’arbitrage vidéo du rugby, la FIFA introduit la VAR. Le football entre dans une nouvelle ère… non sans drames.",
-                                            "template": "full_page"
+                                            "template": "full_page",
+                                            "className": "redText"
                                         },
                                         {
                                             "type": "text",
-                                            "text": "Lors du match France-Irlande en qualifications pour la Coupe du Monde 2010, Henry contrôle un ballon de la main avant de servir Gallas. Le but est d’abord validé… mais l’arbitre consulte la VAR. Résultat : but annulé. La France ne se qualifie pas pour le Mondial. Et c’est là que tout dérape. Les joueurs français, furieux, perdent leur sang-froid. Thierry Henry se bat avec l’arbitre Martin Hansson. Les supporters français envahissent la pelouse. Les images de chaos font le tour du monde. Face à cet épisode apocalyptique, la FIFA sévit. Les coqs français rentrent au poulailler.",
+                                            "text": "Lors du match France-Irlande en qualifications pour la Coupe du Monde 2010, Henry contrôle un ballon de la main avant de servir Gallas. Le but est d’abord validé… mais l’arbitre consulte la VAR. <span class='redText'>Résultat : but annulé. La France ne se qualifie pas pour le Mondial.</span> Et c’est là que tout dérape. Les joueurs français, furieux, perdent leur sang-froid. <span class='redText'>Thierry Henry se bat avec l’arbitre Martin Hansson.</span> Les supporters français envahissent la pelouse. Les images de chaos font le tour du monde. Face à cet épisode apocalyptique, la FIFA sévit. Les coqs français rentrent au poulailler.",
                                             "template": "full_page"
                                         }
                                     ],
@@ -243,7 +251,7 @@
                                                 "content": [
                                                     {
                                                         "type": "text",
-                                                        "text": "L’équipe de France est suspendue de toutes compétitions internationales pour 10 ans. La France rate le Mondial de 2018. Pas de deuxième étoile. Conséquence inattendue, Kylian Mbappé, dégoûté par le système, choisit de jouer pour le Cameroun, le pays de son père. En 2022, il offre la première Coupe du Monde à une nation africaine, devenant une légende du football mondial. Le Cameroun est en liesse.",
+                                                        "text": "<span class='redText'>L’équipe de France est suspendue de toutes compétitions internationales pour 10 ans.</span> La France rate le Mondial de 2018. Pas de deuxième étoile. Conséquence inattendue, <span class='redText'>Kylian Mbappé, dégoûté par le système, choisit de jouer pour le Cameroun, le pays de son père.</span> En 2022, il offre la première Coupe du Monde à une nation africaine, devenant une légende du football mondial. Le Cameroun est en liesse.",
                                                         "template": "full_page"
                                                     }
                                                 ]
@@ -257,7 +265,7 @@
                                                 "content": [
                                                     {
                                                         "type": "text",
-                                                        "text": "Jugé trop violent, le football masculin disparaît en France. La FFF frappe un grand coup et dissout l’équipe. Exit les tacles rugueux, les polémiques en conférence de presse et les rixes sur le terrain. À leur place, l’équipe féminine est promue en première ligne pour représenter la France sur la scène internationale. Les stades changent d’ambiance. Des familles, des enfants, et un public plus diversifié envahissent les gradins. Les Bleues brillent et créent la surprise en remportant l’Euro 2025 et une première Coupe du Monde en 2027. Eugénie Le Sommer devient une héroïne nationale.",
+                                                        "text": "<span class='redText'>Jugé trop violent, le football masculin disparaît en France.</span> La FFF frappe un grand coup et dissout l’équipe. Exit les tacles rugueux, les polémiques en conférence de presse et les rixes sur le terrain. À leur place, <span class='redText'>l’équipe féminine est promue en première ligne pour représenter la France sur la scène internationale.</span> Les stades changent d’ambiance. Des familles, des enfants, et un public plus diversifié envahissent les gradins. <span class='redText'>Les Bleues brillent et créent la surprise en remportant l’Euro 2025 et une première Coupe du Monde en 2027.</span> Eugénie Le Sommer devient une héroïne nationale.",
                                                         "template": "full_page"
                                                     }
                                                 ],
@@ -295,7 +303,7 @@
                                                 "content": [
                                                     {
                                                         "type": "text",
-                                                        "text": "Thierry Henry devient le grand gourou d’un football honnête. Inspirés par son exemple, les joueurs se transforment en modèle de vertu. Ils avouent leurs fautes, signalent leurs hors-jeu, lèvent la main pour signaler un penalty évident et les gardiens admettent quand le ballon a franchi la ligne. Cette nouvelle ère du football transforme les stades en véritables havres de paix et de fair-play. L’auto-arbitrage est de mise. Désormais au chômage technique, les arbitres se reconvertissent en ces joueurs qu’ils ont toujours rêvés d’être. La FIFA inscrit une nouvelle équipe dans les compétitions : celle des arbitres fièrement vêtus de maillots rayés noir et blanc, prêt à prouver qu’eux aussi peuvent jouer.",
+                                                        "text": "<span class='redText'>Thierry Henry devient le grand gourou d’un football honnête.</span> Inspirés par son exemple, les joueurs se transforment en modèle de vertu. Ils avouent leurs fautes, signalent leurs hors-jeu, lèvent la main pour signaler un penalty évident et les gardiens admettent quand le ballon a franchi la ligne. Cette nouvelle ère du football transforme les stades en véritables havres de paix et de fair-play. <span class='redText'>L’auto-arbitrage est de mise.</span> Désormais au chômage technique, les arbitres se reconvertissent en ces joueurs qu’ils ont toujours rêvés d’être. La FIFA inscrit une nouvelle équipe dans les compétitions : celle des arbitres fièrement vêtus de maillots rayés noir et blanc, prêt à prouver qu’eux aussi peuvent jouer.",
                                                         "template": "full_page"
                                                     },
                                                     {
@@ -317,12 +325,12 @@
                                                 "content": [
                                                     {
                                                         "type": "text",
-                                                        "text": "Après son aveu contre l'Irlande, Thierry Henry devient l’ennemi public numéro un du football. Les supporters français le considèrent comme un traître, tandis que les instances internationales le voient comme une menace pour l'intégrité du jeu. Mais l’honnêteté dont a fait preuve le footballeur français, reste un cas isolé. Un geste que les Croates, eux, ne reproduisent pas lors de la finale de la Coupe du Monde 2018 face à la France.",
+                                                        "text": "Après son aveu contre l'Irlande, <span class='redText'>Thierry Henry devient l’ennemi public numéro un du football.</span> Les supporters français le considèrent comme un traître, tandis que les instances internationales le voient comme une menace pour l'intégrité du jeu. Mais l’honnêteté dont a fait preuve le footballeur français, reste un cas isolé. Un geste que les Croates, eux, ne reproduisent pas lors de la finale de la Coupe du Monde 2018 face à la France.",
                                                         "template": "full_page"
                                                     },
                                                     {
                                                         "type": "text",
-                                                        "text": "38ème minute : la Croatie égalise. Puis, sur un corner français, le ballon touche la main du croate Ivan Perisic. L’arbitre, les yeux ailleurs, ne bronche pas. Perisic, lui, ne semble pas près de s’inspirer de l’honnêteté d’un Henry. Pas de penalty. Les tribunes sont en feu. Les français insultent l’arbitre, les croates jubilent. La Croatie l’emporte 2-1 et est sacrée championne du monde. Les commentateurs soulignent l’ironie : \"Si seulement les Bleus avaient eu un Henry croate pour avouer !\" Descente aux enfers pour la France. La rancœur du camp français est grande. Les supporters et médias se déchaînent : \"L’honnêteté, c’est bien beau, mais pas quand la Coupe du monde est en jeu.\"",
+                                                        "text": "38ème minute : la Croatie égalise. Puis, sur un corner français, le ballon touche la main du croate Ivan Perisic. L’arbitre, les yeux ailleurs, ne bronche pas. <span class='redText'>Perisic, lui, ne semble pas près de s’inspirer de l’honnêteté d’un Henry.</span> Pas de penalty. Les tribunes sont en feu. Les français insultent l’arbitre, les croates jubilent. <span class='redText'>La Croatie l’emporte 2-1 et est sacrée championne du monde.</span> Les commentateurs soulignent l’ironie : \"Si seulement les Bleus avaient eu un Henry croate pour avouer !\" Descente aux enfers pour la France. La rancœur du camp français est grande. Les supporters et médias se déchaînent : <span class='redText'>\"L’honnêteté, c’est bien beau, mais pas quand la Coupe du monde est en jeu.\"</span>",
                                                         "template": "full_page"
                                                     }
                                                 ],
@@ -345,12 +353,12 @@
                         "content": [
                             {
                                 "type": "text",
-                                "text": "Malgré les protestations de Lineker, l’arbitre ne bronche pas. Quelques minutes plus tard, c’est le génie de Maradona qui scelle le match avec le « but du siècle ». L’Argentine l’emporte 1-0.",
+                                "text": "Malgré les protestations de Lineker, l’arbitre ne bronche pas. Quelques minutes plus tard, c’est le génie de Maradona qui scelle le match avec le <span class='redText'>« but du siècle ».</span> L’Argentine l’emporte 1-0.",
                                 "template": "full_page"
                             },
                             {
                                 "type": "text",
-                                "text": "Pas de polémique, pas de scandale, juste un Anglais pris la main dans le sac. Ali Bennaceur, sifflet en bouche, a fait son boulot. Face à la pression européenne, hostile à toute innovation technologique, la VAR est abandonnée. Pour les puristes, c'est le jackpot : le football reste ce jeu fait d'erreurs humaines, où râler contre l'arbitre est un sport national. Qui a besoin de la VAR quand un arbitre peut flairer une main anglaise à 30 mètres ? La FIFA, décide de laisser les arbitres jouer les devins sur le terrain, pour le plus grand bonheur des commentateurs et des discussions de comptoir.",
+                                "text": "Pas de polémique, pas de scandale, juste un Anglais pris la main dans le sac. Ali Bennaceur, sifflet en bouche, a fait son boulot. Face à la pression européenne, hostile à toute innovation technologique, <span class='redText'>la VAR est abandonnée.</span> Pour les puristes, c'est le jackpot : le football reste ce jeu fait d'erreurs humaines, où râler contre l'arbitre est un sport national. Qui a besoin de la VAR quand un arbitre peut flairer une main anglaise à 30 mètres ? <span class='redText'>La FIFA, décide de laisser les arbitres jouer les devins sur le terrain</span>, pour le plus grand bonheur des commentateurs et des discussions de comptoir.",
                                 "template": "full_page"
                             },
                             {
@@ -373,7 +381,7 @@
                                     "content": [
                                         {
                                             "type": "text",
-                                            "text": "Thierry Henry devient le grand gourou d’un football honnête. Inspirés par son exemple, les joueurs se transforment en modèle de vertu. Ils avouent leurs fautes, signalent leurs hors-jeu, lèvent la main pour signaler un penalty évident et les gardiens admettent quand le ballon a franchi la ligne. Cette nouvelle ère du football transforme les stades en véritables havres de paix et de fair-play. L’auto-arbitrage est de mise. Désormais au chômage technique, les arbitres se reconvertissent en ces joueurs qu’ils ont toujours rêvés d’être. La FIFA inscrit une nouvelle équipe dans les compétitions : celle des arbitres fièrement vêtus de maillots rayés noir et blanc, prêt à prouver qu’eux aussi peuvent jouer.",
+                                            "text": "<span class='redText'>Thierry Henry devient le grand gourou d’un football honnête.</span> Inspirés par son exemple, les joueurs se transforment en modèle de vertu. Ils avouent leurs fautes, signalent leurs hors-jeu, lèvent la main pour signaler un penalty évident et les gardiens admettent quand le ballon a franchi la ligne. Cette nouvelle ère du football transforme les stades en véritables havres de paix et de fair-play. <span class='redText'>L’auto-arbitrage est de mise.</span> Désormais au chômage technique, les arbitres se reconvertissent en ces joueurs qu’ils ont toujours rêvés d’être. La FIFA inscrit une nouvelle équipe dans les compétitions : celle des arbitres fièrement vêtus de maillots rayés noir et blanc, prêt à prouver qu’eux aussi peuvent jouer.",
                                             "template": "full_page"
                                         },
                                         {
@@ -395,12 +403,12 @@
                                     "content": [
                                         {
                                             "type": "text",
-                                            "text": "Après son aveu contre l'Irlande, Thierry Henry devient l’ennemi public numéro un du football. Les supporters français le considèrent comme un traître, tandis que les instances internationales le voient comme une menace pour l'intégrité du jeu. Mais l’honnêteté dont a fait preuve le footballeur français, reste un cas isolé. Un geste que les Croates, eux, ne reproduisent pas lors de la finale de la Coupe du Monde 2018 face à la France.",
+                                            "text": "Après son aveu contre l'Irlande, <span class='redText'>Thierry Henry devient l’ennemi public numéro un du football.</span> Les supporters français le considèrent comme un traître, tandis que les instances internationales le voient comme une menace pour l'intégrité du jeu. Mais l’honnêteté dont a fait preuve le footballeur français, reste un cas isolé. Un geste que les Croates, eux, ne reproduisent pas lors de la finale de la Coupe du Monde 2018 face à la France.",
                                             "template": "full_page"
                                         },
                                         {
                                             "type": "text",
-                                            "text": "38ème minute : la Croatie égalise. Puis, sur un corner français, le ballon touche la main du croate Ivan Perisic. L’arbitre, les yeux ailleurs, ne bronche pas. Perisic, lui, ne semble pas près de s’inspirer de l’honnêteté d’un Henry. Pas de penalty. Les tribunes sont en feu. Les français insultent l’arbitre, les croates jubilent. La Croatie l’emporte 2-1 et est sacrée championne du monde. Les commentateurs soulignent l’ironie : \"Si seulement les Bleus avaient eu un Henry croate pour avouer !\" Descente aux enfers pour la France. La rancœur du camp français est grande. Les supporters et médias se déchaînent : \"L’honnêteté, c’est bien beau, mais pas quand la Coupe du monde est en jeu.\"",
+                                            "text": "38ème minute : la Croatie égalise. Puis, sur un corner français, le ballon touche la main du croate Ivan Perisic. L’arbitre, les yeux ailleurs, ne bronche pas. <span class='redText'>Perisic, lui, ne semble pas près de s’inspirer de l’honnêteté d’un Henry.</span> Pas de penalty. Les tribunes sont en feu. Les français insultent l’arbitre, les croates jubilent. <span class='redText'>La Croatie l’emporte 2-1 et est sacrée championne du monde.</span> Les commentateurs soulignent l’ironie : \"Si seulement les Bleus avaient eu un Henry croate pour avouer !\" Descente aux enfers pour la France. La rancœur du camp français est grande. Les supporters et médias se déchaînent : <span class='redText'>\"L’honnêteté, c’est bien beau, mais pas quand la Coupe du monde est en jeu.\"</span>",
                                             "template": "full_page"
                                         }
                                     ],
@@ -425,11 +433,11 @@
                     "type": "text",
                     "text": "Description :",
                     "template": "full_page",
-                    "className": "italicRedText"
+                    "className": "redText"
                 },
                 {
                     "type": "text",
-                    "text": "Tu es un jeune rookie de l'Académie Ferrari, plein d’ambition mais terrifié par les récits des accidents tragiques qui jalonnent l’histoire de la Formule 1. Chaque course semble être une prise de risque insensée. Alors que tu t’entraînes dans l’ombre des légendes du paddock, une question t’obsèdes :",
+                    "text": "Tu es un jeune rookie de l'Académie Ferrari, plein d’ambition mais terrifié par les récits des <span class='redText'>accidents tragiques</span> qui jalonnent l’histoire de la Formule 1. Chaque course semble être une prise de risque insensée. Alors que tu t’entraînes dans l’ombre des légendes du paddock, une question t’obsèdes :",
                     "template": "full_page"
                 },
                 {
@@ -457,7 +465,7 @@
                             },
                             {
                                 "type": "text",
-                                "text": "En 2012, le halo est testé pour la première fois en Formule 2, où son efficacité est démontrée lors de plusieurs incidents mineurs. Les résultats sont encourageants mais les critiques persistent : certains le jugent inesthétique, d'autres craignent son impact sur la visibilité des pilotes. En 2014, la FIA décide de le rendre obligatoire en Formule 2 et de l’introduire progressivement en Formule 1, avec une date d'entrée en vigueur prévue pour 2015.",
+                                "text": "<span class='redText'>En 2012, le halo est testé pour la première fois</span> en Formule 2, où son efficacité est démontrée lors de plusieurs incidents mineurs. Les résultats sont encourageants mais les critiques persistent : certains le jugent inesthétique, d'autres craignent son impact sur la visibilité des pilotes. <span class='redText'>En 2014, la FIA décide de le rendre obligatoire en Formule 2</span> et de l’introduire progressivement en Formule 1, avec une date d'entrée en vigueur prévue pour 2015.",
                                 "template": "full_page"
                             }
                         ],
@@ -470,17 +478,17 @@
                                     "content": [
                                         {
                                             "type": "text",
-                                            "text": "Le halo est introduit à titre expérimental en Formule 1 dès 2014, après des tests réussis dans les catégories inférieures. Bien que toutes les voitures n’en soient pas encore équipées, la Marussia de Jules Bianchi en fait partie.",
+                                            "text": "Le halo est <span class='redText'>introduit à titre expérimental en Formule 1 dès 2014</span>, après des tests réussis dans les catégories inférieures. Bien que toutes les voitures n’en soient pas encore équipées, la Marussia de Jules Bianchi en fait partie.",
                                             "template": "full_page"
                                         },
                                         {
                                             "type": "text",
-                                            "text": "Lors du Grand Prix du Japon, dans des conditions de piste détrempées, Bianchi perd le contrôle de sa voiture. Mais cette fois, le halo joue un rôle déterminant. Le dispositif dévie l’impact, réduisant considérablement les forces exercées sur son casque. Grâce au dispositif, la dépanneuse est décoiffée (c’est toujours ça de pris), mais Jules s’en sort. Une commotion, quelques mois de rééducation, et il est prêt à renfiler sa combinaison.",
+                                            "text": "Lors du Grand Prix du Japon, dans des conditions de piste détrempées, Bianchi perd le contrôle de sa voiture. Mais cette fois, <span class='redText'>le halo joue un rôle déterminant</span>. Le dispositif dévie l’impact, réduisant considérablement les forces exercées sur son casque. Grâce au dispositif, la dépanneuse est décoiffée (c’est toujours ça de pris), mais <span class='redText'>Jules s’en sort</span>. Une commotion, quelques mois de rééducation, et il est prêt à renfiler sa combinaison.",
                                             "template": "full_page"
                                         },
                                         {
                                             "type": "text",
-                                            "text": "Avec le halo dès 2010, ils évitent jusqu’à 10 à 15 accidents mortels ou graves à travers les différentes catégories du sport auto. Alors oui, ça fait peut-être une F1 un peu moins spectaculaire pour les amateurs de frissons, mais franchement : mieux vaut un podium en pleine santé qu’un hommage sur la ligne de départ.",
+                                            "text": "Avec le halo dès 2010, <span class='redText'>ils évitent jusqu’à 10 à 15 accidents mortels ou graves à travers les différentes catégories du sport auto</span>. Alors oui, ça fait peut-être une F1 un peu moins spectaculaire pour les amateurs de frissons, mais franchement : mieux vaut un podium en pleine santé qu’un hommage sur la ligne de départ.",
                                             "template": "full_page"
                                         },
                                         {
@@ -499,12 +507,12 @@
                                     "content": [
                                         {
                                             "type": "text",
-                                            "text": "L’accident de Bianchi provoque une onde de choc dans le monde de la Formule 1. Le jeune pilote, vu comme un potentiel futur champion, devient un symbole des risques persistants du sport. Les pilotes, les équipes et les fans réclament des mesures drastiques pour éviter que cela ne se reproduise.",
+                                            "text": "L’accident de Bianchi provoque une onde de choc dans le monde de la Formule 1. Le jeune pilote, vu comme un <span class='redText'>potentiel futur champion</span>, devient un symbole des risques persistants du sport. Les pilotes, les équipes et les fans réclament des mesures drastiques pour éviter que cela ne se reproduise.",
                                             "template": "full_page"
                                         },
                                         {
                                             "type": "text",
-                                            "text": "Les critiques pleuvent. Les pilotes eux-mêmes commencent à hausser le ton. \"On n’est pas des gladiateurs ! Vous voulez qu’on pilote ou qu’on joue à pile ou face avec nos vies ?\" Sebastian Vettel, Fernando Alonso, et même Lewis Hamilton montent au créneau. Le paddock devient un ring, mais cette fois, ce n’est pas pour des batailles de piste : la FIA est sommée de s’expliquer. Pourquoi tant de lenteur ?",
+                                            "text": "Les critiques pleuvent. Les pilotes eux-mêmes commencent à hausser le ton. <span class='redText'>\"On n’est pas des gladiateurs ! Vous voulez qu’on pilote ou qu’on joue à pile ou face avec nos vies ?\"</span> Sebastian Vettel, Fernando Alonso, et même Lewis Hamilton montent au créneau. Le paddock devient un ring, mais cette fois, ce n’est pas pour des batailles de piste : la FIA est sommée de s’expliquer. Pourquoi tant de lenteur ?",
                                             "template": "full_page"
                                         }
                                     ],
@@ -517,7 +525,7 @@
                                                 "content": [
                                                     {
                                                         "type": "text",
-                                                        "text": "Le public perd l’envie de regarder : pourquoi s’intéresser à une course de F1 sans savoir si le héros du jour reviendra entier ? La montée de la conscience sécuritaire (merci Netflix et les réseaux sociaux) pousse le public à boycotter les sports trop dangereux. Dans les années 2010, la F1 aurait pu devenir l'équivalent d’un cirque romain, avec des spectateurs gênés devant leur écran. Résultat : moins de téléspectateurs, moins d’argent, et des paddocks qui ressemblent à des terrains de foot du dimanche.",
+                                                        "text": "Le public perd l’envie de regarder : <span class='redText'>pourquoi s’intéresser à une course de F1 sans savoir si le héros du jour reviendra entier ?</span> La montée de la conscience sécuritaire (merci Netflix et les réseaux sociaux) pousse le public à boycotter les sports trop dangereux. Dans les années 2010, la F1 aurait pu devenir l'équivalent d’un cirque romain, avec des spectateurs gênés devant leur écran. Résultat : moins de téléspectateurs, moins d’argent, et des paddocks qui ressemblent à des terrains de foot du dimanche.",
                                                         "template": "full_page"
                                                     }
                                                 ],
@@ -540,12 +548,12 @@
                         "content": [
                             {
                                 "type": "text",
-                                "text": "En 2010, la FIA décide de lancer le halo, ce dispositif conçu pour protéger la tête des pilotes. Intégré aux monoplaces, c’est rapidement un tollé :  les ingénieurs, déjà en guerre contre chaque gramme superflu, fulminent devant ce \"cerceau en métal\" qui alourdit la voiture et perturbe l’aérodynamisme. Les pilotes, eux, critiquent son design de \"cintre de luxe\" et craignent un manque de visibilité. En résumé, personne n’en veut, mais la FIA, inflexible, le rend obligatoire.",
+                                "text": "En 2010, la FIA décide de lancer le halo, ce dispositif conçu pour protéger la tête des pilotes. Intégré aux monoplaces, c’est rapidement un tollé :  les ingénieurs, déjà en guerre contre chaque gramme superflu, fulminent devant ce \"cerceau en métal\" qui alourdit la voiture et perturbe l’aérodynamisme. <span class='redText'>Les pilotes, eux, critiquent son design de \"cintre de luxe\" et craignent un manque de visibilité.</span> En résumé, personne n’en veut, mais la FIA, inflexible, le rend obligatoire.",
                                 "template": "full_page"
                             },
                             {
                                 "type": "text",
-                                "text": "Quatre ans plus tard, Suzuka 2014 : Jules Bianchi perd le contrôle de sa voiture au 7ème virage. Sous une pluie battante, il percute une grue. Mais le halo fait le boulot et dévie l’impact fatal. L’émotion est immense. Dans les tribunes tout le monde retient son souffle. L’équipe médicale se presse autour du jeune pilote blessé. Bonne nouvelle au CHU de Nice : après 3 semaines d’hospitalisation, Jules Bianchi en sort indemne. Le halo est une sacré révolution. Ingénieurs, pilotes et public comprennent que même si cette barrière de sécurité n’est pas des plus élégantes, elle sauve des vies.",
+                                "text": "Quatre ans plus tard, Suzuka 2014 : <span class='redText'>Jules Bianchi perd le contrôle de sa voiture au 7ème virage.</span> Sous une pluie battante, il percute une grue. <span class='redText'>Mais le halo fait le boulot et dévie l’impact fatal.</span> L’émotion est immense. Dans les tribunes tout le monde retient son souffle. L’équipe médicale se presse autour du jeune pilote blessé. Bonne nouvelle au CHU de Nice : après 3 semaines d’hospitalisation, <span class='redText'>Jules Bianchi en sort indemne</span>. Le halo est une sacré révolution. Ingénieurs, pilotes et public comprennent que même si cette barrière de sécurité n’est pas des plus élégantes, <span class='redText'>elle sauve des vies</span>.",
                                 "template": "full_page"
                             }
                         ],
@@ -558,12 +566,12 @@
                                     "content": [
                                         {
                                             "type": "text",
-                                            "text": "Secouée par l’accident spectaculaire de Jules Bianchi, la FIA décide de ne pas faire dans la dentelle et se lance dans une mission de protection maximale pour les pilotes. Le halo, c’est bien, mais on veut plus. Bien plus. Et hop, voilà que le cockpit fermé débarque sur les circuits. Inspiré des avions de chasse, ce pare-brise ultra-résistant enferme littéralement la tête du pilote, comme dans un bocal géant. Résultat : les monoplaces ressemblent à des vaisseaux spatiaux tout droit sortis d’un film de science-fiction. Trop lourd, trop étouffant, ce sauna automobile ne fait pas l’unanimité.",
+                                            "text": "Secouée par l’accident spectaculaire de Jules Bianchi, la FIA décide de ne pas faire dans la dentelle et se lance dans une mission de protection maximale pour les pilotes. Le halo, c’est bien, mais on veut plus. Bien plus. Et hop, voilà que <span class='redText'>le cockpit fermé débarque sur les circuits</span>. Inspiré des avions de chasse, ce pare-brise ultra-résistant enferme littéralement la tête du pilote, comme dans un bocal géant. Résultat : les monoplaces ressemblent à des vaisseaux spatiaux tout droit sortis d’un film de science-fiction. <span class='redText'>Trop lourd, trop étouffant, ce sauna automobile ne fait pas l’unanimité.</span>",
                                             "template": "full_page"
                                         },
                                         {
                                             "type": "text",
-                                            "text": " Quelques puristes, nostalgiques du pilotage à ciel ouvert se battent pour garder une catégorie \"à l’ancienne\". Deux championnats naissent. D’un côté, la Formula Shield, imaginée par l’intrépide rescapé Jules Bianchi, où le spectacle fait fureur. Les pilotes, à l’abri sous leur bulle de plexiglas, se sentent presque invincibles et prennent des risques insensés. De l’autre, la Formula 1 classique, où le pilote et son bolide fusionnent dans une danse où l'air est encore une question de survie.",
+                                            "text": " Quelques puristes, nostalgiques du pilotage à ciel ouvert se battent pour garder une catégorie \"à l’ancienne\". <span class='redText'>Deux championnats naissent.</span> D’un côté, la Formula Shield, imaginée par l’intrépide rescapé Jules Bianchi, où le spectacle fait fureur. Les pilotes, à l’abri sous leur bulle de plexiglas, se sentent presque invincibles et prennent des risques insensés. De l’autre, la Formula 1 classique, où le pilote et son bolide fusionnent dans une danse où l'air est encore une question de survie.",
                                             "template": "full_page"
                                         }
                                     ],
@@ -580,12 +588,17 @@
                                     "content": [
                                         {
                                             "type": "text",
-                                            "text": "Après des mois de rééducation, de soins et de travail mental intensif pour surmonter le traumatisme de l’accident, Jules Bianchi reprend peu à peu le contrôle de son corps et de ses réflexes. Le monde entier se met à le suivre, comme si c’était le retour d’une star du rock – sponsors, médias et fans sont tous à ses pieds. Il représente l’espoir d’un sport automobile plus sûr. En 2016, Bianchi annonce qu’il est prêt à reprendre la compétition. Son équipe, la Marussia, lui file une place de titulaire, et c’est l’explosion : on le surnomme \"le survivant\".",
+                                            "text": "Après des mois de rééducation, de soins et de travail mental intensif pour surmonter le traumatisme de l’accident, <span class='redText'>Jules Bianchi reprend peu à peu le contrôle de son corps et de ses réflexes.</span> Le monde entier se met à le suivre, comme si c’était le retour d’une star du rock – sponsors, médias et fans sont tous à ses pieds. Il représente l’espoir d’un sport automobile plus sûr.",
                                             "template": "full_page"
                                         },
                                         {
                                             "type": "text",
-                                            "text": "Son retour en compétition n’est pas une promenade de santé, mais il a bien l’intention de mettre tout le monde d’accord. En 2020, lors du Grand Prix de Monaco, Bianchi fait un coup de maître : il grimpe sur le podium après une performance époustouflante, tandis que Hamilton, Vettel et Rosberg, eux, restent sur le carreau.",
+                                            "text": "En 2016, Bianchi annonce qu’il est prêt à reprendre la compétition. Son équipe, la Marussia, lui file une place de titulaire, et c’est l’explosion : on le surnomme <span class='redText'>\"le survivant\"</span>. Son retour en compétition n’est pas une promenade de santé, mais il a bien l’intention de mettre tout le monde d’accord.",
+                                            "template": "full_page"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "En 2020, lors du Grand Prix de Monaco, Bianchi fait un coup de maître : il grimpe sur le podium après une performance époustouflante, tandis que Hamilton, Vettel et Rosberg, eux, restent sur le carreau.",
                                             "template": "full_page"
                                         }
                                     ],
