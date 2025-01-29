@@ -21,6 +21,17 @@
     font-weight: 700;
 }
 
+.article-container {
+    display: flex;
+}
+
+.triangle {
+    margin-top: 9px;
+    margin-right: 11px;
+}
+
+
+
 
 .article button.contained{
     background-color: white;
@@ -47,6 +58,7 @@
     color: #CC2229;
     line-height: 44px;
     border-radius: 8px;
+    border: 2px solid #CC2229; 
     width: 60%;
     margin-left: auto;
     margin-right: auto;
