@@ -90,7 +90,7 @@ async function waitForUserTouch(){
     return new Promise((resolve) => {
         const messageInput = document.getElementById('chatBox');
         messageInput.addEventListener('click', (event) => {
-            if(!event.target.classList.contains("info") && !event.target.classList.contains("expanding") && !event.target.classList.contains("expanding-element")){
+            if(!event.target.classList.contains("expanding") && !event.target.classList.contains("expanding-element")){
                 resolve(true);
             }
         });
@@ -220,9 +220,12 @@ async function histoire(texts, signal){
 
         await displayMessages(texts.contexte[i].avant.slice(0,-1), signal);
         const images = texts.contexte[i].images;
+        console.log(images);
         if(Array.isArray(images)){
             await displayExplanation(texts.informations[i], choices, {"text": texts.contexte[i].avant[texts.contexte[i].avant.length-1], "image": images[0]});
         } else {
+            console.log("oui");
+            console.log(images[choices[choices[0]]]);
             await displayExplanation(texts.informations[i], choices, {"text": texts.contexte[i].avant[texts.contexte[i].avant.length-1], "image": images[choices[choices[0]]]});
         }
 
