@@ -69,7 +69,9 @@
         {
             "id": 1,
             "pos": [435, 675],
-            "text": "L'anguille' c'est super",
+            "text": [
+                "L'anguille' c'est super"
+            ],
             "linked": "None"
         }
     ]

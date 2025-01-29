@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import anime from "animejs";
 import "./DialogueBox.css";
 import loutre from '../assets/loutre.svg';
+import SpeechBubble from "./SpeechBubble";
 
 const CardTitle = ({ number, title }) => {
     return (
@@ -16,15 +17,6 @@ const CardTitle = ({ number, title }) => {
     )
 }
 
-const SpeechBubble = ({ text }) => {
-    return (
-        <div className="speech_bubble">
-            <p>{text}</p>
-            <div className="tail"></div>
-        </div>
-    )
-}
-
 const AnimalIllustration = () => {
     return (
         <div className="illustration">
@@ -33,7 +25,7 @@ const AnimalIllustration = () => {
     )
 }
 
-const DialogueBox = ({ text, setSelectedText}) => {
+const DialogueBox = ({ text, setSelectedText }) => {
     const dialogueRef = useRef(null);
     const speechHolderRef = useRef(null);
     const [pages, setPages] = useState([]);
