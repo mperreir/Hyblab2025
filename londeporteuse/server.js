@@ -23,15 +23,16 @@ app.use('/api', api);
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, '../__common-logos__')));
 
-const BASE_URL = process.env.BASE_URL || 'http://localhost:8080';
+const BASE_URL = process.env.BASE_URL;
+
 
 // Route for the home page
 app.get('/start', async (req, res) => {
     try {
         // Fetch data from the API endpoint
-        const response = await fetch(`${BASE_URL}/londeporteuse/api/home`);
+        const response = await fetch(`https://hyblab.polytech.univ-nantes.fr/londeporteuse/api/home`);
         const data = await response.json();
-
+        console.log(BASE_URL);
         // Render the Mustache template with the fetched data
         res.render('index.mustache', data);
     } catch (error) {
