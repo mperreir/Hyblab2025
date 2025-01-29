@@ -12,6 +12,7 @@ const MapComponent = ({ difficulty, level_id, currentQuestionIndex, onClose, isV
     const map = useRef(null);
     const marker = useRef(null);
     const popup = useRef(null);
+    const previousCoords = useRef(null);
     const [questionData, setQuestionData] = useState(null);
     const [geoJsonData, setGeoJsonData] = useState(null);
     const basename = process.env.REACT_APP_BASENAME || "/";
@@ -128,8 +129,8 @@ const MapComponent = ({ difficulty, level_id, currentQuestionIndex, onClose, isV
 
                 // Définition du marqueur personnalisé
                 const customMarkerHtml = document.createElement('div');
-                customMarkerHtml.style.width = '70px'; 
-                customMarkerHtml.style.height = 'auto'; 
+                customMarkerHtml.style.width = '70px';
+                customMarkerHtml.style.height = 'auto';
                 customMarkerHtml.innerHTML = `<svg width="100%" height="100%" viewBox="0 0 2214 1343" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1819.52 520.635C1602.16 520.635 1425.9 697.952 1425.9 916.556C1425.9 1135.16 1602.16 1312.48 1819.52 1312.48C2036.89 1312.48 2213.15 1135.16 2213.15 916.556C2213.15 697.952 2036.89 520.635 1819.52 520.635ZM1819.52 1244.73C1639.4 1244.73 1493.35 1097.84 1493.35 916.644C1493.35 735.445 1639.4 588.562 1819.52 588.562C1999.65 588.562 2145.7 735.445 2145.7 916.644C2145.7 1097.84 1999.65 1244.73 1819.52 1244.73Z" fill="#2D3849"/>
                     <path d="M393.624 551.07C176.261 551.07 0 728.387 0 947.079C0 1165.77 176.261 1343 393.624 1343C610.987 1343 787.248 1165.68 787.248 947.079C787.248 728.476 610.987 551.158 393.624 551.158V551.07ZM393.624 1275.16C213.498 1275.16 67.4483 1128.28 67.4483 947.079C67.4483 765.88 213.498 618.997 393.624 618.997C573.75 618.997 719.8 765.88 719.8 947.079C719.8 1128.28 573.75 1275.16 393.624 1275.16Z" fill="#2D3849"/>
@@ -148,8 +149,8 @@ const MapComponent = ({ difficulty, level_id, currentQuestionIndex, onClose, isV
 
                 // Ajouter le marqueur personnalisé
                 marker.current = new maptilersdk.Marker({ element: customMarkerHtml })
-                .setLngLat([questionData.map.longitude, questionData.map.latitude])
-                .addTo(map.current);
+                    .setLngLat([questionData.map.longitude, questionData.map.latitude])
+                    .addTo(map.current);
 
                 // Séquence d'animation
                 if (currentQuestionIndex === 0) {
@@ -174,13 +175,43 @@ const MapComponent = ({ difficulty, level_id, currentQuestionIndex, onClose, isV
                     await new Promise(resolve => setTimeout(resolve, 2000));
                 }
 
-                // Animation vers le point de la question
-                map.current.flyTo({
-                    center: [questionData.map.longitude, questionData.map.latitude],
-                    zoom: 13,
-                    duration: currentQuestionIndex === 0 ? 1500 : 3500
-                });
-                await new Promise(resolve => setTimeout(resolve, 3500));
+                const { longitude, latitude } = questionData.map;
+                const newCoords = [longitude, latitude];
+                const previous = previousCoords.current;
+
+                if (!previous || previous[0] !== newCoords[0] || previous[1] !== newCoords[1]) {
+                    previousCoords.current = newCoords;
+
+                    // Animation vers le point de la question
+                    map.current.flyTo({
+                        center: [questionData.map.longitude, questionData.map.latitude],
+                        zoom: 13,
+                        duration: currentQuestionIndex === 0 ? 1500 : 3500
+                    });
+                    await new Promise(resolve => setTimeout(resolve, 3500));
+                } else {
+                    map.current.flyTo({
+                        center: [longitude + 0.002, latitude + 0.002],
+                        zoom: 11,
+                        duration: 500
+                    });
+
+                    setTimeout(() => {
+                        map.current.flyTo({
+                            center: [longitude - 0.002, latitude - 0.002],
+                            zoom: 12,
+                            duration: 500
+                        });
+                    }, 500);
+
+                    setTimeout(() => {
+                        map.current.flyTo({
+                            center: newCoords,
+                            zoom: 13,
+                            duration: 1000
+                        });
+                    }, 1000);
+                }
 
                 // Ajouter le marqueur et le popup
                 popup.current = new maptilersdk.Popup()
