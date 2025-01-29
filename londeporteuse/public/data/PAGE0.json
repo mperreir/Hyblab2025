@@ -2,19 +2,23 @@
   "titles": 
     {
       "id": "mainTitle",
-      "content": "Mort en scène"
+      "content": "F€$TIVA£"
     }
   ,
   "descriptions": [
     {
+      "id": "intro",
+      "content": "Salut ! je suis festi, je suis là pour t’aider à comprendre le budget d’un festival et l’impact des coupes budgétaires de la région Pays de la loire."
+    },
+    {
       "id": "paragraph1",
-      "content": "Christelle Morancais, présidente des Pays de la Loire, a annoncé un plan d’économies de 100 millions d’euros, concernant majoritairement le secteur culturel."
+      "content": "Le budget 2025 de la Région Pays de la Loire, qui prévoit 82 millions d'euros d'économies, a été adopté en décembre 2024. L’un des secteurs les plus touchés par ces coupes : la culture, qui perd environ deux tiers de son enveloppe budgétaire."
     },
     {
       "id": "paragraph2",
-      "content": "Pour comprendre les conséquences de cette coupe budgétaire sur l’avenir de la culture, on vous propose de créer votre propre festival."
+      "content": "Pour comprendre les conséquences des nouveaux enjeux budgétaires des structures culturelles régionales, tu vas composer ton budget pour créer ton propre festival."
     }
   ],
   "image": "fete.jpg",
-  "cta": "Créer mon événement"
+  "cta": "Créer mon festival"
 }

@@ -4,19 +4,95 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style1.css">
+    <title>F€$TIVA£</title>
   </head>
   <body>
+    <script defer>
+      document.addEventListener("DOMContentLoaded", function () {
+    let texteNarratif = [
+        "SALUT ! JE SUIS FESTI, JE SUIS LÀ",
+        "POUR T’AIDER À COMPRENDRE LE",
+        "BUDGET D’UN FESTIVAL ET",
+        "L’IMPACT DES COUPES",
+        "BUDGÉTAIRES DE LA RÉGION",
+        "PAYS DE LA LOIRE."
+    ];
+
+    let svgElement = document.getElementById("perso-svg");
+    let bubbleText = document.createElementNS("http://www.w3.org/2000/svg", "text");
+
+    document.querySelector(".narrative-section").style.opacity = "1";
+
+    // Ajustements pour le placement
+    let textX = 650; // Décalé vers la droite
+    let textY = 110; // Ajuste la hauteur
+
+    bubbleText.setAttribute("x", textX);
+    bubbleText.setAttribute("y", textY);
+    bubbleText.setAttribute("text-anchor", "middle");
+    bubbleText.setAttribute("font-size", "32"); // Taille du texte augmentée
+    bubbleText.setAttribute("fill", "black");
+    bubbleText.setAttribute("font-weight", "bold"); // Texte en gras
+
+    svgElement.style.opacity = "0";
+
+    // Délai avant l’apparition du SVG
+    setTimeout(() => {
+        svgElement.style.opacity = "1";
+
+        // ✅ Ajout progressif des lignes
+        texteNarratif.forEach((line, index) => {
+            setTimeout(() => {
+                let tspan = document.createElementNS("http://www.w3.org/2000/svg", "tspan");
+                tspan.setAttribute("x", textX);
+                tspan.setAttribute("dy", index === 0 ? "0" : "50");
+                tspan.textContent = line;
+                tspan.style.opacity = "0";
+                bubbleText.appendChild(tspan);
+
+                // ✅ Correction du délai d'affichage de chaque ligne
+                setTimeout(() => {
+                    tspan.style.opacity = "1";
+                }, 200 + index * 200); // Augmentation du délai
+            }, index * 800);
+        });
+
+        svgElement.appendChild(bubbleText);
+
+        // ✅ Calcul dynamique du temps d'affichage total avant les paragraphes
+        let totalTime = texteNarratif.length * 800 + 1000; 
+
+        setTimeout(() => {
+            document.querySelector(".content-title").style.opacity = "1";
+            document.querySelector(".content-title").style.transform = "translateY(0)";
+        }, totalTime);
+
+        setTimeout(() => {
+            document.querySelector(".content-text").style.opacity = "1";
+            document.querySelector(".content-text").style.transform = "translateY(0)";
+        }, totalTime + 1000);
+
+        setTimeout(() => {
+            document.querySelector(".btn-create-event").style.opacity = "1";
+            document.querySelector(".btn-create-event").style.transform = "translateY(0)";
+        }, totalTime + 2000);
+
+    }, 1000); // SVG apparaît après 1s
+});
+
+    </script>
     <div id="app-container">
       <header>
         <nav class="navbar">
           <div class="logo-container">
             <!-- Exemple de logos ou de texte -->
-            <img src="./img/logo.svg" alt="logo du site web"/>
+            <img src="img/logo.svg" alt="logo du site web"/>
           </div>
         </nav>
       </header>
 
       <main>
+        
         <div>
   <section class="banner">
     <!-- Image de fond -->
@@ -31,20 +107,20 @@
     <!-- Texte principal -->
   </section>
 
-  <section class="content">
+  <section class="narrative-section">
+    <svg id="perso-svg" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 450"><defs><style>.cls-1{fill:#32d2c3;}.cls-2{fill:#fff;}</style></defs><rect class="cls-1" width="1080" height="450"/><path class="cls-2" d="M260,327l-5-29,33-7-36-45-29-51L106.19,227.64,81.47,395H259.38L261,363l-69-46Zm-58.5-79c5.25,0,9.5,7.39,9.5,16.5s-4.25,16.5-9.5,16.5-9.5-7.39-9.5-16.5S196.25,248,201.5,248Z"/><polygon class="cls-2" points="189.72 170.47 181.31 173.67 174.56 155.91 124.08 175.08 130.82 192.84 120.54 196.75 123.03 203.29 192.21 177.01 189.72 170.47"/><polygon class="cls-2" points="346.28 264.06 294 340 388.15 302.03 449 379 637 401 903 407 978.79 349.66 1039 301 1010 131 868 38 438.53 38 294 139.4 346.28 264.06"/></svg>
+    <div id="dynamic-text" class="narrative-text"></div>
+  </section>
+
+  <section class="content" style="border-bottom: none;">
     <p class="content-title">
-      Christelle Morancais, présidente des Pays de la Loire, a annoncé un plan d’économies de 100 millions d’euros, concernant majoritairement le secteur culturel.
-    </p>
+      Le budget 2025 de la Région Pays de la Loire, qui prévoit 82 millions d'euros d'économies, a été adopté en décembre 2024. L’un des secteurs les plus touchés par ces coupes : la culture, qui perd environ deux tiers de son enveloppe budgétaire.</p>
     <p class="content-text">
-      Pour comprendre les conséquences de cette coupe budgétaire sur l’avenir de la culture, on vous propose de créer votre propre festival.
-    </p>
+      Pour comprendre les conséquences des nouveaux enjeux budgétaires des structures culturelles régionales, tu vas composer ton budget pour créer ton propre festival.    </p>
   </section>
   <div class="create-container">
-    <a href="choices.html" class="btn btn-create-event">Créer mon événement</a>
-  </div
-</div>
-
-
+    <a href="/londeporteuse/choices" class="btn btn-create-event">Créer mon festival</a>
+  </div>
 
       </main>
 

@@ -3,62 +3,83 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-     <link rel="stylesheet" href="css/budget.css">
-    
-    <script src="js/app.js" defer></script>
+    <link rel="stylesheet" href="css/style1.css">
     <title>Budget du Festival</title>
   </head>
   <body>
     <div id="app-container">
-        <header>
-            <nav class="navbar">
-            <div class="logo-container">
-                <img src="img/logo.png" alt="Logo Tpole" />
+      <header>
+        <nav class="navbar">
+          <div class="logo-container">
+            <img src="img/logo.svg" alt="logo du site web"/>
+          </div>
+        </nav>
+      </header>
+
+      <main>
+        <div id="page_scrollable_container">
+          <!-- Titre principal -->
+          <section class="content">
+            <h2>{{ mainTitle }}</h2>
+          </section>
+          
+          <!-- Budget total -->
+          <section class="content">
+            <h2>Budget du festival : {{ budget.cost }} €</h2>
+          </section>
+          
+          <!-- Prix du billet -->
+          <section class="content">
+            <h2>Prix du billet : {{ ticketPrice }} €</h2>
+          </section>
+          
+          <!-- Description du festival -->
+          <section class="content">
+            <p class="content-title">{{ festivalDescription }}</p>
+          </section>
+          
+          <!-- Diagramme en bandes -->
+          <section class="content" id="budget-chart">
+            <p class="content-title">€ {{ budget.chartTitle }}</p>
+            <div class="chart-bars">
+              {{#budgetChart}}
+              <div class="bar {{ className }}" style="width: {{ percentage }}%;">{{ percentage }}%</div>
+              {{/budgetChart}}
             </div>
-            <a href="#" class="btn-en-savoir-plus">En savoir plus</a>
-            </nav>
-        </header>
-        <section class="content">
-            <h2>{{ pageTitle1 }} <br>{{ pageTitle2 }}</h2>
-        </section>
-        
-        <section class="content">
-            <h2>{{ budget.title }} <span id="total-cost"> X XXX XXX </span> €</h2>
-        </section>
-        
-        <section class="content">
-            <h2>Prix moyen du billet :<span id="average-ticket-price"> {{ticketPrice}} </span> €</h2>
-        </section>
-        
-        <section class="content">
-            <p class="content-title">€ {{ budget.infoLink.text }}</p>
-            <img src="img/budget.png" alt="camembert budget" class="img">
-        </section>
-        
-        {{#budgetComposition}}
-        <section class="content">
-            <div class="budget-section">
-            <div class="budget-color" style="background-color: {{ color }}"></div>
-            <p class="content-text">{{ name }} <br> ({{ details }})</p>
-            </div>
-        </section>
-        {{/budgetComposition}}
-        
-        <section class="content">
-            <p class="content-texte">
-            {{ content1.context }}
-            </p>
-            <p class="content-texte">
-            {{ content1.example.text }}
-            </p>
-            <h2>{{ content2.highlight }}</h2>
-            <h2>{{ content2.advice }}</h2>
-        </section>
+            <!-- Légende -->
+            <ul class="chart-legend">
+              {{#chartLegend}}
+              <li>
+                <span class="legend-color {{ className }}"></span>
+                <div>
+                  <p class="legend-title">{{ title }}</p>
+                  <p class="question-info">{{ details }}</p>
+                </div>
+              </li>
+              {{/chartLegend}}
+            </ul>
+          </section>
   
-        <a href="/londeporteuse/ajust" class="btn btn-create-event">Etape suivante</a>
+          <!-- Informations supplémentaires -->
+          <section class="content">
+            <p class="content-text">{{ contentText1 }}</p>
+            <p class="content-text">{{ contentText2 }}</p>
+            <div>
+              <p class="content-title">{{ contentHighlight1 }}</p>
+              <p class="content-title">{{ contentHighlight2 }}</p>
+            </div>
+          </section>
+
+          <!-- Bouton pour l'étape suivante -->
+          <div class="button-container">
+            <a href="{{ nextStepLink }}?budgetLimit={{ budget.cost }}" class="btn-validate">Étape suivante</a>
+          </div>
+        </div>
+      </main>
+      
+      <footer>
+        <p>En partenariat avec <strong>{{ partner1 }}</strong> &amp; <strong>{{ partner2 }}</strong></p>
+      </footer>
     </div>
-
-
-
   </body>
 </html>

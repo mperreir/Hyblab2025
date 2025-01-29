@@ -3,6 +3,7 @@
 // Load useful expressjs and nodejs modules
 const express = require('express');
 const path = require('path');
+const fs = require('fs');
 const mustacheExpress = require('mustache-express'); // Import mustache-express
 
 // Create our application
@@ -50,6 +51,7 @@ app.get('/choices', async (req, res) => {
       res.status(500).send('Error loading the choices page');
     }
   });
+  
 
 
 // Route for the budget page
@@ -59,6 +61,12 @@ app.get('/budget', async (req, res) => {
     const response = await fetch('http://localhost:8080/londeporteuse/api/budget');
     const data = await response.json();
 
+    const initialBudget = req.query.initialBudget;
+    const ticketPrice = req.query.ticketPrice;
+
+    data['ticketPrice'] = ticketPrice;
+    data['budget']['cost'] = initialBudget;
+    
     // Render the Mustache template with the fetched data
     res.render('budget.mustache', data);
   } catch (error) {
@@ -85,17 +93,92 @@ app.get('/ajust', async (req, res) => {
 
 
 // Route for the result page
-app.get('/result', async (req, res) => {
-  try {
-    // Fetch data from the API endpoint
-    const response = await fetch('http://localhost:8080/londeporteuse/api/result');
-    const data = await response.json();
+// app.get('/result', async (req, res) => {
+//   try {
+//     // Fetch data from the API endpoint
+//     const response = await fetch('http://localhost:8080/londeporteuse/api/result');
+//     const data = await response.json();
 
-    // Render the Mustache template with the fetched data
-    res.render('results.mustache', data);
+//     // Render the Mustache template with the fetched data
+//     res.render('results.mustache', data);
+//   } catch (error) {
+//     console.error('Error fetching result data:', error);
+//     res.status(500).send('Error loading the result page');
+//   }
+// });
+
+
+const resultDataPath = path.join(__dirname, 'public/data/results.json');
+const loadResultData = () => JSON.parse(fs.readFileSync(resultDataPath, 'utf8'));
+
+const costMapping = {
+  culturalMediationActions : { Petit: 19520, Moyen: 84800, Grand: 145611 },
+  ecologicalActions : { Petit: 18116, Moyen: 99709, Grand: 671629 },
+  festivalSizes : { Petit: 47300, Moyen: 187500, Grand: 2457000 },
+  riskPreventionActions : { Petit: 0, Moyen: 12000, Grand: 25000 }
+};
+
+
+app.get('/result', (req, res) => {
+  try {
+
+    const adjustedBudget = req.query.adjustedBudget;
+    const ticketPrice = req.query.ticketPrice;
+    const festivalSizes = req.query.festivalSizes;
+    const ecologicalActions = req.query.ecologicalActions;
+    const culturalMediationActions = req.query.culturalMediationActions;
+    const riskPreventionActions = req.query.riskPreventionActions;
+
+    // Fetch costs for the user’s selected choices
+    const costBreakdown = {
+      "festivalSizes": costMapping.festivalSizes[festivalSizes],
+      "ecologicalActions": costMapping.ecologicalActions[ecologicalActions],
+      "culturalMediationActions": costMapping.culturalMediationActions[culturalMediationActions],
+      "riskPreventionActions": costMapping.riskPreventionActions[riskPreventionActions],
+    };
+
+    // Calculate percentages
+    const percentages = {};
+    for (const key in costBreakdown) {
+      percentages[key] = ((costBreakdown[key] / adjustedBudget) * 100).toFixed(2);
+    }
+
+    // Prioritize choices based on cost contribution
+    const priorities = Object.entries(costBreakdown)
+      .sort((a, b) => b[1] - a[1]) // Sort descending by cost
+      .map(([key, value]) => ({
+        criterion: key,
+        cost: value,
+        percentage: percentages[key],
+      }));
+
+
+    // Predefined messages for each prioritized category
+    const messages = loadResultData();
+
+    // Prepare response data
+    const responseData = {
+      adjustedBudget: adjustedBudget,
+      priorities: priorities.map(priority => ({
+        ...priority,
+        message: messages[priority.criterion],
+      })),
+      costBreakdown,
+      percentages,
+      choices: {
+        festivalSizes,
+        ecologicalActions,
+        culturalMediationActions,
+        riskPreventionActions,
+      },
+      ticketPrice,
+    };
+
+    // Send response as JSON
+    res.render('results.mustache', responseData);
   } catch (error) {
-    console.error('Error fetching result data:', error);
-    res.status(500).send('Error loading the result page');
+    console.error('Error generating results:', error);
+    res.status(500).json({ error: 'Error generating results' });
   }
 });
   

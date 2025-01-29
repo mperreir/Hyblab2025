@@ -1,41 +1,38 @@
 {
-  "pageTitle1": "BRAVO, TU AS CRÉÉ TON FESTIVAL IDÉAL !",
-  "pageTitle2": "MAINTENANT, COMMENT VAS-TU LE FINANCER ?",
-  "ticketPrice": "XX",
+  "mainTitle": "Bravo, tu as créé ton festival idéal! Maintenant, comment vas-tu le financer ?",
   "budget": {
-    "title": "Budget du festival :",
-    "infoLink": {
-      "text": "Comment est composé mon budget ?"
-    }
+    "cost": "XXX",
+    "chartTitle": "Comment est composé mon budget ?"
   },
-  "budgetComposition": [
+  "ticketPrice": "XX",
+  "festivalDescription": "J’ai choisi de faire un festival inclusif. Voici comment se compose mon budget.",
+  "budgetChart": [
+    { "className": "bar-recettes", "percentage": "52.3" },
+    { "className": "bar-prives", "percentage": "9.1" },
+    { "className": "bar-publics", "percentage": "38.5" }
+  ],
+  "chartLegend": [
     {
-      "name": "Part des recettes propres",
-      "percentage": 52.3,
-      "details": "billets vendus : 35,4% ; ventes sur site : 16,9%",
-      "color": "#00d1c1"
+      "className": "recettes",
+      "title": "Part des recettes propres",
+      "details": "(billets vendus : 35,4% ; ventes sur site : 16,9%)"
     },
     {
-      "name": "Part des financements privés",
-      "percentage": 9.1,
-      "details": "mécénat : 2,5% ; partenariats : 6,6%",
-      "color": "#d1d1d1"
+      "className": "prives",
+      "title": "Part des financements privés",
+      "details": "(mécénat : 2,5% ; partenariats : 6,6%)"
     },
     {
-      "name": "Part des financements publics",
-      "percentage": 38.5,
-      "details": "38,5% dont une majorité provient des collectivités territoriales",
-      "color": "#808080"
+      "className": "publics",
+      "title": "Part des financements publics",
+      "details": "(38,5% dont une majorité provient des collectivités territoriales)"
     }
   ],
-  "content1": {
-    "context": "L’écosystème culturel des festivals dépend donc en grande partie de financements publics. Et même avec ces subventions, les festivals sont difficilement voire jamais rentables.",
-    "example": {
-      "text": "Par exemple, en 2024, les Escales à Saint-Nazaire n’a pas pu équilibrer son budget. Le festival bénéficie de 30% de subventions pour un budget total de 2 millions d’euros. Mais, avec 2 000 entrées en moins et une baisse de 150 000 euros des aides de la Ville, le déficit est monté à 250 000€."
-    }
-  },
-  "content2": {
-    "highlight": "Cette année, toutes les subventions de la Région ont été supprimées.",
-    "advice": "Pour que le budget de ton festival soit validé, tu vas devoir couper dans tes dépenses."
-  }
+  "contentText1": "L'écosystème culturel des festivals dépend donc en grande partie de financements publics.",
+  "contentText2": "Par exemple, en 2024, les Escales à Saint-Nazaire n'ont pas pu équilibrer leur budget. Le festival bénéficie de 30% de subventions pour un budget total de 2 millions d'euros. Mais, avec 2 000 entrées en moins et une baisse de 150 000 euros des aides de la Ville, le déficit est monté à 250 000€.",
+  "contentHighlight1": "Lors du vote du budget 2025, la Région Pays de la Loire a annoncé renoncer à la totalité de ses partenariats avec les structures culturelles qu’elle subventionnait jusqu’alors.",
+  "contentHighlight2": "Pour que le budget de ton festival soit validé, tu vas devoir couper dans tes dépenses.",
+  "nextStepLink": "/londeporteuse/ajust",
+  "partner1": "L’Onde Porteuse",
+  "partner2": "Le Pôle"
 }

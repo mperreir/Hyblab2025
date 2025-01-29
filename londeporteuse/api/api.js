@@ -7,6 +7,8 @@ const fs = require('fs');
 // Create an Express app instance
 const app = express();
 
+app.use(require('body-parser').urlencoded({ extended: false }));
+
 /******************Loading different json files******************* */
 
 // Load data from JSON file
@@ -27,19 +29,7 @@ const festivalDataPath = path.join(__dirname, '../public/data/festivalData.json'
 const loadFestivalData = () => JSON.parse(fs.readFileSync(festivalDataPath, 'utf8'));
 
 
-//Load texts based on the prioritized scenario
-const resultDataPath = path.join(__dirname, '../public/data/results.json');
-const loadResultData = () => JSON.parse(fs.readFileSync(resultDataPath, 'utf8'));
-
-const costMapping = {
-  culturalMediationActions : { Petit: 19520, Moyen: 84800, Grand: 145611 },
-  ecologicalActions : { Petit: 18116, Moyen: 99709, Grand: 671629 },
-  festivalSizes : { Petit: 47300, Moyen: 187500, Grand: 2457000 },
-  riskPreventionActions : { Petit: 0, Moyen: 12000, Grand: 25000 }
-};
-
 /************************************************************* */
-
 // Middleware to parse JSON
 app.use(express.json());
 
@@ -68,9 +58,17 @@ res.json({ message: 'Choices submitted successfully!', choices: userChoices });
 });
 
 
+// Function to get query parameters
+function getQueryParam(param) {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get(param);
+}
+
+
 // Return JSON data for budget page
 app.get('/budget', (req, res) => {
   const data = loadBudgetData(); // Load data from the JSON file
+
   res.json(data); // Respond with JSON data
 });
 
@@ -80,11 +78,11 @@ function calculateFestivalCostAndTicketPrice(choices, data) {
   // Find the matching scenario
   const scenario = data.find(
     (item) =>
-      item["Médiation culturelle"] === choices[culturalMediationActions] &&
-      item["Transition écologique"] === choices[ecologicalActions] &&
-      item["Prévention"] === choices[riskPreventionActions] &&
+      item['Médiation culturelle'] === choices.culturalMediationActions &&
+      item['Transition écologique'] === choices.ecologicalActions &&
+      item['Prévention'] === choices.riskPreventionActions &&
       item["Programmation et taille de l'événement"] ===
-        choices[festivalSizes]
+        choices.festivalSizes
   );
 
   if (!scenario) {
@@ -98,14 +96,15 @@ function calculateFestivalCostAndTicketPrice(choices, data) {
 }
 
 
-app.post('/calculate-budget', (req, res) => {
+app.post('/calculatebudget', (req, res) => {
   const userChoices = req.body; // Get user choices from the request body
   const festivalData = loadFestivalData();
+
   try {
     const result = calculateFestivalCostAndTicketPrice(userChoices, festivalData);
     res.json(result); // Send the result back to the client
   } catch (error) {
-    res.status(400).json({ error: error.message });
+    res.status(400).json({ error: "Erreur plutot ici" });
   }
 });
 
@@ -117,14 +116,8 @@ app.get('/ajust', (req, res) => {
 });
 
 
-// Function to get query parameters
-function getQueryParam(param) {
-  const urlParams = new URLSearchParams(window.location.search);
-  return urlParams.get(param);
-}
 
-
-function validateAdjustedBudget(userChoices, /*costMapping*/ maxAllowedBudget) {
+function validateAdjustedBudget(userChoices, maxAllowedBudget) {
   // // Calculate the total budget for the new choices
   // let adjustedBudget = 0;
   // for (const criterion in userChoices) {
@@ -145,94 +138,24 @@ function validateAdjustedBudget(userChoices, /*costMapping*/ maxAllowedBudget) {
 
 
 app.post('/validate-budget', (req, res) => {
-  const userChoices = req.body; // Get user choices from the request body
-  const initialBudget = getQueryParam('initialBudget');
+  const userChoices = req.body.userChoices; // Get user choices from the request body
+  const initialBudget = req.body.budgetLimit;
 
   try {
     const maxAllowedBudget = initialBudget * 0.615;
 
-    const { isValid, adjustedBudgetAndPrice } = validateAdjustedBudget(
+    const { isValid, result: { totalCost, averageTicketPrice } } = validateAdjustedBudget(
       userChoices,
-      // costMapping,
       maxAllowedBudget
     );
 
-    const result = { isValid, adjustedBudgetAndPrice }
+    const result = { isValid, result: { totalCost, averageTicketPrice } }
     
     res.json(result); // Send the result back to the client
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
-});
-
-
-// Route for the /api/result API
-app.get('/result', (req, res) => {
-  try {
-    const {
-      adjustedBudget,
-      ticketPrice,
-      festivalSizes,
-      ecologicalActions,
-      culturalMediationActions,
-      riskPreventionActions,
-    } = req.query;
-
-    // Fetch costs for the user’s selected choices
-    const costBreakdown = {
-      "festivalSizes": costMapping.festivalSizes[festivalSizes],
-      "ecologicalActions": costMapping.ecologicalActions[ecologicalActions],
-      "culturalMediationActions": costMapping.culturalMediationActions[culturalMediationActions],
-      "riskPreventionActions": costMapping.riskPreventionActions[riskPreventionActions],
-    };
-
-    // Calculate percentages
-    const percentages = {};
-    for (const key in costBreakdown) {
-      percentages[key] = ((costBreakdown[key] / adjustedBudget) * 100).toFixed(2);
-    }
-
-    // Prioritize choices based on cost contribution
-    const priorities = Object.entries(costBreakdown)
-      .sort((a, b) => b[1] - a[1]) // Sort descending by cost
-      .map(([key, value]) => ({
-        criterion: key,
-        cost: value,
-        percentage: percentages[key],
-      }));
-
-
-    // Predefined messages for each prioritized category
-    const messages = loadResultData();
-
-    // Prepare response data
-    const responseData = {
-      adjustedBudget: adjustedBudget,
-      priorities: priorities.map(priority => ({
-        ...priority,
-        message: messages[priority.criterion],
-      })),
-      costBreakdown,
-      percentages,
-      choices: {
-        festivalSizes,
-        ecologicalActions,
-        culturalMediationActions,
-        riskPreventionActions,
-      },
-      ticketPrice,
-    };
-
-    // Send response as JSON
-    res.json(responseData);
-  } catch (error) {
-    console.error('Error generating results:', error);
-    res.status(500).json({ error: 'Error generating results' });
-  }
-});
-
-
-  
+});  
 
 // Export the app
 module.exports = app;

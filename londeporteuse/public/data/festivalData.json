@@ -4,7 +4,7 @@
         "Médiation culturelle": "Petit",
         "Transition écologique": "Petit",
         "Programmation et taille de l'événement": "Petit",
-        "Prévention": " Petit",
+        "Prévention": "Petit",
         "Coût": 84936,
         "Prix du billet": 20
     },
@@ -13,7 +13,7 @@
         "Médiation culturelle": "Petit",
         "Transition écologique": "Petit",
         "Programmation et taille de l'événement": "Petit",
-        "Prévention": " Moyen",
+        "Prévention": "Moyen",
         "Coût": 96936,
         "Prix du billet": 21
     },
@@ -22,7 +22,7 @@
         "Médiation culturelle": "Petit",
         "Transition écologique": "Petit",
         "Programmation et taille de l'événement": "Petit",
-        "Prévention": " Grand",
+        "Prévention": "Grand",
         "Coût": 109936,
         "Prix du billet": 21.9
     },
@@ -31,7 +31,7 @@
         "Médiation culturelle": "Petit",
         "Transition écologique": "Petit",
         "Programmation et taille de l'événement": "Moyen",
-        "Prévention": " Petit",
+        "Prévention": "Petit",
         "Coût": 225136,
         "Prix du billet": 30.6
     },
@@ -40,7 +40,7 @@
         "Médiation culturelle": "Petit",
         "Transition écologique": "Petit",
         "Programmation et taille de l'événement": "Moyen",
-        "Prévention": " Moyen",
+        "Prévention": "Moyen",
         "Coût": 237136,
         "Prix du billet": 33.5
     },
@@ -49,7 +49,7 @@
         "Médiation culturelle": "Petit",
         "Transition écologique": "Petit",
         "Programmation et taille de l'événement": "Moyen",
-        "Prévention": " Grand",
+        "Prévention": "Grand",
         "Coût": 250136,
         "Prix du billet": 35.5
     },
@@ -58,7 +58,7 @@
         "Médiation culturelle": "Petit",
         "Transition écologique": "Petit",
         "Programmation et taille de l'événement": "Grand",
-        "Prévention": " Petit",
+        "Prévention": "Petit",
         "Coût": 2494636,
         "Prix du billet": 96.9
     },
@@ -67,7 +67,7 @@
         "Médiation culturelle": "Petit",
         "Transition écologique": "Petit",
         "Programmation et taille de l'événement": "Grand",
-        "Prévention": " Moyen",
+        "Prévention": "Moyen",
         "Coût": 2506636,
         "Prix du billet": 99
     },
@@ -76,7 +76,7 @@
         "Médiation culturelle": "Petit",
         "Transition écologique": "Petit",
         "Programmation et taille de l'événement": "Grand",
-        "Prévention": " Grand",
+        "Prévention": "Grand",
         "Coût": 2519636,
         "Prix du billet": 101
     },
@@ -85,7 +85,7 @@
         "Médiation culturelle": "Petit",
         "Transition écologique": "Moyen",
         "Programmation et taille de l'événement": "Petit",
-        "Prévention": " Petit",
+        "Prévention": "Petit",
         "Coût": 166529,
         "Prix du billet": 24.8
     },
@@ -94,7 +94,7 @@
         "Médiation culturelle": "Petit",
         "Transition écologique": "Moyen",
         "Programmation et taille de l'événement": "Petit",
-        "Prévention": " Moyen",
+        "Prévention": "Moyen",
         "Coût": 178529,
         "Prix du billet": 26.8
     },
@@ -103,7 +103,7 @@
         "Médiation culturelle": "Petit",
         "Transition écologique": "Moyen",
         "Programmation et taille de l'événement": "Petit",
-        "Prévention": " Grand",
+        "Prévention": "Grand",
         "Coût": 191529,
         "Prix du billet": 27.7
     },
@@ -112,7 +112,7 @@
         "Médiation culturelle": "Petit",
         "Transition écologique": "Moyen",
         "Programmation et taille de l'événement": "Moyen",
-        "Prévention": " Petit",
+        "Prévention": "Petit",
         "Coût": 306729,
         "Prix du billet": 41.3
     },
@@ -121,7 +121,7 @@
         "Médiation culturelle": "Petit",
         "Transition écologique": "Moyen",
         "Programmation et taille de l'événement": "Moyen",
-        "Prévention": " Moyen",
+        "Prévention": "Moyen",
         "Coût": 318729,
         "Prix du billet": 44.2
     },
@@ -130,7 +130,7 @@
         "Médiation culturelle": "Petit",
         "Transition écologique": "Moyen",
         "Programmation et taille de l'événement": "Moyen",
-        "Prévention": " Grand",
+        "Prévention": "Grand",
         "Coût": 331729,
         "Prix du billet": 45.2
     },
@@ -139,7 +139,7 @@
         "Médiation culturelle": "Petit",
         "Transition écologique": "Moyen",
         "Programmation et taille de l'événement": "Grand",
-        "Prévention": " Petit",
+        "Prévention": "Petit",
         "Coût": 2576229,
         "Prix du billet": 107.1
     },
@@ -148,7 +148,7 @@
         "Médiation culturelle": "Petit",
         "Transition écologique": "Moyen",
         "Programmation et taille de l'événement": "Grand",
-        "Prévention": " Moyen",
+        "Prévention": "Moyen",
         "Coût": 2588229,
         "Prix du billet": 111.2
     },
@@ -157,7 +157,7 @@
         "Médiation culturelle": "Petit",
         "Transition écologique": "Moyen",
         "Programmation et taille de l'événement": "Grand",
-        "Prévention": " Grand",
+        "Prévention": "Grand",
         "Coût": 2601229,
         "Prix du billet": 113.3
     },
@@ -166,7 +166,7 @@
         "Médiation culturelle": "Petit",
         "Transition écologique": "Grand",
         "Programmation et taille de l'événement": "Petit",
-        "Prévention": " Petit",
+        "Prévention": "Petit",
         "Coût": 738449,
         "Prix du billet": 60.2
     },
@@ -175,7 +175,7 @@
         "Médiation culturelle": "Petit",
         "Transition écologique": "Grand",
         "Programmation et taille de l'événement": "Petit",
-        "Prévention": " Moyen",
+        "Prévention": "Moyen",
         "Coût": 750449,
         "Prix du billet": 62.2
     },
@@ -184,7 +184,7 @@
         "Médiation culturelle": "Petit",
         "Transition écologique": "Grand",
         "Programmation et taille de l'événement": "Petit",
-        "Prévention": " Grand",
+        "Prévention": "Grand",
         "Coût": 763449,
         "Prix du billet": 64.3
     },
@@ -193,7 +193,7 @@
         "Médiation culturelle": "Petit",
         "Transition écologique": "Grand",
         "Programmation et taille de l'événement": "Moyen",
-        "Prévention": " Petit",
+        "Prévention": "Petit",
         "Coût": 878649,
         "Prix du billet": 76.5
     },
@@ -202,7 +202,7 @@
         "Médiation culturelle": "Petit",
         "Transition écologique": "Grand",
         "Programmation et taille de l'événement": "Moyen",
-        "Prévention": " Moyen",
+        "Prévention": "Moyen",
         "Coût": 890649,
         "Prix du billet": 80.6
     },
@@ -211,7 +211,7 @@
         "Médiation culturelle": "Petit",
         "Transition écologique": "Grand",
         "Programmation et taille de l'événement": "Moyen",
-        "Prévention": " Grand",
+        "Prévention": "Grand",
         "Coût": 903649,
         "Prix du billet": 82.6
     },
@@ -220,7 +220,7 @@
         "Médiation culturelle": "Petit",
         "Transition écologique": "Grand",
         "Programmation et taille de l'événement": "Grand",
-        "Prévention": " Petit",
+        "Prévention": "Petit",
         "Coût": 3148149,
         "Prix du billet": 133.7
     },
@@ -229,7 +229,7 @@
         "Médiation culturelle": "Petit",
         "Transition écologique": "Grand",
         "Programmation et taille de l'événement": "Grand",
-        "Prévention": " Moyen",
+        "Prévention": "Moyen",
         "Coût": 3160149,
         "Prix du billet": 135.7
     },
@@ -238,7 +238,7 @@
         "Médiation culturelle": "Petit",
         "Transition écologique": "Grand",
         "Programmation et taille de l'événement": "Grand",
-        "Prévention": " Grand",
+        "Prévention": "Grand",
         "Coût": 3173149,
         "Prix du billet": 137.7
     },
@@ -247,7 +247,7 @@
         "Médiation culturelle": "Moyen",
         "Transition écologique": "Petit",
         "Programmation et taille de l'événement": "Petit",
-        "Prévention": " Petit",
+        "Prévention": "Petit",
         "Coût": 150216,
         "Prix du billet": 22.9
     },
@@ -256,7 +256,7 @@
         "Médiation culturelle": "Moyen",
         "Transition écologique": "Petit",
         "Programmation et taille de l'événement": "Petit",
-        "Prévention": " Moyen",
+        "Prévention": "Moyen",
         "Coût": 162216,
         "Prix du billet": 23.9
     },
@@ -265,7 +265,7 @@
         "Médiation culturelle": "Moyen",
         "Transition écologique": "Petit",
         "Programmation et taille de l'événement": "Petit",
-        "Prévention": " Grand",
+        "Prévention": "Grand",
         "Coût": 175216,
         "Prix du billet": 25.8
     },
@@ -274,7 +274,7 @@
         "Médiation culturelle": "Moyen",
         "Transition écologique": "Petit",
         "Programmation et taille de l'événement": "Moyen",
-        "Prévention": " Petit",
+        "Prévention": "Petit",
         "Coût": 290416,
         "Prix du billet": 37.4
     },
@@ -283,7 +283,7 @@
         "Médiation culturelle": "Moyen",
         "Transition écologique": "Petit",
         "Programmation et taille de l'événement": "Moyen",
-        "Prévention": " Moyen",
+        "Prévention": "Moyen",
         "Coût": 302416,
         "Prix du billet": 39.4
     },
@@ -292,7 +292,7 @@
         "Médiation culturelle": "Moyen",
         "Transition écologique": "Petit",
         "Programmation et taille de l'événement": "Moyen",
-        "Prévention": " Grand",
+        "Prévention": "Grand",
         "Coût": 315416,
         "Prix du billet": 42.3
     },
@@ -301,7 +301,7 @@
         "Médiation culturelle": "Moyen",
         "Transition écologique": "Petit",
         "Programmation et taille de l'événement": "Grand",
-        "Prévention": " Petit",
+        "Prévention": "Petit",
         "Coût": 2559916,
         "Prix du billet": 103.1
     },
@@ -310,7 +310,7 @@
         "Médiation culturelle": "Moyen",
         "Transition écologique": "Petit",
         "Programmation et taille de l'événement": "Grand",
-        "Prévention": " Moyen",
+        "Prévention": "Moyen",
         "Coût": 2571916,
         "Prix du billet": 105.1
     },
@@ -319,7 +319,7 @@
         "Médiation culturelle": "Moyen",
         "Transition écologique": "Petit",
         "Programmation et taille de l'événement": "Grand",
-        "Prévention": " Grand",
+        "Prévention": "Grand",
         "Coût": 2584916,
         "Prix du billet": 109.2
     },
@@ -328,7 +328,7 @@
         "Médiation culturelle": "Moyen",
         "Transition écologique": "Moyen",
         "Programmation et taille de l'événement": "Petit",
-        "Prévention": " Petit",
+        "Prévention": "Petit",
         "Coût": 231809,
         "Prix du billet": 31.6
     },
@@ -337,7 +337,7 @@
         "Médiation culturelle": "Moyen",
         "Transition écologique": "Moyen",
         "Programmation et taille de l'événement": "Petit",
-        "Prévention": " Moyen",
+        "Prévention": "Moyen",
         "Coût": 243809,
         "Prix du billet": 34.5
     },
@@ -346,7 +346,7 @@
         "Médiation culturelle": "Moyen",
         "Transition écologique": "Moyen",
         "Programmation et taille de l'événement": "Petit",
-        "Prévention": " Grand",
+        "Prévention": "Grand",
         "Coût": 256809,
         "Prix du billet": 36.5
     },
@@ -355,7 +355,7 @@
         "Médiation culturelle": "Moyen",
         "Transition écologique": "Moyen",
         "Programmation et taille de l'événement": "Moyen",
-        "Prévention": " Petit",
+        "Prévention": "Petit",
         "Coût": 372009,
         "Prix du billet": 48.1
     },
@@ -364,7 +364,7 @@
         "Médiation culturelle": "Moyen",
         "Transition écologique": "Moyen",
         "Programmation et taille de l'événement": "Moyen",
-        "Prévention": " Moyen",
+        "Prévention": "Moyen",
         "Coût": 384009,
         "Prix du billet": 50
     },
@@ -373,7 +373,7 @@
         "Médiation culturelle": "Moyen",
         "Transition écologique": "Moyen",
         "Programmation et taille de l'événement": "Moyen",
-        "Prévention": " Grand",
+        "Prévention": "Grand",
         "Coût": 397009,
         "Prix du billet": 52
     },
@@ -382,7 +382,7 @@
         "Médiation culturelle": "Moyen",
         "Transition écologique": "Moyen",
         "Programmation et taille de l'événement": "Grand",
-        "Prévention": " Petit",
+        "Prévention": "Petit",
         "Coût": 2641509,
         "Prix du billet": 119.4
     },
@@ -391,7 +391,7 @@
         "Médiation culturelle": "Moyen",
         "Transition écologique": "Moyen",
         "Programmation et taille de l'événement": "Grand",
-        "Prévention": " Moyen",
+        "Prévention": "Moyen",
         "Coût": 2653509,
         "Prix du billet": 123.5
     },
@@ -400,7 +400,7 @@
         "Médiation culturelle": "Moyen",
         "Transition écologique": "Moyen",
         "Programmation et taille de l'événement": "Grand",
-        "Prévention": " Grand",
+        "Prévention": "Grand",
         "Coût": 2666509,
         "Prix du billet": 125.5
     },
@@ -409,7 +409,7 @@
         "Médiation culturelle": "Moyen",
         "Transition écologique": "Grand",
         "Programmation et taille de l'événement": "Petit",
-        "Prévention": " Petit",
+        "Prévention": "Petit",
         "Coût": 803729,
         "Prix du billet": 66.3
     },
@@ -418,7 +418,7 @@
         "Médiation culturelle": "Moyen",
         "Transition écologique": "Grand",
         "Programmation et taille de l'événement": "Petit",
-        "Prévention": " Moyen",
+        "Prévention": "Moyen",
         "Coût": 815729,
         "Prix du billet": 68.4
     },
@@ -427,7 +427,7 @@
         "Médiation culturelle": "Moyen",
         "Transition écologique": "Grand",
         "Programmation et taille de l'événement": "Petit",
-        "Prévention": " Grand",
+        "Prévention": "Grand",
         "Coût": 828729,
         "Prix du billet": 70.4
     },
@@ -436,7 +436,7 @@
         "Médiation culturelle": "Moyen",
         "Transition écologique": "Grand",
         "Programmation et taille de l'événement": "Moyen",
-        "Prévention": " Petit",
+        "Prévention": "Petit",
         "Coût": 943929,
         "Prix du billet": 84.7
     },
@@ -445,7 +445,7 @@
         "Médiation culturelle": "Moyen",
         "Transition écologique": "Grand",
         "Programmation et taille de l'événement": "Moyen",
-        "Prévention": " Moyen",
+        "Prévention": "Moyen",
         "Coût": 955929,
         "Prix du billet": 86.7
     },
@@ -454,7 +454,7 @@
         "Médiation culturelle": "Moyen",
         "Transition écologique": "Grand",
         "Programmation et taille de l'événement": "Moyen",
-        "Prévention": " Grand",
+        "Prévention": "Grand",
         "Coût": 968929,
         "Prix du billet": 88.8
     },
@@ -463,7 +463,7 @@
         "Médiation culturelle": "Moyen",
         "Transition écologique": "Grand",
         "Programmation et taille de l'événement": "Grand",
-        "Prévention": " Petit",
+        "Prévention": "Petit",
         "Coût": 3213429,
         "Prix du billet": 139.8
     },
@@ -472,7 +472,7 @@
         "Médiation culturelle": "Moyen",
         "Transition écologique": "Grand",
         "Programmation et taille de l'événement": "Grand",
-        "Prévention": " Moyen",
+        "Prévention": "Moyen",
         "Coût": 3225429,
         "Prix du billet": 141.8
     },
@@ -481,7 +481,7 @@
         "Médiation culturelle": "Moyen",
         "Transition écologique": "Grand",
         "Programmation et taille de l'événement": "Grand",
-        "Prévention": " Grand",
+        "Prévention": "Grand",
         "Coût": 3238429,
         "Prix du billet": 143.9
     },
@@ -490,7 +490,7 @@
         "Médiation culturelle": "Grand",
         "Transition écologique": "Petit",
         "Programmation et taille de l'événement": "Petit",
-        "Prévention": " Petit",
+        "Prévention": "Petit",
         "Coût": 211027,
         "Prix du billet": 28.7
     },
@@ -499,7 +499,7 @@
         "Médiation culturelle": "Grand",
         "Transition écologique": "Petit",
         "Programmation et taille de l'événement": "Petit",
-        "Prévention": " Moyen",
+        "Prévention": "Moyen",
         "Coût": 223027,
         "Prix du billet": 29.7
     },
@@ -508,7 +508,7 @@
         "Médiation culturelle": "Grand",
         "Transition écologique": "Petit",
         "Programmation et taille de l'événement": "Petit",
-        "Prévention": " Grand",
+        "Prévention": "Grand",
         "Coût": 236027,
         "Prix du billet": 32.6
     },
@@ -517,7 +517,7 @@
         "Médiation culturelle": "Grand",
         "Transition écologique": "Petit",
         "Programmation et taille de l'événement": "Moyen",
-        "Prévention": " Petit",
+        "Prévention": "Petit",
         "Coût": 351227,
         "Prix du billet": 46.1
     },
@@ -526,7 +526,7 @@
         "Médiation culturelle": "Grand",
         "Transition écologique": "Petit",
         "Programmation et taille de l'événement": "Moyen",
-        "Prévention": " Moyen",
+        "Prévention": "Moyen",
         "Coût": 363227,
         "Prix du billet": 47.1
     },
@@ -535,7 +535,7 @@
         "Médiation culturelle": "Grand",
         "Transition écologique": "Petit",
         "Programmation et taille de l'événement": "Moyen",
-        "Prévention": " Grand",
+        "Prévention": "Grand",
         "Coût": 376227,
         "Prix du billet": 49
     },
@@ -544,7 +544,7 @@
         "Médiation culturelle": "Grand",
         "Transition écologique": "Petit",
         "Programmation et taille de l'événement": "Grand",
-        "Prévention": " Petit",
+        "Prévention": "Petit",
         "Coût": 2620727,
         "Prix du billet": 115.3
     },
@@ -553,7 +553,7 @@
         "Médiation culturelle": "Grand",
         "Transition écologique": "Petit",
         "Programmation et taille de l'événement": "Grand",
-        "Prévention": " Moyen",
+        "Prévention": "Moyen",
         "Coût": 2632727,
         "Prix du billet": 117.3
     },
@@ -562,7 +562,7 @@
         "Médiation culturelle": "Grand",
         "Transition écologique": "Petit",
         "Programmation et taille de l'événement": "Grand",
-        "Prévention": " Grand",
+        "Prévention": "Grand",
         "Coût": 2645727,
         "Prix du billet": 121.4
     },
@@ -571,7 +571,7 @@
         "Médiation culturelle": "Grand",
         "Transition écologique": "Moyen",
         "Programmation et taille de l'événement": "Petit",
-        "Prévention": " Petit",
+        "Prévention": "Petit",
         "Coût": 292620,
         "Prix du billet": 38.4
     },
@@ -580,7 +580,7 @@
         "Médiation culturelle": "Grand",
         "Transition écologique": "Moyen",
         "Programmation et taille de l'événement": "Petit",
-        "Prévention": " Moyen",
+        "Prévention": "Moyen",
         "Coût": 304620,
         "Prix du billet": 40.3
     },
@@ -589,7 +589,7 @@
         "Médiation culturelle": "Grand",
         "Transition écologique": "Moyen",
         "Programmation et taille de l'événement": "Petit",
-        "Prévention": " Grand",
+        "Prévention": "Grand",
         "Coût": 317620,
         "Prix du billet": 43.2
     },
@@ -598,7 +598,7 @@
         "Médiation culturelle": "Grand",
         "Transition écologique": "Moyen",
         "Programmation et taille de l'événement": "Moyen",
-        "Prévention": " Petit",
+        "Prévention": "Petit",
         "Coût": 432820,
         "Prix du billet": 54.1
     },
@@ -607,7 +607,7 @@
         "Médiation culturelle": "Grand",
         "Transition écologique": "Moyen",
         "Programmation et taille de l'événement": "Moyen",
-        "Prévention": " Moyen",
+        "Prévention": "Moyen",
         "Coût": 444820,
         "Prix du billet": 56.1
     },
@@ -616,7 +616,7 @@
         "Médiation culturelle": "Grand",
         "Transition écologique": "Moyen",
         "Programmation et taille de l'événement": "Moyen",
-        "Prévention": " Grand",
+        "Prévention": "Grand",
         "Coût": 457820,
         "Prix du billet": 58.2
     },
@@ -625,7 +625,7 @@
         "Médiation culturelle": "Grand",
         "Transition écologique": "Moyen",
         "Programmation et taille de l'événement": "Grand",
-        "Prévention": " Petit",
+        "Prévention": "Petit",
         "Coût": 2702320,
         "Prix du billet": 127.5
     },
@@ -634,7 +634,7 @@
         "Médiation culturelle": "Grand",
         "Transition écologique": "Moyen",
         "Programmation et taille de l'événement": "Grand",
-        "Prévention": " Moyen",
+        "Prévention": "Moyen",
         "Coût": 2714320,
         "Prix du billet": 129.6
     },
@@ -643,7 +643,7 @@
         "Médiation culturelle": "Grand",
         "Transition écologique": "Moyen",
         "Programmation et taille de l'événement": "Grand",
-        "Prévention": " Grand",
+        "Prévention": "Grand",
         "Coût": 2727320,
         "Prix du billet": 131.6
     },
@@ -652,7 +652,7 @@
         "Médiation culturelle": "Grand",
         "Transition écologique": "Grand",
         "Programmation et taille de l'événement": "Petit",
-        "Prévention": " Petit",
+        "Prévention": "Petit",
         "Coût": 864540,
         "Prix du billet": 72.4
     },
@@ -661,7 +661,7 @@
         "Médiation culturelle": "Grand",
         "Transition écologique": "Grand",
         "Programmation et taille de l'événement": "Petit",
-        "Prévention": " Moyen",
+        "Prévention": "Moyen",
         "Coût": 876540,
         "Prix du billet": 74.5
     },
@@ -670,7 +670,7 @@
         "Médiation culturelle": "Grand",
         "Transition écologique": "Grand",
         "Programmation et taille de l'événement": "Petit",
-        "Prévention": " Grand",
+        "Prévention": "Grand",
         "Coût": 889540,
         "Prix du billet": 78.6
     },
@@ -679,7 +679,7 @@
         "Médiation culturelle": "Grand",
         "Transition écologique": "Grand",
         "Programmation et taille de l'événement": "Moyen",
-        "Prévention": " Petit",
+        "Prévention": "Petit",
         "Coût": 1004740,
         "Prix du billet": 90.8
     },
@@ -688,7 +688,7 @@
         "Médiation culturelle": "Grand",
         "Transition écologique": "Grand",
         "Programmation et taille de l'événement": "Moyen",
-        "Prévention": " Moyen",
+        "Prévention": "Moyen",
         "Coût": 1016740,
         "Prix du billet": 92.9
     },
@@ -697,7 +697,7 @@
         "Médiation culturelle": "Grand",
         "Transition écologique": "Grand",
         "Programmation et taille de l'événement": "Moyen",
-        "Prévention": " Grand",
+        "Prévention": "Grand",
         "Coût": 1029740,
         "Prix du billet": 94.9
     },
@@ -706,7 +706,7 @@
         "Médiation culturelle": "Grand",
         "Transition écologique": "Grand",
         "Programmation et taille de l'événement": "Grand",
-        "Prévention": " Petit",
+        "Prévention": "Petit",
         "Coût": 3274240,
         "Prix du billet": 145.9
     },
