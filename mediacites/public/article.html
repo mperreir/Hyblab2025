@@ -39,9 +39,27 @@
         }
     }
 
+    function highlightActiveCategory() {
+        // Get the selected category from the URL
+        const category = new URLSearchParams(window.location.search).get('category');
+
+        if (!category) return; // If no category, do nothing
+
+        // Find the corresponding button by its ID
+        const activeButton = document.getElementById(`btn-${category}`);
+
+        if (activeButton) {
+            activeButton.classList.add("btn-secondary");  // Change style to indicate selection
+            activeButton.classList.remove("btn-outline-secondary"); // Remove default style
+        }
+    }
+
     // Run the function when the page loads
-    window.onload = loadArticle;
-</script>
+    window.onload = function () {
+        loadArticle();  // Existing function to load the article
+        highlightActiveCategory(); // New function to highlight the selected category
+    };
+  </script>
 </head>
 <body>
     <nav class="sticky-top">
@@ -50,12 +68,11 @@
             🏠
         </button>
         <!-- Certains boutons pas implémentés en raison de la limite de temps -->
-        <!-- TODO : illuminer le bouton qui correspond à la catégorie dans laquelel on est -->
         <button class="btn btn-outline-secondary" type="button" style="border-radius: 4vh 0vh 0vh 4vh;"> ACTION SOCIALE ET SANTÉ</button> <!-- onclick="redirect('nom_de_la_categorie')" --> 
         <button class="btn btn-outline-secondary" type="button" > CITOYENNETÉ</button> <!-- onclick="redirect('nom_de_la_categorie')" --> 
         <button class="btn btn-outline-secondary" type="button" > CULTURE ET TOURISME</button> <!-- onclick="redirect('nom_de_la_categorie')" --> 
-        <button onclick="redirect('education')" class="btn btn-outline-secondary" type="button"> ÉDUCATION</button>
-        <button onclick="redirect('environnement') " class="btn btn-outline-secondary" type="button"> ENVIRONNEMENT</button>
+        <button onclick="redirect('education')" id="btn-education" class="btn btn-outline-secondary" type="button"> ÉDUCATION</button>
+        <button onclick="redirect('environnement')" id="btn-environnement" class="btn btn-outline-secondary" type="button"> ENVIRONNEMENT</button>
         <button class="btn btn-outline-secondary" type="button"> MOBILITÉS</button> <!-- onclick="redirect('nom_de_la_categorie')" --> 
         <button class="btn btn-outline-secondary" type="button" > SÉCURITÉ</button> <!-- onclick="redirect('nom_de_la_categorie')" --> 
         <button class="btn btn-outline-secondary" type="button" > URBANISME ET LOGEMENT</button> <!-- onclick="redirect('nom_de_la_categorie')" --> 
