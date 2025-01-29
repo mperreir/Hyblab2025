@@ -35,6 +35,25 @@
             document.getElementById('texteArticle').textContent = articleData.text;
             document.getElementById('biduleTexte').textContent = `Voici le bilan 2020-2025 concernant les décisions prises sur le thème "${articleData.name}".`
 
+            // Replace the logo class with a video tag if available, otherwise keep the logo
+            const logoContainer = document.querySelector('.logo');
+            const videoElement = document.createElement('video');
+            videoElement.setAttribute('width', '200vw');
+            videoElement.setAttribute('height', 'auto');
+            videoElement.setAttribute('id', 'animation');
+            videoElement.setAttribute('autoplay', '');
+            videoElement.setAttribute('playsinline', '');
+            videoElement.setAttribute('muted', '');
+            videoElement.setAttribute('disablePictureInPicture', '');
+            videoElement.setAttribute('controlsList', 'nodownload nofullscreen');
+
+            const sourceElement = document.createElement('source');
+            sourceElement.setAttribute('src', `img/${category}-animation.mp4`);
+            sourceElement.setAttribute('type', 'video/mp4');
+
+            videoElement.appendChild(sourceElement);
+            logoContainer.parentNode.replaceChild(videoElement, logoContainer);
+
             // Check if KPIs exist and update them dynamically
             if (articleData.kpis && articleData.kpis.length > 0) {
                 document.getElementById('kpi1').textContent = articleData.kpis[0].number;
@@ -57,6 +76,7 @@
             document.getElementById('textkpi2').textContent = '';
             document.getElementById('biduleTexte').textContent = `Texte indisponible.`
         }
+
     }
 
     async function loadLinks() {
@@ -170,6 +190,8 @@
         if (activeButton) {
             activeButton.classList.add("btn-secondary");  // Change style to indicate selection
             activeButton.classList.remove("btn-outline-secondary"); // Remove default style
+            activeButton.style.backgroundColor = "#FF0023";
+            activeButton.style.color = "white";
         }
     }
 
@@ -183,26 +205,26 @@
 </head>
 <body>
     <nav class="sticky-top">
-      <div class="navigation-header btn-group btn-group-justified" role="group"> 
-        <button onclick="location.href='index.html'" class="btn btn-outline-secondary" type="button" style="border-radius: 4vh 4vh 4vh 4vh; margin-right: 10px; font-style: normal;">
-            🏠
-        </button>
-        <!-- Certains boutons pas implémentés en raison de la limite de temps -->
-        <button class="btn btn-outline-secondary" type="button" style="border-radius: 4vh 0vh 0vh 4vh;"> ACTION SOCIALE ET SANTÉ</button> <!-- onclick="redirect('nom_de_la_categorie')" --> 
-        <button class="btn btn-outline-secondary" type="button" > CITOYENNETÉ</button> <!-- onclick="redirect('nom_de_la_categorie')" --> 
-        <button class="btn btn-outline-secondary" type="button" > CULTURE ET TOURISME</button> <!-- onclick="redirect('nom_de_la_categorie')" --> 
-        <button onclick="redirect('education')" id="btn-education" class="btn btn-outline-secondary" type="button"> ÉDUCATION</button>
-        <button onclick="redirect('environnement')" id="btn-environnement" class="btn btn-outline-secondary" type="button"> ENVIRONNEMENT</button>
-        <button class="btn btn-outline-secondary" type="button"> MOBILITÉS</button> <!-- onclick="redirect('nom_de_la_categorie')" --> 
-        <button class="btn btn-outline-secondary" type="button" > SÉCURITÉ</button> <!-- onclick="redirect('nom_de_la_categorie')" --> 
-        <button class="btn btn-outline-secondary" type="button" > URBANISME ET LOGEMENT</button> <!-- onclick="redirect('nom_de_la_categorie')" --> 
-      </div>
-      <script>
-        function redirect(category) {
-            console.log(`Redirecting to article.html?category=${category}`);
-            window.location.href = `article.html?category=${category}`;
-        }
-      </script>
+        <div class="navigation-header btn-group btn-group-justified" role="group"> 
+            <button onclick="location.href='index.html'" class="btn btn-outline-secondary" type="button" style="border-radius: 4vh 4vh 4vh 4vh; margin-right: 10px; font-style: normal;">
+                🏠
+            </button>
+            <!-- Certains boutons pas implémentés en raison de la limite de temps -->
+            <button class="btn btn-outline-secondary" type="button" style="border-radius: 4vh 0vh 0vh 4vh;"> ACTION SOCIALE ET SANTÉ</button> <!-- onclick="redirect('nom_de_la_categorie')" --> 
+            <button class="btn btn-outline-secondary" type="button" > CITOYENNETÉ</button> <!-- onclick="redirect('nom_de_la_categorie')" --> 
+            <button class="btn btn-outline-secondary" type="button" > CULTURE ET TOURISME</button> <!-- onclick="redirect('nom_de_la_categorie')" --> 
+            <button onclick="redirect('education')" id="btn-education" class="btn btn-outline-secondary" type="button"> ÉDUCATION</button>
+            <button onclick="redirect('environnement')" id="btn-environnement" class="btn btn-outline-secondary" type="button"> ENVIRONNEMENT</button>
+            <button class="btn btn-outline-secondary" type="button"> MOBILITÉS</button> <!-- onclick="redirect('nom_de_la_categorie')" --> 
+            <button class="btn btn-outline-secondary" type="button" > SÉCURITÉ</button> <!-- onclick="redirect('nom_de_la_categorie')" --> 
+            <button class="btn btn-outline-secondary" type="button" > URBANISME ET LOGEMENT</button> <!-- onclick="redirect('nom_de_la_categorie')" --> 
+        </div>
+        <script>
+            function redirect(category) {
+                console.log(`Redirecting to article.html?category=${category}`);
+                window.location.href = `article.html?category=${category}`;
+            }
+        </script>
     </nav>
     <div>
       <h1 style="font-size: 4vw; font-style: italic; margin: 20px; margin-bottom: 0;">
@@ -222,7 +244,7 @@
               <div id="map">
                 <img src="./img/carte.svg" alt="carte" usemap="#carte-map" />
                 <map name="carte-map">
-                  <area shape="poly" coords="25.68800000,29.76800000,25.44800000,29.76800000,23.57600000,41.00000000,20.48000000,41.00000000,23.26400000,24.24800000,27.53600000,24.24800000,29.48000000,35.48000000,29.72000000,35.48000000,31.59200000,24.24800000,34.68800000,24.24800000,31.90400000,41.00000000,27.63200000,41.00000000,25.68800000,29.76800000" href="#" alt="Description du premier polygone">
+        <area shape="poly" coords="25.68800000,29.76800000,25.44800000,29.76800000,23.57600000,41.00000000,20.48000000,41.00000000,23.26400000,24.24800000,27.53600000,24.24800000,29.48000000,35.48000000,29.72000000,35.48000000,31.59200000,24.24800000,34.68800000,24.24800000,31.90400000,41.00000000,27.63200000,41.00000000,25.68800000,29.76800000" href="#" alt="Description du premier polygone">
         <area shape="poly" coords="147.04900000,261.54100000,146.57700000,261.51400000,101.74000000,256.57300000,98.26490000,254.01700000,98.74490000,249.72900000,108.20400000,236.90800000,110.84600000,235.23700000,121.45900000,233.16700000,123.37000000,233.22800000,143.10300000,238.37600000,144.49700000,238.32700000,169.45800000,229.93200000,171.13400000,229.71800000,184.73800000,230.67700000,186.10600000,230.37100000,195.38200000,225.15600000,198.75900000,225.84900000,198.55200000,229.29100000,183.98200000,244.19100000,182.74900000,245.07100000,148.89300000,261.12500000,147.04800000,261.54100000,147.04900000,261.54100000" href="#" alt="Description du deuxième polygone">
         <area shape="poly" coords="218.89100000,225.56300000,216.81800000,224.07600000,217.90000000,221.33400000,237.08900000,211.45500000,239.28100000,210.75600000,260.87300000,207.65700000,263.26400000,209.03400000,262.49800000,211.68600000,247.64000000,222.40400000,243.08900000,223.69900000,232.28300000,222.93600000,230.85500000,223.03800000,219.39400000,225.50900000,218.89100000,225.56300000" href="#" alt="Description du troisième polygone">
         <area shape="poly" coords="170.17000000,227.35700000,168.25300000,226.83100000,151.60300000,216.94400000,149.89700000,214.69900000,144.36500000,194.35700000,145.41600000,190.63200000,152.35500000,184.11200000,152.95200000,182.73400000,152.95200000,177.98500000,156.70600000,174.22800000,165.14700000,174.22800000,165.58000000,174.33500000,188.10500000,186.15200000,188.43100000,186.43700000,205.95900000,211.03400000,206.46300000,214.40500000,204.03600000,216.79600000,171.30400000,227.18100000,170.17000000,227.35700000" href="#" alt="Description du quatrième polygone">
@@ -281,31 +303,39 @@
 
 
               <!-- Liens Section -->
-              <div class="row" style="padding-right: 3vh;">
-                  <div class="col col-to-sort-inside-of" style="width: 100%; background-color: #565656; height: fit-content; border: 1vh solid white; border-radius: 4vh 4vh 4vh 4vh;">
-                      <div class="row">
-                          <div class="col-8">
-                              <h3 class="d-flex" style="font-size: 4vw; color: white; text-align:left; font-style: italic;">Liens</h3>
-                          </div>
-                          <div class="col-4 d-flex justify-content-end align-items-center">
-                              <div class="dropdown">
-                                  <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:white;">
-                                      De A à Z
-                                  </button>
-                                  <ul class="dropdown-menu">
-                                      <li><a id="alphabetical_asc" class="dropdown-item">De A à Z</a></li>
-                                      <li><a id="alphabetical_desc" class="dropdown-item">De Z à A</a></li>
-                                      <li><a id="chronological_asc" class="dropdown-item">Du plus récent au plus vieux</a></li>
-                                      <li><a id="chronological_desc" class="dropdown-item">Du plus vieux au plus récent</a></li>
-                                  </ul>
-                              </div>
-                          </div>
-                      </div>
-                      <!-- Container for dynamically loaded links -->
-                      <div id="links-container"></div>
-                  </div>
+                <div class="row" style="padding-right: 3vh;">
+                    <div class="col col-to-sort-inside-of" style="width: 100%; background-color: #565656; height: fit-content; border: 1vh solid white; border-radius: 4vh 4vh 4vh 4vh;">
+                        <div class="row">
+                            <div class="col-8">
+                                <h3 class="d-flex" style="font-size: 4vw; color: white; text-align:left; font-style: italic;">Liens</h3>
+                            </div>
+                            <div class="col-4 d-flex justify-content-end align-items-center">
+                                <div class="dropdown">
+                                    <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:white;">
+                                        De A à Z
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a id="alphabetical_asc" class="dropdown-item">De A à Z</a></li>
+                                        <li><a id="alphabetical_desc" class="dropdown-item">De Z à A</a></li>
+                                        <li><a id="chronological_asc" class="dropdown-item">Du plus récent au plus vieux</a></li>
+                                        <li><a id="chronological_desc" class="dropdown-item">Du plus vieux au plus récent</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Container for dynamically loaded links -->
+                        <div id="links-container"></div>
+                    </div>
                 </div>
-              </div>
+
+                <div class="row" style="padding-right: 3vh;">
+                    <div class="col" style="width: 100%; text-align: right; padding-top:0.5vh;">
+                        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="btn btn-outline-secondary" style="font-size: 2vw; border-radius: 4vh 4vh 4vh 4vh;">
+                            &#8679;
+                        </button>
+                    </div>
+                </div>
+            </div>
           </div>
         </div>
     </div>  

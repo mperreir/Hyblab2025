@@ -18,7 +18,7 @@
 <body>
     <nav class="sticky-top">
       <div class="navigation-header btn-group btn-group-justified" role="group"> 
-        <button onclick="location.href='home.html'" class="btn btn-outline-secondary" type="button" style="border-radius: 4vh 4vh 4vh 4vh; margin-right: 10px; font-style: normal;">
+        <button onclick="location.href='index.html'" class="btn btn-outline-secondary" type="button" style="border-radius: 4vh 4vh 4vh 4vh; margin-right: 10px; font-style: normal;">
             🏠
         </button>
         <!-- Certains boutons pas implémentés en raison de la limite de temps -->
@@ -169,7 +169,7 @@
                 </div>
                 <!-- Bouton remonter-->
                 <div class="row" style="padding-right: 3vh;">
-                    <div class="col" style="width: 100%; text-align: right;">
+                    <div class="col" style="width: 100%; text-align: right; padding-top:0.5vh;">
                         <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="btn btn-outline-secondary" style="font-size: 2vw; border-radius: 4vh 4vh 4vh 4vh;">
                             &#8679;
                         </button>
@@ -182,7 +182,7 @@
       <script>
      // pour les boutons en haut de page
      function redirect(name) {
-        newUrl = window.location.href.split("?")[0]+"?name="+name;
+        newUrl = window.location.href.replace("info", "article").split("?")[0] + "?category=" + name;
         location.href = newUrl;
     }
     </script>
