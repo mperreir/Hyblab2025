@@ -75,7 +75,7 @@ async function addMessage(message, type) {
 
         
 
-        fetch("img/info-circle.svg")
+        fetch("img/icons/info-circle.svg")
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`Erreur de chargement du SVG: ${response.statusText}`);
