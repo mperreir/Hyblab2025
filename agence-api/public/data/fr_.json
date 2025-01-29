@@ -330,9 +330,7 @@
                         "1_lannion": "Bravo pour ton choix de t'installer à Lannion !"
                     }
                 ],
-                "images": {
-                    "1": []
-                }
+                "images": ["img/tech/Carte_Localisation.png"]
             },
             {
                 "avant": [
@@ -340,7 +338,8 @@
                 ],
                 "apres": [
                     "Grâce à ton financement, tu vas pouvoir démarrer ton activité. Félicitations !"
-                ]
+                ],
+                "images": ["img/tech/Carte_Financement.png"]
             },
             {
                 "avant": [
@@ -352,7 +351,8 @@
                         "3_embauchejeunes": "Tu as choisi de recruter des jeunes diplômés. C’est un choix audacieux qui peut s’avérer très payant !",
                         "3_embaucheexperimentes": "Tu as choisi de recruter des profils expérimentés. Une équipe solide est la clé de la réussite !"
                     }
-                ]
+                ],
+                "images": ["img/tech/Carte_Recrutement.png"]
             },
             {
                 "avant": [
@@ -380,7 +380,8 @@
                         "4_label": "Tu as choisi de tenter d'obtenir un label RSE. C'est un engagement fort qui peut te démarquer de la concurrence !",
                         "4_mission": "Tu as choisi de devenir une entreprise à mission. C'est un engagement fort qui peut te démarquer de la concurrence !"
                     }
-                ]
+                ],
+                "images": ["img/tech/Carte_RSE.png"]
             },
             {
                 "avant": [
@@ -390,7 +391,8 @@
                 ],
                 "apres": [
                     "Super !"
-                ]
+                ],
+                "images": ["img/tech/Carte_French_Tech.png"]
             }
         ],
         "informations": [
@@ -419,9 +421,9 @@
                     "1_lannion": "Les actifs dans les Côtes-d'Armor"
                 },
                 "images": {
-                    "1_nantes": ["img/tech/Loire Atlantique.png"],
-                    "1_lorient": ["img/tech/Morbihan.png"],
-                    "1_lannion": ["img/tech/Côtes d_Armor.png"]
+                    "1_nantes": [],
+                    "1_lorient": [],
+                    "1_lannion": []
                 },
                 "paragraphes": [
                     "Dans nos régions, le taux d’emploi des jeunes s’élève à 43,6 %, une performance supérieure à la moyenne nationale de 39,5 %, témoignant d’une bonne dynamique du marché du travail pour cette tranche d’âge.",
@@ -473,7 +475,7 @@
             },
             {
                 "titre": "Le réseau French Tech",
-                "images": [],
+                "images": ["img/tech/French Tech copie.png"],
                 "paragraphes": [
                     "La French Tech, c’est un écosystème national qui soutient les startups françaises et leur croissance. Dans l’Ouest, elle se décline en 3 Capitales (Nantes, Rennes Saint-Malo, Angers) et 7 Communautés, fédérant des centaines d’acteurs de l’innovation. Avec des programmes comme French Tech Next 120 et French Tech 2030, les entreprises locales accèdent à des opportunités de croissance et de financement stratégiques."
                 ]

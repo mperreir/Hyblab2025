@@ -124,8 +124,8 @@
 .message.info svg {
     /* background-color: var(--bg-color); */
     position: absolute;
-    right: -5px;
-    top: 10%;
+    right: -3px;
+    top: 1%;
     transform: translateY(-50%);
     width: 16px;
     height: 16px;
@@ -151,10 +151,6 @@
     color: var(--user-text-color);
 }
 
-#svg-container svg {
-    background: radial-gradient(circle at center, var(--bg-color) 60%, transparent 40%);
-  }
-
 .message.first {
     margin-top: 20px;
     border-radius: 20px 20px 20px 5px;
@@ -171,6 +167,12 @@
 
 .message img {
     width: 200px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.message.info img {
+    width: 100%;
     height: auto;
     margin-bottom: 10px;
 }

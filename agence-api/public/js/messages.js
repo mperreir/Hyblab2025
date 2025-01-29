@@ -25,6 +25,35 @@ async function addMessage(message, type) {
         div.appendChild(title);
     }
 
+    if (message.choix) {
+        for (let i = 0; i < message.choix.length; i++) {
+            messageElement.dataset[`choix${i}`] = message.choix[i];
+        }
+        messageElement.dataset.taillechoix = message.choix.length;
+        let info_icon = document.createElement('svg');
+        info_icon.src = "img/info-circle.svg";
+        info_icon.classList.add('info-icon');
+        info_icon.classList.add('expanding-element');
+        let svg_container = document.createElement('div');
+        svg_container.id = "svg-container";
+        
+        svg_container.appendChild(info_icon);
+        
+
+        fetch("img/icons/info-circle.svg")
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Erreur de chargement du SVG: ${response.statusText}`);
+                }
+                return response.text();
+            })
+            .then(svgContent => {
+                svg_container.innerHTML = svgContent;
+                div.appendChild(svg_container);
+            })
+            .catch(error => console.error('Erreur:', error));
+    }
+
     if (message.img) {
         div.appendChild(document.createElement('img')).src = message.img;
         div.appendChild(document.createElement('p')).textContent = message.text;
@@ -57,37 +86,6 @@ async function addMessage(message, type) {
     }
 
     messageList.appendChild(messageElement);
-
-    if (message.choix) {
-        for (let i = 0; i < message.choix.length; i++) {
-            messageElement.dataset[`choix${i}`] = message.choix[i];
-        }
-        messageElement.dataset.taillechoix = message.choix.length;
-        let info_icon = document.createElement('svg');
-        info_icon.src = "img/info-circle.svg";
-        info_icon.classList.add('info-icon');
-        info_icon.classList.add('expanding-element');
-        let svg_container = document.createElement('div');
-        svg_container.id = "svg-container";
-        
-        svg_container.appendChild(info_icon);
-        messageElement.appendChild(svg_container);
-
-        
-
-        fetch("img/info-circle.svg")
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`Erreur de chargement du SVG: ${response.statusText}`);
-                }
-                return response.text();
-            })
-            .then(svgContent => {
-                svg_container.innerHTML = svgContent;
-                messageElement.appendChild(svg_container);
-            })
-            .catch(error => console.error('Erreur:', error));
-    }
     scrollToBottom();
 };
 
