@@ -3,6 +3,7 @@ import {
   Routes,
   Route,
   Navigate,
+  useLocation,
 } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
 import QuestionsPage from "./pages/QuestionsPages";
@@ -16,6 +17,9 @@ import ScrollTop from "./components/ScrollTop";
 
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { AppProvider } from "./context/AppContextProvider";
+import TransitionsComponent from "./components/TransitionsComponent";
+import { AnimatePresence } from "framer-motion";
+
 
 const theme = createTheme({
   typography: {
@@ -53,6 +57,71 @@ const theme = createTheme({
   },
 });
 
+
+const AnimatedRoutes = () => {
+  const location = useLocation();
+
+  return (
+    <AnimatePresence mode="wait">
+    <Routes location={location} key={location.pathname}>
+      <Route
+        path="/brief/"
+        element={<Navigate to="/brief/landing" replace />}
+      />
+      <Route
+        path="/brief/landing"
+        element={
+          <TransitionsComponent animationType="feuille">
+            <LandingPage />
+          </TransitionsComponent>
+        }
+      />
+      <Route
+        path="/brief/questions"
+        element={
+          <TransitionsComponent animationType="flamme">
+            <QuestionsPage />
+          </TransitionsComponent>
+        }
+      />
+      <Route
+        path="/brief/contexte"
+        element={
+          <TransitionsComponent animationType="vent">
+            <ContextePage />
+          </TransitionsComponent>
+        }
+      />
+      <Route
+        path="/brief/outro"
+        element={
+          <TransitionsComponent animationType="zoomIn">
+            <OutroPage />
+          </TransitionsComponent>
+        }
+      />
+      <Route
+        path="/brief/Introduction"
+        element={
+          <TransitionsComponent animationType="feuille">
+            <DefinitionPage />
+          </TransitionsComponent>
+        }
+      />
+      <Route
+        path="/brief/Information"
+        element={
+          
+            <InformationMixPage />
+        }
+      />
+    </Routes>
+  </AnimatePresence>
+  );
+};
+
+
+
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
@@ -60,18 +129,7 @@ const App = () => {
         <Router>
           <ScrollTop />
 
-          <Routes>
-            <Route
-              path="/brief/"
-              element={<Navigate to="/brief/landing" replace />}
-            />
-            <Route path="/brief/landing" element={<LandingPage />} />
-            <Route path="/brief/questions" element={<QuestionsPage />} />
-            <Route path="/brief/contexte" element={<ContextePage />} />
-            <Route path="/brief/outro" element={<OutroPage />} />
-            <Route path="/brief/Introduction" element={<DefinitionPage />} />
-            <Route path="/brief/Information" element={<InformationMixPage />} />
-          </Routes>
+         <AnimatedRoutes />
         </Router>
       </AppProvider>
     </ThemeProvider>
