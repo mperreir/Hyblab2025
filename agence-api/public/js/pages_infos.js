@@ -51,25 +51,86 @@ function expandMessage(messageElement, data) {
         const img = document.createElement('img');
         img.src = image;
         image_container.appendChild(img);
-        if (!imgexist){
+        if (!imgexist) {
             expandingElement.appendChild(image_container);
             imgexist = true;
         }
     });
 
     let paragraphes_container = document.createElement('div');
-    paragraphes_container.classList.add('paragraphes-container');
     let paragraphes_exist = false;
-    paragraphes.forEach(paragraphe => {
-        const text = document.createElement('p');
-        text.textContent = paragraphe;
-        paragraphes_container.appendChild(text);
-        if (!paragraphes_exist){
-            expandingElement.appendChild(paragraphes_container);
-            paragraphes_exist = true;
-        }
-    });
 
+    if (paragraphes.length > 0) {
+        switch (detectType(paragraphes[0])) {
+            case "string":
+                paragraphes.forEach(paragraphe => {
+                    const text = document.createElement('p');
+                    text.textContent = paragraphe;
+                    paragraphes_container.appendChild(text);
+                    if (!paragraphes_exist) {
+                        expandingElement.appendChild(paragraphes_container);
+                        paragraphes_exist = true;
+                    }
+                });
+                paragraphes_container.classList.add('paragraphes-container');
+                break;
+            case "dico":
+                const liste = document.createElement('ul');
+                liste.classList.add('liste-rse');
+                paragraphes.forEach(paragraphe => {
+                    const item = document.createElement('li');
+                    item.classList.add('item-rse');
+
+                    //nombre d'entreprises
+                    const nombre = document.createElement('p');
+                    nombre.classList.add('nombre-entreprises');
+                    nombre.textContent = paragraphe.nb_entreprises;
+                    item.appendChild(nombre);
+
+                    //nom du label
+                    const label = document.createElement('h2');
+                    label.textContent = paragraphe.nom_label;
+                    item.appendChild(label);
+
+                    //Paragraphe de présentation
+                    const description_container = document.createElement('div');
+                    description_container.style.display = 'none';
+                    description_container.classList.add('expand-hidden');
+
+                    paragraphe.description.forEach(phrase => {
+                        const text = document.createElement('p');
+                        text.textContent = phrase;
+                        description_container.appendChild(text);
+                    });
+
+                    //Bouton de développement paragraphes
+                    const button = document.createElement('button');
+                    button.textContent = '+';
+                    button.classList.add('button-rse-expand');
+
+                    item.appendChild(button);
+                    item.appendChild(description_container);
+
+                    button.addEventListener('click', function () {
+                        event.stopPropagation();
+                        if (description_container.style.display === 'none') {
+                            console.log('display flex');
+                            description_container.style.display = 'flex';
+                            button.textContent = '-';
+                        } else {
+                            description_container.style.display = 'none';
+                            button.textContent = '+';
+                        }
+                    });
+
+
+                    liste.appendChild(item);
+                });
+                paragraphes_container.appendChild(liste);
+                paragraphes_container.classList.add('liste-rse-container');
+                expandingElement.appendChild(paragraphes_container);
+        }
+    }
     expandingElement.querySelectorAll('*').forEach(element => {
         element.style.display = 'none';
         element.classList.add('expanding-element');
@@ -82,7 +143,11 @@ function expandMessage(messageElement, data) {
 
     // Ajouter un écouteur d'événement pour afficher le contenu une fois la transition terminée
     expandingElement.addEventListener('transitionend', function onTransitionEnd() {
-        expandingElement.querySelectorAll('*').forEach(element => element.style.display = 'flex');
+        expandingElement.querySelectorAll('*').forEach(element => {
+            if (!element.classList.contains('expand-hidden')) {
+                element.style.display = 'flex';
+            }
+        });
         expandingElement.removeEventListener('transitionend', onTransitionEnd);  // Nettoyer l'événement
     });
 
@@ -125,8 +190,8 @@ function closeOverlay() {
 };
 
 // Fonction pour répartir les champs du JSON dans des listes respectives
-function repartitionChamps(fields, data, liste_choix){
-    let result = {titre: "", images: [], paragraphes: []};
+function repartitionChamps(fields, data, liste_choix) {
+    let result = { titre: "", images: [], paragraphes: [] };
     fields.forEach(field => {
         switch (detectType(data[field])) {
             case "array":

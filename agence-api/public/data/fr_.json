@@ -11,8 +11,8 @@
                 "Enchanté de faire ta connaissance, {nom} !",
                 "Je vais te présenter rapidement notre tissu économique. La Bretagne et les Pays de la Loire sont des régions qui bougent beaucoup. Ici, les taux de chômage sont parmi les plus bas en France : 5,8 % en Bretagne et 5,9 % dans les Pays de la Loire, contre 7,1 % au niveau national en 2023.",
                 {
-                    "question":"Et il y a une super dynamique : 37 % des créateurs d’entreprise ont moins de 30 ans. Pas mal non ?",
-                    "reponses":[
+                    "question": "Et il y a une super dynamique : 37 % des créateurs d’entreprise ont moins de 30 ans. Pas mal non ?",
+                    "reponses": [
                         "C'est impressionant !"
                     ]
                 },
@@ -67,7 +67,7 @@
         "title2": "Des profils qui te ressemblent",
         "paragraphe2": "Découvre des profils et articles qui te ressemblent provenant du site de l'agence API !",
         "title3": "Ce projet a été réalisé par l'équipe Bobers :",
-        "paragraphe3": "Fanny Bezançon, Amélie Jaunet, Naëlle Klein, Mengyi Lai, Eliot Leguy, Chloé Mallet, Alan Petit, Nicolas Thomas, Dorian Vidal"
+        "paragraphe3": "Fanny Bezançon, Amélie Jaunet, Naël Klein, Mengyi Lai, Eliot Leguy, Chloé Mallet, Alan Petit, Nicolas Thomas, Dorian Vidal"
     },
     "agro": {
         "introduction": [
@@ -330,7 +330,9 @@
                         "1_lannion": "Bravo pour ton choix de t'installer à Lannion !"
                     }
                 ],
-                "images": ["img/tech/Carte_Localisation.png"]
+                "images": [
+                    "img/tech/Carte_Localisation.png"
+                ]
             },
             {
                 "avant": [
@@ -339,7 +341,9 @@
                 "apres": [
                     "Grâce à ton financement, tu vas pouvoir démarrer ton activité. Félicitations !"
                 ],
-                "images": ["img/tech/Carte_Financement.png"]
+                "images": [
+                    "img/tech/Carte_Financement.png"
+                ]
             },
             {
                 "avant": [
@@ -352,7 +356,9 @@
                         "3_embaucheexperimentes": "Tu as choisi de recruter des profils expérimentés. Une équipe solide est la clé de la réussite !"
                     }
                 ],
-                "images": ["img/tech/Carte_Recrutement.png"]
+                "images": [
+                    "img/tech/Carte_Recrutement.png"
+                ]
             },
             {
                 "avant": [
@@ -381,7 +387,9 @@
                         "4_mission": "Tu as choisi de devenir une entreprise à mission. C'est un engagement fort qui peut te démarquer de la concurrence !"
                     }
                 ],
-                "images": ["img/tech/Carte_RSE.png"]
+                "images": [
+                    "img/tech/Carte_RSE.png"
+                ]
             },
             {
                 "avant": [
@@ -392,7 +400,9 @@
                 "apres": [
                     "Super !"
                 ],
-                "images": ["img/tech/Carte_French_Tech.png"]
+                "images": [
+                    "img/tech/Carte_French_Tech.png"
+                ]
             }
         ],
         "informations": [
@@ -407,7 +417,9 @@
             },
             {
                 "titre": "Financement : Le crownfunding",
-                "images": ["img/tech/Crowfunding.png"],
+                "images": [
+                    "img/tech/Crowfunding.png"
+                ],
                 "paragraphes": [
                     "Le crowdfunding, ou financement participatif, est un mode de financement qui permet à des porteurs de projets de collecter des fonds auprès d'un large public via des plateformes en ligne.",
                     "Contrairement aux emprunts bancaires ou aux aides publiques, qui impliquent généralement des conditions de remboursement ou des critères d'éligibilité stricts, le crowdfunding repose sur des capitaux propres apportés par des contributeurs individuels. Ces fonds peuvent prendre la forme de dons, de prêts ou de participations au capital, offrant ainsi aux entrepreneurs une plus grande flexibilité financière et une moindre dépendance aux institutions traditionnelles.",
@@ -436,46 +448,46 @@
                 "images": ["img/tech/RSE.png"],
                 "paragraphes": [
                     {
-                        "1": {
-                            "nom_label": "AFNOR RSEi",
-                            "bouton": "",
-                            "nb_entreprises": "6",
-                            "description": [
-                                "Délivré par l’AFNOR, le label RSEi s’adresse aux entreprises inclusives, qui agissent pour l’inclusion de personnes vulnérables (personnes vivant en situation de pauvreté-précarité) sur le marché de l’emploi, en mettant leur activité économique au service de cet objectif social."
-                            ]
-                        },
-                        "2": {
-                            "nom_label": "AFNOR ENGAGÉES RSE",
-                            "bouton": "",
-                            "nb_entreprises": "55",
-                            "description": [
-                                "Délivré par l’AFNOR, le label Engagé RSE évalue la maturité des démarches RSE des organisations sur la base de l’ISO 26000. Ce label s’adresse à tous les types d’organisations (entreprises, associations ou territoires) quelle que soit la taille de l’entité ou son secteur d’activité."
-                            ]
-                        },
-                        "3": {
-                            "nom_label": "B-CORP",
-                            "bouton": "",
-                            "nb_entreprises": "16",
-                            "description": [
-                                "Lancé en 2006 aux États-Unis, le Label B-Corp certifie que les entreprises intègrent bien à leur business model des objectifs sociaux, sociétaux et environnementaux.",
-                                "L’évaluation mesure l’impact positif de l’entreprise sur sa gouvernance, ses relations employeurs-employés, sur l’environnement et sur les produits et services qu’elle fournit."
-                            ]
-                        },
-                        "4": {
-                            "nom_label": "CERTIFIÉES LUCIE 26000",
-                            "bouton": "",
-                            "nb_entreprises": "70",
-                            "description": [
-                                "Premier label RSE français, LUCIE accompagne depuis 2007 les entreprises, les associations et les collectivités qui souhaitent intégrer les enjeux sociaux et environnementaux à leurs activités et contribuer aux objectifs de développement durable.",
-                                "Cette certification s’aligne sur la norme internationale ISO 26000."
-                            ]
-                        }
+                        "nom_label": "Entreprises labellisées AFNOR RSEi",
+                        "bouton": "",
+                        "nb_entreprises": "6",
+                        "description": [
+                            "Délivré par l’AFNOR, le label RSEi s’adresse aux entreprises inclusives, qui agissent pour l’inclusion de personnes vulnérables (personnes vivant en situation de pauvreté-précarité) sur le marché de l’emploi, en mettant leur activité économique au service de cet objectif social."
+                        ]
+                    },
+                    {
+                        "nom_label": "Entreprises labellisées AFNOR ENGAGÉES RSE",
+                        "bouton": "",
+                        "nb_entreprises": "55",
+                        "description": [
+                            "Délivré par l’AFNOR, le label Engagé RSE évalue la maturité des démarches RSE des organisations sur la base de l’ISO 26000. Ce label s’adresse à tous les types d’organisations (entreprises, associations ou territoires) quelle que soit la taille de l’entité ou son secteur d’activité."
+                        ]
+                    },
+                    {
+                        "nom_label": "Entreprises B-CORP",
+                        "bouton": "",
+                        "nb_entreprises": "16",
+                        "description": [
+                            "Lancé en 2006 aux États-Unis, le Label B-Corp certifie que les entreprises intègrent bien à leur business model des objectifs sociaux, sociétaux et environnementaux.",
+                            "L’évaluation mesure l’impact positif de l’entreprise sur sa gouvernance, ses relations employeurs-employés, sur l’environnement et sur les produits et services qu’elle fournit."
+                        ]
+                    },
+                    {
+                        "nom_label": "Entreprises certifiées LUCIE 26000",
+                        "bouton": "",
+                        "nb_entreprises": "70",
+                        "description": [
+                            "Premier label RSE français, LUCIE accompagne depuis 2007 les entreprises, les associations et les collectivités qui souhaitent intégrer les enjeux sociaux et environnementaux à leurs activités et contribuer aux objectifs de développement durable.",
+                            "Cette certification s’aligne sur la norme internationale ISO 26000."
+                        ]
                     }
                 ]
             },
             {
                 "titre": "Le réseau French Tech",
-                "images": ["img/tech/French Tech copie.png"],
+                "images": [
+                    "img/tech/French Tech copie.png"
+                ],
                 "paragraphes": [
                     "La French Tech, c’est un écosystème national qui soutient les startups françaises et leur croissance. Dans l’Ouest, elle se décline en 3 Capitales (Nantes, Rennes Saint-Malo, Angers) et 7 Communautés, fédérant des centaines d’acteurs de l’innovation. Avec des programmes comme French Tech Next 120 et French Tech 2030, les entreprises locales accèdent à des opportunités de croissance et de financement stratégiques."
                 ]
