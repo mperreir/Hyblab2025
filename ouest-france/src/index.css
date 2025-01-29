@@ -7,6 +7,19 @@ html {
   font-size: 100%;
 }
 
+@-moz-document url-prefix() {
+  body {
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0; /* Largeur pour retirer la scrollbar verticale */
+  height: 0; /* Hauteur pour retirer la scrollbar horizontale */
+}
+
+
 @keyframes fadeIn {
   from {
     opacity: 0;

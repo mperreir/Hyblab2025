@@ -9,6 +9,8 @@ import QuizResults from "./QuizResults/QuizResults";
 
 const Quiz = ({ data, player, onSelectPlayer }) => {
 
+  const img_path = player === "player1" ? "./pavon_question_" : "./boutier_question_";
+
   const [userAnswers, setUserAnswers] = useState(
     new Array(data.length).fill(null)
   );
@@ -96,7 +98,7 @@ const Quiz = ({ data, player, onSelectPlayer }) => {
               <div className="w-1/2 h-full flex items-center justify-center">
                 <div className="w-full h-full p-6">
                   <img
-                    src="./pavon.jpg"
+                    src={img_path + questionIndex + ".png"}
                     className="w-full h-full object-cover"
                   ></img>
                 </div>
