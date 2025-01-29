@@ -11,40 +11,33 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
+    text-align: center;
 }
 
 
 /* Bloc central contenant le logo */
 .bloc-centre {
-    /* display: flex; */
     justify-content: center;
     align-items: center;
-    flex-grow: 1;
-    margin-top: 150px;
+    
 }
 
 
 .logo-appli {
-    width: 400px;
+    width: 300px;
     height: auto;
-    /* animation: float 3s infinite ease-in-out; */
+    animation: float 3s infinite ease-in-out; 
 }
 
 /* Animation pour le logo (optionnel) */
-/* @keyframes float {
+ @keyframes float {
     0%, 100% {
         transform: translateY(0);
     }
     50% {
         transform: translateY(-10px);
     }
-} */
-
-/* Pied de page */
-footer {
-    text-align: center;
-    padding: 20px;
-}
+} 
 
 .texte {
     font-size: 16px;
@@ -55,6 +48,7 @@ footer {
 }
 
 .arrow {
+    margin-top: 20px;
     width: 30px;
     height: auto;
 }
