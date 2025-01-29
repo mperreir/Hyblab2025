@@ -21,6 +21,7 @@ class Scene {
 
   // jouer l'audio d'ambiance 
   playAudioAmbiance(true);
+  toggleActionImage(false);
   }
 
   set_frame(time){
@@ -146,6 +147,14 @@ function updateKeyframes(value, time, f) {
   }
 }
 
+// fonction pour afficher ou non l'image Action
+function toggleActionImage(visible) {
+  const actionImage = document.getElementById('action');
+  if (actionImage) {
+    actionImage.style.display = visible ? 'block' : 'none';
+  }
+}
+
 function loadImageScene(file_name, id) {
   const imageScene = document.getElementById("image-scene");
   const container = document.getElementById("box-container");
@@ -171,6 +180,9 @@ function loadImageScene(file_name, id) {
             imageScene.style.transform = 'scale(1)';
             imageScene.style.opacity = '1';
             imageScene.style.zIndex = 999;
+
+            // Save current scene
+            imageScene.setAttribute('data-current-scene', id);
             
             data.scenes[i].box.forEach(div => {
               const clickableDiv = document.createElement('div');
@@ -223,3 +235,17 @@ function zoomOutScene() {
     imageScene.style = "";
   }, 500);
 }
+
+// Objet html action clicable pour lancer l'audio
+document.addEventListener('DOMContentLoaded', () => {
+  const actionImage = document.getElementById('action');
+  if (actionImage) {
+    actionImage.addEventListener('click', () => {
+      const currentScene = document.getElementById('image-scene').getAttribute('data-current-scene');
+      if (currentScene) {
+        stopAllAudio();
+        playAudioTrigger('data/audio_scene.json', currentScene);
+      }
+    });
+  }
+});

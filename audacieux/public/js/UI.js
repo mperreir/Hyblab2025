@@ -4,7 +4,7 @@
     // Désactiver toutes les interactions sauf sur "inventaire"
 
     const tutoinventaire = createPopupTuto("inventaire", {
-        title: "Bonjour!!!",
+        title: "Bonjour !",
         message: "Clique sur l'icone de quête en forme de coffre",
         buttonText: "Fermer",
         width: "300px",

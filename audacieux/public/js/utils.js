@@ -38,6 +38,7 @@ function colorizeImage(imageElement) {
 function leaveImage(event){
     console.log("MAGASIN !!");
     stopAllAudio();
+    toggleActionImage(false);
     playAudioAmbiance(true);
     zoomOutScene();
 }
@@ -45,6 +46,7 @@ function leaveImage(event){
 function loadSceneScript(event, id)
 {
     playAudioAmbiance(false);
+    toggleActionImage(true);
     loadImageScene("image_holder.json", id);
 }
 

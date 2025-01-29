@@ -54,6 +54,69 @@
             "volume": 0.4,
             "keyframes":[],
             "type":"loop"
+        },
+        {
+            "id": "abdonia",
+            "src": "assets/audio/abdonia.mp3",
+            "volume": 0.7,
+            "keyframes":[],
+            "type":"play_once"
+        },
+        {
+            "id": "marche",
+            "src": "assets/audio/marche.mp3",
+            "volume": 0.7,
+            "keyframes":[],
+            "type":"play_once"
+        },
+        {
+            "id": "Librairie",
+            "src": "assets/audio/Librairie.mp3",
+            "volume": 0.7,
+            "keyframes":[],
+            "type":"play_once"
+        },
+        {
+            "id": "livreNext",
+            "src": "assets/audio/livreNext.mp3",
+            "volume": 0.5,
+            "keyframes":[],
+            "type":"play_once"
+        },
+        {
+            "id": "livrePrev",
+            "src": "assets/audio/livrePrev.mp3",
+            "volume": 0.5,
+            "keyframes":[],
+            "type":"play_once"
+        },
+        {
+            "id": "livreFerme",
+            "src": "assets/audio/livreFerme.mp3",
+            "volume": 0.5,
+            "keyframes":[],
+            "type":"play_once"
+        },
+        {
+            "id": "coffreOuverture",
+            "src": "assets/audio/coffreOuverture.mp3",
+            "volume": 0.5,
+            "keyframes":[],
+            "type":"play_once"
+        },
+        {
+            "id": "coffreFermeture",
+            "src": "assets/audio/coffreFermeture.mp3",
+            "volume": 0.5,
+            "keyframes":[],
+            "type":"play_once"
+        },
+        {
+            "id": "bateauAmb",
+            "src": "assets/audio/bateauAmb.mp3",
+            "volume": 0.4,
+            "keyframes":[],
+            "type":"loop"
         }
     ]
 }

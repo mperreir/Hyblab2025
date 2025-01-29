@@ -9,7 +9,8 @@
     {
       "id": "PÉNICHE",
       "onload": {"func":"colorScript", "args":[]},
-      "script": {"func":"loadSceneScript", "args":["start_peniche"]}
+      "script": {"func":"loadSceneScript", "args":["start_peniche"]},
+      "audio": {"func":"playAudio", "args":["bateauAmb"]}
     },
     {
       "id":"LIBRAIRIE",

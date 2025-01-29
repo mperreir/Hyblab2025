@@ -37,6 +37,7 @@ class InteractiveBook {
     }
 
     openBook() {
+        playAudioTrigger("data/audio_scene.json", "livreNext");
         this.book.style.visibility = "visible";
         this.activation.classList.remove("notification-img");
 
@@ -67,16 +68,19 @@ class InteractiveBook {
         this.book.appendChild(navigation);
 
         this.book.querySelector('#prev').addEventListener('click', (e) => {
+            playAudioTrigger("data/audio_scene.json", "livrePrev");
             e.stopPropagation();
             this.navigatePage(-2);
         });
         this.book.querySelector('#next').addEventListener('click', (e) => {
+            playAudioTrigger("data/audio_scene.json", "livreNext");
             e.stopPropagation();
             this.navigatePage(2);
         });
     }
 
     closeBook() {
+        playAudioTrigger("data/audio_scene.json", "livreFerme");
         // Remove book container and navigation
         const bookContainer = this.book.querySelector('.book-container');
         const navigation = this.book.querySelector('.navigation');

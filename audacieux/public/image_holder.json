@@ -3,6 +3,7 @@
         {
             "id": "marche",
             "url": "assets/graphic/trebe.png",
+            "audio": "marche",
             "box":[
                 { "left": "56%", "top": "17%", "width": "20%", "height": "80%", "script":{"func":"leaveImage", "args":[]}, "onload": {"func":"setMaxTime", "args":[75] }}
             ]
@@ -18,6 +19,7 @@
         {
             "id": "abdonia",
             "url": "assets/graphic/Abdonia.png",
+            "audio": "abdonia",
             "box":[
                 { "left": "3%", "top": "24%", "width": "40%", "height": "70%", "script": {"func":"leaveImage", "args":[]}, "onload": {"func":"setMaxTime", "args":[42]} }
             ]
@@ -26,6 +28,7 @@
         {
             "id": "Librairie",
             "url": "assets/graphic/Librairie.png",
+            "audio": "Librairie",
             "box":[
                 { "left": "10%", "top": "10%", "width": "16%", "height": "90%", "script": {"func":"leaveImage", "args":[]}, "onload": {"func":"setMaxTime", "args":[100]} },
                 { "left": "30%", "top": "16%", "width": "16%", "height": "90%", "script": {"func":"leaveImage", "args":[]}}

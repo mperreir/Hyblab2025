@@ -199,9 +199,11 @@ function createPopup(idTarget, options) {
         if (state === 0) {
             popupOverlay.style.display = "flex"; // Affiche le popup
             state = 1; // Passe l'état à actif
+            playAudioTrigger('data/audio_scene.json', 'coffreOuverture'); // Jouer le son à l'ouverture
         } else {
             popupOverlay.style.display = "none"; // Cache le popup
             state = 0; // Réinitialise l'état
+            playAudioTrigger('data/audio_scene.json', 'coffreFermeture'); // Jouer le son à l'ouverture
         }
     });
 
