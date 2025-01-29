@@ -83,7 +83,7 @@
 
                 const linkElement = document.createElement('div');
                 linkElement.classList.add('col-8', 'col-name-to-sort');
-                linkElement.innerHTML = `<a href="${link.link}" target="_blank" style="color: #3370E7; text-decoration: underline; font-weight: bold;">${link.name}</a>`;
+                linkElement.innerHTML = `<a href="${link.link}" target="_blank" style="color: #FFFFFF; text-decoration: underline; font-weight: bold;">${link.name}</a>`;
     
                 const dateElement = document.createElement('div');
                 dateElement.classList.add('col-4', 'col-date-to-sort');
@@ -236,34 +236,32 @@
             <!-- Right Container (2/3 of the page) -->
             <div class="col-8 right-container overflow-auto" style="height: fit-content;">
               <!-- Résumé -->
-              <div class="row mb-3" style="padding-right: 3vh;">
-                  <div class="col-12" style="background-color: #3370E7; height: fit-content; border: 1vh solid white; border-radius: 4vh;">
-                      <h3 id="titreResume" style="font-size: 4vw; color: white; text-align: right; font-style: italic;">Résumé</h3>
-                      <p id="resumeGeneral" style="color: white;"></p>
-                  </div>
-              </div>
+                <div class="row mb-3" style="padding-right: 3vh;">
+                    <div class="col-12" style="background-color: #3370E7; height: fit-content; border: 1vh solid white; border-radius: 4vh;">
+                        <h3 id="titreResume" style="font-size: 4vw; color: white; text-align: right; font-style: italic;">Résumé</h3>
+                        <p id="resumeGeneral" style="color: white;"></p>
+                    </div>
+                </div>
           
               <!-- KPIs -->
-              <div class="container">
-                  <div class="row g-3 justify-content-between" style="padding-right: 2vh;">
-                      <div class="col-md-7" style="background-color: #FF0023; height: auto; border-radius: 4vh;">
-                          <h3 id="kpi1" style="font-size: 4vw; color: white; text-align: right;">KPI 1</h3>
-                          <p id="textkpi1" style="color: white;">Chargement...</p>
-                      </div>
-                      <div class="col-md-5" style="background-color: #565656; height: auto; border-radius: 4vh 4vh 4vh 4vh; border-left: 1vh solid white;">
-                          <h3 id="kpi2" style="font-size: 4vw; color: white; text-align: right;">KPI 2</h3>
-                          <p id="textkpi2" style="color: white;">Chargement...</p>
-                      </div>
-                  </div>
-              </div>
+                <div class="row justify-content-between " style="padding-left: 1vh; margin-right:0; padding-right: 1.5vh;">
+                    <div class="col-7" style="width: 100%; background-color: #FF0023; height: auto; border-radius: 4vh 4vh 4vh 4vh; border-right: 2vh solid white; ;">
+                        <h3 id="kpi1" style="font-size: 4vw; color: white; text-align: right;">KPI 1</h3>
+                        <p id="textkpi1" style="color: white;">Chargement...</p>
+                    </div>
+                    <div class="col-5" style="width: 100%; background-color: #565656; height: auto; border-radius: 4vh 4vh 4vh 4vh; border-left: 2vh solid white; border-left: 1vh solid white">
+                        <h3 id="kpi2" style="font-size: 4vw; color: white; text-align: right;">KPI 2</h3>
+                        <p id="textkpi2" style="color: white;">Chargement...</p>
+                    </div>
+                </div>
           
               <!-- Pour en savoir plus -->
-              <div class="row mt-3" style="padding-right: 3vh;">
-                  <div class="col-12" style="background-color: #3370E7; height: fit-content; border: 1vh solid white; border-radius: 4vh;">
-                      <h3 id="titreArticle" style="font-size: 4vw; color: white; font-style: italic;">Pour en savoir plus</h3>
-                      <p id="texteArticle" style="color: white;"></p>
-                  </div>
-              </div>
+                <div class="row mt-3" style="padding-right: 3vh;">
+                    <div class="col-12" style="background-color: #3370E7; height: fit-content; border: 1vh solid white; border-radius: 4vh;">
+                        <h3 id="titreArticle" style="font-size: 4vw; color: white; font-style: italic;">Pour en savoir plus</h3>
+                        <p id="texteArticle" style="color: white;"></p>
+                    </div>
+                </div>
 
 
               <!-- Liens -->
