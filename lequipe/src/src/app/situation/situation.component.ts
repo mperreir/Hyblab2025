@@ -51,7 +51,7 @@ export class SituationComponent implements OnChanges, AfterViewInit {
         tl.add({
             targets: textsToAnimate,
             opacity: [0,1],
-            duration: 250,
+            duration: 800,
             easing: "easeOutExpo",
             delay: anime.stagger(5),
             complete: (anim) => {
@@ -62,5 +62,9 @@ export class SituationComponent implements OnChanges, AfterViewInit {
         });
 
         document.querySelectorAll("#animatedText p").forEach((el) => (el as HTMLElement).setAttribute("data-text-visible","true"));
+    }
+
+    refresh(): void {
+        window.location.reload();
     }
 }

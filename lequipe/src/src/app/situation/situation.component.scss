@@ -127,13 +127,37 @@ p {
 
 .une {
     width: 93%;
-    margin: 30px 5% 200px 2%;
-    border: 1px solid #D61E00;
-    overflow: hidden;
-    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px 5% 60px 2%;
 
     img {
         width: 100%;
+        width: 100%;
         padding: 3%;
+        border: 1px solid #D61E00;
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    .retry_btn {
+        font-size: 20%;
+
+        display: flex;
+        align-self: center;
+        background-color: #D61E00;
+        margin-top: 4%;
+        padding: 2% 5%;
+        //font
+        font-size: 20%;
+        font-weight: 250;
+        color: white;
+        text-align: center;
+        justify-content: center;
+        //border
+        border-radius: 8px;
+
+        cursor: pointer;
     }
 }

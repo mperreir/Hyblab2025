@@ -31,6 +31,7 @@
     @if (situation.ending) {
         <div class="une">
             <img [src]="situation.ending.image" alt="la une alternative">
+            <div class="retry_btn" (click)="refresh()">Retentez l'aventure</div>
         </div>
     }
 </div>
