@@ -1,7 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import anime from "animejs";
 import "./DialogueBox.css";
-import loutre from '../assets/loutre.svg';
+import loutre1 from "../assets/LoutrePOI1.svg"
+import loutre2 from "../assets/LoutrePOI2.svg"
+import loutre3 from "../assets/LoutrePOI3.svg"
+import loutre4 from "../assets/LoutrePOI4.svg"
+import loutre5 from "../assets/LoutrePOI5.svg"
+import loutre6 from "../assets/LoutrePOI6.svg"
 import SpeechBubble from "./SpeechBubble";
 
 const CardTitle = ({ number, title }) => {
@@ -17,19 +22,21 @@ const CardTitle = ({ number, title }) => {
     )
 }
 
-const AnimalIllustration = () => {
+const AnimalIllustration = (imageName) => {
+    //pour tester en local, changer "https://hyblab.polytech.univ-nantes.fr/lanouvellerepublique/assets/" par "/src/assets/"
     return (
         <div className="illustration">
-            <img src={loutre} alt="Loutre"/>
+            <img src={`https://hyblab.polytech.univ-nantes.fr/lanouvellerepublique/assets/${imageName.imageName}`} alt="POI" /> 
         </div>
     )
 }
 
-const DialogueBox = ({ text, setSelectedText }) => {
+const DialogueBox = ({ text, setSelectedText, POI, setSelectedPOI, chosenAnimal}) => {
     const dialogueRef = useRef(null);
     const speechHolderRef = useRef(null);
     const [pages, setPages] = useState([]);
     const [scrollPercentage, setScrollPercentage] = useState(0);
+    const imageName = POI[1];
 
     const handleScroll = () => {
         const holder = speechHolderRef.current;
@@ -96,7 +103,7 @@ const DialogueBox = ({ text, setSelectedText }) => {
             opacity: [1, 0], // Fade out
             duration: 400,
             easing: "easeInQuad",
-            complete: () => setSelectedText(""), // Remove text AFTER animation completes
+            complete: () => {setSelectedText(""); setSelectedPOI([0,""])}, // Remove text AFTER animation completes
             });
         }
     };
@@ -107,14 +114,14 @@ const DialogueBox = ({ text, setSelectedText }) => {
             className="dialogue-box"
             onClick={() => {handleClose()}}
         >
-            <CardTitle number={1} title={"La carte d'identité"}/>
+            <CardTitle number={POI[0]} title={"La carte d'identité"}/>
             <div className="speech_holder" ref={speechHolderRef}>
                 {pages.map((page, index) => {
-                    return (<SpeechBubble key={index} text={page}/>);
+                    return (<SpeechBubble key={index} text={page} side="bot" position="40%"/>);
                 })}
                 <div className="shadow" style={shadowStyle}></div>
             </div>
-            <AnimalIllustration/>
+            <AnimalIllustration imageName={imageName} />
         </div>
     );
 };

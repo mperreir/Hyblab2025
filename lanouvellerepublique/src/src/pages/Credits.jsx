@@ -1,6 +1,19 @@
 import "./Credits.css"; // Import the CSS file
 import Header from "../components/Header";
 
+import image1 from "../assets/parts/logo_polytech.png";
+import image2 from "../assets/parts/logo_agr.png";
+import image3 from "../assets/parts/logo_sciencespo.svg";
+import image4 from "../assets/parts/logo_nantesmetropole.png";
+import image5 from "../assets/parts/logo_nantesuniversite.png";
+import image6 from "../assets/parts/logo_oml.png";
+import image7 from "../assets/parts/hyblab_2025.png";
+import image8 from "../assets/parts/logo_opensource.png";
+import image9 from "../assets/parts/logo_cc.png";
+
+
+const images = [image1, image2, image3, image4, image5, image6, image7, image8, image9]
+
 function Credits() {
     
     function goBigBack() {
@@ -12,35 +25,53 @@ function Credits() {
         <Header titre={"Dans leur peau"} textColor={"black"} isHome={true} />
         <div className="credits-menu">
             <div className="texts">
+                <div className="presentation-and-ai">
+                    <h2>Notre projet & IA</h2>
+                    <p className="ai-text">
+                    Cette édition 2025 du Hyblab a été pensée autour de l’intelligence artificielle. Le but : essayer de mobiliser les outils qui existent aujourd’hui à bon escient, pour faciliter notre travail, à la fois dans le design, le code, et l’écriture journalistique. En collaboration avec La Nouvelle République, nous avons pensé un projet qui s’inscrit dans la continuité d’un dossier paru le 14 janvier 2025, sur les espèces menacées en Indre, Indre-et-Loire, Loir-et-Cher, Vienne et Deux-Sèvres. Dans chaque département, nous vous proposons de suivre le quotidien d’un animal totem, classé “espèce menacée” sur la liste rouge de l’UICN, l’Union Internationale de Conservation de la Nature. En vous promenant sur une carte interactive, vous découvrirez les milieux de ces espèces, les menaces auxquelles ils sont confrontés, avant d’atteindre leur havre de paix.Cette édition 2025 du Hyblab a été pensée autour de l’intelligence artificielle. Le but : essayer de mobiliser les outils qui existent aujourd’hui à bon escient, pour faciliter notre travail, à la fois dans le design, le code, et l’écriture journalistique. En collaboration avec La Nouvelle République, nous avons pensé un projet qui s’inscrit dans la continuité d’un dossier paru le 14 janvier 2025, sur les espèces menacées en Indre, Indre-et-Loire, Loir-et-Cher, Vienne et Deux-Sèvres. Dans chaque département, nous vous proposons de suivre le quotidien d’un animal totem, classé “espèce menacée” sur la liste rouge de l’UICN, l’Union Internationale de Conservation de la Nature. En vous promenant sur une carte interactive, vous découvrirez les milieux de ces espèces, les menaces auxquelles ils sont confrontés, avant d’atteindre leur havre de paix.
+                    </p>
+                </div>
                 <div className="authors">
                     <h2>Les auteurs</h2>
                     <div className="row">
                         <div className="porteurs">
                             <h3>Porteurs du projet</h3>
-                            <p>Delphine Noyon, Laurent Gaudens</p>
+                            <ul className="rows">
+                                <li>Delphine Noyon</li>
+                                <li>Laurent Gaudens</li>
+                            </ul>
                         </div>
                         <div className="journalists">
                             <h3>Journalistes</h3>
-                            <p>Juliette Rigaud, Zoé Diraison</p>
+                            <ul className="rows">
+                                <li>Juliette Rigaud</li>
+                                <li>Zoé Diraison</li>
+                            </ul>
                         </div>
                         <div className="graphist">
                             <h3>Graphiste</h3>
-                            <p>Antoine Clavier</p>
+                            <ul className="rows">
+                                <li>Antoine Clavier</li>
+                            </ul>
                         </div>
                     </div>
                     <div className="devs">
-                        <h3>Développeurs</h3>
-                        <p>Baptiste Josso, Christian Soh, Evan Josso, Julien Chatry, Ulysse Lopez</p>
+                        <h3 className="h3d">Développeurs</h3>
+                        <ul className="devs-grid">
+                            <li>Baptiste Josso</li>
+                            <li>Christian Soh</li>
+                            <li>Evan Josso</li>
+                            <li>Julien Chatry</li>
+                            <li>Ulysse Lopez</li>
+                        </ul>
                     </div>
                 </div>
                 <div className="sponsors">
-                    <h2>Les partenaires</h2>
-                </div>
-                <div className="ai">
-                    <h2>Utilisation de l'IA</h2>
-                    <p className="ai-text">
-                        Ce site a été conçu et pensé à l'aide de l'intelligence artificielle, dans le cadre d'un projet étudiant. Les textes ont été écrits à la main, les données sources ont été résumées par IA, les images ont été générées par IA puis retouchées, et le codage du site assisté par IA.
-                    </p>
+                    <div className="allimages">
+                    {images.map((image, index) => (
+                        <img className="image" key={index} src={image} alt={`Image ${index + 1}`} />
+                    ))}
+                    </div>
                 </div>
             </div>
             <div className='big-back-button' onClick={goBigBack}>
