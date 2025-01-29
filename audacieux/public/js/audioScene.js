@@ -65,20 +65,23 @@ class audioScene {
     }
 }
 
+const audioElements = {}; // Définir globalement pour pouvoir arrêter tous les éléments audio
+
 // Fonction pour jouer un audio à partir d'un événement
-function playAudioTrigger(file_name, id, loop = false) {
+function playAudioTrigger(file_name, id) {
     fetch(file_name)
         .then(response => response.json())
         .then(data => {
             const audioData = data.audios.find(audio => audio.id === id);
             if (audioData) {
-                const audioElement = new Audio(audioData.src);
-                audioElement.volume = audioData.volume;
-                audioElement.loop = audioData.loop;
-                ambianceAudio = audioElement;
+                if (!audioElements[id]) {
+                    audioElements[id] = new Audio(audioData.src);
+                    audioElements[id].volume = audioData.volume;
+                }
+                const audioElement = audioElements[id];
                 console.log(`Playing audio: ${id}`); // Log audio ID
 
-                // Utiliser une structure switch pour gérer différents loops de lecture audio
+                // Utiliser une structure switch pour gérer différents types de lecture audio
                 switch (audioData.type) {
                     case "play_once":
                         audioElement.play();
@@ -125,6 +128,16 @@ function playAudioAmbiance(shouldPlay) {
         if (ambianceAudio) {
             ambianceAudio.pause();
             console.log("Stopping ambiance audio.");
+        }
+    }
+}
+
+function stopAllAudio() {
+    for (const id in audioElements) {
+        if (audioElements[id]) {
+            audioElements[id].pause();
+            audioElements[id].currentTime = 0; // Reset to start
+            console.log(`Stopping audio: ${id}`);
         }
     }
 }

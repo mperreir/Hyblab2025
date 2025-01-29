@@ -42,11 +42,18 @@
             ]
         },
         {
-            "id": "BateauEntree",
-            "src": "assets/audio/bell.mp3",
-            "volume": 0.4,
+            "id": "porteOLib",
+            "src": "assets/audio/ouverturePorte.mp3",
+            "volume": 0.3,
             "keyframes":[],
             "type":"play_once"
+        },
+        {
+            "id": "marcheAmb",
+            "src": "assets/audio/marcheAmbiance.mp3",
+            "volume": 0.4,
+            "keyframes":[],
+            "type":"loop"
         }
     ]
 }

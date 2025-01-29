@@ -3,7 +3,8 @@
     {
       "id": "MARCHÉ-2",
       "onload": {"func":"colorScript", "args":[]},
-      "script": {"func":"loadSceneScript", "args":["marche"]}
+      "script": {"func":"loadSceneScript", "args":["marche"]},
+      "audio": {"func":"playAudio", "args":["marcheAmb"]}
     },
     {
       "id": "PÉNICHE",
@@ -14,7 +15,7 @@
       "id":"LIBRAIRIE",
       "onload": {"func":"colorScript", "args":[]},
       "script": {"func":"loadSceneScript", "args":["Librairie"]},
-      "audio": {"func":"playAudio", "args":["BateauEntree"]}
+      "audio": {"func":"playAudio", "args":["porteOLib"]}
     }
   ],
 
