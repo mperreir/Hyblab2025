@@ -9,7 +9,7 @@ const FinalPage = () => {
     const gameLink = "https://hyblab.polytech.univ-nantes.fr/lavoixdunord"; // Lien de votre jeu
 
     const maillot_images = [
-        `${basename}images/illustrations/maillot_blanc.png`,
+        `${basename}images/illustrations/maillot_blanc2.png`,
         `${basename}images/illustrations/maillot_vert.png`,
         `${basename}images/illustrations/mallot_jaune.png`,
     ]
