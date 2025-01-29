@@ -219,7 +219,7 @@ async function histoire(texts, signal){
         }
 
         await displayMessages(texts.contexte[i].avant.slice(0,-1), signal);
-        await displayExplanation(texts.informations[i], choices, texts.contexte[i].avant[texts.contexte[i].avant.length-1]);
+        await displayExplanation(texts.informations[i], choices, {"text": texts.contexte[i].avant[texts.contexte[i].avant.length-1], "image": texts.contexte[i].images[0]});
         
 
         await displayMessages(texts.questions[i], signal);
