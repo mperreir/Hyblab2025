@@ -27,7 +27,7 @@ const SpeechBubble = ({ text }) => {
 const AnimalIllustration = (imageName) => {
     return (
         <div className="illustration">
-            <img src={`/src/assets/${imageName.imageName}`} alt="POI" />
+            <img src={`https://hyblab.polytech.univ-nantes.fr/lanouvellerepublique/assets/${imageName.imageName}`} alt="POI" />
         </div>
     )
 }
