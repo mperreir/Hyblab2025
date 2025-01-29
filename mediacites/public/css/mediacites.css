@@ -64,18 +64,10 @@
   }
   
   .card-container {
-    display: flex;
-    align-items: flex-end; /* Aligne le logo au bas du conteneur */
-    justify-content: flex-start; /* Positionne la carte et le logo à gauche */
-    gap: 20px; /* Ajoute un espacement entre la carte et le logo */
-    margin-bottom: 20px; /* Espacement entre card-container et la description */
+    margin-bottom: 1vh; /* Espacement entre card-container et la description */
     height: 100%; /* Assure que le conteneur utilise tout l'espace disponible */
   }
   
-  .logo img {
-    max-width: 100px;
-    height: auto;
-  }
   
   .description {
     background-color: #FF0023;
@@ -85,8 +77,8 @@
     width: 80%;
     border-radius: 10px;
     text-align: center;
-    margin-top: 20px;
   }
+
   .custom-button {
     margin-top: 20px;
     font-size: 1.5rem;
@@ -96,7 +88,6 @@
     border-radius: 50px;
     padding: 10px 20px;
     cursor: pointer;
-    font-family: Arial, sans-serif;
     text-align: center;
     outline: none;
     transition: all 0.3s ease;
