@@ -29,7 +29,7 @@ function CarouselBox({ mapRef, boxRef, point, setSelectedText, setSelectedPOI })
                 <h3 className='box-title'>{point.id.toString().padStart(2,"0") + ". " + point.title}</h3>
                 <p className='box-description'>{point.description}</p>
                 <div className='box-button'>
-                    <span className='box-button-text' onClick={showDialogue}>Lire</span>
+                    <span className='box-button-text' onClick={showDialogue}>Explorer</span>
                 </div>
             </div>
         </div>
