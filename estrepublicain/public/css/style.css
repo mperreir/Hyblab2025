@@ -179,6 +179,18 @@ p {
     height: 70px;
 }
 
+#moreText {
+    display: none;
+}
+
+#readMore, #readLess {
+    border: none;
+    padding: 0;
+    text-decoration: underline;
+    color: #CB010A;
+    background: none;
+}
+
 /* --- Décorations/Transitions haut et bas --- */
 .dech-transition-haut {
     width: 100vw;

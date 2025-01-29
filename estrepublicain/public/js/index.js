@@ -9,6 +9,16 @@ const swiper = new Swiper("#mySwiper", {
     },
 });
 
+document.getElementById("readMore").addEventListener("click", function () {
+    document.getElementById("moreText").style.display = "block"
+    document.getElementById("threeDots").style.display = "none"
+})
+
+document.getElementById("readLess").addEventListener("click", function () {
+    document.getElementById("moreText").style.display = "none"
+    document.getElementById("threeDots").style.display = "block"
+})
+
 let activeModal = -1;
 
 let podcastsDataset = [];
@@ -124,7 +134,7 @@ function createPodcastCard(podcast, id, commonTags = null) {
     card.appendChild(thumbnail)
 
     let cardTitle = document.createElement("h6")
-    cardTitle.textContent = podcast.ShortTitle
+    cardTitle.innerHTML = podcast.ShortTitle.replace(/\n/g,"<br>")
 
     if (commonTags) {
         let tagsDiv = document.createElement("div")
