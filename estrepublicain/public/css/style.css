@@ -191,6 +191,10 @@ p {
     background: none;
 }
 
+#footer p {
+    text-align: left;
+}
+
 /* --- Décorations/Transitions haut et bas --- */
 .dech-transition-haut {
     width: 100vw;
