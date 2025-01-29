@@ -11,6 +11,7 @@ import {
 } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import IconButton from '@mui/material/IconButton';
+import StepHeader from "../components/StepHeaderComponent";
 
 // Le composant Layout de base
 const IntroductionLayout = ({ children }) => {
@@ -46,6 +47,11 @@ const IntroductionLayout = ({ children }) => {
           </IconButton>
         </Toolbar>
       </AppBar>
+
+      <Box sx={{ display: 'flex', alignItems: 'center', width: '150%'}}>
+            <StepHeader currentStep={2} />
+      </Box>
+
       <Container
         component="main"
         sx={{
