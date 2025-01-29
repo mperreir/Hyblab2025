@@ -294,9 +294,26 @@ header .logo-container img {
 .content-text {
     font-size: 0.8rem;
     line-height: 1.4;
-    color: #333;
+    color: black;
     text-align: justify;
     margin-bottom: 20px;
+}
+
+.question-title {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 10px;
+  text-align: justify;
+  opacity: 1
+}
+
+.question-text {
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: black;
+  text-align: justify;
+  margin-bottom: 20px;
 }
 
 .create-container {
@@ -567,6 +584,12 @@ footer {
     opacity: 0;
     transition: opacity 0.8s ease-in-out;
   }
+
+  .question-title, .question-info {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+}
   
   .narrative-text tspan {
     opacity: 0;
