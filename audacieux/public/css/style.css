@@ -302,3 +302,13 @@ main{
 .sidebar {
   pointer-events: all;
 }
+
+p.popup-title{
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-size: 10pt;
+}
+
+p.popup-message{
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-size: 8pt;
+}
