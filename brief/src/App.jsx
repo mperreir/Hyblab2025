@@ -23,6 +23,7 @@ import { AnimatePresence } from "framer-motion";
 
 const theme = createTheme({
   typography: {
+    fontFamily: "Arial, sans-serif", // Set Arial as the default font family
     h1: { textTransform: "none" },
     h2: { textTransform: "none" },
     h3: { textTransform: "none" },

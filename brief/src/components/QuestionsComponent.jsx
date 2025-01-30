@@ -13,7 +13,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import DonutJaugeGroup from "./GraphicsComponent";
 import { useAppContext } from "../context/AppContextProvider";
 
-const QuestionsComponent = () => {
+const QuestionsComponent = ({ scenarioId }) => {
   const { globalState, setGlobalState } = useAppContext(); // Accès au contexte
   const [currentPhase, setCurrentPhase] = useState(null);
   const [phaseText, setPhaseText] = useState("");
@@ -24,8 +24,11 @@ const QuestionsComponent = () => {
   const [isLoading, setIsLoading] = useState(true); // Indique si les données sont en cours de chargement
 
   useEffect(() => {
+    if (!scenarioId) return; // Évite d'exécuter les requêtes si scenarioId est vide
+    const scenarioFolder = `scenario${String.fromCharCode(64 + scenarioId)}`; // Dynamise le dossier scénario (A, B, etc.)
+
     // Charger la phase actuelle
-    fetch("/brief/public/data/scenarioA/phases.json")
+    fetch(`/brief/public/data/${scenarioFolder}/phases.json`)
       .then((response) => response.json())
       .then((data) => {
         setCurrentPhase(data.phases[0]); // Phase 1 au début
@@ -34,13 +37,14 @@ const QuestionsComponent = () => {
       .catch((error) =>
         console.error("Erreur lors du chargement des phases :", error)
       );
-  }, []);
+  }, [scenarioId]);
 
   useEffect(() => {
-    if (currentPhase) {
+    if (currentPhase && scenarioId) {
+      const scenarioFolder = `scenario${String.fromCharCode(64 + scenarioId)}`;
       // Charger les questions de la phase actuelle
       fetch(
-        `/brief/public/data/scenarioA/p${currentPhase.phase_id}_questions.json`
+        `/brief/public/data/${scenarioFolder}/p${currentPhase.phase_id}_questions.json`
       )
         .then((response) => response.json())
         .then((data) => {
@@ -52,7 +56,7 @@ const QuestionsComponent = () => {
         )
         .finally(() => setIsLoading(false));
     }
-  }, [currentPhase]);
+  }, [currentPhase, , scenarioId]);
 
   const handleAnswer = (response) => {
     // Mettre à jour les scores dans le contexte
@@ -98,7 +102,7 @@ const QuestionsComponent = () => {
         if (nextPhase <= 3) {
           // Ajuster ce nombre en fonction du nombre total de phases
           // Charger la phase suivante
-          fetch("/brief/public/data/scenarioA/phases.json")
+          fetch(`/brief/public/data/${scenarioFolder}/phases.json`)
             .then((response) => response.json())
             .then((data) => {
               const newPhase = data.phases.find(
@@ -108,7 +112,9 @@ const QuestionsComponent = () => {
               setPhaseText(newPhase.phase_text);
 
               // Charger les questions de la phase suivante
-              fetch(`/brief/public/data/scenarioA/p${nextPhase}_questions.json`)
+              fetch(
+                `/brief/public/data/${scenarioFolder}/p${nextPhase}_questions.json`
+              )
                 .then((response) => response.json())
                 .then((data) => {
                   setQuestions(data.questions);
@@ -174,9 +180,8 @@ const QuestionsComponent = () => {
             opacity: { duration: 0.2 },
           }}
           style={{
-            position: "absolute",
             width: "100%",
-            maxWidth: 500,
+            maxWidth: "400px",
             margin: "auto",
             height: "100%", // Respecte le cadre fixe défini par IntroductionLayout
             display: "flex",
@@ -185,12 +190,6 @@ const QuestionsComponent = () => {
             alignItems: "center",
           }}
         >
-          <Typography
-            variant="h5"
-            sx={{ textAlign: "center", fontWeight: "bold" }}
-          >
-            Graphique interactif
-          </Typography>
           <DonutJaugeGroup />
           <Box
             width="100%"
@@ -200,11 +199,14 @@ const QuestionsComponent = () => {
             display="flex"
             backgroundColor="#F5E8EE"
             flexDirection="column"
-            sx={{ borderRadius: "16px" }}
+            sx={{ borderRadius: "16px", marginBottom: 2 }}
             gap={1}
           >
             {/* Afficher la question */}
-            <Typography variant="h7" align="center" gutterBottom>
+            <Typography
+              sx={{ textAlign: "center", fontWeight: "bold" }}
+              gutterBottom
+            >
               {currentQuestion.question_text}
             </Typography>
 
@@ -216,6 +218,7 @@ const QuestionsComponent = () => {
                 color="primary"
                 onClick={() => handleAnswer(response)}
                 sx={{
+                  padding: "12px 16px",
                   borderRadius: "26px",
                   backgroundColor: "#fff",
                   textAlign: "left",
