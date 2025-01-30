@@ -42,12 +42,6 @@ const player = new Player(2000, [Billet, Legume, Livre]);
 
     console.log("Clique sur le bouton pour continuer...");
 
-    const player = new Player(2000, [
-        new Item("Billet pour l'hybarge", 500),
-        new Item("Légumes", 300),
-        new Item("Livre", 200)
-    ]);
-
     const inventaire = createPopup("inventaire",{
         title: "Liste de course",
         message: player.generateShoppingListHTML(),
@@ -192,7 +186,7 @@ const player = new Player(2000, [Billet, Legume, Livre]);
 
     const tutoScroll = createPopupTuto2("PÉNICHE",{
         title: "Se balader sur le canal",
-        message: "Pour se balader sur le canal rien de plus simple! Utilise ta souris ou ton pavétactile en balayant vers le bas pour faire bouger le bateau ! Tu recontreras plusieurs points d'étapes tout au long de ton voyage. Ces derniers apparaitront en noir et blanc avec une bulle de texte. Clique dessus pour découvrir le point d'étape et découvir la vie du canal du midi. Commence à voyager !   ",
+        message: "Pour se balader sur le canal rien de plus simple! Utilise ta souris ou ton pavétactile en balayant vers le bas pour faire bouger le bateau ! Tu recontreras plusieurs points d'étapes tout au long de ton voyage. Ces derniers apparaitront en noir et blanc avec une bulle de texte. Clique dessus pour découvrir le point d'étape et découvir la vie du canal du midi. Commence ton voyage dans le premier point clé, l'Hybarge !   ",
         width: "550px",
         height: "auto",
         backgroundImage: "img/bulle.png",
