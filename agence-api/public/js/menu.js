@@ -12,7 +12,7 @@ function initMenu(){
     menuBtns.forEach((menuBtn, index) => {
         menuBtn.addEventListener("click", () => {
             menuPopups[index].classList.remove("hidden");
-            hideTapIcon();
+            toggleTapIconDisplay(true);
         });
     });
   
@@ -22,7 +22,7 @@ function initMenu(){
         closeMenuBtn.addEventListener("click", () => {
             menuPopups[index].classList.add("hidden");
             menuBtns[index].checked = false;
-            showTapIcon();
+            toggleTapIconDisplay(false);
         });
     });
 
