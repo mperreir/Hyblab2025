@@ -77,7 +77,7 @@
 }
 
 /*** Shadow filter ***/
-.choice:after{
+.choice:after, .endquiz-left:after{
     position: absolute;
     content: "";
     opacity: 1;
@@ -90,10 +90,9 @@
     border-radius: 0 0 4px 4px;
     transition: all ease 0.3s;
 }
-.choice:hover:after {
+.choice:hover:after{
     opacity: 0;
 }
-
 /*** divider ***/
 .choice h1.divider{
     position: relative;

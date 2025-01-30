@@ -5,3 +5,9 @@
 .choice.right.pavon:hover img{
     right: 0vw;
 }
+.endquiz-left:after{
+    opacity: 0;
+}
+.choice:hover ~ .endquiz-left:after{
+    opacity: 1;
+}
