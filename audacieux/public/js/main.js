@@ -34,10 +34,20 @@ document.querySelectorAll("svg").forEach(svg => {
 });
 let isAnimating = false;
 
-document.addEventListener(
-  "wheel",
+function dysplayCredits() {
+  const credits = document.getElementById('credits');
+  if (sceneManager.time == 100) {
+    credits.style.display = 'block';
+  }
+  else {
+    credits.style.display = 'none';
+  }
+};
+
+document.addEventListener("wheel",
   function (event) {
-    event.preventDefault();
+    dysplayCredits();
+    event.preventDefault(); 
     const timeDelta = event.deltaY / 100;
     
     console.log(sceneManager.time)
