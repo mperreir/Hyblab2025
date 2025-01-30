@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { PieChart } from "@mui/x-charts/PieChart";
+import { useTheme } from "@mui/material/styles";
 import SwipeableViews from "react-swipeable-views";
 import { Box, Typography, Container, styled, Button } from "@mui/material";
 import { Doughnut } from "react-chartjs-2";
@@ -31,7 +32,22 @@ const IndicatorDot = styled(Box)(({ theme, active }) => ({
   border: `2px solid ${theme.palette.primary.main}`,
 }));
 
+const StyledButton = styled(Button)(({ theme }) => ({
+  marginTop: "16px",
+  borderRadius: "20px",
+  border: `2px solid ${theme.palette.primary.main}`,
+  backgroundColor: "white",
+  color: theme.palette.primary.main,
+  padding: "8px 20px",
+  fontWeight: "bold",
+  "&:hover": {
+    backgroundColor: theme.palette.primary.light,
+  },
+}));
+
 const InformationMixComponent = () => {
+  const theme = useTheme();
+
   const navigate = useNavigate();
   const [activeIndex, setActiveIndex] = useState(0);
   const [showNewContent, setShowNewContent] = useState(false);
@@ -96,10 +112,10 @@ const InformationMixComponent = () => {
                   position: "relative",
                 }}
               >
-                <Typography variant="h5" sx={{ color: colors[index], fontWeight: "bold" }}>
-                  {item.name}
+                <Typography variant="h5" sx={{ color: "#991756", fontWeight: "bold" }}>
+                  {item.name} - {item.percentage}%
                 </Typography>
-                <Typography variant="body1">{item.description}</Typography>
+                <Typography variant="body1" sx={{ marginBottom: 2 }}>{item.text}</Typography>
 
                 {item.carbon_emissions && (
                   <Typography variant="body2" sx={{ marginTop: 1 }}>
@@ -124,9 +140,8 @@ const InformationMixComponent = () => {
 
                 {index === sources.length - 1 && (
                   <Box sx={{ marginTop: 2 }}>
-                    <Button variant="contained" color="secondary" onClick={handleUnderstandClick}>
-                      J'ai compris
-                    </Button>
+                    <StyledButton onClick={handleUnderstandClick}>J'ai compris</StyledButton>
+
                   </Box>
                 )}
               </Box>
@@ -185,10 +200,10 @@ const InformationMixComponent = () => {
                   position: "relative",
                 }}
               >
-                <Typography variant="h5" sx={{ color: colors[index], fontWeight: "bold" }}>
-                  {item.name}
+                <Typography variant="h5" sx={{ color: "#991756", fontWeight: "bold" }}>
+                {item.name} - {item.percentage}%
                 </Typography>
-                <Typography variant="body1">{item.text}</Typography>
+                <Typography variant="body1" sx={{ marginBottom: 2 }}>{item.text}</Typography>
 
                 {item.notes && (
                   <Typography variant="body2" sx={{ fontStyle: "italic" }}>
@@ -204,9 +219,8 @@ const InformationMixComponent = () => {
 
                 {index === electricityMix.length - 1 && (
                   <Box sx={{ marginTop: 2 }}>
-                    <Button variant="contained" color="primary" onClick={handleClick}>
-                      Suivant
-                    </Button>
+      <StyledButton onClick={handleClick}>Suivant</StyledButton>
+
                   </Box>
                 )}
               </Box>
