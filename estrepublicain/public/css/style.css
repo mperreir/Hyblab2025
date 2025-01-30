@@ -273,6 +273,10 @@ p {
     border: solid #CB010A 2px;
 }
 
+.cases h6 {
+    color: #CB010A;
+}
+
 /* --- Vidéos (blocs rouges, etc.) --- */
 .videos {
     border: 1px solid #CB010A;
