@@ -18,28 +18,34 @@
                 "long": false
             }
         ],
-        "quartiers": [
+        "districts": [
             {
+                "id": "centre-ville",
                 "name": "Centre-Ville",
-                "kpi1": {
-                    "number": "X",
-                    "text": "lorem ipsum"
-                },
-                "kpi2": {
-                    "number": "X",
-                    "text": "lorem ipsum"
-                }
+                "kpis": [
+                    {
+                        "number": "X",
+                        "text": "lorem ipsum"
+                    },
+                    {
+                        "number": "X",
+                        "text": "lorem ipsum"
+                    }
+                ]
             },
             {
+                "id":"ile_de_nantes",
                 "name": "Île de Nantes",
-                "kpi1": {
-                    "number": "X",
-                    "text": "lorem ipsum"
-                },
-                "kpi2": {
-                    "number": "X",
-                    "text": "lorem ipsum"
-                }
+                "kpis": [
+                    {
+                        "number": "X",
+                        "text": "lorem ipsum"
+                    },
+                    {
+                        "number": "X",
+                        "text": "lorem ipsum"
+                    }
+                ]
             }
         ],
         "links": [
