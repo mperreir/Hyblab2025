@@ -70,7 +70,7 @@ game:
               category: Culture musicale
               text: "Quel chanteur, originaire du Nord, a popularisé la chanson Quand la mer monte et choisi un nom de scène en hommage à la ville de Godewaersvelde ?"
               options:
-                - text: "Raoul de Godewarsvelde"
+                - text: "Raoul de Godewaersvelde"
                   correct: true
                 - text: "Francis Delbarre"
                   correct: false

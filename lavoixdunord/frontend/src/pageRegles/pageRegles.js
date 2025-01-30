@@ -42,7 +42,6 @@ const RulesPage = () => {
                             Une bonne réponse vous permet de continuer sans pénalité, tandis qu’une mauvaise réponse vous fait progresser, mais avec une pénalité de temps.</p>
                         <p>Si vous avez besoin d’aide, des indices sont à votre disposition. L’utilisation de l’indice 1 vous ralentit de 5 secondes, l’indice 2 vous fait perdre 10 secondes.</p>
 
-                        <p><i><b>L’objectif final est de récolter les trois maillots en réussissant les trois étapes. Vous débloquez un maillot à la fin de chaque étape.</b></i></p>
                     </div>
 
                     <button className="btn btn-outline-dark  mt-4 position-relative" onClick={() => navigate("/difficulty")}>

@@ -254,7 +254,7 @@ const MapComponent = ({ difficulty, level_id, currentQuestionIndex, onClose, isV
                 onClick={onClose}
                 style={{ display: isVisible ? 'block' : 'none' }}
             >
-                RÉPONDRE
+                VOIR LA QUESTION
             </button>
         </div>
     );
