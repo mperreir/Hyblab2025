@@ -288,4 +288,5 @@ g[id^="ARBRE-"]{
   height: clamp(200px, 50vh, 450px); /* Respecte tes valeurs */
   max-width: 80vw; /* Pour éviter qu'elle soit trop large */
   object-fit: contain; /* Assure le respect des proportions */
+  transition: display 0.5s ease-in-out;;
 }
