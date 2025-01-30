@@ -3,6 +3,8 @@ import ReactStars from "react-rating-stars-component";
 import "./quizResults.css";
 import {scrollToSection} from "../../utils";
 import Button from "../../ui/Button";
+import filled from "../../assets/star-filled.svg";
+import empty from "../../assets/star-empty.svg";
 
 const QuizResults = ({
                          ranking,
@@ -86,6 +88,8 @@ const QuizResults = ({
                         isHalf={false}
                         edit={false}
                         key={`stars-${ranking}`}
+                        emptyIcon={<img src={empty} alt="Empty Star" style={{ width: "6vw", padding: "10px" }} />}
+                        filledIcon={<img src={filled} alt="Filled Star" style={{ width: "6vw", padding: "10px" }} />}
                     />
 
                     <div className="flex justify-center items-center flex-col gap-4 w-full text-center">

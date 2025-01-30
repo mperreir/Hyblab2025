@@ -6,8 +6,10 @@
     right: 0vw;
 }
 .endquiz-left:after{
+    visibility: hidden;
     opacity: 0;
 }
 .choice:hover ~ .endquiz-left:after{
+    visibility: visible;
     opacity: 1;
 }
