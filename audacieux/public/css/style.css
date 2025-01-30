@@ -283,3 +283,15 @@ g[id^="ARBRE-"]{
   transform-box: fill-box;
   transform-origin: center;
 }
+
+#credits {
+  display: none;
+  position: fixed;
+  top: 10vh;
+  right: 5vw;
+  z-index: 10000;
+  width: auto; /* Garde la largeur proportionnelle */
+  height: clamp(200px, 50vh, 450px); /* Respecte tes valeurs */
+  max-width: 80vw; /* Pour éviter qu'elle soit trop large */
+  object-fit: contain; /* Assure le respect des proportions */
+}
