@@ -38,12 +38,37 @@
                 console.log(`Redirecting to article.html?category=${category}`);
                 window.location.href = `article.html?category=${category}`;
             }
+            window.onload = () => {
+                // Replace the logo class with a video tag if available, otherwise keep the logo
+                const logoContainer = document.querySelector('.logo');
+                const videoElement = document.createElement('video');
+                videoElement.setAttribute('height', 'auto');
+                videoElement.setAttribute('id', 'animation');
+                videoElement.setAttribute('autoplay', '');
+                videoElement.setAttribute('playsinline', '');
+                videoElement.setAttribute('muted', '');
+                videoElement.setAttribute('disablePictureInPicture', '');
+                videoElement.setAttribute('controlsList', 'nodownload nofullscreen');
+                videoElement.style.maxWidth = '100%';
+                videoElement.style.maxHeight = '100%';
+                videoElement.style.borderLeft = '0';
+
+                const sourceElement = document.createElement('source');
+                sourceElement.setAttribute('src', `img/navigation-animation.mp4`);
+                sourceElement.setAttribute('type', 'video/mp4');
+
+                videoElement.appendChild(sourceElement);
+                const logoImage = logoContainer.querySelector('img');
+                if (logoImage) {
+                    logoContainer.replaceChild(videoElement, logoImage);
+                }
+            };
         </script>
     </nav>
     <div>
         <h1 style="font-size: 4vw; font-style: italic; margin: 20px;">
             <span style="color: #FF0023; font-family: 'IBM Plex Mono'; margin-right: -20px;"><strong>SIMPLI'</strong></span>
-            <span style="color: #808080; font-family: 'IBM Plex Mono'; margin-left: -20px;"><strong>CITÉS</strong></span>
+            <span style="color: #808080; font-family: 'IBM Plex Mono'; margin-left: -20px;"><strong>CITÉ</strong></span>
         </h1>
     </div>
 
@@ -84,7 +109,7 @@
                         <div class="col-md-2" style="width:5vh;"></div>
                     </div>
                     <div class="actions">
-                        <button class="custom-button" onclick="location.href='navigation.html'" 
+                        <button class="custom-button" onclick="location.href='index.html'" 
                         style="color: #565656; border-color: #565656; " onmouseover="this.style.backgroundColor='#565656'; this.style.color='white';" 
                         onmouseout="this.style.backgroundColor=''; this.style.color='#565656';"><i class="bi bi-arrow-left"></i></button>
                         <button class="custom-button" onclick="location.href='info.html' " style="color: #565656; border-color: #565656; " 

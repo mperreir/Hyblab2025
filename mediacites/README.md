@@ -2,7 +2,7 @@
 
 Porteur de projet : Médiacités
 
-Sujet : SimpliCités
+Sujet : Simpli'Cité
 
 Nom d'équipe : Médiacitadins
 
