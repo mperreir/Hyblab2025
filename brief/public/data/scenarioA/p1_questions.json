@@ -1,0 +1,429 @@
+{
+  "questions": [
+      {
+          "question_id": 1,
+          "question_text": "Quel rythme donnez-vous à la fermeture des réacteurs nucléaires ?",
+          "responses": [
+              {
+                  "response_id": 1,
+                  "response_text": "Fermer les réacteurs les plus anciens dès maintenant pour accélérer la transition.",
+                  "advantages": "",
+                  "inconvenient": "",
+                  "Budget": {
+                      "plus": 0,
+                      "moins": 30
+                  },
+                  "GES": {
+                      "plus": 5,
+                      "moins": 0
+                  },
+                  "Satisfaction": {
+                      "plus": 0,
+                      "moins": 5
+                  },
+                  "mix": {
+                    "Fossiles" : {
+                        "plus": 3,
+                        "moins": 0
+                    },
+                    "Nucléaire": {
+                        "plus": 0,
+                        "moins": 7
+                    },
+                    "Renouvelables": {
+                        "plus": 14,
+                        "moins": 0
+                    }
+
+                  },
+                  "next_question_id": 2
+              },
+              {
+                  "response_id": 2,
+                  "response_text": "Échelonner les fermetures pour éviter des tensions sur le réseau électrique.",
+                  "advantages": "",
+                  "inconvenient": "",
+                  "Budget": {
+                      "plus": 0,
+                      "moins": 5
+                  },
+                  "GES": {
+                      "plus": 2,
+                      "moins": 0
+                  },
+                  "Satisfaction": {
+                      "plus": 5,
+                      "moins": 0
+                  },
+                  "mix": {
+                    "Fossiles" : {
+                        "plus": 0,
+                        "moins": 2
+                    },
+                    "Nucléaire": {
+                        "plus": 0,
+                        "moins": 4
+                    },
+                    "Renouvelables": {
+                        "plus": 16,
+                        "moins": 0
+                    }
+
+                  },
+                  "next_question_id": 2
+              },
+              {
+                  "response_id": 3,
+                  "response_text": "Maintenir une fermeture plus lente pour maximiser l’usage du nucléaire avant 2040.",
+                  "advantages": "",
+                  "inconvenient": "",
+                  "Budget": {
+                      "plus": 5,
+                      "moins": 0
+                  },
+                  "GES": {
+                      "plus": 0,
+                      "moins": 5
+                  },
+                  "Satisfaction": {
+                      "plus": 3,
+                      "moins": 0
+                  },
+                  "mix": {
+                    "Fossiles" : {
+                        "plus": 0,
+                        "moins": 4
+                    },
+                    "Nucléaire": {
+                        "plus": 0,
+                        "moins": 2
+                    },
+                    "Renouvelables": {
+                        "plus": 16,
+                        "moins": 0
+                    }
+
+                  },
+                  "next_question_id": 2
+              }
+          ]
+      },
+      {
+          "question_id": 2,
+          "question_text": "Quelle priorité donnez-vous au développement des énergies renouvelables ?",
+          "responses": [
+              {
+                  "response_id": 1,
+                  "response_text": "Multiplier les parcs solaires en commençant par les régions ensoleillées.",
+                  "advantages": "",
+                  "inconvenient": "",
+                  "Budget": {
+                      "plus": 0,
+                      "moins": 12
+                  },
+                  "GES": {
+                      "plus": 3,
+                      "moins": 0
+                  },
+                  "Satisfaction": {
+                      "plus": 2,
+                      "moins": 0
+                  },
+                  "mix": {
+                    "Fossiles" : {
+                        "plus": 0,
+                        "moins": 7
+                    },
+                    "Nucléaire": {
+                        "plus": 0,
+                        "moins": 4
+                    },
+                    "Renouvelables": {
+                        "plus": 19,
+                        "moins": 0
+                    }
+
+                  },
+                  "next_question_id": 3
+              },
+              {
+                  "response_id": 2,
+                  "response_text": "Accélérer l’éolien terrestre, même en affrontant des oppositions locales.",
+                  "advantages": "",
+                  "inconvenient": "",
+                  "Budget": {
+                      "plus": 0,
+                      "moins": 15
+                  },
+                  "GES": {
+                      "plus": 5,
+                      "moins": 0
+                  },
+                  "Satisfaction": {
+                      "plus": 0,
+                      "moins": 5
+                  },
+                  "mix": {
+                    "Fossiles" : {
+                        "plus": 0,
+                        "moins": 5
+                    },
+                    "Nucléaire": {
+                        "plus": 0,
+                        "moins": 4
+                    },
+                    "Renouvelables": {
+                        "plus": 19,
+                        "moins": 0
+                    }
+
+                  },
+                  "next_question_id": 3
+              },
+              {
+                  "response_id": 3,
+                  "response_text": "Investir dans l’éolien en mer, même si les coûts initiaux sont élevés.",
+                  "advantages": "",
+                  "inconvenient": "",
+                  "Budget": {
+                      "plus": 0,
+                      "moins": 3
+                  },
+                  "GES": {
+                      "plus": 0,
+                      "moins": 3
+                  },
+                  "Satisfaction": {
+                      "plus": 16,
+                      "moins": 0
+                  },
+                  "mix": {
+                    "Fossiles" : {
+                        "plus": 0,
+                        "moins": 3
+                    },
+                    "Nucléaire": {
+                        "plus": 0,
+                        "moins": 3
+                    },
+                    "Renouvelables": {
+                        "plus": 16,
+                        "moins": 0
+                    }
+
+                  },
+                  "next_question_id": 3
+              }
+          ]
+      },
+      {
+          "question_id": 3,
+          "question_text": "Comment intégrez-vous la sobriété dans les secteurs de consommation ?",
+          "responses": [
+              {
+                  "response_id": 1,
+                  "response_text": "Lancer une campagne nationale pour sensibiliser les citoyens à réduire leur consommation.",
+                  "advantages": "",
+                  "inconvenient": "",
+                  "Budget": {
+                      "plus": 0,
+                      "moins": 3
+                  },
+                  "GES": {
+                      "plus": 3,
+                      "moins": 0
+                  },
+                  "Satisfaction": {
+                      "plus": 5,
+                      "moins": 0
+                  },"mix": {
+                    "Fossiles" : {
+                        "plus": 0,
+                        "moins": 0
+                    },
+                    "Nucléaire": {
+                        "plus": 0,
+                        "moins": 0
+                    },
+                    "Renouvelables": {
+                        "plus": 0,
+                        "moins": 0
+                    }
+
+                  },
+                  "next_question_id": 4
+              },
+              {
+                  "response_id": 2,
+                  "response_text": "Imposer des quotas énergétiques pour limiter les consommations excessives.",
+                  "advantages": "",
+                  "inconvenient": "",
+                  "Budget": {
+                      "plus": 10,
+                      "moins": 0
+                  },
+                  "GES": {
+                      "plus": 7,
+                      "moins": 0
+                  },
+                  "Satisfaction": {
+                      "plus": 0,
+                      "moins": 8
+                  },
+                  "mix": {
+                    "Fossiles" : {
+                        "plus": 0,
+                        "moins": 0
+                    },
+                    "Nucléaire": {
+                        "plus": 0,
+                        "moins": 0
+                    },
+                    "Renouvelables": {
+                        "plus": 0,
+                        "moins": 0
+                    }
+
+                  },
+                  "next_question_id": 4
+              },
+              {
+                  "response_id": 3,
+                  "response_text": "Encourager l’efficacité énergétique avec des subventions pour des équipements moins gourmands.",
+                  "advantages": "",
+                  "inconvenient": "",
+                  "Budget": {
+                      "plus": 0,
+                      "moins": -8
+                  },
+                  "GES": {
+                      "plus": 5,
+                      "moins": 0
+                  },
+                  "Satisfaction": {
+                      "plus": 7,
+                      "moins": 0
+                  },
+                  "mix": {
+                    "Fossiles" : {
+                        "plus": 0,
+                        "moins": 0
+                    },
+                    "Nucléaire": {
+                        "plus": 0,
+                        "moins": 0
+                    },
+                    "Renouvelables": {
+                        "plus": 0,
+                        "moins": 0
+                    }
+
+                  },
+                  "next_question_id": 4
+              }
+          ]
+      },
+      {
+          "question_id": 4,
+          "question_text": "Comment financer ce basculement vers un mix 100 % renouvelable ?",
+          "responses": [
+              {
+                  "response_id": 1,
+                  "response_text": "Instaurer une taxe carbone pour financer les nouveaux projets renouvelables.",
+                  "Budget": {
+                      "plus": 5,
+                      "moins": 0
+                  },
+                  "GES": {
+                      "plus": 5,
+                      "moins": 0
+                  },
+                  "Satisfaction": {
+                      "plus": 0,
+                      "moins": 10
+                  },
+                  "mix": {
+                    "Fossiles" : {
+                        "plus": 0,
+                        "moins": 0
+                    },
+                    "Nucléaire": {
+                        "plus": 0,
+                        "moins": 0
+                    },
+                    "Renouvelables": {
+                        "plus": 0,
+                        "moins": 0
+                    }
+
+                  },
+                  "next_question_id": 5
+              },
+              {
+                  "response_id": 2,
+                  "response_text": "Emprunter massivement pour accélérer les investissements, malgré une augmentation de la dette publique.",
+                  "Budget": {
+                      "plus": 0,
+                      "moins": 15
+                  },
+                  "GES": {
+                      "plus": 7,
+                      "moins": 0
+                  },
+                  "Satisfaction": {
+                      "plus": 3,
+                      "moins": 0
+                  },
+                  "mix": {
+                    "Fossiles" : {
+                        "plus": 0,
+                        "moins": 0
+                    },
+                    "Nucléaire": {
+                        "plus": 0,
+                        "moins": 0
+                    },
+                    "Renouvelables": {
+                        "plus": 0,
+                        "moins": 0
+                    }
+
+                  },
+                  "next_question_id": 5
+              },
+              {
+                  "response_id": 3,
+                  "response_text": "Imposer des quotas énergétiques pour limiter la demande et réduire les besoins en infrastructures.",
+                  "Budget": {
+                      "plus": 3,
+                      "moins": 0
+                  },
+                  "GES": {
+                      "plus": 8,
+                      "moins": 0
+                  },
+                  "Satisfaction": {
+                      "plus": 0,
+                      "moins": 12
+                  },
+                  "mix": {
+                    "Fossiles" : {
+                        "plus": 0,
+                        "moins": 0
+                    },
+                    "Nucléaire": {
+                        "plus": 0,
+                        "moins": 0
+                    },
+                    "Renouvelables": {
+                        "plus": 0,
+                        "moins": 0
+                    }
+
+                  },
+                  "next_question_id": 5
+              }
+          ]
+      }
+  ]
+}

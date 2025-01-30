@@ -1,0 +1,194 @@
+{
+    "questions": [
+        {
+            "question_id": 1,
+            "question_text": "Comment répartir votre budget initial pour lancer la transition énergétique ?",
+            "responses": [
+                {
+                    "response_id": 1,
+                    "response_text": "Prioriser les investissements dans l’éolien terrestre et le solaire.",
+                    "advantages": "",
+                    "inconvenient": "",
+                    "Budget": {
+                        "plus": 0,
+                        "moins": 8
+                    },
+                    "GES": {
+                        "plus": 3,
+                        "moins": 0
+                    },
+                    "Satisfaction": {
+                        "plus": 2,
+                        "moins": 0
+                    },
+                    "next_question_id": 2
+                },
+                {
+                    "response_id": 2,
+                    "response_text": "Moderniser les centrales nucléaires existantes pour prolonger leur durée de vie.",
+                    "advantages": "",
+                    "inconvenient": "",
+                    "Budget": {
+                        "plus": 0,
+                        "moins": 5
+                    },
+                    "GES": {
+                        "plus": 1,
+                        "moins": 0
+                    },
+                    "Satisfaction": {
+                        "plus": 0,
+                        "moins": 1
+                    },
+                    "next_question_id": 2
+                },
+                {
+                    "response_id": 3,
+                    "response_text": " Accélérer le développement de l’éolien offshore, malgré des coûts initiaux élevés.",
+                    "advantages": "",
+                    "inconvenient": "",
+                    "Budget": {
+                        "plus": 0,
+                        "moins": 12
+                    },
+                    "GES": {
+                        "plus": 4,
+                        "moins": 0
+                    },
+                    "Satisfaction": {
+                        "plus": 3,
+                        "moins": 0
+                    },
+                    "next_question_id": 2
+                }
+            ]
+        },
+        {
+            "question_id": 2,
+            "question_text": "Quelle stratégie adoptez-vous pour installer de nouveaux équipements renouvelables tout en minimisant les résistances locales ?",
+            "responses": [
+                {
+                    "response_id": 1,
+                    "response_text": "Développer des projets solaires sur des toitures et des friches industrielles.",
+                    "advantages": "",
+                    "inconvenient": "",
+                    "Budget": {
+                        "plus": 0,
+                        "moins": 5
+                    },
+                    "GES": {
+                        "plus": 2,
+                        "moins": 0
+                    },
+                    "Satisfaction": {
+                        "plus": 3,
+                        "moins": 0
+                    },
+                    "next_question_id": 3
+                },
+                {
+                    "response_id": 2,
+                    "response_text": "Construire des parcs éoliens terrestres dans des zones rurales.",
+                    "advantages": "",
+                    "inconvenient": "",
+                    "Budget": {
+                        "plus": 0,
+                        "moins": 7
+                    },
+                    "GES": {
+                        "plus": 3,
+                        "moins": 0
+                    },
+                    "Satisfaction": {
+                        "plus": 0,
+                        "moins": 2
+                    },
+                    "next_question_id": 3
+                },
+                {
+                    "response_id": 3,
+                    "response_text": "Accélérer le développement de l’éolien offshore, malgré les coûts élevés initiaux.",
+                    "advantages": "",
+                    "inconvenient": "",
+                    "Budget": {
+                        "plus": 0,
+                        "moins": 10
+                    },
+                    "GES": {
+                        "plus": 4,
+                        "moins": 0
+                    },
+                    "Satisfaction": {
+                        "plus": 2,
+                        "moins": 0
+                    },
+                    "next_question_id": 3
+                }
+            ]
+        },
+        {
+            "question_id": 3,
+            "question_text": "Comment sensibiliser la population à la sobriété énergétique pour accompagner la transition ?",
+            "responses": [
+                {
+                    "response_id": 1,
+                    "response_text": "Mettre en place une campagne éducative sur les économies d’énergie.",
+                    "advantages": "",
+                    "inconvenient": "",
+                    "Budget": {
+                        "plus": 0,
+                        "moins": 2
+                    },
+                    "GES": {
+                        "plus": 1,
+                        "moins": 0
+                    },
+                    "Satisfaction": {
+                        "plus": 3,
+                        "moins": 0
+                    },
+                    "next_question_id": 4
+                },
+                {
+                    "response_id": 2,
+                    "response_text": " Instaurer une tarification progressive pour encourager une consommation responsable.",
+                    "advantages": "",
+                    "inconvenient": "",
+                    "Budget": {
+                        "plus": 3,
+                        "moins": 0
+                    },
+                    "GES": {
+                        "plus": 2,
+                        "moins": 0
+                    },
+                    "Satisfaction": {
+                        "plus": 0,
+                        "moins": 2
+                    },
+                    "next_question_id": 4
+                },
+                {
+                    "response_id": 3,
+                    "response_text": "Subventionner les équipements économes en énergie pour les ménages.",
+                    "advantages": "",
+                    "inconvenient": "",
+                    "Budget": {
+                        "plus": 0,
+                        "moins": 5
+                    },
+                    "GES": {
+                        "plus": 2,
+                        "moins": 0
+                    },
+                    "Satisfaction": {
+                        "plus": 3,
+                        "moins": 0
+                    },
+                    "next_question_id": 4
+                }
+            ]
+        }
+    ]
+  }
+  

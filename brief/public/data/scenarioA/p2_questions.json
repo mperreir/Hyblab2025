@@ -1,0 +1,327 @@
+{
+  "questions": [
+      {
+          "question_id": 4,
+          "question_text": "Comment gérez-vous l’intermittence des énergies renouvelables ?",
+          "responses": [
+              {
+                  "response_id": 1,
+                  "response_text": "Investir massivement dans des batteries pour stocker l’énergie solaire et éolienne.",
+                  "advantages": "",
+                  "inconvenient": "",
+                  "Budget": {
+                      "plus": 0,
+                      "moins": 20
+                  },
+                  "GES": {
+                      "plus": 10,
+                      "moins": 0
+                  },
+                  "Satisfaction": {
+                      "plus": 3,
+                      "moins": 0
+                  },
+                  "mix": {
+                    "Fossiles" : {
+                        "plus": 0,
+                        "moins": 0
+                    },
+                    "Nucléaire": {
+                        "plus": 0,
+                        "moins": 0
+                    },
+                    "Renouvelables": {
+                        "plus": 0,
+                        "moins": 0
+                    }
+
+                  },
+                  "next_question_id": 5
+              },
+              {
+                  "response_id": 2,
+                  "response_text": "Développer un réseau de stockage d’hydrogène pour une réserve à long terme.",
+                  "advantages": "",
+                  "inconvenient": "",
+                  "Budget": {
+                      "plus": 0,
+                      "moins": 25
+                  },
+                  "GES": {
+                      "plus": 15,
+                      "moins": 0
+                  },
+                  "Satisfaction": {
+                      "plus": 5,
+                      "moins": 0
+                  },
+                  "mix": {
+                    "Fossiles" : {
+                        "plus": 0,
+                        "moins": 0
+                    },
+                    "Nucléaire": {
+                        "plus": 0,
+                        "moins": 0
+                    },
+                    "Renouvelables": {
+                        "plus": 0,
+                        "moins": 0
+                    }
+
+                  },
+                  "next_question_id": 5
+              },
+              {
+                  "response_id": 3,
+                  "response_text": "Renforcer les interconnexions avec les pays voisins pour importer de l’électricité.",
+                  "advantages": "",
+                  "inconvenient": "",
+                  "Budget": {
+                      "plus": 0,
+                      "moins": 10
+                  },
+                  "GES": {
+                      "plus": 5,
+                      "moins": 0
+                  },
+                  "Satisfaction": {
+                      "plus": 0,
+                      "moins": 3
+                  },
+                  "mix": {
+                    "Fossiles" : {
+                        "plus": 0,
+                        "moins": 0
+                    },
+                    "Nucléaire": {
+                        "plus": 0,
+                        "moins": 0
+                    },
+                    "Renouvelables": {
+                        "plus": 0,
+                        "moins": 0
+                    }
+
+                  },
+                  "next_question_id": 5
+              }
+          ]
+      },
+      {
+          "question_id": 5,
+          "question_text": "Quelle priorité donnez-vous à la flexibilité de la demande ?",
+          "responses": [
+              {
+                  "response_id": 1,
+                  "response_text": "Proposer des tarifs variables pour inciter les consommateurs à adapter leur usage.",
+                  "advantages": "",
+                  "inconvenient": "",
+                  "Budget": {
+                      "plus": 0,
+                      "moins": 5
+                  },
+                  "GES": {
+                      "plus": 5,
+                      "moins": 0
+                  },
+                  "Satisfaction": {
+                      "plus": 0,
+                      "moins": 5
+                  },
+                  "mix": {
+                    "Fossiles" : {
+                        "plus": 0,
+                        "moins": 0
+                    },
+                    "Nucléaire": {
+                        "plus": 0,
+                        "moins": 0
+                    },
+                    "Renouvelables": {
+                        "plus": 0,
+                        "moins": 0
+                    }
+
+                  },
+                  "next_question_id": 6
+              },
+              {
+                  "response_id": 2,
+                  "response_text": "Investir dans le déploiement massif de compteurs intelligents pour piloter les consommations.",
+                  "advantages": "",
+                  "inconvenient": "",
+                  "Budget": {
+                      "plus": 0,
+                      "moins": 15
+                  },
+                  "GES": {
+                      "plus": 10,
+                      "moins": 0
+                  },
+                  "Satisfaction": {
+                      "plus": 3,
+                      "moins": 0
+                  },
+                  "mix": {
+                    "Fossiles" : {
+                        "plus": 0,
+                        "moins": 0
+                    },
+                    "Nucléaire": {
+                        "plus": 0,
+                        "moins": 0
+                    },
+                    "Renouvelables": {
+                        "plus": 0,
+                        "moins": 0
+                    }
+
+                  },
+                  "next_question_id": 6
+              },
+              {
+                  "response_id": 3,
+                  "response_text": "Encourager les entreprises et ménages à stocker leur propre énergie (autoconsommation et batteries domestiques).",
+                  "advantages": "",
+                  "inconvenient": "",
+                  "Budget": {
+                      "plus": 0,
+                      "moins": 20
+                  },
+                  "GES": {
+                      "plus": 15,
+                      "moins": 0
+                  },
+                  "Satisfaction": {
+                      "plus": 8,
+                      "moins": 0
+                  },
+                  "mix": {
+                    "Fossiles" : {
+                        "plus": 0,
+                        "moins": 0
+                    },
+                    "Nucléaire": {
+                        "plus": 0,
+                        "moins": 0
+                    },
+                    "Renouvelables": {
+                        "plus": 0,
+                        "moins": 0
+                    }
+
+                  },
+                  "next_question_id": 6
+              }
+          ]
+      },
+      {
+          "question_id": 6,
+          "question_text": "Quelle stratégie adoptez-vous pour accélérer l’éolien en mer ?",
+          "responses": [
+              {
+                  "response_id": 1,
+                  "response_text": "Créer des zones marines dédiées pour maximiser la puissance installée.",
+                  "advantages": "",
+                  "inconvenient": "",
+                  "Budget": {
+                      "plus": 0,
+                      "moins": 15
+                  },
+                  "GES": {
+                      "plus": 10,
+                      "moins": 0
+                  },
+                  "Satisfaction": {
+                      "plus": 0,
+                      "moins": 5
+                  },
+                  "mix": {
+                    "Fossiles" : {
+                        "plus": 0,
+                        "moins": 9
+                    },
+                    "Nucléaire": {
+                        "plus": 0,
+                        "moins": 5
+                    },
+                    "Renouvelables": {
+                        "plus": 24,
+                        "moins": 0
+                    }
+
+                  },
+                  "next_question_id": 7
+              },
+              {
+                  "response_id": 2,
+                  "response_text": "Favoriser des projets à petite échelle pour limiter les conflits locaux.",
+                  "advantages": "",
+                  "inconvenient": "",
+                  "Budget": {
+                      "plus": 0,
+                      "moins": 10
+                  },
+                  "GES": {
+                      "plus": 5,
+                      "moins": 0
+                  },
+                  "Satisfaction": {
+                      "plus": 3,
+                      "moins": 0
+                  },
+                  "mix": {
+                    "Fossiles" : {
+                        "plus": 0,
+                        "moins": 7
+                    },
+                    "Nucléaire": {
+                        "plus": 0,
+                        "moins": 4
+                    },
+                    "Renouvelables": {
+                        "plus": 21,
+                        "moins": 0
+                    }
+
+                  },
+                  "next_question_id": 7
+              },
+              {
+                  "response_id": 3,
+                  "response_text": "Impliquer les communautés locales en leur proposant une participation financière.",
+                  "advantages": "",
+                  "inconvenient": "",
+                  "Budget": {
+                      "plus": 0,
+                      "moins": 12
+                  },
+                  "GES": {
+                      "plus": 8,
+                      "moins": 0
+                  },
+                  "Satisfaction": {
+                      "plus": 10,
+                      "moins": 0
+                  },"mix": {
+                    "Fossiles" : {
+                        "plus": 0,
+                        "moins": 8
+                    },
+                    "Nucléaire": {
+                        "plus": 0,
+                        "moins": 5
+                    },
+                    "Renouvelables": {
+                        "plus": 23,
+                        "moins": 0
+                    }
+
+                  },
+                  "next_question_id": 7
+              }
+          ]
+      }
+  ]
+}

@@ -1,0 +1,193 @@
+{
+  "questions": [
+      {
+          "question_id": 7,
+          "question_text": "Comment minimisez-vous les impacts du changement climatique sur vos infrastructures ?",
+          "responses": [
+              {
+                  "response_id": 1,
+                  "response_text": "Diversifier les sources d’énergie renouvelable (éolien, solaire, hydrolien et géothermie) pour réduire les risques liés aux conditions météorologiques.",
+                  "advantages": "",
+                  "inconvenient": "",
+                  "Budget": {
+                      "plus": 0,
+                      "moins": 10
+                  },
+                  "GES": {
+                      "plus": 5,
+                      "moins": 0
+                  },
+                  "Satisfaction": {
+                      "plus": 10,
+                      "moins": 0
+                  },
+                  "next_question_id": 8
+              },
+              {
+                  "response_id": 2,
+                  "response_text": "Renforcer les partenariats internationaux (collaborer avec les pays voisins pour importer de l’électricité en cas de besoin).",
+                  "advantages": "",
+                  "inconvenient": "",
+                  "Budget": {
+                      "plus": 0,
+                      "moins": 5
+                  },
+                  "GES": {
+                      "plus": 2,
+                      "moins": 0
+                  },
+                  "Satisfaction": {
+                      "plus": 5,
+                      "moins": 0
+                  },
+                  "next_question_id": 8
+              },
+              {
+                  "response_id": 3,
+                  "response_text": "Investir dans des technologies plus résilientes (parcs éoliens flottants résistants aux tempêtes, panneaux solaires renforcés).",
+                  "advantages": "",
+                  "inconvenient": "",
+                  "Budget": {
+                      "plus": 0,
+                      "moins": 15
+                  },
+                  "GES": {
+                      "plus": 7,
+                      "moins": 0
+                  },
+                  "Satisfaction": {
+                      "plus": 8,
+                      "moins": 0
+                  },
+                  "next_question_id": 8
+              }
+          ]
+      },
+      {
+          "question_id": 8,
+          "question_text": "Quelle stratégie adoptez-vous pour limiter la dépendance aux métaux critiques (lithium, cobalt, cuivre, etc.) ?",
+          "responses": [
+              {
+                  "response_id": 1,
+                  "response_text": "Développer une filière de recyclage nationale (mettre en place des infrastructures pour récupérer et réutiliser les matériaux des équipements solaires et éoliens).",
+                  "advantages": "",
+                  "inconvenient": "",
+                  "Budget": {
+                      "plus": 0,
+                      "moins": 10
+                  },
+                  "GES": {
+                      "plus": 5,
+                      "moins": 0
+                  },
+                  "Satisfaction": {
+                      "plus": 8,
+                      "moins": 0
+                  },
+                  "next_question_id": 9
+              },
+              {
+                  "response_id": 2,
+                  "response_text": "Diversifier les approvisionnements en métaux (collaborer avec des pays partenaires pour garantir un accès constant aux matières premières).",
+                  "advantages": "",
+                  "inconvenient": "",
+                  "Budget": {
+                      "plus": 0,
+                      "moins": 8
+                  },
+                  "GES": {
+                      "plus": 2,
+                      "moins": 0
+                  },
+                  "Satisfaction": {
+                      "plus": 5,
+                      "moins": 0
+                  },
+                  "next_question_id": 9
+              },
+              {
+                  "response_id": 3,
+                  "response_text": "Investir dans des technologies moins gourmandes en métaux rares (comme des batteries sans cobalt ou des panneaux solaires utilisant des alternatives).",
+                  "advantages": "",
+                  "inconvenient": "",
+                  "Budget": {
+                      "plus": 0,
+                      "moins": 12
+                  },
+                  "GES": {
+                      "plus": 6,
+                      "moins": 0
+                  },
+                  "Satisfaction": {
+                      "plus": 7,
+                      "moins": 0
+                  },
+                  "next_question_id": 9
+              }
+          ]
+      },
+      {
+          "question_id": 9,
+          "question_text": "Comment garantir un approvisionnement continu en hiver, lorsque la production solaire est faible ?",
+          "responses": [
+              {
+                  "response_id": 1,
+                  "response_text": "S’appuyer sur les énergies marines et l’éolien offshore, plus constants en hiver.",
+                  "advantages": "",
+                  "inconvenient": "",
+                  "Budget": {
+                      "plus": 0,
+                      "moins": 15
+                  },
+                  "GES": {
+                      "plus": 7,
+                      "moins": 0
+                  },
+                  "Satisfaction": {
+                      "plus": 8,
+                      "moins": 0
+                  },
+                  "next_question_id": 10
+              },
+              {
+                  "response_id": 2,
+                  "response_text": "Déployer des centrales à biomasse (utiliser les déchets organiques pour produire de l’électricité lorsque les renouvelables intermittents sont insuffisants).",
+                  "advantages": "",
+                  "inconvenient": "",
+                  "Budget": {
+                      "plus": 0,
+                      "moins": 10
+                  },
+                  "GES": {
+                      "plus": 4,
+                      "moins": 0
+                  },
+                  "Satisfaction": {
+                      "plus": 7,
+                      "moins": 0
+                  },
+                  "next_question_id": 10
+              },
+              {
+                  "response_id": 3,
+                  "response_text": "Instaurer une gestion de la demande (tarifs élevés en hiver pour inciter à réduire la consommation pendant les périodes critiques).",
+                  "advantages": "",
+                  "inconvenient": "",
+                  "Budget": {
+                      "plus": 0,
+                      "moins": 5
+                  },
+                  "GES": {
+                      "plus": 3,
+                      "moins": 0
+                  },
+                  "Satisfaction": {
+                      "plus": 3,
+                      "moins": 0
+                  },
+                  "next_question_id": 10
+              }
+          ]
+      }
+  ]
+}
