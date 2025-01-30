@@ -9,10 +9,18 @@ export const AppProvider = ({ children }) => {
     GES: 50,
     Satisfaction: 50,
     history: [],
+    stepper: 0,
   });
 
+  const updateStepper = (newStep) => {
+    setGlobalState((prevState) => ({
+      ...prevState,
+      stepper: newStep,
+    }));
+  };
+
   return (
-    <AppContext.Provider value={{ globalState, setGlobalState }}>
+    <AppContext.Provider value={{ globalState, setGlobalState, updateStepper }}>
       {children}
     </AppContext.Provider>
   );

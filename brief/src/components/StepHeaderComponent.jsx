@@ -10,6 +10,8 @@ import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
 import StepConnector, { stepConnectorClasses } from '@mui/material/StepConnector';
 import { Box } from '@mui/material';
+import { useAppContext } from '../context/AppContextProvider';
+
 
 const ColorlibConnector = styled(StepConnector)(({ theme }) => ({
   [`&.${stepConnectorClasses.alternativeLabel}`]: {
@@ -104,11 +106,12 @@ ColorlibStepIcon.propTypes = {
 
 const steps = ['', 'Intro', 'Jeux', 'Bilan', ''];
 
-export default function StepHeader({ currentStep }) {
+export default function StepHeader() {
+  const { globalState } = useAppContext();
   return (
     <Stack  sx={{ width: "150%", position: "relative", left: "-25%" }}spacing={4}>
 
-      <Stepper alternativeLabel activeStep={currentStep} connector={<ColorlibConnector />}>
+      <Stepper alternativeLabel activeStep={globalState.stepper} connector={<ColorlibConnector />}>
         {steps.map((label) => (
           <Step key={label}>
             <StepLabel StepIconComponent={ColorlibStepIcon}>{label}</StepLabel>
