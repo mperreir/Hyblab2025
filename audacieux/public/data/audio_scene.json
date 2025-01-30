@@ -76,6 +76,13 @@
             "type":"play_once"
         },
         {
+            "id": "start_peniche",
+            "src": "assets/audio/bateauAmb.mp3",
+            "volume": 0.4,
+            "keyframes":[],
+            "type":"play_once"
+        },
+        {
             "id": "marche",
             "src": "assets/audio/marche.mp3",
             "volume": 0.7,
