@@ -121,7 +121,7 @@ const InformationMixComponent = () => {
                   borderRadius: 2,
                   margin: "20px auto",
                   width: "90%",
-                  height: "400",
+                  height: "auto",
                   boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
                   position: "relative",
                 }}
