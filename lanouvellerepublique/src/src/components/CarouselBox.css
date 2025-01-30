@@ -26,6 +26,7 @@
     position: absolute;
     bottom: 60%;
     left: 50%;
+    max-height: 45%;
     transform: translateX(-50%);
     clip-path: none;
 }
