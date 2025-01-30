@@ -3,7 +3,10 @@ import { Box, Button, Typography, styled } from "@mui/material";
 import SwipeableViews from "react-swipeable-views";
 import { useTheme } from "@mui/material/styles";
 import { useNavigate } from "react-router-dom";
+import { ParallaxProvider, Parallax } from "react-scroll-parallax";
 import EnergyIcon from "./../assets/PictoTransition2050.png";
+import Logo from "../assets/CONTEXTE-TRANSITION 1.svg";
+
 
 // Conteneur des indicateurs
 const IndicatorContainer = styled(Box)({
@@ -58,49 +61,47 @@ const ContexteComponent = () => {
   };
 
   return (
-    <Box sx={{ maxWidth: 600, mx: "auto", textAlign: "center", p: 3 }}>
-      <SwipeableViews index={activeStep} onChangeIndex={handleStepChange}>
+    <Box sx={{ maxWidth: 600, mx: "auto", textAlign: "center", p: 2 }}>
+      <Box display="flex" justifyContent="center" marginBottom={1}>
+        <ParallaxProvider>
+          <Parallax y={[-15, 15]}>
+            <img src={Logo} style={{ width: "90%", marginBottom: 0 }} alt="image de ville" />
+          </Parallax>
+        </ParallaxProvider>
+      </Box>
+      <SwipeableViews index={activeStep} onChangeIndex={setActiveStep}>
         {slides.map((slide, index) => (
           <Box
             key={index}
             sx={{
               backgroundColor: "#F5E8EE",
-              padding: 3,
-              borderRadius: 3,
-              margin: "20px auto",
+              padding: 2,
+              borderRadius: 2,
+              margin: "12px auto",
               width: "90%",
               maxWidth: "500px",
-              boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
-              position: "relative",
+              boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.1)",
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
             }}
           >
-            {/* Ligne avec logo et titre */}
-            <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
-              <img src={EnergyIcon} style={{ width: "10%", marginRight: "8px" }} alt="Icône transition énergétique" />
+            <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
+              <img src={EnergyIcon} style={{ width: "10%", marginRight: "6px" }} alt="Icône transition énergétique" />
               <Typography variant="h6" sx={{ fontWeight: "bold" }}>
                 Bienvenue dans Transition 2050 !
               </Typography>
             </Box>
-
-            {/* Contenu du slide */}
             <Typography variant="body1" sx={{ whiteSpace: "pre-line", textAlign: "left" }}>
               {slide.text}
             </Typography>
-
-            {/* Pagination */}
             <IndicatorContainer>
               {slides.map((_, dotIndex) => (
                 <IndicatorDot key={dotIndex} active={dotIndex === activeStep} />
               ))}
             </IndicatorContainer>
-
-            {/* Bouton "C'est parti !" sur la dernière page */}
             {activeStep === slides.length - 1 && (
-      <StyledButton onClick={handleClick}>C'est parti !</StyledButton>
-
+              <StyledButton onClick={handleClick}>C'est parti !</StyledButton>
             )}
           </Box>
         ))}
@@ -108,5 +109,6 @@ const ContexteComponent = () => {
     </Box>
   );
 };
+
 
 export default ContexteComponent;

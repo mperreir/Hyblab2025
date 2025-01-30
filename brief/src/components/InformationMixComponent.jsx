@@ -13,7 +13,7 @@ Chart.register(ArcElement, Tooltip, Legend);
 
 
 const colorsMix = ["#4D4D4D", "#FCD383", "#94C9A9", "#E54A4A", "#A6A6A6"];
-const colors = ["#4D4D4D", "#7AA7D2", "#A6A6A6", "#FFCC66", "#E54A4A", "#B8A6B5"];
+const colors = ["#4D4D4D", "#7AA7D2", "#A6A6A6", "#E54A4A", "#FFCC66", "#B8A6B5"];
 
 
 const IndicatorContainer = styled(Box)(({ theme }) => ({
@@ -97,6 +97,7 @@ const InformationMixComponent = () => {
                 animation: { animateScale: true },
               }}
             />
+            
           </Box>
 
           {/* Swiper pour le texte */}
@@ -109,15 +110,19 @@ const InformationMixComponent = () => {
                   padding: 3,
                   borderRadius: 2,
                   margin: "20px auto",
-                  width: 352,
-                  height: 400,
+                  width: "90%",
+                  height: "400",
                   boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
                   position: "relative",
                 }}
               >
-                <Typography variant="h5" sx={{ color: "#991756", fontWeight: "bold" }}>
-                  {item.name} - {item.percentage}%
-                </Typography>
+                <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                  <img src={item.image} alt={item.name} style={{ width: 30, height: 30, filter: "invert(17%) sepia(55%) saturate(320%) hue-rotate(-10deg)" }} />
+                  <Typography variant="h5" sx={{ color: "#991756", fontWeight: "bold", textAlign: "left" }}>
+                    {item.name} - {item.percentage}%
+                  </Typography>
+                </Box>
+
                 <Typography variant="body1" sx={{ marginBottom: 2 }}>{item.text}</Typography>
 
                 {item.carbon_emissions && (
@@ -130,7 +135,7 @@ const InformationMixComponent = () => {
                 )}
 
                 {item.notes && (
-                  <Typography variant="body2" sx={{ fontStyle: "italic" }}>
+                  <Typography variant="body2" sx={{ fontStyle: "italic" , textAlign: "left"}}>
                     {item.notes}
                   </Typography>
                 )}
@@ -185,6 +190,7 @@ const InformationMixComponent = () => {
                 legend: { hidden: true }, // Cache la légende
               }}
             />
+            
           </Box>
 
           {/* Swiper pour le texte */}
@@ -197,19 +203,23 @@ const InformationMixComponent = () => {
                   padding: 3,
                   borderRadius: 2,
                   margin: "20px auto",
-                  width: 352,
+                  width: "90%",
                   height: 400,
                   boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
                   position: "relative",
                 }}
               >
-                <Typography variant="h5" sx={{ color: "#991756", fontWeight: "bold" }}>
-                {item.name} - {item.percentage}%
-                </Typography>
+                <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                  <img src={item.image} alt={item.name} style={{ width: 30, height: 30,  filter: "invert(17%) sepia(55%) saturate(320%) hue-rotate(-10deg)" }} />
+                  <Typography variant="h5" sx={{ color: "#991756", fontWeight: "bold", textAlign: "left" }}>
+                    {item.name} - {item.percentage}%
+                  </Typography>
+                </Box>
+
                 <Typography variant="body1" sx={{ marginBottom: 2 }}>{item.text}</Typography>
 
                 {item.notes && (
-                  <Typography variant="body2" sx={{ fontStyle: "italic" }}>
+                  <Typography variant="body2" sx={{ fontStyle: "italic", textAlign: "left" }}>
                     {item.notes}
                   </Typography>
                 )}
@@ -222,7 +232,7 @@ const InformationMixComponent = () => {
 
                 {index === electricityMix.length - 1 && (
                   <Box sx={{ marginTop: 2 }}>
-      <StyledButton onClick={handleClick}>Suivant</StyledButton>
+                    <StyledButton onClick={handleClick}>Suivant</StyledButton>
 
                   </Box>
                 )}

@@ -24,7 +24,7 @@
         },
         {
             "response_id": 3,
-            "response_text": "Scénario B : 50 % nucléaire / 50 % renouvelables",
+            "response_text": "Scénario C : 50 % nucléaire / 50 % renouvelables",
             "text": "Une combinaison équilibrée entre stabilité (nucléaire) et croissance des énergies renouvelables.",
             "next_scenario_id": 3
         }
