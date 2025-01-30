@@ -219,6 +219,7 @@ function loadImageScene(file_name, id) {
 }
 
 function zoomOutScene() {
+  console.log("ciao");
   const imageScene = document.getElementById("image-scene");
   
   // Zoom-out and fade-out effect
