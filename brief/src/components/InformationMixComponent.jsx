@@ -11,7 +11,10 @@ import electricityMixData from "../../public/data/debut/zoom_elec.json";
 
 Chart.register(ArcElement, Tooltip, Legend);
 
-const colors = ["#991756", "#8670CF", "#5A88FF", "#14A473", "#F86A1B"];
+
+const colorsMix = ["#4D4D4D", "#FCD383", "#94C9A9", "#E54A4A", "#A6A6A6"];
+const colors = ["#4D4D4D", "#7AA7D2", "#A6A6A6", "#FFCC66", "#E54A4A", "#B8A6B5"];
+
 
 const IndicatorContainer = styled(Box)(({ theme }) => ({
   display: "flex",
@@ -80,7 +83,7 @@ const InformationMixComponent = () => {
                     data: sources.map((e, index) =>
                       index === activeIndex ? e.percentage * 1.1 : e.percentage
                     ),
-                    backgroundColor: colors,
+                    backgroundColor: colorsMix,
                     hoverOffset: 10,
                   },
                 ],
@@ -112,7 +115,7 @@ const InformationMixComponent = () => {
                   position: "relative",
                 }}
               >
-                <Typography variant="h5" sx={{ color: colors[index], fontWeight: "bold" }}>
+                <Typography variant="h5" sx={{ color: colorsMix[index], fontWeight: "bold" }}>
                   {item.name}
                 </Typography>
                 <Typography variant="body1">{item.description}</Typography>
