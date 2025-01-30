@@ -290,3 +290,15 @@ g[id^="ARBRE-"]{
   object-fit: contain; /* Assure le respect des proportions */
   transition: display 0.5s ease-in-out;;
 }
+
+main{
+  pointer-events: none;
+}
+
+.game {
+  pointer-events: none;
+}
+
+.sidebar {
+  pointer-events: all;
+}
