@@ -37,8 +37,6 @@ app.get(`/info`, function (req, res) {
     res.sendFile(path.join(__dirname, '/public/info.html'));
 });
 
-
-
 app.get('/test-api', (req, res) => {
     console.log('Test API route hit');
     res.send('API is working');
