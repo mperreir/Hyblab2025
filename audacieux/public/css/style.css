@@ -283,7 +283,7 @@ g[id^="ARBRE-"]{
   position: fixed;
   top: 20vh;
   right: 5vw;
-  z-index: 10000;
+  z-index: 15;
   width: auto; /* Garde la largeur proportionnelle */
   height: clamp(200px, 50vh, 450px); /* Respecte tes valeurs */
   max-width: 70vw; /* Pour éviter qu'elle soit trop large */
