@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style1.css">
+    <script src="js/choices.js" defer></script>
     <title>Budget du Festival</title>
   </head>
   <body>
@@ -19,13 +20,13 @@
       <main>
         <div id="page_scrollable_container">
           <!-- Titre principal -->
-          <section class="content">
-            <h2>{{ mainTitle }}</h2>
-          </section>
+         <svg id="perso-svg-5" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 450"><defs><style>.cls-1{fill:#32d2c3;}.cls-2{fill:#fff;}</style></defs><rect class="cls-1" width="1080" height="450"/><path class="cls-2" d="M260,327l-5-29,33-7-36-45-29-51L106.19,227.64,81.47,395H259.38L261,363l-69-46Zm-58.5-79c5.25,0,9.5,7.39,9.5,16.5s-4.25,16.5-9.5,16.5-9.5-7.39-9.5-16.5S196.25,248,201.5,248Z"/><polygon class="cls-2" points="189.72 170.47 181.31 173.67 174.56 155.91 124.08 175.08 130.82 192.84 120.54 196.75 123.03 203.29 192.21 177.01 189.72 170.47"/><polygon class="cls-2" points="346.28 264.06 294 340 388.15 302.03 449 379 637 401 903 407 978.79 349.66 1039 301 1010 131 868 38 438.53 38 294 139.4 346.28 264.06"/></svg>
+        <div id="dynamic-text" class="narrative-text"></div>
+
           
           <!-- Budget total -->
           <section class="content">
-            <h2>Budget du festival : {{ budget.cost }} €</h2>
+            <h2>Coût du festival : {{ budget.cost }} €</h2>
           </section>
           
           <!-- Prix du billet -->
@@ -35,7 +36,7 @@
           
           <!-- Description du festival -->
           <section class="content">
-            <p class="content-title">{{ festivalDescription }}</p>
+            <p class="content-title" style="text-align:center">{{ festivalDescription1 }} {{ festivalSize }}. {{ festivalDescription2 }}</p>
           </section>
           
           <!-- Diagramme en bandes -->
@@ -77,9 +78,6 @@
         </div>
       </main>
       
-      <footer>
-        <p>En partenariat avec <strong>{{ partner1 }}</strong> &amp; <strong>{{ partner2 }}</strong></p>
-      </footer>
     </div>
   </body>
 </html>

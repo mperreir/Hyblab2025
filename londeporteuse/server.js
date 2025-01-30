@@ -28,7 +28,7 @@ app.get('/start', async (req, res) => {
     try {
         // Fetch data from the API endpoint
         console.log(BASE_URL)
-        const response = await fetch('http://localhost:8080/londeporteuse/api/home');
+        const response = await fetch('https://hyblab.polytech.univ-nantes.fr/londeporteuse/api/home');
         const data = await response.json();
 
         // Render the Mustache template with the fetched data
@@ -43,7 +43,7 @@ app.get('/start', async (req, res) => {
 app.get('/choices', async (req, res) => {
     try {
       // Fetch data from the API endpoint
-      const response = await fetch('http://localhost:8080/londeporteuse/api/choices');
+      const response = await fetch('https://hyblab.polytech.univ-nantes.fr/londeporteuse/api/choices');
       const data = await response.json();
   
       // Render the Mustache template with the fetched data
@@ -60,7 +60,7 @@ app.get('/choices', async (req, res) => {
 app.get('/budget', async (req, res) => {
   try {
     // Fetch data from the API endpoint
-    const response = await fetch('http://localhost:8080/londeporteuse/api/budget');
+    const response = await fetch('https://hyblab.polytech.univ-nantes.fr/londeporteuse/api/budget');
     const data = await response.json();
 
     const initialBudget = req.query.initialBudget;
@@ -84,7 +84,7 @@ app.get('/budget', async (req, res) => {
 app.get('/ajust', async (req, res) => {
   try {
     // Fetch data from the API endpoint
-    const response = await fetch('http://localhost:8080/londeporteuse/api/ajust');
+    const response = await fetch('https://hyblab.polytech.univ-nantes.fr/londeporteuse/api/ajust');
     const data = await response.json();
 
     // Render the Mustache template with the fetched data
@@ -206,6 +206,11 @@ app.get('/result', (req, res) => {
   }
 });
   
+// Route vers la page finale
+app.get('/final', (req, res) => {
+  res.render('finalPage.mustache'); // Rendu de la vue finalPage.mustache
+});
+
 
 // Export the app
 module.exports = app;

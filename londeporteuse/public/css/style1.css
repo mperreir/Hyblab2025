@@ -47,7 +47,6 @@ main {
 /* Ensure content fills available space */
 main > div {
     min-height: min-content;
-    padding-bottom: 20px;
 }
 
 #page_scrollable_container {
@@ -61,7 +60,6 @@ main > div {
     display: flex;
     flex-direction: column;
     background-color: white;
-    padding-bottom: 10%; /* Ajoute un espace suffisant pour le bouton */
 }
 
 #page_scrollable_container::-webkit-scrollbar {
@@ -156,7 +154,6 @@ main > div {
     justify-content: center;
     padding: 25px 0;
     background-color: white;
-    border-block-start: solid 1px #ddd;
 }
 
 .btn-validate {
@@ -170,7 +167,6 @@ main > div {
     padding: 10px 10px;
     text-decoration: none;
     margin-top: auto;
-    margin-bottom: 25%;
     box-shadow: 0px 4px 10px rgba(0, 235, 30, 0.3);
     transition: all 0.3s ease;
     cursor: pointer;
@@ -190,7 +186,6 @@ main > div {
     font-size: 1.2rem;
     font-weight: bold;
     padding: 15px;
-    border-radius: 25px;
     text-decoration: none;
     margin: 20px auto;
     box-shadow: 0px 4px 10px rgba(0, 235, 30, 0.3);
@@ -258,6 +253,15 @@ header .logo-container img {
     width: 60%;
 }
 
+.logo-partners2 {
+  position: absolute;
+  bottom: 75%;
+  z-index: 2;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 55%;
+}
+
 .banner h1 {
     position: absolute; /* Superpose le titre sur l'image */
     font-size: 0.5rem;
@@ -297,9 +301,26 @@ header .logo-container img {
 .content-text {
     font-size: 0.8rem;
     line-height: 1.4;
-    color: #333;
+    color: black;
     text-align: justify;
     margin-bottom: 20px;
+}
+
+.question-title {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 10px;
+  text-align: justify;
+  opacity: 1
+}
+
+.question-text {
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: black;
+  text-align: justify;
+  margin-bottom: 20px;
 }
 
 .create-container {
@@ -423,15 +444,45 @@ h2{
 
 /* Footer */
 footer {
-    background-color: black;
-    color: white;
+    background-color: white;
     text-align: center;
-    padding: 10px;
+    padding-bottom: 20px;
     font-size: 0.8rem;
     font-weight: bold;
     margin-top: auto;
     flex-shrink: 0;
 }
+
+.footer-logos {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 7%;
+  padding: 15px;
+}
+
+.footer-logo {
+    height: 30px;
+    width: auto;
+}
+
+.foot-title {
+  background-color: black; 
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+#foot-text {
+  font-size: 0.8rem;
+  color: white;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
 /* Arrière-plan de la fenêtre modale (modal) */
 .modal {
     display: none;

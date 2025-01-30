@@ -3,8 +3,8 @@
     {
       "id": "Petit",
       "name": "Festival Intimiste",
-      "description": "Petit festival pour un public restreint.",
-      "image": "img/fete.jpg",
+      "description": "Mon festival accueille 3 000 spectateurs. 10 concerts s’y succèdent sur une seule scène. Je vais dépenser en moyenne 91 236 € pour monter cet événement, et récolter 95 000 € dont 72% proviennent de subventions publiques (dont 6 300 € de la Région Pays de la Loire). 180 bénévoles participent à l'événement sur le site. Le billet coûte 20 €.",
+      "image": "img/intimiste_festival.png",
       "cost": 1,
       "icon": "img/plus.svg",
       "isSelected": false
@@ -12,8 +12,8 @@
     {
       "id": "Moyen",
       "name": "Festival Moyen",
-      "description": "Festival de taille moyenne avec ambiance conviviale.",
-      "image": "img/fete.jpg",
+      "description": "Mon festival accueille 15 000 spectateurs. 25 concerts s’y succèdent sur 3 scènes différentes. Je vais dépenser en moyenne 395 468 € pour réaliser cet événement, et récolter 372 932 € de recettes dont 35% proviennent de subventions publiques (dont 11 459 € de la Région Pays de la Loire). 426 bénévoles participent à l'événement sur le site. Le billet coûte 50 €.",
+      "image": "img/mf.png",
       "cost": 2,
       "icon": "img/plus.svg",
       "isSelected": true
@@ -21,8 +21,8 @@
     {
       "id": "Grand",
       "name": "Grand festival",
-      "description": "Festival avec une grande capacité d'accueil.",
-      "image": "img/fete.jpg",
+      "description": "Mon festival accueille 70 000 spectateurs. 50 concerts s’y succèdent sur 10 scènes différentes. Je vais dépenser en moyenne 3 384 929 € pour créer cet événement, et récolter 3 500 000 € de recettes dont 3% proviennent de subventions publiques (dont 85 689 € de la Région Pays de la Loire). 2 856 bénévoles participent à l’événement. Le billet coûte 150 €.",
+      "image": "img/gf.png",
       "cost": 3,
       "icon": "img/plus.svg",
       "isSelected": false
@@ -32,8 +32,8 @@
     {
       "id": "Petit",
       "name": "Minimum légal d’actions écologiques",
-      "description": "Respect du minimum légal pour les actions écologiques.",
-      "image": "img/fete.jpg",
+      "description": "Je suis obligé.e de mettre en place de la vaisselle réutilisable et le tri sélectif.",
+      "image": "img/minimum_eco.png",
       "cost": 1,
       "icon": "img/plus.svg",
       "isSelected": false
@@ -41,8 +41,8 @@
     {
       "id": "Moyen",
       "name": "Peu d’actions écologiques",
-      "description": "Engagement modéré pour la transition écologique.",
-      "image": "img/fete.jpg",
+      "description": "Je mets en place de la vaisselle réutilisable, le tri sélectif ainsi que le compostage et le tri des mégots.",
+      "image": "img/no_eco.png",
       "cost": 2,
       "icon": "img/plus.svg",
       "isSelected": true
@@ -50,8 +50,8 @@
     {
       "id": "Grand",
       "name": "Beaucoup d’actions écologiques",
-      "description": "Engagement élevé pour la transition écologique.",
-      "image": "img/fete.jpg",
+      "description": "Je mets en place : vaisselle réutilisable, tri sélectif, système de compostage, tri des mégots, contractualisation avec des partenaires pour valoriser les déchets, toilettes sèches, consignes pour les gobelets et distributions de gourdes en métal pour les professionnel.les (artistes, technicien.nes…)",
+      "image": "img/plus_eco.png",
       "cost": 3,
       "icon": "img/plus.svg",
       "isSelected": false
@@ -61,8 +61,8 @@
     {
       "id": "Petit",
       "name": "Pas d’actions de médiation",
-      "description": "Aucune action de médiation culturelle prévue.",
-      "image": "img/fete.jpg",
+      "description": "Organiser des actions de médiation culturelle n’est pas obligatoire dans les festivals de musique.",
+      "image": "img/no_mediation.png",
       "cost": 0,
       "icon": "img/plus.svg",
       "isSelected": false
@@ -70,8 +70,8 @@
     {
       "id": "Moyen",
       "name": "Des actions uniquement sur le festival",
-      "description": "Éduquer et sensibiliser les jeunes à la culture.",
-      "image": "img/fete.jpg",
+      "description": "Par exemple, le festival Un Singe en Été, à Mayenne, propose un atelier pour présenter l’organisation d’un concert (communication, programmation, technique, accueil), suivi d’une visite du site.",
+      "image": "img/action_festival.png",
       "cost": 1,
       "icon": "img/plus.svg",
       "isSelected": false
@@ -79,8 +79,8 @@
     {
       "id": "Grand",
       "name": "Des actions tout au long de l’année et pendant le festival",
-      "description": "Créer des opportunités d'échange avec les artistes.",
-      "image": "img/fete.jpg",
+      "description": "J’organise des rencontres avec les artistes, des interventions dans les écoles, un atelier de pratique musicale pendant le festival, une visite du site du festival, des présentations des métiers du spectacle par des professionnels. Par exemple, Le festival de Poupet à St-Malô-du-Bois en Vendée organise un tremplin régional destiné aux groupes amateurs.",
+      "image": "img/annee_mediation.png",
       "cost": 2,
       "icon": "img/plus.svg",
       "isSelected": true
@@ -90,8 +90,8 @@
     {
       "id": "Petit",
       "name": "Minimum légal d’actions de prévention",
-      "description": "Respect du minimum légal pour la prévention.",
-      "image": "img/fete.jpg",
+      "description": " Je suis obligé.e de distribuer des bouchons d’oreilles gratuits pour limiter les risques auditifs. Pour sensibiliser à la sécurité routière, je dois aussi distribuer gratuitement des alcootests, ou proposer un test sur place.",
+      "image": "img/minimum_secu.png",
       "cost": 1,
       "icon": "img/plus.svg",
       "isSelected": false
@@ -99,8 +99,8 @@
     {
       "id": "Moyen",
       "name": "Réduire le nombre d’actions de prévention",
-      "description": "Prévention modérée.",
-      "image": "img/fete.jpg",
+      "description": "Je vais mener seulement deux ou trois actions en plus du minimum légal : Par exemple, le festival Ça chauffe, à Mûrs-Erigné dans le Maine-et-Loire, fait en sorte que tous les espaces (halls, salles, toilettes…) soient accessibles aux personnes à mobilité réduite et aux personnes se déplaçant en fauteuil roulant. Au festival Les Escales à St-Nazaire, des véhicules Ycéo Mobilités peuvent venir chercher des personnes en situation de handicap si la personne habite à plus de 200 mètres d’un arrêt de bus.",
+      "image": "img/peu_secu.png",
       "cost": 2,
       "icon": "img/plus.svg",
       "isSelected": false
@@ -108,8 +108,8 @@
     {
       "id": "Grand",
       "name": "Mener activement des actions de prévention",
-      "description": "Engagement fort pour la sécurité.",
-      "image": "img/fete.jpg",
+      "description": "Je peux mener ce type d’actions : distribution de bouchons d’oreilles gratuits, sensibilisation aux risques auditifs, distribution gratuite d’alcootests, ou tests sur place, sensibilisation à la sécurité routière,  sensibilisation à l’usage des drogues, mise en place de rampes pour les personnes à mobilité réduite, plateformes vibrantes et distribution gratuite de gilets vibrants pour les personnes sourdes et malentendantes, accueil et guidage des personnes déficientes visuelles, audiodescription et interprétation en langue des signes, accompagnement de personnes précaires sur le festival, sensibilisation aux risques d’infections sexuellement transmissibles, sensibilisation aux violences sexistes et sexuelles (VSS), référent.es si agressions… Par exemple, pour sensibiliser et prévenir les VSS, en 2019, Les Escales, La Nuit de l’Erdre, les Z'eclectiques, le Bebop Festival et les 3 Éléphants avaient bénéficié de sessions de formations pour les équipes du festival et les bénévoles afin d’aider à prendre en charge les victimes de violences.",
+      "image": "img/action_secu.png",
       "cost": 3,
       "icon": "img/plus.svg",
       "isSelected": true

@@ -22,14 +22,15 @@
       <div id="dynamic-text" class="narrative-text"></div>
 
       <main>
-        <div id="page_scrollable_container">
+        <div class="page_scrollable_container">
           <!-- Titre principal -->
           
 
           <!-- Section: Taille du festival -->
           <section class="choice-section">
-            <img src="img/picto_perso.svg" alt="Icon">
-            <p class="content-title">{{festivalSizeTitle}}</p>
+            <p class="question-title">
+              <img src="img/picto_perso.svg" alt="Icon">Quelle taille pour mon festival ?
+            </p>
             <div class="choice-group">
               {{#festivalSizes}}
               <div class="choice-item" onclick="selectOption('festivalSizes', '{{id}}', this)">
@@ -45,8 +46,10 @@
 
           <!-- Section: Médiation culturelle -->
           <section class="choice-section">
-            <p class="content-title"><img src="img/picto_mediation.svg" alt="Icon"> {{culturalMediationTitle}}</p>
-            <p class="question-info">{{culturalMediationDescription}}</p>
+            <p class="question-title">
+              <img src="img/picto_mediation.svg" alt="Icon">Quelles actions pour la médiation culturelle ?
+            </p>
+            <p class="question-info">Je souhaite faciliter l’accès à la culture en organisant des activités ouvertes à tous.tes.</p>
             <div class="choice-group">
               {{#culturalMediationActions}}
               <div class="choice-item" onclick="selectOption('culturalMediationActions', '{{id}}', this)">
@@ -62,8 +65,10 @@
 
           <!-- Section: Transition écologique -->
           <section class="choice-section">
-            <p class="content-title"><img src="img/picto_ecolo.svg" alt="Icon"> {{ecologicalTitle}}</p>
-            <p class="question-info">{{ecologicalDescription}}</p>
+            <p class="question-title">
+              <img src="img/picto_ecolo.svg" alt="Icon">Quelles actions pour la transition écologique ?
+            </p>
+            <p class="question-info">Je souhaite que mon festival soit éco-responsable.</p>
             <div class="choice-group">
               {{#ecologicalActions}}
               <div class="choice-item" onclick="selectOption('ecologicalActions', '{{id}}', this)">
@@ -79,8 +84,10 @@
 
           <!-- Section: Prévention des risques -->
           <section class="choice-section">
-            <p class="content-title"><img src="img/picto_securite.svg" alt="Icon"> {{riskPreventionTitle}}</p>
-            <p class="question-info">{{riskPreventionDescription}}</p>
+            <p class="question-title">
+              <img src="img/picto_securite.svg" alt="Icon">Quelles actions pour la prévention des risques ?
+            </p>
+            <p class="question-info">Je veille à l’accessibilité, la sécurité et à la santé de tous.tes lors de mon évènement.</p>
             <div class="choice-group">
               {{#riskPreventionActions}}
               <div class="choice-item" onclick="selectOption('riskPreventionActions', '{{id}}', this)">
@@ -100,15 +107,11 @@
           </div>
         </div>
       </main>
-
-      <footer>
-        <p>En partenariat avec <strong>L’Onde Porteuse</strong> &amp; <strong>Le Pôle</strong></p>
-      </footer>
     </div>
 
     <!-- Fenêtre modale -->
     <div id="modal" class="modal">
-      <div class="modal-content">
+      <div class="modal-question">
         <span class="close">&times;</span>
         <p id="modal-description"></p>
       </div>

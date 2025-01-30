@@ -5,7 +5,8 @@
     "chartTitle": "Comment est composé mon budget ?"
   },
   "ticketPrice": "XX",
-  "festivalDescription": "J’ai choisi de faire un festival inclusif. Voici comment se compose mon budget.",
+  "festivalDescription1": "J’ai choisi de faire un festival",
+  "festivalDescription2": "Voici comment se compose mon budget.",
   "budgetChart": [
     { "className": "bar-recettes", "percentage": "52.3" },
     { "className": "bar-prives", "percentage": "9.1" },

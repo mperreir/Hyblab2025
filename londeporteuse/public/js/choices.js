@@ -36,6 +36,40 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
   let texteNarratif = [
+      "BRAVO? TU AS CRÉÉ TON FESTIVAL",
+      "IDÉAL ! MAINTENANT?",
+      "COMMENT VAS-TU LE FINANCER ?"
+  ];
+
+  let svgElement = document.getElementById("perso-svg-5");
+  let bubbleText = document.createElementNS("http://www.w3.org/2000/svg", "text");
+
+  // Ajustements pour le placement
+  let textX = 650; // Décalé vers la droite
+  let textY = 170; // Ajuste la hauteur
+
+  bubbleText.setAttribute("x", textX);
+  bubbleText.setAttribute("y", textY);
+  bubbleText.setAttribute("text-anchor", "middle");
+  bubbleText.setAttribute("font-size", "32"); // Taille du texte augmentée
+  bubbleText.setAttribute("fill", "black");
+  bubbleText.setAttribute("font-weight", "bold"); // Texte en gras
+
+  // Ajouter les lignes avec des sauts plus espacés
+  texteNarratif.forEach((line, index) => {
+      let tspan = document.createElementNS("http://www.w3.org/2000/svg", "tspan");
+      tspan.setAttribute("x", textX);
+      tspan.setAttribute("dy", index === 0 ? "0" : "50"); // Augmenté à 28px
+      tspan.textContent = line;
+      bubbleText.appendChild(tspan);
+  });
+
+  svgElement.appendChild(bubbleText);
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  let texteNarratif = [
       "CETTE ANNÉE LA SUBVENTION DE",
       "LA RÉGION PAYS DE LA LOIRE",
       "A ÉTÉ SUPPRIMÉE.",
