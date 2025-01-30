@@ -196,7 +196,7 @@
 
             rows.forEach(row => container.appendChild(row));
 
-            const dropdownButton = document.querySelector('.dropdown-toggle');
+            const dropdownButton = document.querySelector('.dropdown-sort-text');
             const selectedItem = document.querySelector(`#${criteria}`).innerText;
             dropdownButton.innerText = selectedItem;
         }
@@ -317,7 +317,7 @@
                     <div class="row" style="height: 15vh;"></div>
                     <div class="row">
                         <div class="dropdown">
-                            <button type="button" class="btn dropdown-toggle" data-toggle="dropdown"
+                            <button type="button" class="btn dropdown-toggle dropdown-district-text" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false" style="color: #3370E7; padding-left: 1vh;">
                                 Sélectionnez votre quartier :
                             </button>
@@ -464,7 +464,7 @@
                             </div>
                             <div class="col-4 d-flex justify-content-end align-items-center">
                                 <div class="dropdown">
-                                    <button type="button" class="btn dropdown-toggle" data-toggle="dropdown"
+                                    <button type="button" class="btn dropdown-toggle dropdown-sort-text" data-toggle="dropdown"
                                         aria-haspopup="true" aria-expanded="false" style="color:white;">
                                         De A à Z
                                     </button>
