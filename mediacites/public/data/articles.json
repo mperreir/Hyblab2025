@@ -18,6 +18,30 @@
                 "long": false
             }
         ],
+        "quartiers": [
+            {
+                "name": "Centre-Ville",
+                "kpi1": {
+                    "number": "X",
+                    "text": "lorem ipsum"
+                },
+                "kpi2": {
+                    "number": "X",
+                    "text": "lorem ipsum"
+                }
+            },
+            {
+                "name": "Île de Nantes",
+                "kpi1": {
+                    "number": "X",
+                    "text": "lorem ipsum"
+                },
+                "kpi2": {
+                    "number": "X",
+                    "text": "lorem ipsum"
+                }
+            }
+        ],
         "links": [
             {
                 "id": 0,
