@@ -184,6 +184,11 @@ app.get('/result', (req, res) => {
   }
 });
   
+// Route vers la page finale
+app.get('/final', (req, res) => {
+  res.render('finalPage.mustache'); // Rendu de la vue finalPage.mustache
+});
+
 
 // Export the app
 module.exports = app;
