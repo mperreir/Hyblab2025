@@ -10,7 +10,7 @@ function DonutChart({ size = 300 }) {
   const chartRef = useRef(null);
 
   // Couleurs pour chaque segment
-  const initialColors = ['#FF5733', '#FFBD33', '#33FF57']; // Exemples de couleurs (Fossiles, Nucléaires, Renouvelables)
+  const initialColors = ['#B8A6B5', '#7AA7D2', '#93C3A6']; // Exemples de couleurs (Fossiles, Nucléaires, Renouvelables)
   const [segmentColors, setSegmentColors] = useState(initialColors); // État des couleurs actuelles
   const [showGreySquare, setShowGreySquare] = useState(false); // Contrôle de l'affichage du carré gris
 
