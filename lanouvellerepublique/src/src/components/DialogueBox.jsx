@@ -24,10 +24,8 @@ const CardTitle = ({ number, title }) => {
 
 
 const AnimalIllustration = (POI) => {
-    const bool = POI.POI[5]
-    const pos = bool == "true" ? 40 : 15;
     return (
-        <div className="illustration" style={{marginLeft: `${POI.POI[4]}%`, top: pos}}>
+        <div className="illustration" style={{marginLeft: `${POI.POI[4]}%`}}>
             <img src={`https://hyblab.polytech.univ-nantes.fr/lanouvellerepublique/assets/${POI.POI[1]}`} /> 
         </div>
     )
@@ -85,7 +83,7 @@ const DialogueBox = ({ text, setSelectedText, POI, setSelectedPOI, chosenAnimal}
     const shadowStyle = {
         content: '""',
         position: "fixed",
-        bottom: "20px",
+        bottom: "0px",
         left: "0",
         width: "100%",
         height: "50px", // Adjust this based on how much shadow you want
@@ -104,7 +102,7 @@ const DialogueBox = ({ text, setSelectedText, POI, setSelectedPOI, chosenAnimal}
             opacity: [1, 0], // Fade out
             duration: 400,
             easing: "easeInQuad",
-            complete: () => {setSelectedText(""); setSelectedPOI([0,"","",0,0,""])}, // Remove text AFTER animation completes
+            complete: () => {setSelectedText(""); setSelectedPOI([0,"","",0,0,])}, // Remove text AFTER animation completes
             });
         }
     };

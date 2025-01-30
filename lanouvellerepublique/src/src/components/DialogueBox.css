@@ -93,6 +93,7 @@
 .dialogue-box .illustration{
     height: 20%;
     width: auto;
+    max-width: 30%;
     display: flex;
     justify-content: center;
     margin-top: 10px;
@@ -102,7 +103,7 @@
 }
 
 .dialogue-box .illustration img{
-    max-width: 250px;
+    max-width: 100%;
 }
 
 /*Faut penser a les faire décendre et le 2 un peu plus*/

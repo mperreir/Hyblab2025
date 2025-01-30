@@ -8,7 +8,7 @@ function CarouselBox({ mapRef, boxRef, point, setSelectedText, setSelectedPOI })
 
     function showDialogue() {
         setSelectedText(point.text);
-        setSelectedPOI([point.id, point.img_name, point.title, point.pos_img, point.icon_pos, point.lower]);
+        setSelectedPOI([point.id, point.img_name, point.title, point.pos_img, point.icon_pos]);
     }
 
     const AnimalIllustration = (imageName) => {
