@@ -5,6 +5,9 @@ setTimeout(() => {
     const front_tree = document.getElementById("GROUPE_ARBRES-2");
     front_tree.remove();
 
+    const dronepb = document.querySelector("#DRONE_CEREALE")
+    dronepb.remove();
+
     const groups = document.querySelectorAll('g[id^="HÉLICES-"]');
     const exception = {
         6:5,
@@ -51,5 +54,7 @@ setTimeout(() => {
 
         }
     });
+
+
 
 }, 2000);
