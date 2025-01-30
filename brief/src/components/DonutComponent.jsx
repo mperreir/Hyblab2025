@@ -1,20 +1,22 @@
 import React, { useRef, useState } from 'react';
 import { Doughnut } from 'react-chartjs-2';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
-import jsonData from './../../public/data/debut/sources_energie.json';
+import { useAppContext } from "../context/AppContextProvider";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 function DonutChart({ size = 300 }) {
+  const { globalState } = useAppContext();
   const chartRef = useRef(null);
 
-  // Initialisation des couleurs dynamiques
-  const initialColors = jsonData.sources.map((source) => source.color);
+  // Couleurs pour chaque segment
+  const initialColors = ['#FF5733', '#FFBD33', '#33FF57']; // Exemples de couleurs (Fossiles, Nucléaires, Renouvelables)
   const [segmentColors, setSegmentColors] = useState(initialColors); // État des couleurs actuelles
   const [showGreySquare, setShowGreySquare] = useState(false); // Contrôle de l'affichage du carré gris
 
-  const labels = jsonData.sources.map((source) => source.name);
-  const dataValues = jsonData.sources.map((source) => source.percentage);
+  // Labels et valeurs fixes
+  const labels = ['Fossiles', 'Nucléaires', 'Renouvelables'];
+  const dataValues = [globalState.Fossiles, globalState.Nucleaire, globalState.Renouvelables];
 
   const data = {
     labels: labels,
@@ -108,11 +110,11 @@ function DonutChart({ size = 300 }) {
           style={greySquareStyles}
           onClick={(e) => e.stopPropagation()} // Empêche le clic sur le carré gris de se propager
         >
-          {jsonData.sources.map((source, index) => (
+          {labels.map((label, index) => (
             <div key={index} style={rowStyles}>
-              <div style={colorBoxStyles(source.color)}></div>
-              <span>{source.name}</span>
-              <span style={{ marginLeft: 'auto' }}>{source.percentage}%</span>
+              <div style={colorBoxStyles(segmentColors[index])}></div>
+              <span>{label}</span>
+              <span style={{ marginLeft: 'auto' }}>{dataValues[index]}%</span>
             </div>
           ))}
         </div>
