@@ -115,10 +115,10 @@ const InformationMixComponent = () => {
                   position: "relative",
                 }}
               >
-                <Typography variant="h5" sx={{ color: colorsMix[index], fontWeight: "bold" }}>
-                  {item.name}
+                <Typography variant="h5" sx={{ color: "#991756", fontWeight: "bold" }}>
+                  {item.name} - {item.percentage}%
                 </Typography>
-                <Typography variant="body1">{item.description}</Typography>
+                <Typography variant="body1" sx={{ marginBottom: 2 }}>{item.text}</Typography>
 
                 {item.carbon_emissions && (
                   <Typography variant="body2" sx={{ marginTop: 1 }}>
@@ -203,10 +203,10 @@ const InformationMixComponent = () => {
                   position: "relative",
                 }}
               >
-                <Typography variant="h5" sx={{ color: colors[index], fontWeight: "bold" }}>
-                  {item.name}
+                <Typography variant="h5" sx={{ color: "#991756", fontWeight: "bold" }}>
+                {item.name} - {item.percentage}%
                 </Typography>
-                <Typography variant="body1">{item.text}</Typography>
+                <Typography variant="body1" sx={{ marginBottom: 2 }}>{item.text}</Typography>
 
                 {item.notes && (
                   <Typography variant="body2" sx={{ fontStyle: "italic" }}>
