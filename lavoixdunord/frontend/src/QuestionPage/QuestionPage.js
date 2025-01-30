@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import yaml from "js-yaml";
 import "./QuestionPage.css";
@@ -31,6 +31,16 @@ const QuestionPage = ({ isMuted, setIsMuted, showMap, setShowMap }) => {
     localStorage.setItem("score", parseInt(new_value));
     setScore(new_value);
   };
+
+  const hintRef = useRef(null);
+  useEffect(() => {
+    if (showHintText && hintRef.current) {
+      setTimeout(() => {
+        hintRef.current.scrollIntoView({ behavior: "smooth", block: "end" });
+      }, 300);
+    }
+  }, [showHintText, showHintImage]);
+
 
   useEffect(() => {
     fetch(basename + "data/questions.yaml")
@@ -195,7 +205,7 @@ const QuestionPage = ({ isMuted, setIsMuted, showMap, setShowMap }) => {
             </p>
           )}
 
-          <div className="hints-container">
+          <div className="hints-container" ref={hintRef}>
             <div className="hint-item">
               <button
                 className="toggle-btn"
