@@ -12,6 +12,7 @@
     justify-content: flex-start;
     overflow: auto;
     border-radius: 10px;
+    padding-bottom: 100px;
 }
 
 /* Style du titre (h1)
