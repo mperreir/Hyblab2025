@@ -55,7 +55,7 @@ const LayoutWithMusic = ({ isMuted, setIsMuted, children }) => {
             </audio>
             <div style={containerStyle}>
                 <div style={buttonSoundStyle}>
-                    <button onClick={() => {
+                    <button className='text-dark' onClick={() => {
                         setIsMuted(!isMuted);
                     }} style={{ background: 'none', border: 'none', cursor: 'pointer' }}>
                         {isMuted ? <MdVolumeOff size="24px" /> : <MdVolumeUp size="24px" />}

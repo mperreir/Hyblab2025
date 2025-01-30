@@ -292,7 +292,7 @@ game:
 
             - id: 5
               category: Histoire
-              text: "En mai-juin 1940, l’évacuation des troupes allées de Dunkerque vers l’Angleterre a été une des dates marquantes de la seconde guerre mondiale, quel était le nom de code de cette événement ?"
+              text: "En mai-juin 1940, l’évacuation des troupes alliées de Dunkerque vers l’Angleterre a été une des dates marquantes de la seconde guerre mondiale, quel était le nom de code de cet événement ?"
               options:
                 - text: "Opération Dynamo"
                   correct: true

@@ -162,7 +162,7 @@ const QuestionPage = ({ isMuted, setIsMuted, showMap, setShowMap }) => {
             {currentQuestion.options.map((option, index) => (
               <button
                 key={index}
-                className={`answer-btn ${selectedOptionIndex === index ? "selected" : ""} ${validated
+                className={`answer-btn border-dark ${selectedOptionIndex === index ? "selected" : ""} ${validated
                   ? index === selectedOptionIndex
                     ? option.correct
                       ? "correct"
@@ -208,7 +208,7 @@ const QuestionPage = ({ isMuted, setIsMuted, showMap, setShowMap }) => {
           <div className="hints-container" ref={hintRef}>
             <div className="hint-item">
               <button
-                className="toggle-btn"
+                className="toggle-btn text-dark"
                 onClick={() => {
                   setShowHintText(!showHintText)
                   if (showHintText) {
@@ -224,7 +224,7 @@ const QuestionPage = ({ isMuted, setIsMuted, showMap, setShowMap }) => {
 
             <div className="hint-item">
               <button
-                className={`toggle-btn ${!showHintText ? "disabled" : ""}`}
+                className={`toggle-btn text-dark ${!showHintText ? "disabled" : ""}`}
                 onClick={handleHint2Click}
                 disabled={!showHintText}
               >
