@@ -1,4 +1,9 @@
+const Billet= new Item("Billet pour l'hybarge", 500);
+const Legume = new Item("Légumes", 300);
+const Livre = new Item("Livre", 200);
 
+
+const player = new Player(2000, [Billet, Legume, Livre]);
 
 (async function run() {
     // Désactiver toutes les interactions sauf sur "inventaire"
@@ -221,3 +226,5 @@
 
     
 })();
+
+

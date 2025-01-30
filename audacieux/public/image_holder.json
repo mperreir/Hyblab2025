@@ -22,7 +22,7 @@
             "url": "assets/graphic/Abdonia.png",
             "audio": "abdonia",
             "box":[
-                { "left": "70%", "top": "50%", "width": "20%", "height": "30%", "script": {"func":"leaveImage", "args":[]}, "onload": {"func":"setMaxTime", "args":[42]} },
+                { "left": "74%", "top": "59%", "width": "11%", "height": "10%", "script": {"func":"leaveImage", "args":[]}, "onload": {"func":"setMaxTime", "args":[42]} },
                 {"left": "3", "top": "24%", "width": "40%", "height": "70%", "script": {"func":"dialogueAbdonia", "args":[]}}
             ]
         },
