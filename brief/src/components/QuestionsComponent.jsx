@@ -12,9 +12,12 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import DonutJaugeGroup from "./GraphicsComponent";
 import { useAppContext } from "../context/AppContextProvider";
+import RecapComponent from "./BilanComponent";
 
-const QuestionsComponent = () => {
+const QuestionsComponent = ({ scenarioId }) => {
   const { globalState, setGlobalState } = useAppContext(); // Accès au contexte
+  const [currentPhase, setCurrentPhase] = useState(null);
+  const [phaseText, setPhaseText] = useState("");
   const [questions, setQuestions] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState(null);
   const [subQuestions, setSubQuestions] = useState([]); // Pile de sous-questions
@@ -22,36 +25,60 @@ const QuestionsComponent = () => {
   const [isLoading, setIsLoading] = useState(true); // Indique si les données sont en cours de chargement
 
   useEffect(() => {
-    // Charger les questions depuis le fichier JSON
-    fetch("/brief/public/data/scenarioA/p1_questions.json")
+    if (!scenarioId) return; // Évite d'exécuter les requêtes si scenarioId est vide
+    const scenarioFolder = `scenario${String.fromCharCode(64 + scenarioId)}`; // Dynamise le dossier scénario (A, B, etc.)
+
+    // Charger la phase actuelle
+    fetch(`/brief/public/data/${scenarioFolder}/phases.json`)
       .then((response) => response.json())
       .then((data) => {
-        setQuestions(data.questions);
-        setCurrentQuestion(data.questions[0]); // Commence par la première question
+        setCurrentPhase(data.phases[0]); // Phase 1 au début
+        setPhaseText(data.phases[0].phase_text); // Texte de la phase
       })
       .catch((error) =>
-        console.error("Erreur lors du chargement des questions :", error)
+        console.error("Erreur lors du chargement des phases :", error)
+      );
+  }, [scenarioId]);
+
+  useEffect(() => {
+    if (currentPhase && scenarioId) {
+      const scenarioFolder = `scenario${String.fromCharCode(64 + scenarioId)}`;
+      // Charger les questions de la phase actuelle
+      fetch(
+        `/brief/public/data/${scenarioFolder}/p${currentPhase.phase_id}_questions.json`
       )
-      .finally(() => setIsLoading(false));
-  }, []);
+        .then((response) => response.json())
+        .then((data) => {
+          setQuestions(data.questions);
+          setCurrentQuestion(data.questions[0]);
+        })
+        .catch((error) =>
+          console.error("Erreur lors du chargement des questions :", error)
+        )
+        .finally(() => setIsLoading(false));
+    }
+  }, [currentPhase, , scenarioId]);
 
   const handleAnswer = (response) => {
-     // Mettre à jour les scores dans le contexte
-     setGlobalState((prevState) => ({
+    const scenarioFolder = `scenario${String.fromCharCode(64 + scenarioId)}`;
+    // Mettre à jour les scores dans le contexte
+    setGlobalState((prevState) => ({
       ...prevState,
       Budget: prevState.Budget + response.Budget.plus - response.Budget.moins,
       GES: prevState.GES + response.GES.plus - response.GES.moins,
       Satisfaction:
-        prevState.Satisfaction + response.Satisfaction.plus - response.Satisfaction.moins,
+        prevState.Satisfaction +
+        response.Satisfaction.plus -
+        response.Satisfaction.moins,
       history: [
         ...prevState.history,
-        { question_id: currentQuestion.question_id, response_id: response.response_id },
+        {
+          question_id: currentQuestion.question_id,
+          response_id: response.response_id,
+        },
       ], // Ajout à l'historique
     }));
-     // Simuler une transition vers la prochaine question (à améliorer)
-     alert(
-      `Scores mis à jour : Budget=${globalState.Budget}, GES=${globalState.GES}, Satisfaction=${globalState.Satisfaction}`
-    );
+
     // Gestion des sous-questions (si elles existent)
     if (response.subquestion && response.subquestion.length > 0) {
       setSubQuestions(response.subquestion); // Ajoute les sous-questions dans la pile
@@ -71,8 +98,42 @@ const QuestionsComponent = () => {
           setCurrentQuestion(nextQuestion);
         }, 300);
       } else {
-        console.log("Fin des questions !");
-        setCurrentQuestion(null); // Fin des questions
+        // Si la prochaine question n'est pas trouvée, passer à la phase suivante
+        const nextPhase = currentPhase.phase_id + 1;
+
+        if (nextPhase <= 3) {
+          // Ajuster ce nombre en fonction du nombre total de phases
+          // Charger la phase suivante
+          //alert(`Chargement de la phase suivante : ${nextPhase}`);
+          fetch(`/brief/public/data/${scenarioFolder}/phases.json`)
+            .then((response) => response.json())
+            .then((data) => {
+              const newPhase = data.phases.find(
+                (phase) => phase.phase_id === nextPhase
+              );
+              setCurrentPhase(newPhase);
+              setPhaseText(newPhase.phase_text);
+
+              // Charger les questions de la phase suivante
+              fetch(
+                `/brief/public/data/${scenarioFolder}/p${nextPhase}_questions.json`
+              )
+                .then((response) => response.json())
+                .then((data) => {
+                  setQuestions(data.questions);
+                  setCurrentQuestion(data.questions[0]);
+                })
+                .catch((error) =>
+                  console.error(
+                    "Erreur lors du chargement des questions de la phase suivante:",
+                    error
+                  )
+                );
+            });
+        } else {
+          // Si toutes les phases sont terminées, afficher la page de fin
+          setCurrentQuestion(null);
+        }
       }
     }
   };
@@ -94,9 +155,13 @@ const QuestionsComponent = () => {
 
   if (!currentQuestion) {
     return (
-      <Typography variant="h6" sx={{ textAlign: "center", marginTop: 2 }}>
-        Félicitations, vous avez terminé !
-      </Typography>
+      <RecapComponent
+        bilan={{
+          titre: " 2050 – Un système 100 % renouvelable",
+          paragraph:
+            "Félicitations, votre pays fonctionne désormais entièrement grâce aux énergies renouvelables ! L’enjeu est maintenant d’optimiser ce modèle : gérer le vieillissement des infrastructures, améliorer le recyclage des panneaux solaires et des éoliennes et anticiper les futurs besoins.",
+        }}
+      />
     );
   }
   return (
@@ -122,9 +187,8 @@ const QuestionsComponent = () => {
             opacity: { duration: 0.2 },
           }}
           style={{
-            position: "absolute",
             width: "100%",
-            maxWidth: 500,
+            maxWidth: "400px",
             margin: "auto",
             height: "100%", // Respecte le cadre fixe défini par IntroductionLayout
             display: "flex",
@@ -133,12 +197,6 @@ const QuestionsComponent = () => {
             alignItems: "center",
           }}
         >
-          <Typography
-            variant="h5"
-            sx={{ textAlign: "center", fontWeight: "bold" }}
-          >
-            Graphique interactif
-          </Typography>
           <DonutJaugeGroup />
           <Box
             width="100%"
@@ -148,11 +206,14 @@ const QuestionsComponent = () => {
             display="flex"
             backgroundColor="#F5E8EE"
             flexDirection="column"
-            sx={{ borderRadius: "16px" }}
+            sx={{ borderRadius: "16px", marginBottom: 2 }}
             gap={1}
           >
             {/* Afficher la question */}
-            <Typography variant="h7" align="center" gutterBottom>
+            <Typography
+              sx={{ textAlign: "center", fontWeight: "bold" }}
+              gutterBottom
+            >
               {currentQuestion.question_text}
             </Typography>
 
@@ -164,6 +225,7 @@ const QuestionsComponent = () => {
                 color="primary"
                 onClick={() => handleAnswer(response)}
                 sx={{
+                  padding: "12px 16px",
                   borderRadius: "26px",
                   backgroundColor: "#fff",
                   textAlign: "left",

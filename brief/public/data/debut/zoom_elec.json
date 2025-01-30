@@ -5,14 +5,16 @@
         {
           "name": "Nucléaire",
           "percentage": 65,
-          "text": "Faiblement émetteur de CO₂, le nucléaire est une pierre angulaire du mix électrique français, mais il pose des défis liés aux déchets radioactifs et à la sécurité. Il fonctionne avec de l'uranium importé principalement du Niger, du Kazakhstan et du Canada.",
-          "notes": "Pratiquement aucune émission directe de CO2. Défis écologiques et politiques liés aux déchets."
+          "notes": "Pratiquement aucune émission directe de CO2. Défis écologiques et politiques liés aux déchets.",
+          "image": "brief/public/images/nucleaire.svg",
+          "text": "Faiblement émetteur de CO₂, le nucléaire est une pierre angulaire du mix électrique français, mais il pose des défis liés aux déchets radioactifs et à la sécurité. Il fonctionne avec de l'uranium importé principalement du Niger, du Kazakhstan et du Canada."
         },
         {
           "name": "Hydraulique",
           "percentage": 12,
           "text": "L'énergie des rivières permet de produire de l'électricité via des barrages et des centrales hydroélectriques. Elle est renouvelable et stable, mais son développement est limité par les contraintes géographiques et climatiques.",
-          "notes": "Pratiquement aucune émission directe de CO2, mais des impacts indirects liés à la construction des barrages."
+          "notes": "Pratiquement aucune émission directe de CO2, mais des impacts indirects liés à la construction des barrages.",
+          "image": "brief/public/images/hydraulique.svg"
         },
         {
           "name": "Éolien",

@@ -23,6 +23,7 @@ import { AnimatePresence } from "framer-motion";
 
 const theme = createTheme({
   typography: {
+    fontFamily: "Arial, sans-serif", // Set Arial as the default font family
     h1: { textTransform: "none" },
     h2: { textTransform: "none" },
     h3: { textTransform: "none" },
@@ -79,7 +80,7 @@ const AnimatedRoutes = () => {
       <Route
         path="/brief/questions"
         element={
-          <TransitionsComponent animationType="flamme">
+          <TransitionsComponent animationType="vent">
             <QuestionsPage />
           </TransitionsComponent>
         }
@@ -111,8 +112,10 @@ const AnimatedRoutes = () => {
       <Route
         path="/brief/Information"
         element={
-          
+          <TransitionsComponent animationType="vent">
             <InformationMixPage />
+            </TransitionsComponent>
+
         }
       />
     </Routes>
