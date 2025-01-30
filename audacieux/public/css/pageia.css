@@ -1,0 +1,158 @@
+:root {
+    --section-bg: #f0eeda;
+    --text-color: #000000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Otama', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #ffffff;
+    padding: 2rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.main-title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.main-title-container img {
+    max-height: 100px;
+    width: auto;
+}
+
+h1 {
+    text-align: center;
+    color: var(--text-color);
+    font-size: 2.5rem;
+    font-style: italic;
+}
+
+.comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.section {
+    background-color: var(--section-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.section-header img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.section h2 {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    font-style: italic;
+}
+
+.section ul {
+    list-style-type: none;
+}
+
+.section li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.section li::before {
+    content: "•";
+    color: var(--text-color);
+    position: absolute;
+    left: 0;
+}
+
+.tools {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--section-bg);
+    border-radius: 8px;
+    margin-top: 2rem;
+}
+
+.tools-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.tools-header img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.tools h2 {
+    color: var(--text-color);
+    font-style: italic;
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    justify-items: center;
+}
+
+.tool-item {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 6px;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 768px) {
+    .comparison-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    body {
+        padding: 1rem;
+    }
+
+    .main-title-container {
+        flex-direction: column;
+    }
+
+    .section-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .tools-header {
+        flex-direction: column;
+    }
+}
