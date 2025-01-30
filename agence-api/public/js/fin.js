@@ -13,6 +13,11 @@ const initSlide3 = async function(){
   document.getElementById("textFin1").textContent = texts.fin.paragraphe1.replace("{nom}", userName);
   document.getElementById("titleFin2").textContent = texts.fin.title2;
   document.getElementById("textFin2").textContent = texts.fin.paragraphe2;
+  //Afffichage des noms de l'équipe
+  document.getElementById("titleFin3").textContent = texts.fin.title3;
+  document.getElementById("teamNamesText").textContent = texts.fin.paragraphe3;
+  
+  document.getElementById("refAPI").innerHTML = texts.fin.paragraphe4;
 
   if(secteur && choices ) {
     // Load the results on the cards
@@ -35,10 +40,6 @@ const initSlide3 = async function(){
   document.getElementById("articleContainer").addEventListener('click', () => {
     window.open(article.url, '_blank');
   });
-
-  //Afffichage des noms de l'équipe
-  document.getElementById("titleFin3").textContent = texts.fin.title3;
-  document.getElementById("teamNamesText").textContent = texts.fin.paragraphe3;
 };
 
 

@@ -16,10 +16,6 @@ const initSlide2 = async function (afterIntro = false) {
     const signal = abortController.signal;
 
     try {
-        const chatBox = document.getElementById('chatBox');
-        const messageList = document.getElementById('messageList');
-        const messageInput = document.getElementById('messageInput');
-
         if(!afterIntro){
             scrollToBottom();
 
@@ -38,17 +34,18 @@ const initSlide2 = async function (afterIntro = false) {
 
         switch (secteur) {
             case "agro":
-                await histoire(texts.agro, userName, signal);
+                await histoire(texts.agro, signal);
                 break;
             case "tech":
-                await histoire(texts.tech, userName, signal);
+                await histoire(texts.tech, signal);
                 break;
             case "arti":
-                await histoire(texts.arti, userName, signal);
+                await histoire(texts.arti, signal);
                 break;
         };
 
-        await displayMessages(texts.fin.avant, userName, signal);
+        await displayMessages(texts.fin.avant, signal);
+        
 
         await addButtonGoToResults(signal);
     } catch (error) {
@@ -89,8 +86,8 @@ async function waitForUserTouch(){
     return new Promise((resolve) => {
         const messageInput = document.getElementById('chatBox');
         messageInput.addEventListener('click', (event) => {
-            if(!event.target.classList.contains("info") && !event.target.classList.contains("expanding") && !event.target.classList.contains("expanding-element")){
-                resolve(true), {once: true};
+            if(!event.target.classList.contains("expanding") && !event.target.classList.contains("expanding-element")){
+                resolve(true);
             }
         });
     });
@@ -132,15 +129,15 @@ async function selectSecteur(presentationSecteurs) {
 
     toggleTapIconDisplay(true);
 
-    addMessage({text: presentationSecteurs.texts.agro, type: "received",img: presentationSecteurs.images.agro, title: presentationSecteurs.reponses.agro, class: "theme-agro"});
+    addMessage({text: presentationSecteurs.texts.agro, type: "received",img: presentationSecteurs.images.agro, class: "theme-agro"});
     scrollToBottom();
     await waitForUserTouch();
 
-    addMessage({text: presentationSecteurs.texts.tech, type: "received",img: presentationSecteurs.images.tech, title: presentationSecteurs.reponses.tech, class: "theme-tech"});
+    addMessage({text: presentationSecteurs.texts.tech, type: "received",img: presentationSecteurs.images.tech, class: "theme-tech"});
     scrollToBottom();
     await waitForUserTouch();
 
-    addMessage({text: presentationSecteurs.texts.arti, type: "received",img: presentationSecteurs.images.arti, title: presentationSecteurs.reponses.arti, class: "theme-arti"});
+    addMessage({text: presentationSecteurs.texts.arti, type: "received",img: presentationSecteurs.images.arti, class: "theme-arti"});
     scrollToBottom();
     await waitForUserTouch();
 
@@ -204,7 +201,7 @@ async function loadIntroStory(introStory, signal, skipInteraction = false) {
     return userName;
 }
 
-async function histoire(texts, userName, signal){
+async function histoire(texts, signal){
 
     choices = [];
 
@@ -218,15 +215,22 @@ async function histoire(texts, userName, signal){
         }
 
         await displayMessages(texts.contexte[i].avant.slice(0,-1), signal);
-        await displayExplanation(texts.informations[i], choices, texts.contexte[i].avant[texts.contexte[i].avant.length-1]);
-        
+        const images = texts.contexte[i].images;
+        console.log(images);
+        if(Array.isArray(images)){
+            await displayExplanation(texts.informations[i], choices, {"text": texts.contexte[i].avant[texts.contexte[i].avant.length-1], "image": images[0]});
+        } else {
+            console.log("oui");
+            console.log(images[choices[choices[0]]]);
+            await displayExplanation(texts.informations[i], choices, {"text": texts.contexte[i].avant[texts.contexte[i].avant.length-1], "image": images[choices[choices[0]]]});
+        }
 
         await displayMessages(texts.questions[i], signal);
 
         /* Ouais bon la solution est dégeu, mais ça fonctionne */
         let multipleChoices = false;
         for(let key in texts.questions[i]){
-           if(texts.questions[i][key].includes("financement")){
+           if(typeof texts.questions[i][key] === "string" && texts.questions[i][key].includes("financement")){
                 multipleChoices = true;
                 break;
            }
@@ -237,7 +241,7 @@ async function histoire(texts, userName, signal){
         let answer;
 
         if (multipleChoices){
-            answer = await addAnswer(texts.reponses[i], "mutliple");
+            answer = await addAnswer(texts.reponses[i], "multiple");
         } else {
             answer = await addAnswer(texts.reponses[i]);
         }

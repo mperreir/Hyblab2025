@@ -45,11 +45,6 @@ body{
     position: absolute;
 }
 
-/* white navigation bullets */
-.swiper-pagination-bullet-active {
-    background-color: white !important;
-}
-
 /* the slides and the loader should fill the whole 9:16 zone */
 .swiper-wrapper section, #loader{
     background-color: white;
@@ -153,7 +148,7 @@ body{
 
 /* CSS */
 button {
-  background: #000000;
+  background: gray;
   border-radius: 999px;
   box-shadow: #000000 0 10px 20px -10px;
   box-sizing: border-box;
@@ -171,5 +166,5 @@ button {
   touch-action: manipulation;
   width: fit-content;
   word-break: break-word;
-  border: 0;
+  border: 2px solid var(--user-color);
 }

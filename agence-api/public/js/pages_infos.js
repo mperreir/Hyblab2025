@@ -1,9 +1,7 @@
 //Fonction de création d'un message permettant d'être agrandi pour afficher de l'information
 async function displayExplanation(data, liste_choix, contenu_message) {
     const num_question = liste_choix.length + 1;
-    const reply = { text: contenu_message, type: 'received', id: `info_${num_question}`, class: 'info', choix: liste_choix }; // id à adapter selon le parametrage du JSON
-    
-    //Création de l'élément message et récupération de l'élément HTML
+    const reply = { text: contenu_message.text, img: contenu_message.image, type: 'received', id: `info_${num_question}`, class: 'info', choix: liste_choix }; // id à adapter selon le parametrage du JSON
     addMessage(reply, 'info');
     const lastMessage = document.querySelector(`#${reply.id}`);
     
@@ -29,15 +27,9 @@ function expandMessage(messageElement, data) {
     const rect = messageElement.getBoundingClientRect();
     expandingElement.dataset.id_message = messageElement.id;
 
-    // Récupération de la liste des choix sur la balise HTML
-    let liste_choix = [];
-    for (let i = 0; i < messageElement.dataset.taillechoix; i++) {
-        liste_choix.push(messageElement.dataset[`choix${i}`]);
-    }
     //Ajout des données du JSON dans des listes respectives
     const fields = ['titre', 'images', 'paragraphes'];
-
-    const { titre, images, paragraphes } = repartitionChamps(fields, data, liste_choix);
+    const { titre, images, paragraphes } = repartitionChamps(fields, data);
 
     const title = document.createElement('h1');
     title.textContent = titre;
@@ -50,25 +42,86 @@ function expandMessage(messageElement, data) {
         const img = document.createElement('img');
         img.src = image;
         image_container.appendChild(img);
-        if (!imgexist){
+        if (!imgexist) {
             expandingElement.appendChild(image_container);
             imgexist = true;
         }
     });
 
     let paragraphes_container = document.createElement('div');
-    paragraphes_container.classList.add('paragraphes-container');
     let paragraphes_exist = false;
-    paragraphes.forEach(paragraphe => {
-        const text = document.createElement('p');
-        text.textContent = paragraphe;
-        paragraphes_container.appendChild(text);
-        if (!paragraphes_exist){
-            expandingElement.appendChild(paragraphes_container);
-            paragraphes_exist = true;
-        }
-    });
 
+    if (paragraphes.length > 0) {
+        switch (detectType(paragraphes[0])) {
+            case "string":
+                paragraphes.forEach(paragraphe => {
+                    const text = document.createElement('p');
+                    text.textContent = paragraphe;
+                    paragraphes_container.appendChild(text);
+                    if (!paragraphes_exist) {
+                        expandingElement.appendChild(paragraphes_container);
+                        paragraphes_exist = true;
+                    }
+                });
+                paragraphes_container.classList.add('paragraphes-container');
+                break;
+            case "dico":
+                const liste = document.createElement('ul');
+                liste.classList.add('liste-rse');
+                paragraphes.forEach(paragraphe => {
+                    const item = document.createElement('li');
+                    item.classList.add('item-rse');
+
+                    //nombre d'entreprises
+                    const nombre = document.createElement('p');
+                    nombre.classList.add('nombre-entreprises');
+                    nombre.textContent = paragraphe.nb_entreprises;
+                    item.appendChild(nombre);
+
+                    //nom du label
+                    const label = document.createElement('h2');
+                    label.textContent = paragraphe.nom_label;
+                    item.appendChild(label);
+
+                    //Paragraphe de présentation
+                    const description_container = document.createElement('div');
+                    description_container.style.display = 'none';
+                    description_container.classList.add('expand-hidden');
+
+                    paragraphe.description.forEach(phrase => {
+                        const text = document.createElement('p');
+                        text.textContent = phrase;
+                        description_container.appendChild(text);
+                    });
+
+                    //Bouton de développement paragraphes
+                    const button = document.createElement('button');
+                    button.textContent = '+';
+                    button.classList.add('button-rse-expand');
+
+                    item.appendChild(button);
+                    item.appendChild(description_container);
+
+                    button.addEventListener('click', function () {
+                        event.stopPropagation();
+                        if (description_container.style.display === 'none') {
+                            console.log('display flex');
+                            description_container.style.display = 'flex';
+                            button.textContent = '-';
+                        } else {
+                            description_container.style.display = 'none';
+                            button.textContent = '+';
+                        }
+                    });
+
+
+                    liste.appendChild(item);
+                });
+                paragraphes_container.appendChild(liste);
+                paragraphes_container.classList.add('liste-rse-container');
+                expandingElement.appendChild(paragraphes_container);
+        }
+    }
     expandingElement.querySelectorAll('*').forEach(element => {
         element.style.display = 'none';
         element.classList.add('expanding-element');
@@ -81,7 +134,11 @@ function expandMessage(messageElement, data) {
 
     // Ajouter un écouteur d'événement pour afficher le contenu une fois la transition terminée
     expandingElement.addEventListener('transitionend', function onTransitionEnd() {
-        expandingElement.querySelectorAll('*').forEach(element => element.style.display = 'flex');
+        expandingElement.querySelectorAll('*').forEach(element => {
+            if (!element.classList.contains('expand-hidden')) {
+                element.style.display = 'flex';
+            }
+        });
         expandingElement.removeEventListener('transitionend', onTransitionEnd);  // Nettoyer l'événement
     });
 
@@ -124,8 +181,8 @@ function closeOverlay() {
 };
 
 // Fonction pour répartir les champs du JSON dans des listes respectives
-function repartitionChamps(fields, data, liste_choix){
-    let result = {titre: "", images: [], paragraphes: []};
+function repartitionChamps(fields, data) {
+    let result = { titre: "", images: [], paragraphes: [] };
     fields.forEach(field => {
         switch (detectType(data[field])) {
             case "array":
@@ -139,7 +196,7 @@ function repartitionChamps(fields, data, liste_choix){
                 result[field] = data[field];
                 break;
             case "dico":
-                result[field] = match(data[field], liste_choix);
+                result[field] = match(data[field]);
                 break;
         }
     });
@@ -147,12 +204,12 @@ function repartitionChamps(fields, data, liste_choix){
 };
 
 // Fonction pour trouver le bon paramètre dans le JSON
-function match(data, liste_choix) {
+function match(data) {
     if (data.length == 0) {
         return [];
     }
     const num_question = parseInt(Object.keys(data)[0].split('_')[0], 10);
-    return data[String(liste_choix[num_question - 1])];
+    return data[String(choices[num_question - 1])];
 };
 
 // Fonction pour détecter le type de l'élément

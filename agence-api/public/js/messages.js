@@ -25,8 +25,40 @@ async function addMessage(message, type) {
         div.appendChild(title);
     }
 
+    if (message.choix) {
+        for (let i = 0; i < message.choix.length; i++) {
+            messageElement.dataset[`choix${i}`] = message.choix[i];
+        }
+        messageElement.dataset.taillechoix = message.choix.length;
+        let info_icon = document.createElement('svg');
+        info_icon.src = "img/info-circle.svg";
+        info_icon.classList.add('info-icon');
+        info_icon.classList.add('expanding-element');
+        let svg_container = document.createElement('div');
+        svg_container.id = "svg-container";
+        
+        svg_container.appendChild(info_icon);
+        
+
+        fetch("img/icons/info-circle.svg")
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Erreur de chargement du SVG: ${response.statusText}`);
+                }
+                return response.text();
+            })
+            .then(svgContent => {
+                svg_container.innerHTML = svgContent;
+                div.appendChild(svg_container);
+            })
+            .catch(error => console.error('Erreur:', error));
+    }
+
     if (message.img) {
-        div.appendChild(document.createElement('img')).src = message.img;
+        const img = document.createElement('img');
+        img.src = message.img;
+        img.classList.add('expanding-element')
+        div.appendChild(img);
         div.appendChild(document.createElement('p')).textContent = message.text;
         div.id = message.id;
         messageElement.appendChild(div);
@@ -38,9 +70,8 @@ async function addMessage(message, type) {
 
     if (message.class) {
         messageElement.classList.add(message.class);
+        div.classList.add(message.class);
     }
-
-
 
     switch (type) {
         case 'first':
@@ -58,37 +89,6 @@ async function addMessage(message, type) {
     }
 
     messageList.appendChild(messageElement);
-
-    if (message.choix) {
-        for (let i = 0; i < message.choix.length; i++) {
-            messageElement.dataset[`choix${i}`] = message.choix[i];
-        }
-        messageElement.dataset.taillechoix = message.choix.length;
-        let info_icon = document.createElement('svg');
-        info_icon.src = "img/info-circle.svg";
-        info_icon.classList.add('info-icon');
-        info_icon.classList.add('expanding-element');
-        let svg_container = document.createElement('div');
-        svg_container.id = "svg-container";
-        
-        svg_container.appendChild(info_icon);
-        messageElement.appendChild(svg_container);
-
-        
-
-        fetch("img/info-circle.svg")
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`Erreur de chargement du SVG: ${response.statusText}`);
-                }
-                return response.text();
-            })
-            .then(svgContent => {
-                svg_container.innerHTML = svgContent;
-                messageElement.appendChild(svg_container);
-            })
-            .catch(error => console.error('Erreur:', error));
-    }
     scrollToBottom();
 };
 
@@ -111,20 +111,43 @@ async function addAnswer(answers, type) {
             answerElement.classList.add('middle');
         }
 
+        if(type === "useless"){
+            answerElement.classList.add("useless");
+        }
+
         answersContainer.appendChild(answerElement);
         i++;
     }
 
+    messageList.appendChild(answersContainer);
+    scrollToBottom();
+
+    let selectedAnswer = [];
+
+    // if the type is useless, send a promise with the answer directly without needingn a confirm button
+    if (type === 'useless') {
+        return new Promise((resolve) => {
+            answersContainer.addEventListener('click', (e) => {
+                if (e.target.classList.contains('answer')) {
+                    document.querySelectorAll('.answer').forEach((div) => div.classList.remove('selected'));
+                    e.target.classList.add('selected');
+                    selectedAnswer = [e.target.dataset.answer];
+                    answersContainer.remove();
+                    for (const answer of selectedAnswer) {
+                        addMessage({ text: answer, type: 'sent' });
+                    }
+                    resolve(selectedAnswer);
+                }
+            });
+        });  
+    }
 
     const confirmButton = document.createElement('button');
     confirmButton.id = 'confirm-button';
     confirmButton.disabled = true;
     confirmButton.textContent = 'Confirmer';
 
-    messageList.appendChild(answersContainer);
     messageList.appendChild(confirmButton);
-
-    let selectedAnswer = [];
 
     switch (type) {
         case 'multiple':

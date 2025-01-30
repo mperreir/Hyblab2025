@@ -1,8 +1,8 @@
 /* Style global du conteneur expanding */
 .expanding {
     position: fixed;
-    background-color: #d6d6d6;
-    color: #000000; /* Texte noir */
+    background-color: var(--user-color);
+    color: var(--user-text-color); /* Texte noir */
     display: none;
     flex-direction: column;
     align-items: center; /* Centrer les éléments horizontalement */
@@ -35,6 +35,7 @@
     width: 100%;
     height: 40%; /* Prend 40% de la hauteur de la page */
     overflow: auto; /* Permet le défilement si nécessaire */
+    padding: inherit;
 }
 
 .expanding .paragraphes-container {
@@ -58,7 +59,7 @@
 /* Ajustement pour les petits écrans */
 @media (max-width: 768px) {
     .expanding img {
-        width: calc(50% - 10px); /* 2 images par ligne sur écran moyen */
+        width: calc(60%); /* 2 images par ligne sur écran moyen */
     }
 }
 
@@ -74,4 +75,85 @@
     line-height: 1.5;
     text-align: left;
     margin-top: 20px; /* Espacement entre les images et le texte */
+}
+
+/* CSS Spécial pour la page d'informations sur le RSE */
+.expanding .liste-rse-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    padding: inherit;
+}
+
+.liste-rse {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+}
+
+.liste-rse li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+}
+
+.liste-rse.nombre-entreprises {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    background-color: var(--user-text-color);
+    color: var(--user-color);
+}
+
+.liste-rse h2 {
+    flex: 1;
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.liste-rse button {
+    /* Réinitialisation du bouton */
+    border: none;
+    
+    /* Dimensions */
+    width: 40px;
+    height: 40px;
+    padding: 0;  /* Évite l'ajout d'espace supplémentaire */
+    
+    /* Apparence */
+    background-color: var(--user-text-color);
+    color: var(--user-color);
+    border-radius: 50%;
+    
+    /* Typographie */
+    font-size: 1.5rem;
+    
+    /* Interaction */
+    cursor: pointer;
+
+    /* Centrage du texte */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.liste-rse .content {
+    display: none;
+    width: 100%;
+    padding: 10px 0 0 55px;
+}
+
+.liste-rse .content.active {
+    display: block;
 }

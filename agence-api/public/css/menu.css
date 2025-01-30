@@ -35,10 +35,9 @@
 
 /* 弹窗内部 */
 .menu-wrapper .menu-content {
-  width: 90%;
-  max-height: 70%;
-  background: #d9d9d9;
-  border-radius: 50px 50px 0 0;
+  width: 100%;
+  max-height: 75%;
+  background: var(--bg-color);
   padding: 20px;
   box-shadow: 0 -8px 20px rgba(0,0,0,0.2);
   text-align: center;
@@ -58,52 +57,77 @@
   top: 25px;
   right: 25px;
   border: none;
-  font-size: 1.4rem;
+  font-size: 40px;
   cursor: pointer;
+  background: none;
+  box-shadow: none;
 }
 
 /* 文字等内部细节 (只影响 .menu-content 里的元素) */
-.menu-wrapper .menu-content h1 {
+#menuTitle{
   font-size: 36px;
   margin-top: 40px;
-  text-align: center;
+  text-align: left;
+  margin-left: 30px;
 }
 .menu-wrapper .menu-content p {
-  margin: 20px auto;
+  margin: 5% 5% 0 5%;
   max-width: 80%;
   line-height: 1.6;
   text-align: left;
-  font-size: 1rem;
+  font-size: 16px;
+  background-color: #1D1D1D;
+  color: white;
+  padding: 15px 0;
+  border-radius: 10px;
 }
+
 .menu-wrapper .menu-content ul {
   list-style: none;
   padding: 0;
-  margin: 20px auto;
-  max-width: 80%;
+  width: 100%;
   text-align: left;
 }
-.menu-wrapper .menu-content ul li {
-  margin: 10px 0;
-  font-size: 1rem;
-  font-weight: 600;
+.menu-wrapper .menu-content li {
+  margin: 10px 5%;
+  max-width: 80%;
+  line-height: 1.6;
+  text-align: left;
+  font-size: 16px;
+  background-color: white;
+  color: #1D1D1D;
+  padding: 15px;
+  border-radius: 10px;
 }
-.menu-wrapper .menu-content ul li a {
-  text-decoration: none;
-  color: #007bff;
+
+.menu-wrapper .menu-content li:hover {
+  background-color: var(--user-color);
+  color: var(--user-text-color);
 }
-.menu-wrapper .menu-content ul li a:hover {
-  color: #0056b3;
-}
-.menu-wrapper .menu-content footer {
-  font-size: 0.8rem;
-  color: #666;
+
+.menu-wrapper .menu-content footer p{
+  font-size: 16px;
+  color: white;
   text-align: center;
+  background-color: var(--bg-color);
+  margin-top: 10px;
+}
+
+.menu-wrapper .menu-content footer hr{
+  margin: 10px 0;
+  border: none;
+  border-top: 2px solid white;
+}
+
+.menu-wrapper .menu-content footer a{
+  color: white;
+  font-size: 16px;
 }
 
 
 .menu {
   --s: 30px; /* control the size */
-  --c: black; /* the color */
+  --c: white; /* the color */
   
   height: var(--s);
   aspect-ratio: 1;

@@ -12,6 +12,7 @@ function initMenu(){
     menuBtns.forEach((menuBtn, index) => {
         menuBtn.addEventListener("click", () => {
             menuPopups[index].classList.remove("hidden");
+            toggleTapIconDisplay(true);
         });
     });
   
@@ -21,6 +22,7 @@ function initMenu(){
         closeMenuBtn.addEventListener("click", () => {
             menuPopups[index].classList.add("hidden");
             menuBtns[index].checked = false;
+            toggleTapIconDisplay(false);
         });
     });
 
@@ -44,8 +46,10 @@ function initMenu(){
             switchTheme("theme-default");
             changeApiName("Api");
             document.getElementById('cardsContainer').innerHTML='';
-            currentQuestion = 1;
-            updateProgress();
+            if (document.getElementById("seeResultsButton")) {
+                document.getElementById("seeResultsButton").remove();
+            }
+            resetProgress();
             swiper.slideTo(1);
             initSlide2(true);
         });

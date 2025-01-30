@@ -1,23 +1,23 @@
 /* ================== Styles de la barre de progression ================== */
 
 /* Conteneur de la barre de progression */
-/* Conteneur de la barre de progression */
 .progress-container {
     width: 100%;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    bottom: -12px;
+    position: absolute;
+    top : 88px;
+    left: 0;
+    right: 0;
+    box-sizing: border-box;
 }
 
 /* Barre de progression */
 .progress-bar {
     display: flex;
-    justify-content: space-between;
-    width: 80%;
+    align-items: center;
+    width: 100%;
     /*espacement des lignes entre les ronds*/
-    position: absolute;
+    
+    
 }
 
 /* Ligne de progression */
@@ -28,7 +28,7 @@
     left: 0;
     right: 0;
     height: 4px;
-    background-color: #ccc;
+    background-color: var(--API-color);
     transform: translateY(-50%);
     z-index: 1;
 }
@@ -37,14 +37,14 @@
 .progress-step {
     width: 24px;
     height: 24px;
-    background-color: #ccc;
+    background-color: var(--API-color);
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 2;
     font-size: 12px;
-    color: #fff;
+    color: var(--user-text-color);
     position: relative;
 }
 
@@ -53,27 +53,22 @@
     flex: 1; /* Adjust to fill space between dots */
     height: 4px;
     border: none;
-    background-color: #ccc; /* Default line color */
+    background-color: var(--API-color); /* Default line color */
     margin: auto; /* Center vertically */
     z-index: 1;
 }
 
-/* Étapes complétées */
-.progress-step.completed {
-    background-color: #39a276; /* Green for completed steps */
-}
-
-.progress-line.completed {
-    background-color: #39a276; /* Green line for completed steps */
-}
-
 /* Étape active */
 .progress-step.active {
-    background-color: #9e4c4c; /* Red for the current step */
+    background-color: var(--user-color); /* Red for the current step */
 }
 
 .progress-line.active {
-    background-color: #9e4c4c; /* Red line for the current step */
+    background-color: var(--user-color); /* Red line for the current step */
+}
+
+.progress-step.hidden {
+    display: none;
 }
 
 /* Numéro de l'étape */
@@ -89,27 +84,27 @@
 }
 
 .chat-header {
-    background: var(--primary-color);
-    color: var(--primary-text-color);
-    text-align: center;
-    padding: 10px;
+    background: var(--bg-color);
+    color: #FFFF;
+    text-align: left;
+    padding: 0px 5px; /* Ajustez les marges si nécessaire */
     font-size: 20px;
     font-weight: bold;
-    border-bottom: 2px solid rgb(163, 161, 161);
-    display: flex;
-    align-items: center;
-    /* Centre verticalement les éléments */
     border-bottom: 1px solid #ccc;
-    /*ligne séparatrice*/
-    position: relative;
-    flex-direction: column;
-    transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    align-items: center; /* Aligne les éléments verticalement */
+    flex-direction: row; /* Positionne les éléments horizontalement */
+    position: relative; /* Nécessaire pour placer la barre de progression en bas */
+    gap: 20px; /* Espace entre la bulle et le texte */
+    height: 100px; /* Fixe la hauteur totale du header */
+    box-sizing: border-box; /* Inclut padding et bordure dans la hauteur */
 }
 
+
 .chat-header-bulle {
-    width: 50px;
+    width: 70px;
     /* Largeur de la bulle */
-    height: 50px;
+    height: 70px;
     /* Hauteur de la bulle */
     border-radius: 50%;
     /* Rend la bulle ronde */
@@ -118,15 +113,19 @@
     flex-shrink: 0;
     /* Empêche la bulle de rétrécir */
     display: flex;
-    justify-self: center;
-    align-self: center;
+    background-image: var(--api-img);
+    background-position: center;
+    background-size: 70px;
+    background-repeat: no-repeat;
+    background-color: #666;
+
 }
 
 /* Style pour l'image à l'intérieur de la bulle */
 .chat-header-img {
     width: 100%;
-    height: auto;
-    border-radius: 50%;
+    height: 100%;
     object-fit: cover;
+    background-image: var(--api-img);
     /* Ajuste l'image pour couvrir entièrement la bulle */
 }

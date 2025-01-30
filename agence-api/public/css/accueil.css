@@ -1,8 +1,11 @@
 /*---------------- Partie accueil ---------------*/
 
-/* Pour le contraste du logo: filter: contrast(1); */
-
+/* Style général pour le corps */
 .accueilbody {
+    margin: 0;
+    padding: 0;
+    background-color: #f8b100; /* Couleur jaune pour le fond */
+    color: #333;
     display: flex;
     flex-direction: column;
     align-items: center; /* Centre les éléments horizontalement */
@@ -66,121 +69,39 @@
 
 /* Style pour #bloc-centre */
 .bloc-centre {
-    padding: 20px; /* Augmenté pour plus d'espacement interne */
-    background-color: #ffffff;
-    border-radius: 10px;
-    /*filter: contrast(1); ajout de contraste*/
-    
-    /* Centrage et ajustement de la taille */
-    max-width: 80%; /* Augmenté de 250px à 80% pour plus de flexibilité */
-    width: 100%;    /* Assure que le bloc prend toute la largeur disponible jusqu'à la largeur maximale */
-    height: auto;   /* Adapté en hauteur en fonction du contenu */
-
-    /* Utilisation de Flexbox pour le contenu interne */
-    display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center; /* Centré horizontalement */
-
-    /* Réactivité */
-    font-size: 2rem; /* Utilisation d'unités relatives pour une meilleure responsivité */
-    box-sizing: border-box;
-    margin: 20px 0; /* Ajuste les marges pour une meilleure responsivité */
+    align-items: center;
     
-    /* Animation */
-    animation: blinkBackground 2s infinite; /* Applique l'animation */
 }
 
-/* Style pour l'image .logo-appli */
+
 .logo-appli {
-    max-width: 100%;    /* Limite la largeur de l'image à 100% du conteneur parent */
-    height: auto;       /* Maintient les proportions de l'image */
-    display: block;     /* Permet d'utiliser les marges automatiques */
-    margin: 0 auto;     /* Centre horizontalement l'image */
-    box-shadow: 0 4px 6px #1D1D1D; /* Ajoute une ombre portée */
-}
-
-/* Texte de bienvenue */
-.texte {
-    font-size: 2rem;          /* Utilisation d'unités relatives pour la responsivité */
-    font-weight: bold;        /* Rend le texte en gras */
-    color: #1D1D1D;           /* Couleur du texte */
-    font-family: 'Helvetica', sans-serif; /* Police du texte */    
-    /* Centrage du texte */
-    text-align: center;
-    background-color: #e7d378;
-    border-radius: 20px;
-    padding: 10px;
-    margin-bottom: 20px; /* Espacement entre le texte et le bloc-centre */
-}
-
-/* Style pour le GIF arrow */
-.arrow {
-    width: 100px; /* Taille par défaut */
+    width: 300px;
     height: auto;
-    display: block;
-    margin: 0 auto; /* Centre horizontalement */
+    animation: float 3s infinite ease-in-out; 
 }
 
-/* Responsive Styles */
-@media (max-width: 1024px) {
-    /* Ajustements pour tablettes */
-    
-    .arrow {
-        width: 80px;
+/* Animation pour le logo (optionnel) */
+ @keyframes float {
+    0%, 100% {
+        transform: translateY(0);
     }
-    
-    #first-slide footer {
-        bottom: 10%;
-        padding: 8px 16px;
+    50% {
+        transform: translateY(-10px);
     }
+} 
+
+.texte {
+    font-size: 16px;
+    margin: 10px 0;
+    font-weight: bold;
+    color: #444;
+    font-family: 'Arial', sans-serif;
 }
 
-@media (max-width: 768px) {
-    /* Ajustements supplémentaires pour des tablettes plus petites */
-    
-    .texte {
-        font-size: 1.8rem;
-    }
-
-    .parent-container {
-        padding: 15px;
-        margin: 80px 0; /* Réduit les marges pour les petits écrans */
-    }
-
-    .bloc-centre {
-        max-width: 70%; /* Augmenté pour plus de taille sur les petites tablettes */
-    }
+.arrow {
+    margin-top: 20px;
+    width: 30px;
+    height: auto;
 }
 
-@media (max-width: 480px) {
-    /* Ajustements pour mobiles */
-    
-    .arrow {
-        width: 60px;
-    }
-    
-    #first-slide footer {
-        bottom: 15%;
-        padding: 6px 12px;
-    }
-    
-    .accueilbody::before {
-        opacity: 0.7; /* Augmente l'opacité pour améliorer la lisibilité si nécessaire */
-    }
-    
-    /* Ajustements supplémentaires */
-    .accueilbody {
-        padding: 10px;
-    }
-
-    .texte {
-        font-size: 1.5rem;
-        padding: 5px;
-    }
-    
-    .bloc-centre {
-        padding: 10px;
-        max-width: 90%; /* Augmenté à 90% pour maximiser l'espace sur mobile */
-    }
-}
