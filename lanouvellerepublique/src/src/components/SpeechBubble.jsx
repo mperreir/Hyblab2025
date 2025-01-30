@@ -1,7 +1,6 @@
 import './SpeechBubble.css';
 
 const SpeechBubble = ({ text, side, pos_tail, width }) => {
-    console.log(pos_tail);
     return (
         <div 
             className="speech_bubble"
