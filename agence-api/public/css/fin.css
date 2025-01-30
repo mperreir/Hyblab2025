@@ -25,6 +25,12 @@
   margin: 0.5em 2em;
 }
 
+#third-slide a {
+  font-size: 16px;
+  text-align: left;
+  color:black;
+}
+
 .separator {
   margin: 0.5em 1.2em;
   height: 1px;
