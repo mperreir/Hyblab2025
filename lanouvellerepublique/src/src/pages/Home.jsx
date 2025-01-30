@@ -12,7 +12,7 @@ function Home() {
 
   return (
     <>
-      <Header titre={"Dans leur peau"} textColor={"black"} isHome="true" />
+      <Header textColor={"black"} isHome="true" />
       <div className='home_page'>
         <div className='main-content'>
           <div className='titles'>

@@ -49,7 +49,7 @@ function Guide() {
 
     return (
         <>
-            <Header titre={"Dans leur peau"} textColor={"black"} />
+            <Header textColor={"black"} />
             <div className="guide1-container">
                 <img src={lines[step].svg} alt="Design ligne" className="line-design" 
                     style={{top: lines[step].yOffset}}/>

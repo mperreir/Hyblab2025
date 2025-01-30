@@ -23,7 +23,7 @@ function RegionSelection() {
 
     return (
         <>
-        <Header titre={"Dans leur peau"} textColor={"black"}/>
+        <Header textColor={"black"}/>
         <div className='region_page'>
             <div className='content'>
                 <h2>5 espèces en voie de disparition en France</h2>
