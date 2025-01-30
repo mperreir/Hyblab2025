@@ -10,7 +10,7 @@ const player = new Player(2000, [Billet, Legume, Livre]);
 
     const tutoinventaire = createPopupTuto("inventaire", {
         title: "Bonjour !",
-        message: "Clique sur l'icone de quête en forme de coffre",
+        message: "Clique sur l'icone de quête (le calepin)",
         buttonText: "Fermer",
         width: "300px",
         height: "auto",
