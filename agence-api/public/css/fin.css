@@ -1,3 +1,7 @@
+#content-fin {
+  background: linear-gradient(180deg, #f8b100,#f8b100, #FFFF);
+}
+
 #third-slide {
     display: flex;
     flex-direction: column;
@@ -6,6 +10,14 @@
     overflow-y: scroll;
     overflow-x: hidden;
 }
+
+.fin-logoAPIstory{
+    width: 200px;
+    display: flex;
+    height: auto;
+    margin: 0 auto;   
+}
+
 
 #third-slide p {
   font-size: 16px;
