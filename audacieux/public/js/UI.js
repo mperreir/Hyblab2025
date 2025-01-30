@@ -48,7 +48,7 @@ const player = new Player(2000, [Billet, Legume, Livre]);
         buttonText: "Fermer",
         width: "300px", // Augmente la taille de l'image
         height: "auto", // Augmente la taille de l'image
-        backgroundImage : "img/postit.webp",
+        backgroundImage : "img/liste_course.svg",
         
         customStyles: {
             container :{
@@ -56,9 +56,10 @@ const player = new Player(2000, [Billet, Legume, Livre]);
                 width: "300px", // Taille ajustable
                 height: "auto", // Taille ajustableg
                 textAlign: "center",
-                backgroundImage: "url('img/postit.webp')",
+                backgroundImage: "url('img/liste_course.svg')",
                 backgroundSize: "cover",
                 backgroundRepeat: "no-repeat",
+                backgroundPosition: "0% 0%",
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
@@ -68,10 +69,20 @@ const player = new Player(2000, [Billet, Legume, Livre]);
                 borderRadius: "8px",
                 color: "black",
                 transform: "scale(2)"
+
+            },
+            title: {
+                padding: "18% 0% 0% 20%",
+            },
+            message: {
+                padding: "0% 0% 0% 15%",
             },
             triangle: {
                 visibility: "hidden",
             },
+            closeButton: {
+                visibility: "hidden",
+            }
         },
     });
     await waitForClick("inventaire");
@@ -79,31 +90,28 @@ const player = new Player(2000, [Billet, Legume, Livre]);
     const tutofininventaire = createPopupTuto("inventaire", {
         title: "L'INVENTAIRE",
         message: "Ici tu as l'ensemble des objets à acheter durant ton aventure. Ta liste de course est composée d'un billet pour l'hybarge, de légumes et d'un livre. Re-clique sur le livre lorsque tu as compris !",
-        width: "400px",
+        width: "600px",
         height: "auto",
-        backgroundImage: "img/BULLE2.png",
+        backgroundImage: "img/BULLE1.png",
         customStyles: {
 
             title:{
-                padding:"0% 0% 0% 8%"
+                padding:"0% 0% 0% 0%"
             },
 
             message: {
                 width:"80%",
-                padding:"1% 0% 0% 12%",
-                margin:"1% 0% 0% 0%"
+                padding:"0% 0% 0% 12%",
             },
             container: {
-                padding:"0% 2% 2% 2%",
+                padding:"0% 2% 3% 2%",
                 color: "black",
                 position: "fixed",
                 top: "5%",
                 left: "40%",
                 transform: "scale(1.5)",
-                backgroundSize: "180%",
+                backgroundSize: "100% 100%",
                 backgroundPosition: "53% 45%", // Centre horizontalement à 50%, décalage vertical à 30%
-
-
             },
         },
     });
@@ -181,28 +189,28 @@ const player = new Player(2000, [Billet, Legume, Livre]);
     const tutoScroll = createPopupTuto2("PÉNICHE",{
         title: "Se balader sur le canal",
         message: "Pour se balader sur le canal, rien de plus simple ! Utilise ta souris ou ton pavé tactile en balayant vers le bas pour faire bouger le bateau ! Tu rencontreras plusieurs points d'étapes tout au long de ton voyage. Ces derniers apparaîtront en noir et blanc avec une bulle de texte. Clique dessus pour découvrir le point d'étape et découvrir la vie du Canal du Midi. Commence ton voyage dans le premier point clé, l'Hybarge !",
-        width: "550px",
+        width: "800px",
         height: "auto",
         backgroundImage: "img/BULLE1.png",
         customStyles: {
 
             title:{
-                padding:"0% 0% 0% 12%"
+                padding:"3% 0% 0% 5%"
             },
 
             message: {
                 width:"80%",
-                padding:"2% 0% 0% 12%",
+                padding:"0% 2% 4% 12%",
             },
             container: {
                 padding:"0% 2% 3% 2%",
                 color: "black",
                 position: "fixed",
                 top: "5%",
-                left: "40%",
+                //left: "40%",
                 transform: "scale(1.5)",
                 backgroundSize: "100% 100%",
-                backgroundPosition: "53% 45%", // Centre horizontalement à 50%, décalage vertical à 30%
+                backgroundPosition: "25% 45%", // Centre horizontalement à 50%, décalage vertical à 30%
             },
         },
     });

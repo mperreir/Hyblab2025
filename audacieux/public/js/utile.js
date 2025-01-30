@@ -193,6 +193,13 @@ function createPopup(idTarget, options) {
         cursor: "pointer",
         ...customStyles.closeButton,
     });
+    Object.assign(popupTitle.style, {
+        ...customStyles.title,
+    });
+    Object.assign(popupMessage.style, {
+        ...customStyles.message,
+    });
+
 
     // Ajouter les événements
     document.getElementById(idTarget).addEventListener("click", () => {
