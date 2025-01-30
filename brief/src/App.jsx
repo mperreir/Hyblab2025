@@ -7,7 +7,6 @@ import {
 } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
 import QuestionsPage from "./pages/QuestionsPages";
-//import Intro from './pages/Intro';
 import ContextePage from "./pages/ContextePage";
 import OutroPage from "./pages/OutroPage";
 import DefinitionPage from "./pages/DefinitionPage";

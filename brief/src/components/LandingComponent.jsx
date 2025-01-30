@@ -3,7 +3,10 @@ import { Box, Button, Typography, styled } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { useTheme } from "@mui/material/styles";
 import { ParallaxProvider, Parallax } from "react-scroll-parallax";
-import Logo from "../assets/LOGO-V1 1.png";
+import Logo1 from "../assets/1e PAGE.svg";
+import Logo2 from "../assets/LOGO-V1 1.svg";
+
+
 
 const StyledButton = styled(Button)(({ theme }) => ({
   marginTop: "16px",
@@ -27,16 +30,19 @@ const LandingComponent = () => {
   };
 
   return (
-    <Box sx={{ textAlign: "center", padding: 3 }}>
-      <Typography variant="h4" sx={{ marginBottom: 2 }}>
-        <span className="typing-animation">
-          Transition 2050 : Prenez les commandes de l’énergie !
-        </span>
-      </Typography>
-      <Box display="flex" justifyContent="center" marginBottom={2}>
+    <Box sx={{ textAlign: "center", padding: 0 }}>
+
+      <Box display="flex" justifyContent="center" marginBottom={0}>
         <ParallaxProvider>
           <Parallax y={[-20, 20]}>
-            <img src={Logo} style={{ width: "80%" }} alt="image de ville" />
+            <img src={Logo2} style={{ width: "90%", marginBottom: 0 }} alt="image de ville" />
+          </Parallax>
+        </ParallaxProvider>
+      </Box>
+      <Box display="flex" justifyContent="center" marginBottom={0}>
+        <ParallaxProvider>
+          <Parallax y={[-20, 20]}>
+            <img src={Logo1} style={{ width: "90%", marginBottom: 0 }} alt="image de ville" />
           </Parallax>
         </ParallaxProvider>
       </Box>

@@ -21,6 +21,21 @@
                       "plus": 10,
                       "moins": 0
                   },
+                  "mix": {
+                    "Fossiles" : {
+                        "plus": 0,
+                        "moins": 0
+                    },
+                    "Nucléaire": {
+                        "plus": 0,
+                        "moins": 0
+                    },
+                    "Renouvelables": {
+                        "plus": 0,
+                        "moins": 0
+                    }
+
+                  },
                   "next_question_id": 8
               },
               {
@@ -40,6 +55,21 @@
                       "plus": 5,
                       "moins": 0
                   },
+                  "mix": {
+                    "Fossiles" : {
+                        "plus": 0,
+                        "moins": 0
+                    },
+                    "Nucléaire": {
+                        "plus": 0,
+                        "moins": 0
+                    },
+                    "Renouvelables": {
+                        "plus": 0,
+                        "moins": 0
+                    }
+
+                  },
                   "next_question_id": 8
               },
               {
@@ -58,6 +88,21 @@
                   "Satisfaction": {
                       "plus": 8,
                       "moins": 0
+                  },
+                  "mix": {
+                    "Fossiles" : {
+                        "plus": 0,
+                        "moins": 0
+                    },
+                    "Nucléaire": {
+                        "plus": 0,
+                        "moins": 0
+                    },
+                    "Renouvelables": {
+                        "plus": 0,
+                        "moins": 0
+                    }
+
                   },
                   "next_question_id": 8
               }
@@ -84,6 +129,21 @@
                       "plus": 8,
                       "moins": 0
                   },
+                  "mix": {
+                    "Fossiles" : {
+                        "plus": 0,
+                        "moins": 7
+                    },
+                    "Nucléaire": {
+                        "plus": 0,
+                        "moins": 2
+                    },
+                    "Renouvelables": {
+                        "plus": 9,
+                        "moins": 0
+                    }
+
+                  },
                   "next_question_id": 9
               },
               {
@@ -103,6 +163,21 @@
                       "plus": 5,
                       "moins": 0
                   },
+                  "mix": {
+                    "Fossiles" : {
+                        "plus": 0,
+                        "moins": 5
+                    },
+                    "Nucléaire": {
+                        "plus": 0,
+                        "moins": 2
+                    },
+                    "Renouvelables": {
+                        "plus": 7,
+                        "moins": 0
+                    }
+
+                  },
                   "next_question_id": 9
               },
               {
@@ -121,6 +196,21 @@
                   "Satisfaction": {
                       "plus": 7,
                       "moins": 0
+                  },
+                  "mix": {
+                    "Fossiles" : {
+                        "plus": 0,
+                        "moins": 7
+                    },
+                    "Nucléaire": {
+                        "plus": 0,
+                        "moins": 2
+                    },
+                    "Renouvelables": {
+                        "plus": 9,
+                        "moins": 0
+                    }
+
                   },
                   "next_question_id": 9
               }
@@ -147,6 +237,21 @@
                       "plus": 8,
                       "moins": 0
                   },
+                  "mix": {
+                    "Fossiles" : {
+                        "plus": 0,
+                        "moins": 10
+                    },
+                    "Nucléaire": {
+                        "plus": 0,
+                        "moins": 4
+                    },
+                    "Renouvelables": {
+                        "plus": 14,
+                        "moins": 0
+                    }
+
+                  },
                   "next_question_id": 10
               },
               {
@@ -166,6 +271,21 @@
                       "plus": 7,
                       "moins": 0
                   },
+                  "mix": {
+                    "Fossiles" : {
+                        "plus": 0,
+                        "moins": 9
+                    },
+                    "Nucléaire": {
+                        "plus": 0,
+                        "moins": 3
+                    },
+                    "Renouvelables": {
+                        "plus": 12,
+                        "moins": 0
+                    }
+
+                  },
                   "next_question_id": 10
               },
               {
@@ -184,6 +304,21 @@
                   "Satisfaction": {
                       "plus": 3,
                       "moins": 0
+                  },
+                  "mix": {
+                    "Fossiles" : {
+                        "plus": 0,
+                        "moins": 8
+                    },
+                    "Nucléaire": {
+                        "plus": 0,
+                        "moins": 3
+                    },
+                    "Renouvelables": {
+                        "plus": 11,
+                        "moins": 0
+                    }
+
                   },
                   "next_question_id": 10
               }

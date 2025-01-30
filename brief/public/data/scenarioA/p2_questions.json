@@ -240,14 +240,14 @@
                   "mix": {
                     "Fossiles" : {
                         "plus": 0,
-                        "moins": 9
+                        "moins": 8
                     },
                     "Nucléaire": {
                         "plus": 0,
-                        "moins": 5
+                        "moins": 2
                     },
                     "Renouvelables": {
-                        "plus": 24,
+                        "plus": 10,
                         "moins": 0
                     }
 
@@ -274,14 +274,14 @@
                   "mix": {
                     "Fossiles" : {
                         "plus": 0,
-                        "moins": 7
+                        "moins": 5
                     },
                     "Nucléaire": {
                         "plus": 0,
-                        "moins": 4
+                        "moins": 2
                     },
                     "Renouvelables": {
-                        "plus": 21,
+                        "plus": 7,
                         "moins": 0
                     }
 
@@ -307,14 +307,14 @@
                   },"mix": {
                     "Fossiles" : {
                         "plus": 0,
-                        "moins": 8
+                        "moins": 5
                     },
                     "Nucléaire": {
                         "plus": 0,
-                        "moins": 5
+                        "moins": 2
                     },
                     "Renouvelables": {
-                        "plus": 23,
+                        "plus": 7,
                         "moins": 0
                     }
 
