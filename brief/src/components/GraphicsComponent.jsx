@@ -2,8 +2,10 @@ import React from "react";
 import { Box } from "@mui/material";
 import DonutChart from "./DonutComponent"; // Votre composant DonutChart
 import JaugeContainer from "./JaugeContainer"; // Votre composant JaugeContainer
+import { useAppContext } from "../context/AppContextProvider";
 
-const DonutJaugeGroup = () => {
+const DonutJaugeGroup = ({ budget, ges, satisfaction }) => {
+
   return (
     <Box
       display="flex"
@@ -37,9 +39,9 @@ const DonutJaugeGroup = () => {
         alignItems="center"
       >
         <JaugeContainer
-          money={45}
-          happyness={56}
-          ges={34}
+          money={budget}
+          happyness= {satisfaction}
+          ges= {ges}
           wth={67}
         />
       </Box>
