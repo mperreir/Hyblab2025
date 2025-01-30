@@ -6,13 +6,16 @@ import CircleIcon from '@mui/icons-material/Circle';
 
 
 const Jauge = ({ value, thickness, color , icon}) => {
+  // Clamp the value between 0 and 100
+  const clampedValue = Math.max(0, Math.min(100, value));
+
   return (
     <Box display="flex" alignItems="flex-start" width="100%" position="relative">
       {/* Barre de progression */}
       <Box width="100%" >
         <LinearProgress
           variant="determinate"
-          value={value}
+          value={clampedValue}
           sx={{
             height: thickness,
             borderRadius: thickness / 2, // Arrondir les bords
@@ -28,7 +31,7 @@ const Jauge = ({ value, thickness, color , icon}) => {
               color: color, // Couleur du cercle (modifiable)
               fontSize: thickness * 2, // Taille du cercle
               position: 'absolute',
-              left: `${value}%`,
+              left: `${clampedValue}%`,
               top: '50%',
               transform: 'translate(-50%, -50%)',
             }}
@@ -42,7 +45,7 @@ const Jauge = ({ value, thickness, color , icon}) => {
           alt="Icon"
           sx={{
             position: 'absolute',
-            left: `${value}%`,
+            left: `${clampedValue}%`,
             top: '50%',
             transform: 'translate(-50%, -50%)', // Centrer verticalement
             width: thickness * 1.5, // Taille de l'image proportionnelle à l'épaisseur de la barre
