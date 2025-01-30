@@ -56,7 +56,7 @@
                         document.getElementById('article-title').textContent = articleData.name.toUpperCase();
                         document.getElementById('article-subtitle').textContent = districtData.name;
                         document.getElementById('article-subtitle').hidden = false;
-                        document.getElementById('resumeGeneral').parentNode.style.display = 'none';
+                        document.getElementById('resumeGeneral').parentNode.style.display = "none";
                         document.getElementById('texteArticle').parentNode.style.display = 'none';
                         document.getElementById('biduleTexte').textContent = `Voici quelques informations sur la période 2020-2025 concernant les décisions 
                     prises sur le thème "${articleData.name}", dans le quartier "${districtData.name}".`
@@ -68,6 +68,7 @@
                             if (districtData.kpis.length > 1) {
                                 document.getElementById('kpi2').textContent = districtData.kpis[1].number;
                                 document.getElementById('textkpi2').textContent = districtData.kpis[1].text;
+                                document.getElementById('kpi2').parentNode.style.backgroundColor = '#3370E7';
                             }
                         }
                     } else {
@@ -128,11 +129,7 @@
             if (!category) {
                 console.error('Category is missing from the URL.');
                 return;
-            } else if (district) {
-                const linksContainer = document.getElementById('links-container');
-                linksContainer.parentNode.style.display = 'none';
-                return;
-            }
+            } 
 
             try {
                 const apiUrl = `/mediacites/api/links/${category}`;
@@ -206,9 +203,17 @@
 
         // Set up sorting event listeners
         function setupSorting() {
-            document.querySelectorAll('.dropdown-item').forEach(item => {
+            document.querySelectorAll('.dropdown-sort').forEach(item => {
                 item.addEventListener('click', () => {
                     sortRows(item.id);
+                });
+            });
+        }
+
+        function setupDropdownDistrict() {
+            document.querySelectorAll('.dropdown-district').forEach(item => {
+                item.addEventListener('click', () => {
+                    redirectDistrict(item.id);
                 });
             });
         }
@@ -245,6 +250,7 @@
             loadArticle();
             highlightActiveCategory();
             loadLinks();
+            setupDropdownDistrict();
         };
     </script>
 </head>
@@ -310,7 +316,29 @@
                 <div class="card-container container">
                     <div class="row" style="height: 15vh;"></div>
                     <div class="row">
-                        <p style="color: #3370E7; padding-left: 1vh;">Sélectionnez votre quartier :</p>
+                        <div class="dropdown">
+                            <button type="button" class="btn dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false" style="color: #3370E7; padding-left: 1vh;">
+                                Sélectionnez votre quartier :
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a id="nantes_sud" class="dropdown-item dropdown-district">Nantes Sud</a></li>
+                                <li><a id="ile_de_nantes" class="dropdown-item dropdown-district">Île de Nantes</a></li>
+                                <li role="separator" class="dropdown-divider"></li>
+                                <li disabled><a id="bellevue_chantenay_sainte-anne" class="dropdown-item dropdown-district">Bellevue - Chantenay - Sainte-Anne</a></li>
+                                <li disabled><a id="breil_barberie" class="dropdown-item dropdown-district">Breil - Barberie</a></li>
+                                <li disabled><a id="centre_ville" class="dropdown-item dropdown-district">Centre-ville</a></li>
+                                <li disabled><a id="dervallieres_zola" class="dropdown-item dropdown-district">Dervallières - Zola</a></li>
+                                <li disabled><a id="doulon_bottiere" class="dropdown-item dropdown-district">Doulon - Bottière</a></li>
+                                <li disabled><a id="hauts_paves_saint-felix" class="dropdown-item dropdown-district">Hauts-Pavés - Saint-Félix</a></li>
+                                <li disabled><a id="malakoff_saint-donatien" class="dropdown-item dropdown-district">Malakoff - Saint-Donatien</a></li>
+                                <li disabled><a id="nantes_erdre" class="dropdown-item dropdown-district">Nantes Erdre</a></li>
+                                <li disabled><a id="nantes_nord" class="dropdown-item dropdown-district">Nantes Nord</a></li>
+
+
+                            </ul>
+                        </div>
+
                         <div id="map" class="col-md-7">
                             <img src="./img/carte.svg" alt="carte" usemap="#carte-map" style="max-width: 100%" />
                             <map name="carte-map">
@@ -441,11 +469,11 @@
                                         De A à Z
                                     </button>
                                     <ul class="dropdown-menu">
-                                        <li><a id="alphabetical_asc" class="dropdown-item">De A à Z</a></li>
-                                        <li><a id="alphabetical_desc" class="dropdown-item">De Z à A</a></li>
-                                        <li><a id="chronological_asc" class="dropdown-item">Du plus récent au plus
+                                        <li><a id="alphabetical_asc" class="dropdown-item dropdown-sort">De A à Z</a></li>
+                                        <li><a id="alphabetical_desc" class="dropdown-item dropdown-sort">De Z à A</a></li>
+                                        <li><a id="chronological_asc" class="dropdown-item dropdown-sort">Du plus récent au plus
                                                 vieux</a></li>
-                                        <li><a id="chronological_desc" class="dropdown-item">Du plus vieux au plus
+                                        <li><a id="chronological_desc" class="dropdown-item dropdown-sort">Du plus vieux au plus
                                                 récent</a></li>
                                     </ul>
                                 </div>
