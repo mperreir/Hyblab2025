@@ -25,14 +25,16 @@
     justify-content: center;
     clip-path: polygon(0 0, 100% 0, 100% 83%, 0% 100%);
     margin-bottom: 10px;
+    padding: 0 5%;
 }
 
 .card_title .title {
     display: inline;
+    text-wrap: wrap;
 }
 
 .card_title .number_square {
-    width: 40px;
+    height: 55%;
     aspect-ratio: 1 / 1;
     display: flex;
     align-content: center;
@@ -41,11 +43,11 @@
     background-color: #EFD8B8;
     color: black;
     clip-path: polygon(25% 0, 100% 25%, 75% 100%, 0 75%);
+    font-weight: 600;
 }
 
 .card_title .number {
     font-size: 120%;
-    font-family: 'Sharpie-bold';
 }
 
 .speech_holder {

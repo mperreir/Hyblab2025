@@ -31,7 +31,7 @@
     cursor: pointer;
 }
 
-.title {
+.header .title {
     cursor: default;
     position: absolute;
     left: 50%;

@@ -37,8 +37,8 @@ function MapPage() {
     <div className="game_container">
       <ScrollableMap
         mapRef={mapRef}
-        width={4000}
-        height={4000}
+        width={3449}
+        height={4242}
         background={`url(${backgroundImage})`} 
         setSelectedText={setSelectedText}
         setSelectedPOI={setSelectedPOI}
