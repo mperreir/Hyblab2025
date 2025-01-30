@@ -20,7 +20,7 @@
         ],
         "districts": [
             {
-                "id": "nantes-sud",
+                "id": "nantes_sud",
                 "name": "Nantes Sud",
                 "kpis": [
                     {
@@ -43,7 +43,7 @@
                     },
                     {
                         "number": "2",
-                        "text": "Le nombre d'école en cours de construction"
+                        "text": "Le nombre d'écoles en cours de construction"
                     }
                 ]
             }
