@@ -90,7 +90,7 @@ const RecapComponent = ({ bilan }) => {
         </Typography>
 
         {/* Texte de bilan */}
-        <Typography variant="body1" sx={{ textAlign: "center", marginBottom: 3 }}>
+        <Typography variant="body1" sx={{ textAlign: "left", marginBottom: 3 }}>
           {bilan.paragraph}
         </Typography>
 
