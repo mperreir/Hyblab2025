@@ -57,7 +57,7 @@ function playAudio(event, id)
 function dialogueChauffeur(){
     const dialogue = bulle({
         title: "Chauffeur de l'hybarge",
-        messages: ["Bonjour jeune voyageur ! Pour emprunter la route du soleil sur le splendide canal du midi, la place sur notre navette à l'hydrogène est à 30 Cardano.", "Je vous laisse insérer votre moyen de paiement ...", "Tenez votre billet Voyagez bien!"],
+        messages: ["Bonjour jeune voyageur ! Pour emprunter la route du soleil sur le splendide canal du midi, la place sur notre navette à l'hydrogène est à 30 Cardano.", "Je vous laisse insérer votre moyen de paiement ...", "Tenez ! Voici votre billet. Bon voyage !"],
         width: "300px",
         height: "200px",
         customStyles:{
@@ -74,7 +74,7 @@ function dialogueChauffeur(){
 
 function dialogueAbdonia(){
     const dialogue = bulle({
-        title: "Abdonia représentante locale",
+        title: "Abdonia, représentante locale",
         messages: ["Le canal, Orion, c’est bien plus qu’une route. C’est notre lien, notre force. Il nourrit nos villages, fait vivre nos artisans, et nous rend libres. Sans lui, Toulouse ne serait pas ce qu’elle est : un cœur qui bat, un lieu où le passé et l’avenir se rencontrent.", "Il nous rappelle qu’on peut avancer sans tout briser. C’est notre autonomie, notre fierté. Et tant qu’il coulera, nous serons debout.", "Alors, tu comprends maintenant ?"],
         width: "550px",
         height: "auto",

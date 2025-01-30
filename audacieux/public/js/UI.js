@@ -9,12 +9,12 @@ const player = new Player(2000, [Billet, Legume, Livre]);
     // Désactiver toutes les interactions sauf sur "inventaire"
 
     const tutoinventaire = createPopupTuto("inventaire", {
-        title: "Bonjour !",
-        message: "Clique sur l'icone de quête (le calepin)",
+        title: "Bonjour jeune voyageur !",
+        message: "Clique sur la liste de courses !",
         buttonText: "Fermer",
-        width: "300px",
+        width: "250px",
         height: "auto",
-        backgroundImage: "img/bulle.png",
+        backgroundImage: "img/BULLE3.png",
         customStyles: {
 
             title:{
@@ -26,13 +26,13 @@ const player = new Player(2000, [Billet, Legume, Livre]);
                 padding:"2% 0% 0% 12%",
             },
             container: {
-                padding:"0% 2% 2% 2%",
+                padding:"0% 2% 3% 2%",
                 color: "black",
                 position: "fixed",
                 top: "5%",
                 left: "40%",
                 transform: "scale(1.5)",
-                backgroundSize: "180%",
+                backgroundSize: "100% 100%",
                 backgroundPosition: "53% 45%", // Centre horizontalement à 50%, décalage vertical à 30%
 
 
@@ -78,10 +78,10 @@ const player = new Player(2000, [Billet, Legume, Livre]);
 
     const tutofininventaire = createPopupTuto("inventaire", {
         title: "L'INVENTAIRE",
-        message: "Ici tu as l'ensemble des objets à acheter durant ton aventure, elle est composé d'un billet pour hybarge, de légumes et d'un livre. Les objets se rayeront si tu les a en ta possession. Clique sur l'inventaire lorsque tu as compris",
+        message: "Ici tu as l'ensemble des objets à acheter durant ton aventure. Ta liste de course est composée d'un billet pour l'hybarge, de légumes et d'un livre. Re-clique sur le livre lorsque tu as compris !",
         width: "400px",
         height: "auto",
-        backgroundImage: "img/bulle.png",
+        backgroundImage: "img/BULLE2.png",
         customStyles: {
 
             title:{
@@ -113,33 +113,30 @@ const player = new Player(2000, [Billet, Legume, Livre]);
 
 
     const tutoBouquin = createPopupTuto("livre_open", {
-        title: "LE BOUQUIN",
-        message: "clique sur le livre en dessous du coffre!",
+        title: "LE CARNET",
+        message: "Appuie sur le livre en panique !",
         width: "300px",
         height: "auto",
-        backgroundImage: "img/bulle.png",
+        backgroundImage: "img/BULLE1.png",
         customStyles: {
 
             title:{
-                padding:"0% 0% 1% 8%"
+                padding:"0% 0% 0% 12%"
             },
 
             message: {
                 width:"80%",
-                padding:"0% 0% 0% 12%",
-                margin:"0% 0% 0% 0%"
+                padding:"2% 0% 0% 12%",
             },
             container: {
-                padding:"0% 2% 2% 2%",
+                padding:"0% 2% 3% 2%",
                 color: "black",
                 position: "fixed",
                 top: "5%",
                 left: "40%",
                 transform: "scale(1.5)",
-                backgroundSize: "170%",
+                backgroundSize: "100% 100%",
                 backgroundPosition: "53% 45%", // Centre horizontalement à 50%, décalage vertical à 30%
-
-
             },
         },
     });
@@ -148,33 +145,30 @@ const player = new Player(2000, [Billet, Legume, Livre]);
     await waitForClick("livre_open");
 
     const tutofinBouquin = createPopupTuto("livre_open", {
-        title: "LE BOUQUIN",
-        message: "Ici s'écrira ton histoire au fur et a mesure de l'aventure n'hesite pas a y jeter un coup d'oeil, clique sur le livre lorsque tu as compris ",
-        width: "350px",
+        title: "CARNET DE BORD",
+        message: "Ici s'écrira ton histoire au fur et à mesure de l'aventure, n'hesite pas à y jeter un coup d'oeil. Re-clique sur le livre lorsque tu as compris.",
+        width: "400px",
         height: "auto",
-        backgroundImage: "img/bulle.png",
+        backgroundImage: "img/BULLE1.png",
         customStyles: {
 
             title:{
-                padding:"0% 0% 0% 8%"
+                padding:"0% 0% 0% 12%"
             },
 
             message: {
                 width:"80%",
-                padding:"0% 0% 0% 12%",
-                margin:"0% 0% 0% 0%"
+                padding:"2% 0% 0% 12%",
             },
             container: {
-                padding:"0% 2% 2% 2%",
+                padding:"0% 2% 3% 2%",
                 color: "black",
                 position: "fixed",
                 top: "5%",
                 left: "40%",
                 transform: "scale(1.5)",
-                backgroundSize: "170%",
+                backgroundSize: "100% 100%",
                 backgroundPosition: "53% 45%", // Centre horizontalement à 50%, décalage vertical à 30%
-
-
             },
         },
     });
@@ -186,32 +180,29 @@ const player = new Player(2000, [Billet, Legume, Livre]);
 
     const tutoScroll = createPopupTuto2("PÉNICHE",{
         title: "Se balader sur le canal",
-        message: "Pour se balader sur le canal rien de plus simple! Utilise ta souris ou ton pavétactile en balayant vers le bas pour faire bouger le bateau ! Tu recontreras plusieurs points d'étapes tout au long de ton voyage. Ces derniers apparaitront en noir et blanc avec une bulle de texte. Clique dessus pour découvrir le point d'étape et découvir la vie du canal du midi. Commence ton voyage dans le premier point clé, l'Hybarge !   ",
+        message: "Pour se balader sur le canal, rien de plus simple ! Utilise ta souris ou ton pavé tactile en balayant vers le bas pour faire bouger le bateau ! Tu rencontreras plusieurs points d'étapes tout au long de ton voyage. Ces derniers apparaîtront en noir et blanc avec une bulle de texte. Clique dessus pour découvrir le point d'étape et découvrir la vie du Canal du Midi. Commence ton voyage dans le premier point clé, l'Hybarge !",
         width: "550px",
         height: "auto",
-        backgroundImage: "img/bulle.png",
+        backgroundImage: "img/BULLE1.png",
         customStyles: {
 
             title:{
-                padding:"0% 0% 0% 8%"
+                padding:"0% 0% 0% 12%"
             },
 
             message: {
                 width:"80%",
-                padding:"3% 0% 0% 13%",
-                margin:"0% 0% 0% 0%"
+                padding:"2% 0% 0% 12%",
             },
             container: {
-                padding:"0% 2% 2% 2%",
+                padding:"0% 2% 3% 2%",
                 color: "black",
                 position: "fixed",
                 top: "5%",
-                left: "30%",
+                left: "40%",
                 transform: "scale(1.5)",
-                backgroundSize: "170%",
+                backgroundSize: "100% 100%",
                 backgroundPosition: "53% 45%", // Centre horizontalement à 50%, décalage vertical à 30%
-
-
             },
         },
     });
