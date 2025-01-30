@@ -11,17 +11,17 @@
                     "inconvenient": "",
                     "Budget": {
                         "plus": 0,
-                        "moins": 30
+                        "moins": 10
                     },
                     "GES": {
-                        "plus": 5,
+                        "plus": 3,
                         "moins": 0
                     },
                     "Satisfaction": {
-                        "plus": 0,
-                        "moins": 5
+                        "plus": 2,
+                        "moins": 0
                     },
-                    "next_question_id": 2
+                    "next_question_id": 5
                 },
                 {
                     "response_id": 2,
@@ -30,17 +30,17 @@
                     "inconvenient": "",
                     "Budget": {
                         "plus": 0,
-                        "moins": 5
+                        "moins": 8
                     },
                     "GES": {
                         "plus": 2,
                         "moins": 0
                     },
                     "Satisfaction": {
-                        "plus": 5,
+                        "plus": 1,
                         "moins": 0
                     },
-                    "next_question_id": 2
+                    "next_question_id": 5
                 },
                 {
                     "response_id": 3,
@@ -48,18 +48,18 @@
                     "advantages": "",
                     "inconvenient": "",
                     "Budget": {
-                        "plus": 5,
-                        "moins": 0
+                        "plus": 0,
+                        "moins": 6
                     },
                     "GES": {
-                        "plus": 0,
-                        "moins": 5
-                    },
-                    "Satisfaction": {
-                        "plus": 3,
+                        "plus": 2,
                         "moins": 0
                     },
-                    "next_question_id": 2
+                    "Satisfaction": {
+                        "plus": 2,
+                        "moins": 0
+                    },
+                    "next_question_id": 5
                 }
             ]
         },
@@ -74,17 +74,17 @@
                     "inconvenient": "",
                     "Budget": {
                         "plus": 0,
-                        "moins": 12
+                        "moins": 5
                     },
                     "GES": {
-                        "plus": 3,
-                        "moins": 0
-                    },
-                    "Satisfaction": {
                         "plus": 2,
                         "moins": 0
                     },
-                    "next_question_id": 3
+                    "Satisfaction": {
+                        "plus": 1,
+                        "moins": 0
+                    },
+                    "next_question_id": 6
                 },
                 {
                     "response_id": 2,
@@ -93,17 +93,17 @@
                     "inconvenient": "",
                     "Budget": {
                         "plus": 0,
-                        "moins": 15
+                        "moins": 3
                     },
                     "GES": {
-                        "plus": 5,
+                        "plus": 1,
                         "moins": 0
                     },
                     "Satisfaction": {
-                        "plus": 0,
-                        "moins": 5
+                        "plus": 2,
+                        "moins": 0
                     },
-                    "next_question_id": 3
+                    "next_question_id": 6
                 },
                 {
                     "response_id": 3,
@@ -112,17 +112,17 @@
                     "inconvenient": "",
                     "Budget": {
                         "plus": 0,
-                        "moins": 30
+                        "moins": 3
                     },
                     "GES": {
-                        "plus": 8,
+                        "plus": 1,
                         "moins": 0
                     },
                     "Satisfaction": {
-                        "plus": 3,
+                        "plus": 1,
                         "moins": 0
                     },
-                    "next_question_id": 3
+                    "next_question_id": 6
                 }
             ]
         },
@@ -140,14 +140,14 @@
                         "moins": 3
                     },
                     "GES": {
-                        "plus": 3,
+                        "plus": 2,
                         "moins": 0
                     },
                     "Satisfaction": {
-                        "plus": 5,
-                        "moins": 0
+                        "plus": 0,
+                        "moins": 1
                     },
-                    "next_question_id": 4
+                    "next_question_id": 7
                 },
                 {
                     "response_id": 2,
@@ -155,18 +155,18 @@
                     "advantages": "",
                     "inconvenient": "",
                     "Budget": {
-                        "plus": 10,
-                        "moins": 0
+                        "plus": 0,
+                        "moins": 7
                     },
                     "GES": {
-                        "plus": 7,
+                        "plus": 3,
                         "moins": 0
                     },
                     "Satisfaction": {
-                        "plus": 0,
-                        "moins": 8
+                        "plus": 1,
+                        "moins": 0
                     },
-                    "next_question_id": 4
+                    "next_question_id": 7
                 },
                 {
                     "response_id": 3,
@@ -175,14 +175,14 @@
                     "inconvenient": "",
                     "Budget": {
                         "plus": 0,
-                        "moins": -8
+                        "moins": 8
                     },
                     "GES": {
-                        "plus": 5,
+                        "plus": 3,
                         "moins": 0
                     },
                     "Satisfaction": {
-                        "plus": 7,
+                        "plus": 1,
                         "moins": 0
                     },
                     "next_question_id": 7
