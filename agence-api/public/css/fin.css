@@ -94,11 +94,12 @@
   }
   
   .card-front {
-    background-color: #fff;
+    background-color: var(--user-color);
+    color: var(--user-text-color);
   }
   
   .card-back {
-    background-color: #f0f0f0;
+    background-color: white;
     transform: rotateY(180deg); /* Rotates the back side 180 degrees */
   }
   
