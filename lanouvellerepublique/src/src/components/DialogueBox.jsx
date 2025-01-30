@@ -22,19 +22,12 @@ const CardTitle = ({ number, title }) => {
     )
 }
 
-const SpeechBubble = ({ text, side, position }) => {
-    //console.log(position)
-    return (
-        <div className="speech_bubble">
-            <p>{text}</p>
-            <div className={side == "top" ? "tail top" : "tail bot"} style={{left: `${position}%`}}></div>
-        </div>
-    )
-}
 
 const AnimalIllustration = (POI) => {
+    const bool = POI.POI[5]
+    const pos = bool == "true" ? 40 : 15;
     return (
-        <div className="illustration" style={{marginLeft: `${POI.POI[4]}%`}}>
+        <div className="illustration" style={{marginLeft: `${POI.POI[4]}%`, top: pos}}>
             <img src={`https://hyblab.polytech.univ-nantes.fr/lanouvellerepublique/assets/${POI.POI[1]}`} /> 
         </div>
     )
@@ -45,8 +38,6 @@ const DialogueBox = ({ text, setSelectedText, POI, setSelectedPOI, chosenAnimal}
     const speechHolderRef = useRef(null);
     const [pages, setPages] = useState([]);
     const [scrollPercentage, setScrollPercentage] = useState(0);
-    let pos_tail = POI[4]+3;
-    if (POI[3] == 'left'){pos_tail = pos_tail+30;console.log(pos_tail)} //faut changer ca part une nouvelle valeur dans le json
 
     const handleScroll = () => {
         const holder = speechHolderRef.current;
@@ -113,7 +104,7 @@ const DialogueBox = ({ text, setSelectedText, POI, setSelectedPOI, chosenAnimal}
             opacity: [1, 0], // Fade out
             duration: 400,
             easing: "easeInQuad",
-            complete: () => {setSelectedText(""); setSelectedPOI([0,"","","",0])}, // Remove text AFTER animation completes
+            complete: () => {setSelectedText(""); setSelectedPOI([0,"","",0,0,""])}, // Remove text AFTER animation completes
             });
         }
     };
@@ -128,7 +119,7 @@ const DialogueBox = ({ text, setSelectedText, POI, setSelectedPOI, chosenAnimal}
             <AnimalIllustration POI={POI} />
             <div className="speech_holder" ref={speechHolderRef}>
                 {pages.map((page, index) => {
-                    return (<SpeechBubble key={index} text={page} side="top" position={pos_tail}/>);
+                    return (<SpeechBubble key={index} text={page} side="top" pos_tail={POI[3]}/>);
                 })}
                 <div className="shadow" style={shadowStyle}></div>
             </div>

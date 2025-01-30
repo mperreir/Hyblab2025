@@ -97,10 +97,11 @@
     justify-content: center;
     margin-top: 10px;
     z-index: 2;
+    position: relative;
     align-self: flex-start; /* Aligner à gauche dans le flex parent */
 }
 
-.illustration img{
+.dialogue-box .illustration img{
     max-width: 250px;
 }
 

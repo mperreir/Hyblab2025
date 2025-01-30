@@ -10,7 +10,7 @@ import data from '../data/db.json';
 
 function MapPage() {
   const [selectedText, setSelectedText] = useState(""); // Manage text globally
-  const [selectedPOI, setSelectedPOI] = useState([0,"","","",0]);
+  const [selectedPOI, setSelectedPOI] = useState([0,"","",0,0,""]);
   const [points, setPoints] = useState([]);
   const [searchParams] = useSearchParams();
   const mapRef = useRef(null);

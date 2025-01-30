@@ -1,6 +1,6 @@
 import './SpeechBubble.css';
 
-const SpeechBubble = ({ text, side, position, width }) => {
+const SpeechBubble = ({ text, side, pos_tail, width }) => {
     return (
         <div 
             className="speech_bubble"
@@ -12,7 +12,7 @@ const SpeechBubble = ({ text, side, position, width }) => {
             <div 
                 className={side === "top" ? "tail top" : "tail bot"} 
                 style={{
-                    left: position, 
+                    left: `${pos_tail}%`, 
                 }}
             ></div>
         </div>

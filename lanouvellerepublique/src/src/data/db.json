@@ -4,8 +4,9 @@
             "id": 1,
             "pos": [175,175],
             "img_name": "LoutrePOI1-oxriM3OT.svg",
-            "pos_img": "right",
-            "icon_pos": 40,
+            "pos_img": 75,
+            "icon_pos": 50,
+            "lower": "false",
             "title" : "La carte d'identité",
             "subtitle": "1",
             "text": [
@@ -18,8 +19,9 @@
             "id": 2,
             "pos": [546, 695],
             "img_name": "LoutrePOI2-DCPhukoF.svg",
-            "pos_img": "left",
-            "icon_pos": 50,
+            "pos_img": 45,
+            "icon_pos": 55,
+            "lower": "true",
             "text": [
                 "Moi, j’adore parcourir les berges et plans d’eau ! Mon chez-moi, c’est une « catiche », un terrier au bord de l’eau, avec une entrée secrète sous-marine. La nuit, c’est mon moment ! Je m’aventure sur mon territoire pour chasser et profiter du calme. ",
                 "Je suis une grande solitaire, mais je peux vivre en couple ou avec ma famille. Mon territoire, je le défends à coups de petits messages olfactifs (merci crottes et urine) – histoire que tout le monde sache qui est la cheffe ici.",
@@ -32,8 +34,9 @@
             "id": 3,
             "pos": [2000, 2000],
             "img_name": "LoutrePOI3-SsGJxE55.svg",
-            "pos_img": "left",
+            "pos_img": 60,
             "icon_pos": 63,
+            "lower": "false",
             "text": [
                 "Je mange surtout du poisson, ce qui n’enchante pas vraiment les pêcheurs... Mais quand l’occasion se présente, j’aime aussi varier les plaisirs : des crustacés, des amphibiens, voire même des petits mammifères. Bref, je suis du genre opportuniste ! Je consomme environ 1 kg de nourriture par jour pour maintenir mon énergie et mes talents de nageuse. Une petite faim ? Je plonge et je me régale !"
             ],
@@ -45,8 +48,9 @@
             "id": 4,
             "pos": [1000, 1000],
             "img_name": "LoutrePOI4-BRz1yqW7.svg",
-            "pos_img": "left",
+            "pos_img": 70,
             "icon_pos": 72,
+            "lower": "false",
             "text": [
                 "Cap vers un lieu que j’adorais autrefois explorer. Mais depuis quelques décennies, tout s’est compliqué… L’agriculture intensive a chamboulé mon quotidien. Les champs bourrés de produits chimiques polluent mes rivières, les machines détruisent mes berges préférées, et les zones humides se transforment en souvenirs.",
                 "Résultat, mes terrains de chasse disparaissent peu à peu. Et ce n’est pas tout : les transformations de l’agriculture affectent aussi ma nourriture et ma sécurité. Mes bons poissons se font rares et mes refuges tranquilles deviennent introuvables. Pas facile de rester une loutre heureuse dans ce monde en mutation…"
@@ -60,8 +64,9 @@
             "id": 5,
             "pos": [200, 1100],
             "img_name": "LoutrePOI5-DEfkdVQ9.svg",
-            "pos_img": "right",
+            "pos_img": 55,
             "icon_pos": 15,
+            "lower": "true",
             "text": [
                 "Il faut que je vous parle d’un vrai danger, sûrement le plus gros pour notre espèce : les ponts et les barrages. Rassurez-vous, je ne n’en suis pas phobique mais quand j’explore mon territoire, je préfère marcher le long des berges plutôt que nager sous les ponts. Mais si elles sont trop petites ou inondées je dois traverser la route. Et là, y’a trop souvent collision… Les voitures sont la première cause de décès chez les loutres. Les barrages, c’est pas mieux. Ils me forcent souvent à emprunter des routes pour contourner l’obstacle. Bref, vos constructions sont un vrai parcours du combattant."
             ],
@@ -74,8 +79,9 @@
             "id": 6,
             "pos": [800, 700],
             "img_name": "LoutrePOI6-D6GDW2jO.svg",
-            "pos_img": "left",
+            "pos_img": 65,
             "icon_pos": 15,
+            "lower": "true",
             "text": [
                 "Si vous cherchez un endroit où je me sens vraiment chez moi, vous y êtes enfin parvenus. Voici le marais de Taligny. Avec ses 85 hectares de zones humides bien protégées, c’est mon refuge idéal. Ici, l’eau reste propre. Le marais agit comme une éponge qui filtre et régule tout. En plus, grâce à la restauration des cours d’eau, mes coins de repos et mes terrains de chasse sont intacts. On gère aussi les crues et on limite les inondations, tout en offrant un abri à plein d’autres espèces aquatiques. Et ce n’est pas fini : un plan sur-mesure (2022-2033) garantit que cet endroit reste mon havre de paix. Entre nous, c’est un vrai bonheur de savoir qu’on prend soin de mes besoins pour les années à venir."
             ],
