@@ -3,13 +3,13 @@
         "general": {
             "avant_nom": [
                 "Salut ! Moi, c’est <b style=\"color: #edb401;\">Api</b>.",
-                "Tu souhaites créer ton entreprise en Bretagne ou Pays de la Loire ? Ce serious game est fait pour toi.",
+                "Tu souhaites créer ton entreprise en <span style=\"font-family: 'Snell Roundhand', cursive; font-size: 18px;\">Bretagne</span> ou <span style=\"font-family: 'Snell Roundhand', cursive; font-size: 18px;\">Pays de la Loire</span>? Ce serious game est fait pour toi.",
                 "Au cours de cette aventure, tu découvriras les chiffres clés de l’économie de ces régions et tu pourras faire tes propres choix pour créer ton entreprise.",
                 "Comment t’appelles-tu ?"
             ],
             "apres_nom": [
-                "Enchanté de faire ta connaissance, {nom} !",
-                "Je vais te présenter rapidement notre tissu économique. La Bretagne et les Pays de la Loire sont des régions qui bougent beaucoup. Ici, les taux de chômage sont parmi les plus bas en France : 5,8 % en Bretagne et 5,9 % dans les Pays de la Loire, contre 7,1 % au niveau national en 2023.",
+                "Enchanté de faire ta connaissance, <b style=\"color: #488ed4;\">{nom}</b> !",
+                "Je vais te présenter rapidement notre tissu économique. La Bretagne et les Pays de la Loire sont des régions qui bougent beaucoup. Ici, les <span style=\"background-color : rgba(237, 180, 1, 0.5);\">taux de chômage</span> sont parmi les plus bas en France : <b style=\"color: #edb401;\">5,8 %</b> en <span style=\"text-decoration : underline;\">Bretagne</span> et <b style=\"color: #edb401;\">5,9 % </b>dans <span style=\"text-decoration : underline;\">les Pays de la Loire</span>, contre <b>7,1 %</b> au niveau national en 2023.",
                 {
                     "question": "Et il y a une super dynamique : 37 % des créateurs d’entreprise ont moins de 30 ans. Pas mal non ?",
                     "reponses": [
