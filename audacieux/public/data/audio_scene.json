@@ -11,8 +11,9 @@
             "src": "assets/audio/drone1.mp3",
             "volume": 0.8,
             "keyframes":[
-                {"time": 18, "type":"play_once"},
-                {"time": 30, "type":"pause"}
+                {"time": 2, "type":"pause"},
+                {"time": 6, "type":"play_once"},
+                {"time": 15, "type":"pause"}
             ]
         },
         {
@@ -20,8 +21,9 @@
             "src": "assets/audio/drone2.mp3",
             "volume": 0.8,
             "keyframes":[
-                {"time": 20, "type":"play_once"},
-                {"time": 30, "type":"pause"}
+                {"time": 2, "type":"pause"},
+                {"time": 6, "type":"play_once"},
+                {"time": 15, "type":"pause"}
             ]
         },
         {
@@ -29,7 +31,7 @@
             "src": "assets/audio/bell.mp3",
             "volume": 0.4,
             "keyframes":[
-                {"time": 40, "type":"play_once"}
+                {"time": 65, "type":"play_once"}
             ]
         },
         {
@@ -37,8 +39,19 @@
             "src": "assets/audio/velo.mp3",
             "volume": 0.7,
             "keyframes":[
-                {"time": 35, "type":"play_once"},
-                {"time": 47, "type":"pause"}
+                {"time": 56, "type":"pause"},
+                {"time": 58, "type":"play_once"},
+                {"time": 70, "type":"pause"}
+            ]
+        },
+        {
+            "id": "ecluseBruit",
+            "src": "assets/audio/ecluseBruit.mp3",
+            "volume": 0.7,
+            "keyframes":[
+                {"time": 15, "type":"pause"},
+                {"time": 18, "type":"play_once"},
+                {"time": 24, "type":"pause"}
             ]
         },
         {
@@ -98,15 +111,8 @@
             "type":"play_once"
         },
         {
-            "id": "coffreOuverture",
-            "src": "assets/audio/coffreOuverture.mp3",
-            "volume": 0.5,
-            "keyframes":[],
-            "type":"play_once"
-        },
-        {
-            "id": "coffreFermeture",
-            "src": "assets/audio/coffreFermeture.mp3",
+            "id": "carnet",
+            "src": "assets/audio/carnet.mp3",
             "volume": 0.5,
             "keyframes":[],
             "type":"play_once"
