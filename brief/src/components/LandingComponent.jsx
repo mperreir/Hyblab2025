@@ -5,7 +5,7 @@ import { useTheme } from "@mui/material/styles";
 import { ParallaxProvider, Parallax } from "react-scroll-parallax";
 import Logo1 from "../assets/1e PAGE.svg";
 import Logo2 from "../assets/LOGO-V1 1.svg";
-
+import { useAppContext } from "../context/AppContextProvider";
 
 
 const StyledButton = styled(Button)(({ theme }) => ({
@@ -25,7 +25,11 @@ const LandingComponent = () => {
   const navigate = useNavigate();
   const theme = useTheme();
 
+  const { updateStepper } = useAppContext();
+
+
   const handleClick = () => {
+    updateStepper(1);
     navigate("/brief/Contexte");
   };
 

@@ -8,6 +8,7 @@ import { Chart, ArcElement, Tooltip, Legend } from "chart.js";
 import { useNavigate } from "react-router-dom";
 import energyData from "../../public/data/debut/sources_energie.json";
 import electricityMixData from "../../public/data/debut/zoom_elec.json";
+import { useAppContext } from '../context/AppContextProvider';
 
 Chart.register(ArcElement, Tooltip, Legend);
 
@@ -56,6 +57,8 @@ const InformationMixComponent = () => {
   const [showNewContent, setShowNewContent] = useState(false);
   const [activeNewIndex, setActiveNewIndex] = useState(0);
 
+  const { updateStepper } = useAppContext();
+
   const sources = energyData.sources;
   const electricityMix = electricityMixData.electricity_mix.sources;
 
@@ -64,6 +67,7 @@ const InformationMixComponent = () => {
   };
 
   const handleClick = () => {
+    updateStepper(2);
     navigate("/brief/questions");
   };
 

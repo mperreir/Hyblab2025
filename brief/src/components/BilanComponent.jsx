@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import DonutJaugeGroup from "./GraphicsComponent";
 import { useNavigate } from "react-router-dom";
 import { useTheme } from "@mui/material/styles";
+import { useAppContext } from '../context/AppContextProvider';
 
 
 
@@ -26,8 +27,10 @@ const RecapComponent = ({ bilan }) => {
   const navigate = useNavigate();
   const theme = useTheme();
 
+  const { updateStepper } = useAppContext();
 
   const handleRedirect = () => {
+    updateStepper(4);
     navigate("/brief/outro");
   };
   return (
