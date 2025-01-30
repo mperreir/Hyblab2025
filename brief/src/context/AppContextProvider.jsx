@@ -8,6 +8,9 @@ export const AppProvider = ({ children }) => {
     Budget: 100,
     GES: 50,
     Satisfaction: 50,
+    Nucleaire: 17,
+    Fossiles: 60,
+    Renouvelables:23,
     history: [],
   });
 
