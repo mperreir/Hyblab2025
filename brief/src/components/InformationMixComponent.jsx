@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { PieChart } from "@mui/x-charts/PieChart";
+import { useTheme } from "@mui/material/styles";
 import SwipeableViews from "react-swipeable-views";
 import { Box, Typography, Container, styled, Button } from "@mui/material";
 import { Doughnut } from "react-chartjs-2";
@@ -45,6 +46,8 @@ const StyledButton = styled(Button)(({ theme }) => ({
 }));
 
 const InformationMixComponent = () => {
+  const theme = useTheme();
+
   const navigate = useNavigate();
   const [activeIndex, setActiveIndex] = useState(0);
   const [showNewContent, setShowNewContent] = useState(false);
@@ -137,7 +140,8 @@ const InformationMixComponent = () => {
 
                 {index === sources.length - 1 && (
                   <Box sx={{ marginTop: 2 }}>
-                    <StyledButton onClick={handleUnderstandClick}>J'ai compris !</StyledButton>
+                    <StyledButton onClick={handleUnderstandClick}>J'ai compris</StyledButton>
+
                   </Box>
                 )}
               </Box>
@@ -215,7 +219,8 @@ const InformationMixComponent = () => {
 
                 {index === electricityMix.length - 1 && (
                   <Box sx={{ marginTop: 2 }}>
-                    <StyledButton onClick={handleClick}>suivant</StyledButton>
+      <StyledButton onClick={handleClick}>Suivant</StyledButton>
+
                   </Box>
                 )}
               </Box>

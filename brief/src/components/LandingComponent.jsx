@@ -33,10 +33,6 @@ const LandingComponent = () => {
           Transition 2050 : Prenez les commandes de l’énergie !
         </span>
       </Typography>
-      <Typography variant="body1" sx={{ marginBottom: 4 }}>
-        Découvrez comment gérer un pays face aux défis énergétiques et
-        climatiques.
-      </Typography>
       <Box display="flex" justifyContent="center" marginBottom={2}>
         <ParallaxProvider>
           <Parallax y={[-20, 20]}>
