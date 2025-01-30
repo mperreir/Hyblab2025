@@ -13,6 +13,28 @@
             <img id="zoomImage" src="assets/graphic/HOMEPAGE.svg" alt="Image SVG à explorer">
         </div>
         <div class="fade-overlay"></div> <!-- Overlay pour fondu noir -->
+<body id="body">
+  <div id="time-slider-container">
+    <input type="range" id="time-slider" min="0" max="100" value="0" step="0.1">
+</div>
+
+
+  <div id="box-container">
+    <img id="image-scene">
+  </div>
+  <div id="mouse-popup" style="position: absolute; z-index: 10001; background-color: rgba(0, 0, 0, 0.7); color: white; padding: 5px; border-radius: 5px; display: none;"></div>
+  
+
+  
+  <div id="scene-container"></div>
+  
+  <main style="position: relative; z-index: 10000;">
+    <div class="game">
+      <!-- Barre latérale gauche -->
+      <div class="sidebar left">
+        <img id="inventaire" src="img/inventaire.png" alt="Inventaire">
+        <img id="livre_open" src="img/livre.png" alt="Livre">
+      </div>
     </div>
 
     <script src="js/loadHomePage.js"></script>

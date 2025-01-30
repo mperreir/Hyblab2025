@@ -1,4 +1,9 @@
+const Billet= new Item("Billet pour l'hybarge", 500);
+const Legume = new Item("Légumes", 300);
+const Livre = new Item("Livre", 200);
 
+
+const player = new Player(2000, [Billet, Legume, Livre]);
 
 (async function run() {
     // Désactiver toutes les interactions sauf sur "inventaire"
@@ -13,7 +18,6 @@
         customStyles: {
 
             title:{
-                color: "black",
                 padding:"0% 0% 0% 12%"
             },
 
@@ -39,9 +43,9 @@
     console.log("Clique sur le bouton pour continuer...");
 
     const player = new Player(2000, [
-        new Item("Éponges", 500),
-        new Item("cur-dents", 300),
-        new Item("Boite de Pringles", 200)
+        new Item("Billet pour l'hybarge", 500),
+        new Item("Légumes", 300),
+        new Item("Livre", 200)
     ]);
 
     const inventaire = createPopup("inventaire",{
@@ -80,14 +84,13 @@
 
     const tutofininventaire = createPopupTuto("inventaire", {
         title: "L'INVENTAIRE",
-        message: "Ici tu auras l'ensemble des objets à acheter durant ton aventure, les objets se rayeront si tu les a en ta possession. Clique sur l'inventaire lorsque tu as compris",
-        width: "350px",
+        message: "Ici tu as l'ensemble des objets à acheter durant ton aventure, elle est composé d'un billet pour hybarge, de légumes et d'un livre. Les objets se rayeront si tu les a en ta possession. Clique sur l'inventaire lorsque tu as compris",
+        width: "400px",
         height: "auto",
         backgroundImage: "img/bulle.png",
         customStyles: {
 
             title:{
-                color: "black",
                 padding:"0% 0% 0% 8%"
             },
 
@@ -124,7 +127,6 @@
         customStyles: {
 
             title:{
-                color: "black",
                 padding:"0% 0% 1% 8%"
             },
 
@@ -160,7 +162,6 @@
         customStyles: {
 
             title:{
-                color: "black",
                 padding:"0% 0% 0% 8%"
             },
 
@@ -188,17 +189,16 @@
 
     await waitForClick("body");
 
-    const tutoScroll = createPopupTuto("PÉNICHE",{
+
+    const tutoScroll = createPopupTuto2("PÉNICHE",{
         title: "Se balader sur le canal",
         message: "Pour se balader sur le canal rien de plus simple! Utilise ta souris ou ton pavétactile en balayant vers le bas pour faire bouger le bateau ! Tu recontreras plusieurs points d'étapes tout au long de ton voyage. Ces derniers apparaitront en noir et blanc avec une bulle de texte. Clique dessus pour découvrir le point d'étape et découvir la vie du canal du midi. Commence à voyager !   ",
         width: "550px",
         height: "auto",
-        closeOnScroll: true,
         backgroundImage: "img/bulle.png",
         customStyles: {
 
             title:{
-                color: "black",
                 padding:"0% 0% 0% 8%"
             },
 
@@ -226,3 +226,5 @@
 
     
 })();
+
+
