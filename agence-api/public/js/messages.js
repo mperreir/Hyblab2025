@@ -64,7 +64,7 @@ async function addMessage(message, type) {
         messageElement.appendChild(div);
     } else {
         messageElement.classList.add('message', message.type);
-        messageElement.textContent = message.text;
+        messageElement.innerHTML += message.text;
         messageElement.id = message.id;
     }
 
