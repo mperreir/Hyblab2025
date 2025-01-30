@@ -514,10 +514,12 @@ fetch('api/videos')
 
 function displayPlateformModal () {
     document.getElementById("links").style.display = "block"
+    document.getElementById("main").style.display = "none"
 }
 
 function hidePlateformModal () {
     document.getElementById("links").style.display = "none"
+    document.getElementById("main").style.display = "block"
 }
 
 window.addEventListener('load', function () {

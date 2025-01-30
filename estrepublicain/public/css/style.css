@@ -52,7 +52,7 @@ a:hover {
 
 /* --- Titres et textes --- */
 h1 {
-    font-family: "Arial Black", sans-serif !important;
+    font-family: 'Arial Black', Gadget, sans-serif !important;
     font-size: 1.3em !important;
     font-weight: bolder;
     text-transform: uppercase;
@@ -60,7 +60,7 @@ h1 {
 }
 
 h6 {
-    font-family: "Arial Black", sans-serif !important;
+    font-family: 'Arial Black', Gadget, sans-serif !important;
     margin-bottom: 0;
     font-size: 0.9em !important;
     text-transform: uppercase;
@@ -316,19 +316,19 @@ p {
     background-image: url("../img/bonnot.gif");
 }
 #div2 {
-    background-image: url("../img/thumbnails/7.png");
+    background-image: url("../img/concierge.gif");
 }
 #div3 {
-    background-image: url("../img/thumbnails/27.png");
+    background-image: url("../img/cure.gif");
 }
 #div4 {
-    background-image: url("../img/thumbnails/31.png");
+    background-image: url("../img/peugeot.gif");
 }
 #div5 {
     background-image: url("../img/peiper.gif");
 }
 #div6 {
-    background-image: url("../img/thumbnails/51.png");
+    background-image: url("../img/heaulme.gif");
 }
 
 /* --- Ligne rouge ("line") --- */
@@ -450,7 +450,7 @@ p {
     position: fixed;
     top: 0;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     background-image: url("../img/FOND_BLANC.jpg");
 }
 
@@ -489,10 +489,17 @@ p {
     transform: translate(0vw, -50%);
 }
 
+.links_list {
+    position: absolute;
+}
+
 .links_list > div {
     padding: 0 10vw;
-    position: relative;
+    position: absolute;
+    top: 100px;
+    width: 100%;
 }
+
 
 /* --- Filtres / Tags --- */
 .tags {
@@ -607,9 +614,5 @@ p {
 
     .title {
         padding-bottom: 100px !important;
-    }
-
-    .links_list div {
-        margin-top: -30vh;
     }
 }
