@@ -527,6 +527,12 @@ p {
 .filters {
     margin-bottom: 10px;
     overflow-x: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.filters::-webkit-scrollbar {
+    display: none;
 }
 
 .filterBtn {
