@@ -36,7 +36,7 @@
 /* 弹窗内部 */
 .menu-wrapper .menu-content {
   width: 100%;
-  max-height: 70%;
+  max-height: 75%;
   background: var(--bg-color);
   padding: 20px;
   box-shadow: 0 -8px 20px rgba(0,0,0,0.2);
