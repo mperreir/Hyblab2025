@@ -19,11 +19,34 @@ const initSlide3 = async function(){
   
   document.getElementById("refAPI").innerHTML = texts.fin.paragraphe4;
 
-  if(secteur && choices ) {
+  if(secteur && choices) {
     // Load the results on the cards
-    texts[secteur].cartes_fin_arriere.forEach((frontText, index) => {
-      addCard(frontText, texts[secteur].cartes_fin_avant[index][choices[index]]);
+
+    let maxVisitedIndex = -1;
+    choices.forEach((choice, index) => {
+
+      if(index > maxVisitedIndex){
+        const [choiceIndex, choiceText] = choice.split('_');
+
+        let text = texts[secteur].cartes_fin_avant[choiceIndex-1][choice];
+        while(choices[index+1] && choices[index+1].split('_')[0] === choiceIndex){
+          index++;
+          text += " - " + texts[secteur].cartes_fin_avant[choiceIndex-1][choices[index]];
+        }
+        maxVisitedIndex = index;
+        addCard(texts[secteur].cartes_fin_arriere[choiceIndex-1], text);
+      }
     });
+
+
+
+    // texts[secteur].cartes_fin_arriere.forEach((frontText, index) => {
+    //   if(frontText === "Financement"){
+    //     let text = texts[secteur].cartes_fin_arriere[index][choices[index]];
+    //   } else {
+    //     addCard(frontText, texts[secteur].cartes_fin_avant[index][choices[index]]);
+    //   }
+    // });
   } else {
     addCard("Vous n'avez fait aucun choix", "Veuillez recommencer le jeu", true);
   }
