@@ -281,12 +281,12 @@ g[id^="ARBRE-"]{
 #credits {
   display: none;
   position: fixed;
-  top: 10vh;
+  top: 20vh;
   right: 5vw;
   z-index: 10000;
   width: auto; /* Garde la largeur proportionnelle */
   height: clamp(200px, 50vh, 450px); /* Respecte tes valeurs */
-  max-width: 80vw; /* Pour éviter qu'elle soit trop large */
+  max-width: 70vw; /* Pour éviter qu'elle soit trop large */
   object-fit: contain; /* Assure le respect des proportions */
   transition: display 0.5s ease-in-out;;
 }
