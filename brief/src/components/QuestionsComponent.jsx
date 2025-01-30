@@ -1,11 +1,8 @@
-// /src/components/QuestionsComponent.jsx
 import React from "react";
 import {
   Box,
   Typography,
   Button,
-  Card,
-  CardContent,
   CircularProgress,
 } from "@mui/material";
 import { useState, useEffect } from "react";
@@ -14,6 +11,11 @@ import DonutJaugeGroup from "./GraphicsComponent";
 import { useAppContext } from "../context/AppContextProvider";
 import RecapComponent from "./BilanComponent";
 
+// Import JSON data directly
+import scenarioAPhases from "../data/scenarioA/phases.json";
+import scenarioAQuestionsP1 from "../data/scenarioA/p1_questions.json";
+import scenarioAQuestionsP2 from "../data/scenarioA/p2_questions.json";
+import scenarioAQuestionsP3 from "../data/scenarioA/p3_questions.json";
 
 const QuestionsComponent = ({ scenarioId }) => {
   const [currentPhase, setCurrentPhase] = useState(null);
@@ -23,36 +25,27 @@ const QuestionsComponent = ({ scenarioId }) => {
   const [isLoading, setIsLoading] = useState(true);
   const { globalState, setGlobalState } = useAppContext();
 
-
-  // Helper function to get scenario folder
-  const getScenarioFolder = (scenarioId) => {
-    return `scenario${String.fromCharCode(64 + scenarioId)}`;
-  };
-
-  // Helper function to fetch data
-  const fetchData = async (url) => {
-    const response = await fetch(url);
-    if (!response.ok) throw new Error(`Failed to fetch ${url}`);
-    return response.json();
-  };
+  const questionFiles = [scenarioAQuestionsP1, scenarioAQuestionsP2, scenarioAQuestionsP3];
 
   // Load initial phase and questions
   useEffect(() => {
     if (!scenarioId) return;
 
-    const scenarioFolder = getScenarioFolder(scenarioId);
-
     const loadInitialData = async () => {
       try {
         // Load phases
-        const phaseData = await fetchData(`/brief/public/data/${scenarioFolder}/phases.json`);
+        const phaseData = scenarioAPhases;
+        if (!phaseData.phases || phaseData.phases.length === 0) {
+          throw new Error("Phases data is empty or undefined");
+        }
         setCurrentPhase(phaseData.phases[0]);
         setPhaseText(phaseData.phases[0].phase_text);
 
         // Load questions for the first phase
-        const questionData = await fetchData(
-          `/brief/public/data/${scenarioFolder}/p${phaseData.phases[0].phase_id}_questions.json`
-        );
+        const questionData = questionFiles[0];
+        if (!questionData.questions || questionData.questions.length === 0) {
+          throw new Error("Questions data is empty or undefined");
+        }
         setQuestions(questionData.questions);
         setCurrentQuestion(questionData.questions[0]);
       } catch (error) {
@@ -67,8 +60,6 @@ const QuestionsComponent = ({ scenarioId }) => {
 
   // Handle answer selection
   const handleAnswer = async (response) => {
-    const scenarioFolder = getScenarioFolder(scenarioId);
-
     // Update scores
     setGlobalState((prevState) => ({
       ...prevState,
@@ -101,17 +92,14 @@ const QuestionsComponent = ({ scenarioId }) => {
       if (nextPhase <= 3) {
         try {
           // Load next phase
-          const phaseData = await fetchData(`/brief/public/data/${scenarioFolder}/phases.json`);
-          const newPhase = phaseData.phases.find((phase) => phase.phase_id === nextPhase);
+          const newPhase = scenarioAPhases.phases.find((phase) => phase.phase_id === nextPhase);
           setCurrentPhase(newPhase);
           setPhaseText(newPhase.phase_text);
 
           // Load questions for the next phase
-          const questionData = await fetchData(
-            `/brief/public/data/${scenarioFolder}/p${nextPhase}_questions.json`
-          );
-          setQuestions(questionData.questions);
-          setCurrentQuestion(questionData.questions[0]);
+          const newQuestions = questionFiles[nextPhase - 1].questions;
+          setQuestions(newQuestions);
+          setCurrentQuestion(newQuestions[0]);
         } catch (error) {
           console.error("Error loading next phase:", error);
         }

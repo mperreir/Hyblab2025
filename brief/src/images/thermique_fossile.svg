@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calque_1" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <rect x="28.39" y="10.9" width="143.23" height="13.39" rx="6.69" ry="6.69"/>
+  <rect x="28.39" y="72.21" width="143.23" height="13.39" rx="6.69" ry="6.69"/>
+  <rect x="28.39" y="125.23" width="143.23" height="13.39" rx="6.69" ry="6.69"/>
+  <rect x="28.39" y="186.61" width="143.23" height="13.39" rx="6.69" ry="6.69"/>
+  <path d="M48.97,0h16.73C69.39,0,72.39,3,72.39,6.69h-30.12C42.27,3,45.27,0,48.97,0Z"/>
+  <rect x="36.43" y="28.17" width="127.17" height="40.16" rx="2.31" ry="2.31"/>
+  <rect x="36.43" y="142.53" width="127.17" height="40.16" rx="2.31" ry="2.31"/>
+  <rect x="36.43" y="90.04" width="127.17" height="30.79" rx="2.02" ry="2.02"/>
+</svg>

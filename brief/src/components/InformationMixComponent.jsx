@@ -6,16 +6,21 @@ import { Box, Typography, Container, styled, Button } from "@mui/material";
 import { Doughnut } from "react-chartjs-2";
 import { Chart, ArcElement, Tooltip, Legend } from "chart.js";
 import { useNavigate } from "react-router-dom";
-import energyData from "../../public/data/debut/sources_energie.json";
-import electricityMixData from "../../public/data/debut/zoom_elec.json";
-import { useAppContext } from '../context/AppContextProvider';
+import energyData from "../../src/data/debut/sources_energie.json";
+import electricityMixData from "../../src/data/debut/zoom_elec.json";
+import { useAppContext } from "../context/AppContextProvider";
 
 Chart.register(ArcElement, Tooltip, Legend);
 
-
 const colorsMix = ["#4D4D4D", "#FCD383", "#94C9A9", "#E54A4A", "#A6A6A6"];
-const colors = ["#4D4D4D", "#7AA7D2", "#A6A6A6", "#E54A4A", "#FFCC66", "#B8A6B5"];
-
+const colors = [
+  "#4D4D4D",
+  "#7AA7D2",
+  "#A6A6A6",
+  "#E54A4A",
+  "#FFCC66",
+  "#B8A6B5",
+];
 
 const IndicatorContainer = styled(Box)(({ theme }) => ({
   display: "flex",
@@ -32,7 +37,9 @@ const IndicatorDot = styled(Box)(({ theme, active }) => ({
   width: "12px",
   height: "12px",
   borderRadius: "50%",
-  backgroundColor: active ? theme.palette.primary.main : theme.palette.secondary.main,
+  backgroundColor: active
+    ? theme.palette.primary.main
+    : theme.palette.secondary.main,
   border: `2px solid ${theme.palette.primary.main}`,
 }));
 
@@ -101,7 +108,6 @@ const InformationMixComponent = () => {
                 animation: { animateScale: true },
               }}
             />
-            
           </Box>
 
           {/* Swiper pour le texte */}
@@ -121,13 +127,31 @@ const InformationMixComponent = () => {
                 }}
               >
                 <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-                  <img src={item.image} alt={item.name} style={{ width: 30, height: 30, filter: "invert(17%) sepia(55%) saturate(320%) hue-rotate(-10deg)" }} />
-                  <Typography variant="h5" sx={{ color: "#991756", fontWeight: "bold", textAlign: "left" }}>
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    style={{
+                      width: 30,
+                      height: 30,
+                      filter:
+                        "invert(17%) sepia(55%) saturate(320%) hue-rotate(-10deg)",
+                    }}
+                  />
+                  <Typography
+                    variant="h5"
+                    sx={{
+                      color: "#991756",
+                      fontWeight: "bold",
+                      textAlign: "left",
+                    }}
+                  >
                     {item.name} - {item.percentage}%
                   </Typography>
                 </Box>
 
-                <Typography variant="body1" sx={{ marginBottom: 2 }}>{item.text}</Typography>
+                <Typography variant="body1" sx={{ marginBottom: 2 }}>
+                  {item.text}
+                </Typography>
 
                 {item.carbon_emissions && (
                   <Typography variant="body2" sx={{ marginTop: 1 }}>
@@ -139,7 +163,10 @@ const InformationMixComponent = () => {
                 )}
 
                 {item.notes && (
-                  <Typography variant="body2" sx={{ fontStyle: "italic" , textAlign: "left"}}>
+                  <Typography
+                    variant="body2"
+                    sx={{ fontStyle: "italic", textAlign: "left" }}
+                  >
                     {item.notes}
                   </Typography>
                 )}
@@ -152,8 +179,9 @@ const InformationMixComponent = () => {
 
                 {index === sources.length - 1 && (
                   <Box sx={{ marginTop: 2 }}>
-                    <StyledButton onClick={handleUnderstandClick}>J'ai compris</StyledButton>
-
+                    <StyledButton onClick={handleUnderstandClick}>
+                      J'ai compris
+                    </StyledButton>
                   </Box>
                 )}
               </Box>
@@ -167,7 +195,14 @@ const InformationMixComponent = () => {
           </Typography>
 
           {/* Moitié de PieChart sans légende */}
-          <Box sx={{ maxWidth: 352, margin: "auto", position: "relative", height: 300 }}>
+          <Box
+            sx={{
+              maxWidth: 352,
+              margin: "auto",
+              position: "relative",
+              height: 300,
+            }}
+          >
             <PieChart
               series={[
                 {
@@ -194,11 +229,13 @@ const InformationMixComponent = () => {
                 legend: { hidden: true }, // Cache la légende
               }}
             />
-            
           </Box>
 
           {/* Swiper pour le texte */}
-          <SwipeableViews index={activeNewIndex} onChangeIndex={setActiveNewIndex}>
+          <SwipeableViews
+            index={activeNewIndex}
+            onChangeIndex={setActiveNewIndex}
+          >
             {electricityMix.map((item, index) => (
               <Box
                 key={index}
@@ -214,16 +251,37 @@ const InformationMixComponent = () => {
                 }}
               >
                 <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-                  <img src={item.image} alt={item.name} style={{ width: 30, height: 30,  filter: "invert(17%) sepia(55%) saturate(320%) hue-rotate(-10deg)" }} />
-                  <Typography variant="h5" sx={{ color: "#991756", fontWeight: "bold", textAlign: "left" }}>
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    style={{
+                      width: 30,
+                      height: 30,
+                      filter:
+                        "invert(17%) sepia(55%) saturate(320%) hue-rotate(-10deg)",
+                    }}
+                  />
+                  <Typography
+                    variant="h5"
+                    sx={{
+                      color: "#991756",
+                      fontWeight: "bold",
+                      textAlign: "left",
+                    }}
+                  >
                     {item.name} - {item.percentage}%
                   </Typography>
                 </Box>
 
-                <Typography variant="body1" sx={{ marginBottom: 2 }}>{item.text}</Typography>
+                <Typography variant="body1" sx={{ marginBottom: 2 }}>
+                  {item.text}
+                </Typography>
 
                 {item.notes && (
-                  <Typography variant="body2" sx={{ fontStyle: "italic", textAlign: "left" }}>
+                  <Typography
+                    variant="body2"
+                    sx={{ fontStyle: "italic", textAlign: "left" }}
+                  >
                     {item.notes}
                   </Typography>
                 )}
@@ -237,7 +295,6 @@ const InformationMixComponent = () => {
                 {index === electricityMix.length - 1 && (
                   <Box sx={{ marginTop: 2 }}>
                     <StyledButton onClick={handleClick}>Suivant</StyledButton>
-
                   </Box>
                 )}
               </Box>
