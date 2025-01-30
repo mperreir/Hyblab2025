@@ -81,7 +81,7 @@ function dialogueAbdonia(){
         customStyles:{
             container: {
                 backgroundColor: "#ffffff",
-                margin: "0% 0% 40% 0%"
+                margin: "0% 0% 30% 0%"
             }
         }
     });

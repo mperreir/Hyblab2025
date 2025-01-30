@@ -97,7 +97,7 @@ body{
 
 /* Positionnement des éléments de la barre latérale */
 .sidebar {
-  position: absolute;
+  /*position: absolute;*/
   padding: 8px;
   display: flex;
   flex-direction: column;
@@ -277,3 +277,5 @@ g[id^="ARBRE-"]{
   transform-box: fill-box;
   transform-origin: center;
 }
+
+
