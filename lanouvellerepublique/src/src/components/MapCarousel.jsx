@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import CarouselBox from './CarouselBox';
 import './MapCarousel.css'
 
-function MapCarousel({ mapRef, points, setSelectedText, setSelectedPOI }) {
+function MapCarousel({ mapRef, points, setSelectedText, setSelectedPOI, setclickedPOI, clickedPOI }) {
     const mapCarouselRef = useRef(null);
     const firstCarouselBoxRef = useRef(null);
     const [activeSnapIndex, setActiveSnapIndex] = useState(0);
@@ -26,9 +26,9 @@ function MapCarousel({ mapRef, points, setSelectedText, setSelectedPOI }) {
         <div className='carousel' ref={mapCarouselRef} onScroll={updateTargetOnScroll}>
             {points.map((point, index) => {
                 if (index == 0) {
-                    return <CarouselBox key={index} boxRef={firstCarouselBoxRef} mapRef={mapRef} point={point} setSelectedText={setSelectedText} setSelectedPOI={setSelectedPOI} />;
+                    return <CarouselBox key={index} boxRef={firstCarouselBoxRef} mapRef={mapRef} point={point} setSelectedText={setSelectedText} setSelectedPOI={setSelectedPOI} clickedPOI={clickedPOI} setclickedPOI={setclickedPOI}/>;
                 } else {
-                    return <CarouselBox key={index} mapRef={mapRef} point={point} setSelectedText={setSelectedText} setSelectedPOI={setSelectedPOI} />;
+                    return <CarouselBox key={index} mapRef={mapRef} point={point} setSelectedText={setSelectedText} setSelectedPOI={setSelectedPOI} clickedPOI={clickedPOI} setclickedPOI={setclickedPOI} />;
                 }
             })}
         </div>

@@ -11,6 +11,7 @@ import data from '../data/db.json';
 function MapPage() {
   const [selectedText, setSelectedText] = useState(""); // Manage text globally
   const [selectedPOI, setSelectedPOI] = useState([0,"","",0,0]);
+  const [clickedPOI, setclickedPOI] = useState([false,false,false,false,false,false])
   const [points, setPoints] = useState([]);
   const [searchParams] = useSearchParams();
   const mapRef = useRef(null);
@@ -42,9 +43,11 @@ function MapPage() {
         setSelectedText={setSelectedText}
         setSelectedPOI={setSelectedPOI}
         points={points}
+        setclickedPOI={setclickedPOI}
+        clickedPOI={clickedPOI}
       />
       {selectedText && <DialogueBox text={selectedText} setSelectedText={setSelectedText} POI={selectedPOI} setSelectedPOI={setSelectedPOI} chosenAnimal={chosenAnimal}/>}
-      <MapCarousel mapRef={mapRef} points={points} setSelectedText={setSelectedText} setSelectedPOI={setSelectedPOI} />
+      <MapCarousel mapRef={mapRef} points={points} setSelectedText={setSelectedText} setSelectedPOI={setSelectedPOI} clickedPOI={clickedPOI} setclickedPOI={setclickedPOI}/>
     </div>
     </>
   );

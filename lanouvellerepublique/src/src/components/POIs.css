@@ -15,11 +15,9 @@
 
 .poi {
     position: absolute;
-    background: rgba(255, 0, 0, 0.8);
     width: 30px;
     height: 30px;
     padding: 5px;
-    border-radius: 100%;
     font-size: 14px;
     white-space: nowrap;
     transition: all ease-in-out .1s; 

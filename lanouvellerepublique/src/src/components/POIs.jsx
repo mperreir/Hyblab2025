@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./POIs.css";
 
-const POIs = ({ setSelectedText, setSelectedPOI, points }) => {
+const POIs = ({ setSelectedText, setSelectedPOI, points, setclickedPOI, clickedPOI }) => {
   const pointsArray = points.map((point) => {
     return {
       x: point.pos[0],
@@ -15,25 +15,41 @@ const POIs = ({ setSelectedText, setSelectedPOI, points }) => {
     }
   })
 
+
   const content = pointsArray.map((point, index) => (
     <div
       key={index}
       className="poi_hitbox"
       style={{
         left: `${point.x - 75/2}px`,
-        top: `${point.y - 75/2}px`
+        top: `${point.y - 75/2}px`,
       }}
       onClick={() => {
+        setclickedPOI(clickedPOI.map((element, idx) => {
+          if (idx == point.id-1) return true;
+          return element;
+      }));
         setSelectedText(point.text);
         setSelectedPOI([point.id, point.img_name, point.title, point.side, point.img_pos])}}
     >
       <div
         key={index}
         className="poi"
+        style={{
+          background:`${clickedPOI[point.id-1] == true ? "#127039" : "#c7b499"}`,
+          color:`${clickedPOI[point.id-1] == true ? "#efd8b8" : "#000000"}`,
+          transform:"rotateZ(15deg)",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          fontWeight: "600",
+        }}
       >
+        <span style={{transform:"rotateZ(345deg)"}}>{point.id}</span>
       </div>
     </div>
   ));
+
 
   return (
     <div className="pois">
