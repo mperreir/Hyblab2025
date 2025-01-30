@@ -127,7 +127,7 @@ const tapIcon = document.getElementById('tapIcon');
   function hideTapIcon() {
     tapIcon.style.display = 'none';
     clearTimeout(timeout);
-    timeout = setTimeout(showTapIcon, 7000); // Reset the timer
+    timeout = setTimeout(showTapIcon, 7000000000); // Reset the timer
   }
   
   
