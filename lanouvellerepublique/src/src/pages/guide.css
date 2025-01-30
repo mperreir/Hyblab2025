@@ -15,7 +15,6 @@
     position: absolute;
     top: 49%;
     width: 100%;
-    transform: translateX(-2%);
 }
 
 /* Animal section */
@@ -27,6 +26,7 @@
     justify-content: flex-end;
     height: 40%;
     width: 100%;
+    z-index: 1;
 }
 
 /* Bubble container */
