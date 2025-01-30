@@ -68,7 +68,7 @@ const Article = ({data}) => {
                             <img
                                 src={section.image}
                                 alt={section.title}
-                                className="w-full h-auto shadow-lg"
+                                className="w-full h-auto"
                             />
                         </div>
                     </div>
