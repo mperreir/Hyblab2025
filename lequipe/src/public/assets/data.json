@@ -254,7 +254,10 @@
                                                         "text": "<span class='redText'>L’équipe de France est suspendue de toutes compétitions internationales pour 10 ans.</span> La France rate le Mondial de 2018. Pas de deuxième étoile. Conséquence inattendue, <span class='redText'>Kylian Mbappé, dégoûté par le système, choisit de jouer pour le Cameroun, le pays de son père.</span> En 2022, il offre la première Coupe du Monde à une nation africaine, devenant une légende du football mondial. Le Cameroun est en liesse.",
                                                         "template": "full_page"
                                                     }
-                                                ]
+                                                ],
+                                                "ending": {
+                                                    "image": "unes/MARADONA_4.png"
+                                                }
                                             }
                                         },
                                         {
@@ -496,7 +499,10 @@
                                             "text": "Le halo, c’est moche ? Peut-être. Mais en imaginant le nombre de pilotes toujours là grâce à lui, ça donne envie d’en coller un sur toutes les voitures. Parce que bon, un sport, c’est plus sympa quand ses héros restent vivants.",
                                             "template": "full_page"
                                         }
-                                    ]
+                                    ],
+                                    "ending": {
+                                        "image": "unes/HALO_4.png"
+                                    }
                                 }
                             },
                             {
