@@ -34,11 +34,15 @@ const MapComponent = ({ difficulty, level_id, currentQuestionIndex, onClose, isV
                     interactive: true,
                     navigationControl: true,
                     geolocateControl: false,
-                    language: 'fr'
                 });
+
 
                 // Attendre que la carte soit chargée
                 await new Promise((resolve, reject) => {
+                    map.current.on('load', () => {
+                        // Puis on applique la langue
+                        map.current.setLanguage(maptilersdk.Language.FRENCH);
+                    });
                     map.current.on('load', resolve);
                     map.current.on('error', reject);
                 });
@@ -165,9 +169,18 @@ const MapComponent = ({ difficulty, level_id, currentQuestionIndex, onClose, isV
 
                     // Zoom sur le tracé GeoJSON
                     const bounds = new maptilersdk.LngLatBounds();
-                    geoJsonData.features[0].geometry.coordinates.forEach(coord => {
-                        bounds.extend(coord);
-                    });
+                    if (
+                        geoJsonData &&
+                        geoJsonData.features &&
+                        geoJsonData.features.length > 0 &&
+                        geoJsonData.features[0].geometry &&
+                        geoJsonData.features[0].geometry.coordinates &&
+                        geoJsonData.features[0].geometry.coordinates.length > 0
+                    ) {
+                        geoJsonData.features[0].geometry.coordinates.forEach(coord => {
+                            bounds.extend(coord);
+                        });
+                    }
 
                     map.current.fitBounds(bounds, {
                         padding: 50,

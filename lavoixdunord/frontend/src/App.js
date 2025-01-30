@@ -16,14 +16,14 @@ import NavBarComponent from "./NavBarComponent/NavBarComponent";
 const basename = process.env.REACT_APP_BASENAME || "/";
 
 function App() {
-  const [showMap, setShowMap] = React.useState({btn: false, map: false});
-    const [isSoundsMuted, setIsSoundMuted] = React.useState(true);
+  const [showMap, setShowMap] = React.useState({ btn: false, map: false });
+  const [isSoundsMuted, setIsSoundMuted] = React.useState(true);
 
   return (
     <Router basename={basename}>
       <LayoutWithMusic
-      isMuted={isSoundsMuted}
-      setIsMuted={setIsSoundMuted}
+        isMuted={isSoundsMuted}
+        setIsMuted={setIsSoundMuted}
       />
       <div className="mobile-container">
         <NavBarComponent
@@ -41,9 +41,11 @@ function App() {
               showMap={showMap}
               setShowMap={setShowMap}
               isMuted={isSoundsMuted}
-              setIsMuted={setIsSoundMuted}        
-              />
-          } />
+              setIsMuted={setIsSoundMuted}
+            />
+          }
+            // key={Date.now()}
+          />
           <Route path="/final" element={<FinalPage />} />
           <Route path="/transition/:difficulty/:level_id" element={<TransitionPage />} />
           <Route path="/credit" element={<Credit />} />
