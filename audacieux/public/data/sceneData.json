@@ -27,8 +27,7 @@
       "type": "group",
       "src": "",
       "z": 1,
-      "subElement":[
-        
+      "subElement":[        
         
         {
           "id": "river",
@@ -213,7 +212,31 @@
               "scale": 65
             }
           ]
-        } 
+        },
+
+        {
+          "id": "credit",
+          "type": "svg",
+          "src": "assets/graphic/Peniche.svg",
+          "z": 9,
+          "keyframes": [
+            {
+              "time": 91,
+              "x": 11000,
+              "y": -300,
+              "rotation": 0,
+              "scale": 65
+            },
+
+            {
+              "time": 100,
+              "x": 9250,
+              "y": -300,
+              "rotation": 0,
+              "scale": 65
+            }
+          ]
+        }
       ],
       "keyframes": [
         {
@@ -227,4 +250,5 @@
     }
 
   ]
+  
 }
