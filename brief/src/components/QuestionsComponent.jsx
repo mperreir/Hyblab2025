@@ -104,7 +104,7 @@ const QuestionsComponent = ({ scenarioId }) => {
         if (nextPhase <= 3) {
           // Ajuster ce nombre en fonction du nombre total de phases
           // Charger la phase suivante
-          alert(`Chargement de la phase suivante : ${nextPhase}`);
+          //alert(`Chargement de la phase suivante : ${nextPhase}`);
           fetch(`/brief/public/data/${scenarioFolder}/phases.json`)
             .then((response) => response.json())
             .then((data) => {
