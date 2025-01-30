@@ -2,24 +2,28 @@
     "phases": [
     {
         "phase_id":1,
+        "image":"/brief/public/images/transition_1.svg",
         "phase_title":" 2025 – Le choix de la transition sans nucléaire",
         "phase_text": "Votre pays s’engage dans une transformation radicale : abandonner progressivement les énergies fossiles et le nucléaire pour construire un système entièrement renouvelable. Le défi est immense : il faut accélérer la construction de parcs solaires, éoliens et hydrauliques tout en développant les premières solutions pour gérer leur intermittence."
        
     },
     {
         "phase_id":2,
+        "image":"/brief/public/images/transition_2.svg",
         "phase_title":"2035 – Résoudre les défis techniques et environnementaux",
         "phase_text": "Dix ans après vos premières décisions, le développement des énergies renouvelables s’accélère, mais les défis techniques, économiques et environnementaux se multiplient. Vous devez maintenant trouver les meilleures stratégies pour assurer une alimentation électrique stable en toute circonstance."
        
     },
     {
         "phase_id":3,
+        "image":"/brief/public/images/transition_3.svg",
         "phase_title":"2045 – Garantir la résilience d’un système 100 % renouvelable",
         "phase_text": "Votre système 100 % renouvelable est presque en place, mais il est confronté à de nouveaux défis : changements climatiques, tensions sur les matières premières, fluctuations de la production. Il faut optimiser la gestion de l’énergie pour garantir une électricité accessible en toutes circonstances."
        
     },
     {
         "phase_id":4,
+        "image":"/brief/public/images/transition_4.svg",
         "phase_title":" 2050 – Maintenir un système 100 % renouvelable",
         "phase_text": "Félicitations, votre pays fonctionne désormais entièrement grâce aux énergies renouvelables ! L’enjeu est maintenant d’optimiser ce modèle : gérer le vieillissement des infrastructures, améliorer le recyclage des panneaux solaires et des éoliennes et anticiper les futurs besoins."
        
