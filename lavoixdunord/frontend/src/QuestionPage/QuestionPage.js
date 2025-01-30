@@ -73,11 +73,12 @@ const QuestionPage = ({ isMuted, setIsMuted, showMap, setShowMap }) => {
       addScore(pointsToAdd);
       setValidated(true);
 
-      // maintenant la carte s'affiche avant la question
-      // setShowMap({ btn: false, map: false });
     } else {
 
       if (currentQuestionIndex < questions.length - 1) {
+        // maintenant la carte s'affiche avant la question
+        setShowMap({ btn: false, map: true });
+
         setCurrentQuestionIndex(currentQuestionIndex + 1);
         setSelectedOptionIndex(null);
         setValidated(false);
@@ -86,6 +87,9 @@ const QuestionPage = ({ isMuted, setIsMuted, showMap, setShowMap }) => {
         setIsEnlarged(false); // Réinitialiser l'agrandissement de l'image
         setHint1Used(false);
         setHint2Used(false);
+
+
+
       } else {
         navigate("/transition/" + (parseInt(difficulty)) + "/" + (parseInt(id)));
         setQuestions([]);
@@ -97,8 +101,6 @@ const QuestionPage = ({ isMuted, setIsMuted, showMap, setShowMap }) => {
         setIsEnlarged(false);
       }
 
-      // maintenant la carte s'affiche avant la question
-      setShowMap({ btn: false, map: true });
     }
   };
 
