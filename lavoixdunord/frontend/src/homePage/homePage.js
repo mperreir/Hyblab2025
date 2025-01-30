@@ -32,7 +32,7 @@ const HomePage = () => {
             <div className="container_home p-4 mt-5">
                 <h1 className="text-white mb-4">BIENVENUE !</h1>
                 <div className="my-4 py-3">&nbsp;</div>
-                <p className='pt-2 position-relative'>
+                <p className='pt-4 mt-5 position-relative'>
                     <img src={`${basename}images/illustrations/bateau.png`}
                         alt="bateau"
                         className="illustration_in_p_bateau"

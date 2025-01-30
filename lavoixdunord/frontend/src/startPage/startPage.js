@@ -46,7 +46,7 @@ const StartPage = () => {
                 <div className='my-3'>&nbsp;</div>
 
                 <div className="mx-3 p-3">
-                    <p className='pt-2 position-relative'>
+                    <p className='pt-4 mt-5 position-relative'>
                         <img src={`${basename}images/illustrations/start_flag.png`} alt="start_flag" className="regle_velo"
                         style={{
                             height: '64px'
