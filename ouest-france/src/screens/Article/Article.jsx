@@ -44,13 +44,21 @@ const Article = ({data}) => {
                     style={{fontFamily: 'Arial, sans-serif'}}
                     id={"article" + section.id}
                 >
-                    <div className="w-1/3">
-                        <h2 className="title text-3xl text-black max-w-lg font-medium mb-4">{section.title}</h2>
-                        <p className="text_content text-black max-w-lg mb-6">{section.content}</p>
-                        <button className='text border border-black' onClick={() => scrollToSection(`quiz${section.id}`)}>
-                            Reprendre le quizz
-                        </button>
+                    <div className="article-container w-1/3">
+                        <div className="triangle">
+                            <svg width="12" height="14" viewBox="0 0 15 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13.5894 7.64486C14.2315 8.03413 14.2315 8.96587 13.5894 9.35514L1.5184 16.6728C0.851964 17.0768 -8.129e-07 16.597 -7.78834e-07 15.8176L-1.39105e-07 1.18235C-1.05039e-07 0.403021 0.851963 -0.0767918 1.5184 0.327214L13.5894 7.64486Z" fill="#CC2229"/>
+                            </svg>
+                        </div>
+                        <div className="article-content">  
+                            <h2 className="title text-3xl text-black max-w-lg font-medium mb-4">{section.title}</h2>
+                            <p className="text_content text-black max-w-lg mb-6">{section.content}</p>
+                            <button className='text border border-black' onClick={() => scrollToSection(`quiz${section.id}`)}>
+                                Reprendre le quizz
+                            </button>
+                        </div>
                     </div>
+                    
                     <div className="w-1/3">
                         <img
                             src={section.image}
