@@ -22,7 +22,7 @@ app.get(`/article`, function (req, res) {
 });
 
 app.get(`/navigation`, function (req, res) {
-    res.sendFile(path.join(__dirname, '/public/index.html'));
+    res.sendFile(path.join(__dirname, '/public/navigation.html'));
 });
 
 app.get('/test-api', (req, res) => {
