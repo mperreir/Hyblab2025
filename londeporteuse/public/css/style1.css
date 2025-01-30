@@ -2,32 +2,35 @@
 
 /* Mise en forme de la page */
 body {
-    display: flex; /* Centrage horizontal et vertical */
+    display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
+    padding: 0;
     background-color: #121212;
     font-family: 'Noto Sans', serif;
     color: white;
 }
 
 #app-container {
-    width: 390px;
-    height: 800px;
-    max-width: 100%;
+    width: 100%;  /* Changed from fixed width */
+    height: 100vh;
+    max-width: 100%;  /* Ensures it doesn't overflow viewport */
     max-height: 100vh;
     background-color: white;
-    border-radius: 15px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    position: relative;
+    border-radius: 0;  /* Removed border radius for full-screen feel */
 }
 
 main {
     flex: 1;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
+    width: 100%;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -546,36 +549,47 @@ footer {
     width: 60%;
   }
 
+  
+/* For larger screens, constrain the width to maintain mobile layout */
+@media (min-width: 768px) {
+    #app-container {
+        width: 390px;
+        height: 800px;
+        border-radius: 15px;  /* Restore border radius for desktop view */
+    }
+}
 
-  /* Animation de fade-in */
-@keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
+
+/**************************Here some of my codes (Ach)**********************/
   
-  .hidden {
-    opacity: 0;
-  }
-  
-  .narrative-section {
-    opacity: 0;
-    transition: opacity 0.8s ease-in-out;
-  }
-  
-  .narrative-text tspan {
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-  }
-  
-  .content-title, .content-text, .btn-create-event {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-  }
-  
+
+.slider-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+input[type="range"] {
+  width: 100%;
+  appearance: none;
+  height: 8px;
+  background: #ddd;
+  border-radius: 4px;
+  outline: none;
+  transition: background 0.3s;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #00d1c1;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#ticketPriceDisplay {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}

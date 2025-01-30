@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style1.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>F€$TIVA£</title>
   </head>
   <body>
@@ -81,6 +82,39 @@
 });
 
     </script>
+    <style>
+        /* Animation de fade-in */
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .hidden {
+    opacity: 0;
+  }
+  
+  .narrative-section {
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+  }
+  
+  .narrative-text tspan {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .content-title, .content-text, .btn-create-event {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+    </style>
     <div id="app-container">
       <header>
         <nav class="navbar">

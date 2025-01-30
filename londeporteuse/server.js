@@ -28,7 +28,7 @@ app.get('/start', async (req, res) => {
     try {
         // Fetch data from the API endpoint
         console.log(BASE_URL)
-        const response = await fetch('https://hyblab.polytech.univ-nantes.fr/londeporteuse/api/home');
+        const response = await fetch('http://localhost:8080/londeporteuse/api/home');
         const data = await response.json();
 
         // Render the Mustache template with the fetched data
@@ -43,7 +43,7 @@ app.get('/start', async (req, res) => {
 app.get('/choices', async (req, res) => {
     try {
       // Fetch data from the API endpoint
-      const response = await fetch('https://hyblab.polytech.univ-nantes.fr/londeporteuse/api/choices');
+      const response = await fetch('http://localhost:8080/londeporteuse/api/choices');
       const data = await response.json();
   
       // Render the Mustache template with the fetched data
@@ -60,14 +60,16 @@ app.get('/choices', async (req, res) => {
 app.get('/budget', async (req, res) => {
   try {
     // Fetch data from the API endpoint
-    const response = await fetch('https://hyblab.polytech.univ-nantes.fr/londeporteuse/api/budget');
+    const response = await fetch('http://localhost:8080/londeporteuse/api/budget');
     const data = await response.json();
 
     const initialBudget = req.query.initialBudget;
     const ticketPrice = req.query.ticketPrice;
+    const festivalSize = req.query.festivalSize;
 
     data['ticketPrice'] = ticketPrice;
     data['budget']['cost'] = initialBudget;
+    data['festivalSize'] = festivalSize;
     
     // Render the Mustache template with the fetched data
     res.render('budget.mustache', data);
@@ -82,7 +84,7 @@ app.get('/budget', async (req, res) => {
 app.get('/ajust', async (req, res) => {
   try {
     // Fetch data from the API endpoint
-    const response = await fetch('https://hyblab.polytech.univ-nantes.fr/londeporteuse/api/ajust');
+    const response = await fetch('http://localhost:8080/londeporteuse/api/ajust');
     const data = await response.json();
 
     // Render the Mustache template with the fetched data
@@ -124,8 +126,8 @@ const costMapping = {
 app.get('/result', (req, res) => {
   try {
 
-    const adjustedBudget = req.query.adjustedBudget;
-    const ticketPrice = req.query.ticketPrice;
+    const adjustedBudget = parseFloat(req.query.adjustedBudget);
+    const ticketPrice = parseFloat(req.query.ticketPrice);
     const festivalSizes = req.query.festivalSizes;
     const ecologicalActions = req.query.ecologicalActions;
     const culturalMediationActions = req.query.culturalMediationActions;
@@ -139,24 +141,43 @@ app.get('/result', (req, res) => {
       "riskPreventionActions": costMapping.riskPreventionActions[riskPreventionActions],
     };
 
-    // Calculate percentages
-    const percentages = {};
+    // **Normalize costs by their average value**
+    const avgCost = {
+      festivalSizes: (costMapping.festivalSizes.Petit + costMapping.festivalSizes.Moyen + costMapping.festivalSizes.Grand) / 3,
+      ecologicalActions: (costMapping.ecologicalActions.Petit + costMapping.ecologicalActions.Moyen + costMapping.ecologicalActions.Grand) / 3,
+      culturalMediationActions: (costMapping.culturalMediationActions.Petit + costMapping.culturalMediationActions.Moyen + costMapping.culturalMediationActions.Grand) / 3,
+      riskPreventionActions: (costMapping.riskPreventionActions.Petit + costMapping.riskPreventionActions.Moyen + costMapping.riskPreventionActions.Grand) / 3
+    };
+
+    const normalizedCosts = {};
     for (const key in costBreakdown) {
-      percentages[key] = ((costBreakdown[key] / adjustedBudget) * 100).toFixed(2);
+      normalizedCosts[key] = costBreakdown[key] / avgCost[key]; // Normalization
     }
 
-    // Prioritize choices based on cost contribution
-    const priorities = Object.entries(costBreakdown)
-      .sort((a, b) => b[1] - a[1]) // Sort descending by cost
-      .map(([key, value]) => ({
-        criterion: key,
-        cost: value,
-        percentage: percentages[key],
-      }));
 
+     // **Sort priorities based on normalized cost impact**
+     const priorities = Object.entries(normalizedCosts)
+     .sort((a, b) => b[1] - a[1])
+     .map(([key, value]) => ({
+       criterion: key,
+       cost: costBreakdown[key],
+       normalizedCost: value
+     }));
 
-    // Predefined messages for each prioritized category
-    const messages = loadResultData();
+   // Get messages
+   const messages = loadResultData();
+
+   const priorityLabels = {
+    festivalSizes: "UNE GRANDE TAILLE ",
+    ecologicalActions: "L'ÉCOLOGIE",
+    culturalMediationActions: "LA MÉDIATION CULTURELLE",
+    riskPreventionActions: "LA PRÉVENTION DES RISQUES"
+  };
+
+  // Determine the highest-priority category
+  const highestPriority = priorities.length > 0 ? priorities[0].criterion : null;
+  const highestPriorityLabel = highestPriority ? priorityLabels[highestPriority] : "un élément inconnu";
+
 
     // Prepare response data
     const responseData = {
@@ -164,9 +185,9 @@ app.get('/result', (req, res) => {
       priorities: priorities.map(priority => ({
         ...priority,
         message: messages[priority.criterion],
+        label: priorityLabels[priority.criterion]
       })),
       costBreakdown,
-      percentages,
       choices: {
         festivalSizes,
         ecologicalActions,
@@ -174,6 +195,7 @@ app.get('/result', (req, res) => {
         riskPreventionActions,
       },
       ticketPrice,
+      highestPriority: highestPriorityLabel
     };
 
     // Send response as JSON

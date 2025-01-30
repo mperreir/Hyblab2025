@@ -30,6 +30,14 @@ const festivalDataPath = path.join(__dirname, '../public/data/festivalData.json'
 const loadFestivalData = () => JSON.parse(fs.readFileSync(festivalDataPath, 'utf8'));
 
 
+const costMapping = {
+  culturalMediationActions : { Petit: 19520, Moyen: 84800, Grand: 145611 },
+  ecologicalActions : { Petit: 18116, Moyen: 99709, Grand: 671629 },
+  festivalSizes : { Petit: 47300, Moyen: 187500, Grand: 2457000 },
+  riskPreventionActions : { Petit: 0, Moyen: 12000, Grand: 25000 }
+};
+
+
 /************************************************************* */
 // Middleware to parse JSON
 app.use(express.json());
@@ -103,6 +111,7 @@ app.post('/calculatebudget', (req, res) => {
 
   try {
     const result = calculateFestivalCostAndTicketPrice(userChoices, festivalData);
+    result['festivalSize'] = userChoices.festivalSizes;
     res.json(result); // Send the result back to the client
   } catch (error) {
     res.status(400).json({ error: "Erreur plutot ici" });
@@ -138,25 +147,99 @@ function validateAdjustedBudget(userChoices, maxAllowedBudget) {
 }
 
 
-app.post('/validate-budget', (req, res) => {
-  const userChoices = req.body.userChoices; // Get user choices from the request body
-  const initialBudget = req.body.budgetLimit;
+// app.post('/validate-budget', (req, res) => {
+//   const userChoices = req.body.userChoices; // Get user choices from the request body
+//   const initialBudget = req.body.budgetLimit;
 
-  try {
-    const maxAllowedBudget = initialBudget * 0.615;
+//   try {
+//     const maxAllowedBudget = initialBudget * 0.615;
 
-    const { isValid, result: { totalCost, averageTicketPrice } } = validateAdjustedBudget(
-      userChoices,
-      maxAllowedBudget
-    );
+//     const { isValid, result: { totalCost, averageTicketPrice } } = validateAdjustedBudget(
+//       userChoices,
+//       maxAllowedBudget
+//     );
 
-    const result = { isValid, result: { totalCost, averageTicketPrice } }
+//     const result = { isValid, result: { totalCost, averageTicketPrice } }
     
-    res.json(result); // Send the result back to the client
+//     res.json(result); // Send the result back to the client
+//   } catch (error) {
+//     res.status(400).json({ error: error.message });
+//   }
+// });  
+
+
+app.post('/validate-budget', (req, res) => {
+  try {
+      const userChoices = req.body.userChoices; // Get user choices from the request body
+      const initialFestivalCost = req.body.budgetLimit;
+      const initialTicketPrice = req.body.initialTicketPrice;
+      const missingAmount = initialFestivalCost * 0.385; // 38.5% du budget initial à compenser
+
+      // Récupération des choix de l'utilisateur
+      const { festivalSizes, ecologicalActions, culturalMediationActions, riskPreventionActions, ticketPrice } = userChoices;
+
+      // const festivalData = loadFestivalData();
+      // const result = calculateFestivalCostAndTicketPrice(userChoices, festivalData);
+      // const ticketPrice = result.averageTicketPrice;
+
+      // Coût total du festival ajusté selon les nouveaux choix
+      const adjustedFestivalCost = 
+          costMapping.festivalSizes[festivalSizes] +
+          costMapping.ecologicalActions[ecologicalActions] +
+          costMapping.culturalMediationActions[culturalMediationActions] +
+          costMapping.riskPreventionActions[riskPreventionActions];
+
+      // Comparaison avec l'ancien coût pour calculer les économies ou surcoûts
+      const costDifference = initialFestivalCost - adjustedFestivalCost; // Économies (positif) ou surcoût (négatif)
+
+      const spectatorsMapping = { Petit: 3000, Moyen: 15000, Grand: 70000 };
+
+      // Calcul des revenus issus de la billetterie
+      const spectators = spectatorsMapping[festivalSizes];
+
+      //const initialTicketPrice = { Petit: 20, Moyen: 50, Grand: 150 }[festivalSizes];
+      console.log(req.body.festivalSize)
+      const initialSpectators = spectatorsMapping[req.body.festivalSize];
+      console.log('initial spectators', initialSpectators)
+
+      // Calcul du revenu billetterie initial
+      const initialRevenueFromTickets = initialTicketPrice * initialSpectators;
+      console.log(initialTicketPrice)
+
+      // Déterminer combien de la billetterie initiale finançait réellement le festival (35.4% du coût initial)
+      const initialInjectedAmount = (initialFestivalCost * 35.4) / 100;
+
+      // Calcul du nouveau revenu billetterie après ajustement du prix du billet
+      const newRevenueFromTickets = ticketPrice * spectators;
+      console.log(ticketPrice)
+
+      // Nouvelle part injectée dans le festival, en appliquant le ratio basé sur la billetterie initiale
+      const newInjectedAmount = (newRevenueFromTickets / initialRevenueFromTickets) * initialInjectedAmount;
+
+      // Différence entre l'ancienne et la nouvelle billetterie qui finance réellement le festival
+      const additionalInjectedAmount = newInjectedAmount - initialInjectedAmount;
+      console.log(missingAmount)
+      console.log(costDifference)
+      console.log(additionalInjectedAmount)
+
+      // Déterminer si l’utilisateur a réussi à combler son déficit
+      const balance = missingAmount - costDifference - additionalInjectedAmount;
+
+      if (balance <= 0) {
+          // Festival validé
+          res.json({ isValid: true, adjustedBudget: adjustedFestivalCost, ticketPrice: ticketPrice });
+      } else {
+          // Budget non équilibré, demander à l'utilisateur d'ajuster encore ses choix
+          res.json({ isValid: false, message: "Votre budget n'est pas équilibré. Vous devez encore réduire vos coûts ou augmenter vos revenus." });
+      }
+
   } catch (error) {
-    res.status(400).json({ error: error.message });
+      console.error("Erreur dans la validation du budget :", error);
+      res.status(500).json({ error: "Erreur lors de la validation du budget." });
   }
-});  
+});
+
+
 
 // Export the app
 module.exports = app;

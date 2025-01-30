@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style1.css">
+    <script src="js/results.js" defer></script>
+    <script src="js/choices.js" defer></script>
     <title>Résultats</title>
   </head>
   <body>
@@ -17,45 +19,117 @@
       </header>
 
       <main>
+      <div id="page_scrollable_container">
+      <svg id="perso-svg-4" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 450"><defs><style>.cls-1{fill:#32d2c3;}.cls-2{fill:#fff;}</style></defs><rect class="cls-1" width="1080" height="450"/><path class="cls-2" d="M260,327l-5-29,33-7-36-45-29-51L106.19,227.64,81.47,395H259.38L261,363l-69-46Zm-58.5-79c5.25,0,9.5,7.39,9.5,16.5s-4.25,16.5-9.5,16.5-9.5-7.39-9.5-16.5S196.25,248,201.5,248Z"/><polygon class="cls-2" points="189.72 170.47 181.31 173.67 174.56 155.91 124.08 175.08 130.82 192.84 120.54 196.75 123.03 203.29 192.21 177.01 189.72 170.47"/><polygon class="cls-2" points="346.28 264.06 294 340 388.15 302.03 449 379 637 401 903 407 978.79 349.66 1039 301 1010 131 868 38 438.53 38 294 139.4 346.28 264.06"/></svg>
+      <div id="dynamic-text" class="narrative-text"></div>
+
         <section class="content">
-          <h2>Bravo, ton festival est prêt !</h2>
-          <h3>Budget final : {{adjustedBudget}} €</h3>
-          <h3>Prix du billet : {{ticketPrice}} €</h3>
+          <h3 class="content-title">LE BILLET COÛTE : {{ticketPrice}} €</h3>
         </section>
 
         <section class="content">
-          <h2>Vos priorités :</h2>
-          <ul>
+          <h3 class="content-title">TU AS PRIORISÉ {{highestPriority}} POUR TON FESTIVAL</h3>
+        </section>
+
+        <section class="content">
+          <h2 class="content-title">Vos priorités :</h2>
+          <ol>
             {{#priorities}}
-            <li>
-              <strong>{{criterion}} :</strong> {{cost}} € ({{percentage}}%)
-              
+            <li class="content-text">
+              <strong>{{label}}</strong>
             </li>
             {{/priorities}}
-          </ul>
-        </section>
+          </ol>
 
         <section class="content">
-        <p>{{priorities.0.message}}</p>
+            <h2 class="content-title">{{priorities.0.message.title}}</h2>
+            {{#priorities.0.message}}
+                {{#paragraph1}}<p class="content-text">{{paragraph1}}</p>{{/paragraph1}}
+                {{#paragraph2}}<p class="content-text">{{paragraph2}}</p>{{/paragraph2}}
+                {{#paragraph3}}<p class="content-text">{{paragraph3}}</p>{{/paragraph3}}
+                {{#paragraph4}}<p class="content-text">{{paragraph4}}</p>{{/paragraph4}}
+                {{#paragraph5}}<p class="content-text">{{paragraph5}}</p>{{/paragraph5}}
+            {{/priorities.0.message}}
         </section>
 
-        <section class="content">
-          <h2>Résumé de tes choix :</h2>
-          <ul>
-            <li>Taille du festival : {{choices.festivalSizes}}</li>
-            <li>Actions écologiques : {{choices.ecologicalActions}}</li>
-            <li>Médiation culturelle : {{choices.culturalMediationActions}}</li>
-            <li>Prévention des risques : {{choices.riskPreventionActions}}</li>
-          </ul>
+        <section class="summary-choices">
+          <h3 class="content-title">RÉSUMÉ DE TES CHOIX</h3>
+               
+
+        <section class="choice-section">
+            <img src="img/picto_perso.svg" alt="Icon">
+            <p class="content-title">Taille du festival</p>
+            <div class="choice-group">
+              <div class="choice-item">
+                <img src="img/fete.jpg" alt="Festival">
+                <div class="choice-info">
+                  <p>{{choices.festivalSizes}}</p>
+                </div>
+              </div>
+            </div>
         </section>
+
+        <!-- Ecological Actions Choice -->
+<section class="choice-section">
+    <img src="img/picto_ecolo.svg" alt="Icon">
+    <p class="content-title">Transition écologique</p>
+    <div class="choice-group">
+        <div class="choice-item">
+            <img src="img/fete.jpg" alt="Ecological Actions">
+            <div class="choice-info">
+                <p>{{choices.ecologicalActions}}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Cultural Mediation Actions Choice -->
+<section class="choice-section">
+    <img src="img/picto_mediation.svg" alt="Icon">
+    <p class="content-title">Médiation culturelle</p>
+    <div class="choice-group">
+        <div class="choice-item">
+            <img src="img/fete.jpg" alt="Cultural Mediation">
+            <div class="choice-info">
+                <p>{{choices.culturalMediationActions}}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Risk Prevention Actions Choice -->
+<section class="choice-section">
+    <img src="img/picto_securite.svg" alt="Icon">
+    <p class="content-title">Prévention des risques</p>
+    <div class="choice-group">
+        <div class="choice-item">
+            <img src="img/fete.jpg" alt="Risk Prevention">
+            <div class="choice-info">
+                <p>{{choices.riskPreventionActions}}</p>
+            </div>
+        </div>
+    </div>
+</section>
+</section> 
+
+
         <div class="button-container">
-            <a href="/londeporteuse" class="btn-validate">Rejouer</a>
+            <a href="/londeporteuse" class="btn-validate">LA SUITE</a>
+        </div>
         </div>
       </main>
 
       <footer>
         <p>En partenariat avec <strong>L’Onde Porteuse</strong> &amp; <strong>Le Pôle</strong></p>
       </footer>
+    </div>
+
+    <!-- Fenêtre modale -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p id="modal-description"></p>
+      </div>
     </div>
   </body>
 </html>

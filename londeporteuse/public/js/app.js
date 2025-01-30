@@ -4,6 +4,7 @@
     ecologicalActions: null,
     culturalMediationActions: null,
     riskPreventionActions: null,
+    ticketPrice: null,
   };
 
   // Handle selection
@@ -49,7 +50,7 @@ async function submitChoices() {
       console.log('Submission successful:', data);
   
       // Redirect or show confirmation message if needed
-      const budgetPageUrl = `/londeporteuse/budget?initialBudget=${data.totalCost}&ticketPrice=${data.averageTicketPrice}`;
+      const budgetPageUrl = `/londeporteuse/budget?initialBudget=${data.totalCost}&ticketPrice=${data.averageTicketPrice}&festivalSize=${data.festivalSize}`;
       window.location.href = budgetPageUrl;
 
       // Update the UI
@@ -67,11 +68,34 @@ async function submitChoices() {
     return urlParams.get(param);
   }
 
+
+  // Récupérer le prix initial du billet depuis l'URL
+function getInitialTicketPrice() {
+  return getQueryParam("ticketPrice"); 
+}
+
+// Mettre à jour l'affichage du prix du billet
+function updateTicketPrice(value) {
+  document.getElementById("ticketPriceDisplay").textContent = value;
+  userChoices.ticketPrice = parseFloat(value);
+}
+
+// Initialiser le slider avec le prix du billet avant ajustement
+function initTicketPriceSlider() {
+  const initialPrice = getInitialTicketPrice();
+  const slider = document.getElementById("ticketPriceSlider");
+  
+  slider.value = initialPrice;
+  updateTicketPrice(initialPrice); // Met à jour l'affichage et userChoices
+}
+
   async function submitAdjustedChoices() {
     try {
       // Log user choices for debugging
       console.log('Submitting choices:', userChoices);
       const budgetLimit = getQueryParam('budgetLimit');
+      const initialTicketPrice = getQueryParam('ticketPrice')
+      const festivalSize = getQueryParam('festivalSize');
   
       // Send choices to the backend via a POST request
       const response = await fetch('./api/validate-budget', {
@@ -79,7 +103,7 @@ async function submitChoices() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({userChoices, budgetLimit}),
+        body: JSON.stringify({userChoices, budgetLimit, initialTicketPrice, festivalSize}),
       });
   
       // Check if the response is successful
@@ -94,10 +118,10 @@ async function submitChoices() {
       if (data.isValid) {
         // Redirect or show confirmation message if needed
         window.location.href = 
-        `/londeporteuse/result?adjustedBudget=${data.result.totalCost}&ticketPrice=${data.result.averageTicketPrice}&festivalSizes=${userChoices.festivalSizes}&ecologicalActions=${userChoices.ecologicalActions}&culturalMediationActions=${userChoices.culturalMediationActions}&riskPreventionActions=${userChoices.riskPreventionActions}`;
+        `/londeporteuse/result?adjustedBudget=${data.adjustedBudget}&ticketPrice=${data.ticketPrice}&festivalSizes=${userChoices.festivalSizes}&ecologicalActions=${userChoices.ecologicalActions}&culturalMediationActions=${userChoices.culturalMediationActions}&riskPreventionActions=${userChoices.riskPreventionActions}`;
       } 
       else {
-        alert ("Your choices exceed the allowed budget. Please adjust your selections.");
+        alert (data.message);
       }
 
     } catch (error) {
@@ -106,3 +130,6 @@ async function submitChoices() {
     }
   }
   
+
+// Lancer l'initialisation au chargement de la page
+document.addEventListener("DOMContentLoaded", initTicketPriceSlider);
