@@ -31,9 +31,9 @@
     cursor: pointer;
 }
 
-.header h2 {
+.title {
     cursor: default;
     position: absolute;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) scale(1.3);
 }

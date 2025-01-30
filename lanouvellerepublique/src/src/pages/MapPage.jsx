@@ -32,12 +32,12 @@ function MapPage() {
 
   return (
     <>
-    <Header titre={"Dans leur peau"} textColor={"white"}/>
+    <Header textColor={"black"} isMap={true}/>
     <div className="game_container">
       <ScrollableMap
         mapRef={mapRef}
-        width={3449}
-        height={4242}
+        width={4000}
+        height={4000}
         background={`url(${backgroundImage})`} 
         setSelectedText={setSelectedText}
         setSelectedPOI={setSelectedPOI}
