@@ -53,7 +53,7 @@
 
 /* Style des messages */
 .message {
-    display: inline;
+    display: flex; /*inline for colors*/
     max-width: 75%;
     padding: 12px 18px;
     margin: 2px 0;
