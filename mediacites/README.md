@@ -16,18 +16,21 @@ Participants :
 
 IP initiale : `http://localhost:8080/mediacites/`
 
-`/` ou `/home` :
+`/` ou `/motion` :
 - Accueil avec motion
 
 `/navigation` :
-- Pages avec catégories séléctionnables
+- Pages avec catégories sélectionnables
 
-`/articles/{nom_catégorie}` :
-- Page avec articles correspondant à la 
-catégorie
+`/article` :
+- Page avec articles
 
 `/info` :
 - Page d’information et de remerciement
+
+`/test-api` :
+- Route de test pour vérifier si l'API fonctionne correctement
+
 
 
 
