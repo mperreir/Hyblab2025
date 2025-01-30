@@ -35,7 +35,7 @@
 
 /* 弹窗内部 */
 .menu-wrapper .menu-content {
-  width: 90%;
+  width: 100%;
   max-height: 70%;
   background: var(--bg-color);
   padding: 20px;
@@ -64,7 +64,7 @@
 }
 
 /* 文字等内部细节 (只影响 .menu-content 里的元素) */
-.menu-wrapper .menu-content h1 {
+#menuTitle{
   font-size: 36px;
   margin-top: 40px;
   text-align: left;
@@ -78,7 +78,7 @@
   font-size: 16px;
   background-color: #1D1D1D;
   color: white;
-  padding: 15px;
+  padding: 15px 0;
   border-radius: 10px;
 }
 
