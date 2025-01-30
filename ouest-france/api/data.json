@@ -104,7 +104,7 @@
       },
       {
         "label": "Gains totaux",
-        "value": "10 843 058.02$"
+        "value": "10 843 058.02€"
       },
       {
         "label": "8 641 joueurs de répertoriés dans le monde (masculin)",
@@ -122,7 +122,7 @@
       },
       {
         "label": "Gain max",
-        "value": "1 492 344$"
+        "value": "1 492 344€"
       },
       {
         "path": "./pavon_bento.png"
@@ -230,11 +230,11 @@
     "stats": [
       {
         "label": "Nombre de coups tirés dans toute la carrière pro",
-        "value": 49495
+        "value": "49 495"
       },
       {
         "label": "Gains totaux",
-        "value": "7 365 139.85$"
+        "value": "7 365 139.85€"
       },
       {
         "label": "8 641 joueuses de répertoriées dans le monde (féminin)",
@@ -252,7 +252,7 @@
       },
       {
         "label": "Gain max",
-        "value": "904 540$"
+        "value": "904 540€"
       },
       {
         "path": "./boutier_bento.png"
