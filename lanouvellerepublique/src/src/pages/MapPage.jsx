@@ -47,7 +47,7 @@ function MapPage() {
         clickedPOI={clickedPOI}
       />
       {selectedText && <DialogueBox text={selectedText} setSelectedText={setSelectedText} POI={selectedPOI} setSelectedPOI={setSelectedPOI} chosenAnimal={chosenAnimal}/>}
-      <MapCarousel mapRef={mapRef} points={points} setSelectedText={setSelectedText} setSelectedPOI={setSelectedPOI} />
+      <MapCarousel mapRef={mapRef} points={points} setSelectedText={setSelectedText} setSelectedPOI={setSelectedPOI} clickedPOI={clickedPOI} setclickedPOI={setclickedPOI}/>
     </div>
     </>
   );

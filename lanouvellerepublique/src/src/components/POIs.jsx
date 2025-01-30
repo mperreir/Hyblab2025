@@ -29,7 +29,6 @@ const POIs = ({ setSelectedText, setSelectedPOI, points, setclickedPOI, clickedP
           if (idx == point.id-1) return true;
           return element;
       }));
-        console.log(clickedPOI);
         setSelectedText(point.text);
         setSelectedPOI([point.id, point.img_name, point.title, point.side, point.img_pos])}}
     >

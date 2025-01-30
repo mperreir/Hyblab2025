@@ -1,6 +1,6 @@
 import './CarouselBox.css'
 
-function CarouselBox({ mapRef, boxRef, point, setSelectedText, setSelectedPOI }) {
+function CarouselBox({ mapRef, boxRef, point, setSelectedText, setSelectedPOI, setclickedPOI, clickedPOI }) {
     const targetElement = (event) => {
         // Scroll to selected carousel box
         event.target.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
@@ -29,7 +29,13 @@ function CarouselBox({ mapRef, boxRef, point, setSelectedText, setSelectedPOI })
                 <h3 className='box-title'>{point.id.toString().padStart(2,"0") + ". " + point.title}</h3>
                 <p className='box-description'>{point.description}</p>
                 <div className='box-button'>
-                    <span className='box-button-text' onClick={showDialogue}>Explorer</span>
+                    <span className='box-button-text' onClick={() => {
+                        setclickedPOI(clickedPOI.map((element, idx) => {
+                            if (idx == point.id-1) return true;
+                            return element;
+                        }));
+                        showDialogue()
+                        }}>Explorer</span>
                 </div>
             </div>
         </div>
