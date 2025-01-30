@@ -35,7 +35,7 @@ const BentoGrid = ({ stats, player }) => {
         </div>
         <div className="relative col-start-9 row-start-1 col-span-8 row-span-3 bg-gray-300 rounded-2xl">
           <img
-            className="h-full w-full object-cover rounded-2xl"
+            className="h-full w-full object-cover rounded-2xl brightness-[80%]"
             src={stats[5].path}
           ></img>
           <div className="absolut">
@@ -70,8 +70,10 @@ const BentoGrid = ({ stats, player }) => {
                 </div>
               </div>
               <div className="relative col-start-3 col-span-2 row-span-1 rounded-2xl flex flex-col justify-end items-center">
-                <h1 className="text-[32px] font-bold">{stats[3].date2}</h1>
-                <p className="italic">{stats[3].info2}</p>
+                <div className="flex flex-col justify-center items-start w-2/3 h-full">
+                  <h1 className="text-[32px] font-bold">{stats[3].date2}</h1>
+                  <p className="italic">{stats[3].info2}</p>
+                </div>
                 <div>
                   <img className="absolute bottom-0 left-8" src="./icon/big_flag.svg"></img>
                 </div>
