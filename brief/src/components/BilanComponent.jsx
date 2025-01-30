@@ -1,15 +1,34 @@
 import React from "react";
-import { Box, Typography, Button } from "@mui/material";
+import { Box, Typography, Button, styled } from "@mui/material";
 import { motion, AnimatePresence } from "framer-motion";
 import DonutJaugeGroup from "./GraphicsComponent";
 import { useNavigate } from "react-router-dom";
+import { useTheme } from "@mui/material/styles";
+
+
+
+const StyledButton = styled(Button)(({ theme }) => ({
+  marginTop: "16px",
+  borderRadius: "20px",
+  border: `2px solid ${theme.palette.primary.main}`,
+  backgroundColor: "white",
+  color: theme.palette.primary.main,
+  padding: "8px 20px",
+  fontWeight: "bold",
+  "&:hover": {
+    backgroundColor: theme.palette.primary.light,
+  },
+}));
+
 
 
 const RecapComponent = ({ bilan }) => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
+  const theme = useTheme();
+
 
   const handleRedirect = () => {
-    navigate("/brief/");
+    navigate("/brief/outro");
   };
   return (
     <motion.div
@@ -76,14 +95,8 @@ const RecapComponent = ({ bilan }) => {
         </Typography>
 
         {/* Bouton de confirmation */}
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={handleRedirect}
-          sx={{ borderRadius: "26px", paddingX: 4 }}
-        >
-          J'ai compris
-        </Button>
+        <StyledButton onClick={handleRedirect}>J'ai compris</StyledButton>
+
       </Box>
     </motion.div>
   );
