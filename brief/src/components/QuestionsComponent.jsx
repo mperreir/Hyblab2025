@@ -12,6 +12,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import DonutJaugeGroup from "./GraphicsComponent";
 import { useAppContext } from "../context/AppContextProvider";
+import RecapComponent from "./BilanComponent";
 
 const QuestionsComponent = ({ scenarioId }) => {
   const { globalState, setGlobalState } = useAppContext(); // Accès au contexte
@@ -59,6 +60,7 @@ const QuestionsComponent = ({ scenarioId }) => {
   }, [currentPhase, , scenarioId]);
 
   const handleAnswer = (response) => {
+    const scenarioFolder = `scenario${String.fromCharCode(64 + scenarioId)}`;
     // Mettre à jour les scores dans le contexte
     setGlobalState((prevState) => ({
       ...prevState,
@@ -102,6 +104,7 @@ const QuestionsComponent = ({ scenarioId }) => {
         if (nextPhase <= 3) {
           // Ajuster ce nombre en fonction du nombre total de phases
           // Charger la phase suivante
+          alert(`Chargement de la phase suivante : ${nextPhase}`);
           fetch(`/brief/public/data/${scenarioFolder}/phases.json`)
             .then((response) => response.json())
             .then((data) => {
@@ -152,9 +155,13 @@ const QuestionsComponent = ({ scenarioId }) => {
 
   if (!currentQuestion) {
     return (
-      <Typography variant="h6" sx={{ textAlign: "center", marginTop: 2 }}>
-        Félicitations, vous avez terminé !
-      </Typography>
+      <RecapComponent
+        bilan={{
+          titre: " 2050 – Un système 100 % renouvelable",
+          paragraph:
+            "Félicitations, votre pays fonctionne désormais entièrement grâce aux énergies renouvelables ! L’enjeu est maintenant d’optimiser ce modèle : gérer le vieillissement des infrastructures, améliorer le recyclage des panneaux solaires et des éoliennes et anticiper les futurs besoins.",
+        }}
+      />
     );
   }
   return (
