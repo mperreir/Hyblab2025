@@ -12,6 +12,7 @@
   <script>
     async function loadArticle() {
         const category = new URLSearchParams(window.location.search).get('category');
+        const district = new URLSearchParams(window.location.search).get('district');
 
         if (!category) {
             console.error('Category is missing from the URL.');
@@ -29,11 +30,52 @@
             const articleData = await response.json();
 
             // Update the DOM with article data
-            document.getElementById('article-title').textContent = articleData.name; 
-            document.getElementById('resumeGeneral').textContent = articleData.resume;
-            document.getElementById('texteArticle').innerHTML = articleData.text;
-            document.getElementById('biduleTexte').textContent = `Voici le bilan 2020-2025 concernant les décisions prises sur le thème "${articleData.name}".`
+            if (!district) {
+                document.getElementById('article-title').textContent = articleData.name; 
+                document.getElementById('resumeGeneral').textContent = articleData.resume;
+                document.getElementById('texteArticle').innerHTML = articleData.text;
+                document.getElementById('biduleTexte').textContent = `Voici le bilan 2020-2025 concernant les décisions prises sur le thème "${articleData.name}".`
 
+                if (articleData.kpis && articleData.kpis.length > 0) {
+                    document.getElementById('kpi1').textContent = articleData.kpis[0].number;
+                    document.getElementById('textkpi1').textContent = articleData.kpis[0].text;
+    
+                    if (articleData.kpis.length > 1) {
+                        document.getElementById('kpi2').textContent = articleData.kpis[1].number;
+                        document.getElementById('textkpi2').textContent = articleData.kpis[1].text;
+                    }
+                }
+            } else {
+                const districtData = articleData.districts.find(d => d.id === district);
+
+                if (districtData) {
+                    document.getElementById('article-title').textContent = articleData.name + " - " + districtData.name;
+                    document.getElementById('resumeGeneral').parentNode.style.display = 'none';
+                    document.getElementById('texteArticle').parentNode.style.display = 'none';
+                    document.getElementById('biduleTexte').textContent = `Voici quelques informations sur la période 2020-2025 concernant les décisions 
+                    prises sur le thème "${articleData.name}", dans le quartier "${districtData.name}".`
+
+                    if (districtData.kpis && districtData.kpis.length > 0) {
+                        document.getElementById('kpi1').textContent = districtData.kpis[0].number;
+                        document.getElementById('textkpi1').textContent = districtData.kpis[0].text;
+
+                        if (districtData.kpis.length > 1) {
+                            document.getElementById('kpi2').textContent = districtData.kpis[1].number;
+                            document.getElementById('textkpi2').textContent = districtData.kpis[1].text;
+                        }
+                    }
+                } else {
+                    console.error('District data not found.');
+                    document.getElementById('article-title').textContent = 'Failed to load article.';
+                    document.getElementById('resumeGeneral').textContent = 'Résumé indisponible.';
+                    document.getElementById('texteArticle').textContent = 'Texte indisponible.';
+                    document.getElementById('kpi1').textContent = 'KPI 1 indisponible';
+                    document.getElementById('textkpi1').textContent = '';
+                    document.getElementById('kpi2').textContent = 'KPI 2 indisponible';
+                    document.getElementById('textkpi2').textContent = '';
+                    document.getElementById('biduleTexte').textContent = `Texte indisponible.`
+                }
+            }
             // Replace the logo class with a video tag if available, otherwise keep the logo
             const logoContainer = document.querySelector('.logo');
             const videoElement = document.createElement('video');
@@ -56,17 +98,7 @@
             const logoImage = logoContainer.querySelector('img');
             if (logoImage) {
                 logoContainer.replaceChild(videoElement, logoImage);
-            }
-
-            if (articleData.kpis && articleData.kpis.length > 0) {
-                document.getElementById('kpi1').textContent = articleData.kpis[0].number;
-                document.getElementById('textkpi1').textContent = articleData.kpis[0].text;
-
-                if (articleData.kpis.length > 1) {
-                    document.getElementById('kpi2').textContent = articleData.kpis[1].number;
-                    document.getElementById('textkpi2').textContent = articleData.kpis[1].text;
-                }
-            }
+            }            
 
         } catch (error) {
             console.error('Error fetching article:', error);
@@ -85,9 +117,14 @@
     async function loadLinks() {
         // Extract the category from the query string
         const category = new URLSearchParams(window.location.search).get('category');
-    
+        const district = new URLSearchParams(window.location.search).get('district');
+
         if (!category) {
             console.error('Category is missing from the URL.');
+            return;
+        } else if (district) {
+            const linksContainer = document.getElementById('links-container');
+            linksContainer.parentNode.style.display = 'none';
             return;
         }
     
@@ -226,6 +263,11 @@
                 console.log(`Redirecting to article.html?category=${category}`);
                 window.location.href = `article.html?category=${category}`;
             }
+            function redirectDistrict(district) {
+                const category = new URLSearchParams(window.location.search).get('category');
+                console.log(`Redirecting to article.html?category=${category}&district=${district}`);
+                window.location.href = `article.html?category=${category}&district=${district}`;
+            }
         </script>
     </nav>
     <div>
@@ -268,6 +310,30 @@
                   <img src="img/logo_mediacites.png" alt="Logo" style="max-width: 100%; max-height: 100%; margin-left:0;">
                 </div>
               </div>
+                <div class="row" style="height: 20vh;"></div>
+                <div class="row">
+                    <div id="map" class="col-md-7">
+                        <img src="./img/carte.svg" alt="carte" usemap="#carte-map" style="max-width: 100%" />
+                        <map name="carte-map">
+                <area shape="poly" coords="25.68800000,29.76800000,25.44800000,29.76800000,23.57600000,41.00000000,20.48000000,41.00000000,23.26400000,24.24800000,27.53600000,24.24800000,29.48000000,35.48000000,29.72000000,35.48000000,31.59200000,24.24800000,34.68800000,24.24800000,31.90400000,41.00000000,27.63200000,41.00000000,25.68800000,29.76800000" href="#1st" alt="Description du premier polygone">
+                <area shape="poly" coords="147.04900000,261.54100000,146.57700000,261.51400000,101.74000000,256.57300000,98.26490000,254.01700000,98.74490000,249.72900000,108.20400000,236.90800000,110.84600000,235.23700000,121.45900000,233.16700000,123.37000000,233.22800000,143.10300000,238.37600000,144.49700000,238.32700000,169.45800000,229.93200000,171.13400000,229.71800000,184.73800000,230.67700000,186.10600000,230.37100000,195.38200000,225.15600000,198.75900000,225.84900000,198.55200000,229.29100000,183.98200000,244.19100000,182.74900000,245.07100000,148.89300000,261.12500000,147.04800000,261.54100000,147.04900000,261.54100000" onclick="redirectDistrict('ile_de_nantes')" title="Île de Nantes" alt="Description du deuxième polygone">
+                <area shape="poly" coords="218.89100000,225.56300000,216.81800000,224.07600000,217.90000000,221.33400000,237.08900000,211.45500000,239.28100000,210.75600000,260.87300000,207.65700000,263.26400000,209.03400000,262.49800000,211.68600000,247.64000000,222.40400000,243.08900000,223.69900000,232.28300000,222.93600000,230.85500000,223.03800000,219.39400000,225.50900000,218.89100000,225.56300000" href="#3rd" alt="Description du troisième polygone">
+                <area shape="poly" coords="170.17000000,227.35700000,168.25300000,226.83100000,151.60300000,216.94400000,149.89700000,214.69900000,144.36500000,194.35700000,145.41600000,190.63200000,152.35500000,184.11200000,152.95200000,182.73400000,152.95200000,177.98500000,156.70600000,174.22800000,165.14700000,174.22800000,165.58000000,174.33500000,188.10500000,186.15200000,188.43100000,186.43700000,205.95900000,211.03400000,206.46300000,214.40500000,204.03600000,216.79600000,171.30400000,227.18100000,170.17000000,227.35700000" href="#4th" alt="Description du quatrième polygone">
+                <area shape="poly" coords="209.09700000,215.51500000,205.56600000,213.69900000,187.38200000,188.18000000,186.52100000,187.42900000,175.70100000,181.75200000,175.22700000,181.14200000,175.37500000,180.38300000,202.73200000,142.18300000,203.94500000,141.03900000,241.17100000,117.61000000,244.94900000,117.20300000,247.59300000,119.93600000,255.39900000,143.96300000,255.79800000,144.71400000,261.11700000,151.55600000,261.99900000,154.72100000,260.42300000,168.12300000,260.72400000,169.62200000,270.44200000,186.85600000,270.78600000,190.33200000,268.45400000,192.93000000,221.27500000,214.24600000,219.86100000,214.61400000,209.45900000,215.50000000,209.09700000,215.51500000,209.09700000,215.51500000" href="#5th" alt="Description du cinquième polygone" >
+                <area shape="poly" coords="176.13300000,181.85900000,175.70100000,181.75200000,165.58900000,176.44700000,164.15600000,176.09400000,157.90100000,176.09400000,152.95000000,171.14200000,152.95000000,167.15700000,155.11300000,163.06300000,159.05700000,160.37600000,160.22200000,158.87300000,169.78200000,132.38900000,170.24200000,131.44400000,179.42200000,116.76600000,179.87300000,114.79100000,178.26600000,100.17900000,179.44500000,96.39620000,193.49800000,80.15480000,193.93400000,79.49610000,199.93100000,67.28780000,199.93100000,64.56580000,190.58400000,45.53090000,190.30900000,41.85170000,192.65000000,34.45720000,197.95500000,31.03550000,219.42800000,33.59320000,221.47400000,33.11610000,226.63900000,32.97430000,229.11700000,37.51000000,227.19900000,76.82950000,227.40600000,78.10090000,235.14200000,97.95310000,234.11100000,103.17200000,229.29000000,108.22500000,228.56300000,111.23400000,231.62400000,121.54900000,229.51500000,127.15100000,205.04200000,142.55300000,204.17700000,143.36800000,176.89200000,181.46900000,176.13300000,181.85900000" href="#6th" alt="Description du sixième polygone">
+                <area shape="poly" coords="144.56900000,235.30600000,143.83200000,235.22900000,123.30500000,230.90500000,122.65700000,230.89500000,114.65600000,232.32100000,110.71700000,230.11800000,106.08600000,218.33900000,106.12500000,217.56900000,106.72900000,217.09100000,119.72400000,213.87000000,129.47500000,207.06200000,130.00900000,206.89400000,140.43600000,206.89400000,145.04200000,209.84600000,149.31600000,219.12600000,149.87800000,219.80300000,156.74900000,224.64800000,158.23700000,227.95600000,156.05600000,230.85300000,145.92500000,235.03500000,144.56900000,235.30600000" onclick="redirectDistrict('centre-ville')" alt="Description du septième polygone" data-toggle="tooltip" data-placement="top" title="Centre-Ville">
+                <area shape="poly" coords="98.13510000,244.39700000,96.37050000,243.85200000,77.97260000,231.24300000,68.82640000,231.97500000,68.62620000,231.96900000,40.37710000,228.11500000,37.89930000,226.19400000,38.32340000,223.08800000,49.25340000,208.97200000,49.51200000,208.33500000,51.24240000,192.75600000,52.32610000,190.71500000,59.73250000,184.40900000,62.44780000,183.73600000,75.77960000,186.72000000,76.04200000,186.82300000,99.05030000,200.11000000,99.42150000,200.50800000,107.79200000,217.58700000,107.82300000,217.65600000,112.42100000,229.35100000,112.36700000,231.77700000,110.59600000,233.43800000,107.85000000,234.45900000,107.30200000,234.85500000,100.58900000,243.22900000,98.13700000,244.39800000,98.13510000,244.39700000" href="#8th" alt="Description du huitième polygone">
+                <area shape="poly" coords="106.95300000,218.93000000,106.11600000,218.40800000,97.87010000,201.58300000,80.40860000,191.49900000,79.95400000,190.54200000,80.68650000,189.77700000,104.66600000,184.82300000,126.08300000,173.66000000,129.12600000,164.73000000,129.21800000,164.53700000,135.24100000,154.88900000,136.03100000,154.45000000,145.93700000,154.45000000,151.04100000,159.17500000,151.95700000,170.96000000,151.67300000,173.08400000,148.67800000,181.44300000,148.03700000,182.67400000,141.06400000,192.53200000,140.58400000,195.28000000,143.15500000,204.57500000,142.60000000,207.45700000,139.97100000,208.76100000,130.30300000,208.76100000,120.65100000,215.50000000,120.34100000,215.64000000,107.17900000,218.90300000,106.95500000,218.93100000,106.95300000,218.93000000" href="#9th" alt="Description du neuvième polygone">
+                <area shape="poly" coords="59.17420000,271.86200000,58.53190000,271.79600000,28.57420000,265.55500000,26.39180000,263.85100000,20.31340000,251.28400000,20.56710000,248.11900000,35.19160000,227.24000000,38.18160000,225.93200000,68.77860000,230.10800000,78.15350000,229.35800000,78.75480000,229.51800000,97.09800000,242.09000000,98.43290000,244.25900000,97.71790000,246.70400000,86.48200000,259.97600000,84.59250000,261.04400000,75.13550000,262.58300000,74.66850000,262.75900000,60.82870000,271.38800000,59.17420000,271.86400000,59.17420000,271.86200000" href="#10th" alt="Description du dixième polygone">
+                <area shape="poly" coords="80.87420000,191.62400000,80.40790000,191.49900000,75.23110000,188.51000000,64.70030000,186.15300000,62.39230000,184.02600000,63.08310000,180.96400000,65.34750000,178.51400000,67.05430000,177.56500000,78.41330000,175.36500000,79.39380000,174.46200000,82.31980000,164.04100000,82.08170000,162.89500000,79.84150000,160.14800000,79.16620000,157.72800000,80.48310000,155.59000000,96.97660000,144.14000000,100.16900000,143.91400000,112.67100000,150.18700000,136.19700000,154.46600000,136.88400000,155.00600000,136.82200000,155.87800000,130.85600000,165.43400000,127.72700000,174.61600000,127.27500000,175.14300000,105.41100000,186.53800000,105.16900000,186.62400000,81.06260000,191.60500000,80.87420000,191.62400000" href="#11th" alt="Description du onzième polygone">
+                <area shape="poly" coords="148.20900000,156.31600000,136.03100000,156.31600000,135.86400000,156.30100000,112.20600000,151.99900000,111.95500000,151.91500000,99.70130000,145.76600000,98.04740000,142.27900000,102.16200000,123.86400000,101.74700000,121.79100000,80.99060000,92.41970000,80.48820000,91.49470000,74.88920000,77.44210000,75.62910000,72.89830000,79.98640000,71.41610000,121.73500000,80.45270000,123.99400000,81.70610000,143.21400000,101.47100000,144.32800000,103.43600000,148.08700000,117.51500000,150.28000000,119.42900000,163.78400000,121.12300000,167.36000000,123.85300000,166.75200000,128.31100000,166.29300000,128.89900000,165.91800000,129.55800000,159.99200000,144.78300000,159.18700000,146.11000000,151.56700000,154.79500000,148.20900000,156.31600000" href="#12th">
+                <area shape="poly" coords="198.82500000,307.00000000,198.57500000,306.98900000,177.76600000,305.27200000,175.56800000,304.06900000,147.53100000,267.34000000,147.21200000,264.11100000,149.95400000,262.38200000,158.74800000,262.30200000,159.31900000,262.15400000,180.44900000,250.64400000,182.92700000,250.43600000,184.75300000,252.12500000,186.27800000,255.63800000,186.23400000,258.19200000,184.52200000,261.79300000,184.59200000,262.96900000,185.62300000,263.53700000,188.24500000,263.53700000,191.32900000,266.62200000,191.32900000,270.37200000,190.75500000,272.16500000,188.97500000,274.66000000,189.19200000,276.30800000,199.91700000,285.16200000,200.55400000,285.43300000,208.27400000,286.31700000,210.86900000,288.46900000,211.39700000,290.17300000,211.10100000,292.66700000,209.04900000,294.11300000,203.05500000,295.29700000,202.07300000,296.46800000,201.91100000,303.97900000,200.89100000,306.20600000,198.82500000,306.99900000,198.82500000,307.00000000" href="#13th" alt="Description du treizième polygone">
+                        </map>
+                    </div>
+                    <div class="logo col-md-3 align-self-end">
+                        <img src="img/logo_mediacites.png" alt="Logo" style="max-width: 100%; max-height: 100%; margin-left:0;">
+                    </div>
+                </div>
                 <div class="row">
                   <div id="biduleTexte" class="description col-md-10" style="border-radius: 4vh 4vh 4vh 4vh; text-align: left;  font-weight: bold; margin-top: 2vh;">
                     Découvrez la synthèse des décisions du conseil municipal en navigant à travers les différentes catégories.
