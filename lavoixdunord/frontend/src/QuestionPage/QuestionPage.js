@@ -76,9 +76,7 @@ const QuestionPage = ({ isMuted, setIsMuted, showMap, setShowMap }) => {
     } else {
 
       if (currentQuestionIndex < questions.length - 1) {
-        // maintenant la carte s'affiche avant la question
-        setShowMap({ btn: false, map: true });
-
+        
         setCurrentQuestionIndex(currentQuestionIndex + 1);
         setSelectedOptionIndex(null);
         setValidated(false);
@@ -87,7 +85,11 @@ const QuestionPage = ({ isMuted, setIsMuted, showMap, setShowMap }) => {
         setIsEnlarged(false); // Réinitialiser l'agrandissement de l'image
         setHint1Used(false);
         setHint2Used(false);
-
+        
+        // maintenant la carte s'affiche avant la question
+        setTimeout(() => {
+          setShowMap({ btn: false, map: true });        
+        }, 500);
 
 
       } else {

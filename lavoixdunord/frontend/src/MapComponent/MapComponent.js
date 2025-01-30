@@ -74,7 +74,8 @@ const MapComponent = ({ difficulty, level_id, currentQuestionIndex, onClose, isV
             const data = yaml.load(yamlText);
             const currentQuestion = data.game.levels[parseInt(difficulty) - 1]
                 .stages[parseInt(level_id) - 1]
-                .questions[currentQuestionIndex];
+                .questions[(currentQuestionIndex)];
+
             setQuestionData(currentQuestion);
             setGeoJsonData(geoJson);
         });
