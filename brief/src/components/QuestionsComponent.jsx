@@ -21,12 +21,8 @@ const QuestionsComponent = ({ scenarioId }) => {
   const [questions, setQuestions] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [globalState, setGlobalState] = useState({
-    Budget: 0,
-    GES: 0,
-    Satisfaction: 0,
-    history: [],
-  });
+  const { globalState, setGlobalState } = useAppContext();
+
 
   // Helper function to get scenario folder
   const getScenarioFolder = (scenarioId) => {
@@ -186,7 +182,11 @@ const QuestionsComponent = ({ scenarioId }) => {
             alignItems: "center",
           }}
         >
-          <DonutJaugeGroup />
+          <DonutJaugeGroup 
+            budget={globalState.Budget}
+            ges={globalState.GES}
+            satisfaction={globalState.Satisfaction}
+          />
           <Box
             width="100%"
             padding={2}

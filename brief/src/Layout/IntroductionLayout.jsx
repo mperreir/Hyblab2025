@@ -22,6 +22,7 @@ const IntroductionLayout = ({ children }) => {
         flexDirection: "column",
         minHeight: "100vh",
         backgroundColor: "white",
+        overflowX: "hidden", // Empêche le défilement horizontal
       }}
     >
       <CssBaseline /> {/* Assure une base de style cohérente pour MUI */}
