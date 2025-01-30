@@ -72,7 +72,7 @@ const AnimatedRoutes = () => {
       <Route
         path="/brief/landing"
         element={
-          <TransitionsComponent animationType="feuille">
+          <TransitionsComponent animationType="zoomIn">
             <LandingPage />
           </TransitionsComponent>
         }
@@ -80,7 +80,7 @@ const AnimatedRoutes = () => {
       <Route
         path="/brief/questions"
         element={
-          <TransitionsComponent animationType="vent">
+          <TransitionsComponent animationType="fadeInOut">
             <QuestionsPage />
           </TransitionsComponent>
         }
@@ -88,7 +88,7 @@ const AnimatedRoutes = () => {
       <Route
         path="/brief/contexte"
         element={
-          <TransitionsComponent animationType="vent">
+          <TransitionsComponent animationType="fadeInOut">
             <ContextePage />
           </TransitionsComponent>
         }
@@ -104,7 +104,7 @@ const AnimatedRoutes = () => {
       <Route
         path="/brief/Introduction"
         element={
-          <TransitionsComponent animationType="feuille">
+          <TransitionsComponent animationType="fadeInOut">
             <DefinitionPage />
           </TransitionsComponent>
         }
@@ -112,7 +112,7 @@ const AnimatedRoutes = () => {
       <Route
         path="/brief/Information"
         element={
-          <TransitionsComponent animationType="vent">
+          <TransitionsComponent animationType="fadeInOut">
             <InformationMixPage />
             </TransitionsComponent>
 

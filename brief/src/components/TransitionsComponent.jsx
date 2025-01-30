@@ -4,6 +4,12 @@ import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 
 const animations = {
+    fadeInOut: {
+        initial: { opacity: 0, backgroundColor: "#ffffff" },
+        animate: { opacity: 1, backgroundColor: "transparent" },
+        exit: { opacity: 0, backgroundColor: "#ffffff" },
+        transition: { duration: 0.8, ease: "easeInOut" },
+      },
   feuille: {
     initial: { rotateY: 90, opacity: 0 },
     animate: { rotateY: 0, opacity: 1 },
@@ -20,7 +26,7 @@ const animations = {
     initial: { scale: 0.5, opacity: 0 },
     animate: { scale: 1, opacity: 1 },
     exit: { scale: 0.2, opacity: 0 },
-    transition: { duration: 0.7, ease: "easeInOut" },
+    transition: { duration: 0.3, ease: "easeInOut" },
   },
   flamme: {
     initial: { opacity: 0, y: 20 },

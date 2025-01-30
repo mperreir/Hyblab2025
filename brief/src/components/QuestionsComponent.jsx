@@ -25,39 +25,32 @@ const QuestionsComponent = ({ scenarioId }) => {
   const [isLoading, setIsLoading] = useState(true); // Indique si les données sont en cours de chargement
 
   useEffect(() => {
-    if (!scenarioId) return; // Évite d'exécuter les requêtes si scenarioId est vide
-    const scenarioFolder = `scenario${String.fromCharCode(64 + scenarioId)}`; // Dynamise le dossier scénario (A, B, etc.)
-
-    // Charger la phase actuelle
+    if (!scenarioId) return;
+  
+    const scenarioFolder = `scenario${String.fromCharCode(64 + scenarioId)}`;
+  
+    // Load phases
     fetch(`/brief/public/data/${scenarioFolder}/phases.json`)
       .then((response) => response.json())
       .then((data) => {
-        setCurrentPhase(data.phases[0]); // Phase 1 au début
-        setPhaseText(data.phases[0].phase_text); // Texte de la phase
+        setCurrentPhase(data.phases[0]);
+        setPhaseText(data.phases[0].phase_text);
+  
+        // Load questions for the first phase
+        return fetch(
+          `/brief/public/data/${scenarioFolder}/p${data.phases[0].phase_id}_questions.json`
+        );
       })
-      .catch((error) =>
-        console.error("Erreur lors du chargement des phases :", error)
-      );
+      .then((response) => response.json())
+      .then((data) => {
+        setQuestions(data.questions);
+        setCurrentQuestion(data.questions[0]);
+      })
+      .catch((error) => {
+        console.error("Error loading data:", error);
+      })
+      .finally(() => setIsLoading(false));
   }, [scenarioId]);
-
-  useEffect(() => {
-    if (currentPhase && scenarioId) {
-      const scenarioFolder = `scenario${String.fromCharCode(64 + scenarioId)}`;
-      // Charger les questions de la phase actuelle
-      fetch(
-        `/brief/public/data/${scenarioFolder}/p${currentPhase.phase_id}_questions.json`
-      )
-        .then((response) => response.json())
-        .then((data) => {
-          setQuestions(data.questions);
-          setCurrentQuestion(data.questions[0]);
-        })
-        .catch((error) =>
-          console.error("Erreur lors du chargement des questions :", error)
-        )
-        .finally(() => setIsLoading(false));
-    }
-  }, [currentPhase, , scenarioId]);
 
   const handleAnswer = (response) => {
     const scenarioFolder = `scenario${String.fromCharCode(64 + scenarioId)}`;
@@ -202,11 +195,10 @@ const QuestionsComponent = ({ scenarioId }) => {
             width="100%"
             padding={2}
             bgcolor="white"
-            boxShadow={0} // Pas d'ombre portée
+            boxShadow={0} // No shadow
             display="flex"
-            backgroundColor="#F5E8EE"
             flexDirection="column"
-            sx={{ borderRadius: "16px", marginBottom: 2 }}
+            sx={{ borderRadius: "16px", marginBottom: 2, backgroundColor: "#F5E8EE" }}
             gap={1}
           >
             {/* Afficher la question */}

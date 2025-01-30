@@ -63,8 +63,17 @@ const IntroductionLayout = ({ children }) => {
         </Toolbar>
       </AppBar>
 
-      <Box sx={{ display: 'flex', alignItems: 'center', width: '150%'}}>
-            <StepHeader currentStep={2} />
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          width: "100%", // Ne déborde plus
+          marginTop: 2,
+        }}
+      >
+        <Box sx={{ width: "90%" }}>
+          <StepHeader currentStep={2} />
+        </Box>
       </Box>
 
       <Container
