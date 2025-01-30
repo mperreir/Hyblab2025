@@ -33,7 +33,8 @@ const MapComponent = ({ difficulty, level_id, currentQuestionIndex, onClose, isV
                     zoom: 13,
                     interactive: true,
                     navigationControl: true,
-                    geolocateControl: false
+                    geolocateControl: false,
+                    language: 'fr'
                 });
 
                 // Attendre que la carte soit chargée
