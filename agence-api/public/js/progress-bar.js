@@ -21,7 +21,7 @@ function updateProgress() {
     });
 
     lines.forEach((line, index) => {
-        if (index%totalQuestions === currentQuestion - 2) {
+        if (index%(totalQuestions-1) === currentQuestion - 2) {
             line.classList.add('active');
         }
     });
