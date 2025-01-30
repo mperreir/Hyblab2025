@@ -20,16 +20,16 @@
         ],
         "districts": [
             {
-                "id": "centre-ville",
-                "name": "Centre-Ville",
+                "id": "nantes-sud",
+                "name": "Nantes Sud",
                 "kpis": [
                     {
-                        "number": "X",
-                        "text": "lorem ipsum"
+                        "number": "3",
+                        "text": "Le nombre d'écoles rénovées à Nantes Sud"
                     },
                     {
-                        "number": "X",
-                        "text": "lorem ipsum"
+                        "number": "1",
+                        "text": "Une école est en cours de construction dans le quartier de Nantes Sud"
                     }
                 ]
             },
@@ -38,12 +38,12 @@
                 "name": "Île de Nantes",
                 "kpis": [
                     {
-                        "number": "X",
-                        "text": "lorem ipsum"
+                        "number": "2",
+                        "text": "Le nombre de travaux d'école en cours sur l'Île de Nantes"
                     },
                     {
-                        "number": "X",
-                        "text": "lorem ipsum"
+                        "number": "2",
+                        "text": "Le nombre d'école en cours de construction"
                     }
                 ]
             }
