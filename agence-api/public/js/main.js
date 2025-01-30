@@ -16,10 +16,6 @@ const initSlide2 = async function (afterIntro = false) {
     const signal = abortController.signal;
 
     try {
-        const chatBox = document.getElementById('chatBox');
-        const messageList = document.getElementById('messageList');
-        const messageInput = document.getElementById('messageInput');
-
         if(!afterIntro){
             scrollToBottom();
 

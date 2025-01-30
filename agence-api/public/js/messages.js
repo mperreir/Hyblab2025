@@ -111,6 +111,10 @@ async function addAnswer(answers, type) {
             answerElement.classList.add('middle');
         }
 
+        if(type === "useless"){
+            answerElement.classList.add("useless");
+        }
+
         answersContainer.appendChild(answerElement);
         i++;
     }
