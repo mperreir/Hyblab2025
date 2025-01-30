@@ -121,7 +121,7 @@
                 "id": 0,
                 "number": "4",
                 "text": "Le nombre de parcs et d’espaces verts qui doivent voir le jour d’ici à  2026, parmi lesquels le cours Saint-Pierre, le cours Saint-André, la Petite-Hollande et la Persagotière.",
-                "long": false
+                "long": true
             },
             {
                 "id": 1,
