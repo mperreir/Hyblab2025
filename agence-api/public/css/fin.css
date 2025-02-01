@@ -68,7 +68,7 @@
 
 #flipCard p{
     text-align: center;
-    font-size: 20px;
+    font-size: clamp(16px, 3vw, 24px);
     font-weight: bold;
   }
 
