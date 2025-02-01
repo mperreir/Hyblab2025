@@ -75,6 +75,8 @@ function expandMessage(messageElement, data) {
                     //nombre d'entreprises
                     const nombre = document.createElement('p');
                     nombre.classList.add('nombre-entreprises');
+                    nombre.style.marginTop = '0';
+                    nombre.style.fontSize = '24px';
                     nombre.textContent = paragraphe.nb_entreprises;
                     item.appendChild(nombre);
 
@@ -105,8 +107,8 @@ function expandMessage(messageElement, data) {
                     button.addEventListener('click', function () {
                         event.stopPropagation();
                         if (description_container.style.display === 'none') {
-                            console.log('display flex');
                             description_container.style.display = 'flex';
+                            description_container.style.flexDirection = 'column';
                             button.textContent = '-';
                         } else {
                             description_container.style.display = 'none';
