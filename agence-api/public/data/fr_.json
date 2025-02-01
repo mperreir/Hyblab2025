@@ -610,6 +610,9 @@
                         "1_ceramiste": "Bon choix ! J'en suis sûr, tu vas faire des merveilles dans en tant que céramiste. Pourquoi ne pas t'installer en Ille-et-Vilaine ?",
                         "1_boucher": "Bravo pour ton choix de devenir boucher. Je suis sûr que tu te feras une place de choix dans le secteur de l'artisanat. Que dirais-tu de t'installer dans le Maine-et-Loire ?"
                     }
+                ],
+                "images":[
+                    "img/arti/Carte_Metier.png"
                 ]
             },
             {
@@ -619,6 +622,9 @@
                 ],
                 "apres": [
                     "Tu as reçu le financement dont tu avais besoin pour démarrer ton activité. Félicitations !"
+                ],
+                "images":[
+                    "img/arti/Carte_financement_arti.png"
                 ]
             },
             {
@@ -627,6 +633,9 @@
                 ],
                 "apres": [
                     "Super ! Te voilà prêt à démarrer ton activité avec une équipe solide."
+                ],
+                "images":[
+                    "img/arti/Carte_recrutement_arti.png"
                 ]
             },
             {
@@ -647,6 +656,9 @@
                         "4_label": "Tu as choisi de tenter d'obtenir un label RSE. C'est un engagement fort qui peut te démarquer de la concurrence !",
                         "4_mission": "Tu as choisi de devenir une entreprise à mission. C'est un engagement fort qui peut te démarquer de la concurrence !"
                     }
+                ],
+                "images":[
+                    "img/arti/Carte_RSE_arti.png"
                 ]
             },
             {
@@ -657,13 +669,16 @@
                 ],
                 "apres": [
                     "Très bien !"
+                ],
+                "images":[
+                    "img/arti/Carte_Approvisionnement.png"
                 ]
             }
         ],
         "informations": [
             {
                 "titre": "La place de l'artisanat dans l'Ouest",
-                "images": [],
+                "images": ["img/arti/La_place_de l_Artisanat.png"],
                 "paragraphes": [
                     "L’artisanat est au cœur de notre économie locale. En Bretagne et dans les Pays de la Loire, nous sommes fiers de cette diversité qui caractérise nos régions : des plombiers aux bijoutiers, en passant par les commerçants de produits régionaux, chacun apporte une richesse unique à nos territoires.",
                     "Savais-tu que 79 % des entreprises artisanales dans nos régions emploient moins de 10 salariés ? Il s'agit d'un cadre idéal pour un projet artisanal à échelle humaine."
@@ -683,9 +698,9 @@
                     "1_boucher": "Les actifs dans le Maine-et-Loire"
                 },
                 "images": {
-                    "1_menuisier": [],
-                    "1_ceramiste": [],
-                    "1_boucher": []
+                    "1_menuisier": ["img/arti/Menuisier.png"],
+                    "1_ceramiste": ["img/arti/Ceramiste.png"],
+                    "1_boucher": ["img/arti/Boucher.png"]
                 },
                 "paragraphes": [
                     "En Bretagne, l'enseignement professionnel compte 42 323 inscrits, tandis qu'en Pays de la Loire, il enregistre 47 262 inscrits. Parallèlement, l'emploi des jeunes de 15 à 24 ans a connu une progression notable sur la dernière décennie, avec une augmentation de +25,7 % en Bretagne et +29,6 % en Pays de la Loire. Ces évolutions témoignent d’une dynamique favorable à l’insertion des jeunes dans le marché du travail, portée par des secteurs clés tels que l’industrie, le commerce et les services."
@@ -693,7 +708,7 @@
             },
             {
                 "titre": "Les entreprises à mission dans l'Ouest",
-                "images": [],
+                "images": ["img/arti/Entreprises_à_mission_local.png"],
                 "paragraphes": [
                     "La Bretagne et les Pays de la Loire comptaient 26 sociétés à missions en 2020. Ce nombre a été multiplié par 6 entre 2020 et 2023, atteignant 151 sociétés à missions en 2023.",
                     "Une entreprise dite \"à mission\" est une entreprise qui se fixe des objectifs sociaux et environnementaux dans ses statuts juridiques.",
@@ -703,7 +718,7 @@
             },
             {
                 "titre": "L'importation de marchandises dans l'Ouest",
-                "images": [],
+                "images": ["img/arti/Importation_de_marchandises.png"],
                 "paragraphes": [
                     "En 2023, les régions Bretagne et Pays de la Loire ont représenté 7,1 % des importations totales de la France, avec un coût s’élevant à 37 409 millions d’euros pour les Pays de la Loire et 15 538 millions d’euros pour la Bretagne.",
                     {
