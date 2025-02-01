@@ -134,6 +134,9 @@
                         "1_porc": "Bravo pour ton ambition dans la filière porcine dans le Finistère ! Ce département abrite notamment l’entreprise Bigard, un leader français de la transformation de viande, spécialisé dans la production porcine.",
                         "1_volaille": "Bravo pour ton projet dans le secteur avicole en Vendée ! Le département accueille des entreprises de renom comme Groupe LDC, leader français de la volaille."
                     }
+                ],
+                "images":[
+                    "img/agro/Production.png"
                 ]
             },
             {
@@ -143,6 +146,9 @@
                 ],
                 "apres": [
                     "Tu as trouvé le financement nécessaire pour démarrer ton activité. Félicitations !"
+                ],
+                "images":[
+                    "img/agro/Carte_financement_agro.png"
                 ]
             },
             {
@@ -152,6 +158,9 @@
                 ],
                 "apres": [
                     "Très bien !"
+                ],
+                "images":[
+                    "img/agro/Carte_recrutement_agro.png"
                 ]
             },
             {
@@ -171,13 +180,16 @@
                         "4_marchenational": "Tu as choisi de viser le marché national. Bonne chance pour la suite !",
                         "4_marcheeuro": "Tu as choisi de viser le marché international. C'est un pari risqué, mais qui peut s'avérer très payant !"
                     }
+                ],
+                "images":[
+                    "img/agro/Politique_d_exportation.png"
                 ]
             }
         ],
         "informations": [
             {
                 "titre": "L'agroalimentaire dans l'Ouest",
-                "images": [],
+                "images": ["img/agro/Agro_pilier_de l_éco.png"],
                 "paragraphes": [
                     "L’agroalimentaire est un pilier économique de nos régions. La Bretagne est la première région agricole de France, et les Pays de la Loire sont troisièmes.",
                     "Voici quelques chiffres clés :",
@@ -187,7 +199,7 @@
             },
             {
                 "titre": "Financement : Les aides publiques",
-                "images": [],
+                "images": ["img/agro/Aides_publiques.png"],
                 "paragraphes": [
                     "L'Ouest de la France bénéficie d'un soutien significatif à travers les dispositifs publics visant à renforcer son tissu industriel et à favoriser la réindustrialisation.",
                     "Le programme France Relance a permis d’accompagner 67 entreprises de la région dans leur projet de relocalisation dans des secteurs stratégiques, tout en soutenant 185 initiatives industrielles pour dynamiser les territoires​.",
@@ -201,9 +213,9 @@
                     "1_volaille": "Les actifs en Vendée"
                 },
                 "images": {
-                    "1_lait": [],
-                    "1_porc": [],
-                    "1_volaille": []
+                    "1_lait": ["img/agro/Lait.png"],
+                    "1_porc": ["img/agro/Porc.png"],
+                    "1_volaille": ["img/agro/Poule.png"]
                 },
                 "paragraphes": [
                     "Il faut savoir que nos deux régions se distinguent du reste du territoire métropolitain par une plus forte proportion d’ouvriers et d’agriculteurs-exploitants, liée au poids important de l’agriculture et de l’industrie. Tu devrais donc trouver de nombreux partenaires et employés pour ton activité ici."
@@ -211,7 +223,7 @@
             },
             {
                 "titre": "L'export de marchandises de l'Ouest",
-                "images": [],
+                "images": ["img/agro/Exportation_marchandise_agro.png"],
                 "paragraphes": [
                     "La Bretagne et les Pays de la Loire exportent respectivement 12 810 M€ et 25 430M€ de marchandises par an (données du T4 2022 au T3 2023). Les principaux pays d'exportation sont l'Allemagne, l'Espagne et la Belgique pour la Bretagne, et la Belgique, l'Espagne et le Royaume-Uni pour les Pays de la Loire.",
                     {
