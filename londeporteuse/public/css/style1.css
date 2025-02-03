@@ -446,7 +446,6 @@ h2{
 footer {
     background-color: white;
     text-align: center;
-    padding-bottom: 20px;
     font-size: 0.8rem;
     font-weight: bold;
     margin-top: auto;
@@ -454,16 +453,16 @@ footer {
 }
 
 .footer-logos {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 7%;
-  padding: 15px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-items: center;
+  padding: 20px;
 }
 
 .footer-logo {
-    height: 30px;
-    width: auto;
+  width: 60px;
+  height: auto;
 }
 
 .foot-title {
