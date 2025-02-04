@@ -1,0 +1,163 @@
+p, a {
+    padding: 30px 5% 0 2%;
+    font-size: 25%;
+    font-weight: 400;
+    text-align: justify;
+}
+
+.question_block {
+    display: flex;
+    padding: 30px 5% 0 1%;
+    flex-direction: row;
+    gap: 2%;
+    align-items: center;
+    width: 100%;
+
+    p {
+        max-width: 85%;
+        font-weight: 700;
+        font-style: italic;
+        font-size: 22%;
+        vertical-align: middle;
+        padding: 0;
+    }
+
+    img {
+        width: 10%;
+    }
+
+    .dot {
+        width: 20px;
+        height: 20px;
+        background-color: hsl(8, 100%, 15%);
+        border-radius: 100%;
+        position: absolute;
+        left: 2%;
+        transform: translate(-40%, 0);
+    }
+}
+
+.choice {
+    // make some sort of nice looking card looking button for a choice button
+    position: relative;
+    width: 96%;
+    aspect-ratio: 357 / 109;
+    margin: 2%;
+    border: 1px solid white;
+    border-radius: 5px;
+
+    color: white;
+    text-shadow: 1px 1px 2px black;
+
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    background: no-repeat center center;
+    background-color: lighten(black, 10%);
+    background-size: 100% auto;
+
+    #choisir {
+        position: absolute;
+        border-radius: 5px;
+        height: 100%;
+        width: 100%;
+        align-items: flex-end;
+        justify-content: center;
+        display: flex;
+
+        p{
+            text-align: center;
+            padding: 1%;
+            margin: 0px 0px;
+            font-size: 20%;
+            color: #D61E00;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+    }
+
+    #gris {
+        position: absolute;
+        border-radius: 5px;
+        height: 100%;
+        width: 100%;
+        padding: 5%;
+        align-content: center;
+        justify-content: center;
+        display: flex;  
+        p{
+            text-align: center;
+            margin: 0px 0px;
+        }
+    }
+
+    &:hover {
+        background-color: lighten(#D61E00, 5%);
+    }
+}
+
+#choice_div {
+    display: flex;
+    flex-direction: column;
+}
+
+.selected {
+    background-color: lighten(#D61E00, 5%);
+    border:black;
+}
+
+.not_selected {
+    #gris{
+        background-color: rgba(0, 0, 0, 0.5);
+        color: grey;
+    }
+}
+
+#main {
+    margin-bottom: 0;
+    margin-left: 2%;
+    padding-left: 2%;
+    border-left: 4px solid hsl(8, 100%, 15%);
+}
+
+.une {
+    width: 93%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px 5% 60px 2%;
+
+    img {
+        width: 100%;
+        width: 100%;
+        padding: 3%;
+        border: 1px solid #D61E00;
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    .retry_btn {
+        font-size: 20%;
+
+        display: flex;
+        align-self: center;
+        background-color: #D61E00;
+        margin-top: 4%;
+        padding: 2% 5%;
+        //font
+        font-size: 20%;
+        font-weight: 250;
+        color: white;
+        text-align: center;
+        justify-content: center;
+        //border
+        border-radius: 8px;
+
+        cursor: pointer;
+    }
+}
