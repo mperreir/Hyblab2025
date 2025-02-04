@@ -20,12 +20,14 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-
-    transform: scale(2);
 }
 
 .big-back-button:hover {
     cursor: pointer;
+}
+
+.big-back-button svg {
+    transform: scale(2);
 }
 
 h2 {

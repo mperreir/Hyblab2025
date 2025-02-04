@@ -55,6 +55,10 @@
     margin: 0;
 }
 
+.text_container h4 {
+    font-weight: 300;
+}
+
 .image_offset{
     width: 30%;
 }

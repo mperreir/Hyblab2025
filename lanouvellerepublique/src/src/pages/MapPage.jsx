@@ -4,9 +4,18 @@ import ScrollableMap from "../components/ScrollableMap";
 import DialogueBox from "../components/DialogueBox";
 import Header from "../components/Header";
 import MapCarousel from "../components/MapCarousel";
-import backgroundImage from '../assets/Map-loutreeurope.jpg';
 import data from '../data/db.json';
 
+import LoutreMap from '../assets/Map-loutreeurope.jpg';
+import DefaultMap from '../assets/Map-default.jpg';
+
+const animalMaps = {
+  Loutre: LoutreMap,
+  Papillon: DefaultMap,
+  Crapaud: DefaultMap,
+  Anguille: DefaultMap,
+  Tortue: DefaultMap,
+};
 
 function MapPage() {
   const [selectedText, setSelectedText] = useState(""); // Manage text globally
@@ -17,19 +26,14 @@ function MapPage() {
   const mapRef = useRef(null);
   const queryAnimal = searchParams.get("animal"); // Get 'region' query parameter
   const chosenAnimal = queryAnimal in data ? queryAnimal : 'Loutre'; // Charger la Loutre par défaut
-/*
-  async function fetchPOIs() {
-    const res = await fetch('http://localhost:8080/lanouvellerepublique/api/animals/Loutre') // TEST (route à modifier)
-      .then(response => response.json())
-      .then(response => setPoints(response));
-  }
-*/
 
   useEffect(() => {
     const pts = data[chosenAnimal];
     setPoints(data[chosenAnimal]);
     //fetchPOIs();
   });
+
+  const backgroundImage = animalMaps[chosenAnimal] || DefaultMap;
 
   return (
     <>

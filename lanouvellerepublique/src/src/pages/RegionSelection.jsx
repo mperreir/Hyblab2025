@@ -14,11 +14,11 @@ function RegionSelection() {
     const [selectedAnimal, setSelectedAnimal] = useState(null);
 
     const animals = [
-        { id: 1, name: 'Loutre', fullname: 'Loutre d\'Europe', svg: loutre},
-        { id: 2, name: 'Tortue', fullname: 'Tortue Cistude', svg: tortue},
-        { id: 3, name: 'Crapaud', fullname: 'Sonneur à ventre jaune', svg: crapaud},
-        { id: 4, name: 'Papillon', fullname: 'Azuré de la pulmonaire', svg: papillon},
-        { id: 5, name: 'Anguille', fullname: 'Anguille argentée', svg: anguille},
+        { id: 1, name: 'Loutre', fullname: 'Loutre d\'Europe', svg: loutre, departement: 'Indre-et-Loire'},
+        { id: 2, name: 'Tortue', fullname: 'Tortue Cistude', svg: tortue, departement: 'Indre'},
+        { id: 3, name: 'Crapaud', fullname: 'Sonneur à ventre jaune', svg: crapaud, departement: 'Loir-et-Cher'},
+        { id: 4, name: 'Papillon', fullname: 'Azuré de la pulmonaire', svg: papillon, departement: 'Vienne'},
+        { id: 5, name: 'Anguille', fullname: 'Anguille argentée', svg: anguille, departement: 'Deux-Sèvres'},
     ];
 
     return (

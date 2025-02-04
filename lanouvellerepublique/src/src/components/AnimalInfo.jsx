@@ -24,7 +24,7 @@ function AnimalInfo({ animal }) {
                     </div>
                     <div className='text_container'>
                         <h3>{displayedAnimal.fullname}</h3>
-                        <p>Vous avez cliqué sur mon profil ? Laissez moi vous en dire un peu plus.</p>
+                        <h4>{displayedAnimal.departement}</h4>
                     </div>
                 </div>
                 <div className='bottom_section'>

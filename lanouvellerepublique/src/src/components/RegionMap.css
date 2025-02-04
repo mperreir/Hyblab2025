@@ -25,33 +25,33 @@
 
 .animals_list .Loutre {
     position: absolute;
-    bottom: 27%;
-    left: 33%;
+    bottom: 51%;
+    left: 36%;
 
 }
 
 .animals_list .Tortue {
     position: absolute;
-    bottom: 52%;
-    left: 39%;
+    bottom: 38%;
+    left: 61%;
 }
 
 .animals_list .Crapaud {
     position: absolute;
-    bottom: 35%;
-    left: 13%;
+    bottom: 67%;
+    left: 58%;
 }
 
 .animals_list .Papillon {
     position: absolute;
-    left: 59%;
-    bottom: 64%;
+    left: 37%;
+    bottom: 25%;
 }
 
 .animals_list .Anguille {
     position: absolute;
-    left: 59%;
-    bottom: 36%;
+    left: 15%;
+    bottom: 30%;
 }
 
 .animals_list .Anguille.selected::after {

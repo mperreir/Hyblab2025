@@ -61,30 +61,6 @@
     position: relative;
 }
 
-/* Customize the scrollbar */
-.speech_holder::-webkit-scrollbar {
-    width: 8px; /* Width of the vertical scrollbar */
-    height: 8px; /* Height of the horizontal scrollbar */
-}
-
-/* Customize the scrollbar track (background) */
-.speech_holder::-webkit-scrollbar-track {
-    background-color: #f1f1f1; /* Light background color for the track */
-    border-radius: 10px; /* Rounded corners */
-}
-
-/* Customize the scrollbar thumb (the draggable part) */
-.speech_holder::-webkit-scrollbar-thumb {
-    background-color: #888; /* Thumb color */
-    border-radius: 10px; /* Rounded corners */
-    border: 2px solid #f1f1f1; /* Border around the thumb for better visibility */
-}
-
-/* Customize the scrollbar thumb when hovering */
-.speech_holder::-webkit-scrollbar-thumb:hover {
-    background-color: #555; /* Darker color when hovered */
-}
-
 .dialogue-box > p {
     text-wrap: auto;
     margin: 0;
