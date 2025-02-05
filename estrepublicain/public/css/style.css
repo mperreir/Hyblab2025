@@ -172,6 +172,37 @@ p {
     border-top-right-radius: 25px;
 }
 
+#footer p {
+    max-width: 100%;
+    text-align: justify !important;
+}
+
+#footer .card {
+    height: auto;
+    background-color: #000000;
+    width: 100%;
+    border-radius: 25px;
+    padding: 10px;
+    color: white;
+}
+
+#footer .card img {
+    width: 100%;
+    margin-left: 10px;
+    border-radius: 15px;
+}
+
+#footer .card h2 {
+    margin-top: 10px;
+    font-size: 1.2em;
+    font-family: "Arial Black", "sans-serif";
+}
+
+#footer .card p {
+    text-align: left !important;
+}
+
+
 /* --- Élément "folder" dans le footer --- */
 #folder {
     background-image: url("../img/FOND_BLANC.jpg");
@@ -349,12 +380,20 @@ p {
     margin-top: 50px;
 }
 
+#mySwiper2 {
+    width: 80vw;
+}
+
 /* Points de pagination Swiper en blanc/rouge */
 .swiper-pagination-bullet-active {
     background-color: #CB010A !important;
 }
 
 #swiper-wrapper {
+    padding-bottom: 40px;
+}
+
+#swiper-wrapper2 {
     padding-bottom: 40px;
 }
 
@@ -556,8 +595,21 @@ p {
 }
 
 /* --- Logos --- */
-#logos img {
-    width: 100%;
+
+#logos .logo {
+    background-image: url("../img/FOND_BLANC.jpg");
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 15px; /* 5px rounded corners */
+}
+
+#logos .logo img {
+    height: 50px;
+    padding: 10px;
+}
+
+#logos .logo p {
+    padding: 10px;
 }
 
 /* --- Overlay (si besoin) --- */

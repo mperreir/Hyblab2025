@@ -9,6 +9,38 @@ const swiper = new Swiper("#mySwiper", {
     },
 });
 
+$(document).ready(function() {
+    var isMobile  = isVisible('#bp_mobile'),
+        isTablet  = isVisible('#bp_tablet'),
+        isDesktop = isVisible('#bp_desktop');
+
+    if( isMobile ) {
+        const swiper2 = new Swiper("#mySwiper2", {
+            direction: "horizontal",
+            mousewheel: false,
+            spaceBetween: 10,
+            slidesPerView: 1.8,
+            pagination: false
+        });
+    } else if (isTablet) {
+        const swiper2 = new Swiper("#mySwiper2", {
+            direction: "horizontal",
+            mousewheel: false,
+            spaceBetween: 10,
+            slidesPerView: 3.5,
+            pagination: false
+        });
+    } else {
+        const swiper2 = new Swiper("#mySwiper2", {
+            direction: "horizontal",
+            mousewheel: false,
+            spaceBetween: 10,
+            slidesPerView: 5.5,
+            pagination: false
+        });
+    }
+});
+
 document.getElementById("readMore").addEventListener("click", function () {
     document.getElementById("moreText").style.display = "block"
     document.getElementById("threeDots").style.display = "none"
@@ -526,4 +558,25 @@ window.addEventListener('load', function () {
 
     document.getElementById("loader").style.display = "none"
     document.getElementById("main").style.display = "block"
+
+    setTimeout(() => {
+        const cards = Array.from(document.getElementsByClassName("card"));
+
+        const maxHeight = cards.reduce((acc, card) => {
+            return Math.max(acc, card.clientHeight);
+        }, 0);
+
+        cards.forEach(card => {
+            card.style.height = maxHeight + "px";
+        });
+    }, 50);
+
+
+
 })
+
+var isVisible = function(element) {
+    return $(element).is(':visible');
+};
+
+
