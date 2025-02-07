@@ -30,7 +30,7 @@ const AnimalIllustration = ({ imageName }) => {
 };
 
 
-// Carousel menu on the bottom of the scrollable map
+// One of the boxes of the carousel
 function CarouselBox({ mapRef, boxRef, point, setSelectedText, setSelectedPOI, setclickedPOI, clickedPOI }) {
     const targetElement = (event) => {
         // Scroll to selected carousel box

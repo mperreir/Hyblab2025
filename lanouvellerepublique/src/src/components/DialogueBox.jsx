@@ -23,7 +23,7 @@ const CardTitle = ({ number, title }) => {
     )
 }
 
-// 
+// Animal image above speech bubbles
 const AnimalIllustration = ({ POI }) => {
     const [imageSrc, setImageSrc] = useState(null);
 
@@ -40,6 +40,7 @@ const AnimalIllustration = ({ POI }) => {
     );
 };
 
+// Container for the whole dialogue section
 const DialogueBox = ({ text, setSelectedText, POI, setSelectedPOI, chosenAnimal}) => {
     const dialogueRef = useRef(null);
     const speechHolderRef = useRef(null);
@@ -68,7 +69,7 @@ const DialogueBox = ({ text, setSelectedText, POI, setSelectedPOI, chosenAnimal}
         if (dialogueRef.current) {
         anime({
             targets: dialogueRef.current,
-            translateY: ["100%", "0%"], // Move from 100px below to its normal position
+            translateY: ["100%", "0%"], // Move from below the screen to its normal position
             opacity: [0, 1],
             duration: 400, // Animation duration in milliseconds
             easing: "easeOutQuad",
@@ -95,7 +96,7 @@ const DialogueBox = ({ text, setSelectedText, POI, setSelectedPOI, chosenAnimal}
         bottom: "0px",
         left: "0",
         width: "100%",
-        height: "50px", // Adjust this based on how much shadow you want
+        height: "50px",
         background: `linear-gradient(to top, rgba(255, 255, 255, ${shadowIntensity*8}), rgba(255, 255, 255, 0))`,
         pointerEvents: "none",
         zIndex: 1,

@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import CarouselBox from './CarouselBox';
 import './MapCarousel.css'
 
+// Carousel used to navigate between POIs
 function MapCarousel({ mapRef, points, setSelectedText, setSelectedPOI, setclickedPOI, clickedPOI }) {
     const mapCarouselRef = useRef(null);
     const firstCarouselBoxRef = useRef(null);

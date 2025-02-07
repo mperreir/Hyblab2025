@@ -6,7 +6,7 @@ function Header({ textColor, isHome = false, isMap = false}) {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    const bgColor = (isMap) ? "transparent" : "white";
+    const bgColor = (isMap) ? "transparent" : "white"; // Set background color to transparent if on map
 
     function toggleMenu() {
         setIsMenuOpen(!isMenuOpen);

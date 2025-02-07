@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
 import "./POIs.css";
 
+// Div containing all POIs for a selected animal
 const POIs = ({ setSelectedText, setSelectedPOI, points, setclickedPOI, clickedPOI }) => {
   const pointsArray = points.map((point) => {
     return {
