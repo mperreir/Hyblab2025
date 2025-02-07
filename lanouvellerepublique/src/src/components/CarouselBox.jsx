@@ -1,5 +1,36 @@
 import './CarouselBox.css'
+import { useState, useEffect } from "react";
 
+const images = import.meta.glob("../assets/POI_images/*.svg");
+async function getImage(fileName) {
+    const matchedPath = Object.keys(images).find((path) => path.endsWith(fileName));
+    return matchedPath ? (await images[matchedPath]()).default : null;
+}
+
+const AnimalIllustration = ({ imageName }) => {
+    const [imageSrc, setImageSrc] = useState(null);
+
+    useEffect(() => {
+        let isMounted = true; // Prevent state updates if the component unmounts
+        if (imageName) {
+            getImage(imageName).then((src) => {
+                if (isMounted) setImageSrc(src);
+            });
+        }
+        return () => {
+            isMounted = false; // Cleanup function
+        };
+    }, [imageName]);  // Only runs when imageName changes
+
+    return (
+        <div className="illustration">
+            {imageSrc ? <img src={imageSrc} alt="POI" /> : <p>Loading...</p>}
+        </div>
+    );
+};
+
+
+// Carousel menu on the bottom of the scrollable map
 function CarouselBox({ mapRef, boxRef, point, setSelectedText, setSelectedPOI, setclickedPOI, clickedPOI }) {
     const targetElement = (event) => {
         // Scroll to selected carousel box
@@ -9,15 +40,6 @@ function CarouselBox({ mapRef, boxRef, point, setSelectedText, setSelectedPOI, s
     function showDialogue() {
         setSelectedText(point.text);
         setSelectedPOI([point.id, point.img_name, point.title, point.pos_img, point.icon_pos]);
-    }
-
-    const AnimalIllustration = (imageName) => {
-        //pour tester en local, changer "https://hyblab.polytech.univ-nantes.fr/lanouvellerepublique/assets/" par "/src/assets/"
-        return (
-            <div className="illustration">
-                <img src={`https://hyblab.polytech.univ-nantes.fr/lanouvellerepublique/assets/${imageName.imageName}`} alt="POI" /> 
-            </div>
-        )
     }
 
     return (

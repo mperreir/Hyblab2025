@@ -3,6 +3,7 @@ import './BurgerMenu.css';
 import { useNavigate } from "react-router-dom";
 import anime from 'animejs';
 
+// Burger menu that appears when the three dashes of the header are clicked
 function BurgerMenu({ isMenuOpen, setIsMenuOpen }) {
     const [isClosing, setIsClosing] = useState(false);
 
@@ -25,8 +26,8 @@ function BurgerMenu({ isMenuOpen, setIsMenuOpen }) {
         setIsMenuOpen(false);
     }
 
+    // Manage the opening and closing animations
     const animDuration = 250;
-
     useEffect(() => {
         if (isMenuOpen && menuRef.current && !isClosing) {
             anime({
@@ -43,14 +44,14 @@ function BurgerMenu({ isMenuOpen, setIsMenuOpen }) {
                 easing: 'easeInQuad',
             });
         }
-    }, [isMenuOpen, isClosing]);
+    }, [isMenuOpen, isClosing]); // Launch an animation whenever one of these changes
 
     function closeMenu(){
         setIsClosing(true);
         setTimeout(() => {
             setIsMenuOpen(false);
             setIsClosing(false);
-        }, animDuration);
+        }, animDuration); // Timeout to prevent the menu to disappear immediately
     }
 
     return (

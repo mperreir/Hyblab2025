@@ -1,14 +1,15 @@
 import { useEffect, useRef, useState } from "react";
 import anime from "animejs";
 import "./DialogueBox.css";
-import loutre1 from "../assets/LoutrePOI1.svg"
-import loutre2 from "../assets/LoutrePOI2.svg"
-import loutre3 from "../assets/LoutrePOI3.svg"
-import loutre4 from "../assets/LoutrePOI4.svg"
-import loutre5 from "../assets/LoutrePOI5.svg"
-import loutre6 from "../assets/LoutrePOI6.svg"
 import SpeechBubble from "./SpeechBubble";
 
+const images = import.meta.glob("../assets/POI_images/*.svg");
+async function getImage(fileName) {
+    const matchedPath = Object.keys(images).find((path) => path.endsWith(fileName));
+    return matchedPath ? (await images[matchedPath]()).default : null;
+}
+
+// Banner on top of the dialogue box
 const CardTitle = ({ number, title }) => {
     return (
         <div className="card_title">
@@ -22,14 +23,22 @@ const CardTitle = ({ number, title }) => {
     )
 }
 
+// 
+const AnimalIllustration = ({ POI }) => {
+    const [imageSrc, setImageSrc] = useState(null);
 
-const AnimalIllustration = (POI) => {
+    useEffect(() => {
+        if (POI && POI[1]) {
+            getImage(POI[1]).then(setImageSrc);
+        }
+    }, [POI]);  // ✅ Fetch image only when POI changes
+
     return (
-        <div className="illustration" style={{marginLeft: `${POI.POI[4]}%`}}>
-            <img src={`https://hyblab.polytech.univ-nantes.fr/lanouvellerepublique/assets/${POI.POI[1]}`} /> 
+        <div className="illustration" style={{ marginLeft: `${POI[4]}%` }}>
+            {imageSrc ? <img src={imageSrc} alt={POI[2]} /> : <p>Loading...</p>}
         </div>
-    )
-}
+    );
+};
 
 const DialogueBox = ({ text, setSelectedText, POI, setSelectedPOI, chosenAnimal}) => {
     const dialogueRef = useRef(null);

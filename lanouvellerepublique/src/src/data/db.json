@@ -3,7 +3,7 @@
         {
             "id": 1,
             "pos": [630,3685],
-            "img_name": "LoutrePOI1-oxriM3OT.svg",
+            "img_name": "LoutrePOI1.svg",
             "pos_img": 75,
             "icon_pos": 50,
             "title" : "La carte d'identité",
@@ -17,7 +17,7 @@
         {
             "id": 2,
             "pos": [1347, 3390],
-            "img_name": "LoutrePOI2-DCPhukoF.svg",
+            "img_name": "LoutrePOI2.svg",
             "pos_img": 45,
             "icon_pos": 55,
             "text": [
@@ -31,7 +31,7 @@
         {
             "id": 3,
             "pos": [1755, 2649],
-            "img_name": "LoutrePOI3-SsGJxE55.svg",
+            "img_name": "LoutrePOI3.svg",
             "pos_img": 60,
             "icon_pos": 63,
             "text": [
@@ -44,7 +44,7 @@
         {
             "id": 4,
             "pos": [1930, 1550],
-            "img_name": "LoutrePOI4-BRz1yqW7.svg",
+            "img_name": "LoutrePOI4.svg",
             "pos_img": 70,
             "icon_pos": 72,
             "text": [
@@ -59,7 +59,7 @@
         {
             "id": 5,
             "pos": [2190, 1150],
-            "img_name": "LoutrePOI5-DEfkdVQ9.svg",
+            "img_name": "LoutrePOI5.svg",
             "pos_img": 55,
             "icon_pos": 15,
             "text": [
@@ -73,7 +73,7 @@
         {
             "id": 6,
             "pos": [2850, 630],
-            "img_name": "LoutrePOI6-D6GDW2jO.svg",
+            "img_name": "LoutrePOI6.svg",
             "pos_img": 65,
             "icon_pos": 15,
             "text": [
@@ -87,7 +87,7 @@
         {
             "id": 1,
             "pos": [435, 675],
-            "img_name": "anguille-CGq3p8aa.svg",
+            "img_name": "anguille.svg",
             "title": "Carte d’identité",
             "subtitle": "1",
             "text": [
@@ -101,7 +101,7 @@
         {
             "id": 2,
             "pos": [535, 675],
-            "img_name": "anguille-CGq3p8aa.svg",
+            "img_name": "anguille.svg",
             "title": "Cycle de vie",
             "subtitle": "2",
             "text": [
@@ -115,7 +115,7 @@
         {
             "id": 3,
             "pos": [635, 675],
-            "img_name": "anguille-CGq3p8aa.svg",
+            "img_name": "anguille.svg",
             "title": "Reproduction",
             "subtitle": "3",
             "text": [
@@ -128,7 +128,7 @@
         {
             "id": 4,
             "pos": [435, 775],
-            "img_name": "anguille-CGq3p8aa.svg",
+            "img_name": "anguille.svg",
             "title": "Barrages & braconnage",
             "subtitle": "4",
             "text": [
@@ -142,7 +142,7 @@
         {
             "id": 5,
             "pos": [535, 775],
-            "img_name": "anguille-CGq3p8aa.svg",
+            "img_name": "anguille.svg",
             "title": "Pollution des eaux",
             "subtitle": "5",
             "text": [
@@ -155,7 +155,7 @@
         {
             "id": 6,
             "pos": [635, 775],
-            "img_name": "anguille-CGq3p8aa.svg",
+            "img_name": "anguille.svg",
             "title": "Marais poitevin",
             "subtitle": "6",
             "text": [
@@ -170,7 +170,7 @@
         {
             "id": 1,
             "pos": [435, 675],
-            "img_name": "crapaud-wLil_CZg.svg",
+            "img_name": "crapaud.svg",
             "title": "Carte d’identité",
             "subtitle": "1",
             "text": [
@@ -184,7 +184,7 @@
         {
             "id": 2,
             "pos": [535, 675],
-            "img_name": "crapaud-wLil_CZg.svg",
+            "img_name": "crapaud.svg",
             "title": "L'alimentation",
             "subtitle": "2",
             "text": [
@@ -197,7 +197,7 @@
         {
             "id": 3,
             "pos": [635, 675],
-            "img_name": "crapaud-wLil_CZg.svg",
+            "img_name": "crapaud.svg",
             "title": "Reproduction",
             "subtitle": "3",
             "text": [
@@ -211,7 +211,7 @@
         {
             "id": 4,
             "pos": [435, 775],
-            "img_name": "crapaud-wLil_CZg.svg",
+            "img_name": "crapaud.svg",
             "title": "Réchauffement climatique",
             "subtitle": "4",
             "text": [
@@ -225,7 +225,7 @@
         {
             "id": 5,
             "pos": [535, 775],
-            "img_name": "crapaud-wLil_CZg.svg",
+            "img_name": "crapaud.svg",
             "title": "Agriculture intensive",
             "subtitle": "5",
             "text": [
@@ -238,7 +238,7 @@
         {
             "id": 6,
             "pos": [635, 775],
-            "img_name": "crapaud-wLil_CZg.svg",
+            "img_name": "crapaud.svg",
             "title": "Vallée de la Braye",
             "subtitle": "6",
             "text": [
@@ -253,7 +253,7 @@
         {
             "id": 1,
             "pos": [435, 675],
-            "img_name": "papillon-M1b81DBF.svg",
+            "img_name": "papillon.svg",
             "title": "Carte d’identité",
             "subtitle": "1",
             "text": [
@@ -267,7 +267,7 @@
         {
             "id": 2,
             "pos": [535, 675],
-            "img_name": "papillon-M1b81DBF.svg",
+            "img_name": "papillon.svg",
             "title": "Rythme de vie",
             "subtitle": "2",
             "text": [
@@ -281,7 +281,7 @@
         {
             "id": 3,
             "pos": [635, 675],
-            "img_name": "papillon-M1b81DBF.svg",
+            "img_name": "papillon.svg",
             "title": "Reproduction",
             "subtitle": "3",
             "text": [
@@ -294,7 +294,7 @@
         {
             "id": 4,
             "pos": [435, 775],
-            "img_name": "papillon-M1b81DBF.svg",
+            "img_name": "papillon.svg",
             "title": "Réchauffement climatique",
             "subtitle": "4",
             "text": [
@@ -308,7 +308,7 @@
         {
             "id": 5,
             "pos": [535, 775],
-            "img_name": "papillon-M1b81DBF.svg",
+            "img_name": "papillon.svg",
             "title": "Agriculture intensive",
             "subtitle": "5",
             "text": [
@@ -321,7 +321,7 @@
         {
             "id": 6,
             "pos": [635, 775],
-            "img_name": "papillon-M1b81DBF.svg",
+            "img_name": "papillon.svg",
             "title": "Réserve naturelle du Pinail",
             "subtitle": "6",
             "text": [
@@ -335,7 +335,7 @@
         {
             "id": 1,
             "pos": [435, 675],
-            "img_name": "tortue-5Iq2OVpH.svg",
+            "img_name": "tortue.svg",
             "title": "Carte d’identité",
             "subtitle": "1",
             "text": [
@@ -348,7 +348,7 @@
         {
             "id": 2,
             "pos": [535, 675],
-            "img_name": "tortue-5Iq2OVpH.svg",
+            "img_name": "tortue.svg",
             "title": "Alimentation",
             "subtitle": "2",
             "text": [
@@ -361,7 +361,7 @@
         {
             "id": 3,
             "pos": [635, 675],
-            "img_name": "tortue-5Iq2OVpH.svg",
+            "img_name": "tortue.svg",
             "title": "Reproduction",
             "subtitle": "3",
             "text": [
@@ -374,7 +374,7 @@
         {
             "id": 4,
             "pos": [435, 775],
-            "img_name": "tortue-5Iq2OVpH.svg",
+            "img_name": "tortue.svg",
             "title": "Prédation",
             "subtitle": "4",
             "text": [
@@ -388,7 +388,7 @@
         {
             "id": 5,
             "pos": [535, 775],
-            "img_name": "tortue-5Iq2OVpH.svg",
+            "img_name": "tortue.svg",
             "title": "Mécanisation de l’agriculture",
             "subtitle": "5",
             "text": [
@@ -401,7 +401,7 @@
         {
             "id": 6,
             "pos": [635, 775],
-            "img_name": "tortue-5Iq2OVpH.svg",
+            "img_name": "tortue.svg",
             "title": "Réserve naturelle de Chérine",
             "subtitle": "6",
             "text": [
