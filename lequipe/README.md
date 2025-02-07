@@ -1,30 +1,45 @@
 # Descriptif du projet
 
-Porteur de projet :
+Porteur de projet : L'équipe
 
-Sujet :
+Sujet : Retrospective sur des moments importants du sport mondial avec différentes uchronies.
 
-Nom d'équipe :
+Nom d'équipe : 
 
 Participants : 
 
 - AGR :
-- Polytech :  
+    - Kilian Bélier
+- Polytech : 
+    - Maxime Tchernychev
+    - Ruikang Sun
+    - Yassine Akoh
+    - Robinson Roué
+    - Valentin Esnault
 - SciencesPo : 
-
-
-
-## A supprimer
-
-Ces instructions ne sont la que pour vous guider dans le développement de vos pages web. Elles seront à supprimer pour la soumission finale de votre code.
-
-Le dossier de votre projet contient un squelette de code que vous devez modifier. 
-
-- La partie `serveur.js`  ne doit a priori pas être touchée, si vous avez des entrées d'API à ajouter il faudra le faire dans le dossier `api`.
-- Le dossier `public`  contient la partie statique de votre site. Par défaut le fichier index.html charge un fichier `style.css` qui est destiné au format mobile (portrait). Si votre porteur de projet demande un site desktop, vous pouvez vous baser sur l'exemple `index-desktop.html` et le CSS associé `style-desktop.css` qui propose une page au format paysage.
-
+    - Maxime Cormier
+    - Line Baudriller
 
 
 ## Instructions de déploiement
 
-Si votre projet nécessite des instructions spécifiques pour son déploiement, merci d'ajouter des explications ici.
+Le projet Angular peut être construit puis déployé en utilisant les commandes suivantes depuis le dossier `lequipe/` :
+
+```bash
+# 1. Naviguer dans le dossier src/ contenant le code source Angular
+cd src/
+
+# 2. Installer les dépendances du projet
+npm install
+
+# 3. Installer Angular CLI globalement (si ce n'est pas déjà fait)
+npm install -g @angular/cli
+
+# 4. Construire le projet avec le bon base-href
+ng build --base-href=/lequipe/
+
+# 5. Nettoyer le répertoire public (pour éviter d'anciens fichiers obsolètes)
+rm -rf ../public/*
+
+# 6. Copier les fichiers construits dans le répertoire public
+cp -r dist/hyblab-angular/browser/* ../public/

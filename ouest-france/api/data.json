@@ -1,0 +1,262 @@
+{
+  "player1": {
+    "quiz": [
+      {
+        "question": "Matthieu Pavon décroche son ticket pour l’un des tournois les plus prestigieux du golf : le Masters d’Augusta 2024. Mais quelle performance lui a permis d’y accéder ?",
+        "answers": [
+          "Grâce à une wild-card spéciale",
+          "En remportant un tournoi du PGA Tour",
+          "En terminant dans le top 50 mondial en 2023",
+          "Grâce à son palmarès sur le DP World Tour"
+        ],
+        "correct_answer": "En remportant un tournoi du PGA Tour",
+        "explanation": "Grâce à sa victoire au Farmers Insurance Open en janvier 2024, Matthieu Pavon gagne son ticket pour ce tournoi mythique. Son parcours illustre parfaitement la difficulté d’accéder à Augusta, un événement réservé à l’élite mondiale.",
+        "articleBtn": "En savoir plus sur le Masters d’Augusta"
+      },
+      {
+        "question": "Janvier 2024 : un Français entre dans l’histoire du golf en remportant un tournoi du PGA Tour, une première depuis plus d’un siècle. Sais-tu de quel tournoi il s’agit ?",
+        "answers": [
+          "The Open Championship",
+          "Le Masters d'Augusta",
+          "Le Farmers Insurance Open",
+          "Le Players Championship"
+        ],
+        "correct_answer": "Le Farmers Insurance Open",
+        "explanation": "Le 27 janvier 2024, Matthieu Pavon marque l’histoire en remportant le Farmers Insurance Open à Torrey Pines. Ce succès est d’autant plus impressionnant qu’aucun Français n’avait gagné sur le PGA Tour depuis Arnaud Massy en 1907.",
+        "articleBtn": "En savoir plus sur sa victoire historique"
+      },
+      {
+        "question": "Matthieu Pavon n’a pas touché un club de golf dès son plus jeune âge, et pourtant, il est devenu l’un des meilleurs joueurs français. Sais-tu à quel âge il a commencé à jouer ?",
+        "answers": [
+          "5 ans",
+          "8 ans",
+          "12 ans",
+          "15 ans"
+        ],
+        "correct_answer": "12 ans",
+        "explanation": "Matthieu Pavon commence le golf à l’âge de 12 ans, ce qui est très tard pour un joueur de golf professionnel comme lui. Cela montre son travail acharné et sa persévérance.",
+        "articleBtn": "En savoir plus sur son parcours atypique"
+      },
+      {
+        "question": "En 2009, la mère de Matthieu Pavon enterre une pièce au Masters d’Augusta, avec un vœu en tête. Des années plus tard, ce vœu se réalise. Mais pourquoi avait-elle fait ce geste ?",
+        "answers": [
+          "Pour porter chance à son fils",
+          "Pour commémorer un voyage familial",
+          "Pour rendre hommage à un joueur décédé",
+          "Par simple superstition"
+        ],
+        "correct_answer": "Pour porter chance à son fils",
+        "explanation": "En 2009, Béatrice Pavon-Deler a enterré une pièce sous un arbre du practice, espérant qu’un jour son fils participerait au Masters. Quinze ans plus tard, ce rêve devient réalité.",
+        "articleBtn": "En savoir plus sur Augusta : un rêve qui se réalise"
+      },
+      {
+        "question": "Après une saison 2024 impressionnante, Matthieu Pavon ne compte pas s’arrêter là. Il vise un nouvel objectif dans le monde du golf. Lequel ?",
+        "answers": [
+          "Gagner les Jeux Olympiques de 2028",
+          "Se qualifier pour la Ryder Cup",
+          "Remporter les quatre tournois du Grand Chelem la même année",
+          "Participer aux Jeux d’hiver en curling"
+        ],
+        "correct_answer": "Se qualifier pour la Ryder Cup",
+        "explanation": "Après une saison 2024 où il a brillé sur le PGA Tour et participé aux Jeux Olympiques, Matthieu Pavon vise désormais à intégrer l’équipe européenne de la Ryder Cup, un immense honneur pour tout golfeur.",
+        "articleBtn": "En savoir plus sur ces ambitions futures"
+      }
+    ],
+    "articles": {
+      "title": "Matthieu Pavon et le Masters d'Augusta : un rêve devenu réalité",
+      "sections": [
+        {
+          "id": "0",
+          "title": "Le Masters d’Augusta, un rendez-vous légendaire",
+          "content": "Du 11 au 14 avril 2024, le prestigieux Masters d’Augusta accueillait l’élite du golf mondial pour sa 88ᵉ édition. Disputé sur le légendaire parcours de l’Augusta National Golf Club en Géorgie (États-Unis), ce tournoi est réservé aux meilleurs joueurs du monde, aux anciens vainqueurs et à cinq amateurs triés sur le volet. L’unique récompense : la mythique veste verte. Parmi les invités de cette année figuraient Jon Rahm, tenant du titre, Scottie Scheffler, actuel numéro un mondial, Rory McIlroy, Brooks Koepka, Dustin Johnson… mais aussi Matthieu Pavon, premier Français à découvrir ce parcours mythique après une ascension fulgurante.",
+          "image": "pavon_article_p1.jpg"
+        },
+        {
+          "id": "1",
+          "title": "Une révélation historique",
+          "content": "Le 27 janvier 2024 était une date importante pour le golf français. Matthieu Pavon s’impose au Farmers Insurance Open, devenant ainsi le premier Français à remporter un tournoi du PGA Tour depuis plus d’un siècle et un succès de Louis Tellier en 1920 au New England Pro Championship. Une victoire inespérée quelques mois plus tôt, alors qu’il cherchait encore son premier titre sur le DP World Tour. L’automne précédent, lors du DP World Tour Championship 2023 à Dubaï, Pavon avait déjà montré l’étendue de son talent en réussissant quatre birdies consécutifs sur les quatre derniers trous. Ce coup d’éclat lui permettait de terminer 5ᵉ et d’obtenir une place sur le PGA Tour, un circuit qui l’a toujours fait rêver. Fils de Michel Pavon, ancien capitaine des Girondins de Bordeaux, Matthieu Pavon ne s’est pas laissé griser par son premier titre sur le Spanish Open en octobre 2023, une victoire qu’il attendait depuis 7 ans et 185 tournois. Travailleur acharné, il a poursuivi ses efforts avec détermination.",
+          "image": "pavon_article_p2.png"
+        },
+        {
+          "id": "2",
+          "title": "Un parcours atypique forgé par le travail",
+          "content": "Matthieu Pavon, né le 2 novembre 1992 à Toulouse, d’un père footballeur et d’une mère golfeuse, part de très loin. Alors que la plupart des golfeurs professionnels de son rang débutent le golf très tôt, lui, commence sur le tard à l’âge de 12 ans, et ne passe pas par un pôle espoirs. Il est alors loin de faire partie des golfeurs les plus talentueux de sa génération. Contrairement à beaucoup de ses adversaires, Pavon n’a pas suivi un parcours classique et n’est pas passé par un pôle espoirs. Il ne figurait pas non plus parmi les jeunes prodiges du golf français. Comme il l’a confié au Figaro : « Je pars de loin. C’est beaucoup de travail. Le golf nous remet souvent à notre place. Cela a été beaucoup d’échecs. » Malgré cela, il a toujours cru en lui et a su s’entourer d’une équipe solide, notamment avec son préparateur mental Matthieu David. Sa rigueur et son approche méthodique lui ont permis de gravir les échelons du golf mondial. – il résume cet acharnement avec un tatouage, gravé sur sa main droite, celle qui ne porte jamais de gant lorsqu'il joue « La salive qui coule aujourd’hui deviendra demain des larmes de joie » ",
+          "image": "pavon_article_p3.png"
+        },
+        {
+          "id": "3",
+          "title": "Augusta : un rêve qui se réalise",
+          "content": "En 2009, sa mère, Béatrice Pavon-Deler, assiste au Masters d’Augusta et enterre symboliquement une pièce sous un arbre du practice, espérant voir un jour son fils jouer ce tournoi mythique. Quinze ans plus tard, le rêve devient réalité. Aujourd'hui 36ᵉ joueur mondial et numéro 1 français, Pavon est en pleine confiance. Après sa victoire historique à Torrey Pines, il enchaîne avec une 3ᵉ place à Pebble Beach, obtenant ainsi son invitation pour le Masters. Fait intéressant : il n’a jamais voulu découvrir Augusta en tant que spectateur, convaincu qu’il y mettrait un jour les pieds en tant que joueur. « Mon souhait, c’était d’y aller en tant que joueur d’abord. » confie-t-il à RMC sport. Pour Pascal Grizot, président de la Fédération Française de Golf, la clé de son succès réside dans son mental : « La bascule se fait sur la confiance. Matthieu a franchi le cap entre bien jouer et gagner. Il a du caractère, et c’est la marque des grands champions. »",
+          "image": "pavon_article_p4.png"
+        },
+        {
+          "id": "4",
+          "title": "Objectif Jeux Olympiques 2024",
+          "content": "Après Augusta, Matthieu Pavon a pu réaliser à nouveau un de ses rêves en participant aux Jeux Olympiques de Paris 2024. Passionné, il considère cet événement comme un objectif majeur : « Ce sera un grand moment dans ma vie de sportif. » déclarait-il lors d'un interview avec la fédération française de golf juste avant les jeux olympiques. En conférence de presse après sa victoire à Torrey Pines, il confiait déjà : « Participer aux JO était un de mes objectifs cette année. Me qualifier pour représenter mon pays à Paris me semble désormais bien engagé. » Malheureusement, il livre 'une piètre performance' dès la 2nde journée du tournois, et celui qui était alors 23ème mondial, se retrouve propulsé à la 58ème place sur 60 joueurs des jeux olympiques. Déçu de sa performance, il déclare avoir tout de même passé un aggréable moment grâce à la foule et à l'ambiance des jeux olympiques. Il ne baisse pas pour autant les bras et se motive pour le PGA tour à venir. Du 10 au 13 Avril 2025 à Augusta, le golfeur français, aujourd'hui 38ème au classement mondial, n'a pas encore dit son dernier mot. ",
+          "image": "pavon_article_p5.jpg"
+        }
+      ]
+    },
+    "stats": [
+      {
+        "label": "Nombre de coups tirés dans toute la carrière pro",
+        "value": "64 144"
+      },
+      {
+        "label": "Gains totaux",
+        "value": "10 843 058.02€"
+      },
+      {
+        "label": "6 623 joueurs répertoriés dans le monde (masculin)",
+        "value": 33
+      },
+      {
+        "label": "Victoires majeures",
+        "value0": "Open International de Rebetz",
+        "value1": "Acciona Open de España",
+        "value2": "Farmers Insurance Open",
+        "date0": "3 MAI 2014",
+        "date1" : "15 OCT. 2024",
+        "date2" : "27 JANVIER 2024",
+        "info2" : "premier vainqueur francais depuis 1907"
+      },
+      {
+        "label": "Gain max",
+        "value": "1 492 344€"
+      },
+      {
+        "path": "./pavon_bento.png"
+      }
+    ]
+  },
+  "player2": {
+      "quiz": [
+        {
+          "question": "Le 30 juillet 2023, Céline Boutier écrit une page de l’histoire du golf français en réalisant un exploit majeur. Sais-tu lequel ?",
+          "answers": [
+            "Elle a remporté les Jeux Olympiques de Paris 2024",
+            "Elle est devenue la première Française à gagner un Majeur depuis 2003",
+            "Elle a remporté la Solheim Cup en équipe",
+            "Elle a atteint la première place mondiale"
+          ],
+          "correct_answer": "Elle est devenue la première Française à gagner un Majeur depuis 2003",
+          "explanation": "Céline Boutier a marqué l'histoire en remportant l’Amundi Evian Championship, devenant la première Française à s’imposer dans un tournoi Majeur depuis Patricia Meunier-Lebouc en 2003.",
+          "articleBtn": "En savoir plus sur cette victoire historique"
+        },
+        {
+          "question": "Avant de briller sur les plus grands greens du monde, Céline Boutier a découvert le golf grâce à une passion familiale. Où a-t-elle fait ses premiers swings ?",
+          "answers": [
+            "Sur le Golf National de Saint-Quentin-en-Yvelines",
+            "Sur les greens de Duke University",
+            "En accompagnant son père sur les greens d’Île-de-France",
+            "Lors de ses compétitions par équipe en amateur"
+          ],
+          "correct_answer": "En accompagnant son père sur les greens d’Île-de-France",
+          "explanation": "Céline Boutier a découvert le golf à 7 ans en accompagnant son père, un amateur passionné, sur les greens d’Île-de-France.",
+          "articleBtn": "En savoir plus sur son parcours atypique"
+        },
+        {
+          "question": "Malgré ses nombreux succès en individuel, Céline Boutier attache une importance particulière aux compétitions par équipe. Sais-tu pourquoi ?",
+          "answers": [
+            "Elles lui permettent de remporter plus de titres individuels",
+            "Elle les considère comme les moments les plus marquants de sa carrière",
+            "Elles lui offrent plus de visibilité médiatique",
+            "Elle préfère les compétitions en équipe aux compétitions individuelles"
+          ],
+          "correct_answer": "Elle les considère comme les moments les plus marquants de sa carrière",
+          "explanation": "Céline Boutier a toujours apprécié les compétitions par équipe, les décrivant comme les moments les plus marquants de sa carrière, notamment avec la France et lors de la Solheim Cup.",
+          "articleBtn": "En savoir plus sur ses compétitions en équipes"
+        },
+        {
+          "question": "Les Jeux Olympiques de Paris 2024 ont été un moment clé pour Céline Boutier. Quelle performance y a-t-elle réalisée ?",
+          "answers": [
+            "Une victoire en terminant à la 1ère place",
+            "Une performance solide avec une 18ᵉ place",
+            "Une qualification pour la Ryder Cup",
+            "Une performance médiocre hors du top 50"
+          ],
+          "correct_answer": "Une performance solide avec une 18ᵉ place",
+          "explanation": "Aux Jeux Olympiques de Paris 2024, Céline Boutier a terminé à la 18ᵉ place face à une concurrence relevée, une performance solide malgré des attentes élevées.",
+          "articleBtn": "En savoir plus sur cette performance"
+        },
+        {
+          "question": "Après avoir conquis son premier titre en Majeur, Céline Boutier ne compte pas s’arrêter là. Quels sont désormais ses prochains grands objectifs ?",
+          "answers": [
+            "Les championnats universitaires",
+            "La Ryder Cup et le Masters",
+            "Les prochains tournois Majeurs du circuit LPGA",
+            "Les championnats européens amateurs"
+          ],
+          "correct_answer": "Les prochains tournois Majeurs du circuit LPGA",
+          "explanation": "Céline Boutier prépare activement les prochains tournois Majeurs du circuit LPGA, comme le Chevron Championship, l’US Women’s Open, et le Women’s British Open.",
+          "articleBtn": "En savoir plus sur ses objectifs"
+        }
+      ],    
+    "articles": {
+      "title": "Céline Boutier : une championne historique du golf français",
+      "sections": [
+        {
+          "id": "0",
+          "title": "Un exploit historique à Évian",
+          "content": "Le 30 juillet 2023, Céline Boutier est entrée dans l’histoire du golf français en remportant l’Amundi Evian Championship, devenant ainsi la première Française à s’imposer dans un Majeur depuis Patricia Meunier-Lebouc en 2003. Ce succès, acquis sur ses terres, confirme son statut de référence sur le circuit international. Quelques mois plus tôt, en s’imposant lors du LPGA Drive On Championship, elle devenait la golfeuse française la plus titrée de l’histoire sur le circuit LPGA, le plus prestigieux au monde. Cette victoire lui permettait de faire son entrée dans le top 10 mondial, avant de gravir un nouvel échelon en devenant la meilleure joueuse française de l’histoire, hommes et femmes confondus, avec une 4ᵉ place au classement mondial. Pourtant, rien ne la prédestinait à un tel parcours, si ce n'est son travail acharné et sa détermination sans faille.",
+          "image": "boutier_article_p1.jpg"
+        },
+        {
+          "id": "1",
+          "title": "Un parcours construit sur l'effort",
+          "content": "Née à Clamart, le 10 novembre 1993, Céline Boutier découvre le golf à l'âge de 7 ans en accompagnant son père sur les greens d'Île-de-France. Bien que simple amateur, il lui transmet sa passion et l'encourage à poursuivre. Elle s’inscrit avec son frère, d’abord bien meilleur qu’elle. Mais alors que Céline est considérée moins forte que son frère, ce dernier relâche très vites ses efforts, tandis que Céline, elle, s’accroche. Perfectionniste, elle ne supporte pas d’être nulle. Elle va continuer de s’entraîner sans relâches, et afficher une réelle détermination, gravissant rapidement les échelons et se fixant des objectifs toujours plus ambitieux. En 2012, elle part aux États-Unis grâce à une bourse d'études à la Duke University, en Caroline du Nord. Cette expérience l'enrichit tant sur le plan sportif qu'académique, lui permettant d'obtenir un diplôme en psychologie. Sur le plan sportif, elle brille sur le circuit universitaire et contribue à offrir à son université le titre national en 2014. Elle est récompensée du trophée de meilleure joueuse de la saison, confirmant ainsi son potentiel. Dans le même temps, elle atteint la première place mondiale chez les amateurs. Pourtant, sa transition vers le monde professionnel n'est pas immédiate. Face aux difficultés et aux doutes, elle mise sur son travail acharné pour compenser son manque de puissance. Cette approche lui permet de franchir chaque obstacle et d'intégrer le circuit LPGA en 2017. Aujourd’hui, avec quatre titres LPGA, elle est la golfeuse française la plus titrée de l’histoire.",
+          "image": "boutier_article_p2.jpg"
+        },
+        {
+          "id": "2",
+          "title": "Un esprit d'équipe indéfectible",
+          "content": "Malgré sa carrière individuelle, Céline Boutier a toujours attaché une importance particulière aux compétitions par équipe. Elle l’expliquait dès 2018 au New York Times : « Les compétitions par équipe avec la France ont été les meilleurs moments de ma carrière chez les amateurs. Quand je suis arrivée à Duke, c’était la même chose mais en plus grand. Je vais toujours apprécier ces moments où je peux jouer pour quelque chose de plus grand que moi. » Sur le circuit professionnel, elle continue à briller en équipe en représentant l’Europe lors de la Solheim Cup (l'équivalent féminin de la Ryder Cup). Elle remporte deux éditions consécutives en 2019 et 2021, confirmant son statut de joueuse majeure du golf mondial.",
+          "image": "boutier_article_p3.jpg"
+        },
+        {
+          "id": "3",
+          "title": "Un parcours solide aux Jeux Olympiques de Paris 2024",
+          "content": "Après avoir représenté la France aux Jeux Olympiques de Tokyo 2020 (34ᵉ place), Céline Boutier a relevé un défi majeur aux JO de Paris 2024. Sur le Golf National de Saint-Quentin-en-Yvelines, elle a livré une performance solide, terminant à la 18ᵉ place sur 60 concurrentes. Si elle espérait un meilleur classement, cette performance reste encourageante face à une concurrence relevée. Devant un public français acquis à sa cause, elle a su gérer la pression et montrer son talent. Malgré cette place en dehors du top 10, Céline Boutier reste une figure incontournable du golf mondial et compte bien rebondir sur le circuit LPGA. Son objectif désormais : continuer à performer et décrocher de nouveaux titres majeurs.",
+          "image": "boutier_article_p4.jpg"
+        },
+        {
+          "id": "4",
+          "title": "Les défis à venir pour Céline Boutier",
+          "content": "Après une saison déjà riche en succès, Céline Boutier se tourne désormais vers de nouveaux objectifs. Toujours engagée sur le circuit LPGA, elle prépare activement les prochains tournois majeurs, notamment le Chevron Championship, l'US Women’s Open, le Women’s PGA Championship et le Women's British Open. Avec son expérience et sa régularité, elle visera de nouvelles performances de prestige et pourquoi pas un deuxième titre en Majeur. Par ailleurs, elle devrait également jouer un rôle clé lors de la prochaine Solheim Cup, où elle tentera d’aider l’équipe européenne à décrocher un nouveau succès face aux Américaines. Ses ambitions sont claires : maintenir son rang parmi l’élite mondiale et continuer à marquer l’histoire du golf français.",
+          "image": "boutier_article_p5.jpg"
+        }
+      ]
+    },
+    "stats": [
+      {
+        "label": "Nombre de coups tirés dans toute la carrière pro",
+        "value": "49 495"
+      },
+      {
+        "label": "Gains totaux",
+        "value": "7 365 139.85€"
+      },
+      {
+        "label": "1 597 joueuses répertoriées dans le monde (féminin)",
+        "value": 9
+      },
+      {
+        "label": "Victoires majeures",
+        "value0": "ISPS Handa Vic Open",
+        "value1": "ShopRite LPGA Classic",
+        "value2": "Amundi Evian Championship",
+        "date0" : "FEVRIER 2019",
+        "date1" : "JUIN 2021",
+        "date2" : "30 JUILLET 2023",
+        "info2" : "première vainqueur francaise depuis 2003"
+      },
+      {
+        "label": "Gain max",
+        "value": "904 540€"
+      },
+      {
+        "path": "./boutier_bento.png"
+      }
+    ]
+  }
+}
