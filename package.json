@@ -8,8 +8,8 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "bootstrap-icons": "^1.11.3",
     "express": "^4.21.2",
+    "HyblabRouting": "file:",
     "nodemon": "^3.1.9"
   },
   "author": "MPDS",
