@@ -64,8 +64,7 @@ function adjustLine(from, to, containerFrom, containerTo, line){
     line.style.height = H + 'px';
 }
 
-
-window.addEventListener('load', function () {
+function initLines() {
     adjustLine(
         document.getElementById('div1'),
         document.getElementById('div2'),
@@ -135,4 +134,13 @@ window.addEventListener('load', function () {
         document.getElementById('case-5'),
         document.getElementById('line8')
     );
+}
+
+
+window.addEventListener('load', function () {
+    initLines()
+})
+
+window.addEventListener('resize', function () {
+    initLines()
 })
