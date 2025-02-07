@@ -16,6 +16,7 @@ app.use('/api', api);
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, '../__common-logos__')));
 
+
 // You can then add whatever routing code you need
 
 // This module is exported and served by the main server.js located

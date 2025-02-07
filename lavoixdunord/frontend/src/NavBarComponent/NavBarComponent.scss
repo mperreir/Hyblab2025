@@ -1,0 +1,59 @@
+@import "../styles/_variables";
+
+.custom-navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: transparent;
+    padding: 0.25rem 0.5rem;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .custom-navbar {
+        max-width: 375px;
+        left: 50%;
+        transform: translateX(-50%);
+        // border-top-left-radius: 10px;
+        // border-top-right-radius: 10px;
+    }
+}
+
+.navbar-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    border-radius: 0;
+}
+
+.custom-navbar .breadcrumb-item {
+    a {
+        text-decoration: none;
+    }
+}
+
+.custom-navbar .breadcrumb-item.active {
+    opacity: 1;
+    font-weight: bold;
+    color: $primary;
+}
+
+.custom-navbar .breadcrumb {
+    font-size: 0.8rem;
+    margin-bottom: 0;
+}
+
+.breadcrumb-item a, .breadcrumb-item.active {
+    color: white;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    text-decoration: none; 
+}
+
+.breadcrumb-item.active {
+    font-weight: 600; 
+}

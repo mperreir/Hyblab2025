@@ -1,0 +1,27 @@
+.background_rules {
+    background: url('bgregles.png');
+    background-size: 100% 100%;
+    position: relative;
+    height: 100%;
+}
+
+.arbre {
+    background: url('arbre2.gif') no-repeat center center;
+    /* Ajuster selon les besoins */
+    position: absolute;
+    bottom: 48px;
+    left: 48px;
+    height: 13rem;
+    width: 9rem;
+    zoom: 0.4;
+    z-index: -1;
+}
+
+.regle_velo {
+    z-index: 0;
+    position: absolute;
+    top: -64px;
+    right: 0;
+    width: 100px;
+    object-fit: scale-down;
+}

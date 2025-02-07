@@ -1,208 +1,684 @@
-/* ------- Important ! Please at least keep the last part of this CSS ----------- */
-/* ------- that adapts content width and height so that aspect ratio  ----------- */
-/* ------- is kept between 9/16 a,d 3/4 (portait orientation)         ----------- */
+/* =========================================================================
+   1. IMPORT DES ICONS
+   ========================================================================== */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css");
 
-/* Normalize margin and padding to ease elements positioning */
-*{
-    padding:0;
-    margin:0;
+/* =========================================================================
+   2. RÉINITIALISATION (RESET)
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
 }
 
-body{
-    background-color: black;
+/* =========================================================================
+   3. STYLE GÉNÉRAL (TYPO, COULEURS, ETC.)
+   ========================================================================== */
+
+/* --- Base du document --- */
+html {
+    overflow-x: hidden;
+}
+
+body {
+    font-family: "Arial", sans-serif !important;
+    background-color: #000 !important;
+    color: #CB010A !important;
+    overflow-x: clip;
+}
+
+#main {
+    display: none;
+}
+
+/* --- Liens --- */
+a {
+    margin-top: 10px;
+    transition: background-color 100ms ease;
+    text-decoration: none;
+    color: #CB010A;
+    border: solid 2px #CB010A;
+    padding: 10px 20px;
+    border-radius: 25px;
+}
+
+a:hover {
+    background-color: rgba(203, 1, 10, 0.2);
+}
+
+/* --- Titres et textes --- */
+h1 {
+    font-family: 'Arial Black', Gadget, sans-serif !important;
+    font-size: 1.3em !important;
+    font-weight: bolder;
+    text-transform: uppercase;
+    max-width: 70%;
+}
+
+h6 {
+    font-family: 'Arial Black', Gadget, sans-serif !important;
+    margin-bottom: 0;
+    font-size: 0.9em !important;
+    text-transform: uppercase;
+}
+
+p {
+    text-align: justify;
+    max-width: 70%;
+    font-size: 16px !important;
+    line-height: 1.4;
+}
+
+/* =========================================================================
+   4. MISE EN PAGE / SECTIONS PRINCIPALES
+   ========================================================================== */
+
+/* --- Fond d'écran --- */
+#background {
+    background-image: url("../img/FOND_NOIR_20_.jpg");
+    opacity: 0.2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+}
+
+/* --- Logo --- */
+#logo-ler {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    margin-top: 0;
+    padding: 5px;
+    border-radius: 5px;
+    background-image: url("../img/FOND_BLANC.jpg");
+    border: none;
+}
+
+#logo-ler img {
+    width: 50px;
+}
+
+/* --- Section intro --- */
+#intro {
+    background-image: url("../img/FOND_BLANC.jpg");
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    padding: 12vh 10vw 20vh 10vw;
+    position: relative;
+}
+
+#intro img {
+    position: absolute;
+    bottom: -12vh;
+    right: 0;
+    width: 70vw;
+    max-width: 400px;
+}
+
+#intro svg {
+    width: 90vw;
+    left: 20%;
+    top: 18.5%;
+}
+
+/* --- Section "UNE" --- */
+#une {
+    padding: 9vh 10vw 50px 10vw;
     color: white;
-    overflow: hidden;   /* to avoid slider bugs on some browsers */
-    font-family: sans-serif;
 }
 
-/* -------------- Loader --------------*/
-#loader{
-    z-index: 2;
-    position:absolute;
+#une h1 {
+    color: #CB010A !important;
 }
 
-#loader-img{
-    top: calc(50% - 0.5em);
-    left: calc(50% - 0.5em);
-    position: absolute;
-    font-size: 50%;
+/* --- Section "nos-podcast" --- */
+#nos-podcast {
+    background-image: url("../img/FOND_BLANC.jpg");
+    padding: 0 10vw;
+    position: relative;
 }
 
-#loader-text{
-    text-align: center;
-    font-size: 25%;
-    position: absolute;
-    top:calc(50% + 2em);
-    width: 100%
+/* --- Section "retrouvez-nous" --- */
+#retrouvez-nous {
+    color: white !important;
+    background-color: #303030;
+    padding: 100px 10vw;
+    position: relative;
 }
-/* -------------- End of Loader --------------*/
 
-/* Swiper slider. Need to fill the container */
-#mySwiper{
+#retrouvez-nous h1 {
+    color: #CB010A !important;
+}
+
+/* --- Section footer --- */
+#footer {
+    background-image: url("../img/FOND_BLANC.jpg");
+    padding: 50px 10vw;
+    position: relative;
+    border-top-right-radius: 25px;
+}
+
+#footer p {
+    max-width: 100%;
+    text-align: justify !important;
+}
+
+#footer a {
+    color: white;
+    border: none;
+    padding: 0;
+    margin: 0;
+    margin-left: 5px;
+    transition: color 500ms ease;
+}
+
+#footer a:hover {
+    color: #CB010A;
+}
+
+#footer i {
+    font-size: 25px;
+}
+
+#footer .card {
+    height: auto;
+    background-color: #000000;
     width: 100%;
-    height:100%;
-    position: absolute;
+    border-radius: 25px;
+    padding: 10px;
+    color: white;
 }
 
-/* white navigation bullets */
-.swiper-pagination-bullet-active {
-    background-color: white !important;
-}
-
-/* the slides and the loader should fill the whole 9:16 zone */
-.swiper-wrapper section, #loader{
-    background-color: dodgerblue;
+#footer .card img {
     width: 100%;
+    margin-left: 10px;
+    border-radius: 15px;
+}
+
+#footer .card h2 {
+    margin-top: 10px;
+    font-size: 1.2em;
+    font-family: "Arial Black", "sans-serif";
+}
+
+#footer .card p {
+    text-align: left !important;
+}
+
+/* --- Élément "folder" dans le footer --- */
+#folder {
+    background-image: url("../img/FOND_BLANC.jpg");
+    position: absolute;
+    border-radius: 25px;
+    top: -25px;
+    left: 0;
+    width: 20vw;
+    height: 70px;
+}
+
+#moreText {
+    display: none;
+}
+
+#readMore, #readLess {
+    border: none;
+    padding: 0;
+    text-decoration: underline;
+    color: #CB010A;
+    background: none;
+}
+
+#footer p {
+    text-align: left;
+}
+
+/* --- Décorations/Transitions haut et bas --- */
+.dech-transition-haut, .dech-transition-bas {
+    width: 100vw;
+}
+
+.dech-transition-haut {
+    transform: translate(-10vw, -50%);
+}
+
+.dech-transition-bas {
+    transform: translate(-10vw, 65%);
+}
+
+/* --- Contenu global (#content) --- */
+#content {
+    position: relative;
+}
+
+#line-bg {
+    position: fixed;
+    top: 10%;
+    max-width: 90%;
+}
+
+#podcasts-bg {
+    position: absolute;
     height: 100%;
 }
 
-/* Most of the elements in this demo are absolute positioned with percentages */
-#first-slide header, #second-slide header{
-    text-align: center;
-    width: 100%;
-    top: 10%;
+/* =========================================================================
+   5. ÉLÉMENTS / BLOCS SPÉCIFIQUES
+   ========================================================================== */
+
+/* --- Descriptions des "cases" (#desc-case-x) --- */
+#desc-case-1, #desc-case-2, #desc-case-3, #desc-case-4, #desc-case-5, #desc-case-6 {
     position: absolute;
-    font-size: 30%;
-    z-index: 2;
+    width: 60%;
+    padding-top: 10px;
 }
 
-#logo-hyblab{
-    text-align: center;
-    width: 50%;
-    left: 50%; /* center the logo, in interaction with the negative margin-left */
-    top: 50%;
-    margin-left:-25%; /* this is half the width */
-    margin-top:calc(-7.5% * 9 / 16 ); /* margins are relative to the element width... :-( */
+#desc-case-1, #desc-case-3, #desc-case-5 {
+    left: 0;
+    padding-right: 20px;
+}
+
+#desc-case-2, #desc-case-4, #desc-case-6 {
+    right: 0;
+    padding-left: 20px;
+}
+
+/* --- Cases (30vh de hauteur) --- */
+.cases {
+    height: 30vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    cursor: pointer;
+    text-shadow: #000000 1px 0 10px;
+    margin-bottom: 50px; /* Sera précisé dans media query pour ajuster */
+}
+
+.cases button, .cases h6 {
+    color: #CB010A;
+}
+
+/* --- Vidéos (blocs rouges, etc.) --- */
+.videos {
+    border: 1px solid #CB010A;
+    background-color: #CB010A;
     position: absolute;
-    font-size: 50%;
-    z-index: 2;
+    width: 40%;
+    max-width: 200px;
+    aspect-ratio: 9/16;
+    border-radius: 25px;
+    transition: all 500ms ease;
+}
+
+.videos:hover {
+    transform: scale(1.05);
+}
+
+.videos .knowMore {
+    width: 80%;
+    position: absolute;
+    bottom: 10px;
+    margin-left: 10%;
+    background: #CB010A;
+    border-radius: 15px;
+    text-align: center;
+    padding: 2px;
+    font-size: 0.9em;
+}
+
+/* Pseudo-élément vide (s'il devait contenir quelque chose) */
+.videos:after {
+    content: no-close-quote;
+    top: 50%;
+    left: 50%;
+    background-color: black;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    margin-left: -2px;
+    margin-top: -2px;
+}
+
+/* --- Divs spécifiques (gif en background) --- */
+#div1, #div3, #div5 {
+    right: 0px;
+    background-size: cover;
+}
+
+#div2, #div4, #div6 {
+    left: 0px;
+    background-size: cover;
+}
+
+#div1 { background-image: url("../img/bonnot.gif"); }
+#div2 { background-image: url("../img/concierge.gif"); }
+#div3 { background-image: url("../img/cure.gif"); }
+#div4 { background-image: url("../img/peugeot.gif"); }
+#div5 { background-image: url("../img/peiper.gif"); }
+#div6 { background-image: url("../img/heaulme.gif"); }
+
+/* --- Ligne rouge ("line") --- */
+.line {
+    position: absolute;
+    width: 2px;
+    margin-top: -1px;
+    background-color: #CB010A;
+}
+
+/* --- Swiper (carrousel) --- */
+#mySwiper, #mySwiper2 {
+    width: 80vw;
+}
+
+#mySwiper {
+    margin-top: 50px;
+}
+
+/* Points de pagination Swiper en blanc/rouge */
+.swiper-pagination-bullet-active {
+    background-color: #CB010A !important;
+}
+
+#swiper-wrapper, #swiper-wrapper2 {
+    padding-bottom: 40px;
+}
+
+/* --- Podcasts (vignettes, textes) --- */
+.podcast {
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.vignette {
+    width: 100%;
+    aspect-ratio: 1/1.5;
+    border-radius: 25px;
+    background-color: black;
+    background-size: contain;
+    transition: all 500ms ease;
+}
+
+.vignette:hover {
+    transform: scale(1.02);
+}
+
+.podcast h6 {
+    margin-top: 5px;
+    font-family: "Arial Black", sans-serif;
+    font-weight: bolder;
+}
+
+.podcast p {
+    font-size: 1em;
+    margin: 0;
+}
+
+/* --- Modale "podcatsModal" --- */
+.podcatsModal {
+    width: 100vw !important;
+    min-height: 100vh !important;
+    top: 0 !important;
+    left: 0 !important;
+    background-image: url("../img/FOND_BLANC.jpg");
+    display: none;
+    overflow-y: scroll;
+}
+
+.modalInfo {
+    background-image: url("../img/FOND_BLANC.jpg");
+    padding: 100px 10vw 0 10vw;
+    position: relative;
+    min-height: 100vh;
+}
+
+.cross {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    margin-top: 0;
+    padding: 5px;
+    width: 40px;
     cursor: pointer;
 }
 
-/* Last slide image is centered */
-#img-fini{
-    width: 70%;
-    left: 50%; /* center the logo, in interaction with the negative margin-left */
-    top: 40%;
+.podcatsModal .svg1 {
     position: absolute;
-    margin-left:-35%; /* this is half the width */
-    margin-top:calc(-25% * 9 / 16 ); /* margins are relative to the element width... :-( */
+    top: 150px;
+    right: 80px;
 }
 
-main > section{
-    background-image: url('../img/background.svg');
-    background-size: 100% auto; /* background is full width and height is proportional to width */
-    background-position: bottom; /* background is bottom aligned */
+.podcatsModal .svg2 {
+    margin-left: 20px;
+    margin-top: 18px;
 }
 
-/* Footer of last slide is at the bottom and content is centered */
-#first-slide footer{
-    bottom: 5%;
-    position: absolute;
-    box-sizing: border-box; /* So that padding is not added to width (and width: 100% works) */
-    width: 100%; /* could also use  width: calc(100% - 2em) if not using box-sizing */
-    font-size: 20%;
-    text-align: center;
-    padding: 1em;
-    background-color: rgba(0, 0, 0, 0.5);
+.podcatsModal a {
+    text-decoration: none;
+    color: #CB010A;
+    border: solid #CB010A 2px;
+    padding: 10px;
+    border-radius: 25px;
+    transition: background-color 500ms ease;
 }
 
+.podcatsModal a:hover {
+    background-color: rgba(203, 1, 10, 0.2);
+}
 
-/* ---------- Positioning of logos on the last slide -------------------- */
-/* here we have a contraint on the height of the logos (not the width)     */
-/* so we cannot use % and use em (which are proportional to the size of the */
-/* slide because of body's font size rule at the end of this CSS           */
-#bandeau {
-    width:100%;
-    position: absolute;
-    bottom: 0;
-    background-color: white;
-    font-size: 20%;
-  }
+.podcatsModal p {
+    line-height: 1.1;
+}
 
-  #bandeau li{
-    list-style-type: none;
-    display: inline-block;
-    vertical-align: middle;
-    margin: 0 0.5em;
-  }
+/* --- Vidéo en plein écran --- */
+.video-container {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    background: black;
+}
 
-  #bandeau img{
-    height: 2.5em;
-  }
+.thumbnail-container {
+    width: 100vw;
+    height: 90vh;
+    position: fixed;
+    top: 0;
+    background-size: cover;
+}
 
-  #bandeau #hyblab{
-    margin: 1em auto;
-    height: 3em;
+/* --- Section "links" (liens) --- */
+#links {
+    display: none;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    min-height: 100vh;
+    background-image: url("../img/FOND_BLANC.jpg");
+}
+
+.links_list a {
+    border-radius: 100px;
+    text-decoration: none;
+    color: #CB010A;
+    border: solid 2px #CB010A;
+    padding: 10px 20px;
     display: block;
-  }
-
-  #bandeau #cc, #bandeau #opensource
-  {
-    height: 1em;
-  }
-
-  #bandeau .stacked{
-    display:block;
-  }
-
-  #bandeau ul{
+    transition: background-color 500ms ease;
     text-align: center;
-    padding: 0 0;
-    margin: 0.5em auto;
-  }
-
-  #bandeau .institutionnel
-  {
-    height: 2em;
-  }
-
-/* ---------- Important media queries for easy responsive content :-) ----------------- */
-/* Whatever the device used, the content will be displayed full width and height if      */
-/* the aspect ratio is between 3/4 and 9/16. If not it is locked to either 3/4 or 9/16  */
-
-/* When the aspect ratio is smaller that 3/4, display a 3/4 content */
-#container{
-    position: fixed; /* To set the size of the container to 100% of the visible viewport height AND for absolute positioning of child elements*/ 
-    height: 100%;   /* even on mobile devices with url or navigation bars */
-    margin-left: calc((100vw - 100 * 3vh / 4) / 2); /* Add black bands on left and right */
-    width: calc(100 * 3vh / 4); /* Force 3/4 aspect ratio */
 }
 
-/* We set a default font size here. It will be the base for all other font sizes */
-/* Here the font size is proportional to content width */
-body{
-    font-size: calc(15vh * 3 / 4);
+.links_list a:hover {
+    background-color: rgba(203, 1, 10, 0.2);
 }
 
-/* Fill the whole viewport when its aspect ratio is between 9/16 and 3/4 */
-@media screen and (max-aspect-ratio: 3/4) {
-    #container{
-        margin-left: 0; /* reset margin-left */
-        width: 100vw; /* content is full width (and full height because of the default rule for container height */
-    }
-
-    /* We set a default font size here. It will be the base for all other font sizes */
-    /* Here the font size is proportional to content width */
-    body{
-        font-size: 15vw;
-    }
+#links h1 {
+    padding-left: 10vw;
 }
 
-/* The content is displayed at 9/16 If the aspect ratio is higher that 9/16  */ 
-@media screen and (max-aspect-ratio: 9/16) {
-    #container{
-        margin-left: 0; /* reset left margin */
-        width: 100vw;   /* content is full width */
-        margin-top: calc(-50 * 16vw / 9); /* move the content half the height to the top */
-        top:50%; /* then center it ! */
-        height: calc(100 * 16vw / 9); /* adjust height so that aspect ratio is 9/16 */
-    }
-
-    /* We set a default font size here. It will be the base for all other font sizes */
-    /* Here the font size is proportional to content width */
-    body{
-        font-size: 15vw;
-    }
+#links > div.title {
+    padding-top: 100px;
+    background-color: #303030;
+    padding-bottom: 50px;
 }
 
+#links > div.links_list {
+    width: 100vw;
+    background-image: url("../img/FOND_BLANC.jpg");
+}
+
+#links .dech-transition-haut {
+    width: 100vw;
+    transform: translate(0vw, -50%);
+}
+
+.links_list {
+    position: absolute;
+}
+
+.links_list > div {
+    padding: 0 10vw;
+    position: absolute;
+    top: 100px;
+    width: 100%;
+}
+
+/* --- Filtres / Tags --- */
+
+.filters {
+    margin-bottom: 10px;
+}
+
+.tags, .filters {
+    width: 100%;
+    margin-top: 10px;
+    overflow-x: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.tags::-webkit-scrollbar, .filters::-webkit-scrollbar {
+    display: none;
+}
+
+.tags span {
+    margin-bottom: 5px;
+    margin-left: 5px;
+    border-radius: 5px;
+    padding: 2px;
+    font-size: 0.7em;
+    color: #CB010A;
+    border: solid #CB010A 2px;
+    background-color: rgba(203, 1, 10, 0.2);
+}
+
+.filterBtn {
+    padding: 10px;
+    margin-top: 5px;
+    color: #CB010A;
+    border: solid #CB010A 2px;
+    border-radius: 25px;
+    transition: all 500ms ease;
+}
+
+.filterBtn:hover, .filterBtn.active {
+    background-color: rgba(203, 1, 10, 0.2);
+}
+
+.filterBtn:nth-child(2) {
+    margin-left: 5px;
+}
+
+/* --- Logos --- */
+#logos .logo {
+    background-image: url("../img/FOND_BLANC.jpg");
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 15px; /* 5px rounded corners */
+}
+
+#logos .logo:hover {
+    transform: translateY(-2px);
+}
+
+#logos .logo img {
+    height: 50px;
+    padding: 10px;
+}
+
+#logos .logo p {
+    padding: 10px;
+}
+
+/* --- Overlay (si besoin) --- */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* --- Loader -- */
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#loader {
+    opacity: 1;
+    transition: opacity 100ms ease;
+}
+
+.loader-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    padding-left: calc(50vw - 40px);
+    padding-top: calc(50vh - 40px);
+    background-image: url("../img/FOND_BLANC.jpg");
+    background-size: cover;
+    overflow: hidden;
+}
+
+.loader {
+    border: 3px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 3px solid #CB010A;
+    width: 80px;
+    height: 80px;
+    -webkit-animation: spin 1s linear infinite; /* Safari */
+    animation: spin 1s linear infinite;
+}
+
+/* =========================================================================
+   6. MEDIA QUERIES
+   ========================================================================== */
+@media screen and (min-width: 768px) {
+
+    /* --- Contenu centré sur grands écrans --- */
+    #content {
+        margin: 0 20vw;
+        padding-bottom: 150px;
+    }
+
+    .cases {
+        margin-bottom: 100px;
+    }
+
+    #retrouvez-nous {
+        padding-top: 300px !important;
+    }
+
+    .title {
+        padding-bottom: 100px !important;
+    }
+}

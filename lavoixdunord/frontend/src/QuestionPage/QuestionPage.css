@@ -1,0 +1,331 @@
+body {
+  font-family: "Work Sans";
+  background-color: #4D95AF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.question-container {
+  text-align: center;
+  width: 100%;
+  height: fit-content;
+  min-height: 100%;
+  padding-top: 72px;
+}
+
+.blur-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Fond assombri */
+  backdrop-filter: blur(10px); /* Applique un flou */
+  z-index: 998; /* Derrière l’image mais devant le reste */
+}
+.no-click {
+  pointer-events: none;
+}
+.question-number {
+  font-family: 'Pathway Extreme';
+  font-weight: 800;
+  color: white;
+  margin-top: 15px;
+}
+
+.question-box {
+  background-color: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px #1A3347;
+  margin-inline: 32px;
+  margin-top: 25px;
+}
+
+.question-text {
+  color: #0d192e;
+  font-weight: bold;
+}
+
+.answers {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.answer-btn {
+  padding: 10px 20px;
+  margin: 5px;
+  border: 2px solid;
+  border-radius: 100px;
+  cursor: pointer;
+  background-color: rgb(255, 255, 255);
+  font-size: 16px;
+  color: #1A3347;
+}
+
+
+.answer-btn.selected {
+  background-color: #bed5e7; /* Couleur de surbrillance pour le choix sélectionné */
+  color: #1A3347; /* Couleur du texte contrastante */
+  font-weight: bold;
+  border-color: #1A3347;
+}
+
+
+.answer-btn.correct {
+  background-color: #739916;
+  color: white;
+}
+
+.answer-btn.wrong {
+  background-color: #C1121F;
+  color: white;
+}
+
+.answer-btn:hover {
+  background-color: #1A3347;
+  color: white;
+}
+
+.hint {
+  margin-top: 10px;
+  font-style: italic;
+  color: #1A3347;
+  background-color: #f0e6d2;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.hint-btn,
+.next-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 400px;
+}
+
+.hint-btn {
+  background-color: white;
+  color: #1A3347;
+  border: 2px solid #1A3347;
+  margin-left: auto;
+}
+
+.hint-btn:hover {
+  background-color: #1A3347;
+  color: white;
+}
+
+
+.next-btn:hover {
+  background-color: #1A3347;
+  color: white;
+}
+
+.hint {
+  margin-top: 10px;
+  font-style: italic;
+  color: #1A3347;
+  background-color: #f0e6d2;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+
+.hints-container {
+  margin-top: 20px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: justify;
+}
+
+.hint-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center; 
+  justify-content: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  background: #f9f9f9;
+  border-radius: 18px;
+  flex-wrap: wrap;
+}
+
+.toggle-btn {
+    padding: 5px 10px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #f9f9f9;
+    font-size: 17px;
+    font-weight: 600;
+    order: 2;
+
+  }
+  
+.toggle-btn.disabled {
+  cursor: not-allowed;
+  background-color: #f9f9f9;
+  color: #1A3347;
+}
+  
+
+.hint-title {
+  flex-grow: 1;
+  font-weight: bold;
+  font-style: italic;
+  align-items: center;
+  margin-right: 6px;
+  order: 1;
+  margin-right: auto;
+  margin-left: auto;
+  
+}
+
+.hint-text {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #000000;
+  order: 3;
+}
+
+.hint-img {
+  max-width: 90%;
+  border-radius: 10px;
+  margin: 12px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  order: 3;
+}
+/* Agrandissement adapté aux mobiles */
+.hint-img.enlarged {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.5); /* Ajusté pour mobile */
+  z-index: 1000;
+  max-width: 95vw; /* Pas plus large que l'écran */
+  max-height: 80vh; /* Garde un peu d'espace en bas */
+  border-radius: 5px;
+}
+
+/* Fond assombri quand l'image est agrandie */
+.enlarged::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #1A3347;
+  z-index: 999;
+}
+
+/* Empêcher le défilement quand une image est agrandie */
+body.modal-open {
+  overflow: hidden;
+}
+.next-btn {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: white;
+  color: #1A3347;
+  border: 2px solid #1A3347;
+  cursor: pointer;
+}
+
+.next-btn:disabled {
+  background-color: rgb(255, 255, 255);
+  cursor: not-allowed;
+}
+
+
+.article-link {
+  margin-top: 10px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.article-link a {
+  font-size: 13.5px;
+  color: #1A3347;
+  text-decoration: underline;
+}
+
+.article-link a:hover {
+  color: #4D95AF;
+  text-decoration: none;
+  text-decoration: underline;
+}
+
+.article-link a:hover {
+  color: #4D95AF;
+  text-decoration: none;
+  cursor: not-allowed;
+}
+
+
+.article-link {
+  margin-top: 20px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.article-link a {
+  color: #1A3347;
+  text-decoration: underline;
+}
+
+.article-link a:hover {
+  color: #4D95AF;
+  text-decoration: none;
+}
+
+
+/*rajouter ca pour blur*/
+.blur-background {
+  filter: blur(8px);
+  transition: filter 0.3s ease-in-out;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* Fond sombre semi-transparent */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.enlarged-image {
+  position: relative;
+  z-index: 1001; /* Assurez-vous qu'elle est au-dessus de l'overlay */
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px; /* Bords arrondis */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Ombre légère */
+}
+
+/*jusqua ici*/

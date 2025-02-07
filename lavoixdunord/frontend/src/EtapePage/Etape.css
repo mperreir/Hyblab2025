@@ -1,0 +1,107 @@
+/* Style global */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #4D95AF; /* Bleu */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0 10px; /* Ajout d'un padding pour les petits écrans */
+  box-sizing: border-box;
+}
+
+.etape-container {
+  text-align: center;
+  width: 100%;
+  max-width: 380px; /* Limite de largeur */
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.etape-title {
+  font-weight: bold;
+  color: #ffffff; /* Texte blanc */
+  margin-bottom: 20px;
+  font-size: 24px; /* Texte plus grand */
+  line-height: 1.5; /* Meilleure lisibilité */
+}
+
+.etape-box {
+  background-color: #ffffff; /* Fond blanc */
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%; /* Occupe toute la largeur disponible */
+  box-sizing: border-box;
+}
+
+.etape-btn {
+  padding: 15px 0;
+  border-radius: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  width: 100%; /* Boutons occupent toute la largeur */
+  box-sizing: border-box;
+}
+
+.etape-btn.unlocked {
+  background-color: #ffffff; /* Bouton blanc */
+  color: #0d192e; /* Texte noir */
+  border: 2px solid #0d192e;
+}
+
+.etape-btn.unlocked:hover {
+  background-color: #4D95AF; /* Survol bleu */
+  color: #ffffff; /* Texte blanc */
+}
+
+.etape-btn.locked {
+  background-color: gray;
+  color: white;
+  cursor: not-allowed;
+}
+
+.lock-icon {
+  margin-left: 10px;
+  font-size: 14px; /* Taille ajustée */
+}
+
+/* Media Query pour les mobiles */
+@media (max-width: 720px) {
+  body {
+    height: auto; /* Adapter la hauteur */
+    padding: 20px 10px;
+  }
+
+  .etape-container {
+    max-width: 100%; /* Utiliser toute la largeur */
+    padding: 0;
+  }
+
+  .etape-title {
+    font-size: 20px; /* Réduire légèrement la taille du titre */
+    margin-bottom: 15px;
+  }
+
+  .etape-box {
+    padding: 15px; /* Réduire le padding */
+    gap: 10px; /* Espacement réduit entre les boutons */
+  }
+
+  .etape-btn {
+    font-size: 16px; /* Taille de police réduite */
+    padding: 12px 0; /* Ajuster les marges internes */
+  }
+
+  .lock-icon {
+    font-size: 12px; /* Icône plus petite */
+  }
+}

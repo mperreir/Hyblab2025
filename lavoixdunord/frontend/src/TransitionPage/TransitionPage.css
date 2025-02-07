@@ -1,0 +1,10 @@
+.transition_bg {
+    background-size: 100% 140%;
+    
+    z-index: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}

@@ -1,0 +1,68 @@
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .font-variant-position-sub {
+    font-variant-position: sub;
+  }
+  .font-variant-position-super {
+    font-variant-position: super;
+  }
+  .font-variant-position-normal {
+    font-variant-position: normal;
+  }
+}
+
+html {
+  font-size: 100%;
+}
+
+#fullpage {
+  width: 100vw;
+  height: 100vh;
+}
+
+@-moz-document url-prefix() {
+  body {
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0; /* Largeur pour retirer la scrollbar verticale */
+  height: 0; /* Hauteur pour retirer la scrollbar horizontale */
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s forwards;
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-10px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(10px);
+  }
+}
+
+.animate-shake {
+  animation: shake 1s infinite;
+  animation-delay: 3s; /* Delay between shakes */
+}

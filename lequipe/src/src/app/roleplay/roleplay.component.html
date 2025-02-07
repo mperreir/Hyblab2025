@@ -1,0 +1,19 @@
+<app-header></app-header>
+<div id="main">
+    @if (!selected_scenario) {
+        <app-slider [items]="data" (selected_output)="selectScenario($event)"></app-slider>
+    }
+    @else {
+        <div class="back" (click)="selected_scenario=undefined"><div class="arrow"></div>RETOUR</div>
+        <div class="item">
+            <img [src]=selected_scenario.image [alt]="selected_scenario.title">
+            <h2>{{ selected_scenario.title }}</h2>
+        </div>
+    }
+    <!-- <pre>
+        {{selected_scenario | json}}
+    </pre> -->
+    @if (selected_scenario) {
+        <app-situation [situation]="selected_scenario.situation"></app-situation>
+    }
+</div>

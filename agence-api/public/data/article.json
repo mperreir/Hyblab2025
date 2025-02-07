@@ -1,0 +1,67 @@
+{
+    "articles": [
+      {
+        "name": "Pixel_Butter",
+        "accroche": "Pixel Butter (7 salariés) est un studio spécialisé dans les jeux mobiles. Téléchargé 23 millions de fois, son dernier jeu \"Draw your game\" permet aux utilisateurs de créer un jeu vidéo à partir d'un dessin. L'entreprise cherche à lever des fonds pour soutenir sa croissance et son expansion internationale.",
+        "url": "https://agence-api.ouest-france.fr/article/le-studio-rennais-pixel-butter-transforme-les-dessins-en-jeux-video",
+        "img": "img/articles/Pixel_Butter.png",
+        "keywords": ["tech", "1_lannion"]
+      },
+      {
+        "name": "MM_Process",
+        "accroche": "Après avoir marqué la cérémonie d'ouverture des JO en remontant la Seine au galop sur le cheval mécanique porté par leur trimaran motorisé, les dirigeants de MMProcess Morgane Suquart et Madeg Ciret Le Cosquer se lancent un défi : battre le record du monde de vitesse à la voile. Leur bureau d'études en ingénierie navale basé à Saint-Pierre-Quiberon travaille aussi sur un concept de vedette motorisée à foils, un projet d'Imoca et des \"skis volants\".",
+        "url": "https://agence-api.ouest-france.fr/article/apres-avoir-fait-galoper-un-cheval-dargent-sur-la-seine-mm-process-veut-battre-le-record-du-monde-a-la-voile?security_key=4fda3c6e5736dee15ab11c08de95362e",
+        "img": "img/articles/MM_Process.png",
+        "keywords": ["tech", "1_lorient"]
+      },
+      {
+        "name": "CDoudeh",
+        "accroche": "Spécialisé dans les glaces exotiques, C'doudeh déménage à Saint-Brieuc pour doubler son volume d'activité.",
+        "url": "https://agence-api.ouest-france.fr/article/cdoudeh-poursuit-le-developpement-de-ses-glaces-exotiques-a-saint-brieuc",
+        "img": "img/articles/CDoudeh.png",
+        "keywords": ["agro", "arti", "1_porc"]
+      },
+      {
+        "name": "Kermeur_Spirits",
+        "accroche": "Comme évoqué dans API News en mars dernier, Kermeur Spirits (ex-Kermeur industrie) va mettre en ce début du mois de juin sur le marché un second alcool : une liqueur de menthe. Comme pour son Ty jaune, un pastis breton commercialisé depuis août 2020, la PME de Saint-Renan s’est attachée à créer une recette plus naturelle. Baptisée Otsh !, cette liqueur de menthe verte est fabriquée à partir de trois variétés de menthe, de spiruline et de fleurs de carthame. Elle ne contient pas de E131 et de E102, des colorants artificiels et controversés, et reste donc translucide.",
+        "url": "https://agence-api.ouest-france.fr/article/apres-le-ty-jaune-kermeur-spirits-mise-sur-une-liqueur-de-menthe-sans-colorant-artificiel",
+        "img": "img/articles/Kermeur_Spirits.png",
+        "keywords": ["agro", "arti", "1_porc"]
+      },
+      {
+        "name": "Lhyfe",
+        "accroche": "Le producteur nantais d’hydrogène vert Lhyfe ajoute un nouveau levier à ses multiples sources de carburant financier. Après plusieurs levées de fonds, une introduction en Bourse et l’obtention d’aides étatiques ou régionales venant soutenir ses projets industriels, il va également mener une campagne de financement participatif sur la plate-forme en ligne Lita. Il espère y récolter de 2 à 5 M€ via l’émission d’obligations, proposées à un taux d’intérêt annuel de 8,5 % sur 5 ans. L’opération vise à impliquer les investisseurs particuliers dans la construction de plusieurs sites de production : un dans le land du Baden-Wurttemberg, en Allemagne, et deux autres en France, dans la Somme et en Isère. Chacun pourra produire entre 2 et 4 tonnes d’hydrogène par jour.",
+        "url": "https://agence-api.ouest-france.fr/article/lhyfe-se-tourne-aussi-vers-le-financement-participatif",
+        "img": "img/articles/Lhyfe.png",
+        "keywords": ["tech", "1_nantes","2_crowdfunding"]
+      },
+      {
+        "name": "Poreva",
+        "accroche": "En Vendée, Poreva veut contribuer à la revalorisation des 10 000 tonnes de chutes de cuir produites chaque année par les industriels français de la maroquinerie, de la chaussure ou encore de la ganterie.",
+        "url": "https://agence-api.ouest-france.fr/article/poreva-donne-une-nouvelle-vie-aux-chutes-de-cuir-industrielles",
+        "img": "img/articles/Poreva.png",
+        "keywords": ["arti", "1_volaille"]
+      },
+      {
+        "title": "Cocoonr_Hosting_School",
+        "accroche": "Steven Sorgius s’associe avec le rennais Cocoonr et le lyonnais Hosting Service pour créer la Hosting School : une école certifiée des métiers de la location courte durée. Elle lance fin janvier sa première levée de fonds.",
+        "url": "https://agence-api.ouest-france.fr/article/le-rennais-cocoonr-cofonde-la-hosting-school-une-ecole-des-metiers-de-la-location-courte-duree",
+        "img": "img/articles/Cocoonr_Hosting_School.png",
+        "keywords": ["1_lannion", "tech"]
+      },
+      {
+        "title": "Les_Mini_Mondes",
+        "accroche": "Nouvelle ère pour les Mini mondes, start-up nantaise de 10 personnes lancée en 2019 autour d’un mensuel, de kits d’activités et de jouets sensibilisant les enfants à la lecture et au monde. Elle a été rachetée juste avant Noël dernier par le groupe média parisien Unique Heritage Media (UHM) spécialisé dans la presse jeunesse, connu notamment pour avoir repris en 2019 Le Journal de Mickey et Picsou magazine à Lagardère et à Disney.",
+        "url": "https://agence-api.ouest-france.fr/article/nes-a-nantes-les-mini-mondes-desormais-cousins-du-journal-de-mickey-suite-a-leur-rachat",
+        "img": "img/articles/Les_Mini_Mondes.png",
+        "keywords": ["1_nantes", "tech"]
+      },
+      {
+        "title": "Oryon",
+        "accroche": "L’agence de développement de l’agglomération de la Roche-sur-Yon, Oryon, a lancé en septembre 2024 son premier parc de tiny houses. Une expérimentation pour répondre, en partie, à la pénurie de logements.",
+        "url": "https://agence-api.ouest-france.fr/article/oryon-experimente-un-premier-parc-de-tiny-houses-a-la-roche-sur-yon",
+        "img": "img/articles/Oryon.png",
+        "keywords": ["1_volaille"]
+      }
+    ]
+  }

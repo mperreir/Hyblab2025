@@ -1,0 +1,40 @@
+/* IA.css */
+.heading {
+    color: white;
+    text-align: center;
+    font-family: 'Pathway Extreme';
+    font-size: 2.3rem;
+    margin-bottom: 50px;
+}
+
+.bg_gradient_fond_vague2 {
+    background: radial-gradient(50.87% 50.87% at 50% 50%, #B0D2DF 0%, #6BADC6 100%);
+    height: 157vh;  
+    width: 100%; 
+}
+.content{
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+    color: #1A3347;
+}
+
+.list-item {
+    color: #1A3347;
+    font-size: 0.8rem;
+}
+
+ul {
+    padding-left: 0.8rem;
+    text-align: left;
+}
+
+.subheading {
+    font-size: 1rem;
+    color: #1A3347;
+    text-align: left;
+}
+
+.logo {
+    width: 200px;
+    margin-bottom: 88px;
+}

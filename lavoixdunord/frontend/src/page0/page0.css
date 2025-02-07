@@ -1,0 +1,13 @@
+.background_page0 {
+    background: url('animation_logo.gif');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    position: relative;
+}
+
+.logo_page0 {
+    width: 200px; /* Taille du logo principal */
+}
+
+

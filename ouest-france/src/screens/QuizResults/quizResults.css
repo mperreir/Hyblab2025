@@ -1,0 +1,15 @@
+.choice.right.pavon img {
+    transform: skew(20deg) scaleX(-1.5) scaleY(1.5);
+    right: 15vw;
+}
+.choice.right.pavon:hover img{
+    right: 0vw;
+}
+.endquiz-left:after{
+    visibility: hidden;
+    opacity: 0;
+}
+.choice:hover ~ .endquiz-left:after{
+    visibility: visible;
+    opacity: 1;
+}

@@ -37,6 +37,7 @@ body{
 }
 /* -------------- End of Loader --------------*/
 
+
 /* Swiper slider. Need to fill the container */
 #mySwiper{
     width: 100%;
@@ -44,16 +45,12 @@ body{
     position: absolute;
 }
 
-/* white navigation bullets */
-.swiper-pagination-bullet-active {
-    background-color: white !important;
-}
-
 /* the slides and the loader should fill the whole 9:16 zone */
 .swiper-wrapper section, #loader{
-    background-color: dodgerblue;
+    background-color: white;
     width: 100%;
     height: 100%;
+    color: black
 }
 
 /* Most of the elements in this demo are absolute positioned with percentages */
@@ -64,6 +61,7 @@ body{
     position: absolute;
     font-size: 30%;
     z-index: 2;
+    text-decoration-color: #0056b3;
 }
 
 #logo-hyblab{
@@ -90,72 +88,13 @@ body{
 }
 
 main > section{
-    background-image: url('../img/background.svg');
+    /* background-image: url('../img/background.svg'); */
     background-size: 100% auto; /* background is full width and height is proportional to width */
     background-position: bottom; /* background is bottom aligned */
 }
 
-/* Footer of last slide is at the bottom and content is centered */
-#first-slide footer{
-    bottom: 5%;
-    position: absolute;
-    box-sizing: border-box; /* So that padding is not added to width (and width: 100% works) */
-    width: 100%; /* could also use  width: calc(100% - 2em) if not using box-sizing */
-    font-size: 20%;
-    text-align: center;
-    padding: 1em;
-    background-color: rgba(0, 0, 0, 0.5);
-}
 
 
-/* ---------- Positioning of logos on the last slide -------------------- */
-/* here we have a contraint on the height of the logos (not the width)     */
-/* so we cannot use % and use em (which are proportional to the size of the */
-/* slide because of body's font size rule at the end of this CSS           */
-#bandeau {
-    width:100%;
-    position: absolute;
-    bottom: 0;
-    background-color: white;
-    font-size: 20%;
-  }
-
-  #bandeau li{
-    list-style-type: none;
-    display: inline-block;
-    vertical-align: middle;
-    margin: 0 0.5em;
-  }
-
-  #bandeau img{
-    height: 2.5em;
-  }
-
-  #bandeau #hyblab{
-    margin: 1em auto;
-    height: 3em;
-    display: block;
-  }
-
-  #bandeau #cc, #bandeau #opensource
-  {
-    height: 1em;
-  }
-
-  #bandeau .stacked{
-    display:block;
-  }
-
-  #bandeau ul{
-    text-align: center;
-    padding: 0 0;
-    margin: 0.5em auto;
-  }
-
-  #bandeau .institutionnel
-  {
-    height: 2em;
-  }
 
 /* ---------- Important media queries for easy responsive content :-) ----------------- */
 /* Whatever the device used, the content will be displayed full width and height if      */
@@ -173,6 +112,7 @@ main > section{
 /* Here the font size is proportional to content width */
 body{
     font-size: calc(15vh * 3 / 4);
+    
 }
 
 /* Fill the whole viewport when its aspect ratio is between 9/16 and 3/4 */
@@ -206,3 +146,25 @@ body{
     }
 }
 
+/* CSS */
+button {
+  background: gray;
+  border-radius: 999px;
+  box-shadow: #000000 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 8px 18px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 2px solid var(--user-color);
+}
