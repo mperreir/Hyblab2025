@@ -298,15 +298,21 @@ function createPodcastModal(podcast, id) {
         modal.appendChild(video)
         modal.appendChild(overlay)
     }
+    else {
+        let thumbnail = document.createElement("div")
+        thumbnail.classList.add("thumbnail-container")
+        thumbnail.classList.add("z-1")
+        thumbnail.style.backgroundImage = "url('" + "img/thumbnails/" + (podcast.id) + ".png')"
+
+        modal.appendChild(thumbnail)
+    }
 
     let info = document.createElement("div")
     info.classList.add("z-2")
     info.classList.add("modalInfo")
-    if (podcast.VideoLink !== "") {
-        info.style.marginTop = "100vh"
-        info.style.borderTopLeftRadius = "25px"
-        info.style.borderTopRightRadius = "25px"
-    }
+    info.style.marginTop = (podcast.VideoLink !== "") ? "100vh" : "88vh"
+    info.style.borderTopLeftRadius = "25px"
+    info.style.borderTopRightRadius = "25px"
 
     let title = document.createElement("h1")
     title.innerText = podcast.Title
@@ -410,11 +416,23 @@ function createPodcastModal(podcast, id) {
     })
     filtersDiv.appendChild(btnDate)
 
-
+    const departementsEst = {
+        "Bas-Rhin": "Dans le ",
+        "Haut-Rhin": "Dans le ",
+        "Doubs": "Dans le ",
+        "Jura": "Dans le ",
+        "Haute-Saône": "Dans la ",
+        "Vosges": "Dans les ",
+        "Territoire de Belfort": "Dans le ",
+        "Moselle": "En ",
+        "Meurthe-et-Moselle": "En ",
+        "Haute-Marne": "En ",
+        "Meuse": "En "
+    };
     let btnDep = document.createElement("button")
     btnDep.classList.add("filterBtn")
     btnDep.classList.add("depBtn")
-    btnDep.innerText = "En " + podcast.Department
+    btnDep.innerText = departementsEst[podcast.Department] + podcast.Department
     btnDep.addEventListener("click", function (e) {
         if (btnDep.classList.contains("active")) {
             btnDep.classList.remove("active")

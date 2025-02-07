@@ -1,10 +1,7 @@
 /* =========================================================================
-   1. IMPORT DES POLICES
+   1. IMPORT DES ICONS
    ========================================================================== */
-/* Exemple :
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
-*/
-
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css");
 
 /* =========================================================================
    2. RÉINITIALISATION (RESET)
@@ -175,6 +172,18 @@ p {
 #footer p {
     max-width: 100%;
     text-align: justify !important;
+}
+
+#footer a {
+    color: white;
+    border: none;
+    padding: 0;
+    margin: 0;
+    margin-left: 5px;
+}
+
+#footer i {
+    font-size: 25px;
 }
 
 #footer .card {
@@ -485,6 +494,14 @@ p {
     position: fixed;
     top: 0;
     background: black;
+}
+
+.thumbnail-container {
+    width: 100vw;
+    height: 90vh;
+    position: fixed;
+    top: 0;
+    background-size: cover;
 }
 
 /* --- Section "links" (liens) --- */
