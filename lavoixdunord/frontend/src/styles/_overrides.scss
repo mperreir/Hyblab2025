@@ -1,0 +1,61 @@
+// ajout de styles spécifiques
+
+// .navbar {
+//     background-color: $primary;
+// }
+
+.btn {
+    border-radius: 41.5px;
+}
+
+.fs-6 {
+    font-size: 0.8rem !important;
+}
+
+
+.fs-7 {
+    font-size: 0.7rem;
+}
+
+h1, .h1 {
+    font-size: calc(2.85rem);
+}
+
+/* Mobile-first styles (par défaut, pour les mobiles) */
+.mobile-container {
+    width: 100%;
+    /* S'étend sur toute la largeur de l'écran */
+    max-width: none;
+    /* Supprime toute restriction de largeur */
+    // padding-inline: 4px;
+    /* Ajoute un peu d'espace intérieur */
+    height: 100vh;
+    overflow-y: auto;
+    /* Occupe toute la hauteur de l'écran */
+    background-color: $body-bg;
+    /* Couleur de fond pour l'app */
+    display: flex;
+    position: relative;
+    z-index: 1;
+}
+
+/* Styles spécifiques pour les écrans plus grands (desktop) */
+@media (min-width: 768px) {
+    .mobile-container {
+        max-width: 375px;
+        /* Limite la largeur à 375px sur desktop */
+        margin: 0 auto;
+        /* Centre horizontalement */
+        border: 1px solid #ddd;
+        /* Ajoute une bordure optionnelle */
+        border-radius: 5px;
+        /* Coins arrondis pour un look moderne */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        /* Ombre pour le style */
+        padding-inline: 0px;
+    }
+}
+
+.border-41 {
+    border-radius: 41.5px !important;
+}

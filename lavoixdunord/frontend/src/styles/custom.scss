@@ -1,0 +1,14 @@
+// src/styles/custom.scss
+
+// Importer le thème Bootswatch Lux
+@import "~bootswatch/dist/litera/_variables";
+
+// Variables personnalisées
+@import './variables';
+
+@import "~bootstrap/scss/bootstrap"; // Charger Bootstrap après les variables du thème
+
+// Import des overrides (pour écraser des styles spécifiques)
+@import './overrides';
+
+@import './global.scss'

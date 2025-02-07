@@ -1,30 +1,40 @@
 # Descriptif du projet
 
-Porteur de projet :
+Bienvenue dans notre projet développé dans le cadre du **Hyblab**, en lien avec le passage du **Tour de France** à Lille ! 🌍🎉  
 
-Sujet :
+**Porteur de projet** : La voix du nord
 
-Nom d'équipe :
+**Sujet** : **Le défi des 3 maillots** est un jeu interactif conçu dans le cadre du **Hyblab**, en lien avec le passage du **Tour de France à Lille**. Ce quiz ludique mêle **culture, sport et intelligence artificielle**, avec des questions variées sur le **cyclisme, le patrimoine, la gastronomie et l’histoire locale**. Destiné aussi bien aux **locaux** qu’aux **touristes et spectateurs**, il permet de tester ses connaissances sur la région tout en découvrant ses richesses. Pensé dans une logique de **gamification**, ce projet met en avant Lille et ses environs à travers une expérience immersive et accessible à tous. 🚴‍♂️🎉
 
-Participants : 
+**Nom d'équipe** : La roue libre
+
+**Participants** : 
 
 - AGR :
-- Polytech :  
+    - RONTARD Ivana
+- Polytech : 
+    - BEN SALHA Mahdi
+    - IBNOUALI Youssef
+    - JAOUADA Mohamed
+    - JRAD Ghassen
+    - OUERIEMMI Arwa
+    - TAGNE TCHWEGUEM Theophile Pierre
 - SciencesPo : 
+    - MALLET Quentin
 
 
+## 🔧 **Modifications et Processus de Build**  
 
-## A supprimer
+### 🚀 **Modifications apportées à `server.js`**  
 
-Ces instructions ne sont la que pour vous guider dans le développement de vos pages web. Elles seront à supprimer pour la soumission finale de votre code.
+Des ajustements ont été faits pour assurer une meilleure gestion des fichiers statiques et la compatibilité avec une application **React SPA** :  
 
-Le dossier de votre projet contient un squelette de code que vous devez modifier. 
+- 📂 **Changement du répertoire de build** : Les fichiers statiques sont désormais servis depuis `frontend/build` au lieu de `public`.  
+- 🔄 **Gestion des routes React** : Une route **catch-all** a été implémentée pour rediriger toutes les requêtes vers `index.html`, évitant ainsi les erreurs 404 pour les routes côté client.  
 
-- La partie `serveur.js`  ne doit a priori pas être touchée, si vous avez des entrées d'API à ajouter il faudra le faire dans le dossier `api`.
-- Le dossier `public`  contient la partie statique de votre site. Par défaut le fichier index.html charge un fichier `style.css` qui est destiné au format mobile (portrait). Si votre porteur de projet demande un site desktop, vous pouvez vous baser sur l'exemple `index-desktop.html` et le CSS associé `style-desktop.css` qui propose une page au format paysage.
+### 🏗️ **Processus de build avec `post-build.js`**  
 
+Le script `post-build.js` automatise une tâche importante après la génération du build :  
 
-
-## Instructions de déploiement
-
-Si votre projet nécessite des instructions spécifiques pour son déploiement, merci d'ajouter des explications ici.
+- 📄 **Mise à jour des fichiers YAML** : Il modifie `data/questions.yaml` en ajoutant un **basename** aux images des questions pour garantir leur bon affichage dans l’application.
+- ⚡ **Exécution automatique après le build** : Ce script est déclenché via `"postbuild": "node postbuild-script.js"` dans le fichier `package.json`, garantissant que les images sont correctement mises à jour après chaque build.  
