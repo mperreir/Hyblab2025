@@ -8,20 +8,19 @@ Bienvenue dans notre projet développé dans le cadre du **Hyblab**, en lien ave
 
 **Nom d'équipe** : La roue libre
 
-**Participants** : 
+**Participants** :
 
 - AGR :
-    - RONTARD Ivana
-- Polytech : 
-    - BEN SALHA Mahdi
-    - IBNOUALI Youssef
-    - JAOUADA Mohamed
-    - JRAD Ghassen
-    - OUERIEMMI Arwa
-    - TAGNE TCHWEGUEM Theophile Pierre
-- SciencesPo : 
-    - MALLET Quentin
-
+  - RONTARD Ivana
+- Polytech :
+  - BEN SALHA Mahdi
+  - IBNOUALI Youssef
+  - JAOUADA Mohamed
+  - JRAD Ghassen
+  - OUERIEMMI Arwa
+  - TAGNE TCHWEGUEM Theophile Pierre
+- SciencesPo :
+  - MALLET Quentin
 
 ## 🔧 **Modifications et Processus de Build**  
 
