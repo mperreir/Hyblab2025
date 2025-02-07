@@ -1,0 +1,86 @@
+.dialogue-box {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    color: black;
+    box-sizing: border-box;
+    font-size: 120%;
+    white-space: nowrap;
+    transition: opacity 0.3s ease-in-out;
+    height: calc(100% - var(--header-height));
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    z-index: 1000; /* just to make sure */
+}
+
+.card_title {
+    width: 100%;
+    background-color: #127039;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    clip-path: polygon(0 0, 100% 0, 100% 83%, 0% 100%);
+    margin-bottom: 10px;
+    padding: 0 5%;
+}
+
+.card_title .title {
+    display: inline;
+    text-wrap: wrap;
+}
+
+.card_title .number_square {
+    height: 55%;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    background-color: #EFD8B8;
+    color: black;
+    clip-path: polygon(25% 0, 100% 25%, 75% 100%, 0 75%);
+    font-weight: 600;
+}
+
+.card_title .number {
+    font-size: 120%;
+}
+
+.speech_holder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: 65%;
+    overflow-y: auto;
+    -webkit-box-shadow: inset 0px -9px 13px -5px #FFFFFF; 
+    box-shadow: inset 0px -9px 13px -5px #FFFFFF;
+    position: relative;
+}
+
+.dialogue-box > p {
+    text-wrap: auto;
+    margin: 0;
+    user-select: none;
+    position: relative;
+}
+
+.dialogue-box .illustration{
+    height: 20%;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    z-index: 2;
+    position: relative;
+    align-self: flex-start; /* Aligner à gauche dans le flex parent */
+}
+
+.dialogue-box .illustration img{
+    max-width: 280px;
+}
+
+/*Faut penser a les faire décendre et le 2 un peu plus*/

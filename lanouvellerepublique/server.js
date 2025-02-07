@@ -17,6 +17,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, '../__common-logos__')));
 
 // You can then add whatever routing code you need
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'))
+});
 
 // This module is exported and served by the main server.js located
 // at the root of this set of projects. You can access it by lanching the main

@@ -1,0 +1,80 @@
+/* Global container */
+.guide1-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100vh;
+    background-color: #fff;
+    position: relative; /* Pour positionner les éléments comme le chemin */
+    overflow: hidden; /* Empêche tout débordement */
+}
+
+
+.line-design {
+    position: absolute;
+    top: 49%;
+    width: 100%;
+}
+
+/* Animal section */
+.animal-section {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: flex-end;
+    height: 40%;
+    width: 100%;
+    z-index: 1;
+}
+
+/* Bubble container */
+.bubble-container {
+    position: relative;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    color: black;
+    font-size: 130%;
+    width: 100%;
+}
+
+
+/* Animal image */
+.image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.animal-image {
+    width: 140px; /* Augmente légèrement la taille */
+    height: auto;
+    margin-top: -10px; /* Remonte légèrement l'image */
+}
+
+/* Continue button */
+.continue-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: transform 150ms ease;
+    margin-bottom: 20px;
+    margin-top: 30%;
+}
+
+.continue-button .continue-button-text {
+    padding: 6px 22px;
+    color: black;
+    background: linear-gradient(to bottom, #FCE4C3 10%, #EFD8B8 10% 90%, #CEB89A 90%);
+    font-size: 1.2rem;
+
+    clip-path: polygon(10% 0, 98% 10%, 100% 100%, 0 100%);
+}
+
+.continue-button:hover {
+    cursor: pointer;
+    filter: drop-shadow(0px 6px 6px rgba(0, 0, 0, 0.1));
+}

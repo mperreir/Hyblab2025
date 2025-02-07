@@ -1,0 +1,416 @@
+{
+    "Loutre":[
+        {
+            "id": 1,
+            "pos": [630,3685],
+            "img_name": "LoutrePOI1.svg",
+            "pos_img": 75,
+            "icon_pos": 50,
+            "title" : "La carte d'identité",
+            "subtitle": "1",
+            "text": [
+                "Vous remarquerez vite que je suis une vraie championne de la nage ! Mon corps long et fuselé, mes petites pattes palmées et ma queue musclée sont conçus pour filer sous l’eau. ",
+                "Mon pelage marron chocolat est super pratique : 98% de poils de bourre pour me garder au sec, et des poils de jarre pour être totalement imperméable. ",
+                "Sous l’eau, je suis équipée pour tout gérer : nager, plonger, chasser. Par contre, sur terre, je suis un peu moins agile… Mais avec tous mes atouts aquatiques, j’ai encore besoin de votre aide pour protéger mes habitats. Vous êtes prêts à me soutenir ?"
+            ]
+        },
+        {
+            "id": 2,
+            "pos": [1347, 3390],
+            "img_name": "LoutrePOI2.svg",
+            "pos_img": 45,
+            "icon_pos": 55,
+            "text": [
+                "Moi, j’adore parcourir les berges et plans d’eau ! Mon chez-moi, c’est une « catiche », un terrier au bord de l’eau, avec une entrée secrète sous-marine. La nuit, c’est mon moment ! Je m’aventure sur mon territoire pour chasser et profiter du calme. ",
+                "Je suis une grande solitaire, mais je peux vivre en couple ou avec ma famille. Mon territoire, je le défends à coups de petits messages olfactifs (merci crottes et urine) – histoire que tout le monde sache qui est la cheffe ici.",
+                "Côté amour, je m'accouple discrètement, sous l’eau, toute l’année. Après 60 jours, je donne naissance à 1 à 3 loutrons que je protège avec soin."
+            ],
+            "title" : "Comportement & Rythme de vie",
+            "subtitle": "2"
+        },
+        {
+            "id": 3,
+            "pos": [1755, 2649],
+            "img_name": "LoutrePOI3.svg",
+            "pos_img": 60,
+            "icon_pos": 63,
+            "text": [
+                "Je mange surtout du poisson, ce qui n’enchante pas vraiment les pêcheurs... Mais quand l’occasion se présente, j’aime aussi varier les plaisirs : des crustacés, des amphibiens, voire même des petits mammifères. Bref, je suis du genre opportuniste ! Je consomme environ 1 kg de nourriture par jour pour maintenir mon énergie et mes talents de nageuse. Une petite faim ? Je plonge et je me régale !"
+            ],
+            "title" : "Alimentation",
+            "subtitle": "3",
+            "linked": "anguille"
+        },
+        {
+            "id": 4,
+            "pos": [1930, 1550],
+            "img_name": "LoutrePOI4.svg",
+            "pos_img": 70,
+            "icon_pos": 72,
+            "text": [
+                "Cap vers un lieu que j’adorais autrefois explorer. Mais depuis quelques décennies, tout s’est compliqué… L’agriculture intensive a chamboulé mon quotidien. Les champs bourrés de produits chimiques polluent mes rivières, les machines détruisent mes berges préférées, et les zones humides se transforment en souvenirs.",
+                "Résultat, mes terrains de chasse disparaissent peu à peu. Et ce n’est pas tout : les transformations de l’agriculture affectent aussi ma nourriture et ma sécurité. Mes bons poissons se font rares et mes refuges tranquilles deviennent introuvables. Pas facile de rester une loutre heureuse dans ce monde en mutation…"
+            ],
+            "title" : "Agriculture intensive",
+            "subtitle": "4",
+            "linked": ["Crapaud", "Papillon", "Tortue"],
+            "link_text": "Eh oh ! Moi aussi l’agriculture intensive menace mon habitat. Viens découvrir pourquoi !"
+        },
+        {
+            "id": 5,
+            "pos": [2190, 1150],
+            "img_name": "LoutrePOI5.svg",
+            "pos_img": 55,
+            "icon_pos": 15,
+            "text": [
+                "Il faut que je vous parle d’un vrai danger, sûrement le plus gros pour notre espèce : les ponts et les barrages. Rassurez-vous, je ne n’en suis pas phobique mais quand j’explore mon territoire, je préfère marcher le long des berges plutôt que nager sous les ponts. Mais si elles sont trop petites ou inondées je dois traverser la route. Et là, y’a trop souvent collision… Les voitures sont la première cause de décès chez les loutres. Les barrages, c’est pas mieux. Ils me forcent souvent à emprunter des routes pour contourner l’obstacle. Bref, vos constructions sont un vrai parcours du combattant."
+            ],
+            "title" : "Ponts et barrages",
+            "subtitle": "5",
+            "linked": ["Anguille"],
+            "link-text": "Eh oh ! Moi aussi les ponts et les barrages me mettent des batons dans les roues. Viens découvrir pourquoi !"
+        },
+        {
+            "id": 6,
+            "pos": [2850, 630],
+            "img_name": "LoutrePOI6.svg",
+            "pos_img": 65,
+            "icon_pos": 15,
+            "text": [
+                "Si vous cherchez un endroit où je me sens vraiment chez moi, vous y êtes enfin parvenus. Voici le marais de Taligny, non loin de Chinon. Avec ses 85 hectares de zones humides bien protégées, c’est mon refuge idéal. Ici, l’eau reste propre. Le marais agit comme une éponge qui filtre et régule tout. En plus, grâce à la restauration des cours d’eau, mes coins de repos et mes terrains de chasse sont intacts. On gère aussi les crues et on limite les inondations, tout en offrant un abri à plein d’autres espèces aquatiques. Et ce n’est pas fini : un plan sur-mesure (2022-2033) garantit que cet endroit reste mon havre de paix. Entre nous, c’est un vrai bonheur de savoir qu’on prend soin de mes besoins pour les années à venir."
+            ],
+            "title" : "Marais de Taligny",
+            "subtitle": "6"
+        }
+    ],
+    "Anguille":[
+        {
+            "id": 1,
+            "pos": [435, 675],
+            "img_name": "anguille.svg",
+            "title": "Carte d’identité",
+            "subtitle": "1",
+            "text": [
+                "Dans le milieu sous-marin on me surnomme le serpent des eaux ! Avec mon corps long, ovale et tout glissant (merci le mucus), je suis une vraie athlète aquatique.",
+                "Mes nageoires ? Pas de pelviennes, et celles de derrière – caudale, anale et dorsale – sont soudées en une seule grande nageoire. Je commence ma vie en brun-vert avec un ventre jaunâtre, mais avant ma migration vers la mer des Sargasses, je passe au noir et argenté : le style parfait pour l’aventure.",
+                "Je peux atteindre jusqu’à 1,5 mètre et vivre une belle vie : 8 à 14 ans si je suis un mâle, 10 à 18 ans pour mes copines femelles. En journée, j’adore me cacher sous la vase, mais la nuit, attention, je me transforme en fine gourmande : poissons, grenouilles, crustacés, œufs de poisson, vers… tout y passe !"
+            ],
+            "pos_img": 75,
+            "icon_pos": 50
+        },
+        {
+            "id": 2,
+            "pos": [535, 675],
+            "img_name": "anguille.svg",
+            "title": "Cycle de vie",
+            "subtitle": "2",
+            "text": [
+                "Après des années de croissance dans les eaux douces, je subis une transformation géniale : l’argenture. ! C’est un changement total, à la fois physique et psychologique, qui marque mon passage de juvénile à adulte prêt à migrer.",
+                "Pendant ma migration, je ne mange plus. Mon intestin se rétrécit et je me nourris uniquement de mes réserves de graisse accumulées pendant ma phase jaune. C’est pour ça que je suis un peu plus dodue, et je vous avoue que ça m’aide bien pour le long voyage de reproduction. ",
+                "Chaque automne, à la nouvelle lune, je m’élance, nageant avec le courant pour parcourir jusqu’à 7 500 km. C’est là-bas, au fond de la mer des Sargasses, que je pourrai enfin me reproduire. Un sacré périple, n’est-ce pas ?"
+            ],
+            "pos_img": 75,
+            "icon_pos": 50
+        },
+        {
+            "id": 3,
+            "pos": [635, 675],
+            "img_name": "anguille.svg",
+            "title": "Reproduction",
+            "subtitle": "3",
+            "text": [
+                "Mon histoire d’amour avec la Mer des Sargasses, c’est tout un roman ! Arrivé au printemps, je ponds à 400 voire 700 mètres de profondeur dans ses eaux tièdes (16 à 17 °C, le top du confort). Une fois les œufs éclos, mes bébés, appelés leptocéphales, remontent vers la surface et passent trois ans à flâner en mer. Puis, en mode aventuriers, ils reviennent dans les rivières où ils deviennent des anguilles jaunes, prêtes à grandir.",
+                "Pendant environ 15 ans, on vit en eau douce, mais pour frayer, c’est retour à la mer ! Chez nous, on s’organise bien : les plus jeunes restent en aval, et les mâles préfèrent les zones basses, tandis que les femelles grimpent dans les hauteurs. Bref, une répartition millimétrée pour que tout roule dans notre cycle de vie aquatique."
+            ],
+            "pos_img": 75,
+            "icon_pos": 50
+        },
+        {
+            "id": 4,
+            "pos": [435, 775],
+            "img_name": "anguille.svg",
+            "title": "Barrages & braconnage",
+            "subtitle": "4",
+            "text": [
+                "Attention tout de fois, migrer n’est pas une promenade de santé. Entre barrages, écluses et autres constructions, vos rivières sont truffées de pièges : en France, un obstacle tous les 3,8 km en moyenne. Même les petits seuils, souvent inutilisés, bloquent notre chemin.",
+                "Et les barrages hydroélectriques ? Pas mieux ! Leur passage peut nous coûter la vie : leurs turbines, c’est la roulette russe, avec un gros risque de finir en morceaux.",
+                "Ajoutez à ça le braconnage, et vous comprendrez que rejoindre l’océan ou remonter les rivières, c’est loin d’être une balade tranquille pour une anguille comme moi !"
+            ],
+            "pos_img": 75,
+            "icon_pos": 50
+        },
+        {
+            "id": 5,
+            "pos": [535, 775],
+            "img_name": "anguille.svg",
+            "title": "Pollution des eaux",
+            "subtitle": "5",
+            "text": [
+                "Bon, je vais être honnête : l’eau dans laquelle je nage n’est pas toujours aussi propre qu’elle devrait l’être. Pollution par les pesticides, plastiques, métaux lourds… Vous l’avez compris, tout ça n’est pas super pour moi. Comme je passe beaucoup de temps dans les rivières (de 5 à 20 ans, c’est long !), je suis particulièrement exposée.",
+                "Plus je mange, plus je stocke ces polluants. Pas très pratique, non ? Alors, si vous voulez m’aider à rester en forme pour ma grande migration, il va falloir nettoyer un peu tout ça !"
+            ],
+            "pos_img": 75,
+            "icon_pos": 50
+        },
+        {
+            "id": 6,
+            "pos": [635, 775],
+            "img_name": "anguille.svg",
+            "title": "Marais poitevin",
+            "subtitle": "6",
+            "text": [
+                "Dans le Marais poitevin, on ne rigole pas avec ma protection ! Le parc naturel régional a mis en place une vraie mission commando : on me mesure, on m’équipe d’une puce électronique, et hop, ils suivent mes aventures dans les rivières. Leur objectif ? Ramener ma population à son niveau d’il y a quarante ans.",
+                "Ici, ils n’ont pas chômé : Alors que la création du premier passe à anguille  en France date de 1984, le marais en compte déjà une trentaine sur son site aujourd’hui. Elles sont essentielles pour m’aider à contourner les obstacles. Et en prime, dans les Deux-Sèvres, la pêche à l’anguille argentée est interdite en 2025. Pas mal, non ? Une belle preuve que, quand on s’y met, on peut faire beaucoup pour ma survie !"
+            ],
+            "pos_img": 75,
+            "icon_pos": 50
+        }
+    ],
+    "Crapaud":[
+        {
+            "id": 1,
+            "pos": [435, 675],
+            "img_name": "crapaud.svg",
+            "title": "Carte d’identité",
+            "subtitle": "1",
+            "text": [
+                "Je mesure environ 5 cm, et mon ventre jaune avec des taches noires, c’est ma signature. Et mes pupilles, tu les vois ? Elles sont parfois triangulaires, parfois arrondies, mais toujours un peu en forme de cœur. Ca me donne un vrai petit charme !",
+                "Mon dos est marron, avec une peau verruqueuse. Je suis plutôt léger (entre 2,5 et 15 grammes) et j’adore les coins tranquilles, comme les mares temporaires ou les bords de ruisseaux.",
+                "Je suis actif de fin avril à octobre, et avec ma longévité (je peux vivre jusqu’à 10 ans !), tu as pas mal de chances de me croiser ! Dans la région Centre, tu me trouveras dans des bocages, prairies ou forêts. Alors garde un œil sur les coins d’eau calme !"
+            ],
+            "pos_img": 35,
+            "icon_pos": 50
+        },
+        {
+            "id": 2,
+            "pos": [535, 675],
+            "img_name": "crapaud.svg",
+            "title": "L'alimentation",
+            "subtitle": "2",
+            "text": [
+                "Alors, tu veux savoir ce que je mange ? Quand je suis têtard, je me régale d’algues et de petites diatomées. Plutôt végétarien à ce moment-là ! Mais dès que je grandis, j’attaque des bestioles minuscules, comme les collemboles, puis je passe à des proies plus grosses.",
+                "En tant qu’adulte, je suis un vrai petit glouton ! J’adore les insectes, les vers, les crustacés et même les mollusques. Je suis un chasseur opportuniste : dès qu’une petite bête se pointe, je n’hésite pas une seconde !"
+            ],
+            "pos_img": 35,
+            "icon_pos": 50
+        },
+        {
+            "id": 3,
+            "pos": [635, 675],
+            "img_name": "crapaud.svg",
+            "title": "Reproduction",
+            "subtitle": "3",
+            "text": [
+                "Alors, vous voulez savoir comment je me reproduis ? Je suis ovipare, donc je pond des œufs… et pas qu’un peu ! Les mâles chantent « hou, hou » pour m'attirer, alors si tu les entends, c’est qu’ils essaient de me séduire.",
+                "En moyenne, je pond de 2 à 4 fois par an, avec une centaine d’œufs à chaque fois, sur des plantes aquatiques ou des brindilles immergées. Et pour augmenter mes chances, j’étale mes pontes de fin avril à août.",
+                "En plus, les œufs se développent vite, en seulement 5 jours, et les têtards se métamorphosent en 1 à 4 mois. Dans les années sèches, on peut même reprendre la reproduction en septembre. Plutôt malin, non ?"
+            ],
+            "pos_img": 35,
+            "icon_pos": 50
+        },
+        {
+            "id": 4,
+            "pos": [435, 775],
+            "img_name": "crapaud.svg",
+            "title": "Réchauffement climatique",
+            "subtitle": "4",
+            "text": [
+                "Ah, le réchauffement climatique… C’est un peu comme un mauvais voisin qui met trop de chauffage en été ! Avec des températures plus élevées, les milieux humides où je vis risquent de s’assécher. Et croyez-moi, ça ne me plaît pas du tout ! D'autant que pour nous, petites créatures aquatiques, les points d’eau sont essentiels.",
+                "Et puis, les précipitations, vous savez, c’est aussi crucial pour notre reproduction. Trop de sécheresse et hop, plus de mares pour nous. Pire encore, chez moi, la température de l’eau détermine si mes œufs se développent bien. Alors, si le climat continue à jouer avec nos nerfs, avec certains de mes copains, on risque de disparaître plus vite que prévu."
+                
+            ],
+            "pos_img": 35,
+            "icon_pos": 50
+        },
+        {
+            "id": 5,
+            "pos": [535, 775],
+            "img_name": "crapaud.svg",
+            "title": "Agriculture intensive",
+            "subtitle": "5",
+            "text": [
+                "Vous savez, la sylviculture moderne, ce n’est pas toujours un cadeau pour moi. Les gros engins qui débardent les arbres créent de jolies ornières, idéales pour ma reproduction. Mais à force de remettre en état les chemins ou d’assécher trop rapidement les zones, mes petits coins tranquilles disparaissent… Et ne me parlez pas de la gestion cynégétique ! Les produits chimiques, comme les larvicides, sont un vrai danger pour moi et mes voisins aquatiques.",
+                "Mais ce n’est pas tout : l’agriculture intensive avec ses pesticides et la disparition des haies, ça n’arrange pas non plus mes affaires. Heureusement, certains endroits comme les carrières peuvent devenir des refuges si elles sont bien gérées, mais tout cela reste fragile. Il va falloir qu’on fasse attention, sinon je risque de sauter… au mauvais endroit !"
+            ],
+            "pos_img": 35,
+            "icon_pos": 50
+        },
+        {
+            "id": 6,
+            "pos": [635, 775],
+            "img_name": "crapaud.svg",
+            "title": "Vallée de la Braye",
+            "subtitle": "6",
+            "text": [
+                "Bienvenue dans ma réserve située sur la Vallée de la Braye ! Ce site protégé, géré par Perche Nature et loué par le Conservatoire d’espaces naturels, est mon dernier refuge en Loir-et-Cher. Ici, sur 3.000 m², je trouve une trentaine de mares, des zones de végétation humide et même des fossés ensoleillés.",
+                "Les experts travaillent dur pour préserver mon habitat et favoriser ma reproduction. Ils veillent à maintenir la végétation en laissant passer le soleil sur les mares et fossés, avec un peu de fauche et de coupe sélective des plantes. Et tout ça, c’est pour m’offrir un futur, avec des mares, des petites dépressions et une belle végétation de zones humides. Alors, si tu veux me croiser, c’est ici que ça se passe !"
+            ],
+            "pos_img": 35,
+            "icon_pos": 50
+        }
+    ],
+    "Papillon":[
+        {
+            "id": 1,
+            "pos": [435, 675],
+            "img_name": "papillon.svg",
+            "title": "Carte d’identité",
+            "subtitle": "1",
+            "text": [
+                "Je suis un papillon discret mais avec un style bien à moi. Les mâles sont tout en bleu, tandis que les femelles, comme moi, préfèrent un joli marron. Mais on a tous un point commun : le dessous de nos ailes avec des points noirs.",
+                "Moi, les milieux humides ça me connait. Je raffole des endroits bien abrités près des roselières et des buissons. En gros, mon cocon idéal, c’est une zone humide avec des prairies créées par le pâturage.",
+                "Une fois adulte, je deviens floricole : je me régale de nectar, surtout dans les fleurs de Fabacées. Bref, je suis un vrai gourmet !"
+            ],
+            "pos_img": 50,
+            "icon_pos": 47
+        },
+        {
+            "id": 2,
+            "pos": [535, 675],
+            "img_name": "papillon.svg",
+            "title": "Rythme de vie",
+            "subtitle": "2",
+            "text": [
+                "Une fois adulte, ma vie est courte mais intense ! Je vole pendant 20 à 31 jours, entre mi-mai et fin juillet, mais ça peut varier un peu selon l’endroit où je suis.",
+                "Niveau espérance de vie, je tiens entre 3 jours et 6 jours et demi. Bon, je peux aller jusqu’à 13 jours si je suis vraiment chanceux, mais ce n’est pas gagné !",
+                "Quant à mes premières étapes de vie, je grandis dans les fleurs de ma plante hôte, puis, vers la fin de l’été, je me lance dans une aventure… direction une fourmilière pour finir mon développement larvaire. Oui, je sais, c’est un peu surprenant, mais je vous en parlerai plus tard !"
+            ],
+            "pos_img": 50,
+            "icon_pos": 47
+        },
+        {
+            "id": 3,
+            "pos": [635, 675],
+            "img_name": "papillon.svg",
+            "title": "Reproduction",
+            "subtitle": "3",
+            "text": [
+                "Ah, la reproduction, toute une histoire ! En tant que femelle Azuré de la pulmonaire, je commence par pondre mes œufs sur les fleurs de ma plante hôte, la Gentiane pneumonanthe. Mes petites chenilles passent leurs premières étapes tranquillement dans les fleurs, mais attention, au quatrième stade, elles se lâchent et tombent à terre ! C’est là que la magie opère : elles doivent absolument trouver une fourmilière de Myrmica scabrinodis, à quelques mètres de là, pour croiser une ouvrière. Si elles ont de la chance, c'est la fête !",
+                "Une fois dans la fourmilière, elles continuent leur chemin : certaines chenilles y restent jusqu’à dix mois avant de devenir papillons l’année suivante, tandis que d’autres patientent encore un an. Un vrai parcours atypique !"
+            ],
+            "pos_img": 50,
+            "icon_pos": 47
+        },
+        {
+            "id": 4,
+            "pos": [435, 775],
+            "img_name": "papillon.svg",
+            "title": "Réchauffement climatique",
+            "subtitle": "4",
+            "text": [
+                "Bon, on doit parler d’un problème sérieux : le réchauffement climatique. Avant, je pouvais me développer dans ce milieu mais avec les périodes de fortes sécheresse, les conditions deviennent de plus en plus difficiles pour nous, les habitants des milieux humides. Ma plante hôte, la gentiane pneumonanthe, essaie de s’adapter en décalant sa floraison, mais même ça, ça ne suffit plus face à la sécheresse.",
+                "De mon côté, ça complique bien les choses aussi. Ma période d’émergence est décalée, et surtout, le nombre d’œufs pondus augmente, ce qui crée de la concurrence pour la nourriture. Les fourmis peinent à s’occuper de toutes mes chenilles, et ça peut finir par épuiser toute la colonie. Pas très fun pour ma survie…"
+                
+            ],
+            "pos_img": 50,
+            "icon_pos": 47
+        },
+        {
+            "id": 5,
+            "pos": [535, 775],
+            "img_name": "papillon.svg",
+            "title": "Agriculture intensive",
+            "subtitle": "5",
+            "text": [
+                "Vous savez, je suis un papillon plutôt sensible aux changements dans mon environnement et je vais être honnête avec vous : l’agriculture intensive n’est vraiment pas mon alliée. D’abord, elle fait disparaître mes précieux habitats, comme les zones humides où je trouve ma plante hôte. Et quand ces zones sont remplacées par des champs ou des constructions, eh bien, je suis un peu dans l’impasse.",
+                "Ajoutez à ça l’assèchement des prairies, les enrésinements et les pratiques agricoles agressives comme les fauches trop tôt ou trop souvent, vous obtenez un habitat fragmenté et difficile à vivre. Sans oublier l’épandage d’engrais qui pollue tout ça… Résultat : je me retrouve à chercher un peu d’espace pour vivre, mais ce n’est pas gagné !"
+            ],
+            "pos_img": 50,
+            "icon_pos": 47
+        },
+        {
+            "id": 6,
+            "pos": [635, 775],
+            "img_name": "papillon.svg",
+            "title": "Réserve naturelle du Pinail",
+            "subtitle": "6",
+            "text": [
+                "La Réserve Naturelle du Pinail, c’est un peu mon petit cocon ! Située à Vouneuil-sur-Vienne (86), c’est un endroit parfait pour moi avec ses prairies humides, ses landes et surtout ma plante hôte. Ici, l’équipe de GEREPI prend bien soin de mes fleurs et de mes œufs, et grâce aux interventions régulières, ma gentiane peut fleurir tranquillement. Et le top, c’est qu’il y a des fourmis, comme Myrmica scabrinodis, prêtes à m’accueillir pour que mes petites chenilles grandissent bien. Bon, les sécheresses compliquent un peu les choses, mais pour l’instant, je me sens bien ici."
+            ],
+            "pos_img": 50,
+            "icon_pos": 47
+        }
+    ],
+    "Tortue":[
+        {
+            "id": 1,
+            "pos": [435, 675],
+            "img_name": "tortue.svg",
+            "title": "Carte d’identité",
+            "subtitle": "1",
+            "text": [
+                "Tu veux en savoir plus sur moi ? Regarde ma carapace : ovale, brun-noir, avec des motifs jaunes, un vrai chef-d’œuvre de la nature ! Avec mes pattes palmées, je nage comme un poisson et je creuse comme une pro. Les mâles, toujours un peu tape-à-l’œil, ont des yeux rouges, mais nous, les femelles, on préfère le jaune.",
+                "J’habite les marais tranquilles, parfaits pour nager, bronzer, et pondre mes œufs. Mais ces petits coins de paradis disparaissent… Envie de découvrir les dessous de mes sanctuaires ? Suivez-moi !"
+            ],
+            "pos_img": 30,
+            "icon_pos": 47
+        },
+        {
+            "id": 2,
+            "pos": [535, 675],
+            "img_name": "tortue.svg",
+            "title": "Alimentation",
+            "subtitle": "2",
+            "text": [
+                "Curieux de connaître mes mets préférés ? Préparez-vous à être surpris. Je préfère les insectes croquants, les escargots juteux, les limaces bien dodues, sans oublier les poissons, sangsues et autres petites créatures aquatiques. Et ça, c’est juste pour l’entrée !",
+                "En réalité, mon régime varie selon mon âge et les saisons. Quand je suis en pleine croissance ou en période de reproduction, je me régale surtout de protéines animales : têtards, mollusques, crustacés… En vieillissant, je deviens plus flexitarien : je grignote des plantes aquatiques pour équilibrer mon assiette. En résumé, mon estomac de tortue est un peu tordu."
+            ],
+            "pos_img": 30,
+            "icon_pos": 47
+        },
+        {
+            "id": 3,
+            "pos": [635, 675],
+            "img_name": "tortue.svg",
+            "title": "Reproduction",
+            "subtitle": "3",
+            "text": [
+                "Se reproduire chez les cistudes, c’est tout un art ! Entre mai et juillet, c’est le moment pour moi de chercher le spot parfait : un sol sableux, bien exposé au soleil et surtout assez éloigné de l’eau pour éviter les petits curieux ou prédateurs. Une fois trouvé, je creuse un trou avec mes griffes expertes et y dépose en moyenne 8 à 9 œufs.",
+                "Ensuite, je laisse la nature faire son travail. Mais soyons honnêtes, c’est un vrai défi d’atteindre l’âge adulte. Seul 1 petit sur 100 réussira à grandir jusqu’à la maturité. Il faut s’armer de patience, chez nous, elle arrive entre 8 et 12 ans, selon les régions."
+            ],
+            "pos_img": 30,
+            "icon_pos": 47
+        },
+        {
+            "id": 4,
+            "pos": [435, 775],
+            "img_name": "tortue.svg",
+            "title": "Prédation",
+            "subtitle": "4",
+            "text": [
+                "Aujourd’hui, il y a une chose qui me donne vraiment la chair de poule (ou plutôt… d’écaille) : la prédation. Avec la dégradation de nos marais, mes petits ont moins d’endroits où se cacher, et mes nids sont plus faciles à trouver. Renards, sangliers, blaireaux, rats… la liste des invités non désirés est longue.",
+                "Sans oublier que mes bébés, avec leur carapace encore molle, sont une cible facile. Le pire, c’est que les bons spots pour pondre se font rares. Alors, toutes les mamans tortues se retrouvent à pondre au même endroit, ce qui rend les nids encore plus vulnérables."
+                
+            ],
+            "pos_img": 30,
+            "icon_pos": 47
+        },
+        {
+            "id": 5,
+            "pos": [535, 775],
+            "img_name": "tortue.svg",
+            "title": "Mécanisation de l’agriculture",
+            "subtitle": "5",
+            "text": [
+                "Vous savez, vivre dans un marais, à proximité des champs agricoles, c’était autrefois un vrai paradis. Mais vos activités compliquent sérieusement la donne. L’intensification agricole et la pisciculture abîment mes zones de vie : moins de végétation aquatique pour me cacher, destruction de mes pontes par vos machines, et pollution par des produits chimiques comme les pesticides ou les métaux lourds.",
+                "Et ce n’est pas juste désagréable. Ces contaminants sont susceptibles de perturber nos hormones, d’affaiblir nos défenses, et de rendre la reproduction difficile. On parle souvent des grands dangers visibles, mais ces petites molécules invisibles causent des dégâts silencieux et tout aussi graves."
+            ],
+            "pos_img": 30,
+            "icon_pos": 47
+        },
+        {
+            "id": 6,
+            "pos": [635, 775],
+            "img_name": "tortue.svg",
+            "title": "Réserve naturelle de Chérine",
+            "subtitle": "6",
+            "text": [
+                "Ici, dans la réserve naturelle de Chérine, les humains sont passés à l’action. Grâce à une gestion soignée et à des mesures ciblées, je peux enfin prospérer : des étangs propres, des plantes aquatiques pour me cacher et des coins tranquilles pour pondre mes œufs.",
+                "Mais ce n’est pas tout. Ils ne se contentent pas de m’observer ; ils comptent chacun de mes congénères grâce à une méthode appelée Capture-Marquage-Recapture (CMR). C’est un peu comme un recensement, mais pour les tortues ! Cela permet d’estimer la taille de notre population et d’agir en conséquence.",
+                "Ils ont aussi pensé à protéger mes précieux nids : une fois localisés, ces derniers sont sécurisés avec des grillages et des cages qui dissuadent les prédateurs comme le renard."
+            ],
+            "pos_img": 30,
+            "icon_pos": 47
+        }
+    ]
+}

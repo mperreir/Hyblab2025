@@ -1,0 +1,131 @@
+.map_container {
+    width: 100%;
+    max-width: 45vh;
+    aspect-ratio: 1 / 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+}
+
+.regions_map {
+    height: 100%;
+    width: 100%;
+}
+
+.animals_list {
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.animals_list .Loutre {
+    position: absolute;
+    bottom: 51%;
+    left: 36%;
+
+}
+
+.animals_list .Tortue {
+    position: absolute;
+    bottom: 38%;
+    left: 61%;
+}
+
+.animals_list .Crapaud {
+    position: absolute;
+    bottom: 67%;
+    left: 58%;
+}
+
+.animals_list .Papillon {
+    position: absolute;
+    left: 37%;
+    bottom: 25%;
+}
+
+.animals_list .Anguille {
+    position: absolute;
+    left: 15%;
+    bottom: 30%;
+}
+
+.animals_list .Anguille.selected::after {
+    transform: scale(1) translateY(-10%); /* Fix the slight offset due to anguilla's shape */
+}
+
+.animal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    transition: all .1s ease;
+    max-width: 23%;
+}
+
+.animal:hover {
+    cursor: pointer;
+}
+
+.animal::after {
+    content: '';
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 100%;
+    background: radial-gradient(green 0%, transparent 70%);
+    position: absolute;
+    transform: scale(0);
+    transition: transform ease .25s;
+    z-index: -1;
+}
+
+.animal.selected::after {
+    transform: scale(1);
+}
+
+.animal img {
+    width: 100%;
+}
+
+.background_square {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    
+    opacity: 0;
+    transform: scale(0.6), opacity(0.8);
+
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.background_square.bright {
+    transform: rotateZ(17deg);
+    background-color: #EFD8B8;
+    transition-delay: 0.1s; /* Adjust this delay as needed */
+
+}
+
+.background_square.dark {
+    transform: rotateZ(14deg);
+    background-color: #C9B69B;
+}
+
+.background_square.tilted {
+    transform: rotateZ(15deg);
+}
+
+.background_square.bright.animate {
+    opacity: 1;
+    transform: scale(1) rotateZ(0deg); /* Final state for scale and rotation */
+}
+
+.background_square.dark.animate {
+    opacity: 1;
+    transform: scale(1) rotateZ(-4deg); /* Final state for scale and rotation */
+}

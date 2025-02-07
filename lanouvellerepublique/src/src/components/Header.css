@@ -1,0 +1,39 @@
+.header {
+    position: absolute;
+    top: 0;
+    margin: 0;
+    width: 100%;
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    z-index: 10;
+}
+
+.back-button {
+    margin: 0 10px;
+}
+
+.back-button:hover {
+    cursor: pointer;
+}
+
+.burger-button {
+    position: absolute;
+    right: 20px;
+    transform: scale(1.5);
+}
+
+.burger-button:hover {
+    cursor: pointer;
+}
+
+.header .title {
+    cursor: default;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) scale(1.3);
+}

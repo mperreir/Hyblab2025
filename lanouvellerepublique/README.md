@@ -1,30 +1,50 @@
 # Descriptif du projet
 
-Porteur de projet :
+Porteur de projet : La Nouvelle République
 
-Sujet :
+Sujet : Nos animaux en danger sur nos territoires
 
-Nom d'équipe :
+Nom d'équipe : Dans leur peau
 
 Participants : 
 
-- AGR :
-- Polytech :  
-- SciencesPo : 
+- AGR : Antoine Clavier
+- Polytech : Julien Chatry / Baptiste Josso / Evan Josso / Ulysse Lopez / Christian Soh
+- SciencesPo : Zoé Diraison / Juliette Rigaud
 
+# Guide de construction du projet + déploiement
 
+```bash
+# Se placer dans le dossier du projet
+cd src
+```
 
-## A supprimer
+## Installation des dépendances
 
-Ces instructions ne sont la que pour vous guider dans le développement de vos pages web. Elles seront à supprimer pour la soumission finale de votre code.
+```bash
+npm install
+```
 
-Le dossier de votre projet contient un squelette de code que vous devez modifier. 
+## Construction
+```bash
+# Construire l'application pour la production
+npm run build
+```
 
-- La partie `serveur.js`  ne doit a priori pas être touchée, si vous avez des entrées d'API à ajouter il faudra le faire dans le dossier `api`.
-- Le dossier `public`  contient la partie statique de votre site. Par défaut le fichier index.html charge un fichier `style.css` qui est destiné au format mobile (portrait). Si votre porteur de projet demande un site desktop, vous pouvez vous baser sur l'exemple `index-desktop.html` et le CSS associé `style-desktop.css` qui propose une page au format paysage.
+## Prévisualisation
+```bash
+# Prévisualiser l'application construite
+npm run preview
+```
 
+## Vider le dossier public 
 
+- Supprimez le contenu du dossier /lanouvellerepublique/public
+```bash
+rm -rf  ../public/*
+```
 
-## Instructions de déploiement
-
-Si votre projet nécessite des instructions spécifiques pour son déploiement, merci d'ajouter des explications ici.
+## Copier les fichiers construits dans public
+```bash
+cp -r ./dist/* ../public/
+```
