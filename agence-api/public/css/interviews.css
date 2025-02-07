@@ -1,0 +1,108 @@
+/* 基本页面样式 */
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7; /* 浅灰色背景 */
+  color: #444; /* 深灰色文字 */
+}
+
+header {
+  background-color: #d9eafc; /* 浅蓝色背景 */
+  color: #333; /* 深灰色文字 */
+  text-align: center;
+  padding: 15px 0;
+  font-size: 1.5em;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+header h1 {
+  margin: 0;
+}
+
+main {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+/* 卡片样式 */
+.category-card {
+  width: 90%;
+  max-width: 600px;
+  background: #ffffff; /* 白色卡片 */
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* 浅阴影 */
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* 悬停加深阴影 */
+  background-color: #eef7ff; /* 悬停时卡片浅蓝色 */
+}
+
+.category-card h2 {
+  color: #4a90e2; /* 浅蓝色标题 */
+  margin: 0 0 10px;
+  font-size: 1.2em;
+  text-transform: uppercase;
+}
+
+.category-card p {
+  margin: 10px 0;
+  font-size: 0.9em;
+  color: #666; /* 浅灰色文字 */
+}
+
+/* 按钮样式 */
+.category-card a.button {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #d9eafc; /* 按钮初始浅蓝色 */
+  color: #333; /* 深灰色文字 */
+  text-decoration: none;
+  border-radius: 25px;
+  font-size: 0.9em;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.category-card a.button:hover {
+  background-color: #c0dcf9; /* 按钮悬停更浅的蓝色 */
+  color: #222; /* 悬停时更深的灰色 */
+}
+
+footer {
+  margin-top: 30px;
+  text-align: center;
+}
+
+footer a.button {
+  text-decoration: none;
+  color: #4a90e2; /* 浅蓝色文字 */
+  padding: 10px;
+  font-size: 1em;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+footer a.button:hover {
+  color: #2d78c8; /* 悬停时更深的蓝色 */
+}
+
+/* 移动设备优化 */
+@media (max-width: 768px) {
+  .category-card {
+      width: 95%;
+  }
+
+  header {
+      font-size: 1.3em;
+  }
+}

@@ -1,0 +1,34 @@
+/* Default Theme */
+:root {
+    --bg-color: #1d1d1d;
+    --API-text-color: #FFFF;
+    --user-text-color: #1d1d1d;
+    --API-color: #484848;
+    --user-color: #FFFF;
+    --api-img: url('../img/icons/APIstory-normal.png');
+  }
+  
+  /* Tech Theme - Blue */
+  .theme-tech {
+    --user-text-color: #FFFF;
+    --user-color: #4854d4;
+    --accent-color: rgba(69, 84, 220, 0.8);
+    --api-img: url('../img/tech/API-Tech.png');
+  }
+  
+  /* Agro Theme - Green */
+  .theme-agro {
+    --user-text-color: #FFFF;
+    --user-color: #edb401;
+    --accent-color: rgba(248, 177, 0, 0.8);
+    --api-img: url('../img/agro/API-Agro.png');
+  }
+  
+  /* Arti Theme - Yellow */
+  .theme-arti {
+    --user-text-color: #1d1d1d;
+    --user-color: #fba6b8;
+    --accent-color: rgba(255, 161, 184, 0.8);
+    --api-img: url('../img/arti/API-Artisanat.png');
+  }
+  

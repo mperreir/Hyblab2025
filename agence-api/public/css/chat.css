@@ -1,0 +1,322 @@
+/*------------------------ Partie messages ------------------*/
+
+/* Styles pour la deuxième diapositive (chat.html) */
+#second-slide {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+/* Assurer que #content-chat occupe tout l'espace restant */
+#content-chat {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.chat-container {
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color);
+    border-radius: 0px;
+    /*arrondir angles*/
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.chat-box {
+    flex: 1;
+    padding: 15px;
+    overflow-y: scroll; /* Ensure the content can be scrolled */
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+}
+
+.chat-box::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Opera */
+}
+
+/*------color-text-API-------------------------*/
+
+#messageList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Style des messages */
+.message {
+    display: flex; /*inline for colors*/
+    max-width: 75%;
+    padding: 12px 18px;
+    margin: 2px 0;
+    /*espacement entre les messages*/
+    border-radius: 20px;
+    font-size: 16px;
+    line-height: 1.4;
+    word-wrap: break-word;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+    /* Smooth effect */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Add the animation for the info class */
+.message.info {
+    animation: pulse 1.5s infinite ease-in-out;
+    margin-top: 10px;
+    display: inline-block;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.answer.useless {
+    animation: pulse 1.5s infinite ease-in-out;
+    transition: transform 0.2s ease;
+}
+
+@keyframes tapBounce {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0.95);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.message.info:active {
+    animation: tapBounce 0.2s ease-in-out;
+}
+
+/* Define the pulse animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    50% {
+        transform: scale(1.02);
+        /* Slightly enlarge */
+        box-shadow:
+            0 4px 10px rgba(0, 0, 0, 0.2),
+            /* Original shadow */
+            0 0 15px 2px var(--accent-color);
+        /* glow */
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+}
+
+.message.info svg {
+    /* background-color: var(--bg-color); */
+    position: absolute;
+    right: -3px;
+    top: 1%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    margin-bottom: 10px;
+}
+
+#svg-container svg {
+    background: radial-gradient(circle at center, var(--bg-color) 60%, transparent 40%);
+  }
+
+.message.theme-tech {
+    background: var(--user-color);
+    color: var(--user-text-color);
+}
+
+.message.theme-agro {
+    background: var(--user-color);
+    color: var(--user-text-color);
+}
+
+.message.theme-arti {
+    background: var(--user-color);
+    color: var(--user-text-color);
+}
+
+.message.first {
+    margin-top: 20px;
+    border-radius: 20px 20px 20px 5px;
+}
+
+.message.middle {
+    border-radius: 20px;
+}
+
+.message.last {
+    margin-bottom: 20px;
+    border-radius: 5px 20px 20px 20px;
+}
+
+.message img {
+    width: 200px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.message.info img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Messages envoyés */
+.sent {
+    background: var(--user-color);
+    color: var(--user-text-color);
+    align-self: flex-end;
+    margin: 20px 0;
+}
+
+/* Messages reçus */
+.received {
+    background: var(--API-color);
+    align-self: flex-start;
+    color: var(--API-text-color);
+}
+
+
+#answers-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px 0px;
+    font-size: medium;
+}
+
+.answer {
+    padding: 10px 20px;
+    margin-left: 30px;
+    border: 2px solid gray;
+    border-radius: 20px;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    background-color: gray;
+    color: #1D1D1D;
+}
+
+.answer.first {
+    border-radius: 20px 20px 0px 20px;
+}
+
+.answer.middle {
+    border-radius: 0px;
+}
+
+.answer.last {
+    border-radius: 0px 20px 20px 20px;
+}
+
+.answer.selected {
+    border-color: var(--accent-color);
+    background-color: var(--user-color);
+    color: var(--user-text-color);
+}
+
+#confirm-button {
+    padding: 10px 20px;
+    cursor: not-allowed;
+    width: auto;
+    margin-left: 30px;
+}
+
+#confirm-button:enabled {
+    cursor: pointer;
+    /* background-color: blue; */
+    /* color: white; */
+}
+
+#confirm-button:disabled {
+    cursor: pointer;
+    background-color: #1D1D1D;
+    color: white;
+    border: 2px solid gray;
+}
+
+.chat-input {
+    display: flex;
+    padding: 15px;
+    background: var(--bg-color);
+    border-top: 2px solid #ddd;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    outline: none;
+    font-size: 16px;
+}
+
+.chat-input button {
+    margin-left: 10px;
+    padding: 12px 20px;
+    border: none;
+    /* background: #007bff; */
+    /* color: #fff; */
+    /* border-radius: 20px; */
+    cursor: pointer;
+    font-size: 16px;
+    background-image: url('../img/icons/send.png');
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.chat-input button:hover {
+    background: #FFFF;
+}
+
+/* Tap icon */
+#tapIcon {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 70px;
+    height: 70px;
+    background: url('../img/icons/tap.png') no-repeat center center;
+    /* Replace with your icon */
+    background-size: contain;
+    animation: click-effect 1s infinite ease-in-out;
+}
+
+@keyframes click-effect {
+
+    0%,
+    100% {
+        transform: scale(1);
+        /* Normal size */
+    }
+
+    50% {
+        transform: scale(0.9);
+        /* Shrink slightly */
+    }
+}
+
+#seeResultsButton {
+    width: 100%;
+}
