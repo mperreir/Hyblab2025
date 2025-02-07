@@ -13,14 +13,9 @@ const api = require('./api/api');
 app.use('/api', api);
 
 // Minimum routing: serve static content from the html directory
-// app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'frontend/build')));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, '../__common-logos__')));
 
-// Catch-all route pour les routes React (SPA)
-app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "frontend/build", "index.html"));
-});
 
 // You can then add whatever routing code you need
 

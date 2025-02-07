@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/lavoixdunord/static/css/main.915d1a40.css",
+    "main.js": "/lavoixdunord/static/js/main.9639431e.js",
+    "static/js/488.01d897a5.chunk.js": "/lavoixdunord/static/js/488.01d897a5.chunk.js",
+    "static/media/test1.mp3": "/lavoixdunord/static/media/test1.a35675a335f48cd62e3a.mp3",
+    "static/media/animation_logo.gif": "/lavoixdunord/static/media/animation_logo.5faf7a7a2d63c0479a97.gif",
+    "static/media/arbre2.gif": "/lavoixdunord/static/media/arbre2.be7408bc6c3b1ade7fa0.gif",
+    "static/media/bootstrap-icons.woff?": "/lavoixdunord/static/media/bootstrap-icons.39795c0b4513de014cf8.woff",
+    "static/media/bootstrap-icons.woff2?": "/lavoixdunord/static/media/bootstrap-icons.b7bcc075b395c14ce8c2.woff2",
+    "static/media/rightanswer.mp3": "/lavoixdunord/static/media/rightanswer.236ed6ffbf479892427b.mp3",
+    "static/media/wronganswer.mp3": "/lavoixdunord/static/media/wronganswer.836d44bdeb10a3b2315b.mp3",
+    "index.html": "/lavoixdunord/index.html",
+    "main.915d1a40.css.map": "/lavoixdunord/static/css/main.915d1a40.css.map",
+    "main.9639431e.js.map": "/lavoixdunord/static/js/main.9639431e.js.map",
+    "488.01d897a5.chunk.js.map": "/lavoixdunord/static/js/488.01d897a5.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.915d1a40.css",
+    "static/js/main.9639431e.js"
+  ]
+}
