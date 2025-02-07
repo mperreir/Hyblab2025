@@ -1,0 +1,61 @@
+@keyframes fadeIn {
+    from {
+    opacity: 0;
+    }
+    to {
+    opacity: 1;
+    }
+}
+
+.popup {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: radial-gradient(182.51% 182.51% at 50% 50%, #EFD8B8 0%, #897C69 100%);
+    padding: 20px;
+    color: black;
+    animation: fadeIn 0.5s ease-out; /* Apply fade-in animation */
+}
+
+.popup .popup-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.popup h2 {
+    max-width: 60%;
+}
+
+.popup h2 span {
+    color:  #127039;
+}
+
+.popup .controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 80%;
+    margin-top: 20px;
+}
+
+.popup .controls a {
+    background-color: #127039;
+    padding: 20px;
+    color: white;
+    cursor: pointer;
+    clip-path: polygon(15px 0, 100% 9%, 100% 100%, 0% 100%);
+    width: 40%;
+}
+
+.popup .articles {
+    color: black;
+    margin-top: 20px;
+}

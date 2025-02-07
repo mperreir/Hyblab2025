@@ -1,10 +1,11 @@
 import './AnimalInfo.css';
 import { useNavigate } from "react-router-dom";
 
+// Small popup that appears beneath the regions map when an animal is clicked
 function AnimalInfo({ animal }) {
     const navigate = useNavigate();
 
-    const displayedAnimal = animal ?? {};
+    const displayedAnimal = animal ?? {}; // Set to none by default
     
     const goToMap = () => {
         const param = displayedAnimal.name;
