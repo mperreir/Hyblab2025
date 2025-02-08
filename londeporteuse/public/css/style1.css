@@ -543,6 +543,7 @@ footer {
 #modal-description {
     margin: 20px 0;
     font-weight: 300;
+    text-align: justify;
 }
   
 /* Animation d'apparition */
@@ -683,4 +684,73 @@ input[type="range"]::-webkit-slider-thumb {
   font-size: 18px;
   font-weight: bold;
   color: #333;
+}
+
+/* Lien interactif pour les sources */
+.toggle-link {
+  display: block;
+  margin-top: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.85rem;
+  text-align: center;
+  color: black;
+  text-decoration: underline;
+  font-weight: bold;
+  margin: 5px auto;
+}
+
+/* Contenu caché par défaut */
+.ia-details {
+  display: none;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #f4f4f4;
+  border-left: 4px solid #32D2C3;
+}
+
+/* Classe pour afficher la section */
+.ia-details.show {
+  display: block;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Animation d'apparition */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-10px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+
+/* Style par défaut de la section sources */
+.sources-section {
+  background-color: #f0f0f0;
+  padding: 5px;
+  margin-top: 10%;
+  text-align: center;
+  transition: background-color 0.5s ease-in-out, padding 0.5s ease-in-out;
+  max-height: 50px;
+  overflow: hidden;
+}
+
+/* Quand la section est active, le fond devient blanc et la taille augmente */
+.sources-section.active {
+  background-color: white;
+  max-height: 600px;
+  padding: 10px;
+  margin-bottom: 10%;
+}
+
+/* Style du texte des sources pour qu'il soit noir et uniforme */
+.sources-section .ia-details {
+  color: black;
+  font-size: 1rem;
+  text-align: left;
+  padding-top: 10px;
 }
