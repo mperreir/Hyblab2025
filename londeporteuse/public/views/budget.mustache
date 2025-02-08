@@ -4,7 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style1.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
     <script src="js/choices.js" defer></script>
+    <script src="js/budget.js" defer></script>
     <title>Budget du Festival</title>
   </head>
   <body>
@@ -38,28 +40,14 @@
           <section class="content">
             <p class="content-title" style="text-align:center">{{ festivalDescription1 }} {{ festivalSize }}. {{ festivalDescription2 }}</p>
           </section>
-          
-          <!-- Diagramme en bandes -->
-          <section class="content" id="budget-chart">
-            <p class="content-title">€ {{ budget.chartTitle }}</p>
-            <div class="chart-bars">
-              {{#budgetChart}}
-              <div class="bar {{ className }}" style="width: {{ percentage }}%;">{{ percentage }}%</div>
-              {{/budgetChart}}
+
+          <section class="content">
+            <h2 class="content-title">Répartition du budget</h2>
+            <div class="chart-container">
+              <canvas id="budgetChart"></canvas>
             </div>
-            <!-- Légende -->
-            <ul class="chart-legend">
-              {{#chartLegend}}
-              <li>
-                <span class="legend-color {{ className }}"></span>
-                <div>
-                  <p class="legend-title">{{ title }}</p>
-                  <p class="question-info">{{ details }}</p>
-                </div>
-              </li>
-              {{/chartLegend}}
-            </ul>
           </section>
+        </section>
   
           <!-- Informations supplémentaires -->
           <section class="content">
