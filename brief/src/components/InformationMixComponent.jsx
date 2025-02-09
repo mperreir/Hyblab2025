@@ -193,15 +193,12 @@ const InformationMixComponent = () => {
                     </StyledButton>
                   </Box>
                 )}
-              </Box>
-            ))}
-          </SwipeableViews>
-          {(activeIndex < sources.length - 1) && (
+                 {(activeIndex < sources.length - 1) && (
             <IconButton
               sx={{
                 position: "absolute",
-                right: 240,
-                top: "105%",
+                right: 0,
+                top: "55%",
                 transform: "translateY(-50%)",
               }}
               onClick={activeIndex < sources.length - 1 ? handleNext1 : handleNext2}
@@ -209,6 +206,10 @@ const InformationMixComponent = () => {
               <ArrowForwardIcon />
             </IconButton>
           )}
+              </Box>
+            ))}
+          </SwipeableViews>
+         
         </>
       ) : (
         <>
@@ -319,15 +320,12 @@ const InformationMixComponent = () => {
                     <StyledButton onClick={handleClick}>Suivant</StyledButton>
                   </Box>
                 )}
-              </Box>
-            ))}
-          </SwipeableViews>
-          {( activeNewIndex < electricityMix.length - 1) && (
+                  {( activeNewIndex < electricityMix.length - 1) && (
             <IconButton
               sx={{
                 position: "absolute",
-                right: 240,
-                top: "125%",
+                right: 0,
+                top: "55%",
                 transform: "translateY(-50%)",
               }}
               onClick={ handleNext2}
@@ -335,6 +333,10 @@ const InformationMixComponent = () => {
               <ArrowForwardIcon />
             </IconButton>
           )}
+              </Box>
+            ))}
+          </SwipeableViews>
+        
         </>
       )}
     </Container>
