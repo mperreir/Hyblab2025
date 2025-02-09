@@ -29,7 +29,6 @@ main {
     flex: 1;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    padding-bottom: 80px;  /* Added padding to main content */
     width: 100%;
 }
 
@@ -56,7 +55,6 @@ main > div {
     display: flex;
     flex-direction: column;
     background-color: white;
-    padding-bottom: 80px;  /* Added padding to scrollable container */
 }
 
 #page_scrollable_container::-webkit-scrollbar {
@@ -151,12 +149,10 @@ main > div {
     justify-content: center;
     padding: 25px 0;
     background-color: white;
-    margin-bottom: 80px;  /* Added margin to container as well */
-    padding-bottom: 20px; /* Extra padding for safety */
 }
 
 .btn-validate, .btn-next {
-    margin-bottom: 80px;  /* Added significant bottom margin */
+    margin-bottom: 20px;  /* Added significant bottom margin */
     position: relative;   /* Ensure proper stacking */
     z-index: 1;          /* Make sure button stays above other elements */
 }
@@ -736,14 +732,6 @@ input[type="range"]::-webkit-slider-thumb {
     
     body {
         font-size: 14px;
-    }
-    
-    .btn-validate, .btn-next {
-        margin-bottom: 100px;  /* Even more margin for shorter screens */
-    }
-    
-    .button-container {
-        margin-bottom: 100px;
     }
 }
 
