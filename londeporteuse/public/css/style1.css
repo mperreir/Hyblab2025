@@ -1,29 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
+*{
+  padding:0;
+  margin:0;
+}
+
 /* Mise en forme de la page */
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
     background-color: #121212;
     font-family: 'Noto Sans', serif;
     color: white;
+    overflow: hidden;
 }
 
 #app-container {
-    width: 100%;  /* Changed from fixed width */
-    height: 100vh;
-    max-width: 100%;  /* Ensures it doesn't overflow viewport */
-    max-height: 100vh;
+    width: calc(100 * 3vh / 4);  /* Changed from fixed width */
+    height: 100%;
+    
     background-color: white;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    position: relative;
-    border-radius: 0;  /* Removed border radius for full-screen feel */
+    position: fixed;
+    margin-left: calc((100vw - 100 * 3vh / 4) / 2);
 }
 
 main {
@@ -50,10 +49,6 @@ main > div {
 }
 
 #page_scrollable_container {
-    width: 390px; 
-    height: 700px;
-    max-width: 100%;
-    max-height: 100vh;
     overflow-y: scroll; /* Active le défilement vertical */
     scrollbar-width: none; /* Masque la barre de défilement pour Firefox */
     -ms-overflow-style: none; /* Masque la barre pour IE et Edge */
@@ -196,6 +191,7 @@ main > div {
     background-color: #32D2C3;
     box-shadow: 0px 6px 12px rgba(0, 235, 30, 0.5);
   }  
+
 
 /* Header */
 header {
@@ -605,27 +601,7 @@ footer {
   z-index: 2;
 }
   
-/* Responsive Design */
-@media (max-width: 768px) {
-    #app-container {
-        width: 360px;
-        height: 680px;
-    }
 
-    header .btn-en-savoir-plus {
-        padding: 5px 12px;
-        font-size: 11px;
-    }
-
-    .btn-create-event {
-        font-size: 13px;
-        padding: 10px 16px;
-    }
-
-    .banner h1 {
-        font-size: 0.5rem;
-    }
-}
 
 
 #dynamic-text {
@@ -641,14 +617,7 @@ footer {
   }
 
   
-/* For larger screens, constrain the width to maintain mobile layout */
-@media (min-width: 768px) {
-    #app-container {
-        width: 390px;
-        height: 800px;
-        border-radius: 15px;  /* Restore border radius for desktop view */
-    }
-}
+
 
 
 /**************************Here some of my codes (Ach)**********************/
@@ -684,3 +653,82 @@ input[type="range"]::-webkit-slider-thumb {
   font-weight: bold;
   color: #333;
 }
+
+
+/* Fill the whole viewport when its aspect ratio is between 9/16 and 3/4 */
+@media screen and (max-aspect-ratio: 3/4) {
+  #app-container{
+      margin-left: 0; /* reset margin-left */
+      width: 100vw; /* content is full width (and full height because of the default rule for container height */
+  }
+
+  /* We set a default font size here. It will be the base for all other font sizes */
+  /* Here the font size is proportional to content width */
+  body{
+      font-size: 15vw;
+  }
+}
+
+/* The content is displayed at 9/16 If the aspect ratio is higher that 9/16  */ 
+/* For standard mobile devices (portrait) */
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    #app-container {
+        width: 100vw;
+        height: 100vh;
+    }
+    
+    body {
+        font-size: 15px;
+    }
+}
+
+/* For larger phones */
+@media screen and (min-width: 375px) and (max-width: 428px) {
+    #app-container {
+        width: 100vw;
+        height: 100vh;
+    }
+}
+
+/* For tablets (portrait) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    #app-container {
+        width: 390px;
+        height: 100vh;
+        margin-left: calc((100vw - 390px) / 2);
+    }
+}
+
+/* For desktop */
+@media screen and (min-width: 1025px) {
+    #app-container {
+        width: 390px;
+        height: 85vh;
+        min-height: 700px;
+        max-height: 900px;
+        margin-left: calc((100vw - 390px) / 2);
+    }
+}
+
+/* For very tall screens (like iPhone 12 Pro Max) */
+@media screen and (min-height: 800px) and (max-width: 428px) {
+    #app-container {
+        height: 100vh;
+    }
+}
+
+/* For shorter screens */
+@media screen and (max-height: 667px) {
+    #app-container {
+        height: 100vh;
+    }
+    
+    body {
+        font-size: 14px;
+    }
+}
+
+/* Remove the old aspect ratio queries that were causing wrapping */
+/* @media screen and (max-aspect-ratio: 9/16) { ... } */
+
+

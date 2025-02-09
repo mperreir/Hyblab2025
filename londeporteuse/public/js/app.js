@@ -1,9 +1,9 @@
   // Store user choices
   const userChoices = {
-    festivalSizes: null,
-    ecologicalActions: null,
-    culturalMediationActions: null,
-    riskPreventionActions: null,
+    festivalSizes: getQueryParam("festivalSize") ?? null,
+    ecologicalActions: getQueryParam("ecologicalActions") ?? null,
+    culturalMediationActions: getQueryParam("culturalMediationActions") ?? null,
+    riskPreventionActions: getQueryParam("riskPreventionActions") ?? null,
     ticketPrice: null,
   };
 
@@ -50,7 +50,7 @@ async function submitChoices() {
       console.log('Submission successful:', data);
   
       // Redirect or show confirmation message if needed
-      const budgetPageUrl = `/londeporteuse/budget?initialBudget=${data.totalCost}&ticketPrice=${data.averageTicketPrice}&festivalSize=${data.festivalSize}`;
+      const budgetPageUrl = `/londeporteuse/budget?initialBudget=${data.totalCost}&ticketPrice=${data.averageTicketPrice}&festivalSize=${data.festivalSize}&ecologicalActions=${data.ecologicalActions}&culturalMediationActions=${data.culturalMediationActions}&riskPreventionActions=${data.riskPreventionActions}`;
       window.location.href = budgetPageUrl;
 
       // Update the UI
@@ -129,6 +129,23 @@ function initTicketPriceSlider() {
       alert('Une erreur est survenue lors de la soumission.');
     }
   }
+
+  function preselectUserChoices() {
+    Object.keys(userChoices).forEach(category => {
+        const selectedId = userChoices[category];
+        if (selectedId) {
+          console.log(selectedId)
+            const element = document.querySelector(`.choice-section [data-id="${selectedId}"][category="${category}"] `);
+            console.log(element)
+            if (element) {
+                selectOption(category, selectedId, element);
+            }
+        }
+    });
+}
+
+// Run preselection logic when the page loads
+document.addEventListener("DOMContentLoaded", preselectUserChoices);
   
 
 // Lancer l'initialisation au chargement de la page

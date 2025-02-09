@@ -5,7 +5,7 @@
     "chartTitle": "Comment est composé mon budget ?"
   },
   "ticketPrice": "XX",
-  "festivalDescription1": "J’ai choisi de faire un festival",
+  "festivalDescription1": "J’ai choisi de faire",
   "festivalDescription2": "Voici comment se compose mon budget.",
   "budgetChart": [
     { "className": "bar-recettes", "percentage": "52.3" },

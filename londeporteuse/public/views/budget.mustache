@@ -36,7 +36,7 @@
           
           <!-- Description du festival -->
           <section class="content">
-            <p class="content-title" style="text-align:center">{{ festivalDescription1 }} {{ festivalSize }}. {{ festivalDescription2 }}</p>
+            <p class="content-title" style="text-align:center">{{ festivalDescription1 }} {{ festivalSizeLabel }}. {{ festivalDescription2 }}</p>
           </section>
           
           <!-- Diagramme en bandes -->
@@ -73,7 +73,7 @@
 
           <!-- Bouton pour l'étape suivante -->
           <div class="button-container">
-            <a href="{{ nextStepLink }}?budgetLimit={{ budget.cost }}&ticketPrice={{ ticketPrice }}&festivalSize={{ festivalSize }}" class="btn-validate">Étape suivante</a>
+            <a href="{{ nextStepLink }}?budgetLimit={{ budget.cost }}&ticketPrice={{ ticketPrice }}&festivalSize={{ festivalSize }}&ecologicalActions={{ecologicalActions}}&culturalMediationActions={{culturalMediationActions}}&riskPreventionActions={{riskPreventionActions}}" class="btn-validate">Étape suivante</a>
           </div>
         </div>
       </main>

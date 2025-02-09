@@ -32,7 +32,7 @@
             </p>
             <div class="choice-group">
               {{#festivalSizes}}
-              <div class="choice-item" onclick="selectOption('festivalSizes', '{{id}}', this)">
+              <div data-id="{{id}}" class="choice-item" onclick="selectOption('festivalSizes', '{{id}}', this)">
                 <img src="{{image}}" alt="{{name}}">
                 <div class="choice-info">
                   <p>{{name}}</p>
@@ -51,7 +51,7 @@
             <p class="question-info">Je souhaite faciliter l’accès à la culture en organisant des activités ouvertes à tous.tes.</p>
             <div class="choice-group">
               {{#culturalMediationActions}}
-              <div class="choice-item" onclick="selectOption('culturalMediationActions', '{{id}}', this)">
+              <div data-id="{{id}}" class="choice-item" onclick="selectOption('culturalMediationActions', '{{id}}', this)">
                 <img src="{{image}}" alt="{{name}}">
                 <div class="choice-info">
                   <p>{{name}}</p>
@@ -70,7 +70,7 @@
             <p class="question-info">Je souhaite que mon festival soit éco-responsable.</p>
             <div class="choice-group">
               {{#ecologicalActions}}
-              <div class="choice-item" onclick="selectOption('ecologicalActions', '{{id}}', this)">
+              <div data-id="{{id}}" class="choice-item" onclick="selectOption('ecologicalActions', '{{id}}', this)">
                 <img src="{{image}}" alt="{{name}}">
                 <div class="choice-info">
                   <p>{{name}}</p>
@@ -89,7 +89,7 @@
             <p class="question-info">Je veille à l’accessibilité, la sécurité et à la santé de tous.tes lors de mon évènement.</p>
             <div class="choice-group">
               {{#riskPreventionActions}}
-              <div class="choice-item" onclick="selectOption('riskPreventionActions', '{{id}}', this)">
+              <div data-id="{{id}}" class="choice-item" onclick="selectOption('riskPreventionActions', '{{id}}', this)">
                 <img src="{{image}}" alt="{{name}}">
                 <div class="choice-info">
                   <p>{{name}}</p>

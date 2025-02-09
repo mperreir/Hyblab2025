@@ -112,6 +112,9 @@ app.post('/calculatebudget', (req, res) => {
   try {
     const result = calculateFestivalCostAndTicketPrice(userChoices, festivalData);
     result['festivalSize'] = userChoices.festivalSizes;
+    result['ecologicalActions'] = userChoices.ecologicalActions;
+    result['culturalMediationActions'] = userChoices.culturalMediationActions;
+    result['riskPreventionActions'] = userChoices.riskPreventionActions;
     res.json(result); // Send the result back to the client
   } catch (error) {
     res.status(400).json({ error: "Erreur plutot ici" });
@@ -147,27 +150,6 @@ function validateAdjustedBudget(userChoices, maxAllowedBudget) {
 }
 
 
-// app.post('/validate-budget', (req, res) => {
-//   const userChoices = req.body.userChoices; // Get user choices from the request body
-//   const initialBudget = req.body.budgetLimit;
-
-//   try {
-//     const maxAllowedBudget = initialBudget * 0.615;
-
-//     const { isValid, result: { totalCost, averageTicketPrice } } = validateAdjustedBudget(
-//       userChoices,
-//       maxAllowedBudget
-//     );
-
-//     const result = { isValid, result: { totalCost, averageTicketPrice } }
-    
-//     res.json(result); // Send the result back to the client
-//   } catch (error) {
-//     res.status(400).json({ error: error.message });
-//   }
-// });  
-
-
 app.post('/validate-budget', (req, res) => {
   try {
       const userChoices = req.body.userChoices; // Get user choices from the request body
@@ -177,10 +159,6 @@ app.post('/validate-budget', (req, res) => {
 
       // Récupération des choix de l'utilisateur
       const { festivalSizes, ecologicalActions, culturalMediationActions, riskPreventionActions, ticketPrice } = userChoices;
-
-      // const festivalData = loadFestivalData();
-      // const result = calculateFestivalCostAndTicketPrice(userChoices, festivalData);
-      // const ticketPrice = result.averageTicketPrice;
 
       // Coût total du festival ajusté selon les nouveaux choix
       const adjustedFestivalCost = 
@@ -198,29 +176,22 @@ app.post('/validate-budget', (req, res) => {
       const spectators = spectatorsMapping[festivalSizes];
 
       //const initialTicketPrice = { Petit: 20, Moyen: 50, Grand: 150 }[festivalSizes];
-      console.log(req.body.festivalSize)
       const initialSpectators = spectatorsMapping[req.body.festivalSize];
-      console.log('initial spectators', initialSpectators)
 
       // Calcul du revenu billetterie initial
       const initialRevenueFromTickets = initialTicketPrice * initialSpectators;
-      console.log(initialTicketPrice)
 
       // Déterminer combien de la billetterie initiale finançait réellement le festival (35.4% du coût initial)
       const initialInjectedAmount = (initialFestivalCost * 35.4) / 100;
 
       // Calcul du nouveau revenu billetterie après ajustement du prix du billet
       const newRevenueFromTickets = ticketPrice * spectators;
-      console.log(ticketPrice)
 
       // Nouvelle part injectée dans le festival, en appliquant le ratio basé sur la billetterie initiale
       const newInjectedAmount = (newRevenueFromTickets / initialRevenueFromTickets) * initialInjectedAmount;
 
       // Différence entre l'ancienne et la nouvelle billetterie qui finance réellement le festival
       const additionalInjectedAmount = newInjectedAmount - initialInjectedAmount;
-      console.log(missingAmount)
-      console.log(costDifference)
-      console.log(additionalInjectedAmount)
 
       // Déterminer si l’utilisateur a réussi à combler son déficit
       const balance = missingAmount - costDifference - additionalInjectedAmount;

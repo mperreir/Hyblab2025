@@ -23,22 +23,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, '../__common-logos__')));
 
 
-// Route for the home page
-app.get('/start', async (req, res) => {
-    try {
-        // Fetch data from the API endpoint
-        console.log(BASE_URL)
-        const response = await fetch('https://hyblab.polytech.univ-nantes.fr/londeporteuse/api/home');
-        const data = await response.json();
-
-        // Render the Mustache template with the fetched data
-        res.render('index.mustache', data);
-    } catch (error) {
-        console.error('Error fetching home page data:', error);
-        res.status(500).send('Error loading the home page');
-    }
-});
-
 // Route for the choices page
 app.get('/choices', async (req, res) => {
     try {
@@ -54,7 +38,11 @@ app.get('/choices', async (req, res) => {
     }
   });
   
-
+  const festivalSizeLabels = {
+    Petit: "un festival intimiste",
+    Moyen: "un festival de taille moyenne",
+    Grand: "un grand festival"
+  };
 
 // Route for the budget page
 app.get('/budget', async (req, res) => {
@@ -65,11 +53,21 @@ app.get('/budget', async (req, res) => {
 
     const initialBudget = req.query.initialBudget;
     const ticketPrice = req.query.ticketPrice;
+
     const festivalSize = req.query.festivalSize;
+    const ecologicalActions = req.query.ecologicalActions;
+    const culturalMediationActions = req.query.culturalMediationActions;
+    const riskPreventionActions = req.query.riskPreventionActions;
 
     data['ticketPrice'] = ticketPrice;
     data['budget']['cost'] = initialBudget;
+
     data['festivalSize'] = festivalSize;
+    data['ecologicalActions'] = ecologicalActions;
+    data['culturalMediationActions'] = culturalMediationActions;
+    data['riskPreventionActions'] = riskPreventionActions;
+    
+    data['festivalSizeLabel'] = festivalSizeLabels[festivalSize];
     
     // Render the Mustache template with the fetched data
     res.render('budget.mustache', data);
@@ -123,6 +121,31 @@ const costMapping = {
 };
 
 
+// Define mappings for images
+const imageMappings = {
+  culturalMediationActions: {
+    Petit: "img/no_mediation.png",
+    Moyen: "img/action_festival.png",
+    Grand: "img/annee_mediation.png"
+  },
+  ecologicalActions: {
+    Petit: "img/minimum_eco.png",
+    Moyen: "img/no_eco.png",
+    Grand: "img/plus_eco.png"
+  },
+  festivalSizes: {
+    Petit: "img/intimiste_festival.png",
+    Moyen: "img/mf.png",
+    Grand: "img/gf.png"
+  },
+  riskPreventionActions: {
+    Petit: "img/minimum_secu.png",
+    Moyen: "img/peu_secu.png",
+    Grand: "img/action_secu.png"
+  }
+};
+
+
 app.get('/result', (req, res) => {
   try {
 
@@ -168,7 +191,7 @@ app.get('/result', (req, res) => {
    const messages = loadResultData();
 
    const priorityLabels = {
-    festivalSizes: "UNE GRANDE TAILLE ",
+    festivalSizes: "TAILLE DU FESTIVAL",
     ecologicalActions: "L'ÉCOLOGIE",
     culturalMediationActions: "LA MÉDIATION CULTURELLE",
     riskPreventionActions: "LA PRÉVENTION DES RISQUES"
@@ -195,7 +218,11 @@ app.get('/result', (req, res) => {
         riskPreventionActions,
       },
       ticketPrice,
-      highestPriority: highestPriorityLabel
+      highestPriority: highestPriorityLabel,
+      festivalSizesImage: imageMappings.festivalSizes[festivalSizes],
+      riskPreventionActionsImage : imageMappings.riskPreventionActions[riskPreventionActions],
+      culturalMediationActionsImage: imageMappings.culturalMediationActions[culturalMediationActions],
+      ecologicalActionsImage: imageMappings.ecologicalActions[ecologicalActions]
     };
 
     // Send response as JSON
