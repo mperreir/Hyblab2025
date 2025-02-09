@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import { Box, Button, Typography, styled } from "@mui/material";
+import { Box, Button, IconButton, Typography, styled } from "@mui/material";
 import SwipeableViews from "react-swipeable-views";
 import { useTheme } from "@mui/material/styles";
 import { useNavigate } from "react-router-dom";
 import { ParallaxProvider, Parallax } from "react-scroll-parallax";
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+
 import EnergyIcon from "./../assets/PictoTransition2050.png";
 import Logo from "../assets/CONTEXTE-TRANSITION 1.svg";
 
@@ -51,6 +53,9 @@ const ContexteComponent = () => {
       text: "• Apprendre comment les choix énergétiques façonnent notre avenir climatique.\n • Tester différents scénarios pour construire un mix énergétique équilibré et durable.\n • Participer à une expérience ludique pour mieux comprendre les défis de la transition énergétique.",
     },
   ];
+  const handleNext = () => {
+    setActiveStep((prevActiveStep) => (prevActiveStep + 1) % slides.length);
+  };
 
   const handleClick = () => {
     navigate("/brief/Information");
@@ -100,8 +105,21 @@ const ContexteComponent = () => {
                 <IndicatorDot key={dotIndex} active={dotIndex === activeStep} />
               ))}
             </IndicatorContainer>
-            {activeStep === slides.length - 1 && (
+            {activeStep === slides.length - 1 ? (
               <StyledButton onClick={handleClick}>C'est parti !</StyledButton>
+            ) : (
+              <IconButton
+                sx={{
+                  position: "absolute",
+                  right: 15,
+                  top: "50%",
+                  transform: "translateY(-50%)",
+                }}
+                
+                onClick={handleNext}
+              >
+                <ArrowForwardIcon />
+              </IconButton>
             )}
           </Box>
         ))}

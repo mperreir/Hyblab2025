@@ -18,7 +18,7 @@
         },
         {
             "response_id": 2,
-            "response_text": "Scénario B : 25 % nucléaire / 74 % renouvelables",
+            "response_text": "Scénario B : 25 % nucléaire / 75 % renouvelables",
             "text":"Un équilibre qui réduit le nucléaire mais le conserve pour garantir une production stable en complément des renouvelables.",
             "next_scenario_id": 2
         },

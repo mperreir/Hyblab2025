@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import { PieChart } from "@mui/x-charts/PieChart";
 import { useTheme } from "@mui/material/styles";
 import SwipeableViews from "react-swipeable-views";
-import { Box, Typography, Container, styled, Button } from "@mui/material";
+import { Box, Typography, Container, styled, Button, IconButton } from "@mui/material";
 import { Doughnut } from "react-chartjs-2";
 import { Chart, ArcElement, Tooltip, Legend } from "chart.js";
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+
 import { useNavigate } from "react-router-dom";
 import energyData from "../../src/data/debut/sources_energie.json";
 import electricityMixData from "../../src/data/debut/zoom_elec.json";
@@ -73,6 +75,13 @@ const InformationMixComponent = () => {
     setShowNewContent(true);
   };
 
+  const handleNext1 = () => {
+    setActiveIndex((prevIndex) => (prevIndex + 1) % sources.length);
+  };
+
+  const handleNext2 = () => {
+    setActiveNewIndex((prevNewIndex) => (prevNewIndex + 1) % sources.length);
+  };
   const handleClick = () => {
     updateStepper(2);
     navigate("/brief/questions");
@@ -187,6 +196,19 @@ const InformationMixComponent = () => {
               </Box>
             ))}
           </SwipeableViews>
+          {(activeIndex < sources.length - 1) && (
+            <IconButton
+              sx={{
+                position: "absolute",
+                right: 240,
+                top: "105%",
+                transform: "translateY(-50%)",
+              }}
+              onClick={activeIndex < sources.length - 1 ? handleNext1 : handleNext2}
+            >
+              <ArrowForwardIcon />
+            </IconButton>
+          )}
         </>
       ) : (
         <>
@@ -300,6 +322,19 @@ const InformationMixComponent = () => {
               </Box>
             ))}
           </SwipeableViews>
+          {( activeNewIndex < electricityMix.length - 1) && (
+            <IconButton
+              sx={{
+                position: "absolute",
+                right: 240,
+                top: "125%",
+                transform: "translateY(-50%)",
+              }}
+              onClick={ handleNext2}
+            >
+              <ArrowForwardIcon />
+            </IconButton>
+          )}
         </>
       )}
     </Container>
