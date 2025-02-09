@@ -1,0 +1,44 @@
+{
+  "sources": [
+    {
+      "name": "Pétrole",
+      "percentage": 38.5,
+      "image": "brief/src/images/petrole.svg",
+      "text": "Utilisé essentiellement pour les transports (essence, diesel), le pétrole est la principale source d’émissions de gaz à effet de serre en France.",
+      "notes": "Responsable d'environ 1/3 des émissions de CO2 liées à l'énergie."
+    },
+    {
+      "name": "Gaz naturel",
+      "percentage": 17.9,
+      "image": "brief/src/images/gaz_naturel.svg",
+      "text": "Composée essentiellement de méthane, cette énergie fossile est la deuxième source d'énergie la plus émettrice de CO2 en France, après le pétrole. Son principal usage est le chauffage résidentiel et industriel et la production d’électricité.",
+      "notes": "Fossile le plus propre mais non renouvelable."
+    },
+    {
+      "name": "Charbon",
+      "percentage": 0.5,
+      "image": "brief/src/images/charbon.svg",
+      "text": "Très émetteur de CO₂, le charbon est l'une des sources d'énergie fossile les plus polluantes. Son usage en France est très limité.",
+      "notes": "Responsable d'environ 1/3 des émissions de CO2 liées à l'énergie."
+    },
+    {
+      "name": "Électricité",
+      "percentage": 26.9,
+      "image": "brief/src/images/electricite.svg",
+      "text": " L’électricité en France est une énergie bas-carbone, grâce au nucléaire et aux renouvelables, qui émettent très peu. Elle joue un rôle central dans la transition énergétique, notamment avec l’électrification des transports et des bâtiments."
+    },
+    {
+      "name": "Bioénergies",
+      "percentage": 12.9,
+      "image": "brief/src/images/bioenergies.svg",
+      "text": "Les bioénergies regroupent les centrales thermiques fonctionnant avec des combustibles renouvelables ou de récupération. Elle inclut les installations produisant de la chaleur à partir de biomasse solide (bois, paille, etc.), de biogaz (produit à partir de déchets agricoles) ou encore de déchets ménagers. Elle représente une solution locale et bas-carbone, mais elle dépend de la disponibilité des ressources et de leur gestion durable.",
+      "notes": "Peu ou pas de gaz à effet de serre, mais nécessite des investissements initiaux."
+    },
+    {
+      "name": "Chaleur commercialisée",
+      "percentage": 3.2,
+      "image": "brief/src/images/chaleur_commerciale.svg",
+      "text": "La chaleur commercialisée combine différentes sources pour alimenter des réseaux de chauffage collectif urbains : centrale à bois ou granulés, incinération de déchets, récupération de chaleur industrielle, etc. Elle représente un outil clé de la transition énergétique locale."
+    }
+  ]
+}

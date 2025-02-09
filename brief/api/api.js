@@ -1,17 +1,13 @@
 'use strict';
 
-const app = require( 'express' )();
-const path = require('path');
+const express = require('express');
+const router = express.Router(); // Router pour les API
 
-// Sample endpoint that sends the partner's name
-app.get('/topic', function ( req, res ) {
-    let topic;
+// API endpoint pour envoyer un message
+router.get('/message', (req, res) => {
+    res.json({ message: 'Bonjour depuis l\'API Express!' });
+});
 
-    // Get partner's topic from folder name
-    topic = path.basename(path.join(__dirname, '/..'))
-    // Send it as a JSON object
-    res.json({'topic':topic});
-} );
 
-// Export our API
-module.exports = app;
+// Export our API (pas besoin de cette ligne pour le démarrage du serveur)
+module.exports = router;

@@ -1,0 +1,43 @@
+{
+  "electricity_mix": {
+    "text": "L'électricité n'existe pas à l'état naturel sous une forme directement utilisable. Elle doit être produite à partir d'autres sources d'énergie, ce qui constitue le mix électrique.",
+    "sources": [
+      {
+        "name": "Nucléaire",
+        "percentage": 65,
+        "image": "./images/nucleaire.svg",
+        "text": "Faiblement émetteur de CO₂, le nucléaire est une pierre angulaire du mix électrique français, mais il pose des défis liés aux déchets radioactifs et à la sécurité. Il fonctionne avec de l'uranium importé principalement du Niger, du Kazakhstan et du Canada."
+      },
+      {
+        "name": "Hydraulique",
+        "percentage": 12,
+        "image": "./images/hydraulique.svg",
+        "text": "L'énergie des rivières permet de produire de l'électricité via des barrages et des centrales hydroélectriques. Elle est renouvelable et stable, mais son développement est limité par les contraintes géographiques et climatiques."
+      },
+      {
+        "name": "Éolien",
+        "percentage": 10,
+        "image": "./images/eolien.svg",
+        "text": "L’éolien est un pilier de la transition énergétique, car il n'émet pas de CO2. Cependant, sa production est intermittente (elle dépend de la présence ou non de vent), ce qui nécessite des solutions de flexibilité pour garantir un approvisionnement constant en électricité."
+      },
+      {
+        "name": "Gaz",
+        "percentage": 6,
+        "image": "./images/charbon.svg",
+        "text": "Les bioénergies regroupent les centrales thermiques fonctionnant avec des combustibles renouvelables ou de récupération. Elle inclut les installations produisant de l’électricité à partir de biomasse solide (bois, paille, etc.), de biogaz (produit à partir de déchets agricoles) ou encore de déchets ménagers. Elle représente une solution locale et bas-carbone, mais elle dépend de la disponibilité des ressources et de leur gestion durable."
+      },
+      {
+        "name": "Solaire",
+        "percentage": 4.4,
+        "image": "./images/solaire.svg",
+        "text": "Le solaire est une énergie renouvelable qui n'émet pas de CO2, mais elle est intermittente (il n'y a pas toujours de soleil). Elle nécessite un stockage ou un complément avec d’autres sources d'énergie."
+      },
+      {
+        "name": "Thermique fossile",
+        "percentage": 0.5,
+        "image": "./images/thermique_fossile.svg",
+        "text": "Production électrique à partir de centrales thermiques alimentées par des combustibles fossiles (gaz naturel, fioul et charbon). Le gaz naturel est le plus utilisé (6 %), tandis que le charbon est extrêmement faible (moins de 0,2 %). Ces énergies sont utilisées pour pallier les pics de demande ou comme source d’appoint."
+      }
+    ]
+  }
+}
