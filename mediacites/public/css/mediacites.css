@@ -1,0 +1,100 @@
+*{
+    padding:0;
+    margin:0;
+    font-family: 'IBM Plex Mono';
+}
+
+.navigation-header {
+    display: flex; 
+    flex-direction: row; 
+    align-items: center; 
+    justify-content: center; 
+    padding: 2vh 4vh 0vh 4vh;
+    margin-bottom: 2vh;  
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    button {
+        border-color: #FF0023;
+        color: #FF0023;
+        height: 100%;
+        width: auto;
+        border-radius: 4vh 4vh 4vh 4vh; 
+        font-style: italic;
+        
+    }
+    button:hover {
+        border-color: #FF0023 !important;
+        background-color: #FF0023 !important;
+        color: white !important;
+    }
+    button:disabled {
+        border: 1px solid gray;
+    }
+    button:hover:disabled {
+        border-color: gray !important;
+        background-color: gray !important;
+        color: white !important;
+    }
+
+   button:nth-child(3) { border-right:#FF0023; }
+   button:nth-child(6) { border-left:#FF0023; }
+}
+
+
+.left-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 77vh;
+    border: 1vh solid black;
+    border-radius: 4vh;
+    padding: 10px;
+  }
+  
+  .header {
+    margin-bottom: 10px;
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: auto;
+  }
+  
+  .card-container {
+    margin-bottom: 1vh; /* Espacement entre card-container et la description */
+    height: 100%; /* Assure que le conteneur utilise tout l'espace disponible */
+  }
+  
+  
+  .description {
+    background-color: #FF0023;
+    color: #ffffff;
+    font-size: 1rem;
+    padding: 15px;
+    width: 80%;
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  .custom-button {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    color: #FF0023;
+    background: none;
+    border: 2px solid #FF0023;
+    border-radius: 50px;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-align: center;
+    outline: none;
+    transition: all 0.3s ease;
+  }
+  
+  .custom-button:hover {
+    background-color: #FF0023;
+    color: #ffffff;
+  }
+  

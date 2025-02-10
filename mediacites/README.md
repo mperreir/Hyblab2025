@@ -1,17 +1,75 @@
 # Descriptif du projet
 
-Porteur de projet :
+Porteur de projet : Médiacités
 
-Sujet :
+Sujet : Simpli'Cité
 
-Nom d'équipe :
+Nom d'équipe : Médiacitadins
 
-Participants : 
+Participants :
 
-- AGR :
-- Polytech :  
-- SciencesPo : 
+- AGR : Lilou, Anaïs, 
+- Polytech :  Pierre, Samuel, Saad, Ayman, Nolann
+- SciencesPo : Robin
 
+## Pages du site
+
+IP initiale : `http://localhost:8080/mediacites/`
+
+`/` ou `/motion` :
+- Accueil avec motion
+
+`/navigation` :
+- Pages avec catégories sélectionnables
+
+`/article` :
+- Page avec articles
+
+`/info` :
+- Page d’information et de remerciement
+
+`/test-api` :
+- Route de test pour vérifier si l'API fonctionne correctement
+
+
+
+
+## APIs (uniquement requête GET)
+
+`/api/categories` :
+- Obtenir la liste
+
+`/api/articles/{category_name}` :
+- Texte de l’article
+
+`/api/articles/{category_name}/kpis` :
+- KPIs de l’article (les chiffres)
+
+`/api/articles/{category_name}/` :
+- linked_categories, les catégories qui se rapprochent de celle de l'article
+
+`/api/articles/{category_name}/links` :
+- Liens vers les décisions
+
+
+## Organisation des JSONs
+### `articles.json`
+* `id` : id de l'article
+* `name` : titre de la catégorie
+* `text` : texte de l’article
+* `resume` : resume de l'article
+* `kpis` : 
+    * `id` : identifiant du KPI (0 ou 1)
+    * `number` : le chiffre à montrer (sous forme de chaîne pour avoir le %)
+    * `text` : texte accompagnateur
+* `links` :
+    * `id` : identifiant de la décision
+    * `name` : nom du lien vers la décision
+    * `link` : lien vers la décision
+### `decisions.json`
+* `id` : identifiant
+* `category` : catégorie
+* `link` : lien
 
 
 ## A supprimer

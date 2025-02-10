@@ -17,6 +17,30 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, '../__common-logos__')));
 
 // You can then add whatever routing code you need
+app.get(`/article`, function (req, res) {
+    res.sendFile(path.join(__dirname, '/public/article.html'));
+});
+
+app.get(`/navigation`, function (req, res) {
+    res.sendFile(path.join(__dirname, '/public/navigation.html'));
+});
+
+app.get(`/`, function (req, res) {
+    res.sendFile(path.join(__dirname, '/public/index.html'));
+});
+
+app.get(`/motion`, function (req, res) {
+    res.sendFile(path.join(__dirname, '/public/index.html'));
+});
+
+app.get(`/info`, function (req, res) {
+    res.sendFile(path.join(__dirname, '/public/info.html'));
+});
+
+app.get('/test-api', (req, res) => {
+    console.log('Test API route hit');
+    res.send('API is working');
+});
 
 // This module is exported and served by the main server.js located
 // at the root of this set of projects. You can access it by lanching the main

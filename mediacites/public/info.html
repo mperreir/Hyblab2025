@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <title>Infos Projet Mediacites</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/mediacites.css">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
+  <style>
+        body {
+            font-family: 'IBM Plex Mono'
+        }
+    </style>
+</head>
+<body>
+    <nav class="sticky-top">
+        <div class="navigation-header btn-group btn-group-justified" role="group"> 
+            <button onclick="location.href='navigation.html'" class="btn btn-outline-secondary" type="button" style="border-radius: 4vh 4vh 4vh 4vh; margin-right: 10px; font-style: normal;">
+                <i class="bi bi-house"></i>
+            </button>
+            <!-- Certains boutons pas implémentés en raison de la limite de temps -->
+            <button class="btn btn-outline-secondary" type="button" style="border-radius: 4vh 0vh 0vh 4vh;"> ACTION SOCIALE ET SANTÉ</button> <!-- onclick="redirect('nom_de_la_categorie')" --> 
+            <button class="btn btn-outline-secondary" type="button" > CITOYENNETÉ</button> <!-- onclick="redirect('nom_de_la_categorie')" --> 
+            <button class="btn btn-outline-secondary" type="button" > CULTURE ET TOURISME</button> <!-- onclick="redirect('nom_de_la_categorie')" --> 
+            <button onclick="redirect('education')" class="btn btn-outline-secondary" type="button"> ÉDUCATION</button>
+            <button onclick="redirect('environnement') " class="btn btn-outline-secondary" type="button"> ENVIRONNEMENT</button>
+            <button class="btn btn-outline-secondary" type="button"> MOBILITÉS</button> <!-- onclick="redirect('nom_de_la_categorie')" --> 
+            <button class="btn btn-outline-secondary" type="button" > SÉCURITÉ</button> <!-- onclick="redirect('nom_de_la_categorie')" --> 
+            <button class="btn btn-outline-secondary" type="button" > URBANISME ET LOGEMENT</button> <!-- onclick="redirect('nom_de_la_categorie')" --> 
+        </div>
+        <script>
+            function redirect(category) {
+                console.log(`Redirecting to article.html?category=${category}`);
+                window.location.href = `article.html?category=${category}`;
+            }
+        </script>
+    </nav>
+
+    <div class="container-fluid" style="padding-left: 5vh;">
+        <div class="row">
+            <!-- Left Container (1/3 of the page) -->
+            <div class="col-4 left-container" style="width: 100%; height: 77vh; border: 1vh; border-radius: 4vh; position: sticky; top: 60px; display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start;">
+                <div>
+                    <h1 style="font-size: 4vw; font-style: italic; margin: 20px; margin-bottom: 0;">
+                        <span
+                            style="color: #FF0023; font-family: 'IBM Plex Mono'; margin-right: -20px;"><strong>SIMPLI'</strong></span>
+                        <span
+                            style="color: #808080; font-family: 'IBM Plex Mono'; margin-left: -20px;"><strong>CITÉ</strong></span>
+                    </h1>
+                </div>
+                <div>
+                    <h1 id="article-title" style="font-size: 3vw; margin-left: 7vw; color:#3370E7; font-style: italic;">
+                        INFORMATIONS</h1>
+                    <h1 id="article-subtitle" style="font-size: 2vw; margin-left: 14vw; color:#808080; font-style: italic;"
+                        hidden>INFORMATIONS</h1>
+                </div>
+                <div class="row" style="height: 30vh;"></div>
+                <div class="row">
+                    <div class="logo col-md-7"></div>
+                    <div class="logo col-md-3">
+                        <img src="img/logo_mediacites.png" alt="Logo">
+                    </div>
+                    <div class="description col-md-10" style="border-radius: 4vh 4vh 4vh 4vh;  text-align: left; width: 25vw; font-weight: bold;">
+                        Découvrez le contexte et les acteurs derrière la réalisation de ce projet.
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+                <div class="actions row">
+                    <button class="custom-button" onclick="location.href='navigation.html'"><i class="bi bi-arrow-left"></i></button>
+                </div>
+            </div>
+            <!-- Right Container (2/3 of the page) -->
+            <div class="col-8 right-container overflow-auto">
+                <!-- Résumé -->
+                <div class="row" style="padding-right: 3vh;">
+                    <div class="col" style="width: 100%; background-color: #3370E7; height: fit-content; border: 1vh solid white; border-radius: 4vh 4vh 4vh 4vh;">
+                        <h3 id="titreResume" style="font-size: 4vw; color: white; text-align: right; font-style: italic; padding-bottom:3vh;">Résumé</h3>
+                        <p id="resumeGeneral" style="color: white;">Soucieux de la transparence en démocratie, Médiacités a lancé, en 2020, Radar, un outil qui permet de suivre
+                            l’action des élus locaux et vérifier s’ils ont tenu leurs promesses de campagne. Dans la poursuite de ce
+                            même objectif, Médiacités présente “Simpli'Cité”, un nouvel outil qui passe en revue les décisions prises par
+                            le conseil municipal de la ville de Nantes. Qu’on réellement fait les élus pour vous ? SimpliCité vous
+                            permet de naviguer dans toutes les décisions du conseil municipal, en toute... simplicité. Médiacité a analysé
+                            plus de 850 décisions de la municipalité, prises entre 2020 et 2024 et les a organisées par thèmes pour
+                            résumer l’action de vos élus.</p>
+                    </div>
+                </div>
+
+                <!-- KPIs -->
+                <div class="row" style="padding-right: 3vh; display:flex;">
+                    <div class="col" style="width: 100%; background-color: #FF0023; height: auto; border: 1vh solid white; border-radius: 4vh 4vh 4vh 4vh;">
+                        <h3 id="kpi1" style="font-size: 4vw; color: white; text-align: right; padding-bottom:3vh;">867</h3>
+                        <p id="textkpi1" style="color: white;">Nombre total de délibérations prises par le conseil municipal de Nantes entre le 15 juillet 2020 et le 2 février 2024.</p>
+                    </div>
+                    <!--<div class="col" style="width: 100%; background-color: #565656; height: auto; border: 1vh solid white; border-radius: 4vh 4vh 4vh 4vh;">
+                        <h3 id="kpi2" style="font-size: 4vw; color: white; text-align: right;" >KPI 2</h3>
+                        <p id="textkpi2" style="color: white;">Texte résumé catégorie 1</p>
+                    </div>-->
+                </div>
+                
+                <!-- Pour en savoir plus -->
+                <div class="row" style="padding-right: 3vh;">
+                    <div class="col" style="width: 100%; background-color: #3370E7; height: fit-content; border: 1vh solid white; border-radius: 4vh 4vh 4vh 4vh;">
+                        <h3 id="titreArticle" style="font-size: 4vw; color: white; font-style: italic;">Pour en savoir plus</h3>
+                        <p id="texteArticle" style="color: white;"><br>Ce projet a été réalisé sur une période de deux semaines en collaboration avec une équipe d’étudiants issus de différentes écoles dans le cadre du projet annuel Hyblab. Pour cette édition 2025, le thème portait sur l’utilisation de l’intelligence artificielle, afin de pouvoir examiner les différents points sur laquelle cette dernière pouvait se montrer utile, efficace, et fiable. <br>
+                            <br>Les différentes IA utilisées lors de ce projet sont ChatGPT et DeepSeek pour l’assistance à la programmation ou des propositions de textes, et NotebookLM pour le parcours des délibérations de conseils municipaux et l’extraction de données. <br>
+                            <br>Pour ce qui est du code, les IA ont été très utiles pour aider à avoir une base relativement cohérente, mais pour certains détails précis, elles se sont parfois avérées très peu efficaces et plus chronophages qu’autre chose, faisant souvent tourner les choses en rond. Et pour le parcours de document, bien que très efficace, l’information extraite était souvent assez pauvre, rarement très cohérente, et parfois fausse. La faute généralement à un jargon peu clair, et les informations à extraire entre les lignes dans les documents analysés. <br></p>
+                    </div>
+                </div>
+                <!-- Crédits -->
+                <div class="row" style="padding-right: 3vh;">
+                    <div class="col" style="width: 100%; background-color: #565656; height: fit-content; border: 1vh solid white; border-radius: 4vh 4vh 4vh 4vh;">
+                        <div class="row">
+                            <div class="col-8">
+                                <h3 class="d-flex" style="font-size: 4vw; color: white; text-align:left; font-style: italic; padding-bottom:3vh;">Crédits</h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <h6 class="d-flex" style="font-size: 2vw; color: white; text-align: left; padding-left:2vh;"> Les données</h6>
+                        </div>
+                        <div class="row">
+                            <p style="padding-left:2vh; color: white;">Toutes les délibérations proviennent du site data.nantesmetropole.fr, qui sont accessibles librement.
+                            Simpli'cité se fonde sur les délibérations des conseils municipaux du 15 juillet 2020 au 2 février 2024.</p>
+                        </div>
+                        <div class="row">
+                            <h6 class="d-flex" style="font-size: 2vw; color: white; text-align: left; padding-left:2vh;"> Les partenaires</h6>
+                        </div>
+                        <div class="row">
+                            <p style="padding-left:2vh; color: white;">Simpli'cité a été développé pendant le Hyblab 2025, avec les étudiants de Polytech Nantes, de l’AGR, de Nantes
+                            et de Sciences Po Rennes.</p>
+                        </div>
+                        <div class="row">
+                            <h6 class="d-flex" style="font-size: 2vw; color: white; text-align: left; padding-left:2vh;"> Développement </h6>
+                        </div>
+                        <div class="row">
+                            <p style="padding-left:2vh; color: white;">Nolann Boyere, Pierre Pellerin, Samuel Bally, Ayman Gouhmid, et Saad Ait Bendra </p>
+                        </div>
+                        <div class="row">
+                            <p style="padding-left:2vh; color: white; font-style: italic;">Polytech Nantes</p>
+                        </div>
+                        <div class="row">
+                            <h6 class="d-flex" style="font-size: 2vw; color: white; text-align: left; padding-left:2vh;"> Design </h6>
+                        </div>
+                        <div class="row">
+                            <p style="padding-left:2vh; color: white;">Anaïs Rinaudo et Lilou Lucas</p>
+                        </div>
+                        <div class="row">
+                            <p style="padding-left:2vh; color: white; font-style: italic;">AGR, l’école de l’image de Nantes</p>
+                        </div>
+                        <div class="row">
+                            <h6 class="d-flex" style="font-size: 2vw; color: white; text-align: left; padding-left:2vh;"> Informations et rédaction </h6>
+                        </div>
+                        <div class="row">
+                            <p style="padding-left:2vh; color: white;">Robin Peter</p>
+                        </div>
+                        <div class="row">
+                            <p style="padding-left:2vh; color: white; font-style: italic;">Sciences Po Rennes</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Logos -->
+                <div class="row" style="padding-right: 3vh;">
+                    <div class="col-8" style="margin-left:1vh; margin-top:0.5vh; background-color: white; min-width: calc(100% - 1.5vh) !important; height: fit-content; border: 0.25vh solid black; border-radius: 4vh 4vh 4vh 4vh;">
+                        <div class="row align-items-center">
+                            <div class="col-1" style="width: max-content;"></div>
+                            <div class="col-2 text-center"><a href="http://www.polytech.univ-nantes.fr/"><img src="ecoles/logo_polytech.png" alt="Polytech Nantes" class="img-fluid"></a></div>
+                            <div class="col-2 text-center"><a href="http://www.agrnantes.fr"><img src="ecoles/logo_agr.png" alt="AGR école de l'image" class="img-fluid"></a></div>
+                            <div class="col-2 text-center"><a href="https://www.sciencespo-rennes.fr/"><img src="ecoles/logo_sciencespo.svg" alt="SciencesPo" class="img-fluid"></a></div>
+                            <div class="col-2 text-center"><img id="opensource" src="logo_opensource.png" alt="Open source" class="img-fluid"></div>    
+                            <div class="col-2 text-center"><img id="cc" src="logo_cc.png" alt="Creative commons" class="img-fluid"></div>
+                            <div class="col-1" style="width: max-content;"></div>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-1" style="width: max-content;"></div>
+                            <div class="col-2 text-center"><a href="http://www.ouestmedialab.fr/"><img src="logo_oml.png" alt="Ouest Médialab" class="img-fluid"></a></div>
+                            
+                            <div class="col-2 text-center"><img src="img/logo_hyblab.png" id="logo-hyblab" alt="logo hyblab" class="img-fluid"></div>
+                            <div class="col-2 text-center"><a href="http://www.nantesmetropole.fr/"><img class="img-fluid" src="institutionnels/logo_nantesmetropole.png" alt="Nantes Métropole"></a></div>
+                            <div class="col-2 text-center"><img src="institutionnels/logo_pdl.png" alt="Pays de la Loire" class="img-fluid"></div>
+                            <div class="col-2 text-center"><img src="img/logo-mediacites-full.svg" alt="Médiacités" class="img-fluid"></div>
+                            <div class="col-1" style="width: max-content;"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Bouton remonter-->
+                <div class="row" style="padding-right: 3vh;">
+                    <div class="col" style="width: 100%; text-align: right; padding-top:0.5vh;">
+                        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="btn btn-outline-secondary" style="font-size: 2vw; border-radius: 4vh 4vh 4vh 4vh;"><i class="bi bi-arrow-up"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>  
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+</body>
