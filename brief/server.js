@@ -4,7 +4,7 @@
 // Load usefull expressjs and nodejs objects / modules
 const express = require('express');
 const path = require('path');
-const cors = require('cors'); // Importer CORS
+//const cors = require('cors'); // Importer CORS
 // Load and register our REST API
 const api = require('./api/api');
 
@@ -12,7 +12,7 @@ const api = require('./api/api');
 const app = express();
 
 // Utiliser CORS pour autoriser les requêtes venant de n'importe quelle origine
-app.use(cors({ origin: 'http://localhost:5173' }));
+//app.use(cors({ origin: 'http://localhost:5173' }));
 
 app.use('/api', api);
 

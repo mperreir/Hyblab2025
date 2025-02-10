@@ -65,11 +65,11 @@ const AnimatedRoutes = () => {
     <AnimatePresence mode="wait">
     <Routes location={location} key={location.pathname}>
       <Route
-        path="/brief/"
-        element={<Navigate to="/brief/landing" replace />}
+        path="/nantes2025/brief/"
+        element={<Navigate to="/nantes2025/brief/landing" replace />}
       />
       <Route
-        path="/brief/landing"
+        path="/nantes2025/brief/landing"
         element={
           <TransitionsComponent animationType="zoomIn">
             <LandingPage />
@@ -77,7 +77,7 @@ const AnimatedRoutes = () => {
         }
       />
       <Route
-        path="/brief/questions"
+        path="/nantes2025/brief/questions"
         element={
           <TransitionsComponent animationType="fadeInOut">
             <QuestionsPage />
@@ -85,7 +85,7 @@ const AnimatedRoutes = () => {
         }
       />
       <Route
-        path="/brief/contexte"
+        path="/nantes2025/brief/contexte"
         element={
           <TransitionsComponent animationType="fadeInOut">
             <ContextePage />
@@ -93,7 +93,7 @@ const AnimatedRoutes = () => {
         }
       />
       <Route
-        path="/brief/outro"
+        path="/nantes2025/brief/outro"
         element={
           <TransitionsComponent animationType="zoomIn">
             <OutroPage />
@@ -101,7 +101,7 @@ const AnimatedRoutes = () => {
         }
       />
       <Route
-        path="/brief/Introduction"
+        path="/nantes2025/brief/Introduction"
         element={
           <TransitionsComponent animationType="fadeInOut">
             <DefinitionPage />
@@ -109,7 +109,7 @@ const AnimatedRoutes = () => {
         }
       />
       <Route
-        path="/brief/Information"
+        path="/nantes2025/brief/Information"
         element={
           <TransitionsComponent animationType="fadeInOut">
             <InformationMixPage />

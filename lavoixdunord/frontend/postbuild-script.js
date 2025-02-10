@@ -2,7 +2,7 @@ const fs = require('fs');
 const yaml = require('js-yaml');
 const path = require('path');
 
-const basename = (process.env.REACT_APP_BASENAME || "lavoixdunord/");
+const basename = (process.env.REACT_APP_BASENAME || "nantes2025/lavoixdunord/");
 const questionsFilePath = path.join(__dirname, 'build', 'data/questions.yaml');
 
 try {

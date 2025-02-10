@@ -3,6 +3,6 @@ import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/ouest-france/',
+  base: '/nantes2025/ouest-france/',
   plugins: [react()],
 })

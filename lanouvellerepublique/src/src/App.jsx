@@ -9,7 +9,7 @@ import Guide from "./pages/guide";
 function App() {
   return (
     <>
-    <Router basename="/lanouvellerepublique">
+    <Router basename="/nantes2025/lanouvellerepublique">
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/regions" element={<RegionSelection />} />

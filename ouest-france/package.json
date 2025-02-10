@@ -9,7 +9,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@esbuild/darwin-x64": "^0.24.2",
     "@gsap/react": "^2.1.2",
+    "@rollup/rollup-darwin-x64": "^4.34.6",
     "express": "^4.21.2",
     "gsap": "^3.12.7",
     "react": "^18.3.1",
