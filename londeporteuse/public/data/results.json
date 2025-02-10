@@ -1,0 +1,32 @@
+{
+    "festivalSizes": {
+      "title": "Bravo, tu as créé un grand festival qui attire de nombreux participants !",
+      "paragraph1": "Ton festival a su attirer une large audience, créant une effervescence culturelle inédite.",
+      "paragraph2": "Avec plus d'espace, une programmation diversifiée et des infrastructures adaptées, ton événement devient un rendez-vous incontournable.",
+      "paragraph3": "Cependant, l'organisation d'un grand festival engendre des coûts importants, notamment en logistique, sécurité et communication."
+    },
+    "ecologicalActions": {
+      "title": "Bravo, tu as créé un festival écologique en permettant la revalorisation de 70% des déchets créés par le festival !",
+      "paragraph1": "En moyenne, les festivals revalorisent 24% de leurs déchets. (Étude 'Festivals et transitions sociétales' du Pôle - juin 2024)",
+      "paragraph2": "Le tri des déchets est supervisé par des bénévoles formés (la 'brigade verte') et l’évacuation est assurée par une entreprise privée qui les revalorise ou les recycle. Si ton festival est en ville, la Mairie peut également participer au tri des déchets en mettant à disposition ses infrastructures.",
+      "paragraph3": "Voici les partenaires qui t’ont aidé.e pour mener tes actions : chargé.e de communication, entreprises de billetterie utilisant du papier recyclé, restaurateurs, prestataires techniques, fournisseurs de toilettes sèches, créateurs de décors recyclés...",
+      "paragraph4": "En revanche, tu as sacrifié des actions de médiation, ce qui a réduit les opportunités de rencontre entre le public et les artistes. De plus, les actions de prévention des risques et d’inclusion ont été négligées, rendant l'événement moins accessible et sécurisé."
+    },
+    "culturalMediationActions": {
+      "title": "Bravo, tu as favorisé la rencontre entre le public et les artistes !",
+      "paragraph1": "En un an, environ 300 personnes ont participé à une animation grâce à ton engagement, en particulier des élèves des écoles, collèges et lycées.",
+      "paragraph2": "Plusieurs jeunes ayant suivi ces ateliers se sont engagé.e.s en tant que bénévoles pour l’année prochaine, et certains ont découvert des vocations artistiques. En 2019, apprendre de nouvelles compétences était une motivation pour 22% des bénévoles des festivals.",
+      "paragraph3": "Ces actions représentent un coût important en raison du temps de travail des artistes et des équipes, ainsi que des frais de matériel et de déplacement.",
+      "paragraph4": "Voici les partenaires qui t’ont aidé.e pour mener ces actions : artistes et managers, chargé.e de médiation culturelle, professeur.es des écoles, luthiers, régisseurs techniques...",
+      "paragraph5": "En revanche, tu as moins investi dans la transition écologique, ce qui a entraîné une empreinte environnementale plus importante. Par exemple, un festival génère en moyenne 18 tonnes de déchets par jour."
+    },
+    "riskPreventionActions": {
+      "title": "Bravo, tu as organisé un festival plus accessible et sécurisé pour tous les participants !",
+      "paragraph1": "Grâce à tes actions, les festivalier.es se sentent plus en sécurité grâce aux campagnes de sensibilisation sur les addictions, les risques routiers et les violences sexistes et sexuelles.",
+      "paragraph2": "L’installation d’équipements spécialisés comme des rampes PMR (Personnes à Mobilité Réduite) a permis à plus de publics d’accéder à l’événement.",
+      "paragraph3": "Certaines infrastructures ont un coût élevé et nécessitent une mise en place par des entreprises spécialisées, qui les proposent souvent en location.",
+      "paragraph4": "Voici les partenaires qui t’ont aidé.e : organismes de formation, entreprises de location de matériel (gilets vibrants, rampes PMR…), équipes logistiques, professionnels de la santé et du secourisme, associations de prévention...",
+      "paragraph5": "En revanche, la transition écologique a été mise de côté, ce qui a augmenté la quantité de déchets produits par le festival. Moins d’actions de médiation signifie également moins de temps d’échange avec les artistes et moins d’effets positifs sur les bénéficiaires des actions."
+    }
+  }
+  

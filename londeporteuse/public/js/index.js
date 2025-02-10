@@ -36,3 +36,4 @@ setTimeout(() => {
   // Init first slide
   initSlide1();
 }, 1000);
+

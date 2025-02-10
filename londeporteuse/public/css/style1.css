@@ -1,0 +1,809 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+  padding:0;
+  margin:0;
+}
+
+/* Mise en forme de la page */
+body {
+    background-color: #121212;
+    font-family: 'Noto Sans', serif;
+    color: white;
+    overflow: hidden;
+}
+
+#app-container {
+    width: calc(100 * 3vh / 4);  /* Changed from fixed width */
+    height: 100%;
+    
+    background-color: white;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    margin-left: calc((100vw - 100 * 3vh / 4) / 2);
+}
+
+main {
+    flex: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+main::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+main {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Ensure content fills available space */
+main > div {
+    min-height: min-content;
+}
+
+#page_scrollable_container {
+    overflow-y: scroll; /* Active le défilement vertical */
+    scrollbar-width: none; /* Masque la barre de défilement pour Firefox */
+    -ms-overflow-style: none; /* Masque la barre pour IE et Edge */
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+#page_scrollable_container::-webkit-scrollbar {
+    display: none; /* Masque la barre pour Chrome */
+}
+
+/* Sections */
+.choice-section {
+  padding: 15px;
+  background-color: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  border-block-start: solid 0.5px #ddd;
+}
+
+.question-info {
+  color: black;
+  font-size: 0.7rem;
+  text-align: justify;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.choice-section h2 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.choice-section img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.choice-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.choice-item {
+  display: flex;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  overflow: hidden;
+}
+
+.choice-item img {
+  width: 150px;
+  height: auto;
+  object-fit: cover;
+}
+
+.choice-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.choice-info p {
+  font-size: 0.6rem;
+  font-weight: bold;
+  color: black;
+}
+
+.btn-info {
+  color: black;
+  font-size: 0.6rem;
+  border:rgb(168, 167, 167) solid 1px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 48%;
+  margin-bottom: 5%;
+  width: 80px;
+  height: 20px;
+}
+
+.btn-info span {
+  font-size: 1.0rem;
+  margin-left: 5px;
+  color: #32D2C3;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    padding: 25px 0;
+    background-color: white;
+}
+
+.btn-validate, .btn-next {
+    margin-bottom: 20px;  /* Added significant bottom margin */
+    position: relative;   /* Ensure proper stacking */
+    z-index: 1;          /* Make sure button stays above other elements */
+}
+
+.btn-validate {
+    display: block;
+    text-align: center;
+    width: 50%;
+    background-color: #32D2C3;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 10px 10px;
+    text-decoration: none;
+    margin-top: auto;
+    box-shadow: 0px 4px 10px rgba(0, 235, 30, 0.3);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-validate:hover {
+    background-color: #32D2C3;
+    box-shadow: 0px 6px 12px rgba(50, 210, 195, 0.5);
+}
+
+.btn-next {
+    display: block;
+    text-align: center;
+    width: 100%;
+    background-color: #32D2C3;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 15px;
+    text-decoration: none;
+    margin: 20px auto;
+    box-shadow: 0px 4px 10px rgba(0, 235, 30, 0.3);
+    transition: all 0.3s ease;
+  }
+  
+  .btn-next:hover {
+    background-color: #32D2C3;
+    box-shadow: 0px 6px 12px rgba(0, 235, 30, 0.5);
+  }  
+
+
+/* Header */
+header {
+    background-color: #000;
+    padding: 10px 20px;
+}
+
+header .navbar {
+    display: flex; /* Organisation en ligne */
+    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+}
+
+header .logo-container img {
+    height: 40px;
+}
+
+/* Bannière */
+.banner {
+    width: 100%;
+    height: 40vh;
+    position: relative; /* Permet de positionner le texte par-dessus */
+    display: flex; /* Flexbox pour centrer le contenu */
+    align-items: center; /* Aligne verticalement le texte */
+    justify-content: center; /* Centre horizontalement le texte */
+    overflow: hidden; /* Cache les débordements de l'image */
+}
+
+.banner .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Adapte l'image sans déformation */
+    z-index: 1; /* Derrière les autres éléments */
+}
+
+.logo-festival {
+    position: absolute;
+    top: 25%;
+    z-index: 2; /* Au-dessus de l'image de fond */
+    width: 70%;
+    left: 50%;
+    transform: translateX(-50%); /* Centre horizontalement */
+}
+
+.logo-partners {
+    position: absolute;
+    bottom: 5%; /* Place les logos près du bas */
+    z-index: 2; /* Au-dessus de l'image */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+}
+
+.logo-partners2 {
+  position: absolute;
+  bottom: 75%;
+  z-index: 2;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 55%;
+}
+
+.banner h1 {
+    position: absolute; /* Superpose le titre sur l'image */
+    font-size: 0.5rem;
+    color: white;
+    text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7);
+    text-align: center;
+    bottom: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3; /* Place le texte au-dessus des autres éléments */
+    width: 90%; /* Limite la largeur pour forcer le texte à rester sur une ligne */
+    white-space: nowrap; /* Empêche le passage à la ligne */
+}
+
+
+/* Contenu principal */
+.content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: white;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: none;
+    border-bottom: solid 1px #ddd;
+}
+
+.content-title {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 10px;
+    text-align: justify;
+}
+
+.content-text {
+    font-size: 0.8rem;
+    line-height: 1.4;
+    color: black;
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+.question-title {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 10px;
+  text-align: justify;
+  opacity: 1
+}
+
+.question-text {
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: black;
+  text-align: justify;
+  margin-bottom: 20px;
+}
+
+.create-container {
+    display: flex;
+    justify-content: center;
+}
+
+/* Bouton principal */
+.btn-create-event {
+    background-color: #32D2C3;
+    color: white;
+    padding: 10px 10px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0px 4px 10px rgba(37, 190, 162, 0.3);
+    margin-top: 5%;
+}
+
+.btn-create-event:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 12px rgba(37, 190, 162, 0.3);
+}
+
+h2{
+    font-size: 0.8rem;
+    color: black;
+    text-align: center;
+    bottom: 75%;
+    left: 25%;
+}
+
+/* Conteneur principal du diagramme */
+.budget-chart {
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Titre */
+  .chart-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: black;
+    text-align: center;
+  }
+  
+  /* Diagramme en bandes */
+  .chart-bars {
+    display: flex;
+    height: 40px;
+    overflow: hidden;
+    margin-bottom: 15px;
+  }
+  
+  .bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-size: 0.7rem;
+    font-weight: bold;
+  }
+  
+  .bar-recettes {
+    background-color: #32D2C3;
+  }
+  
+  .bar-prives {
+    background-color: #D9D9D9;
+  }
+  
+  .bar-publics {
+    background-color: #999999;
+  }
+  
+  /* Légende */
+  .chart-legend {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .chart-legend li {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    color: black;
+  }
+  
+  .legend-color {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+  }
+  
+  .legend-color.recettes {
+    background-color: #32D2C3;
+  }
+  
+  .legend-color.prives {
+    background-color: #D9D9D9;
+  }
+  
+  .legend-color.publics {
+    background-color: #999999;
+  }
+
+.legend-title {
+  color: black;
+  font-size: 0.7rem;
+  padding-left: 15px;
+  font-weight: bold;
+}
+
+/* Footer */
+footer {
+    background-color: white;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-top: auto;
+    flex-shrink: 0;
+}
+
+.footer-logos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-items: center;
+  padding: 20px;
+}
+
+.footer-logo {
+  width: 60px;
+  height: auto;
+}
+
+.foot-title {
+  background-color: black; 
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+#foot-text {
+  font-size: 0.8rem;
+  color: white;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* Arrière-plan de la fenêtre modale (modal) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7); /* Fond sombre semi-transparent */
+}
+
+/* Contenu de la fenêtre modale */
+.modal-content {
+  background: linear-gradient(135deg, #444, #222); /* Fond en dégradé */
+  color: #fff; /* Texte en blanc */
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 15px; /* Coins arrondis */
+  text-align: center;
+  width: 80%;
+  max-width: 400px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6); /* Effet d'ombre */
+  font-family: 'Arial', sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  position: relative;
+  animation: fadeIn 0.3s ease-in-out; /* Animation d'apparition */
+}
+  
+/* Style du bouton de fermeture */
+/* Style du bouton de fermeture */
+
+
+.choice-item {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.choice-item:hover {
+    transform: scale(1.1);
+    z-index: 2;
+}
+.choice-item.selected {
+    border: 2px solid #32D2C3;
+    box-shadow: 0 0 10px rgba(50, 210, 195, 0.5);
+}
+
+.close:hover,
+.close:focus {
+    color: #ff6666;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+  
+/* Style du texte de la fenêtre modale */
+#modal-description {
+    margin: 20px 0;
+    font-weight: 300;
+    text-align: justify;
+}
+  
+/* Animation d'apparition */
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+
+/* Style spécifique pour la question modale */
+.modal-question {
+  background-color: rgba(255, 255, 255, 0.95);
+  position: fixed;  /* Changed from relative to fixed */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);  /* Center both horizontally and vertically */
+  padding: 25px;
+  border-radius: 15px;
+  width: 85%;
+  max-width: 320px;
+  max-height: 70vh;  /* Limit height to 70% of viewport height */
+  overflow-y: auto;  /* Enable vertical scrolling */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  -webkit-overflow-scrolling: touch;  /* Smooth scrolling on iOS */
+}
+
+.modal-question p {
+  color: #333;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin: 0;
+  padding-right: 20px;
+  padding-bottom: 10px;  /* Add some bottom padding for better scrolling */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.modal-question::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.modal-question {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Ensure close button stays visible */
+.close {
+  position: sticky;  /* Changed from absolute to sticky */
+  top: 0;
+  right: 15px;
+  color: #ff6666;
+  background-color: rgba(255, 255, 255, 0.9);  /* Slight background to ensure visibility */
+  padding: 5px;
+  z-index: 2;
+}
+  
+
+
+
+#dynamic-text {
+    position: absolute;
+    top: 40%; /* Ajuste selon le SVG */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: black;
+    width: 60%;
+  }
+
+  
+
+
+
+/**************************Here some of my codes (Ach)**********************/
+  
+
+.slider-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+input[type="range"] {
+  width: 100%;
+  appearance: none;
+  height: 8px;
+  background: #ddd;
+  border-radius: 4px;
+  outline: none;
+  transition: background 0.3s;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #00d1c1;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#ticketPriceDisplay {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+
+/* Fill the whole viewport when its aspect ratio is between 9/16 and 3/4 */
+@media screen and (max-aspect-ratio: 3/4) {
+  #app-container{
+      margin-left: 0; /* reset margin-left */
+      width: 100vw; /* content is full width (and full height because of the default rule for container height */
+  }
+
+  /* We set a default font size here. It will be the base for all other font sizes */
+  /* Here the font size is proportional to content width */
+  body{
+      font-size: 15vw;
+  }
+}
+
+/* The content is displayed at 9/16 If the aspect ratio is higher that 9/16  */ 
+/* For standard mobile devices (portrait) */
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    #app-container {
+        width: 100vw;
+        height: 100vh;
+    }
+    
+    body {
+        font-size: 15px;
+    }
+}
+
+/* For larger phones */
+@media screen and (min-width: 375px) and (max-width: 428px) {
+    #app-container {
+        width: 100vw;
+        height: 100vh;
+    }
+}
+
+/* For tablets (portrait) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    #app-container {
+        width: 390px;
+        height: 100vh;
+        margin-left: calc((100vw - 390px) / 2);
+    }
+}
+
+/* For desktop */
+@media screen and (min-width: 1025px) {
+    #app-container {
+        width: 390px;
+        height: 85vh;
+        min-height: 700px;
+        max-height: 900px;
+        margin-left: calc((100vw - 390px) / 2);
+    }
+}
+
+/* For very tall screens (like iPhone 12 Pro Max) */
+@media screen and (min-height: 800px) and (max-width: 428px) {
+    #app-container {
+        height: 100vh;
+    }
+}
+
+/* For shorter screens */
+@media screen and (max-height: 667px) {
+    #app-container {
+        height: 100vh;
+    }
+    
+    body {
+        font-size: 14px;
+    }
+}
+
+/* Remove the old aspect ratio queries that were causing wrapping */
+/* @media screen and (max-aspect-ratio: 9/16) { ... } */
+
+
+/* Lien interactif pour les sources */
+.toggle-link {
+  display: block;
+  margin-top: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.85rem;
+  text-align: center;
+  color: black;
+  text-decoration: underline;
+  font-weight: bold;
+  margin: 5px auto;
+}
+
+/* Contenu caché par défaut */
+.ia-details {
+  display: none;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #f4f4f4;
+  border-left: 4px solid #32D2C3;
+}
+
+/* Classe pour afficher la section */
+.ia-details.show {
+  display: block;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Animation d'apparition */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-10px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+
+/* Style par défaut de la section sources */
+.sources-section {
+  background-color: #f0f0f0;
+  padding: 5px;
+  margin-top: 10%;
+  text-align: center;
+  transition: background-color 0.5s ease-in-out, padding 0.5s ease-in-out;
+  max-height: 50px;
+  overflow: hidden;
+}
+
+/* Quand la section est active, le fond devient blanc et la taille augmente */
+.sources-section.active {
+  background-color: white;
+  max-height: 600px;
+  padding: 10px;
+  margin-bottom: 10%;
+}
+
+/* Style du texte des sources pour qu'il soit noir et uniforme */
+.sources-section .ia-details {
+  color: black;
+  font-size: 1rem;
+  text-align: left;
+  padding-top: 10px;
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="js/choices.js" defer></script>
+    <script src="js/app.js" defer></script>
+    <link rel="stylesheet" href="css/style1.css">
+    <title>Choix du Festival</title>
+  </head>
+  <body>
+    <div id="app-container">
+      <header>
+        <nav class="navbar">
+          <div class="logo-container">
+            <img src="img/logo.svg" alt="logo du site web"/>
+          </div>
+        </nav>
+      </header>
+
+      <main>
+        <div class="page_scrollable_container">
+          <!-- Titre principal -->
+          <svg id="perso-svg" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 450"><defs><style>.cls-1{fill:#32d2c3;}.cls-2{fill:#fff;}</style></defs><rect class="cls-1" width="1080" height="450"/><path class="cls-2" d="M260,327l-5-29,33-7-36-45-29-51L106.19,227.64,81.47,395H259.38L261,363l-69-46Zm-58.5-79c5.25,0,9.5,7.39,9.5,16.5s-4.25,16.5-9.5,16.5-9.5-7.39-9.5-16.5S196.25,248,201.5,248Z"/><polygon class="cls-2" points="189.72 170.47 181.31 173.67 174.56 155.91 124.08 175.08 130.82 192.84 120.54 196.75 123.03 203.29 192.21 177.01 189.72 170.47"/><polygon class="cls-2" points="346.28 264.06 294 340 388.15 302.03 449 379 637 401 903 407 978.79 349.66 1039 301 1010 131 868 38 438.53 38 294 139.4 346.28 264.06"/></svg>
+          <div id="dynamic-text" class="narrative-text"></div>
+
+
+          <!-- Section: Taille du festival -->
+          <section class="choice-section">
+            <p class="question-title">
+              <img src="img/picto_perso.svg" alt="Icon">Quelle taille pour mon festival ?
+            </p>
+            <div class="choice-group">
+              {{#festivalSizes}}
+              <div data-id="{{id}}" class="choice-item" onclick="selectOption('festivalSizes', '{{id}}', this)">
+                <img src="{{image}}" alt="{{name}}">
+                <div class="choice-info">
+                  <p>{{name}}</p>
+                  <button class="btn-info">Plus d'info <span>+</span></button>
+                </div>
+              </div>
+              {{/festivalSizes}}
+            </div>
+          </section>
+
+          <!-- Section: Médiation culturelle -->
+          <section class="choice-section">
+            <p class="question-title">
+              <img src="img/picto_mediation.svg" alt="Icon">Quelles actions pour la médiation culturelle ?
+            </p>
+            <p class="question-info">Je souhaite faciliter l’accès à la culture en organisant des activités ouvertes à tous.tes.</p>
+            <div class="choice-group">
+              {{#culturalMediationActions}}
+              <div data-id="{{id}}" class="choice-item" onclick="selectOption('culturalMediationActions', '{{id}}', this)">
+                <img src="{{image}}" alt="{{name}}">
+                <div class="choice-info">
+                  <p>{{name}}</p>
+                  <button class="btn-info">Plus d'info <span>+</span></button>
+                </div>
+              </div>
+              {{/culturalMediationActions}}
+            </div>
+          </section>
+
+          <!-- Section: Transition écologique -->
+          <section class="choice-section">
+            <p class="question-title">
+              <img src="img/picto_ecolo.svg" alt="Icon">Quelles actions pour la transition écologique ?
+            </p>
+            <p class="question-info">Je souhaite que mon festival soit éco-responsable.</p>
+            <div class="choice-group">
+              {{#ecologicalActions}}
+              <div data-id="{{id}}" class="choice-item" onclick="selectOption('ecologicalActions', '{{id}}', this)">
+                <img src="{{image}}" alt="{{name}}">
+                <div class="choice-info">
+                  <p>{{name}}</p>
+                  <button class="btn-info">Plus d'info <span>+</span></button>
+                </div>
+              </div>
+              {{/ecologicalActions}}
+            </div>
+          </section>
+
+          <!-- Section: Prévention des risques -->
+          <section class="choice-section">
+            <p class="question-title">
+              <img src="img/picto_securite.svg" alt="Icon">Quelles actions pour la prévention des risques ?
+            </p>
+            <p class="question-info">Je veille à l’accessibilité, la sécurité et à la santé de tous.tes lors de mon évènement.</p>
+            <div class="choice-group">
+              {{#riskPreventionActions}}
+              <div data-id="{{id}}" class="choice-item" onclick="selectOption('riskPreventionActions', '{{id}}', this)">
+                <img src="{{image}}" alt="{{name}}">
+                <div class="choice-info">
+                  <p>{{name}}</p>
+                  <button class="btn-info">Plus d'info <span>+</span></button>
+                </div>
+              </div>
+              {{/riskPreventionActions}}
+            </div>
+          </section>
+
+          <!-- Bouton de validation -->
+          <div class="button-container">
+            <button class="btn-validate" onclick="submitChoices()">Je valide mes choix</button>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Fenêtre modale -->
+    <div id="modal" class="modal">
+      <div class="modal-question">
+        <span class="close">&times;</span>
+        <p id="modal-description"></p>
+      </div>
+    </div>
+
+  </body>
+</html>
+
