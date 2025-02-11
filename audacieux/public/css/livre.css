@@ -1,0 +1,190 @@
+.book-cover h1 {
+    margin: 0;
+    font-size: 1.5em;
+    line-height: 1.2;
+}
+
+.book-cover .subtitle {
+    font-size: 1em;
+    margin-top: 10px;
+}
+
+.book.open {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; /*Dimensions du livre fermé.*/
+    height: 100vh;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.book.open .content {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+    visibility: hidden;
+}
+
+.book-container {
+    width: 80vw;
+    height: 80vh;
+    display: flex;
+    background: white;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.current-pages {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.page {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-right: 1px solid #ccc;
+    max-width: 100%;
+    background-color: #fdf5e6; /* couleur de fond de page */
+}
+
+.page:last-child {
+    border-right: none;
+}
+
+/* Ensure media elements are responsive */
+.page img, 
+.page video {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Prevent horizontal scrollbars on content */
+.page * {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Style scrollbar for better aesthetics */
+.page::-webkit-scrollbar {
+    width: 8px;
+}
+
+.page::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.page::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.page::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.navigation {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+}
+
+.navigation button {
+    padding: 10px 20px;
+    background: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* Styles pour le deuxième livre */
+#book2 {
+    cursor: pointer;
+    position: relative;
+    width: 120px; /* Dimensions spécifiques au deuxième livre */
+    height: 180px;
+    background: darkblue;
+    border-radius: 8px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+    top: 20%; /* Position spécifique */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#book2 .book-cover {
+    background-color: darkblue;
+    background-image: url('/public/img/cover2.jpg'); /* Image de couverture pour le deuxième livre */
+    background-size: cover;
+}
+
+#book2 .book-cover h1 {
+    font-size: 1.2em;
+}
+
+#book2 .book-cover .subtitle {
+    font-size: 0.9em;
+}
+
+#book2.book.open {
+    width: 90vw;
+    height: 90vh;
+    background: rgba(0, 0, 0, 0.85);
+}
+
+/* Fade-in effect for pages */
+.page {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* When a page is shown */
+.page.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Text typing effect */
+.page h2, .page p {
+    overflow: hidden;
+    white-space: normal;
+    animation: typing 2s steps(30, end), blink 0.5s step-end infinite alternate;
+    display: block; /* Maintain typing effect compatibility */
+}
+
+.page p {
+    font-family: Verdana, sans-serif;
+    font-size: 15pt;
+}
+
+.page h2 {
+    animation-duration: 1.5s;
+    font-size: 35pt;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    from {
+        border-right: 2px solid black;
+    }
+    to {
+        border-right: 2px solid transparent;
+    }
+}

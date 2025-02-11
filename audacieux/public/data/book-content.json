@@ -1,0 +1,66 @@
+{
+    "pages_time": [
+        {
+            "step": 0,
+            "id": "start",
+            "title": "Bienvenue à Toulouse",
+            "content": "Toulouse est un grand centre de production artisanale et de petite industrie. Au XXe siècle, comme toutes les grandes villes, elle était devenue un centre d’emplois improductifs, mais après le grand choc pétrolier, il y a trente ans, elle a perdu les 3/4 de ses habitants, partis repeupler les collines et les montagnes pyrénéennes. Aujourd’hui, Toulouse est toujours un centre politique, puisqu’elle héberge le Parlement d’Occitanie, où se retrouvent les différents élus des territoires autonomes. "
+        },
+        {
+            "step": 0,
+            "id" : "hybarge",
+            "title": "les \"Hybarge\"",
+            "content": "C’est une Hybarge, une barge propulsée à l’hydrogène. La première générationa été lmise à l’eau dans les années 2020, alors que le frêt redémarrait doucement sur le Canal."
+        },
+        {
+            "step": 0,
+            "id" : "monnaie",
+            "title": "Les monaies du canal",
+            "content": "J’ai l’habitude de payer en Bulle, la monnaie Charentaise, lancée en 2019. Il y a déjà presque 50 ans ! Depuis le début du XXIe siècle, les monnaies locales citoyennes se sont développées partout en France et dans le monde, permettant aux habitants de chaque territoire d’avoir un impact sur leurs échanges. Les monnaies nationales ou continentales, comme l’euro, ont disparu parce qu’elles n’avaient plus d’utilité dans une économie sans spéculation financière. "
+        },
+        {
+            "step": 16,
+            "id": "drone",
+            "title": "Les Drones",
+            "content": "Les drones de portage facilitent la logistique le long du canal. Ils sont précieux, on leur fait réaliser les tâches les plus difficiles"
+        },
+        {
+            "step": 16,
+            "id": "ecluse",
+            "title": "L’écluse de Gardouch",
+            "content": "Me voici à l’écluse de Gardouch, près de Villefranche-de-Lauragais : des drones porteurs s’activent pour charger une péniche avec des sacs de céréales pris dans un vaste entrepôt. Avant même le grand choc pétrolier, on avait relancé le fret fluvial et le canal était redevenu un axe de transport de marchandises. Les écluses fonctionnent comme au lancement du canal au XVIIe siècle, le principe n’a pas changé ! Mais maintenant, elles sont automatisées et une IA gère les apports d’eau pour ne pas la gaspiller."
+        },
+        {
+            "step": 66,
+            "id": "veloroute",
+            "title": "La Véloroute",
+            "content": "La véloroute du Canal du Midi est l’une des mieux entretenues d’Occitanie. Elle accueille cyclistes et vélo-cargos sur son revêtement en bioasphalte. Les chevaux et leur crottin empreuntent, eux, la voie de l’autre coté du canal ! Surtout, elle relie les grandes véloroutes européennes qui longent  l’Atlantique et la Méditerrannée. "
+        },
+        {
+            "step": 66,
+            "id": "Carcassone",
+            "title": "Carcassonne",
+            "content": "Nous laissons derrière nous Carcassonne, ancien chef-lieu du Département de l’Aude, et ses centres commerciaux en ruine. J’ai passé un agréable moment dans la cité médiévale, qui a été conservée à l’identique. Après mon escapade, j’ai pris une autre HyBarge. J’entend au loin l’activité frénétique de la prochaine ville, Trèbes. C’est jour de marché. Située à l’embouchure de plusieures vallées, la ville a profité du déclin de Carcassonne pour s’affirmer comme l’un des centres économiques de la région."
+        },
+        {
+            "step": 74,
+            "id":"somail",
+            "title": "Le Somail",
+            "content": "Nous voici arrivés au Somail, le dernier grand port avant Béziers. On y trouve les meilleurs produits qui transitent sur le canal : de la viande d’estive, du poisson de Méditerrannée, des bouteilles de blanquette de Limoux… et surtout une librairie de livres anciens absolument fabuleuse.  C’est un vaste bâtiment, un ancien entrepôt de vin, qui héberge plus de 100 000 ouvrages !"
+        },
+        {
+            "step": 90,
+            "id":"sete",
+            "title": "Arrivée à Sète",
+            "content": "Nous nous engageons maintenant sur l’étang de Thau, qui marque la fin du Canal du Midi. Sur l’autre rive de l’étang, depuis le port de Sète où je débarquerai dans quelques minutes, les HyBarges de voyageurs et de marchandises s’engagent dans un nouveau canal, et poursuivent leur route vers le Rhône. Je prends le temps de contempler, de l’autre côté de la digue, la vaste mer méditerranée. Voilà, j’espère que vous avez autant apprécié le voyage que moi. C’était Orion Kanoa, restez à l’écoute d’Écotone FM, la radio de la Charente réunifiée."
+        }
+    ],
+    "pages_callback":[
+        {
+            "type": "callback",
+            "id": "demi",
+            "title": "Mi-parcours",
+            "content": "Un événement important..."
+        }
+    ]
+}

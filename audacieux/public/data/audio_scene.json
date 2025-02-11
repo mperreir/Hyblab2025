@@ -1,0 +1,135 @@
+{
+    "audios":[
+        {
+            "id": "ambiance",
+            "src": "assets/audio/ambiance.mp3",
+            "volume": 0.2,
+            "keyframes":[]
+        },
+        {
+            "id": "drone1",
+            "src": "assets/audio/drone1.mp3",
+            "volume": 0.8,
+            "keyframes":[
+                {"time": 2, "type":"pause"},
+                {"time": 6, "type":"play_once"},
+                {"time": 15, "type":"pause"}
+            ]
+        },
+        {
+            "id": "drone2",
+            "src": "assets/audio/drone2.mp3",
+            "volume": 0.8,
+            "keyframes":[
+                {"time": 2, "type":"pause"},
+                {"time": 6, "type":"play_once"},
+                {"time": 15, "type":"pause"}
+            ]
+        },
+        {
+            "id": "Bell",
+            "src": "assets/audio/bell.mp3",
+            "volume": 0.4,
+            "keyframes":[
+                {"time": 65, "type":"play_once"}
+            ]
+        },
+        {
+            "id": "velo",
+            "src": "assets/audio/velo.mp3",
+            "volume": 0.7,
+            "keyframes":[
+                {"time": 56, "type":"pause"},
+                {"time": 58, "type":"play_once"},
+                {"time": 70, "type":"pause"}
+            ]
+        },
+        {
+            "id": "ecluseBruit",
+            "src": "assets/audio/ecluseBruit.mp3",
+            "volume": 0.7,
+            "keyframes":[
+                {"time": 15, "type":"pause"},
+                {"time": 18, "type":"play_once"},
+                {"time": 24, "type":"pause"}
+            ]
+        },
+        {
+            "id": "porteOLib",
+            "src": "assets/audio/ouverturePorte.mp3",
+            "volume": 0.3,
+            "keyframes":[],
+            "type":"play_once"
+        },
+        {
+            "id": "marcheAmb",
+            "src": "assets/audio/marcheAmbiance.mp3",
+            "volume": 0.4,
+            "keyframes":[],
+            "type":"loop"
+        },
+        {
+            "id": "abdonia",
+            "src": "assets/audio/abdonia.mp3",
+            "volume": 0.7,
+            "keyframes":[],
+            "type":"play_once"
+        },
+        {
+            "id": "start_peniche",
+            "src": "assets/audio/bateauAmb.mp3",
+            "volume": 0.4,
+            "keyframes":[],
+            "type":"play_once"
+        },
+        {
+            "id": "marche",
+            "src": "assets/audio/marche.mp3",
+            "volume": 0.7,
+            "keyframes":[],
+            "type":"play_once"
+        },
+        {
+            "id": "Librairie",
+            "src": "assets/audio/Librairie.mp3",
+            "volume": 0.7,
+            "keyframes":[],
+            "type":"play_once"
+        },
+        {
+            "id": "livreNext",
+            "src": "assets/audio/livreNext.mp3",
+            "volume": 0.5,
+            "keyframes":[],
+            "type":"play_once"
+        },
+        {
+            "id": "livrePrev",
+            "src": "assets/audio/livrePrev.mp3",
+            "volume": 0.5,
+            "keyframes":[],
+            "type":"play_once"
+        },
+        {
+            "id": "livreFerme",
+            "src": "assets/audio/livreFerme.mp3",
+            "volume": 0.5,
+            "keyframes":[],
+            "type":"play_once"
+        },
+        {
+            "id": "carnet",
+            "src": "assets/audio/carnet.mp3",
+            "volume": 0.5,
+            "keyframes":[],
+            "type":"play_once"
+        },
+        {
+            "id": "bateauAmb",
+            "src": "assets/audio/bateauAmb.mp3",
+            "volume": 0.4,
+            "keyframes":[],
+            "type":"loop"
+        }
+    ]
+}

@@ -1,208 +1,314 @@
-/* ------- Important ! Please at least keep the last part of this CSS ----------- */
-/* ------- that adapts content width and height so that aspect ratio  ----------- */
-/* ------- is kept between 9/16 a,d 3/4 (portait orientation)         ----------- */
-
-/* Normalize margin and padding to ease elements positioning */
-*{
-    padding:0;
-    margin:0;
-}
-
 body{
-    background-color: black;
-    color: white;
-    overflow: hidden;   /* to avoid slider bugs on some browsers */
-    font-family: sans-serif;
+  background-color: #000000;
 }
 
-/* -------------- Loader --------------*/
-#loader{
-    z-index: 2;
-    position:absolute;
+.clickable-div {
+  position: absolute;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-#loader-img{
-    top: calc(50% - 0.5em);
-    left: calc(50% - 0.5em);
-    position: absolute;
-    font-size: 50%;
+#box-container{
+  position: absolute;
+  width: 100%;
+  height: auto;
 }
 
-#loader-text{
-    text-align: center;
-    font-size: 25%;
-    position: absolute;
-    top:calc(50% + 2em);
-    width: 100%
-}
-/* -------------- End of Loader --------------*/
-
-/* Swiper slider. Need to fill the container */
-#mySwiper{
-    width: 100%;
-    height:100%;
-    position: absolute;
+#image-scene {
+  position: relative;
+  z-index: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
-/* white navigation bullets */
-.swiper-pagination-bullet-active {
-    background-color: white !important;
+.scene-object {
+  position: absolute;
 }
 
-/* the slides and the loader should fill the whole 9:16 zone */
-.swiper-wrapper section, #loader{
-    background-color: dodgerblue;
-    width: 100%;
-    height: 100%;
+.hidden {
+  display: none;
 }
 
-/* Most of the elements in this demo are absolute positioned with percentages */
-#first-slide header, #second-slide header{
-    text-align: center;
-    width: 100%;
-    top: 10%;
-    position: absolute;
-    font-size: 30%;
-    z-index: 2;
+#slider-container {
+  z-index: 15;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
 }
 
-#logo-hyblab{
-    text-align: center;
-    width: 50%;
-    left: 50%; /* center the logo, in interaction with the negative margin-left */
-    top: 50%;
-    margin-left:-25%; /* this is half the width */
-    margin-top:calc(-7.5% * 9 / 16 ); /* margins are relative to the element width... :-( */
-    position: absolute;
-    font-size: 50%;
-    z-index: 2;
-    cursor: pointer;
+#time-slider {
+  flex-grow: 1;
 }
 
-/* Last slide image is centered */
-#img-fini{
-    width: 70%;
-    left: 50%; /* center the logo, in interaction with the negative margin-left */
-    top: 40%;
-    position: absolute;
-    margin-left:-35%; /* this is half the width */
-    margin-top:calc(-25% * 9 / 16 ); /* margins are relative to the element width... :-( */
+#mouse-popup {
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  pointer-events: none;
 }
 
-main > section{
-    background-image: url('../img/background.svg');
-    background-size: 100% auto; /* background is full width and height is proportional to width */
-    background-position: bottom; /* background is bottom aligned */
+#time-slider-container {
+  position: fixed;
+  bottom: 0; /* Positionné en bas de l'écran */
+  left: 0;
+  width: 100%; /* Occupe toute la largeur */
+  background-color: rgba(0, 0, 0, 0.8); /* Fond semi-transparent */
+  z-index: 20; /* Au-dessus des autres éléments */
+  padding: 10px 0;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5); /* Ombre subtile pour un effet visuel */
 }
 
-/* Footer of last slide is at the bottom and content is centered */
-#first-slide footer{
-    bottom: 5%;
-    position: absolute;
-    box-sizing: border-box; /* So that padding is not added to width (and width: 100% works) */
-    width: 100%; /* could also use  width: calc(100% - 2em) if not using box-sizing */
-    font-size: 20%;
-    text-align: center;
-    padding: 1em;
-    background-color: rgba(0, 0, 0, 0.5);
+#time-slider {
+  width: 90%; /* Le slider occupe 90% de la largeur du container */
+  margin: 0 auto; /* Centrer le slider horizontalement */
+  display: block;
+  -webkit-appearance: none; /* Supprime le style par défaut sur les navigateurs WebKit */
+  background: linear-gradient(to right, #4caf50, #2196f3); /* Dégradé pour le slider */
+  height: 8px; /* Hauteur de la barre */
+  border-radius: 5px; /* Bordures arrondies */
+  outline: none; /* Supprime le contour lors de la sélection */
+  cursor: pointer;
+}
+
+#time-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid #2196f3;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+#time-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid #2196f3;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Positionnement des éléments de la barre latérale */
+.sidebar {
+  /*position: absolute;*/
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; /* Espacement entre les images */
+}
+
+.sidebar img {
+  width: 70px; /* Taille réduite pour les images */
+  height: auto; /* Conserve le ratio d'aspect */
+  border-radius: 5px;
+  /*background-color: #2c3e50;*/
+  padding: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.notification-img {
+  animation: pulse 1s infinite;
+}
+
+/* Animation to draw attention */
+@keyframes pulse {
+  0% {
+      transform: rotate(0deg) scale(1.0);
+  }
+  25% { 
+      transform: rotate(45deg) scale(1.5);
+  }
+  50%{
+    transform: scale(1.0);
+  }
+  75%{
+      transform: rotate(-45deg) scale(1.5);
+  }
+  100% {
+      transform: rotate(0deg) scale(1.0);
+  }
+}
+
+.notification-img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(255, 71, 71, 1);
+}
+
+/* Inventaire et Livre en haut à gauche */
+.sidebar.left {
+  top: 10px;
+  left: 10px;
+  height: 10px;
+}
+
+/* Ajustements pour le conteneur principal */
+main {
+  position: relative;
+  z-index: 10000;
+}
+
+main .game {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+main > section {
+  background-image: url('../img/background.svg');
+  background-size: auto 350%;
+  background-position: bottom;
+}
+
+/* Animation pour wiggle */
+@keyframes wiggle {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-1px) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(-2px) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-1px) rotate(2deg);
+  }
+  100% {
+    transform: translateY(-0px) rotate(0deg);
+  }
+}
+/* Keyframes pour simuler le mouvement d'un drone */
+@keyframes slideWiggle {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  25% {
+    transform: translate(5px, 0px) rotate( 20deg);
+  }
+  50% {
+    transform: translate(10px, 0px);
+  }
+  75% {
+    transform: translate(5px, 0px) rotate(-20deg);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
 }
 
 
-/* ---------- Positioning of logos on the last slide -------------------- */
-/* here we have a contraint on the height of the logos (not the width)     */
-/* so we cannot use % and use em (which are proportional to the size of the */
-/* slide because of body's font size rule at the end of this CSS           */
-#bandeau {
-    width:100%;
-    position: absolute;
-    bottom: 0;
-    background-color: white;
-    font-size: 20%;
+@keyframes fullRotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+@keyframes TreeAnimation {
+  0% {
+    transform: scale(1.0, 1.0);
   }
 
-  #bandeau li{
-    list-style-type: none;
-    display: inline-block;
-    vertical-align: middle;
-    margin: 0 0.5em;
+  50% {
+    transform:  scale(1.2, 1.0);
   }
 
-  #bandeau img{
-    height: 2.5em;
+  100% {
+    transform: scale(1.0, 1.0);
   }
-
-  #bandeau #hyblab{
-    margin: 1em auto;
-    height: 3em;
-    display: block;
-  }
-
-  #bandeau #cc, #bandeau #opensource
-  {
-    height: 1em;
-  }
-
-  #bandeau .stacked{
-    display:block;
-  }
-
-  #bandeau ul{
-    text-align: center;
-    padding: 0 0;
-    margin: 0.5em auto;
-  }
-
-  #bandeau .institutionnel
-  {
-    height: 2em;
-  }
-
-/* ---------- Important media queries for easy responsive content :-) ----------------- */
-/* Whatever the device used, the content will be displayed full width and height if      */
-/* the aspect ratio is between 3/4 and 9/16. If not it is locked to either 3/4 or 9/16  */
-
-/* When the aspect ratio is smaller that 3/4, display a 3/4 content */
-#container{
-    position: fixed; /* To set the size of the container to 100% of the visible viewport height AND for absolute positioning of child elements*/ 
-    height: 100%;   /* even on mobile devices with url or navigation bars */
-    margin-left: calc((100vw - 100 * 3vh / 4) / 2); /* Add black bands on left and right */
-    width: calc(100 * 3vh / 4); /* Force 3/4 aspect ratio */
 }
 
-/* We set a default font size here. It will be the base for all other font sizes */
-/* Here the font size is proportional to content width */
-body{
-    font-size: calc(15vh * 3 / 4);
+
+#wiggle-group{
+  animation: wiggle 1.6s infinite linear;
+  transform-box: fill-box;
+  transform-origin: center;
 }
 
-/* Fill the whole viewport when its aspect ratio is between 9/16 and 3/4 */
-@media screen and (max-aspect-ratio: 3/4) {
-    #container{
-        margin-left: 0; /* reset margin-left */
-        width: 100vw; /* content is full width (and full height because of the default rule for container height */
-    }
 
-    /* We set a default font size here. It will be the base for all other font sizes */
-    /* Here the font size is proportional to content width */
-    body{
-        font-size: 15vw;
-    }
+#wiggle-group{
+  animation: wiggle 1.6s infinite linear;
+  transform-box: fill-box;
+  transform-origin: center;
 }
 
-/* The content is displayed at 9/16 If the aspect ratio is higher that 9/16  */ 
-@media screen and (max-aspect-ratio: 9/16) {
-    #container{
-        margin-left: 0; /* reset left margin */
-        width: 100vw;   /* content is full width */
-        margin-top: calc(-50 * 16vw / 9); /* move the content half the height to the top */
-        top:50%; /* then center it ! */
-        height: calc(100 * 16vw / 9); /* adjust height so that aspect ratio is 9/16 */
-    }
-
-    /* We set a default font size here. It will be the base for all other font sizes */
-    /* Here the font size is proportional to content width */
-    body{
-        font-size: 15vw;
-    }
+.eolienne{
+  animation: fullRotation 5s infinite linear;
+  transform-box: fill-box;
+  transform-origin: center;
 }
 
+.svgElement2-cls-2{
+  animation: slideWiggle 10s infinite linear;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.drone {
+  /* Style par défaut */
+  animation: slideWiggle 3s infinite linear;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+g[id^="ARBRE-"]{
+  animation: TreeAnimation 1s infinite linear;
+  
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+#credits {
+  display: none;
+  position: fixed;
+  top: 20vh;
+  right: 5vw;
+  z-index: 15;
+  width: auto; /* Garde la largeur proportionnelle */
+  height: clamp(200px, 50vh, 450px); /* Respecte tes valeurs */
+  max-width: 70vw; /* Pour éviter qu'elle soit trop large */
+  object-fit: contain; /* Assure le respect des proportions */
+  transition: display 0.5s ease-in-out;;
+}
+
+main{
+  pointer-events: none;
+}
+
+.game {
+  pointer-events: none;
+}
+
+.sidebar {
+  pointer-events: all;
+}
+
+p.popup-title{
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-size: 10pt;
+}
+
+p.popup-message{
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-size: 8pt;
+}

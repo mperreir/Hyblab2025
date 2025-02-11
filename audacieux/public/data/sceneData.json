@@ -1,0 +1,254 @@
+{
+  "triggers":[
+    {
+      "id": "MARCHÉ-2",
+      "onload": {"func":"colorScript", "args":[]},
+      "script": {"func":"loadSceneScript", "args":["marche"]},
+      "audio": {"func":"playAudio", "args":["marcheAmb"]}
+    },
+    {
+      "id": "PÉNICHE",
+      "onload": {"func":"colorScript", "args":[]},
+      "script": {"func":"loadSceneScript", "args":["start_peniche"]},
+      "audio": {"func":"playAudio", "args":["bateauAmb"]}
+    },
+    {
+      "id":"LIBRAIRIE",
+      "onload": {"func":"colorScript", "args":[]},
+      "script": {"func":"loadSceneScript", "args":["Librairie"]},
+      "audio": {"func":"playAudio", "args":["porteOLib"]}
+    }
+  ],
+
+  "elements": [
+
+    {
+      "id": "landscape",
+      "type": "group",
+      "src": "",
+      "z": 1,
+      "subElement":[        
+        
+        {
+          "id": "river",
+          "type": "group",
+          "src": "",
+          "z": 9,
+          "subElement":[
+            {
+              "id": "svgElement2",
+              "type": "svg",
+              "src": "assets/graphic/2PLAN_ILLUSTRATIONS.svg",
+              "z": 8,
+              "keyframes": [
+                {
+                  "time": 0,
+                  "x": 0,
+                  "y": 0,
+                  "rotation": 0,
+                  "scale": 85
+                }
+              ]
+            },
+            {
+              "id": "ecluse",
+              "type": "lottie",
+              "src": "assets/graphic/ecluse.json",
+              "z": 9,
+              "keyframes": [
+                {
+                  "time": 0,
+                  "lotti_time":0,
+                  "x": -8550,
+                  "y": -10,
+                  "rotation": 0,
+                  "scale": 13
+                },
+                {
+                  "time": 19,
+                  "lotti_time":18,
+                  "x": -8550,
+                  "y": -10,
+                  "rotation": 0,
+                  "scale": 13
+                },
+                {
+                  "time": 19,
+                  "lotti_time":18,
+                  "x": -8550,
+                  "y": -10,
+                  "rotation": 0,
+                  "scale": 13
+                },
+                {
+                  "time": 20,
+                  "lotti_time":83,
+                  "x": -8550,
+                  "y": -10,
+                  "rotation": 0,
+                  "scale": 13
+                }
+              ]
+            }
+          ],
+          "keyframes":[
+            {
+              "time": 0,
+              "x": 12000,
+              "y": 0,
+              "rotation": 0,
+              "scale": 1
+            },
+            {
+              "time": 100,
+              "x": -7500,
+              "y": 0,
+              "rotation": 0,
+              "scale": 1
+            }
+          ]
+        },
+
+        {
+          "id": "svgElement1",
+          "type": "svg",
+          "src": "assets/graphic/1PLAN_ILLUSTRATIONS.svg",
+          "z": 10,
+          
+          "keyframes": [
+            {
+              "time": 0,
+              "x": 13000,
+              "y": 0,
+              "rotation": 0,
+              "scale": 85
+            },
+            {
+              "time": 100,
+              "x": -7000,
+              "y": 0,
+              "rotation": 0,
+              "scale": 85
+            }
+          ]
+        },
+        {
+          "id": "svgElement3",
+          "type": "svg",
+          "src": "assets/graphic/3PLAN_ILLUSTRATIONS.svg",
+          "z": 7,
+          "keyframes": [
+            {
+              "time": 0,
+              "x": 12000,
+              "y": 0,
+              "rotation": 0,
+              "scale": 85
+            },
+            {
+              "time": 100,
+              "x": -9000,
+              "y": 0,
+              "rotation": 0,
+              "scale": 85
+            }
+          ]
+        },
+        
+        {
+          "id": "svgElement4",
+          "type": "svg",
+          "src": "assets/graphic/4PLAN_ILLUSTRATIONS.svg",
+          "z": 6,
+          "keyframes": [
+            {
+              "time": 0,
+              "x": 14000,
+              "y": 0,
+              "rotation": 0,
+              "scale": 100
+            },
+            {
+              "time": 100,
+              "x": -4500,
+              "y": 0,
+              "rotation": 0,
+              "scale": 100
+            }
+          ]
+        },
+        {
+          "id": "peniche",
+          "type": "svg",
+          "src": "assets/graphic/Peniche.svg",
+          "z": 9,
+          "keyframes": [
+            {
+              "time": 0,
+              "x": 9000,
+              "y": 0,
+              "rotation": 0,
+              "scale": 65
+            },
+            {
+              "time": 20,
+              "x": 9000,
+              "y": 0,
+              "rotation": 0,
+              "scale": 65
+            },
+            {
+              "time": 20.5,
+              "x": 9000,
+              "y": -75,
+              "rotation": 0,
+              "scale": 65
+            },
+            {
+              "time": 100,
+              "x": 9000,
+              "y": -75,
+              "rotation": 0,
+              "scale": 65
+            }
+          ]
+        },
+
+        {
+          "id": "credit",
+          "type": "svg",
+          "src": "assets/graphic/Peniche.svg",
+          "z": 9,
+          "keyframes": [
+            {
+              "time": 91,
+              "x": 11000,
+              "y": -300,
+              "rotation": 0,
+              "scale": 1
+            },
+
+            {
+              "time": 100,
+              "x": 9250,
+              "y": -300,
+              "rotation": 0,
+              "scale": 1
+            }
+          ]
+        }
+      ],
+      "keyframes": [
+        {
+          "time": 0,
+          "x": 300,
+          "y": 400,
+          "rotation": 0,
+          "scale": 1
+        }
+      ]
+    }
+
+  ]
+  
+}
