@@ -30,7 +30,7 @@ const LandingComponent = () => {
 
   const handleClick = () => {
     updateStepper(1);
-    navigate("/brief/Contexte");
+    navigate("/Contexte");
   };
 
   return (

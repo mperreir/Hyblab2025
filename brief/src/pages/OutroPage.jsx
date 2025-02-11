@@ -94,7 +94,7 @@ const OutroPage = () => {
 
                 {/* Bouton retour à l'accueil */}
                 <Box textAlign="center" marginTop={4}>
-                    <Link to="/brief/" style={{ textDecoration: 'none', fontSize: '18px', fontWeight: 'bold', color: '#991756' }}>
+                    <Link to="/" style={{ textDecoration: 'none', fontSize: '18px', fontWeight: 'bold', color: '#991756' }}>
                         Retour à l'accueil
                     </Link>
                 </Box>

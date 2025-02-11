@@ -58,7 +58,7 @@ const ContexteComponent = () => {
   };
 
   const handleClick = () => {
-    navigate("/brief/Information");
+    navigate("/Information");
   };
 
   const handleStepChange = (step) => {

@@ -5,6 +5,9 @@ const express = require('express');
 const path = require('path');
 const fs = require('fs');
 const mustacheExpress = require('mustache-express'); // Import mustache-express
+const nodefetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
+
+const baseurl= "http://apps.hyblab.fr/nantes2025/londeporteuse/";
 
 // Create our application
 const app = express();
@@ -27,7 +30,7 @@ app.use(express.static(path.join(__dirname, '../__common-logos__')));
 app.get('/choices', async (req, res) => {
     try {
       // Fetch data from the API endpoint
-      const response = await fetch('https://hyblab.polytech.univ-nantes.fr/londeporteuse/api/choices');
+      const response = await nodefetch(baseurl+'api/choices');
       const data = await response.json();
   
       // Render the Mustache template with the fetched data
@@ -48,7 +51,7 @@ app.get('/choices', async (req, res) => {
 app.get('/budget', async (req, res) => {
   try {
     // Fetch data from the API endpoint
-    const response = await fetch('https://hyblab.polytech.univ-nantes.fr/londeporteuse/api/budget');
+    const response = await nodefetch(baseurl+'api/budget');
     const data = await response.json();
 
     const initialBudget = req.query.initialBudget;
@@ -82,7 +85,7 @@ app.get('/budget', async (req, res) => {
 app.get('/ajust', async (req, res) => {
   try {
     // Fetch data from the API endpoint
-    const response = await fetch('https://hyblab.polytech.univ-nantes.fr/londeporteuse/api/ajust');
+    const response = await nodefetch(baseurl+'api/ajust');
     const data = await response.json();
 
     // Render the Mustache template with the fetched data
@@ -98,7 +101,7 @@ app.get('/ajust', async (req, res) => {
 // app.get('/result', async (req, res) => {
 //   try {
 //     // Fetch data from the API endpoint
-//     const response = await fetch('http://localhost:8080/londeporteuse/api/result');
+//     const response = await nodefetch('http://localhost:8080/londeporteuse/api/result');
 //     const data = await response.json();
 
 //     // Render the Mustache template with the fetched data

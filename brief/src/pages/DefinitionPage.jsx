@@ -8,7 +8,7 @@ const DefinitionPage = () => {
   const navigate = useNavigate();
   return (
     <IntroLayout>
-      <LandingComponent onStart={() => navigate("/brief/contexte")} />
+      <LandingComponent onStart={() => navigate("/contexte")} />
     </IntroLayout>
   );
 };

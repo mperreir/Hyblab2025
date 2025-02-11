@@ -9,7 +9,7 @@ const InformationMixPage = () => {
   const navigate = useNavigate();
   return (
     <IntroLayout>
-      <InformationMixComponent onStart={() => navigate("/brief/contexte")} />
+      <InformationMixComponent onStart={() => navigate("/contexte")} />
     </IntroLayout>
   );
 };

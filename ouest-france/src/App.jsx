@@ -11,7 +11,7 @@ import EndPage from "./screens/EndPage";
 import BentoGrid from "./screens/Stats";
 
 const App = () => {
-  const baseUrl = `${window.location.origin}/ouest-france/api`;
+  const baseUrl = `${window.location.origin}/nantes2025/ouest-france/api`;
 
   const [quizData, setQuizData] = useState(null);
   const [articleData, setArticleData] = useState(null);

@@ -24,7 +24,7 @@
             }
 
             try {
-                const apiUrl = `/mediacites/api/articles/${category}`;
+                const apiUrl = `api/articles/${category}`;
                 const response = await fetch(apiUrl);
 
                 if (!response.ok) {
@@ -132,7 +132,7 @@
             } 
 
             try {
-                const apiUrl = `/mediacites/api/links/${category}`;
+                const apiUrl = `api/links/${category}`;
                 const response = await fetch(apiUrl);
 
                 if (!response.ok) {

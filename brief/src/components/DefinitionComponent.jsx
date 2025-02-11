@@ -9,7 +9,7 @@ const DefinitionComponent = () => {
 const navigate = useNavigate(); // Hook pour la navigation
 
     const handleClick = () => {
-        navigate('/brief/contexte'); // Redirige vers la page /landing (ou une autre page de ton choix)
+        navigate('/contexte'); // Redirige vers la page /landing (ou une autre page de ton choix)
     };
 
     return (

@@ -219,7 +219,7 @@
         </div>
     </div>
     <script>
-        fetch('/mediacites/api/articles')
+        fetch('api/articles')
             .then(response => response.json())
             .then(data => {
                 const kpiContainers = document.querySelectorAll('.kpi-container');
@@ -259,7 +259,7 @@
     console.log(name);
 
     const saucisse = document.getElementById("saucisse");
-    fetch(`/mediacites/api/articles/${name}/text`)
+    fetch(`api/articles/${name}/text`)
         .then(response => response.json())
         .then(text => {
             saucisse.innerHTML = text;

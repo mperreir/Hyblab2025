@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", () => {
     // Charger les données JSON
-    fetch("./data/PAGE3.json")
+    fetch("data/PAGE3.json")
       .then(response => {
         if (!response.ok) {
           throw new Error("Erreur lors du chargement du fichier JSON.");
@@ -166,7 +166,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 document.addEventListener("DOMContentLoaded", () => {
     // Charger les données JSON
-    fetch("./data/PAGE3.json")
+    fetch("data/PAGE3.json")
       .then(response => {
         if (!response.ok) {
           throw new Error("Erreur lors du chargement du fichier JSON.");
@@ -226,7 +226,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   document.addEventListener("DOMContentLoaded", () => {
     // Charger les données JSON
-    fetch("./data/PAGE3.json")
+    fetch("data/PAGE3.json")
       .then(response => {
         if (!response.ok) {
           throw new Error("Erreur lors du chargement du fichier JSON.");

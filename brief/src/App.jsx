@@ -19,7 +19,6 @@ import { AppProvider } from "./context/AppContextProvider";
 import TransitionsComponent from "./components/TransitionsComponent";
 import { AnimatePresence } from "framer-motion";
 
-
 const theme = createTheme({
   typography: {
     fontFamily: "Arial, sans-serif", // Set Arial as the default font family
@@ -63,13 +62,13 @@ const AnimatedRoutes = () => {
 
   return (
     <AnimatePresence mode="wait">
-    <Routes location={location} key={location.pathname}>
+    <Routes location={location} key={location.pathname} >
       <Route
-        path="/nantes2025/brief/"
-        element={<Navigate to="/nantes2025/brief/landing" replace />}
+        path="/"
+        element={<Navigate to="/landing" replace />}
       />
       <Route
-        path="/nantes2025/brief/landing"
+        path="landing"
         element={
           <TransitionsComponent animationType="zoomIn">
             <LandingPage />
@@ -77,7 +76,7 @@ const AnimatedRoutes = () => {
         }
       />
       <Route
-        path="/nantes2025/brief/questions"
+        path="questions"
         element={
           <TransitionsComponent animationType="fadeInOut">
             <QuestionsPage />
@@ -85,7 +84,7 @@ const AnimatedRoutes = () => {
         }
       />
       <Route
-        path="/nantes2025/brief/contexte"
+        path="contexte"
         element={
           <TransitionsComponent animationType="fadeInOut">
             <ContextePage />
@@ -93,7 +92,7 @@ const AnimatedRoutes = () => {
         }
       />
       <Route
-        path="/nantes2025/brief/outro"
+        path="outro"
         element={
           <TransitionsComponent animationType="zoomIn">
             <OutroPage />
@@ -101,7 +100,7 @@ const AnimatedRoutes = () => {
         }
       />
       <Route
-        path="/nantes2025/brief/Introduction"
+        path="Introduction"
         element={
           <TransitionsComponent animationType="fadeInOut">
             <DefinitionPage />
@@ -109,7 +108,7 @@ const AnimatedRoutes = () => {
         }
       />
       <Route
-        path="/nantes2025/brief/Information"
+        path="Information"
         element={
           <TransitionsComponent animationType="fadeInOut">
             <InformationMixPage />
@@ -128,7 +127,7 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <AppProvider>
-        <Router>
+        <Router basename={'/nantes2025/brief'}s >
           <ScrollTop />
 
          <AnimatedRoutes />

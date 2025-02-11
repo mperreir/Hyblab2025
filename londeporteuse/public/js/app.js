@@ -30,7 +30,7 @@ async function submitChoices() {
       console.log('Submitting choices:', userChoices);
   
       // Send choices to the backend via a POST request
-      const response = await fetch(`./api/calculatebudget`, {
+      const response = await fetch(`api/calculatebudget`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -50,7 +50,7 @@ async function submitChoices() {
       console.log('Submission successful:', data);
   
       // Redirect or show confirmation message if needed
-      const budgetPageUrl = `/londeporteuse/budget?initialBudget=${data.totalCost}&ticketPrice=${data.averageTicketPrice}&festivalSize=${data.festivalSize}&ecologicalActions=${data.ecologicalActions}&culturalMediationActions=${data.culturalMediationActions}&riskPreventionActions=${data.riskPreventionActions}`;
+      const budgetPageUrl = `budget?initialBudget=${data.totalCost}&ticketPrice=${data.averageTicketPrice}&festivalSize=${data.festivalSize}&ecologicalActions=${data.ecologicalActions}&culturalMediationActions=${data.culturalMediationActions}&riskPreventionActions=${data.riskPreventionActions}`;
       window.location.href = budgetPageUrl;
 
       // Update the UI
@@ -98,7 +98,7 @@ function initTicketPriceSlider() {
       const festivalSize = getQueryParam('festivalSize');
   
       // Send choices to the backend via a POST request
-      const response = await fetch('./api/validate-budget', {
+      const response = await fetch('api/validate-budget', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -118,7 +118,7 @@ function initTicketPriceSlider() {
       if (data.isValid) {
         // Redirect or show confirmation message if needed
         window.location.href = 
-        `/londeporteuse/result?adjustedBudget=${data.adjustedBudget}&ticketPrice=${data.ticketPrice}&festivalSizes=${userChoices.festivalSizes}&ecologicalActions=${userChoices.ecologicalActions}&culturalMediationActions=${userChoices.culturalMediationActions}&riskPreventionActions=${userChoices.riskPreventionActions}`;
+        `result?adjustedBudget=${data.adjustedBudget}&ticketPrice=${data.ticketPrice}&festivalSizes=${userChoices.festivalSizes}&ecologicalActions=${userChoices.ecologicalActions}&culturalMediationActions=${userChoices.culturalMediationActions}&riskPreventionActions=${userChoices.riskPreventionActions}`;
       } 
       else {
         alert (data.message);

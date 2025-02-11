@@ -84,7 +84,7 @@ const InformationMixComponent = () => {
   };
   const handleClick = () => {
     updateStepper(2);
-    navigate("/brief/questions");
+    navigate("/questions");
   };
 
   return (

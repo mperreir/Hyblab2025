@@ -5,7 +5,7 @@ function BodyComponent() {
 
   // Utilisation de useEffect pour récupérer le message dès le chargement du composant
   useEffect(() => {
-    fetch('http://localhost:8080/brief/api/message')
+    fetch('api/message')
       .then(response => response.json())  // On suppose que l'API renvoie un JSON
       .then(data => {
         setMessage(data.message);  // On met à jour le state avec le message reçu

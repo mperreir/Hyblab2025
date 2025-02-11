@@ -31,7 +31,7 @@ const RecapComponent = ({ bilan }) => {
 
   const handleRedirect = () => {
     updateStepper(4);
-    navigate("/brief/outro");
+    navigate("/outro");
   };
   return (
     <motion.div
